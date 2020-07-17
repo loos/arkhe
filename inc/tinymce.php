@@ -1,5 +1,5 @@
 <?php
-use ARKHE_THEME\TinyMce;
+use ARKHE_THEME\TinyMCE;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 add_action( 'admin_init', 'arkhe_hook__add_editor_style' );

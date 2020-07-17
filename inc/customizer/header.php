@@ -64,11 +64,11 @@ Customizer::add(
 	'logo_size_sp',
 	array(
 		'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
-		'description' => '40~80px',
+		'description' => '32~80px',
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step'    => '1',
-			'min'     => '40',
+			'min'     => '32',
 			'max'     => '80',
 		),
 		'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),

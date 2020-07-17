@@ -21,7 +21,7 @@
 					wp_nav_menu(
 						array(
 							'container'       => '',
-							// 'fallback_cb'     => [$this,'default_head_menu'],
+							'fallback_cb'     => '',
 							'theme_location'  => 'header_menu',
 							'items_wrap'      => '<ul class="c-spnav">%3$s</ul>',
 						)

@@ -38,7 +38,6 @@
 }
 
 // ロゴセンター寄せ
-// 
 .l-header[data-logo-pos="center"] {
 
     @include pc {
@@ -223,6 +222,7 @@
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     @include sp {
         height: var(--logo_size_sp);
