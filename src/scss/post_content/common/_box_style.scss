@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+// has-
+p.has-background,
+div.has-background {
+    padding: 1.5em;
+}
+
+@include tab {
+
+    div.has-background {
+        padding: 2em;
+    }
+}

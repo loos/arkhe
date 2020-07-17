@@ -1,0 +1,27 @@
+.p-searchModal__inner {
+
+    position: absolute;
+    top: calc(50% + 16px);
+    left: 50%;
+    z-index: 1;
+    width: 96%;
+    max-width: 600px;
+    padding: 1em;
+    background: rgba(255, 255, 255, .1);
+    transform: translateX(-50%) translateY(-50%);
+    transition: top .5s;
+
+    .is-open > & {
+        top: 50%;
+    }
+
+    .c-searchForm { //form
+        box-shadow: 0 0 4px rgba(255, 255, 255, .2);
+    }
+
+    .s {
+        font-size: 16px;
+    }
+
+}
+

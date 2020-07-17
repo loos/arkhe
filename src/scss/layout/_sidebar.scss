@@ -1,0 +1,22 @@
+#sidebar {
+    position: relative;
+
+    @include sp {
+        margin-top: 4em;
+    }
+
+    @include pc {
+
+        .c-widget + .c-widget {
+            margin-top: 2.5em;
+        }
+    }
+
+    [data-sidebar="on"] & {
+
+        @include pc {
+            width: 304px;
+        }
+    }
+
+}

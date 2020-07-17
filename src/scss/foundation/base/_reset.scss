@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+::before,
+::after {
+    box-sizing: inherit;
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+
+// HTML5 display-role reset for older browsers
+main {
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+// blockquote::before, blockquote::after,
+// q::before, q::after {
+//     content: none;
+// }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td, th {
+    // background-clip: padding-box;
+    word-break: break-all;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+}
+
+video {
+    outline: none;
+}
+
+pre,code {
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+[hidden] {
+  display: none; /* Add the correct display in IE */
+}
+
+
+/* 
+ * Form
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/* Show the overflow in IE. */
+
+button,
+input { /* Show the overflow in Edge. */
+    overflow: visible;
+}
+
+/* Remove the inheritance of text transform in Edge, Firefox, and IE.  */
+button,
+select { /* Remove the inheritance of text transform in Firefox. */
+    text-transform: none;
+}
+
+/* button */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    display: inline-block;
+    cursor: pointer;
+}
+[role="button"] {
+    cursor: pointer; //バグ対策
+}
+
+/* normalize 通り */
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+/* normalize 通り */
+legend {
+    box-sizing: border-box;
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+
+// SWELL
+input,
+textarea,
+select,
+button {
+    padding: .25em .5em;
+    color: #333;
+    border: 1px solid $color_border;
+    border-radius: 0;
+}
+[type="color"]{
+    padding: 0;
+}
+[type="range"]{
+    vertical-align: middle;
+}
+
+
+/* 
+ * Accessibility
+ */
+/* Specify the progress cursor of updating elements */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled] {
+  cursor: default;
+}
+
+
+/* Hide content from screens but not screenreaders */
+@media screen {
+  [hidden~="screen"] {
+    display: inherit;
+  }
+  [hidden~="screen"]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+

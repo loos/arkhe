@@ -1,0 +1,47 @@
+//画像フィルター
+.c-filterLayer {
+    // position: relative;
+    z-index: 0;
+
+    &::before {
+
+        @extend %absLayer;
+        z-index: 1;
+    }
+
+    &::after {
+
+        @extend %absLayer;
+        z-index: 2;
+        display: block;
+    }
+
+    &.-filter-none {
+
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+
+    &.-filter-dot::after {
+        background-color: rgba(0, 0, 0, .1);
+        background-image: url(../../assets/img/dot_texture.png);
+        background-size: 2px;
+        opacity: .5;
+    }
+
+}
+
+.c-filterLayer__img {
+
+    @extend %absLayer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backface-visibility: hidden;
+    // transform: perspective(0);
+    & > img {
+        width: 100%;
+    }
+}

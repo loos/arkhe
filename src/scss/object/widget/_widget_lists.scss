@@ -1,0 +1,170 @@
+/*
+    リスト系のウィジェットに関するもの
+*/
+
+// 一番最初の ulタグ
+.wp-block-categories-list,
+.wp-block-archives-list,
+.widget_nav_menu .menu,
+.widget_recent_entries ul,
+.widget_recent_comments ul,
+.widget_archive > ul,
+.widget_categories > ul,
+.widget_pages > ul {
+    border-top: solid 1px var(--color_border);
+}
+
+// サブメニューの展開
+.c-submenuToggleBtn {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    z-index: 1;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    line-height: 2;
+    text-align: center;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    @include tab {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        transition: background-color .25s;
+    }
+
+    &::before {
+        display: inline-block;
+        font-size: 12px;
+        line-height: inherit;
+        transition: transform .25s;
+
+        @extend %arkheIcon;
+        @extend .arkhe-icon-chevron-down::before;
+    }
+
+    &::after {
+        box-shadow: inset 0 0 0 1px currentColor;
+        // border: solid 1px currentColor;
+        opacity: .15;
+        transition: background-color .25s;
+
+        @extend %absLayer;
+
+    }
+
+    @include pc {
+
+        &:hover::after {
+            background-color: currentColor;
+        }
+    }
+
+
+    &.is-opened {
+
+        &::before {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+
+// 基本スタイル
+.wp-block-categories,
+.wp-block-archives,
+.widget_nav_menu,
+.widget_archive,
+.widget_categories,
+.widget_pages {
+
+    li {
+        position: relative;
+        margin: 0 !important;
+
+        a {
+            border-bottom: solid 1px var(--color_border);
+        }
+    }
+
+    a {
+        position: relative;
+        display: block;
+        padding: .75em .5em;
+        color: inherit;
+        line-height: 1.4;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $hover_gray;
+        }
+    }
+}
+
+// アイコン用の before要素
+.wp-block-categories,
+.wp-block-archives,
+.widget_nav_menu,
+.widget_archive,
+.widget_categories,
+.widget_pages {
+
+    a::before {
+        position: absolute;
+        top: 50%;
+        left: 2px;
+        display: inline-block;
+        color: inherit;
+        vertical-align: middle;
+        transform: translateY(-50%);
+    }
+
+}
+
+
+// カテゴリーウィジェット
+//カテゴリー ブロック
+.wp-block-categories > .cat-item > a,
+.widget_categories > ul > .cat-item > a {
+
+    padding-left: 1.5em;
+
+    &::before {
+        transform: scale(.8) translateX(1px) translateY(-50%);
+        transform-origin: 0 0;
+        opacity: .8;
+
+        @extend %arkheIcon;
+        @extend .arkhe-icon-folder::before;
+    }
+}
+
+.widget_categories,
+.wp-block-categories {
+
+    label {
+        display: none;
+    }
+}
+
+//投稿カウント数
+.tag-link-count,
+.cat-post-count {
+    position: relative;
+    right: -1px;
+    color: #666;
+    font-size: 3vw;
+
+    @include tab {
+        font-size: 13px;
+    }
+}
+
+.cat-post-count {
+    margin-left: 4px;
+}

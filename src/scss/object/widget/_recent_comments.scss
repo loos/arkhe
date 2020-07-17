@@ -1,0 +1,15 @@
+
+.widget_recent_comments {
+    // li
+    .recentcomments {
+        position: relative;
+        margin: 0;
+        padding: .75em .5em;
+        line-height: 1.4;
+        border-bottom: solid 1px var(--color_border);
+
+        &:hover {
+            background-color: $hover_gray;
+        }
+    }
+}

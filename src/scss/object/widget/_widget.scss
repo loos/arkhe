@@ -1,0 +1,33 @@
+// ウィジェット基本
+.c-widget {
+
+    & + .c-widget {
+        margin-top: 2em;
+    }
+}
+
+.c-widget__title {
+    position: relative;
+    margin-bottom: 1.5em;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 4vw;
+
+    @include tab {
+        font-size: 16px;
+    }
+}
+
+
+//ウィジェットで挿入したリンク
+.textwidget {
+
+    a {
+        transition: opacity .25s;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        opacity: .75;
+    }
+}

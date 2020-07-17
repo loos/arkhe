@@ -1,0 +1,17 @@
+.p-drawerOverlayer {
+    position: fixed;
+    z-index: 99; //header - 1
+    background: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s, visibility .5s;
+
+    [data-loaded="false"] & {
+        display: none;
+    }
+
+    [data-drawer="opened"] & {
+        visibility: visible;
+        opacity: 1;
+    }
+}

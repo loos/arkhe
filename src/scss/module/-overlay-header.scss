@@ -1,0 +1,133 @@
+
+//ヘッダー透過設定時、かつトップページでしか読み込まれない
+@import "../foundation/mixin/**";
+@import "../foundation/setting/variable";
+
+
+.c-infoBar {
+    display: none;
+}
+
+.l-header {
+    // position: fixed !important;
+    top: 0;
+    left: 0;
+    transition: background-color .25s;
+
+    @include pc {
+
+        &[data-pcfix="1"] {
+            position: fixed;
+        }
+
+        &[data-pcfix="0"] {
+            position: absolute;
+            transition-duration: 0s;
+        }
+    }
+
+    @include sp {
+
+        &[data-spfix="1"] {
+            position: fixed;
+        }
+
+        &[data-spfix="0"] {
+            position: absolute;
+            transition-duration: 0s;
+        }
+    }
+
+    .l-header__body {
+        // transition: color .25s; //ナビやアイコンには各自 transition がついている
+        color: #fff;
+    }
+
+    .c-headLogo {
+        position: relative;
+    }
+    // 初期状態で、普通のロゴは非表示
+    .c-headLogo__img {
+        transition: opacity .25s;
+    }
+
+    .c-headLogo__img.-common {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    // これはさらに設定によって変える ?
+    .l-container {
+        max-width: 100%;
+    }
+
+}
+
+[data-scrolled="false"] {
+
+    .l-header {
+        background-color: transparent;
+    }
+
+}
+
+@include pc {
+
+    // 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
+    [data-scrolled="true"] {
+
+        [data-pcfix="1"] {
+
+            .l-header__body {
+                color: inherit;
+            }
+
+            .c-headLogo__img.-top {
+                opacity: 0;
+            }
+
+            .c-headLogo__img.-common {
+                opacity: 1;
+            }
+
+        }
+    }
+
+    // PCで固定設定なしの時
+    .l-header[data-pcfix="0"] {
+        // data-scrolled=" true"でも透明を維持
+        background-color: transparent;
+    }
+}
+
+@include sp {
+
+    // 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
+    [data-scrolled="true"] {
+
+        [data-spfix="1"] {
+
+            .l-header__body {
+                color: inherit;
+            }
+
+            .c-headLogo__img.-top {
+                opacity: 0;
+            }
+
+            .c-headLogo__img.-common {
+                opacity: 1;
+            }
+
+        }
+    }
+
+    // SPで固定設定なしの時
+    .l-header[data-spfix="0"] {
+        // data-scrolled=" true"でも透明を維持
+        background-color: transparent;
+    }
+}

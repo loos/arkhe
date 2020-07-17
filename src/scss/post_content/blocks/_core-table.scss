@@ -1,0 +1,32 @@
+// テーブル
+.wp-block-table {
+
+    & > table {
+        margin-bottom: 0;
+    }
+
+    figcaption {
+
+        @extend %figcaption;
+    }
+}
+
+
+// ストライプ
+table.is-style-stripes,
+.is-style-stripes table {
+    border: none;
+}
+
+.is-style-stripes {
+
+    tbody th,
+    tbody td {
+        background: none !important; //th風tdの詳細度を上書き
+    }
+
+    figcaption {
+        margin-top: 0;
+        border-top: 1px solid #f3f4f5;
+    }
+}

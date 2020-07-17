@@ -1,0 +1,12 @@
+.l-container {
+    max-width: var(--container_size);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 4vw;
+    padding-left: 4vw;
+
+    @include pc {
+        padding-right: 48px;
+        padding-left: 48px;
+    }
+}

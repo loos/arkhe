@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+//=========================================================
+// 投稿リスト ベース
+// 記事スライダーには card_list などはつかない
+//=========================================================
+
+// ul
+.p-postList {
+
+    &.-type-simple {
+        border-top: solid 1px var(--color_border);
+    }
+
+    &.-type-card {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -.75em;
+        margin-left: -.75em;
+    }
+
+}
+
+// li
+.p-postList__item {
+
+    .-type-simple & {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    // リスト
+    .-type-list & {
+        margin-top: 0;
+        margin-bottom: 2em;
+    }
+
+
+    // カード ベースは2列
+    .-type-card & {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 2.5em;
+        padding: 0 .75em;
+
+        @include tab {
+            width: 50%;
+        }
+    }
+
+    [data-sidebar="off"] .-type-card & {
+
+        @include pc {
+            width: 33.3%;
+        }
+    }
+
+
+    // 1列にするケース
+    .is-first-big > &:first-child {
+        width: 100%;
+    }
+
+    #sidebar .-type-card & {
+
+        @include pc {
+            width: 100%;
+        }
+    }
+
+
+    // widget ではマージン少し狭く
+    .c-widget .-type-card & {
+        margin-bottom: 2em;
+    }
+
+    .c-widget .-type-list & {
+        margin-bottom: 1.5em;
+    }
+
+}
+
+
+//aタグ
+.p-postList__link {
+    position: relative;
+    z-index: 0;
+    display: block;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+
+    .c-postContent & {
+        color: inherit;
+    }
+
+    &:hover {
+
+        .c-postThumb {
+
+            &::before {
+                opacity: .1;
+            }
+        }
+
+        .c-postThumb__img {
+            transform: scale(1.1);
+        }
+    }
+
+
+    .-type-simple & {
+        display: block;
+        padding: .75em .5em;
+        border-bottom: solid 1px var(--color_border);
+        transition: background-color .25s;
+
+        &:hover {
+            // background-color: rgba(150, 150, 150, .05);
+            background-color: var(--color_gray);
+        }
+    }
+
+
+    .-type-list & {
+        display: flex;
+        align-items: flex-start;
+        // justify-content: space-between;
+    }
+
+}
+
+
+// サムネイル画像
+.p-postList__thumb {
+
+    // @extend %thumbShadow;
+
+    .-type-card & {
+        width: 100%;
+    }
+
+    .-type-list & {
+        flex-shrink: 0;
+        width: 36%;
+        max-width: 280px;
+    }
+
+    &::before {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        transform: perspective(0);
+        backface-visibility: hidden;
+        opacity: 0;
+        transition: opacity .25s;
+        content: "";
+    }
+}
+
+
+// テキスト
+.p-postList__body {
+    // backface-visibility: hidden;
+    position: relative;
+    transition: opacity .25s;
+
+
+    .-type-card & {
+        padding-top: calc(1em + 2px);
+    }
+
+    .-type-card .p-postList__item:hover &,
+    .-type-list .p-postList__item:hover & {
+        opacity: .75;
+    }
+
+    .-type-list & {
+        flex: 1 1 auto;
+        padding-left: 1em;
+
+        @include tab {
+            padding-left: 1.5em;
+        }
+    }
+}
+
+
+// タイトル
+.p-postList__title {
+
+    .p-postList & {
+        //ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.1em;
+        line-height: 1.5;
+    }
+
+    .-type-simple & {
+
+        font-size: 1em;
+    }
+
+    .-type-list & {
+
+        @include mobile {
+            font-size: 4vw;
+        }
+    }
+
+    // #sidebar .-type-card & ,
+    .-related & {
+        font-size: .9em;
+    }
+
+    // #sidebar .-type-list & {
+
+    //     @include tab {
+    //         font-size: 13px;
+    //     }
+    // }
+}
+
+
+// 抜粋文
+.p-postList__excerpt {
+    margin-top: .5em;
+    font-size: 3vw;
+    line-height: 1.5;
+
+    @include tab {
+        font-size: 13px;
+    }
+
+    .-type-card & {
+
+        margin-top: .5em;
+    }
+
+}
+
+
+// メタ情報
+.p-postList__meta {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: .75em;
+    font-size: 10px;
+    line-height: 1.25;
+    letter-spacing: .1px;
+
+    .p-postList__title + & {
+        margin-top: .25em;
+    }
+
+    @include tab {
+        font-size: 11px;
+    }
+
+    ::before {
+        margin-right: .25em;
+    }
+
+    .-type-simple & {
+        margin: 0 0 .75em;
+    }
+
+
+    .c-widget & {
+        margin-top: 0;
+    }
+
+
+}
+
+.p-postList__cat,
+.p-postList__author {
+    margin-right: .5em;
+    // padding: 4px 0;
+}
+
+// .p-postList__cat {
+
+//     &::before {
+
+//         @extend %arkheIcon;
+//         @extend .arkhe-icon-folder::before;
+//     }
+// }
+
+.p-postList__times + .p-postList__cat {
+
+    position: relative;
+    padding-left: calc(.5em + 1px);
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 1px;
+        height: 1em;
+        background: currentColor;
+        transform: translateY(-50%);
+        content: "";
+
+    }
+
+}
+
+// .p-postList__times,
+
+.-type-simple .p-postList__author {
+    padding: 0;
+}
+
+.p-postList__author:not(:first-child) {
+    margin-left: auto;
+}
+
+// .p-postList__times {}
+
+
+// 関連記事
+.-related {
+
+    &.-type-card {
+
+        @include mobile {
+            margin-right: -.5em;
+            margin-left: -.5em;
+        }
+
+        .p-postList__item {
+            width: 50%;
+            margin-bottom: 1.5em;
+
+            @include mobile {
+                padding: 0 .5em;
+            }
+
+            @include pc {
+                width: 33.33%;
+            }
+        }
+
+    }
+
+    &.-type-list {
+
+        // サイズ小さくする？
+        .p-postList__thumb {
+            max-width: 240px;
+        }
+    }
+}
+
+// インフィード
+@include mobile {
+
+    .-type-card .c-infeedAd {
+        width: 100%;
+    }
+}
+
+
+// 記事内での呼び出し
+.c-postContent {
+
+    .p-postList {
+        margin-bottom: 0;
+        list-style: none;
+        // padding-left: 0;
+    }
+
+    .-type-simple {
+        //liにmarginがないもの
+        margin-bottom: 2em;
+    }
+
+    .p-postList__item {
+        // padding-left: 0;
+        &::before {
+            content: none; //liのbeforeを表示させない
+        }
+    }
+
+    .p-postList__title {
+        display: block;
+        padding: 0;
+        // margin: 0;
+        color: inherit;
+        background: none;
+        border: none;
+
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+}

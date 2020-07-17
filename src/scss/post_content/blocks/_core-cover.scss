@@ -1,0 +1,16 @@
+.wp-block-cover {
+    padding: 2em;
+    overflow: hidden;
+
+    @include sp {
+        padding: 1em;
+    }
+
+}
+
+.wp-block-cover__inner-container {
+
+    .wp-block-cover & {
+        width: 100%;
+    }
+}

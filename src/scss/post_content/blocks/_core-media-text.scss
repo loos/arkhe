@@ -1,0 +1,52 @@
+/*
+ * メディアと文章ブロック
+ *   コアのCSSが .wp-block-media-text のブレークポイントだけ 600px なのでそれに合わせることに注意。
+*/
+
+.wp-block-media-text {
+
+    // .has-background 自体に padding 指定があるので、打ち消す
+    &.has-background {
+        padding: 0;
+    }
+
+}
+
+.wp-block-media-text__media {
+
+    img {
+        display: block;
+    }
+
+    .wp-block-media-text.is-image-fill & {
+
+        @media (max-width: 600px) {
+            min-height: 56vw;
+        }
+    }
+}
+
+.wp-block-media-text__content {
+
+    // コアを上書き できるように .wp-block-media-text から指定
+    .wp-block-media-text & {
+        padding: 1.5em;
+    }
+}
+
+
+// 「モバイルで重ねる」の対応
+@media (max-width: 600px) {
+
+    .is-stacked-on-mobile {
+
+        .wp-block-media-text__media {
+            grid-row: 1 !important; //画像を上に。
+        }
+
+        .wp-block-media-text__content {
+            grid-row: 2 !important;
+        }
+    }
+
+}

@@ -1,0 +1,34 @@
+.wp-block-columns {
+
+    & > .block-editor-inner-blocks {
+        width: 100%;
+    }
+}
+
+// verticalの時
+.wp-block-column[class*="is-vertically-aligned-"] {
+    width: 100%; //5.3用
+
+    // .wp-block-columnにかかるスタイルは削除し、その中の.block-editor-inner-blocksに当て直す
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    & > .block-editor-inner-blocks {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+// ガイド線
+.branch-5-4 {
+
+    // [data-type="core/columns"]:not(.is-selected):not(.has-child-selected),
+    [data-type="core/columns"]:not(.is-selected) {
+
+        &::before {
+            border: dashed 1px $color_guide;
+        }
+    }
+}

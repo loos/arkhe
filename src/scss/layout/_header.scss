@@ -1,0 +1,289 @@
+.l-header {
+    top: 0; //fixされた時用
+    z-index: 100;
+    width: 100%;
+    color: #333;
+    background: #fff;
+
+    &[data-pcfix="1"] {
+
+        @include pc {
+            position: sticky;
+        }
+    }
+
+    &[data-spfix="1"] {
+
+        @include sp {
+            position: sticky;
+        }
+    }
+
+    .wp-block-social-links {
+
+        @include sp {
+            display: none;
+        }
+    }
+
+    // Stickeyの時
+    .admin-bar & {
+        top: 32px;
+
+        @media (max-width: 782px) {
+            top: 46px;
+        }
+    }
+
+}
+
+// ロゴセンター寄せ
+// 
+.l-header[data-logo-pos="center"] {
+
+    @include pc {
+
+        .l-header__main {
+            position: relative;
+            width: calc(100% - 80px);
+        }
+
+        .l-header__logoWrap {
+            box-sizing: content-box; //padding分も高さに含めるため
+            height: var(--logo_size_pc);
+            margin-left: auto;
+        }
+
+        .l-header__logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+// ヘッドバー
+.l-header__bar {
+    position: relative;
+
+    @include sp {
+        display: none;
+    }
+
+    .l-header__barInner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .c-catchphrase {
+        width: 50%;
+        margin-right: auto;
+        padding: 4px 0;
+        overflow: hidden;
+        font-size: 11px;
+        // line-height: 14px;
+        letter-spacing: .2px;
+        white-space: nowrap;
+    }
+
+    .c-iconList {
+        justify-content: flex-end;
+        width: 50%;
+        margin-left: auto;
+
+        .c-iconList__link {
+            margin: 0;
+            padding: 4px 6px;
+        }
+    }
+
+    .c-customBox,
+    .wp-block-social-links {
+        margin-left: 8px;
+    }
+
+    .wp-block-social-links {
+
+        .wp-social-link {
+
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+            padding: 0;
+            // border-radius: 36px;
+            a {
+                padding: 2px;
+            }
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+
+
+.l-header__body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    @include sp {
+        padding: 0;
+
+        .c-customBox {
+            display: none;
+        }
+    }
+
+    // .c-customBox,
+    // .wp-block-social-links {
+    //     position: relative;
+    //     z-index: 1;
+    // }
+
+    .wp-block-social-links {
+
+        .wp-social-link {
+            width: 28px;
+            height: 28px;
+            margin-right: 4px;
+            padding: 0;
+            // border-radius: 36px;
+            a {
+                padding: 4px;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &.is-style-logos-only {
+
+            .wp-social-link {
+                width: 28px;
+                height: 28px;
+
+                a {
+                    padding: 2px;
+                }
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+}
+
+.l-header__main {
+    display: flex;
+    width: 100%;
+}
+
+.l-header__bottom {
+    position: relative;
+    z-index: 0;
+}
+
+.l-header__logoWrap {
+    // position: relative;
+    // z-index: 1;
+    padding: 8px 0;
+    line-height: 1;
+
+    @include sp {
+        flex-basis: 100%;
+        padding: 4px;
+        text-align: center;
+    }
+
+    @include pc {
+        margin-right: auto;
+    }
+
+    .c-catchphrase {
+        letter-spacing: .2px;
+
+        @include sp {
+            width: 100%;
+            font-size: 10px;
+        }
+    }
+}
+
+.l-header__logo {
+
+    display: flex;
+    align-items: center;
+
+    @include sp {
+        height: var(--logo_size_sp);
+    }
+
+    @include pc {
+        height: var(--logo_size_pc);
+
+    }
+
+}
+
+
+.c-headLogo {
+    display: block;
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+
+    &[data-logo-type="img"] {
+        height: 100%;
+    }
+
+    &[data-logo-type="txt"] {
+
+        font-size: 5vw;
+
+        @include tab {
+            font-size: 24px;
+        }
+    }
+}
+
+.c-headLogo__img {
+    // display: block;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    font-family: "object-fit: contain;";
+}
+
+
+.l-header__menuBtn,
+.l-header__customBtn {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 1.25;
+    text-align: center;
+
+    @include sp {
+        margin: 0 2vw;
+    }
+
+    &.has-bg-color {
+        width: var(--header_body_height);
+        height: var(--header_body_height);
+        margin: 0;
+    }
+
+}
+

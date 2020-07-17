@@ -1,0 +1,9 @@
+.l-article {
+    max-width: var(--article_size);
+
+    [data-sidebar="off"] & {
+        // max-width: 964px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}

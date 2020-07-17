@@ -1,0 +1,8 @@
+.wp-block-video {
+    text-align: center;
+
+    figcaption {
+
+        @extend %figcaption;
+    }
+}

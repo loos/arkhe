@@ -1,0 +1,29 @@
+.widget_archive,
+.widget_categories {
+
+    select {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 0 1em;
+        padding: 4px 24px 4px 12px;
+        line-height: 32px;
+        border: solid 1px var(--color_border);
+        border-radius: 5px;
+        border-radius: 2px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+.widget_archive {
+
+    .screen-reader-text {
+        display: none;
+    }
+}

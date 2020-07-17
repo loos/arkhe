@@ -1,0 +1,259 @@
+// カスタマイザーの横幅 少し広く。
+.wp-customizer .wp-full-overlay-sidebar {
+    width: 20%;
+    min-width: 324px;
+}
+
+.wp-full-overlay.expanded {
+    margin-left: 324px;
+}
+
+@media screen and (min-width: 1667px) {
+
+    .wp-full-overlay.expanded {
+        margin-left: 20%;
+    }
+}
+
+
+// モバイルサイズ
+.preview-mobile .wp-full-overlay-main {
+    width: 400px;
+    height: 680px;
+}
+
+// サイドバーのカスタマイズ
+.wp-full-overlay-sidebar-content {
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 8px;
+        box-shadow: inset 0 0 0 1px #fff;
+    }
+
+}
+
+
+// 項目の表示切り替えた時にサイドバーばぐらないようにする。
+#customize-theme-controls .customize-pane-child.open {
+    overflow: hidden;
+}
+
+#customize-theme-controls .customize-pane-child.accordion-section-content {
+    padding: 12px 0;
+
+    & > li {
+        box-sizing: border-box;
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+}
+
+#customize-controls {
+
+    // label タイトル
+    .customize-control-title {
+        display: block;
+        margin: 16px 0 8px;
+        font-weight: bold;
+        font-size: 14px;
+
+        // Big title
+        &.-big {
+            position: relative;
+            margin: 24px -12px 8px;
+            padding: 12px 12px;
+            background: #fdfdfd;
+            border-top: solid 1px #c0c4ca;
+            border-bottom: solid 1px #c0c4ca;
+            // cursor: pointer;
+
+        }
+    }
+
+    .customize-control > .customize-control-title:not(.-big):first-child {
+        margin-top: 8px;
+    }
+
+    .customize-control-title:not(.-big) + div + .customize-control-description {
+        margin-top: -4px;
+    }
+    // 一番上のビッグタイトルのmt削除
+    .customize-section-description-container + .customize-control {
+
+        .customize-control-title.-big {
+            margin-top: 0;
+        }
+    }
+
+    // 説明文の隠し
+    .-desc-hidden .customize-control-description {
+        display: none;
+    }
+
+    // 各項目
+    .customize-control {
+        height: auto;
+        margin-bottom: 8px;
+        overflow: hidden;
+        transition: .25s;
+
+        &.-hide {
+            height: 0;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding-top: 0;
+            padding-bottom: 0;
+            // transform: translateY(-8px);
+            visibility: hidden;
+            opacity: 0;
+        }
+
+    }
+
+
+    // 説明
+    .description {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #656e77;
+        font-style: italic;
+        line-height: 1.25;
+    }
+
+    .customize-section-description {
+        margin: 1em 0;
+    }
+
+    // セレクト
+    .customize-control-select select {
+        width: 90%;
+        margin: 4px 0;
+    }
+
+    // チェックボタン
+    // .customize-control-checkbox + .customize-control-checkbox {
+    //     margin-top: -4px;
+    // }
+
+    .customize-control-checkbox {
+
+        .customize-inside-control-row {
+            padding-top: 0;
+            padding-bottom: 4px;
+        }
+    }
+
+
+}
+
+
+/* ラジオボタン */
+.customize-control-radio {
+
+    &:not(.-radio-button) {
+
+        .customize-inside-control-row {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+    }
+
+    &.-radio-button {
+
+
+        .customize-inside-control-row {
+            display: inline-flex;
+            margin: 0;
+            vertical-align: middle;
+
+            & + .customize-inside-control-row {
+                margin-left: -4px;
+            }
+
+            & > input {
+                width: 0;
+                min-width: 0;
+                margin: 0 !important;
+                border: none;
+                visibility: hidden;
+            }
+
+            & > label {
+                min-width: 2em;
+                padding: 4px 8px;
+                color: #0075af;
+                text-align: center;
+                background: #f3f5f6;
+                border: solid 1px #0075af;
+                transition: .25s;
+            }
+
+            & > input:checked + label {
+                color: #fff;
+                background: #007cba;
+            }
+        }
+    }
+
+    &.-related-post {
+
+        .customize-inside-control-row > label::before {
+            margin-right: 4px;
+            color: inherit;
+
+            @extend %arkheIcon;
+        }
+
+        // カテゴリー
+        .customize-inside-control-row:nth-last-child(2) {
+
+            & > label::before {
+
+                @extend .arkhe-icon-folder::before;
+
+            }
+        }
+
+        // タグ
+        .customize-inside-control-row:last-child {
+
+            & > label::before {
+
+                @extend .arkhe-icon-tag::before;
+            }
+        }
+    }
+
+}
+
+
+/* 画像アップロード */
+#customize-controls .attachment-media-view {
+    padding-bottom: 8px;
+}
+
+/* テキストエリア */
+.customize-control input[type="email"],
+.customize-control input[type="number"],
+.customize-control input[type="password"],
+.customize-control input[type="search"],
+.customize-control input[type="tel"],
+.customize-control input[type="text"],
+.customize-control input[type="url"] {
+    margin: 0 0 8px;
+}
+
+.customize-control input[type="number"] {
+    width: 50%;
+}
+

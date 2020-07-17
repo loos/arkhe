@@ -1,0 +1,133 @@
+.c-postContent {
+
+    // Embed
+    blockquote.wp-embedded-content {
+        display: none;
+    }
+
+    iframe.wp-embedded-content {
+        position: relative !important;
+        max-width: 100%;
+        // height: auto;
+    }
+}
+
+
+// チラつき防止。
+@include mobile {
+
+    .twitter-tweet,
+    .instagram-media {
+        display: none !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 88vw !important;
+    }
+
+    .twitter-tweet-rendered,
+    .instagram-media-rendered {
+        display: block !important;
+    }
+
+    // 2020.6月末頃に構造が変わった
+    .twitter-tweet > iframe {
+        width: 100% !important;
+    }
+}
+
+// twitter-widget:not(.twitter-tweet-rendered) {
+//     display: none !important;
+// }
+
+
+.wp-block-embed {
+    max-width: 100%;
+    // overflow: hidden; //ブログカードがおかしくなるよ
+
+    // Youtubeとかには figcaption も設定できる
+    & > figcaption {
+
+        @extend %figcaption;
+    }
+}
+
+.wp-block-embed-facebook,
+.wp-block-embed-twitter,
+.wp-block-embed-instagram {
+    max-width: 100%;
+    overflow: hidden;
+    text-align: center; //FB用センター寄せ
+
+}
+
+// センター寄せ
+.wp-block-embed.aligncenter {
+
+    iframe {
+        display: block !important;
+        margin: 0 auto !important;
+    }
+}
+
+// Twitterとインスタグラム、中央寄せに対応
+.twitter-tweet-rendered,
+.instagram-media-rendered {
+    // display: block !important;
+    margin-right: auto !important; //instaがmargin上書きされるので important
+    margin-left: auto !important; //instaがmargin上書きされるので important
+}
+
+
+.wp-has-aspect-ratio {
+    position: relative;
+
+    .wp-block-embed__wrapper {
+        position: relative;
+        width: 100%;
+        // height: 0;
+        &::before {
+            display: block;
+            padding-top: 50%; //デフォルト比率
+            content: "";
+        }
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.wp-embed-aspect-21-9 .wp-block-embed__wrapper::before {
+    padding-top: 42.85%;
+}
+
+.wp-embed-aspect-18-9 .wp-block-embed__wrapper::before {
+    padding-top: 50%;
+}
+
+.wp-embed-aspect-16-9 .wp-block-embed__wrapper::before {
+    padding-top: 56.25%;
+}
+
+.wp-embed-aspect-4-3 .wp-block-embed__wrapper::before {
+    padding-top: 75%;
+}
+
+.wp-embed-aspect-1-1 .wp-block-embed__wrapper::before {
+    padding-top: 100%;
+}
+
+.wp-embed-aspect-9-16 .wp-block-embed__wrapper::before {
+    padding-top: 177.78%;
+}
+
+.wp-embed-aspect-1-2 .wp-block-embed__wrapper::before {
+    padding-top: 200%;
+}

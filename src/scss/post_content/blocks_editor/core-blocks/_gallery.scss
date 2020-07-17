@@ -1,0 +1,18 @@
+.wp-block-gallery {
+
+    .blocks-gallery-item {
+
+        &.has-add-item-button {
+            max-height: 40vh;
+        }
+
+        figure {
+            max-height: 240px;
+        }
+
+        .components-form-file-upload,
+        .components-button.block-library-gallery-add-item-button {
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+
+// .l-content__main__body に p-article をつける
+.p-entry__head {
+
+    .c-postTimes,
+    .c-postMetas {
+        margin: 4px 0;
+    }
+
+    .c-postTimes {
+        margin-right: 1px;
+    }
+}
+
+.p-entry__title {
+    width: 100%;
+}
+
+.p-entry__head__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 1em;
+    font-size: 11px;
+    letter-spacing: .1px;
+}
+
+.p-entry__content.c-postContent {
+    margin-bottom: 4em;
+}
+
+.p-entry__foot {
+    padding-top: 2em;
+    border-top: dashed 1px var(--color_border);
+}
+
+.p-entry__foot__meta {
+    padding: 0 .25em;
+    font-size: 13px;
+    letter-spacing: .1px;
+}

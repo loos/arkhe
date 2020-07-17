@@ -1,0 +1,20 @@
+// 埋め込みブロック系
+[data-align="full"] {
+
+    .wp-embed-aspect-16-9,
+    .wp-block-embed-youtube {
+        max-width: 100%;
+    }
+}
+
+.wp-block-embed-twitter,
+.wp-block-embed-instagram {
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+    .wp-block-embed__wrapper > iframe {
+        display: block;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

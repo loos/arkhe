@@ -1,0 +1,73 @@
+// 全体の幅
+.wp-block {
+    max-width: 900px;
+}
+
+// フォント
+.editor-styles-wrapper {
+    font-size: 16px;
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif !important;
+}
+
+// 本文エリア
+.block-editor-writing-flow {
+
+    // ブロック感のマージン ( default: 28px )
+    .block-editor-block-list__block {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    // block-editor-block-list__layout is-root-container
+    .is-root-container {
+
+        & > [data-align="full"] + [data-align="full"] {
+            margin-top: -2em;
+        }
+    }
+
+
+    // 余白を小さくするエリア
+    .wp-block-column,
+    .wp-block-group__inner-container,
+    .wp-block-cover__inner-container,
+    .wp-block-media-text__content {
+
+        .block-editor-block-list__block {
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+    }
+
+    // padding大きく
+    [data-align="full"] {
+
+        & > .wp-block-cover,
+        & > .wp-block-group {
+            padding: 4em;
+        }
+    }
+
+    // ガイド線を表示する
+    [data-type="core/group"],
+    [data-type="core/columns"] {
+
+        &:not(.has-background).has-child-selected {
+
+            &::after {
+                top: -8px;
+                right: -8px;
+                bottom: -8px;
+                left: -8px;
+                border: dashed 1px $color_guide;
+            }
+        }
+    }
+
+}

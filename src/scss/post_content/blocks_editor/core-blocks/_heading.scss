@@ -1,0 +1,32 @@
+//エディター側のみ（プレビューには反映させない）
+.block-editor-writing-flow {
+
+    .wp-block[data-type="core/heading"]:not(:first-child) {
+        margin-top: 80px;
+    }
+
+}
+
+.editor-styles-wrapper {
+
+    // .wp-block-heading, //5.4 RC でこのクラス消えてる
+    [data-type="core/heading"] {
+
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.4em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+        }
+
+        h4 {
+            font-size: 1.2em;
+        }
+    }
+}

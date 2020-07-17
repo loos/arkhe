@@ -1,0 +1,102 @@
+.c-shareBtns {
+
+    @extend %postParts_margin;
+
+    &[data-sharebtn="icon"] {
+        padding: 8px 0;
+        border-top: solid 1px var(--color_border);
+        border-bottom: solid 1px var(--color_border);
+    }
+
+}
+
+.c-shareBtns__list {
+    display: flex;
+}
+
+.c-shareBtns__item {
+    flex: 1;
+
+    &:not(:last-child) {
+        margin-right: 4px;
+    }
+
+    &.-facebook {
+        color: #3b5998;
+    }
+
+    &.-twitter {
+        color: #1da1f2;
+    }
+
+    &.-hatebu {
+        color: #00a4de;
+    }
+
+    &.-pocket {
+        color: #ef3f56;
+    }
+
+    &.-pinterest {
+        color: #bb0f23;
+    }
+
+    &.-line {
+        color: #00c300;
+    }
+}
+
+.c-shareBtns__btn {
+    display: block;
+    padding: 8px 0;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    background-color: currentColor;
+    cursor: pointer;
+
+    [data-sharebtn="icon"] & {
+        transition: background-color .25s;
+
+        &:not(:hover) {
+            background: none;
+        }
+
+        &:not(:hover) .c-shareBtns__icon {
+            color: inherit;
+        }
+    }
+
+    [data-sharebtn="block"] & {
+        transition: opacity .25s;
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+}
+
+.c-shareBtns__icon {
+    display: block;
+    color: #fff;
+    font-size: 4.5vw;
+    line-height: 1;
+    transition: color .25s;
+
+    @include tab {
+        font-size: 18px;
+    }
+
+    &::before {
+        display: block;
+        color: inherit;
+    }
+}
+
+[data-style="block"]{
+
+}
+
+[data-style="icon"]{
+
+}

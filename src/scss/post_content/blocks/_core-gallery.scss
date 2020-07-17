@@ -1,0 +1,30 @@
+// 5.2までは ul.wp-block-galleryだった -> サポートしない
+// ul.wp-block-gallery {}
+
+//5.3からは figure.wp-block-gallery > ul.blocks-gallery-grid
+
+.wp-block-gallery {
+
+    .blocks-gallery-grid {
+        width: 100%;
+    }
+
+    .blocks-gallery-grid,
+    .blocks-gallery-item {
+        padding: 0;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+
+}
+
+.gallery-caption,
+.blocks-gallery-caption {
+    width: 100%;
+    font-size: .9em;
+    text-align: center;
+    opacity: .8;
+}

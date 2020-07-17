@@ -1,0 +1,42 @@
+// フロントで読み込む
+
+// マージン
+.c-postContent {
+
+    & > * {
+        margin-top: 2em;
+        margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
+    }
+
+    margin: 4em 0 0;
+    padding: 0;
+    line-height: 1.8;
+
+    @import "./post_content";
+
+    // 先頭要素は上側の余白なし
+    & > :first-child,
+    div > :first-child {
+        margin-top: 0;
+    }
+
+    th,
+    td {
+
+        &:not([data-align]) {
+            text-align: left;
+        }
+    }
+}
+
+// インナーコンテンツの余白
+.wp-block-column,  // カラム
+.wp-block-cover__inner-container, // カバーブロック
+.wp-block-media-text__content, // メディアと文章ブロック
+.wp-block-group__inner-container { // グループ
+
+    & > * {
+        margin-top: 1em;
+        margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
+    }
+}

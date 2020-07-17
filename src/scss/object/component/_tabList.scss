@@ -1,0 +1,144 @@
+
+.c-tabList {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include tab {
+        justify-content: center;
+    }
+
+    &__item {
+        width: 48%;
+        margin: 0 1% 10px;
+        // font-size: 3.2vw;
+        text-align: center;
+        // cursor: pointer;
+        transition: background-color .1s, color .1s;
+
+        @include tab {
+            width: 24%;
+            margin: 0 .5% 16px;
+            // font-size: 14px;
+        }
+    }
+
+    // 旧 : なかった
+    &__button {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 1em .5em;
+        line-height: 1;
+        border: none;
+
+
+
+        box-shadow: 0 2px 4px $color_shadow;
+        transition: background-color .25s, color .25s;
+
+
+        &:hover {
+            outline: none; //マウス操作ではアウトライン非表示
+        }
+    }
+
+    $p: &;
+
+    @at-root {
+
+        .is-style-default {
+            // &#{$p} {}
+
+            #{$p}__button {
+                background: #f7f7f7;
+
+                &::before {
+                    position: absolute;
+                    bottom: -8px;
+                    left: 50%;
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border: solid 8px transparent;
+                    border-top-color: var(--color_main);
+                    border-bottom: 0;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    transition: opacity .25s;
+                    content: "";
+                }
+
+                &:hover,
+                &[aria-selected="true"] {
+                    color: #fff;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .is-style-simple {
+            // &#{$p} {}
+            #{$p}__item {
+                margin-right: 0;
+                margin-left: -1px;
+            }
+
+            #{$p}__button {
+                color: #666;
+                background: none;
+                border: solid 1px #ddd;
+                box-shadow: none;
+
+                &:hover,
+                &[aria-selected="true"] {
+                    color: #333;
+                    background: #ddd;
+
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .is-style-bb {
+            // &#{$p} {}
+            #{$p}__item {
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            #{$p}__button {
+                color: #666;
+                background: none;
+                border-bottom: solid 1px #ddd;
+                box-shadow: none;
+
+                &::after {
+                    position: absolute;
+                    bottom: -1px;
+                    left: 0;
+                    z-index: 1;
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    opacity: 0;
+                    transition: opacity .25s;
+                    content: "";
+                }
+
+                &:hover,
+                &[aria-selected="true"] {
+                    font-weight: bold;
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

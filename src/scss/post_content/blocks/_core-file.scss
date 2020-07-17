@@ -1,0 +1,21 @@
+//ファイルブロック
+.wp-block-file {
+
+    a:not(.wp-block-file__button) {
+
+        &::before {
+            font-family: arkhe-icon;
+            letter-spacing: -2px;
+            content: "\e908\0020";
+        }
+    }
+}
+
+.wp-block-file__button {
+    padding: .75em 1.5em;
+    color: #fff;
+    font-size: inherit;
+    background: #32373c;
+    border-radius: 8px;
+
+}

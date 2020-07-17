@@ -1,0 +1,35 @@
+// 旧 arkhe_tab_box
+.c-tabBody {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    transform: translateY(0);
+
+    &[aria-hidden="true"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(8px);
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &[aria-hidden="false"] {
+        z-index: 1;
+        transition: opacity .5s, visibility .5s, transform .5s;
+        transition-timing-function: ease-out;
+    }
+
+    &__pager {
+        position: relative;
+        left: 24px;
+    }
+
+    &__moreText {
+        position: absolute;
+        //top: 0;
+        right: 48px;
+        color: #aaa;
+        box-shadow: none !important;
+    }
+}

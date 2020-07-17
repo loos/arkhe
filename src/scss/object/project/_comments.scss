@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+// .p-comments {}
+
+
+// コメントリスト
+.c-commentList {
+    margin: 2em 0 0;
+
+    // li
+    .comment {
+        margin-top: 1em;
+    }
+
+    // & > .comment:not(:last-child),
+    & > .comment {
+        padding: 1em;
+        background-color: var(--color_gray);
+    }
+
+    .children {
+        margin-left: 1em;
+        padding: 0 0 0 1em;
+        border-left: solid 1px var(--color_border);
+    }
+
+    .reply {
+        margin-top: .5em;
+    }
+
+}
+
+// article
+.comment-body {
+    padding: 8px;
+}
+
+// コメント主
+.comment-author {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+        border-radius: 50%;
+    }
+
+    //名前
+    .fn {
+        margin-left: 1em;
+        //a{}
+    }
+    // 名前のリンク（サイトURLある時）
+    .url {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    //「より」
+    .says {
+        display: none;
+    }
+}
+
+// 日付
+.comment-metadata {
+
+    a {
+        color: inherit;
+        font-size: 11px;
+        text-decoration: none;
+        opacity: .8;
+    }
+
+}
+
+// コメント本文
+.comment-content {
+    margin-top: 1em;
+    font-size: 14px;
+    line-height: 1.5;
+
+    & > :first-child {
+        margin-top: 0;
+    }
+
+    p {
+        margin-top: 1em;
+    }
+}
+
+// 「あなたのコメントは承認待ちです。」
+.comment-awaiting-moderation {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: .9em;
+}
+
+// 「返信」
+.comment-reply-link {
+    font-size: 12px;
+}
+
+
+// コメント入力エリア
+.comment-respond {
+    margin-top: 2.5em;
+}
+
+.comment-reply-title {
+    font-weight: bold;
+    font-size: 1.2em;
+
+    &::before {
+        margin-right: .5em;
+
+        @extend .arkhe-icon-comment;
+        @extend %arkheIcon;
+    }
+}
+
+.comment-notes {
+    // margin-bottom: 2.5em;
+    font-size: 13px;
+}
+
+.comment-form {
+    margin-top: 1em;
+
+    p {
+        margin-top: 1em;
+    }
+
+    label {
+        display: block;
+        margin-bottom: .5em;
+        font-weight: bold;
+        // font-size: .9em;
+    }
+
+    [for="wp-comment-cookies-consent"] {
+        font-weight: normal;
+    }
+
+    #comment,
+    #author,
+    #email,
+    #url {
+        width: 100%;
+    }
+
+    .form-submit {
+        margin-top: 2em;
+    }
+
+    .submit {
+        padding: .5em 1.5em;
+        color: #fff;
+        background-color: var(--color_main);
+        border: none;
+        transition: opacity .25s;
+
+        &:hover {
+            opacity: .75;
+        }
+
+    }
+}
+
+// 返信キャンセルリンク
+#cancel-comment-reply-link {
+    margin-left: 1em;
+    font-size: 13px;
+    font-style: italic;
+}
+
+// 「次回のコメントで使用するためブラウザーに自分の名前、メールアドレス、サイトを保存する。」
+.comment-form-cookies-consent {
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+#wp-comment-cookies-consent {
+    margin-right: 8px;
+}

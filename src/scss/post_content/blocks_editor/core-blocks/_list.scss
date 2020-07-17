@@ -1,0 +1,42 @@
+// リスト
+.wp-block[data-type="core/list"] {
+    // post_conetntのやつもっかい : ここから
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+    ul,
+    ol {
+        margin-left: 0;
+        padding-left: 1.5em;
+        white-space: normal;
+
+        ul {
+            list-style: circle;
+        }
+    }
+
+    // @import "../block/_core-list.scss";
+
+    ul + ul li::before {
+        content: none;
+    }
+
+}
+
+.components-panel__body.-default {
+
+    .components-select-control__input {
+
+        opacity: .5;
+        pointer-events: none;
+    }
+
+    .components-base-control__field {
+        cursor: not-allowed;
+    }
+}

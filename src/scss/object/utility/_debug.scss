@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/**
+ * 汎用クラスをまとめたファイル
+ */
+//デバッグ用
+.dump_data {
+    display: block;
+    padding: 16px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    white-space: pre-wrap;
+    background: #fafafa;
+    border: solid 1px #ddd;
+}
+
+// .xdebug-var-dump {
+//     font-family: inherit;
+//     white-space: inherit;
+// }
+
+// .xdebug-var-dump font {
+//     color: #4368af;
+// }
+
+// .xdebug-var-dump small {
+//     color: #ff6868;
+// }

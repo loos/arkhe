@@ -1,0 +1,33 @@
+//コンテンツエリア
+.l-content {
+    flex: 1 0 auto;
+    overflow: hidden;
+}
+
+.l-content__body {
+
+    margin: 3em auto;
+
+    .home.page & {
+        // フロントページでは上下のマージン0に。
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    [data-sidebar="on"] & {
+
+        @include pc {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
+
+.l-content__sidebar {
+
+    @include pc {
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,62 @@
+// Twitterフォロー ＆ FBいいねボックス
+.c-followBox {
+    display: flex;
+    width: 100%;
+    margin: 2em auto;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    background: #1d1d1d;
+
+    &__figure,
+    &__body {
+        flex: 1 1 50%;
+        height: 32vw;
+
+        @include tab {
+            height: 200px;
+        }
+    }
+
+    &__img {
+
+        @extend %objFitCover;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include mobile {
+            flex-basis: 64%;
+        }
+    }
+
+    &__message {
+        // width: 100%;
+        margin-bottom: 1em;
+        font-size: 3.2vw;
+
+        @include tab {
+            font-size: 16px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fb-like,
+    .twitter-follow-button {
+        margin: 0 .5em;
+    }
+
+    .fb-like > span {
+        display: block;
+    }
+    // iphone SEサイズ
+    // @media screen {}
+}

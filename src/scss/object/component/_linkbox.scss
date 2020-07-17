@@ -1,0 +1,8 @@
+.c-linkbox {
+    cursor: pointer;
+    transition: opacity .25s;
+
+    &:hover {
+        opacity: .75;
+    }
+}

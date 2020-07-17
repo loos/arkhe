@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+// メニュークローズ時
+[data-drawer="closed"] {
+
+    .p-spMenu {
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+// メニューオープン時
+[data-drawer="opened"] {
+
+    body {
+        // ( iOSでスクロールできてしまうことはひとまず無視 )
+        @include sp {
+            // height: 100%;
+            overflow-y: hidden;
+            touch-action: none;
+        }
+    }
+
+    .l-header__menuBtn {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+}
+
+//メニュー
+.p-spMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: var(--header_height);
+    transition: opacity .5s, visibility .5s;
+
+    [data-loaded="false"] & {
+        display: none;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    .admin-bar & {
+        top: 32px;
+    }
+}
+
+.p-spMenu__inner {
+    position: relative;
+    // top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+
+.p-spMenu__body {
+    position: relative;
+    max-width: 560px;
+    // height: 100%;
+    margin: 0 auto;
+    padding: 4vw 6vw;
+
+    @include pc {
+        padding: 2em;
+    }
+
+}
+
+.c-spnav {
+    display: block;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+
+    .menu-item {
+        position: relative;
+    }
+
+    & > .menu-item:first-child > a {
+        border-top: none;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        padding: 1em .5em;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        transition: background-color .25s;
+
+        @include pc {
+
+            &:hover {
+                background-color: rgba(255, 255, 255, .1);
+            }
+        }
+    }
+
+    .__subText {
+        margin-left: 1em;
+        font-size: .75em;
+        opacity: .6;
+    }
+}
+
+// menuアイコンだけを見せたい
+[data-drawer-move="fade"] {
+
+    .l-header__menuBtn {
+        z-index: 2;
+    }
+
+    .p-spMenu {
+        z-index: 1;
+        color: #fff;
+        background: rgba(#000, .92);
+    }
+
+    &[data-drawer="opened"] {
+
+        .l-header__menuBtn {
+            color: #fff;
+        }
+    }
+}
+
+// 左右から展開したい場合
+[data-drawer-move="left"] {
+
+    .p-spMenu {
+        z-index: 1; //ロゴなどより上に
+        padding-top: 0;
+        background: rgba(#000, .5);
+        transition: opacity .1s, visibility .1s;
+
+        transition-delay: 0s;
+        pointer-events: none; //.c-overlayをクリックできるように
+    }
+
+    &[data-drawer="closed"] {
+
+        .p-spMenu {
+            transition-delay: .5s;
+        }
+    }
+
+    .l-header__menuBtn {
+
+        // @include sp {
+        z-index: 2; //メニューボタンだけ押せるように
+        // }
+    }
+
+    .p-spMenu__inner {
+        left: 0;
+        width: 88vw;
+        padding-top: var(--header_height);
+        background: #fff;
+        transform: translateX(-100%);
+        transition: transform .5s;
+        transition-delay: .1s;
+        pointer-events: auto;
+
+        @include pc {
+            width: 480px;
+        }
+    }
+
+
+    &[data-drawer="opened"] .p-spMenu__inner {
+        transform: translateX(0);
+    }
+
+    .c-overlay.-drawer {
+        background: none; // クリックはできるように 色だけなくす (ヘッダーの上にもカラーを被せるために、色は .p-spMenu で決める。)
+    }
+}

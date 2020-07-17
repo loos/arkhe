@@ -1,0 +1,52 @@
+.wp-block-column {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include sp {
+
+        flex-basis: 100% !important; //tab縦サイズの時にもコアと同じ指定を
+
+        &:not(:first-child) {
+            //600px以上で :nth-child(2n)に、782px以上で:not(:first-child)に 32pxついてしまう
+            margin-left: 0;
+        }
+
+        & + .wp-block-column {
+            margin-top: 2em;
+
+        }
+    }
+}
+
+.wp-block-columns {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     margin-bottom: 28px; // NEW! 5.3
+
+    line-height: 1.6; //少し狭めに
+
+    @include pc {
+        flex-wrap: nowrap;
+    }
+
+    @include pc {
+
+        .wp-block-column {
+            flex-basis: calc(50% - 12px);
+            flex-grow: 0;
+        }
+
+        .wp-block-column:not(:first-child) {
+            margin-left: 24px;
+        }
+    }
+
+    @include sp {
+        flex-wrap: wrap; //(min-width: 782px) で nowrap にされるので明示的に指定
+
+        //スマホは1列の場合
+        .wp-block-column {
+            flex-basis: 100%; //(min-width: 782px) から表示になるので明示的に指定
+        }
+    }
+}

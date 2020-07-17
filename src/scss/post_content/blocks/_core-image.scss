@@ -1,0 +1,66 @@
+.wp-block-image {
+    text-align: center;
+
+    img {
+        vertical-align: bottom; //下部の隙間なくす
+    }
+
+    &.is-resized {
+        display: block;
+        width: 100%;
+    }
+
+    // align ついたら .wp-block-image > figure になる
+    figure {
+        display: block !important;
+    }
+
+    figcaption {
+
+        @extend %figcaption;
+
+    }
+
+    &::after {
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+        content: "";
+    }
+
+    a {
+        display: block;
+        transition: opacity .25s;
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+
+    figcaption a {
+        display: inline;
+    }
+}
+
+
+//キャプション付き画像（TinyMCE）
+.wp-caption {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.wp-caption-text {
+    margin-top: 1em;
+    font-size: .8em;
+    opacity: .8;
+}
+
+// 
+img.aligncenter {
+    display: block;
+    clear: both;
+    margin-right: auto;
+    margin-left: auto;
+}

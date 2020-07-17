@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// mixin
+@import "foundation/mixin/**";
+
+// setting
+@import "foundation/setting/variable";
+@import "foundation/setting/keyframes";
+@import "foundation/setting/placeholder";
+
+// icon
+@import "foundation/icon/icomoon";
+
+// レイアウト(テンプレート用に読み込んでいる)
+@import "layout/article";
+@import "layout/container";
+@import "layout/header";
+@import "layout/gnav";
+
+// object
+@import "object/**";
+
+// post_content
+@import "post_content/editor";
+@import "post_content/common/**";
+@import "post_content/blocks/**";
+@import "post_content/blocks_editor/**";
+

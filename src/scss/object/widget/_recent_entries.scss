@@ -1,0 +1,28 @@
+// 「最新の投稿」
+.widget_recent_entries {
+
+    li {
+        position: relative;
+        margin: 0;
+        border-bottom: solid 1px var(--color_border);
+    }
+
+    a {
+        position: relative;
+        display: block;
+        padding: .75em .5em;
+        color: inherit;
+        line-height: 1.4;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $hover_gray;
+        }
+
+    }
+}
+
+.recent_entries_date {
+    display: block;
+    margin-top: 2px;
+}

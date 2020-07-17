@@ -1,0 +1,34 @@
+.c-pageTitle {
+    position: relative;
+    font-weight: 700;
+    font-size: 1.75em;
+    line-height: 1.5;
+
+    // @include tab {
+    //     font-size: 1.5em;
+    // }
+}
+
+//コンテンツ内 表示時
+.p-page__title,
+.p-archive__title {
+    margin-bottom: 1.5em;
+}
+
+.p-404__title {
+    padding-top: 2em;
+    font-size: 4.6vw;
+    text-align: center;
+
+    @include tab {
+        font-size: 24px;
+    }
+}
+
+.c-secTitle,
+.c-bottomSection__title {
+    // position: relative;
+    // display: block;
+    margin-bottom: 1.5em;
+    font-size: 1.4em;
+}

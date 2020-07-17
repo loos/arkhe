@@ -1,0 +1,30 @@
+/**
+ * サイドバー用のスタイル
+ */
+
+.edit-post-sidebar {
+    // 5.3からinline-blockに急に切り替わったのでblockに上書き
+    .components-base-control__label {
+        display: block;
+    }
+
+    // カラーパレットの 透明パターンの背景柄を非表示
+    .components-circular-option-picker__option-wrapper::before {
+        background: none;
+    }
+}
+
+// 色設定の 背景色を分かりやすく四角形に。
+// .block-editor-color-gradient-control {
+
+//     & + & {
+//         // border: solid 1px;
+//         .components-button.components-circular-option-picker__option {
+//             border-radius: 4px;
+
+//             &::after {
+//                 border-radius: 4px;
+//             }
+//         }
+//     }
+// }

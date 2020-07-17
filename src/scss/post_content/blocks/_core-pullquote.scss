@@ -1,0 +1,36 @@
+//プルクォート
+.wp-block-pullquote {
+    width: 100%;
+    padding: 2em 0;
+    text-align: center;
+    border-top: solid 2px currentColor;
+    border-bottom: solid 2px currentColor;
+
+
+    &.alignleft {
+        text-align: left;
+    }
+
+    &.alignright {
+        text-align: right;
+    }
+
+    & > blockquote {
+        margin: 0;
+        padding: .5em;
+        background: none;
+        border-left: none !important;
+    }
+
+    p {
+        font-size: 1.2em !important; //align付きやsolid styleで上書きされてしまう
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    &.is-style-solid-color {
+        background-color: var(--color_gray);
+    }
+}

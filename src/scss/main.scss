@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// mixin
+@import "foundation/mixin/**";
+
+// setting
+@import "foundation/setting/variable";
+@import "foundation/setting/keyframes";
+@import "foundation/setting/placeholder";
+
+// icon
+@import "foundation/icon/**";
+
+// base
+@import "foundation/base/reset";
+@import "foundation/base/body";
+
+//各パーツ
+@import "layout/*.scss";
+@import "object/**";
+
+// post_content
+@import "post_content/front";
+@import "post_content/common/**";
+@import "post_content/blocks/**";

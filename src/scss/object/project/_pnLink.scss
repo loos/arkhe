@@ -1,0 +1,87 @@
+
+.c-pnNav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.c-pnNav__item {
+    position: relative;
+    flex: 1 0 auto;
+    max-width: 100%;
+    // min-height: 2em;
+    font-size: 3vw;
+
+    @include tab {
+        width: 50%;
+        font-size: 13px;
+    }
+
+    &.-prev {
+
+        .c-pnNav__link {
+            padding-left: 1.5em;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: inline-block;
+                font-size: 1.2em;
+                transform: translateY(-50%);
+
+                @extend %arkheIcon;
+                @extend .arkhe-icon-chevron-left::before;
+            }
+        }
+
+    }
+
+    &.-next {
+
+        .c-pnNav__link {
+            justify-content: flex-end;
+            padding-right: 1.5em;
+
+            &::before {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                display: inline-block;
+                font-size: 1.2em;
+                transform: translateY(-50%);
+
+                @extend %arkheIcon;
+                @extend .arkhe-icon-chevron-right::before;
+            }
+        }
+
+    }
+}
+
+.c-pnNav__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: .5em 1em;
+    color: inherit;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: .25s;
+
+    &:hover {
+        opacity: .75;
+    }
+}
+
+.c-pnNav__title {
+    // hover時に動くように relative
+    position: relative;
+    left: 0;
+    transition: all .25s;
+}
+

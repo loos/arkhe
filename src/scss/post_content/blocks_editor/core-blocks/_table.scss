@@ -1,0 +1,24 @@
+
+.wp-block-table {
+
+    table {
+        border-bottom: none;
+        border-left: none;
+    }
+
+    thead,
+    tfoot {
+        border: none;
+    }
+
+    th,
+    td {
+        border-top: none;
+        border-right: none;
+
+        &:not([class*="has-text-align-"]) {
+            text-align: left;
+        }
+    }
+
+}

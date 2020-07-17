@@ -1,0 +1,36 @@
+.p-topArea {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 32vh;
+    margin: 0;
+    padding: 1.5em 0;
+    overflow: hidden;
+    text-align: center;
+
+    &.-noimg {
+        background: #555;
+    }
+}
+
+.p-topArea__body {
+    position: relative;
+    // left: -8px;
+    z-index: 3;
+    width: 100%;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+.p-topArea__excerpt {
+    margin-top: 1em;
+    font-size: .9em;
+}
+
+// // IEでは align-items: center + min-height がきかない
+// _:lang(x)::-ms-backdrop,
+// .p-topArea {
+//     min-height: auto !important;
+//     padding: 2em 0 !important;
+// }

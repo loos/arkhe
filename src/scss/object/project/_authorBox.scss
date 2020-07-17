@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+.p-authorBox {
+    padding: 1.5em;
+    background-color: var(--color_gray);
+
+    @include tab {
+        display: flex;
+        align-items: center;
+        padding: 1.5em 2em;
+    }
+
+    // 著者一覧ページ
+    .author & {
+        margin-bottom: 4em;
+    }
+}
+
+
+.p-authorBox__avatar {
+    flex: 1 0 auto;
+
+    @include mobile {
+        margin-bottom: .75em;
+    }
+
+    .avatar {
+        display: block;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+
+        @include mobile {
+            margin: 0 auto;
+        }
+    }
+}
+
+.p-authorBox__name {
+    display: block;
+    color: inherit;
+    font-weight: bold;
+    line-height: 1.25;
+    text-decoration: none;
+
+    @include mobile {
+        text-align: center;
+    }
+}
+
+.p-authorBox__position {
+    display: block;
+    margin-top: .5em;
+    font-size: .75em;
+    line-height: 1.25;
+}
+
+.p-authorBox__body {
+
+    @include tab {
+        flex: 1 1 100%;
+        margin-left: 1.5em;
+    }
+}
+
+.p-authorBox__description {
+    // width: 100%;
+    margin-top: .75em;
+
+    @include tab {
+        font-size: .9em;
+        line-height: 1.5;
+    }
+}
+
+.p-authorBox__links {
+    margin-top: 1em;
+    line-height: 1.5;
+
+    @include tab {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: .8em;
+    }
+}
+
+.p-authorBox__weblink {
+    margin-right: 1em;
+
+    @include mobile {
+        text-align: center;
+    }
+
+    i {
+        font-size: .95em;
+        line-height: inherit;
+        // vertical-align: baseline;
+    }
+}
+
+.p-authorBox__iconList {
+    // width: 100%;
+}
+
+.p-authorBox__archivelink {
+
+    margin-left: auto;
+
+    @include mobile {
+        margin-top: 1em;
+    }
+
+    a {
+        display: block;
+
+        margin: 0 auto;
+        padding: .5em 1.5em;
+        color: inherit;
+        letter-spacing: 1px;
+        text-align: center;
+        text-decoration: none;
+        // border-radius: 1px;
+        box-shadow: 0 0 0 1px currentColor;
+        opacity: .8;
+        transition: opacity .25s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        @include mobile {
+            padding: .75em 1em;
+            // width: 120px;
+        }
+    }
+}

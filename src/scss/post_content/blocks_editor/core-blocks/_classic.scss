@@ -1,0 +1,36 @@
+// クラシックブロック
+[data-type="core/freeform"] {
+
+    // 編集中、どこまでがクラシックエディターかわかるように枠をつける
+    &.is-selected {
+
+        .block-library-classic__toolbar {
+            margin-bottom: 0;
+        }
+
+        .block-library-rich-text__tinymce {
+            padding: 1em;
+            border: dashed 1px var(--color_border);
+            // border: solid 1px #1e1e1e; // #1e1e1e は .block-library-classic__toolbar のボーダーと同じ色
+            border-top: none;
+        }
+    }
+
+
+    // 引用にボーダーなどがつくのを阻止
+    .block-library-rich-text__tinymce {
+
+        blockquote {
+            border-color: var(--color_border);
+            border-width: 2px;
+
+            p {
+                margin: 0;
+            }
+
+            p + p {
+                margin-top: 1em;
+            }
+        }
+    }
+}

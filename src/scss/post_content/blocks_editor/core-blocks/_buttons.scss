@@ -1,0 +1,39 @@
+.wp-block-buttons {
+
+    [data-type="core/button"] {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    // & > .block-editor-inner-blocks > .block-editor-block-list__layout {}
+}
+
+.wp-block-button__link.has-background {
+    padding: .5em 1em;
+}
+
+[data-type="core/buttons"] {
+
+    .block-editor-inner-blocks {
+        text-align: inherit !important; //.wp-block-media-textの中だと initialになってしまう。
+    }
+
+    &[data-align="left"],
+    &[data-align="right"] {
+
+        height: auto !important;
+
+        & > .is-block-content {
+            float: none !important;
+        }
+
+    }
+
+    &[data-align="left"] {
+        text-align: left;
+    }
+
+    &[data-align="right"] {
+        text-align: right;
+    }
+}
+

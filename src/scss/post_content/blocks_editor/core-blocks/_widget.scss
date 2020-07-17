@@ -1,0 +1,7 @@
+[data-type="core/archives"] .wp-block-archives-list,
+[data-type="core/categories"] .wp-block-categories__list {
+    padding: 0 !important;
+    list-style: none;
+    border-top: solid 1px var(--color_border);
+
+}

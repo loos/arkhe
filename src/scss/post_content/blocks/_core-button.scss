@@ -1,0 +1,19 @@
+//WPコアのボタンブロック
+.wp-block-button {
+
+    &:not(.is-style-outline) {
+
+        .wp-block-button__link:not(.has-text-color) {
+            color: #fff;
+        }
+    }
+}
+
+.wp-block-button__link {
+    min-width: 8em;
+    padding: .5em 1em;
+
+    .is-style-outline > & {
+        border-width: 1px;
+    }
+}

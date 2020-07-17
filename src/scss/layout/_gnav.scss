@@ -1,0 +1,182 @@
+
+// グローバルメニュー
+// #gnav は PCの #header の中。
+
+.c-gnavWrap {
+
+    display: flex;
+    justify-content: center;
+
+    .l-header__body & {
+        position: relative;
+        z-index: 1;
+    }
+
+    @include sp {
+        display: none;
+    }
+
+}
+
+
+.c-gnav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    list-style: none;
+
+    a {
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    // li
+    .menu-item {
+        position: relative;
+
+        &:hover {
+
+            & > a::after {
+                transform: scaleX(1);
+            }
+        }
+
+        &.-current > a::after {
+            transform: scaleX(1);
+            transition-duration: 0s;
+        }
+    }
+
+
+    & > .menu-item {
+        // position: relative;
+        height: 100%;
+
+        &:hover {
+
+            & > .sub-menu {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        & > a {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding: 16px 12px;
+            color: inherit;
+            white-space: nowrap;
+            transition: all .25s;
+
+            .c-submenuToggleBtn {
+                display: none;
+            }
+
+            &::after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                // background: currentColor;
+                background: var(--color_main);
+                transform: scaleX(0);
+                transition: transform .25s;
+                content: "";
+            }
+        }
+    }
+
+
+    // 子リスト
+    .sub-menu {
+        color: #fff;
+        text-align: left;
+        background: var(--color_main);
+        border-top: 1px solid rgba(255, 255, 255, .1);
+
+        a {
+            position: relative;
+            display: block;
+            padding: 1em .75em;
+            color: inherit;
+            font-size: 13px;
+            transition: opacity .25s, background-color .25s;
+
+
+            &::before {
+
+                @extend %absLayer;
+                background-color: transparent;
+                transition: background-color .25s;
+                content: "";
+            }
+
+            &:hover::before {
+                background-color: rgba(255, 255, 255, .1);
+            }
+        }
+
+        & > .menu-item:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+    }
+
+    // 優先度高めるために .sub-menu 関係より下で書いている。
+    // .menu-item-has-children:not(.-current):hover > a::after {
+    //     content: none;
+    // }
+
+
+    // 二層目のみ
+    & > .menu-item > .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        width: 100%;
+        min-width: 240px;
+        transform: translateX(-50%);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .5s, visibility .35s;
+
+        // ▲部分
+        &::before {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            z-index: 1;
+            // padding: 0;
+            border: 8px solid transparent;
+            border-bottom-color: var(--color_main);
+            transform: translateX(-50%);
+            content: "";
+        }
+    }
+
+
+    .__mainText {
+        display: block;
+        color: inherit;
+        font-size: inherit;
+        line-height: 1;
+    }
+
+    .__subText {
+        position: relative;
+        top: 4px;
+        display: block;
+        color: inherit;
+        font-size: 10px;
+        line-height: 1;
+        opacity: .6;
+    }
+
+}

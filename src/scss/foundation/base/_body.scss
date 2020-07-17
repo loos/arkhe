@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+:root {
+    --header_height: 0; //実際の数値は JSでセット
+    --header_body_height: 40px; //実際の数値は JSでセット
+}
+
+body {
+    position: relative;
+    min-width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    color: var(--color_text);
+    font-weight: 400;
+    font-size: 16px;
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    background-color: var(--color_bg);
+    -webkit-text-size-adjust: 100%;
+
+    @include mobile {
+        font-size: 3.8vw;
+    }
+
+}
+
+
+// リンクカラー
+a {
+    color: var(--color_link);
+}

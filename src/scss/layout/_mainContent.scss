@@ -1,0 +1,23 @@
+.l-content__main {
+    position: static !important; //色々と重要
+    width: 100%;
+
+    [data-sidebar="on"] & {
+
+        @include pc {
+            width: calc(100% - 356px);
+            max-width: 100%; //l-artcileにが狭い時を考慮
+        }
+    }
+}
+
+.l-content__main__body {
+
+    & > :first-child {
+        margin-top: 0 !important;
+    }
+
+    & > :last-child {
+        margin-bottom: 0 !important;
+    }
+}

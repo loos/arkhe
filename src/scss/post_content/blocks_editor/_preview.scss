@@ -1,0 +1,22 @@
+/*
+ * プレビュー画面の調整
+ */
+.block-editor-block-preview__container {
+
+    // 上下マージン0に
+    [data-block] {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    // サイドバーのみ、プレビュー上部の余白をなくす。
+    .edit-post-sidebar & .block-editor-block-preview__content {
+        top: 5% !important;
+    }
+
+    // 左右に余白を
+    .wp-block-image {
+        padding: 0 5%;
+    }
+
+}

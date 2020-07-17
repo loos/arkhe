@@ -1,0 +1,86 @@
+// サブメニューの展開
+
+%w_Ul {
+
+    a {
+        position: relative;
+    }
+
+    // a + ul がある時
+    a:not(:last-child) {
+
+        padding-right: 3em;
+
+        @include tab {
+            padding-right: 40px;
+        }
+    }
+}
+
+%w_childUl {
+    position: relative;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .25s;
+
+    &.is-opened {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    a {
+        padding-left: 1.5em;
+
+        // @include pc {
+        font-size: .9em;
+        // }
+
+    }
+
+    ul a {
+        padding-left: 2.25em;
+    }
+
+}
+
+// グロナビ・ドロワーメニュー
+.c-spnav,
+.c-gnav .sub-menu {
+
+    @extend %w_Ul;
+
+    .sub-menu {
+
+        @extend %w_childUl;
+    }
+}
+
+// ウィジェット系
+.wp-block-categories,
+.widget_categories,
+.widget_pages {
+
+    @extend %w_Ul;
+
+    .children {
+
+        @extend %w_childUl;
+
+    }
+}
+
+// ナビメニュー
+.widget_nav_menu {
+
+    @extend %w_Ul;
+
+    .sub-menu {
+
+        @extend %w_childUl;
+    }
+
+}
+

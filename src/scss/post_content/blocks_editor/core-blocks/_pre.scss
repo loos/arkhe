@@ -1,0 +1,19 @@
+.wp-block-code {
+    padding: 0 !important;
+    background-color: var(--color_gray);
+    border: none;
+
+    .block-editor-plain-text {
+        display: block;
+        margin: 0;
+        padding: 1em;
+        overflow-x: auto !important;
+        font-size: 14px;
+        white-space: pre;
+        background: none;
+    }
+}
+
+.wp-block-preformatted {
+    font-family: inherit;
+}

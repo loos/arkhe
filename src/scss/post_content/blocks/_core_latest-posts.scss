@@ -1,0 +1,47 @@
+.wp-block-latest-posts {
+    // リスト型
+    &:not(.is-grid) {
+        border-top: solid 1px #dcdcdc;
+
+        li {
+            // display: flex;
+            // flex-wrap: wrap;
+            padding: 1em .25em;
+            border-bottom: solid 1px #dcdcdc;
+        }
+
+        // .wp-block-latest-posts__featured-image {
+        //     width: 120px;
+        //     margin-right: 24px;
+        // }
+    }
+
+
+    // タイトル
+    a{
+
+    }
+    // 日付表示
+    &.has-dates{
+
+    }
+}
+
+.wp-block-latest-posts__list{}
+
+
+// 日付
+.wp-block-latest-posts__post-date{
+
+}
+// サムネイル
+.wp-block-latest-posts__featured-image {
+
+    .wp-post-image{
+
+    }
+}
+// 抜粋文
+.wp-block-latest-posts__post-excerpt{
+
+}

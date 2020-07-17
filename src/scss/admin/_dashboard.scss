@@ -1,0 +1,26 @@
+/**
+ * 管理画面に関するスタイル
+ */
+
+// 投稿一覧の「クラシックエディター」などの文字を小さく薄く表示
+table.wp-list-table .post-state {
+    color: #666;
+    font-size: 11px;
+}
+
+// Macの 新OSで見るとチェックボックスが青くつぶれるのを阻止
+// input[type=radio],
+//.customize-control input[type=checkbox]
+input[type="checkbox"] {
+    -webkit-appearance: none !important;
+}
+
+// カスタムメニューの「ブロックエディター / 旧エディター」の表示が邪魔なので消しておく
+#nav-menus-frame .post-state {
+    display: none;
+}
+
+// 説明テキスト
+// p.description {
+//     margin: 8px 0;
+// }

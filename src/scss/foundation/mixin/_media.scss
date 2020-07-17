@@ -1,0 +1,64 @@
+//------------------------------------------
+// Media Query用
+//------------------------------------------
+
+$media_sp: 599px;
+$media_tablet_yoko: 960px;
+
+// mobileのみ
+@mixin mobile {
+
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+//tab以上
+@mixin tab {
+
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+//pc以上
+@mixin pc {
+
+    @media (min-width: 960px) {
+        @content;
+    }
+}
+
+@mixin sp {
+
+    @media (max-width: 959px) {
+        @content;
+    }
+}
+
+// @mixin sp {
+// 	@media screen and (max-width: 599px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin tab {
+// 	@media screen and (max-width: 959px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin pc {
+// 	@media screen and (min-width: 600px) {
+// 		@content;
+// 	}
+// }
+
+//任意の数値
+@mixin max-width($break-point) {
+
+    @media (max-width: $break-point) {
+        @content;
+    }
+
+}
