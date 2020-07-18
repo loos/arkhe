@@ -13,6 +13,11 @@ GutenbergのコアブロックにCSSを加えるだけで、柔軟にコンテ�
 
 現在申請中...！
 
+### テーマのアップデート方法
+公式ディレクトリに登録されるまでは、以下のプラグインを有効化することで最新版へのアップデートが可能になります。
+
+[arkhe-updater.zip](https://github.com/ddryo/arkhe/files/4940916/arkhe-updater.zip)
+
 
 ## Requirements
 - WordPress 5.0 +
