@@ -14,7 +14,11 @@ export const clickEvents = {
             window.setTimeout(thisFunc, 10);
         }
     },
-    toggleMenu: function() {
+    toggleMenu: function(e) {
+        // if ('A' === e.target.tagName) return;
+
+        e.preventDefault();
+
         const spMenu = DOM.spMenu;
         if (spMenu) {
             const dataDrower = document.documentElement.getAttribute('data-drawer');
@@ -25,7 +29,8 @@ export const clickEvents = {
             }
         }
     },
-    toggleSearch: function() {
+    toggleSearch: function(e) {
+        e.preventDefault();
         const searchModal = DOM.searchModal;
         if (null === searchModal) return false;
         searchModal.classList.toggle('is-open');
@@ -36,36 +41,39 @@ export const clickEvents = {
             }, 250);
         }
     },
-    toggleIndex: function() {
-        const indexModal = DOM.indexModal;
-        if (null !== indexModal) indexModal.classList.toggle('is-open');
-    },
+    // toggleIndex: function(e) {
+    //     e.preventDefault();
+    //     const indexModal = DOM.indexModal;
+    //     if (null !== indexModal) indexModal.classList.toggle('is-open');
+    // },
 
     /**
      * アコーディオン
      * 親のariaと兄弟要素のariaを制御。
      */
-    toggleAccordion: function(e) {
-        const acTitle = e.currentTarget;
-        const acWrap = acTitle.parentNode;
-        const acBody = acTitle.nextElementSibling;
-        const acIcon = acTitle.lastElementChild;
-        const isExpanded = acWrap.getAttribute('aria-expanded');
-        if ('false' === isExpanded) {
-            acWrap.setAttribute('aria-expanded', 'true');
-            acBody.setAttribute('aria-hidden', 'false');
-            acIcon.setAttribute('data-opened', 'true');
-        } else {
-            acWrap.setAttribute('aria-expanded', 'false');
-            acBody.setAttribute('aria-hidden', 'true');
-            acIcon.setAttribute('data-opened', 'false');
-        }
-    },
+    // toggleAccordion: function(e) {
+    //     e.preventDefault();
+    //     const acTitle = e.currentTarget;
+    //     const acWrap = acTitle.parentNode;
+    //     const acBody = acTitle.nextElementSibling;
+    //     const acIcon = acTitle.lastElementChild;
+    //     const isExpanded = acWrap.getAttribute('aria-expanded');
+    //     if ('false' === isExpanded) {
+    //         acWrap.setAttribute('aria-expanded', 'true');
+    //         acBody.setAttribute('aria-hidden', 'false');
+    //         acIcon.setAttribute('data-opened', 'true');
+    //     } else {
+    //         acWrap.setAttribute('aria-expanded', 'false');
+    //         acBody.setAttribute('aria-hidden', 'true');
+    //         acIcon.setAttribute('data-opened', 'false');
+    //     }
+    // },
 
     /**
      * サブメニューのアコーディオン
      */
     toggleSubmenu: function(e) {
+        e.preventDefault();
         const btn = e.currentTarget;
         const submenu = btn.parentNode.nextElementSibling;
 
@@ -79,6 +87,8 @@ export const clickEvents = {
      * タブ
      */
     tabControl: function(e) {
+        e.preventDefault();
+
         // クリックイベントがキー（Enter / space）によって呼び出されたかどうか
         const iskeyClick = 0 === e.clientX;
 
@@ -115,12 +125,13 @@ export const clickEvents = {
     /**
      * メインビジュアルのスクロールボタン
      */
-    scrollToContent: function(e) {
-        const mvNext = document.querySelector('#main_visual + *');
-        if (mvNext) {
-            smoothScroll(mvNext, smoothOffset - 8, 16);
-        }
-    },
+    // scrollToContent: function(e) {
+    //     e.preventDefault();
+    //     const mvNext = document.querySelector('#main_visual + *');
+    //     if (mvNext) {
+    //         smoothScroll(mvNext, smoothOffset - 8, 16);
+    //     }
+    // },
 };
 
 /**
@@ -135,7 +146,6 @@ export default function addClickEvents(dom) {
             const funcName = elem.getAttribute('data-onclick');
             const clickFunc = clickEvents[funcName];
             elem.addEventListener('click', function(e) {
-                e.preventDefault();
                 clickFunc(e);
             });
         }

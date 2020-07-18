@@ -23,6 +23,7 @@ export default {
     headH: (header) => {
         if (null !== header) {
             headH = header.offsetHeight;
+
             document.documentElement.style.setProperty('--header_height', headH + 'px');
             const headBody = header.querySelector('.l-header__body');
             if (null !== headBody) {

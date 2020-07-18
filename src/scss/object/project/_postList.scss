@@ -61,7 +61,7 @@
         width: 100%;
     }
 
-    #sidebar .-type-card & {
+    .l-content__sidebar .-type-card & {
 
         @include pc {
             width: 100%;
@@ -215,12 +215,12 @@
         }
     }
 
-    // #sidebar .-type-card & ,
+    // .l-content__sidebar .-type-card & ,
     .-related & {
         font-size: .9em;
     }
 
-    // #sidebar .-type-list & {
+    // .l-content__sidebar .-type-list & {
 
     //     @include tab {
     //         font-size: 13px;

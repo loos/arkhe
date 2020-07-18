@@ -151,7 +151,7 @@ class ARKHE_THEME {
 
 		if ( is_front_page() ) {
 			$return = $is_header_overlay;
-		} elseif ( is_page() ) {
+		} elseif ( is_page() || is_home() ) {
 			$return = $is_header_overlay && self::get_setting( 'header_overlay_on_page' );
 		}
 
@@ -211,8 +211,10 @@ class ARKHE_THEME {
 	/**
 	 * ヘッダーの追加属性
 	 */
-	public static function header_attr() {
+	public static function header_attr( $args = null ) {
 		$SETTING = self::get_setting();
+
+		$logo_pos = isset( $args['logo_pos'] ) ? $args['logo_pos'] : '';
 
 		// 追従設定
 		$pcfix = $SETTING['fix_header_pc'] ? '1' : '0';
@@ -220,8 +222,14 @@ class ARKHE_THEME {
 
 		$attrs = 'data-pcfix="' . $pcfix . '" data-spfix="' . $spfix . '"';
 
+		// ロゴを中央表示するかどうか
+		if ( 'center' === $logo_pos ) {
+			$attrs .= ' data-logo-pos="center"';
+		}
+
 		// オーバーレイ化
-		if ( is_front_page() && 'on' === $SETTING['header_overlay'] ) {
+
+		if ( self::is_header_overlay() ) {
 			// $header_class .= ' is-overlay';
 			$attrs .= ' data-overlay="true"';
 		}

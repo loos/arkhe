@@ -1,0 +1,39 @@
+
+// ナビがヘッダーの下側にある時
+.l-headerUnder {
+    z-index: 1; // オーバーレイヘッダーの時も考慮して、fix時じゃなくても指定しておく
+    width: 100%;
+    background: #fff;
+
+    @include sp {
+        display: none;
+    }
+
+    .c-gnav {
+        justify-content: center;
+        width: 100%;
+
+        & > .menu-item > a {
+            // flex: 1 1 auto;
+            padding: 16px 24px;
+        }
+    }
+
+    &[data-fix] {
+        position: sticky;
+        top: 0;
+
+        // ヘッダーもfixの時
+        [data-pcfix="1"] + & {
+            top: var(--header_height);
+        }
+
+        .admin-bar & {
+            top: 32px;
+        }
+
+        .admin-bar [data-pcfix="1"] + & {
+            top: calc(var(--header_height) + 32px);
+        }
+    }
+}

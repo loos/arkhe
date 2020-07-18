@@ -75,6 +75,96 @@ Customizer::add(
 	)
 );
 
+// レイアウト設定
+Customizer::big_title(
+	$section,
+	'header_layout',
+	array(
+		'label' => __( 'Layout setting', 'arkhe' ),
+	)
+);
+
+// 検索ボタンをSPで表示する
+Customizer::add(
+	$section,
+	'show_search_btn_sp',
+	array(
+		'label'       => __( 'Show search btn on SP', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// 検索ボタンをPCで表示する
+Customizer::add(
+	$section,
+	'show_search_btn_pc',
+	array(
+		'label'       => __( 'Show search btn on PC', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// ドロワーメニューをPCでも表示する
+Customizer::add(
+	$section,
+	'show_drower_pc',
+	array(
+		'label'       => __( 'Show drawer menu on PC', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// グローバルナビを下側に移動する
+Customizer::add(
+	$section,
+	'move_gnav_under',
+	array(
+		'label'       => __( 'Move global navigation down', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+
+
+// ヘッダーの固定設定
+Customizer::big_title(
+	$section,
+	'fix_head',
+	array(
+		'label' => __( 'Fixed header setting', 'arkhe' ),
+	)
+);
+
+// ヘッダーを画面上部に固定する （PC）
+Customizer::add(
+	$section,
+	'fix_header_pc',
+	array(
+		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (PC)',
+		'type'        => 'checkbox',
+	)
+);
+
+// ヘッダーを画面上部に固定する (SP)
+Customizer::add(
+	$section,
+	'fix_header_sp',
+	array(
+		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (SP)',
+		'type'        => 'checkbox',
+	)
+);
+
+// グローバルナビを画面上部に固定する
+Customizer::add(
+	$section,
+	'fix_gnav',
+	array(
+		'label'       => __( 'Fixed global navigation at top of screen', 'arkhe' ),
+		'description' => ARKHE_NOTE . __( 'Only valid when below the header.', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
 
 // オーバーレイ設定
@@ -83,10 +173,9 @@ Customizer::big_title(
 	'top_header',
 	array(
 		'label' => __( 'Overlay settings', 'arkhe' ),
-	// 'description' => '※ この設定を使う場合、PCのヘッダーレイアウトは横並びにしてください。',
+	// 'description' => '※ フロントページのヘッダーに反映されます。',
 	)
 );
-
 Customizer::add(
 	$section,
 	'header_overlay',
@@ -118,35 +207,5 @@ Customizer::add(
 		'classname'   => '-header-overlay',
 		'label'       => __( 'Logo image when overlaying', 'arkhe' ),
 		'type'        => 'image',
-	)
-);
-
-
-// ヘッダーの固定設定
-Customizer::big_title(
-	$section,
-	'fix_head',
-	array(
-		'label' => __( 'Fixed header setting', 'arkhe' ),
-	)
-);
-
-// ヘッダーを画面上部に固定する （PC）
-Customizer::add(
-	$section,
-	'fix_header_pc',
-	array(
-		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (PC)',
-		'type'        => 'checkbox',
-	)
-);
-
-// ヘッダーを画面上部に固定する (SP)
-Customizer::add(
-	$section,
-	'fix_header_sp',
-	array(
-		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (SP)',
-		'type'        => 'checkbox',
 	)
 );

@@ -14,5 +14,5 @@ ARKHE_THEME::get_parts( 'footer/fix_btns' );
 	</div>
 </div>
 
-<?php // ドロワーメニュー用のオーバーレイヤー ?>
-<div class="p-drawerOverlayer c-overlay -drawer" data-onclick="toggleMenu"></div>
+<?php // ドロワーメニューの下側に敷いておく ?>
+<div class="p-drawerUnderlayer" data-onclick="toggleMenu"></div>

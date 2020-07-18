@@ -59,10 +59,10 @@
         opacity: 0;
     }
 
-    // これはさらに設定によって変える ?
-    .l-container {
-        max-width: 100%;
-    }
+    // これは設定によって変える ?
+    // .l-container {
+    //     max-width: 100%;
+    // }
 
 }
 
@@ -102,6 +102,7 @@
 
     // PCで固定設定なしの時
     .l-header[data-pcfix="0"] {
+        top: 0 !important;
         // data-scrolled=" true"でも透明を維持
         background-color: transparent;
     }
@@ -131,7 +132,49 @@
 
     // SPで固定設定なしの時
     .l-header[data-spfix="0"] {
+        top: 0 !important;
         // data-scrolled=" true"でも透明を維持
         background-color: transparent;
     }
+}
+
+
+.l-headerUnder {
+    transition: background-color .25s;
+}
+
+// 透明に。
+.l-headerUnder:not([data-fix]),
+[data-scrolled="false"] .l-headerUnder[data-fix] {
+    color: #fff;
+    background-color: transparent;
+}
+
+
+// ナビが fix しない場合 & ナビだけが fix の場合
+.l-headerUnder:not([data-fix]),
+[data-pcfix="0"] + .l-headerUnder[data-fix] {
+    position: absolute;
+    top: var(--header_height);
+}
+
+// ナビだけが fix の場合 (ちょっとチラつくが、このパターンは非推奨で。)
+[data-scrolled="true"] [data-pcfix="0"] + .l-headerUnder[data-fix] {
+    position: fixed;
+    top: 0;
+}
+
+[data-scrolled="true"] .admin-bar [data-pcfix="0"] + .l-headerUnder[data-fix] {
+    top: 32px;
+}
+
+
+// ヘッダーもナビだけも fix の場合
+[data-pcfix="1"] + .l-headerUnder[data-fix] {
+    position: fixed;
+    top: calc(var(--header_height));
+}
+
+.admin-bar [data-pcfix="1"] + .l-headerUnder[data-fix] {
+    top: calc(var(--header_height) + 32px);
 }

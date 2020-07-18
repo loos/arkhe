@@ -4,18 +4,16 @@
 
 .c-gnavWrap {
 
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    height: 100%;
 
     .l-header__body & {
         position: relative;
         z-index: 1;
+        padding-right: 0;
+        padding-left: 0;
     }
-
-    @include sp {
-        display: none;
-    }
-
 }
 
 

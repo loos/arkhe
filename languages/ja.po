@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-07-17 17:42+0900\n"
-"PO-Revision-Date: 2020-07-17 17:42+0900\n"
+"POT-Creation-Date: 2020-07-18 23:57+0900\n"
+"PO-Revision-Date: 2020-07-18 23:57+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -173,25 +173,53 @@ msgstr "ロゴ画像"
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: inc/customizer/header.php:85
-msgid "Overlay settings"
-msgstr "オーバーレイ設定"
+#: inc/customizer/header.php:83
+msgid "Layout setting"
+msgstr "レイアアウト設定"
 
-#: inc/customizer/header.php:108
-msgid "Enable on Pages"
-msgstr "固定ページでも有効化する"
+#: inc/customizer/header.php:92
+msgid "Show search btn on SP"
+msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:119
-msgid "Logo image when overlaying"
-msgstr "オーバーレイ時のロゴ画像"
+#: inc/customizer/header.php:102
+msgid "Show search btn on PC"
+msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:130
+#: inc/customizer/header.php:112
+msgid "Show drawer menu on PC"
+msgstr "ドロワーメニューをPCでも表示する"
+
+#: inc/customizer/header.php:122
+msgid "Move global navigation down"
+msgstr "グローバルナビを下側に移動する"
+
+#: inc/customizer/header.php:134
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:139 inc/customizer/header.php:149
+#: inc/customizer/header.php:143 inc/customizer/header.php:153
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
+
+#: inc/customizer/header.php:163
+msgid "Fixed global navigation at top of screen"
+msgstr "グローバルナビを画面上部に固定する"
+
+#: inc/customizer/header.php:164
+msgid "Only valid when below the header."
+msgstr "ヘッダーの下にある時のみ有効です。"
+
+#: inc/customizer/header.php:175
+msgid "Overlay settings"
+msgstr "オーバーレイ設定"
+
+#: inc/customizer/header.php:197
+msgid "Enable on Pages"
+msgstr "固定ページでも有効化する"
+
+#: inc/customizer/header.php:208
+msgid "Logo image when overlaying"
+msgstr "オーバーレイ時のロゴ画像"
 
 #: inc/customizer/page.php:13
 msgid "Pages"

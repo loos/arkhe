@@ -17,7 +17,7 @@ $style = '';
 if ( $logo_size_pc ) $style .= '--logo_size_pc:' . $logo_size_pc . 'px;';
 if ( $logo_size_sp ) $style .= '--logo_size_sp:' . $logo_size_sp . 'px;';
 ?>
-<div class="l-header__logoWrap"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
+<div class="l-header__center"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
 	<?php if ( is_front_page() ) : ?>
 			<h1 class="l-header__logo">
 				<?php ARKHE_THEME::get_parts( 'header/logo_img' ); ?>
