@@ -8,16 +8,12 @@ h1 {
 h2 {
     position: relative;
     z-index: 1;
-    // margin: 4em 0 2em;
-    margin-top: 4em;
     font-size: 1.6em;
     line-height: 1.5;
 }
 
 h3 {
     position: relative;
-    // margin: 3em 0 2em;
-    margin-top: 3em;
     font-weight: bold;
     font-size: 1.4em;
     line-height: 1.5;
@@ -26,8 +22,6 @@ h3 {
 
 h4 {
     position: relative;
-    // margin: 3em 0 1.5em;
-    margin-top: 3em;
     font-size: 1.2em;
     line-height: 1.5;
 }
@@ -48,47 +42,52 @@ hr {
 }
 
 /* ---------- リスト ---------- */
-li {
-    position: relative;
-    margin: .5em 0;
-    line-height: 1.5;
+// li {
+//     position: relative;
+//     margin: .5em 0;
+//     line-height: 1.5;
 
-    ul,
-    ol {
-        margin: 0 !important;
-    }
-}
+//     ul,
+//     ol {
+//         margin: 0 !important;
+//     }
+// }
 
-ol {
-    counter-reset: li;
+// ol {
+//     counter-reset: li;
 
-    & > li::before {
-        counter-increment: li;
-    }
+//     & > li::before {
+//         counter-increment: li;
+//     }
 
-    &[reversed] {
+//     &[reversed] {
 
-        & > li::before {
-            counter-increment: li -1;
-        }
-    }
-}
+//         & > li::before {
+//             counter-increment: li -1;
+//         }
+//     }
+// }
 
-ul:not([class]),
-ul.is-style-default {
+// ul.is-style-default,
+ul:not([class]) {
     list-style: disc;
 }
 
-ol:not([class]),
-ol.is-style-default {
+// ol.is-style-default,
+ol:not([class]) {
     list-style: decimal;
 }
 
+// ul.is-style-default,
+// ol.is-style-default,
 ul:not([class]),
-ol:not([class]),
-ul.is-style-default,
-ol.is-style-default {
+ol:not([class]) {
+    margin-left: 0;
     padding-left: 1.5em;
+
+    li {
+        margin: 0;
+    }
 
     ul {
         list-style: circle;

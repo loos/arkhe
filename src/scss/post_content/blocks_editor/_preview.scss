@@ -1,22 +1,35 @@
 /*
  * プレビュー画面の調整
  */
-.block-editor-block-preview__container {
+.branch-5-5 {
 
-    // 上下マージン0に
-    [data-block] {
-        margin-top: 0;
-        margin-bottom: 0;
+    // サイドバーのチラツキ防止
+    .edit-post-sidebar .block-editor-block-styles__item-preview {
+        min-height: 90px;
     }
+}
 
-    // サイドバーのみ、プレビュー上部の余白をなくす。
-    .edit-post-sidebar & .block-editor-block-preview__content {
-        top: 5% !important;
+// スタイル選択したときの黒線が太いので1pに。
+.block-editor-block-styles__item.is-active .block-editor-block-styles__item-preview {
+    border-width: 1px;
+}
+
+// サイドバーと変換パネルのプレビューにのみ適用する。（パターンプレビューに影響がないようにする。）
+.edit-post-sidebar,
+.block-editor-block-switcher__styles__menugroup {
+
+    .block-editor-block-preview__container {
+
+        // プレビューエリアに余白をつける。
+        .is-root-container > .wp-block {
+            margin: 5%;
+        }
     }
+}
+// }
 
-    // 左右に余白を
-    .wp-block-image {
-        padding: 0 5%;
-    }
-
+// ブロックパターンのプレビューでボーダーが見えなくなるのを阻止
+.block-editor-block-patterns-list__item .block-editor-block-preview__container {
+    box-sizing: content-box;
+    padding: 1px 0;
 }

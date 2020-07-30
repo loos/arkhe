@@ -1,0 +1,21 @@
+// 本文エリア
+.block-editor-writing-flow {
+
+    // ガイド線を表示する
+    [data-type="core/group"],
+    [data-type="core/columns"] {
+
+        &:not(.has-background).has-child-selected {
+
+            &::after {
+                top: -12px;
+                right: -12px;
+                bottom: -12px;
+                left: -12px;
+                border: dashed 1px $color_guide;
+            }
+        }
+    }
+
+}
+

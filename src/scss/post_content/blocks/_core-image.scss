@@ -7,7 +7,6 @@
 
     &.is-resized {
         display: block;
-        width: 100%;
     }
 
     // align ついたら .wp-block-image > figure になる
@@ -21,14 +20,7 @@
 
     }
 
-    &::after {
-        display: block;
-        clear: both;
-        height: 0;
-        visibility: hidden;
-        content: "";
-    }
-
+    // リンク付きの場合
     a {
         display: block;
         transition: opacity .25s;
@@ -57,10 +49,9 @@
     opacity: .8;
 }
 
-// 
+// TinyMCEでの中央寄せ画像
 img.aligncenter {
     display: block;
-    clear: both;
     margin-right: auto;
     margin-left: auto;
 }

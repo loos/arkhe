@@ -2,21 +2,15 @@
 .wp-block-image {
     text-align: center;
 
-    &.is-resized,
-    &.is-resized .editor-rich-text {
-        display: block !important;
-    }
-
+    // .is-resized は 50& とかにすると付くクラス。 エディターをはみ出さないように。
+    // &.is-resized {
+    //     display: block !important;  // -> フロント側と共通で指定
+    // }
     .components-resizable-box__container {
         max-width: 100% !important;
         height: auto !important;
     }
+
 }
 
-// 左寄せ・右寄せの調節
-.editor-block-list__layout
-.editor-block-list__block[data-align="left"] > .editor-block-list__block-edit,
-.editor-block-list__layout
-.editor-block-list__block[data-align="right"] > .editor-block-list__block-edit {
-    max-width: 100% !important;
-}
+// .branch-5-5 {}
