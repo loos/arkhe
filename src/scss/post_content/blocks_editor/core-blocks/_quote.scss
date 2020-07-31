@@ -1,8 +1,30 @@
 // 引用
-.wp-block-quote {
+[data-type="core/quote"],
+[data-type="core/pullquote"] {
 
     p {
         margin-bottom: 0 !important;
     }
+
+    p:first-child {
+        margin-top: 0 !important;
+    }
+
+    p + p {
+        margin-top: 1em;
+    }
+
 }
 
+// cite
+.wp-block-quote__citation,
+.wp-block-pullquote__citation {
+    margin-top: 1em;
+}
+
+// .wp-block-quote{}
+
+// [data-type="core/pullquote"] {
+
+//     .wp-block-pullquote{}
+// }

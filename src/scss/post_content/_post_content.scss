@@ -135,7 +135,7 @@ blockquote {
 table {
     width: 100%;
     max-width: 100%;
-    line-height: 1.5;
+    // line-height: 1.5;
     border: none;
     border-top: solid 1px #ededed;
     border-right: solid 1px #ededed;
@@ -163,8 +163,6 @@ thead {
     th {
         color: #fff;
         background-color: var(--color_main);
-        // background-color: #777;
-        // background-color: rgba(150, 150, 150, .15);
     }
 }
 
