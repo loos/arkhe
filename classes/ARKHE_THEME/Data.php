@@ -6,6 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Data {
 
+	/**
+	 * インスタンス
+	 */
 	private static $instance;
 
 	/**
@@ -30,14 +33,31 @@ class Data {
 	// const DB_NAME_OPTIONS    = 'arkhe_options';
 
 
-	// 外部からインスタンス化させない
+	/**
+	 * 外部からインスタンス化させない
+	 */
 	private function __construct() {}
 
-	// init()
+
+	/**
+	 * インスタンスを取得または生成して返す
+	 */
+	public static function get_instance() {
+		if ( empty( self::$instance ) ) {
+			self::$instance = new Data();
+		}
+		return self::$instance;
+	}
+
+
+	/**
+	 * init()
+	 */
 	public static function init() {
 
+		// 一度しか発火させない
 		if ( isset( self::$instance ) ) return;
-		self::$instance = new Data();
+		self::$instance = self::get_instance();
 
 		// テーマバージョンを取得
 		self::$instance->get_theme_version();

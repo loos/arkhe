@@ -1,6 +1,5 @@
-
 # テーマのzip化
 
 ```
-bash ./bin/zip.sh 0-0-1
+bash ./bin/zip.sh 0-0-4
 ```

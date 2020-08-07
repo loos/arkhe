@@ -24,10 +24,11 @@
     }
 
 
-    // 余白を小さくするエリア
-    .wp-block-column,
-    .wp-block-group__inner-container,
-    .wp-block-cover__inner-container,
+    // 余白を小さくするエリア。 (全幅や幅広の時は適用しないように .wp-block が一つ上の層にある通常時だけ指定)
+    .block-editor-inner-blocks, // 5.3用
+    .wp-block > .wp-block-column,
+    .wp-block > .wp-block-group__inner-container,
+    .wp-block > .wp-block-cover__inner-container,
     .wp-block-media-text__content {
 
         .block-editor-block-list__block {
