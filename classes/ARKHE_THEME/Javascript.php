@@ -20,8 +20,8 @@ class Javascript {
 		return array(
 			// 'adminUrl' => admin_url(),
 			// 'apiPath' => rest_url() .'wp/v2/',
-			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
-			'ajaxNonce'   => wp_create_nonce( 'arkhe-addon-ajax-nonce' ),
+			// 'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
+			// 'ajaxNonce'   => wp_create_nonce( 'arkhe-ajax-nonce' ),
 			'isFixHeadPC' => $SETTING['fix_header_pc'],
 			'isFixHeadSP' => $SETTING['fix_header_sp'],
 		);
@@ -35,7 +35,7 @@ class Javascript {
 			'adminUrl'    => admin_url(),
 			'apiPath'     => rest_url() . 'wp/v2/',
 			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
-			'ajaxNonce'   => wp_create_nonce( 'arkhe-addon-ajax-nonce' ),
+			'ajaxNonce'   => wp_create_nonce( 'arkhe-ajax-nonce' ),
 		);
 	}
 
