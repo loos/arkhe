@@ -37,3 +37,22 @@
         opacity: .75;
     }
 }
+
+
+.c-closeBtn--search {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    color: #fff;
+    background: none;
+    border: none;
+    transform: translateX(-50%);
+
+    i {
+        margin-right: .5em;
+        line-height: 1;
+    }
+}

@@ -1,39 +1,66 @@
 import DOM from './data/domData';
 
 const setCurrent = (nav) => {
-    if (null === nav) return;
+	//-currentクラスをいったん削除
+	const currentItem = nav.querySelector('li.-current');
+	if (currentItem) currentItem.classList.remove('-current');
 
-    //-currentクラスをいったん削除
-    const currentItem = nav.querySelector('li.-current');
-    if (currentItem) currentItem.classList.remove('-current');
+	// トップページは、カレントクラス付与しない
+	const locationPath = window.location.pathname;
+	if ('/' === locationPath) return;
 
-    // トップページは、カレントクラス付与しない
-    const locationPath = window.location.pathname;
-    if ('/' === locationPath) return;
+	//現在のURLを取得 （? や # はをのぞいて）
+	const nowHref = window.location.origin + locationPath;
 
-    //現在のURLを取得 （? や # はをのぞいて）
-    const nowHref = window.location.origin + locationPath;
+	// 全liを取得
+	const navItem = nav.querySelectorAll('.c-gnav > li');
+	for (let i = 0; i < navItem.length; i++) {
+		const li = navItem[i];
 
-    // 全liを取得
-    const navItem = nav.querySelectorAll('.c-gnav > li');
-    for (let i = 0; i < navItem.length; i++) {
-        const li = navItem[i];
+		const a = li.querySelector('a');
+		const href = a.getAttribute('href');
 
-        const a = li.querySelector('a');
-        const href = a.getAttribute('href');
-
-        //現在のURLと一致していれば、-currentクラスを付与
-        if (nowHref === href) {
-            li.classList.add('-current');
-        }
-    }
+		//現在のURLと一致していれば、-currentクラスを付与
+		if (nowHref === href) {
+			li.classList.add('-current');
+		}
+	}
 };
 
 /**
  * setGnavClass
- *   グロナビに -current つける
+ *
  */
 export default function() {
-    // クラス付与
-    setCurrent(DOM.gnav);
+	const gnav = DOM.gnav;
+	if (null === gnav) return;
+	// グロナビに -current つける
+	setCurrent(gnav);
+
+	const gnavMenu = gnav.querySelector('.c-gnav');
+
+	if (null === gnavMenu) return false;
+
+	const links = gnavMenu.getElementsByTagName('a');
+
+	for (let i = 0; i < links.length; i++) {
+		const link = links[i];
+		link.addEventListener('focus', toggleFocus, true);
+		link.addEventListener('blur', toggleFocus, true);
+	}
+
+	//Sets or removes the .focus class on an element.
+	function toggleFocus() {
+		let self = this;
+		console.log(self);
+
+		// Move up through the ancestors of the current link until we hit .primary-menu.
+		while (!self.classList.contains('c-gnav')) {
+			// On li elements toggle the class .focus.
+			if ('li' === self.tagName.toLowerCase()) {
+				self.classList.toggle('focus');
+			}
+			self = self.parentElement;
+		}
+	}
 }

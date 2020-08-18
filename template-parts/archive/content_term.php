@@ -7,7 +7,7 @@ $wp_obj  = get_queried_object();
 $term_id = $wp_obj->term_id;
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_term', POST_LIST_TYPE, $term_id );
+$list_type = apply_filters( 'arkhe_list_type_on_term', ARKHE_LIST_TYPE, $term_id );
 
 // アーカイブページのデータ
 $archive_data = ARKHE_THEME::get_archive_data();

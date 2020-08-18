@@ -11,12 +11,13 @@ add_filter( 'excerpt_more', 'arkhe_hook__excerpt_more' );
 add_filter( 'the_excerpt_rss', 'arkhe_hook__add_rss_thumb' );
 add_filter( 'the_content_feed', 'arkhe_hook__add_rss_thumb' );
 
+add_filter( 'navigation_markup_template', 'arkhe_hook__navigation_markup_template', 10, 2 );
+
+add_action( 'wp_body_open', 'arkhe_hook__wp_body_open', 5 );
 add_action( 'wp_list_categories', 'arkhe_hook__wp_list_categories' );
 add_action( 'wp_list_pages', 'arkhe_hook__wp_list_pages' );
 add_action( 'get_archives_link', 'arkhe_hook__get_archives_link', 10, 6 );
 add_action( 'wp_terms_checklist_args', 'arkhe_hook__wp_terms_checklist_args', 10, 2 );
-
-add_filter( 'navigation_markup_template', 'arkhe_hook__navigation_markup_template', 10, 2 );
 
 
 /**
@@ -24,9 +25,10 @@ add_filter( 'navigation_markup_template', 'arkhe_hook__navigation_markup_templat
  */
 if ( ! function_exists( 'arkhe_hook__excerpt_length' ) ) :
 function arkhe_hook__excerpt_length( $length ) {
+	if ( is_admin() ) return $length;
 	if ( defined( 'ARKHE_EXCERPT_LENGTH' ) ) {
 		return ARKHE_EXCERPT_LENGTH;
-		}
+	}
 	return $length;
 }
 endif;
@@ -35,7 +37,8 @@ endif;
  * 抜粋文の末尾を ... に
  */
 if ( ! function_exists( 'arkhe_hook__excerpt_more' ) ) :
-function arkhe_hook__excerpt_more() {
+function arkhe_hook__excerpt_more( $more ) {
+	if ( is_admin() ) return $more;
 	return '&hellip;';
 }
 endif;
@@ -49,11 +52,22 @@ function arkhe_hook__add_rss_thumb( $content ) {
 
 	$thumb = get_the_post_thumbnail_url( $post->ID, 'large' );
 	if ( $thumb ) {
-		$content = '<p><img src="' . $thumb . '" class="webfeedsFeaturedVisual" /></p>' . $content;
+		$content = '<p><img src="' . esc_url( $thumb ) . '" class="webfeedsFeaturedVisual" /></p>' . $content;
 		}
 	return $content;
 }
 endif;
+
+
+/**
+ * Add skip link
+ */
+if ( ! function_exists( 'arkhe_hook__wp_body_open' ) ) :
+	function arkhe_hook__wp_body_open( $output ) {
+		echo '<a class="skip-link screen-reader-text" href="#main_content">' . esc_html__( 'Skip to the content', 'arkhe' ) . '</a>';
+	}
+endif;
+
 
 /**
  * カテゴリーリストの件数を</a>の中に移動 & spanで囲む
@@ -118,7 +132,7 @@ if ( ! function_exists( 'arkhe_hook__navigation_markup_template' ) ) :
 function arkhe_hook__navigation_markup_template( $template, $class ) {
 	if ( 'pagination' === $class ) {
 		return '<nav class="navigation %1$s" role="navigation" aria-label="%4$s">%3$s</nav>';
-		}
+	}
 	return $template;
 }
 endif;

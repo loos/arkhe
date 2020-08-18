@@ -211,7 +211,7 @@ class ARKHE_THEME {
 	/**
 	 * ヘッダーの追加属性
 	 */
-	public static function header_attr( $args = null ) {
+	public static function header_attr( $args = null, $is_echo = true ) {
 		$SETTING = self::get_setting();
 
 		$logo_pos = isset( $args['logo_pos'] ) ? $args['logo_pos'] : '';
@@ -234,9 +234,15 @@ class ARKHE_THEME {
 			$attrs .= ' data-overlay="true"';
 		}
 
-		// @codingStandardsIgnoreStart
-		echo apply_filters( 'arkhe_header_attr', $attrs );
-		// @codingStandardsIgnoreEnd
+		$attrs = apply_filters( 'arkhe_header_attr', $attrs );
+		if ( $is_echo ) {
+			// @codingStandardsIgnoreStart
+			echo $attrs;
+			// @codingStandardsIgnoreEnd
+		} else {
+			return $attrs;
+		}
+
 	}
 
 
@@ -334,10 +340,10 @@ class ARKHE_THEME {
 			// アイキャッチ画像の設定がある場合
 			$thumb = get_the_post_thumbnail( $post_id, $size, $attachment_args );
 
-		} elseif ( NOIMG_ID ) {
+		} elseif ( ARKHE_NOIMG_ID ) {
 
-			// まだサムネイル画像が取得できていない場合で、NOIMG_ID がある場合
-			$thumb = wp_get_attachment_image( NOIMG_ID, $size, false, $attachment_args );
+			// まだサムネイル画像が取得できていない場合で、ARKHE_NOIMG_ID がある場合
+			$thumb = wp_get_attachment_image( ARKHE_NOIMG_ID, $size, false, $attachment_args );
 		}
 
 		if ( $thumb ) {
@@ -346,12 +352,12 @@ class ARKHE_THEME {
 				$thumb = preg_replace( '/ sizes="([^"]*)"/', ' sizes="' . $sizes . '"', $thumb );
 			}
 		} else {
-			$thumb = '<img src="' . NOIMG_URL . '" class="' . $class . '">';
+			$thumb = '<img src="' . ARKHE_NOIMG_URL . '" class="' . $class . '">';
 		}
 
 		// 通常のフロント表示の時（Gutenberg上やRESTの時以外）
 		if ( ! defined( 'REST_REQUEST' ) ) {
-			$placeholder = $placeholder ?: PLACEHOLDER;
+			$placeholder = $placeholder ?: ARKHE_PLACEHOLDER;
 			$thumb       = str_replace( ' src="', ' src="' . esc_attr( $placeholder ) . '" data-src="', $thumb );
 			$thumb       = str_replace( ' srcset="', ' data-srcset="', $thumb );
 			// loading="lazy"

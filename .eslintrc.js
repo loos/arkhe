@@ -20,7 +20,7 @@ module.exports = {
 
     rules: {
         // 'prettier/prettier': 0,
-        // indent: [2, 4],
+        indent: [2, 'tab'],
         // quotes: ['error', 'double'],
         // 'space-in-parens': 'error',
         // 'comma-dangle': 'off',

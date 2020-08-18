@@ -19,12 +19,12 @@ $diplay_class                    = '';
 if ( ! $show_pc ) $diplay_class .= ' u-hide-pc';
 if ( ! $show_sp ) $diplay_class .= ' u-hide-sp';
 ?>
-<div class="l-header__customBtn<?php if ( $diplay_class ) echo $diplay_class; ?>">
+<div class="l-header__customBtn<?php if ( $diplay_class ) echo esc_attr( $diplay_class ); ?>">
 	<?php if ( $is_search ) : ?>
-		<div class="c-iconBtn" data-onclick="toggleSearch" role="button">
+		<button class="c-iconBtn" data-onclick="toggleSearch" aria-label="<?php esc_attr_e( 'Search button', 'arkhe' ); ?>">
 			<span class="c-iconBtn__icon"><i class="__icon arkhe-icon-search"></i></span>
 			<span class="c-iconBtn__label"><?php echo esc_html( $label ); ?></span>
-		</div>
+		</button>
 	<?php else : ?>
 		<a href="<?php echo esc_url( $href ); ?>" class="c-iconBtn">
 			<span class="c-iconBtn__icon"><i class="<?php echo esc_attr( $icon_class ); ?>"></i></span>

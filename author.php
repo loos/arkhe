@@ -5,7 +5,7 @@ $author_id   = get_queried_object_id();
 $author_data = get_userdata( $author_id );
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_author', POST_LIST_TYPE, $author_id );
+$list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $author_id );
 
 ?>
 <main id="main_content" class="<?php ARKHE_THEME::main_class(); ?>">

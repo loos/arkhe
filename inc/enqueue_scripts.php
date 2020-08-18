@@ -47,27 +47,25 @@ endif;
 if ( ! function_exists( 'arkhe_hook__admin_enqueue_scripts' ) ) :
 function arkhe_hook__admin_enqueue_scripts( $hook_suffix ) {
 
-	global $post_type;
+	$css_path = ARKHE_TMP_DIR_URI . '/dist/css';
 
-	// メディアアップローダー用
-	// wp_enqueue_media();
-	// wp_enqueue_script( 'mediauploader', ARKHE_TMP_DIR_URI.'/dist/js/admin/mediauploader.js', [ 'jquery' ], ARKHE_VERSION );
+	if ( is_customize_preview() ) {
+		// カスタマイザー
+		wp_enqueue_style( 'arkhe-customizer', $css_path . '/admin/customizer.css', array(), ARKHE_VERSION );
 
-	// カラーピッカー
-	// wp_enqueue_style( 'wp-color-picker' );
-	// wp_enqueue_script( 'wp-color-picker' );
+	} elseif ( 'nav-menus.php' === $hook_suffix ) {
+		// カスタムメニュー
+		wp_enqueue_style( 'arkhe-nav-menus', $css_path . '/admin/nav-menus.css', array(), ARKHE_VERSION );
 
-	// 管理画面用CSS
-	wp_enqueue_style( 'arkhe_admin_style', ARKHE_TMP_DIR_URI . '/dist/css/admin.css', array(), ARKHE_VERSION );
+	} elseif ( 'edit.php' === $hook_suffix ) {
+		// 投稿一覧
+		wp_enqueue_style( 'arkhe-edit-table', $css_path . '/admin/edit-table.css', array(), ARKHE_VERSION );
+	}
 
-	// インライン出力するCSS
-	wp_add_inline_style( 'arkhe_admin_style', Style::output( 'editor' ) );
-
-	// 管理画面用JS
-	// wp_enqueue_script( 'arkhe_admin_script', ARKHE_TMP_DIR_URI . '/dist/js/admin/admin_script.js', array( 'jquery' ), ARKHE_VERSION );
-
-	// 管理画面側に渡すグローバル変数
-	wp_localize_script( 'arkhe_admin_script', 'arkheVars', Javascript::get_admin_global_vars() );
+	// if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+		// 投稿編集画面
+		// wp_enqueue_style( 'arkhe-editor', $css_path . '/editor.css', array(), ARKHE_VERSION );
+	// }
 }
 endif;
 
@@ -78,9 +76,12 @@ if ( ! function_exists( 'arkhe_hook__enqueue_block_editor_assets' ) ) :
 function arkhe_hook__enqueue_block_editor_assets( $hook_suffix ) {
 
 	// CSS
-	wp_enqueue_style( 'arkhe_block_style', ARKHE_TMP_DIR_URI . '/dist/css/editor.css', array(), ARKHE_VERSION );
+	wp_enqueue_style( 'arkhe-block-editor', ARKHE_TMP_DIR_URI . '/dist/css/editor.css', array(), ARKHE_VERSION );
+
+	// Inline CSS
+	wp_add_inline_style( 'arkhe-block-editor', Style::output( 'editor' ) );
 
 	// JS
-	// wp_enqueue_script( 'arkhe_block_script', ARKHE_TMP_DIR_URI . '/dist/js/block.js', [], ARKHE_VERSION, true);
+	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_TMP_DIR_URI . '/dist/js/block.js', [], ARKHE_VERSION, true);
 }
 endif;

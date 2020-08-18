@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-07-18 23:57+0900\n"
-"PO-Revision-Date: 2020-07-18 23:57+0900\n"
+"POT-Creation-Date: 2020-08-18 20:55+0900\n"
+"PO-Revision-Date: 2020-08-18 20:55+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -225,6 +225,14 @@ msgstr "オーバーレイ時のロゴ画像"
 msgid "Pages"
 msgstr "固定ページ"
 
+#: inc/customizer/page.php:34
+msgid "Top of content"
+msgstr "コンテンツ上部"
+
+#: inc/customizer/page.php:35
+msgid "Inside the content"
+msgstr "コンテンツ内部"
+
 #: inc/customizer/post_list.php:13
 msgid "Post List"
 msgstr "投稿リスト"
@@ -381,6 +389,10 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示する"
 
+#: inc/hooks.php:67
+msgid "Skip to the content"
+msgstr "コンテンツへスキップ"
+
 #. translators: %s is the value of get_search_query().
 #: search.php:15
 #, php-format
@@ -395,9 +407,21 @@ msgstr "検索"
 msgid "Search word"
 msgstr "検索ワード"
 
-#: searchform.php:8
+#: searchform.php:8 template-parts/header/custom_btn.php:24
 msgid "Search button"
 msgstr "検索ボタン"
+
+#: searchform.php:12
+msgid "Close seartch modal"
+msgstr ""
+
+#: searchform.php:12
+msgid "CLOSE"
+msgstr "閉じる"
+
+#: template-parts/header/menu_btn.php:12
+msgid "Menu button"
+msgstr "メニューボタン"
 
 #: template-parts/others/author_box.php:53
 msgid "To article list"
@@ -433,8 +457,8 @@ msgid "Two column"
 msgstr "2カラム"
 
 #. Theme Name of the plugin/theme
-msgid "Arkhē"
-msgstr "Arkhē"
+msgid "Arkhe"
+msgstr "Arkhe"
 
 #. Theme URI of the plugin/theme
 msgid "https://arkhe-theme.com/"
@@ -453,3 +477,8 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos-web-studio.com/"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Search button"
+#~ msgid "Search Button"
+#~ msgstr "検索ボタン"

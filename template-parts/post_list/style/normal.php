@@ -5,7 +5,7 @@
  * @param $parts_args
  *   $parts_args['count'] : 現在のループカウント数 (フック用に用意)
  */
-$list_type = isset( $parts_args['type'] ) ? $parts_args['type'] : POST_LIST_TYPE;
+$list_type = isset( $parts_args['type'] ) ? $parts_args['type'] : ARKHE_LIST_TYPE;
 
 // 投稿情報
 $post_data = get_post();

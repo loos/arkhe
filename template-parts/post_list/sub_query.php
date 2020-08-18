@@ -14,7 +14,7 @@ if ( ! is_array( $query_args ) ) return;
 $the_query = new WP_Query( $query_args );
 
 // リストタイプ
-$list_type = isset( $list_args['list_type'] ) ? $list_args['list_type'] : POST_LIST_TYPE;
+$list_type = isset( $list_args['list_type'] ) ? $list_args['list_type'] : ARKHE_LIST_TYPE;
 
 // リストスタイルによって読み込むファイル名を振り分ける
 $file_name = ( 'simple' === $list_type ) ? 'simple' : 'normal';

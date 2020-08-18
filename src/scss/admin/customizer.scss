@@ -1,3 +1,19 @@
+@charset "UTF-8";
+
+// mixin
+@import "../foundation/mixin/**";
+
+// setting
+@import "../foundation/setting/variable";
+@import "../foundation/setting/keyframes";
+@import "../foundation/setting/placeholder";
+
+// icon
+@import "../foundation/icon/icomoon";
+
+// utility
+// @import "object/utility/**";
+
 // カスタマイザーの横幅 少し広く。
 .wp-customizer .wp-full-overlay-sidebar {
     width: 20%;

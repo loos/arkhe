@@ -106,7 +106,7 @@ class Default_Data {
 			'show_tw_follow_btn'        => false,
 			'share_hashtags'            => '',
 			'share_via'                 => '',
-			'fb_like_url'               => home_url( '/' ),
+			'fb_like_url'               => esc_url( home_url( '/' ) ),
 			'fb_like_appID'             => '',
 			'tw_follow_id'              => '',
 

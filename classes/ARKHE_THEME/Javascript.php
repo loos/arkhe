@@ -18,10 +18,6 @@ class Javascript {
 		$SETTING = \ARKHE_THEME::get_setting();
 
 		return array(
-			// 'adminUrl' => admin_url(),
-			// 'apiPath' => rest_url() .'wp/v2/',
-			// 'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
-			// 'ajaxNonce'   => wp_create_nonce( 'arkhe-ajax-nonce' ),
 			'isFixHeadPC' => $SETTING['fix_header_pc'],
 			'isFixHeadSP' => $SETTING['fix_header_sp'],
 		);
@@ -30,13 +26,8 @@ class Javascript {
 	/**
 	 * 管理画面側に渡すグローバル変数
 	 */
-	public static function get_admin_global_vars() {
-		return array(
-			'adminUrl'    => admin_url(),
-			'apiPath'     => rest_url() . 'wp/v2/',
-			'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
-			'ajaxNonce'   => wp_create_nonce( 'arkhe-ajax-nonce' ),
-		);
-	}
+	// public static function get_admin_global_vars() {
+	// 	return array();
+	// }
 
 }

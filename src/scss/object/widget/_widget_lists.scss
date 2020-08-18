@@ -14,66 +14,6 @@
     border-top: solid 1px var(--color_border);
 }
 
-// サブメニューの展開
-.c-submenuToggleBtn {
-    position: absolute;
-    top: 50%;
-    right: 8px;
-    z-index: 1;
-    display: block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2em;
-    height: 2em;
-    line-height: 2;
-    text-align: center;
-    transform: translateY(-50%);
-    cursor: pointer;
-
-    @include tab {
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        transition: background-color .25s;
-    }
-
-    &::before {
-        display: inline-block;
-        font-size: 12px;
-        line-height: inherit;
-        transition: transform .25s;
-
-        @extend %arkheIcon;
-        @extend .arkhe-icon-chevron-down::before;
-    }
-
-    &::after {
-        box-shadow: inset 0 0 0 1px currentColor;
-        // border: solid 1px currentColor;
-        opacity: .15;
-        transition: background-color .25s;
-
-        @extend %absLayer;
-
-    }
-
-    @include pc {
-
-        &:hover::after {
-            background-color: currentColor;
-        }
-    }
-
-
-    &.is-opened {
-
-        &::before {
-            transform: rotate(-180deg);
-        }
-    }
-}
-
 
 // 基本スタイル
 .wp-block-categories,

@@ -4,7 +4,7 @@
  */
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_home', POST_LIST_TYPE );
+$list_type = apply_filters( 'arkhe_list_type_on_home', ARKHE_LIST_TYPE );
 
 // コンテンツ前フック
 do_action( 'arkhe_before_home_content' );

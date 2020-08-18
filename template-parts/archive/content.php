@@ -7,7 +7,7 @@
 $archive_data = ARKHE_THEME::get_archive_data();
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_archive', POST_LIST_TYPE, $archive_data );
+$list_type = apply_filters( 'arkhe_list_type_on_archive', ARKHE_LIST_TYPE, $archive_data );
 ?>
 <div <?php post_class( ARKHE_THEME::main_body_class( false ) ); ?>>
 <?php

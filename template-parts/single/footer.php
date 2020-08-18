@@ -28,19 +28,6 @@ $show_related_posts = apply_filters( 'arkhe_show_related_posts', $SETTING['show_
 // 	ARKHE_THEME::get_parts( 'single/share_btns', array( 'post_id' => $the_id ) );
 // endif;
 
-// FBいいね & Twitterフォロー ボックス
-// $tw_id  = $SETTING['show_tw_follow_btn'] ? $SETTING['tw_follow_id'] : '';
-// $fb_url = $SETTING['show_fb_like_box'] ? $SETTING['fb_like_url'] : '';
-// if ( $tw_id || $fb_url ) :
-// 	ARKHE_THEME::get_parts(
-// 		'single/sns_cta',
-// 		array(
-// 			'tw_id'  => $tw_id,
-// 			'fb_url' => $fb_url,
-// 		)
-// 	);
-// endif;
-
 ?>
 <footer class="p-entry__foot">
 	<div class="p-entry__foot__meta">

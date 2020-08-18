@@ -34,7 +34,9 @@ $logo_pos           = $move_gnav_under ? 'center' : '';
 	</div>
 </header>
 <?php if ( $move_gnav_under ) : ?>
-	<div class="l-headerUnder"  <?php if ( \ARKHE_THEME::get_setting( 'fix_gnav' ) )  echo ' data-fix="true"'; ?>>
-		<?php \ARKHE_THEME::get_parts( 'header/gnav' ); ?>
+	<div class="l-headerUnder" <?php if ( \ARKHE_THEME::get_setting( 'fix_gnav' ) )  echo ' data-fix="1"'; ?>>
+		<div class="l-headerUnder__inner l-container">
+			<?php \ARKHE_THEME::get_parts( 'header/gnav' ); ?>
+		</div>
 	</div>
 <?php endif; ?>

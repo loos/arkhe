@@ -11,7 +11,7 @@ if ( defined( 'ARKHE_TMPID_KEY' ) ) {
 	}
 }
 
-if ( 0 && apply_filters( 'arkhe_header_id', $header_id ) ) {
+if ( apply_filters( 'arkhe_header_id', $header_id ) ) {
 	// ブロックで構成する場合
 	$header = get_posts(
 		array(

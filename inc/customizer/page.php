@@ -31,8 +31,8 @@ Customizer::add(
 		'label'       => 'タイトルの表示位置',
 		'type'        => 'radio',
 		'choices'     => array(
-			'top'    => 'コンテンツ上',
-			'inner'  => 'コンテンツ内',
+			'top'   => __( 'Top of content', 'arkhe' ), // コンテンツ上部
+			'inner' => __( 'Inside the content', 'arkhe' ), // コンテンツ内部
 		),
 	)
 );

@@ -8,6 +8,9 @@ $site_title = get_option( 'blogname' );
 
 // ロゴ画像の設定があるかどうか
 $logo_type = $logo ? 'img' : 'txt';
+
+// the_custom_logo();
+
 ?>
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo" data-logo-type="<?php echo esc_attr( $logo_type ); ?>" rel="home">
 <?php

@@ -1,0 +1,33 @@
+// .screen-reader-text {}
+
+
+.skip-link {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+
+    &:focus {
+        top: 8px;
+        left: 8px;
+        z-index: 1000;
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 16px 24px;
+        color: #21759b;
+        font-weight: 700;
+        font-size: 14px;
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+}
+

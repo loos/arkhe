@@ -3,7 +3,7 @@
  * 投稿一覧リストの出力テンプレート（メインクエリ用）
  *   $parts_args['list_type'] : リストタイプ
  */
-$list_type = isset( $parts_args['list_type'] ) ? $parts_args['list_type'] : POST_LIST_TYPE;
+$list_type = isset( $parts_args['list_type'] ) ? $parts_args['list_type'] : ARKHE_LIST_TYPE;
 
 // リストスタイルによって読み込むファイル名を振り分ける
 $file_name = ( 'simple' === $list_type ) ? 'simple' : 'normal';

@@ -41,13 +41,13 @@ function arkhe_hook__customize_controls_enqueue_scripts() {
 	// プレビュー画面の更新 & デバイス情報の受け渡し
 	$prev_handle = 'customizer-responsive-device-preview';
 	wp_enqueue_script(
-		$prev_handle,
+		'customizer-responsive-preview',
 		ARKHE_TMP_DIR_URI . '/dist/js/admin/responsive-device-preview.js',
 		array( 'customize-controls' ),
 		ARKHE_VERSION,
 		false
 	);
-	wp_add_inline_script( $prev_handle, 'CustomizerResponsiveDevicePreview.init( wp.customize );', 'after' );
+	wp_add_inline_script( 'customizer-responsive-preview', 'CustomizerResponsiveDevicePreview.init( wp.customize );', 'after' );
 
 	// 設定項目の表示・非表示を切り替える処理
 	wp_enqueue_script(

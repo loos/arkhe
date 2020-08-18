@@ -13,7 +13,7 @@ $gnav = wp_nav_menu(
 	)
 );
 if ( ! $gnav ) return; ?>
-<nav id="gnav" class="c-gnavWrap l-container">
+<nav id="gnav" class="c-gnavWrap">
 	<ul class="c-gnav">
 		<?php // @codingStandardsIgnoreStart
 			echo $gnav;

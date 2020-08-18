@@ -10,14 +10,19 @@ if ( ! function_exists( 'arkhe_hook__setup_theme' ) ) :
 function arkhe_hook__setup_theme() {
 	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \ARKHE_THEME::get_setting( 'container_size' ) );
 
-	// ウィジェットのカスタムHTMLでショートコードを有効化
-	add_filter( 'widget_text', 'do_shortcode' );
-
-	// タイトルでアイコン用ショートコード 使えるように
-	add_filter( 'widget_title', 'do_shortcode' );
-
 	// 固定ページでも抜粋文を使用可能にする
 	add_post_type_support( 'page', 'excerpt' );
+
+	// カスタムロゴ
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 160,
+			'width'       => 320,
+			'flex-height' => true,
+			'flex-width'  => true,
+		)
+	);
 
 	// add_theme_support( 'menus' );
 	add_theme_support( 'widgets' );
@@ -31,19 +36,12 @@ function arkhe_hook__setup_theme() {
 	add_theme_support( 'align-wide' ); // 画像の全幅表示などを可能に
 	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
 
-	// 16:9で保つ...？
-	// add_theme_support( 'responsive-embeds' );
-
-	add_theme_support(
-		'html5',
-		array(
-			'comment-form',
-			'comment-list',
-		// 'search-form',
-		// 'gallery',
-		// 'caption',
-		)
+	// html5サポート
+	$html5s = array(
+		'comment-form',
+		'comment-list',
 	);
+	add_theme_support( 'html5', $html5s );
 
 	// フォントサイズ
 	add_theme_support(
@@ -81,5 +79,8 @@ function arkhe_hook__setup_theme() {
 			),
 		)
 	);
+
+	// 16:9で保つ...？
+	// add_theme_support( 'responsive-embeds' );
 }
 endif;

@@ -5,7 +5,7 @@
 get_header();
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_search', POST_LIST_TYPE );
+$list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 ?>
 <main id="main_content" class="<?php ARKHE_THEME::main_class(); ?>">
 	<div class="<?php ARKHE_THEME::main_body_class(); ?>">

@@ -57,7 +57,7 @@ function arkhe_hook__walker_nav_menu_start_el( $item_output, $item, $depth, $arg
 		if ( $has_child ) {
 			$item_output = str_replace(
 				'</a>',
-				'<span class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></span></a>',
+				'<button class="c-submenuToggleBtn" role="button" data-onclick="toggleSubmenu"></button></a>',
 				$item_output
 			);
 		}
@@ -65,7 +65,7 @@ function arkhe_hook__walker_nav_menu_start_el( $item_output, $item, $depth, $arg
 		if ( $has_child ) {
 			$item_output = str_replace(
 				'</a>',
-				'<span class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></span></a>',
+				'<button class="c-submenuToggleBtn" role="button" data-onclick="toggleSubmenu"></button></a>',
 				$item_output
 			);
 		}

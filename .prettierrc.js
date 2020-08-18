@@ -1,6 +1,7 @@
 // 各種オプションについて：https://prettier.io/docs/en/options.html
 module.exports = {
-    tabWidth: 4,
+    // tabWidth: 4,
+    useTabs: true,
     singleQuote: true, //シングルクォートに統一
     jsxSingleQuote: true, //JSXでもシングルクォートに統一。
     trailingComma: 'es5', //末尾のカンマをどうすか。es5に準拠させる（オブジェクトの末尾は , つける）

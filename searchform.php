@@ -8,3 +8,7 @@
 		aria-label="<?php esc_attr_e( 'Search button', 'arkhe' ); ?>"
 	></button>
 </form>
+
+<button type="button" class="c-closeBtn--search" data-onclick="toggleSearch">
+	<i class="arkhe-icon-close"></i><?php esc_attr_e( 'CLOSE', 'arkhe' ); ?>
+</button>

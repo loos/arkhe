@@ -36,49 +36,5 @@ function arkhe_hook__widgets_init() {
 			'after_title'   => '</div>',
 		)
 	);
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => '固定ページ上部',
-	// 		'id'            => 'page_top',
-	// 		'description'   => '固定ページのコンテンツ上部に表示されます。',
-	// 		'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
-	// 		'after_widget'  => '</div>',
-	// 		'before_title'  => '<h2 class="c-secTitle -widget"><span>',
-	// 		'after_title'   => '</span></h2>',
-	// 	)
-	// );
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => '固定ページ下部',
-	// 		'id'            => 'page_bottom',
-	// 		'description'   => '固定ページのコンテンツ下部に表示されます。',
-	// 		'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
-	// 		'after_widget'  => '</div>',
-	// 		'before_title'  => '<h2 class="c-secTitle -widget"><span>',
-	// 		'after_title'   => '</span></h2>',
-	// 	)
-	// );
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => '記事上部',
-	// 		'id'            => 'single_top',
-	// 		'description'   => '投稿ページのコンテンツ上部に表示されます。',
-	// 		'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
-	// 		'after_widget'  => '</div>',
-	// 		'before_title'  => '<h2 class="c-secTitle -widget">',
-	// 		'after_title'   => '</h2>',
-	// 	)
-	// );
-	// register_sidebar(
-	// 	array(
-	// 		'name'          => '記事下部',
-	// 		'id'            => 'single_bottom',
-	// 		'description'   => '投稿ページのコンテンツ下部に表示されます。',
-	// 		'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
-	// 		'after_widget'  => '</div>',
-	// 		'before_title'  => '<h2 class="c-secTitle -widget">',
-	// 		'after_title'   => '</h2>',
-	// 	)
-	// );
 }
 endif;
