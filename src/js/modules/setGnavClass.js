@@ -52,7 +52,7 @@ export default function() {
 	//Sets or removes the .focus class on an element.
 	function toggleFocus() {
 		let self = this;
-		console.log(self);
+		// console.log(self);
 
 		// Move up through the ancestors of the current link until we hit .primary-menu.
 		while (!self.classList.contains('c-gnav')) {

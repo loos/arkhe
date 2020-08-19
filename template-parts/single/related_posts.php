@@ -2,7 +2,7 @@
 /**
  * 関連記事
  */
-$the_post_id = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_post_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 $SETTING = ARKHE_THEME::get_setting();
 

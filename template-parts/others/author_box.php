@@ -1,9 +1,9 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 著者情報を出力する
- *   $parts_args['author_id'] : 著者ID
+ *   $args['author_id'] : 著者ID
  */
-$author_id = isset( $parts_args['author_id'] ) ? $parts_args['author_id'] : 0;
+$author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
 
 
 // 著者データを取得

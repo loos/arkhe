@@ -1,14 +1,13 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+<?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * ヘッダーロゴの出力テンプレート
- *   $parts_args['label'] : ボタンしたのラベル
- *   $parts_args['show_pc'] : PCでもボタンを表示するかどうか
+ *   $args['label'] : ボタンしたのラベル
+ *   $args['show_pc'] : PCでもボタンを表示するかどうか
  */
-$show_phrase    = isset( $parts_args['show_phrase'] ) ? $parts_args['show_phrase'] : false;
-$show_phrase_sp = isset( $parts_args['show_phrase_sp'] ) ? $parts_args['show_phrase_sp'] : false;
-$logo_size_pc   = isset( $parts_args['logo_size_pc'] ) ? $parts_args['logo_size_pc'] : '';
-$logo_size_sp   = isset( $parts_args['logo_size_sp'] ) ? $parts_args['logo_size_sp'] : '';
+$show_phrase    = isset( $args['show_phrase'] ) ? $args['show_phrase'] : false;
+$show_phrase_sp = isset( $args['show_phrase_sp'] ) ? $args['show_phrase_sp'] : false;
+$logo_size_pc   = isset( $args['logo_size_pc'] ) ? $args['logo_size_pc'] : '';
+$logo_size_sp   = isset( $args['logo_size_sp'] ) ? $args['logo_size_sp'] : '';
 
 // 追加スタイル
 $style = '';

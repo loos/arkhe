@@ -13,10 +13,10 @@ class Partial {
 	/**
 	 * ヘッダーロゴ
 	 */
-	public static function head_logo() {
-		$logo = \ARKHE_THEME::head_logo();
-		return $logo;
-	}
+	// public static function head_logo() {
+	// 	$logo = \ARKHE_THEME::head_logo();
+	// 	return $logo;
+	// }
 
 	/**
 	 * パンくず

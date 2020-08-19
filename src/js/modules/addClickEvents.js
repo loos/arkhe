@@ -14,12 +14,13 @@ export const clickEvents = {
 		}
 	},
 	toggleMenu: function(e) {
-		// if ('A' === e.target.tagName) return;
-
 		e.preventDefault();
 
 		const spMenu = DOM.spMenu;
 		if (null === spMenu) return false;
+
+		// マウスクリックで発火したイベントかどうか
+		const isMouseClicked = 0 !== e.screenX && 0 !== e.screenY;
 
 		// クリックされたドロワーメニューのトグルボタンをセット
 		const theToggleBtn = e.currentTarget;
@@ -37,8 +38,8 @@ export const clickEvents = {
 			// クローズ処理
 			document.documentElement.setAttribute('data-drawer', 'closed');
 
-			// ボタンにフォーカス戻す
-			if (DOM.lastFocusedElem) {
+			// キー操作でクローズした場合、元のボタンにフォーカスを戻す
+			if (!isMouseClicked && DOM.lastFocusedElem) {
 				DOM.lastFocusedElem.focus();
 				DOM.lastFocusedElem = null;
 				setState.modalOpen(false);
@@ -50,6 +51,9 @@ export const clickEvents = {
 
 		const searchModal = DOM.searchModal;
 		if (null === searchModal) return false;
+
+		// マウスクリックで発火したイベントかどうか
+		const isMouseClicked = 0 !== e.screenX && 0 !== e.screenY;
 
 		// クリックされた検索トグルボタンをセット
 		const theToggleBtn = e.currentTarget;
@@ -71,8 +75,8 @@ export const clickEvents = {
 			// クローズ処理
 			searchModal.classList.remove('is-open');
 
-			// ボタンにフォーカス戻す
-			if (DOM.lastFocusedElem) {
+			// キー操作でクローズした場合、元のボタンにフォーカスを戻す
+			if (!isMouseClicked && DOM.lastFocusedElem) {
 				DOM.lastFocusedElem.focus();
 				DOM.lastFocusedElem = null;
 				setState.modalOpen(false);

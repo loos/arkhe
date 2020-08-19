@@ -3,7 +3,7 @@
  * 固定ページヘッド部分 (コンテンツ上)
  * ※ ここはループ外なことに注意。
  */
-$the_id    = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
 $excerpt   = $post_data->post_excerpt;
 ?>

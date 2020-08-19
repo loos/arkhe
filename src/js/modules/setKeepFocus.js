@@ -27,7 +27,6 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 
 	// Add keydown event
 	modal.addEventListener('keydown', function(e) {
-		// console.log('now Modal elem!');
 		if (!isModalOpen) return;
 
 		// 現在アクティブなトグルボタンを取得
@@ -78,7 +77,6 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 
 	toggleBtns.forEach(function(btn) {
 		btn.addEventListener('keydown', function(e) {
-			// console.log('now Btn!');
 			if (!isModalOpen) return;
 
 			if (9 === e.keyCode) {

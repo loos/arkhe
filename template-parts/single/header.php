@@ -1,11 +1,11 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのタイトル部分
- * $parts_args['post_id'] : 投稿IDが渡ってくる
+ * $args['post_id'] : 投稿IDが渡ってくる
  */
 $SETTING = ARKHE_THEME::get_setting();
 
-$the_id    = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
 $date      = new DateTime( $post_data->post_date );
 $modified  = new DateTime( $post_data->post_modified );

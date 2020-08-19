@@ -1,12 +1,12 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのフッター部分
- * $parts_args['post_id'] : 投稿IDが渡ってくる
+ * $args['post_id'] : 投稿IDが渡ってくる
  */
 $SETTING = ARKHE_THEME::get_setting();
 
 // 投稿情報
-$the_id    = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
 
 // シェアボタンを表示するかどうか

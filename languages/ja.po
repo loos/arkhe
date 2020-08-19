@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-08-18 20:55+0900\n"
-"PO-Revision-Date: 2020-08-18 20:55+0900\n"
+"POT-Creation-Date: 2020-08-19 12:29+0900\n"
+"PO-Revision-Date: 2020-08-19 12:30+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -165,65 +165,73 @@ msgstr "ヘッダー"
 msgid "Header logo settings"
 msgstr "ヘッダーロゴ設定"
 
-#: inc/customizer/header.php:33
-msgid "Logo image"
-msgstr "ロゴ画像"
+#: inc/customizer/header.php:25
+msgid "You can set the image to use from the \"Site Identity\" menu."
+msgstr "使用する画像は「サイト基本情報」メニューから設定できます。"
 
-#: inc/customizer/header.php:49 inc/customizer/header.php:66
+#: inc/customizer/header.php:35 inc/customizer/header.php:52
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: inc/customizer/header.php:83
+#: inc/customizer/header.php:69
 msgid "Layout setting"
 msgstr "レイアアウト設定"
 
-#: inc/customizer/header.php:92
+#: inc/customizer/header.php:78
 msgid "Show search btn on SP"
 msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:102
+#: inc/customizer/header.php:88
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:112
+#: inc/customizer/header.php:98
 msgid "Show drawer menu on PC"
 msgstr "ドロワーメニューをPCでも表示する"
 
-#: inc/customizer/header.php:122
+#: inc/customizer/header.php:108
 msgid "Move global navigation down"
 msgstr "グローバルナビを下側に移動する"
 
-#: inc/customizer/header.php:134
+#: inc/customizer/header.php:120
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:143 inc/customizer/header.php:153
+#: inc/customizer/header.php:129 inc/customizer/header.php:139
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
 
-#: inc/customizer/header.php:163
+#: inc/customizer/header.php:149
 msgid "Fixed global navigation at top of screen"
 msgstr "グローバルナビを画面上部に固定する"
 
-#: inc/customizer/header.php:164
+#: inc/customizer/header.php:150
 msgid "Only valid when below the header."
 msgstr "ヘッダーの下にある時のみ有効です。"
 
-#: inc/customizer/header.php:175
+#: inc/customizer/header.php:161
 msgid "Overlay settings"
 msgstr "オーバーレイ設定"
 
-#: inc/customizer/header.php:197
+#: inc/customizer/header.php:183
 msgid "Enable on Pages"
 msgstr "固定ページでも有効化する"
 
-#: inc/customizer/header.php:208
+#: inc/customizer/header.php:194
 msgid "Logo image when overlaying"
 msgstr "オーバーレイ時のロゴ画像"
 
 #: inc/customizer/page.php:13
 msgid "Pages"
 msgstr "固定ページ"
+
+#: inc/customizer/page.php:23
+msgid "Title settings"
+msgstr "タイトル設定"
+
+#: inc/customizer/page.php:31
+msgid "Position of title"
+msgstr "タイトルの表示位置"
 
 #: inc/customizer/page.php:34
 msgid "Top of content"
@@ -232,6 +240,47 @@ msgstr "コンテンツ上部"
 #: inc/customizer/page.php:35
 msgid "Inside the content"
 msgstr "コンテンツ内部"
+
+#: inc/customizer/page.php:45
+msgid "Title background settings"
+msgstr "タイトル背景の設定"
+
+#: inc/customizer/page.php:53
+msgid "Image filtering"
+msgstr "画像フィルター"
+
+#: inc/customizer/page.php:56
+msgid "None"
+msgstr "なし"
+
+#: inc/customizer/page.php:57
+msgid "Dot"
+msgstr "ドット"
+
+#: inc/customizer/page.php:66
+msgid "Color overlay"
+msgstr "カラーオーバーレイ"
+
+#: inc/customizer/page.php:67
+msgid "Color"
+msgstr "色"
+
+#: inc/customizer/page.php:77
+msgid "Opacity"
+msgstr "不透明度"
+
+#: inc/customizer/page.php:93
+msgid "Featured image"
+msgstr "アイキャッチ画像"
+
+#: inc/customizer/page.php:101 inc/customizer/single.php:62
+msgid "Show featured image"
+msgstr "アイキャッチ画像を表示する"
+
+#: inc/customizer/page.php:102
+msgid ""
+"It is valid only when the position of the title is \"Inside the content\"."
+msgstr "タイトルの表示位置が「コンテンツ内部」の時のみ有効です。"
 
 #: inc/customizer/post_list.php:13
 msgid "Post List"
@@ -337,10 +386,6 @@ msgstr "タイトル下の情報"
 msgid "Show tags"
 msgstr "タグを表示する"
 
-#: inc/customizer/single.php:62
-msgid "Show featured image"
-msgstr "アイキャッチ画像を表示する"
-
 #: inc/customizer/single.php:72
 msgid "Link to previous/next article"
 msgstr "前の記事・次の記事へのリンク"
@@ -411,11 +456,7 @@ msgstr "検索ワード"
 msgid "Search button"
 msgstr "検索ボタン"
 
-#: searchform.php:12
-msgid "Close seartch modal"
-msgstr ""
-
-#: searchform.php:12
+#: searchform.php:13
 msgid "CLOSE"
 msgstr "閉じる"
 
@@ -471,12 +512,18 @@ msgstr ""
 "ズしてください。"
 
 #. Author of the plugin/theme
-msgid "LOOS WEB STUDIO"
+msgid "LOOS,Inc."
 msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://loos-web-studio.com/"
 msgstr ""
+
+#~ msgid "Logo image"
+#~ msgstr "ロゴ画像"
+
+#~ msgid "Featured image settings"
+#~ msgstr "アイキャッチ画像の設定"
 
 #, fuzzy
 #~| msgid "Search button"

@@ -11,7 +11,7 @@ $logo_pos           = $move_gnav_under ? 'center' : '';
 ?>
 <header id="header" class="l-header" <?php \ARKHE_THEME::header_attr( array( 'logo_pos' => $logo_pos ) ); ?>>
 	<div class="l-header__body l-container">
-<?php \ARKHE_THEME::get_parts( 'header/menu_btn', array( 'show_pc' => $show_drower_pc ) ); ?>
+		<?php \ARKHE_THEME::get_parts( 'header/menu_btn', array( 'show_pc' => $show_drower_pc ) ); ?>
 		<div class="l-header__left u-only-pc"></div>
 		<?php \ARKHE_THEME::get_parts( 'header/logo' ); ?>
 		<!-- <div class="l-header__main"></div> -->

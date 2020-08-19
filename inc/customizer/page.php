@@ -15,12 +15,12 @@ $wp_customize->add_section(
 	)
 );
 
-// タイトルエリア設定
+// タイトル設定
 Customizer::big_title(
 	$section,
 	'page_title',
 	array(
-		'label' => 'タイトルエリア設定',
+		'label' => __( 'Title settings', 'arkhe' ),
 	)
 );
 
@@ -28,12 +28,21 @@ Customizer::add(
 	$section,
 	'page_title_pos',
 	array(
-		'label'       => 'タイトルの表示位置',
+		'label'       => __( 'Position of title', 'arkhe' ),
 		'type'        => 'radio',
 		'choices'     => array(
-			'top'   => __( 'Top of content', 'arkhe' ), // コンテンツ上部
-			'inner' => __( 'Inside the content', 'arkhe' ), // コンテンツ内部
+			'top'   => __( 'Top of content', 'arkhe' ),
+			'inner' => __( 'Inside the content', 'arkhe' ),
 		),
+	)
+);
+
+// タイトル設定
+Customizer::big_title(
+	$section,
+	'page_title_bg',
+	array(
+		'label' => __( 'Title background settings', 'arkhe' ),
 	)
 );
 
@@ -41,12 +50,11 @@ Customizer::add(
 	$section,
 	'title_bg_filter',
 	array(
-		'label'       => '画像フィルター',
-		'description' => 'タイトル表示位置が「コンテンツ上」の時の背景画像へのフィルター処理',
+		'label'       => __( 'Image filtering', 'arkhe' ),
 		'type'        => 'select',
 		'choices'     => array(
-			'none' => 'なし',
-			'dot'  => 'ドット',
+			'none' => __( 'None', 'arkhe' ),
+			'dot'  => __( 'Dot', 'arkhe' ),
 		),
 	)
 );
@@ -55,8 +63,8 @@ Customizer::add(
 	$section,
 	'ttlbg_overlay_color',
 	array(
-		'label'       => 'カラーオーバーレイの設定',
-		'description' => 'タイトル背景画像に被せるカラーレイヤーの色',
+		'label'       => __( 'Color overlay', 'arkhe' ),
+		'description' => __( 'Color', 'arkhe' ),
 		'type'        => 'color',
 	)
 );
@@ -65,8 +73,8 @@ Customizer::add(
 	$section,
 	'ttlbg_overlay_opacity',
 	array(
-		// 'label'       => 'オーバレイカラーの不透明度',
-		'description' => 'オーバレイカラーの不透明度<br>（CSSの opacity プロパティの値）',
+		// 'label'       => '不透明度',
+		'description' => __( 'Opacity', 'arkhe' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step' => '0.1',
@@ -82,7 +90,7 @@ Customizer::big_title(
 	$section,
 	'page_thumb',
 	array(
-		'label' => 'アイキャッチ画像の設定',
+		'label' => __( 'Featured image', 'arkhe' ),
 	)
 );
 
@@ -90,8 +98,8 @@ Customizer::add(
 	$section,
 	'show_page_thumb',
 	array(
-		'label'       => '本文の始めにアイキャッチ画像を表示',
-		'description' => '※ タイトルの表示位置が「コンテンツ内」の時のみ有効です。',
+		'label'       => __( 'Show featured image', 'arkhe' ),
+		'description' => ARKHE_NOTE . __( 'It is valid only when the position of the title is "Inside the content".', 'arkhe' ),
 		'type'        => 'checkbox',
 	)
 );

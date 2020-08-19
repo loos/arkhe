@@ -123,11 +123,11 @@
     font-weight: normal;
     text-decoration: none;
 
-    &[data-logo-type="img"] {
+    &[data-logo="img"] {
         height: 100%;
     }
 
-    &[data-logo-type="txt"] {
+    &[data-logo="txt"] {
 
         font-size: 5vw;
 

@@ -34,9 +34,9 @@ class ARKHE_THEME {
 	/**
 	 * テンプレート読み込み
 	 *   $path : 読み込むファイルのパス
-	 *   $parts_args : 引数として利用できるようにする変数
+	 *   $args : 引数として利用できるようにする変数
 	 */
-	public static function get_parts( $path = '', $parts_args = null ) {
+	public static function get_parts( $path = '', $args = null ) {
 
 		if ( '' === $path ) return '';
 
@@ -59,7 +59,7 @@ class ARKHE_THEME {
 			include $include_path;
 
 			// @codingStandardsIgnoreStart
-			echo apply_filters( $filter_name, ob_get_clean(), $parts_args );
+			echo apply_filters( $filter_name, ob_get_clean(), $args );
 			// @codingStandardsIgnoreEnd
 		} else {
 

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Recent_Posts extends \wp_widget_recent_posts {
 
 	// 既存の widget メソッドを上書き
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 
 		$title = apply_filters(
 			'widget_title',
@@ -23,23 +23,24 @@ class Recent_Posts extends \wp_widget_recent_posts {
 		if ( empty( $instance['number'] ) || ! $number ) {
 			$number = 10;
 		}
-		$q = new \WP_Query(
-			apply_filters(
-				'widget_posts_args',
-				array(
-					'posts_per_page'      => $number,
-					'no_found_rows'       => true,
-					'post_status'         => 'publish',
-					'ignore_sticky_posts' => true,
-				)
-			)
+
+		$q_args = array(
+			'posts_per_page'      => $number,
+			'no_found_rows'       => true,
+			'post_status'         => 'publish',
+			'ignore_sticky_posts' => true,
 		);
+
+		// new Query
+		$q = new \WP_Query( apply_filters( 'widget_posts_args', $q_args ) );
+
+		$return = '';
 		if ( $q->have_posts() ) :
-			echo $args['before_widget'];
+			$return .= $args['before_widget'];
 			if ( $title ) {
-				echo $args['before_title'], $title, $args['after_title'];
+				$return .= $args['before_title'] . $title . $args['after_title'];
 			}
-			echo '<ul>';
+			$return .= '<ul>';
 			while ( $q->have_posts() ) :
 				$q->the_post(); ?>
 				<li><a href="<?php the_permalink(); ?>">
@@ -50,9 +51,11 @@ class Recent_Posts extends \wp_widget_recent_posts {
 				</a></li>
 				<?php
 			endwhile;
-			echo '</ul>';
-			echo $args['after_widget'];
+			$return .= '</ul>';
+			$return .= $args['after_widget'];
 			wp_reset_postdata();
 		endif;
+
+		echo wp_kses_post( $return );
 	}
 }

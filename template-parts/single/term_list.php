@@ -2,12 +2,12 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのタイトル部分
- * $parts_args['post_id'] : 投稿IDが渡ってくる
- * $parts_args['post_title'] : 投稿タイトルが渡ってくる
+ * $args['post_id'] : 投稿IDが渡ってくる
+ * $args['post_title'] : 投稿タイトルが渡ってくる
  */
-$the_id   = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
-$show_cat = isset( $parts_args['show_cat'] ) ? $parts_args['show_cat'] : true;
-$show_tag = isset( $parts_args['show_tag'] ) ? $parts_args['show_tag'] : false;
+$the_id   = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+$show_cat = isset( $args['show_cat'] ) ? $args['show_cat'] : true;
+$show_tag = isset( $args['show_tag'] ) ? $args['show_tag'] : false;
 
 // カテゴリー・タグを取得
 $cat_list = $show_cat ? \ARKHE_THEME::get_the_term_links( $the_id, 'cat' ) : '';

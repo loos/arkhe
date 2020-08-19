@@ -2,10 +2,10 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのタイトル部分
- * $parts_args['post_id'] : 投稿IDが渡ってくる
- * $parts_args['post_title'] : 投稿タイトルが渡ってくる
+ * $args['post_id'] : 投稿IDが渡ってくる
+ * $args['post_title'] : 投稿タイトルが渡ってくる
  */
-$the_id = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // アイキャッチ画像のソースを取得
 $thumb_m_url = get_the_post_thumbnail_url( $the_id, 'medium' );

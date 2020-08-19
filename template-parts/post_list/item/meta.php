@@ -3,30 +3,30 @@
  * 投稿リストに表示されるメタデータ
  *
   * 渡されるプロパティ
- *   $parts_args['post_id'] : 投稿ID
- *   $parts_args['author_id'] : 著者ID
- *   $parts_args['date'] : 公開日
- *   $parts_args['modified'] : 更新日
+ *   $args['post_id'] : 投稿ID
+ *   $args['author_id'] : 著者ID
+ *   $args['date'] : 公開日
+ *   $args['modified'] : 更新日
  *
  * 渡される可能性のあるプロパティ
- *   $parts_args['show_cat'] : カテゴリーを表示するかどうか
- *   $parts_args['show_date'] : 公開日を表示するかどうか
- *   $parts_args['show_modified'] : 更新日を表示するかどうか
- *   $parts_args['show_author'] : 著者を表示するかどうか
+ *   $args['show_cat'] : カテゴリーを表示するかどうか
+ *   $args['show_date'] : 公開日を表示するかどうか
+ *   $args['show_modified'] : 更新日を表示するかどうか
+ *   $args['show_author'] : 著者を表示するかどうか
  */
 $SETTING = \ARKHE_THEME::get_setting();
 
 // 投稿データ
-$the_id    = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
-$author_id = isset( $parts_args['author_id'] ) ? $parts_args['author_id'] : 0;
-$date      = isset( $parts_args['date'] ) ? $parts_args['date'] : null;
-$modified  = isset( $parts_args['modified'] ) ? $parts_args['modified'] : null;
+$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+$author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
+$date      = isset( $args['date'] ) ? $args['date'] : null;
+$modified  = isset( $args['modified'] ) ? $args['modified'] : null;
 
 // リスト用の設定データ
-$show_cat      = isset( $parts_args['show_cat'] ) ? $parts_args['show_cat'] : $SETTING['show_list_cat'];
-$show_date     = isset( $parts_args['show_date'] ) ? $parts_args['show_date'] : $SETTING['show_list_date'];
-$show_modified = isset( $parts_args['show_modified'] ) ? $parts_args['show_modified'] : $SETTING['show_list_mod'];
-$show_author   = isset( $parts_args['show_author'] ) ? $parts_args['show_author'] : $SETTING['show_list_author'];
+$show_cat      = isset( $args['show_cat'] ) ? $args['show_cat'] : $SETTING['show_list_cat'];
+$show_date     = isset( $args['show_date'] ) ? $args['show_date'] : $SETTING['show_list_date'];
+$show_modified = isset( $args['show_modified'] ) ? $args['show_modified'] : $SETTING['show_list_mod'];
+$show_author   = isset( $args['show_author'] ) ? $args['show_author'] : $SETTING['show_list_author'];
 
 // 更新日は、公開日より遅い場合だけ表示
 if ( $show_modified && $show_date ) {

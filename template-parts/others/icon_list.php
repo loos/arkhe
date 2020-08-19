@@ -2,16 +2,16 @@
 /**
  * SNSなどのアイコンリストを出力する
  *
- * @param $parts_args
- *   $parts_args['list_data'] : アイコンリストのデータ。 key => href がアイコンごとに入っている。
- *   $parts_args['class'] : 追加クラス名
+ * @param $args
+ *   $args['list_data'] : アイコンリストのデータ。 key => href がアイコンごとに入っている。
+ *   $args['class'] : 追加クラス名
  */
 
-if ( null === $parts_args ) return;
+if ( null === $args ) return;
 
 // 引数から受け取る情報
-$list_data = isset( $parts_args['list_data'] ) ? $parts_args['list_data'] : array();
-$class     = isset( $parts_args['class'] ) ? $parts_args['class'] : '';
+$list_data = isset( $args['list_data'] ) ? $args['list_data'] : array();
+$class     = isset( $args['class'] ) ? $args['class'] : '';
 
 ?>
 <ul class="c-iconList <?php echo esc_attr( $class ); ?>">

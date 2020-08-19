@@ -18,7 +18,7 @@ add_action( 'wp_list_categories', 'arkhe_hook__wp_list_categories' );
 add_action( 'wp_list_pages', 'arkhe_hook__wp_list_pages' );
 add_action( 'get_archives_link', 'arkhe_hook__get_archives_link', 10, 6 );
 add_action( 'wp_terms_checklist_args', 'arkhe_hook__wp_terms_checklist_args', 10, 2 );
-
+// add_filter( 'theme_mod_custom_logo', 'arkhe_hook__custom_logo' );
 
 /**
  * 抜粋文字数を変更する
@@ -136,3 +136,16 @@ function arkhe_hook__navigation_markup_template( $template, $class ) {
 	return $template;
 }
 endif;
+
+
+/**
+ * 子テーマでの設定が空の時、親テーマの設定を取得する
+ */
+// if ( ! function_exists( 'arkhe_hook__custom_logo' ) ) :
+// function arkhe_hook__custom_logo( $val ) {
+// 	if ( is_child_theme() && empty( $val ) ) {
+// 		$arkhe_mods = get_option( 'theme_mods_arkhe' );
+// 		return $arkhe_mods['custom_logo'];
+// 	}
+// }
+// endif;

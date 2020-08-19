@@ -1,11 +1,11 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * ハンバーガーメニューの出力テンプレート
- *   $parts_args['label'] : ボタンしたのラベル
- *   $parts_args['show_pc'] : PCでもボタンを表示するかどうか
+ *   $args['label'] : ボタンしたのラベル
+ *   $args['show_pc'] : PCでもボタンを表示するかどうか
  */
-$label   = isset( $parts_args['label'] ) ? $parts_args['label'] : '';
-$show_pc = isset( $parts_args['show_pc'] ) ? $parts_args['show_pc'] : false;
+$label   = isset( $args['label'] ) ? $args['label'] : '';
+$show_pc = isset( $args['show_pc'] ) ? $args['show_pc'] : false;
 
 ?>
 <div class="l-header__menuBtn<?php if ( ! $show_pc ) echo ' u-only-sp'; ?>">

@@ -21,25 +21,11 @@ Customizer::big_title(
 	$section,
 	'header_logo',
 	array(
-		'label' => __( 'Header logo settings', 'arkhe' ),
+		'label'       => __( 'Header logo settings', 'arkhe' ),
+		'description' => __( 'You can set the image to use from the "Site Identity" menu.', 'arkhe' ),
 	)
 );
 
-// ロゴ画像
-Customizer::add(
-	$section,
-	'head_logo',
-	array(
-		'label'       => __( 'Logo image', 'arkhe' ),
-		// 'description' => 'ロゴ画像を設定してください。',
-		'type'        => 'image',
-		'partial'     => array(
-			'selector'            => '.l-header__logo',
-			'container_inclusive' => false, // 中身だけ書き換える
-			'render_callback'     => array( '\ARKHE_THEME\Customizer\Partial', 'head_logo' ),
-		),
-	)
-);
 
 // 画像サイズ（PC）
 Customizer::add(
@@ -206,6 +192,7 @@ Customizer::add(
 	array(
 		'classname'   => '-header-overlay',
 		'label'       => __( 'Logo image when overlaying', 'arkhe' ),
-		'type'        => 'image',
+		'type'        => 'media',
+		'mime_type'   => 'image',
 	)
 );

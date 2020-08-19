@@ -27,7 +27,7 @@ function arkhe_hook__wp_enqueue_scripts() {
 	wp_add_inline_style( 'arkhe_main_style', Style::output( 'front' ) );
 
 	// JS
-	wp_enqueue_script( 'arkhe_lazysizes', ARKHE_TMP_DIR_URI . '/assets/js/lazysizes.js', array(), ARKHE_VERSION, true );
+	wp_enqueue_script( 'arkhe_lazysizes', ARKHE_TMP_DIR_URI . '/dist/js/plugins/lazysizes.min.js', array(), ARKHE_VERSION, true );
 	wp_enqueue_script( 'arkhe_main_script', ARKHE_TMP_DIR_URI . '/dist/js/main.js', array(), ARKHE_VERSION, true );
 
 	// フロント側に渡すグローバル変数

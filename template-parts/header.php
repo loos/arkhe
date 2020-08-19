@@ -3,10 +3,11 @@
  * ヘッダー用テンプレート
  *   ブロックで生成されている場合はそちらを優先する
  */
+$header_id = 0;
 if ( defined( 'ARKHE_TMPID_KEY' ) ) {
 
 	$template_id_data = get_option( ARKHE_TMPID_KEY );
-	if ( $template_id_data ) {
+	if ( isset( $template_id_data['header'] ) ) {
 		$header_id = $template_id_data['header'] ?: 0;
 	}
 }

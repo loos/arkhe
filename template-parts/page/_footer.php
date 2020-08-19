@@ -2,7 +2,7 @@
 /**
  * 固定ページ下部
  */
-$the_id = isset( $parts_args['post_id'] ) ? $parts_args['post_id'] : get_the_ID();
+$the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // ページ下部ウィジェット
 // if ( is_active_sidebar( 'page_bottom' ) ) :

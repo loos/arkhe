@@ -1,11 +1,11 @@
 <?php if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿一覧リストの出力テンプレート（サブループ用）
- *   $parts_args['query_args'] : WP_Queryに渡す引数
- *   $parts_args['list_args'] : リストの表示に関する設定値（メインループでは 'type' しか渡されてこない）
+ *   $args['query_args'] : WP_Queryに渡す引数
+ *   $args['list_args'] : リストの表示に関する設定値（メインループでは 'type' しか渡されてこない）
  */
-$query_args = isset( $parts_args['query_args'] ) ? $parts_args['query_args'] : null;
-$list_args  = isset( $parts_args['list_args'] ) ? $parts_args['list_args'] : array();
+$query_args = isset( $args['query_args'] ) ? $args['query_args'] : null;
+$list_args  = isset( $args['list_args'] ) ? $args['list_args'] : array();
 
 // データが配列じゃなければ return
 if ( ! is_array( $query_args ) ) return;

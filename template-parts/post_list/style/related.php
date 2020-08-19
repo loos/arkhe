@@ -2,7 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 関連記事リストの出力テンプレート（サブループ内）
- *   $parts_args['count'] : 現在のループカウント数 (フック用に用意)
+ *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
 $post_data = get_post();
 $the_id    = $post_data->ID;

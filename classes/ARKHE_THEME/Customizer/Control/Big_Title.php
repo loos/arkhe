@@ -13,10 +13,10 @@ class Big_Title extends \WP_Customize_Control {
 	// 出力するコンテンツ
 	public function render_content() {
 		if ( isset( $this->label ) ) {
-			echo '<div class="customize-control-title -big">' . $this->label . '</div>';
+			echo '<div class="customize-control-title -big">' . esc_html( $this->label ) . '</div>';
 		}
 		if ( isset( $this->description ) ) {
-			echo '<span class="description customize-control-description">' . $this->description . '</span>';
+			echo '<span class="description customize-control-description">' . wp_kses_post( $this->description ) . '</span>';
 		}
 	}
 
