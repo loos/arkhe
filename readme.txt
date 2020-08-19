@@ -1,7 +1,7 @@
 === Arkhe ===
 Contributors: looswebstudio
 Tested up to: 5.5
-Stable tag: 0.0.5.1
+Stable tag: 0.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
