@@ -10,5 +10,5 @@
 </form>
 
 <button type="button" class="c-closeBtn--search" data-onclick="toggleSearch">
-	<i class="arkhe-icon-close"></i><?php esc_attr_e( 'CLOSE', 'arkhe' ); ?>
+	<i class="arkhe-icon-close"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
 </button>
