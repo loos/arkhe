@@ -9,18 +9,14 @@ add_action( 'tiny_mce_before_init', 'arkhe_hook__tiny_mce_before_init' );
 /**
  * TinyMCEのエディタ内CSS
  */
-if ( ! function_exists( 'arkhe_hook__add_editor_style' ) ) :
 function arkhe_hook__add_editor_style() {
 	$editor_style_path = array( ARKHE_TMP_DIR_URI . '/dist/css/editor.css?v=' . ARKHE_VERSION );
 	add_editor_style( $editor_style_path );
 }
-endif;
-
 
 /**
  * TinyMCE設定
  */
-if ( ! function_exists( 'arkhe_hook__tiny_mce_before_init' ) ) :
 function arkhe_hook__tiny_mce_before_init( $mceInit ) {
 
 	// 見出し4まで
@@ -47,6 +43,4 @@ function arkhe_hook__tiny_mce_before_init( $mceInit ) {
 	$mceInit = TinyMce::set_content_style( $mceInit );
 
 	return $mceInit;
-
 }
-endif;

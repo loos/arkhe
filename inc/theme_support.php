@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 add_action( 'after_setup_theme', 'arkhe_hook__setup_theme' );
 
-if ( ! function_exists( 'arkhe_hook__setup_theme' ) ) :
 function arkhe_hook__setup_theme() {
 	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \ARKHE_THEME::get_setting( 'container_size' ) );
 
@@ -83,4 +82,3 @@ function arkhe_hook__setup_theme() {
 	// 16:9で保つ...？
 	// add_theme_support( 'responsive-embeds' );
 }
-endif;

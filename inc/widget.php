@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 add_action( 'widgets_init', 'arkhe_hook__widgets_init' );
 
-if ( ! function_exists( 'arkhe_hook__widgets_init' ) ) :
 function arkhe_hook__widgets_init() {
 
 	// 標準の「最新の投稿」ウィジェットを削除して上書き
@@ -37,4 +36,3 @@ function arkhe_hook__widgets_init() {
 		)
 	);
 }
-endif;

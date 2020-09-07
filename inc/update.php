@@ -6,8 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 add_action( 'after_setup_theme', 'arkhe_hook__update_check' );
 
-if ( ! function_exists( 'arkhe_hook__update_check' ) ) :
 function arkhe_hook__update_check() {
 	\ARKHE_THEME\Update::version_check();
 }
-endif;

@@ -13,7 +13,6 @@ add_action( 'enqueue_block_editor_assets', 'arkhe_hook__enqueue_block_editor_ass
 /**
  * フロントで読み込むファイル
  */
-if ( ! function_exists( 'arkhe_hook__wp_enqueue_scripts' ) ) :
 function arkhe_hook__wp_enqueue_scripts() {
 	$SETTING = \ARKHE_THEME::get_setting();
 
@@ -38,13 +37,11 @@ function arkhe_hook__wp_enqueue_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-endif;
 
 /**
  * 管理画面で読み込むファイル
  */
 
-if ( ! function_exists( 'arkhe_hook__admin_enqueue_scripts' ) ) :
 function arkhe_hook__admin_enqueue_scripts( $hook_suffix ) {
 
 	$css_path = ARKHE_TMP_DIR_URI . '/dist/css';
@@ -67,12 +64,10 @@ function arkhe_hook__admin_enqueue_scripts( $hook_suffix ) {
 		// wp_enqueue_style( 'arkhe-editor', $css_path . '/editor.css', array(), ARKHE_VERSION );
 	// }
 }
-endif;
 
 /**
  * Gutenberg用ファイル
  */
-if ( ! function_exists( 'arkhe_hook__enqueue_block_editor_assets' ) ) :
 function arkhe_hook__enqueue_block_editor_assets( $hook_suffix ) {
 
 	// CSS
@@ -84,4 +79,3 @@ function arkhe_hook__enqueue_block_editor_assets( $hook_suffix ) {
 	// JS
 	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_TMP_DIR_URI . '/dist/js/block.js', [], ARKHE_VERSION, true);
 }
-endif;

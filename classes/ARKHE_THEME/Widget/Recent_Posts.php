@@ -41,6 +41,7 @@ class Recent_Posts extends \wp_widget_recent_posts {
 				$return .= $args['before_title'] . $title . $args['after_title'];
 			}
 			$return .= '<ul>';
+			ob_start();
 			while ( $q->have_posts() ) :
 				$q->the_post(); ?>
 				<li><a href="<?php the_permalink(); ?>">
@@ -51,6 +52,7 @@ class Recent_Posts extends \wp_widget_recent_posts {
 				</a></li>
 				<?php
 			endwhile;
+			$return .= ob_get_clean();
 			$return .= '</ul>';
 			$return .= $args['after_widget'];
 			wp_reset_postdata();

@@ -11,7 +11,6 @@ add_action( 'wp', 'arkhe_hook__define_page_template' );
 /**
  * カスタマイザーのデータを受け取ってから定義する定数たち。
  */
-if ( ! function_exists( 'arkhe_hook__define_theme_const' ) ) :
 function arkhe_hook__define_theme_const() {
 	$SETTING = \ARKHE_THEME::get_setting();
 
@@ -35,13 +34,10 @@ function arkhe_hook__define_theme_const() {
 		define( 'ARKHE_EXCERPT_LENGTH', (int) $SETTING['excerpt_length'] );
 	}
 }
-endif;
-
 
 /**
  * ページテンプレートを定数化する。 (wp_loaded ではまだ 取得できない)
  */
-if ( ! function_exists( 'arkhe_hook__define_page_template' ) ) :
 function arkhe_hook__define_page_template() {
 
 	// ページテンプレート名
@@ -49,4 +45,3 @@ function arkhe_hook__define_page_template() {
 	define( 'ARKHE_PAGE_TEMPLATE', $template_slug );
 
 }
-endif;

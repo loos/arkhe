@@ -11,8 +11,6 @@ add_filter( 'walker_nav_menu_start_el', 'arkhe_hook__walker_nav_menu_start_el', 
 /**
  * カスタムメニューのロケーション登録
  */
-
-if ( ! function_exists( 'arkhe_hook__register_nav_menus' ) ) :
 function arkhe_hook__register_nav_menus() {
 	register_nav_menus(
 		array(
@@ -22,13 +20,11 @@ function arkhe_hook__register_nav_menus() {
 		)
 	);
 }
-endif;
 
 /**
  * リストのHTMLを組み替える
  * 例：「説明」を追加（ナビゲーションの英語テキストに使用）
  */
-if ( ! function_exists( 'arkhe_hook__walker_nav_menu_start_el' ) ) :
 function arkhe_hook__walker_nav_menu_start_el( $item_output, $item, $depth, $args ) {
 
 	// 特定のメニューに対して処理
@@ -75,4 +71,3 @@ function arkhe_hook__walker_nav_menu_start_el( $item_output, $item, $depth, $arg
 
 	return $item_output;
 }
-endif;

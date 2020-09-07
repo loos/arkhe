@@ -12,7 +12,6 @@ add_action( 'customize_register', 'arkhe_hook__customize_register', 99 );
 /**
  * プレビュー画面でTab / Mobileのデバイス情報を取得できるようにする
  */
-if ( ! function_exists( 'arkhe_hook__customize_controls_init' ) ) :
 function arkhe_hook__customize_controls_init() {
 	global $wp_customize;
 	$previewed_device_name = null;
@@ -31,12 +30,10 @@ function arkhe_hook__customize_controls_init() {
 		);
 	}
 }
-endif;
 
 /**
  * カスタマイザー画面で読み込むファイル
  */
-if ( ! function_exists( 'arkhe_hook__customize_controls_enqueue_scripts' ) ) :
 function arkhe_hook__customize_controls_enqueue_scripts() {
 	// プレビュー画面の更新 & デバイス情報の受け渡し
 	$prev_handle = 'customizer-responsive-device-preview';
@@ -58,12 +55,10 @@ function arkhe_hook__customize_controls_enqueue_scripts() {
 		false
 	);
 }
-endif;
 
 /**
  * カスタマイザー 登録
  */
-if ( ! function_exists( 'arkhe_hook__customize_register' ) ) :
 function arkhe_hook__customize_register( $wp_customize ) {
 
 	// 全体設定
@@ -88,4 +83,3 @@ function arkhe_hook__customize_register( $wp_customize ) {
 	include_once ARKHE_TMP_DIR . '/inc/customizer/post_list.php';
 
 }
-endif;
