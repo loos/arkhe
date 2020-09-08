@@ -8,25 +8,18 @@ class Post_List extends \ARKHE_THEME\Style {
 		switch ( $thumb_ratio ) {
 			case 'golden':
 				return '61.8%';
-			break;
 			case 'silver':
 				return '70.72%';
-			break;
 			case 'slr':
 				return '66.66%';
-			break;
 			case 'wide':
 				return '56.25%';
-			break;
 			case 'wide2':
 				return '50%';
-			break;
 			case 'wide3':
 				return '40%';
-			break;
 			default: // 'square'
 				return '100%';
-			break;
 		}
 	}
 

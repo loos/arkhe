@@ -2,13 +2,23 @@
 use \ARKHE_THEME\Customizer;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$section = 'arkhe_section_post_list';
+$arkhe_section = 'arkhe_section_post_list';
+
+$arkhe_thumb_ratios = array(
+	'silver' => '1 : 1.414 (' . __( 'Silver ratio', 'arkhe' ) . ')',
+	'golden' => '1 : 1.618 (' . __( 'Golden ratio', 'arkhe' ) . ')',
+	'slr'    => '3 : 2',
+	'wide'   => '16 : 9',
+	'wide2'  => '2 : 1',
+	'wide3'  => '5 : 2',
+	'square' => '1 : 1',
+);
 
 /**
  * セクション : 投稿リスト
  */
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Post List', 'arkhe' ),
 		'priority' => 23,
@@ -18,7 +28,7 @@ $wp_customize->add_section(
 
 // リストのレイアウト設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'post_list_layout',
 	array(
 		'label'     => __( 'List layout', 'arkhe' ),
@@ -27,7 +37,7 @@ Customizer::big_title(
 
 // リストレイアウト
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'post_list_layout',
 	array(
 		// 'label'       => __( 'List layout', 'arkhe' ),
@@ -43,7 +53,7 @@ Customizer::add(
 
 // 投稿情報
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'post_list_design',
 	array(
 		'label'     => __( 'Post information', 'arkhe' ),
@@ -52,7 +62,7 @@ Customizer::big_title(
 
 // 公開日を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_list_date',
 	array(
 		'label'       => __( 'Show publication date', 'arkhe' ),
@@ -62,7 +72,7 @@ Customizer::add(
 
 // 更新日を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_list_mod',
 	array(
 		'label'       => __( 'Show update date', 'arkhe' ),
@@ -72,7 +82,7 @@ Customizer::add(
 
 // カテゴリーを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_list_cat',
 	array(
 		'label'       => __( 'Show categories', 'arkhe' ),
@@ -82,7 +92,7 @@ Customizer::add(
 
 // 著者を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_list_author',
 	array(
 		'label'       => __( 'Show author', 'arkhe' ),
@@ -92,7 +102,7 @@ Customizer::add(
 
 // 抜粋文の文字数
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'excerpt_length',
 	array(
 		'label'       => __( 'Number of characters in excerpt', 'arkhe' ),
@@ -109,41 +119,31 @@ Customizer::add(
 
 // サムネイル画像の比率
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'thumb_ratio',
 	array(
 		'label'     => __( 'Thumbnail image ratio', 'arkhe' ),
 	)
 );
 
-$thumb_ratios = array(
-	'silver' => '1 : 1.414 (' . __( 'Silver ratio', 'arkhe' ) . ')',
-	'golden' => '1 : 1.618 (' . __( 'Golden ratio', 'arkhe' ) . ')',
-	'slr'    => '3 : 2',
-	'wide'   => '16 : 9',
-	'wide2'  => '2 : 1',
-	'wide3'  => '5 : 2',
-	'square' => '1 : 1',
-);
-
 // カード型リストでの比率
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'card_posts_thumb_ratio',
 	array(
 		'label'       => __( 'Ratio in "card type"', 'arkhe' ),
 		'type'        => 'select',
-		'choices'     => $thumb_ratios,
+		'choices'     => $arkhe_thumb_ratios,
 	)
 );
 
 // リスト型リストでの比率
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'list_posts_thumb_ratio',
 	array(
 		'label'       => __( 'Ratio in "list type"', 'arkhe' ),
 		'type'        => 'select',
-		'choices'     => $thumb_ratios,
+		'choices'     => $arkhe_thumb_ratios,
 	)
 );

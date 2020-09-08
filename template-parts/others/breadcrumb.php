@@ -29,7 +29,9 @@ if ( is_attachment() ) {
 	/**
 	 * 添付ファイルページ ※ is_single()もtrueになるので先に分岐
 	 */
-	$post_title  = apply_filters( 'the_title', $wp_obj->post_title );
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+	$post_title = apply_filters( 'the_title', $wp_obj->post_title );
+
 	$list_data[] = array(
 		'url'  => '',
 		'name' => $post_title,
@@ -43,7 +45,9 @@ if ( is_attachment() ) {
 	 */
 	$the_id        = $wp_obj->ID;
 	$the_post_type = $wp_obj->post_type;
-	$post_title    = apply_filters( 'the_title', $wp_obj->post_title );
+
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+	$post_title = apply_filters( 'the_title', $wp_obj->post_title );
 
 	// カスタム投稿タイプかどうか
 	if ( 'post' !== $the_post_type ) {
@@ -147,7 +151,9 @@ if ( is_attachment() ) {
 	 * 固定ページ
 	 * $wp_obj : WP_Post
 	 */
-	$page_id    = $wp_obj->ID;
+	$page_id = $wp_obj->ID;
+
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 	$page_title = apply_filters( 'the_title', $wp_obj->post_title );
 
 	// 親ページがあれば順番に表示

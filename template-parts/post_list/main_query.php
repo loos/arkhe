@@ -32,5 +32,3 @@ if ( have_posts() ) : ?>
 	</div>
 <?php
 endif;
-
-wp_reset_postdata();

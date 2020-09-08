@@ -84,7 +84,7 @@ class Data {
 	 */
 	private static function get_theme_version() {
 		$theme_data          = wp_get_theme( 'arkhe' );
-		self::$arkhe_version = $theme_data->Version;
+		self::$arkhe_version = $theme_data->get( 'Version' );
 	}
 
 

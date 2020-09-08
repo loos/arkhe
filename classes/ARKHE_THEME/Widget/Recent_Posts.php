@@ -31,7 +31,7 @@ class Recent_Posts extends \wp_widget_recent_posts {
 			'ignore_sticky_posts' => true,
 		);
 
-		// new Query
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 		$q = new \WP_Query( apply_filters( 'widget_posts_args', $q_args ) );
 
 		$return = '';

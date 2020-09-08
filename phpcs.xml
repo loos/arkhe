@@ -96,7 +96,6 @@
 		<!-- クラスコメントが短くても許す -->
 		<exclude name="Generic.Commenting.DocComment.MissingShort" />
 
-
 		<!-- 変数の snake_case ルールを除外 ( $SETTING などに影響) -->
 		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
 		
@@ -110,9 +109,6 @@
 
 		<!-- 参考演算子を許可 -->
 		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
-
-		<!-- $post_id などの変数名にエラーをださない -->
-		<!-- <exclude name="WordPress.WP.GlobalVariablesOverride.OverrideProhibited" /> -->
 		
 		
 
@@ -176,19 +172,13 @@
 	<rule ref="PHPCompatibilityWP">
 
 		<!-- 無名関数を許可 -->
-		<exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" />
+		<!-- <exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" /> -->
 		
 		<!-- namespace を許可 -->
-		<exclude name="PHPCompatibility.Keywords.NewKeywords.t_namespaceFound" />
+		<!-- <exclude name="PHPCompatibility.Keywords.NewKeywords.t_namespaceFound" /> -->
 
 		<!-- / 始まりの関数を許可 -->
-		<exclude name="PHPCompatibility.LanguageConstructs.NewLanguageConstructs.t_ns_separatorFound" />
-
-		<!-- PHP省略タグを許可 -->
-		<!-- <exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" /> -->
-
-		<!--  -->
-		<!-- <exclude name="PHPCompatibility.Operators.NewOperators.t_coalesceFound" /> -->
+		<!-- <exclude name="PHPCompatibility.LanguageConstructs.NewLanguageConstructs.t_ns_separatorFound" /> -->
 
 	</rule>
 

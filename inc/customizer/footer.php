@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * セクション : フッター
  */
-$section = 'arkhe_section_footer';
+$arkhe_section = 'arkhe_section_footer';
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Footer', 'arkhe' ),
 		'priority' => 21,
@@ -17,7 +17,7 @@ $wp_customize->add_section(
 
 // 「ページトップへ」ボタン
 Customizer::sub_title(
-	$section,
+	$arkhe_section,
 	'pagetop',
 	array(
 		'label'     => __( '"To the top" button', 'arkhe' ),
@@ -26,7 +26,7 @@ Customizer::sub_title(
 
 // ボタンを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_pagetop',
 	array(
 		'label'       => __( 'Show button', 'arkhe' ),
@@ -36,7 +36,7 @@ Customizer::add(
 
 // コピーライトのテキスト
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'copyright',
 	array(
 		'label'       => __( 'Copyright text', 'arkhe' ),

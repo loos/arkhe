@@ -2,13 +2,13 @@
 use \ARKHE_THEME\Customizer;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$section = 'arkhe_section_page';
+$arkhe_section = 'arkhe_section_page';
 
 /**
  * セクション : 固定ページ
  */
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Pages', 'arkhe' ),
 		'priority' => 22,
@@ -17,7 +17,7 @@ $wp_customize->add_section(
 
 // タイトル設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'page_title',
 	array(
 		'label' => __( 'Title settings', 'arkhe' ),
@@ -25,7 +25,7 @@ Customizer::big_title(
 );
 
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'page_title_pos',
 	array(
 		'label'       => __( 'Position of title', 'arkhe' ),
@@ -39,7 +39,7 @@ Customizer::add(
 
 // タイトル設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'page_title_bg',
 	array(
 		'label' => __( 'Title background settings', 'arkhe' ),
@@ -47,7 +47,7 @@ Customizer::big_title(
 );
 
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'title_bg_filter',
 	array(
 		'label'       => __( 'Image filtering', 'arkhe' ),
@@ -60,7 +60,7 @@ Customizer::add(
 );
 
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'ttlbg_overlay_color',
 	array(
 		'label'       => __( 'Color overlay', 'arkhe' ),
@@ -70,7 +70,7 @@ Customizer::add(
 );
 
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'ttlbg_overlay_opacity',
 	array(
 		// 'label'       => '不透明度',
@@ -87,7 +87,7 @@ Customizer::add(
 
 // アイキャッチ画像の設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'page_thumb',
 	array(
 		'label' => __( 'Featured image', 'arkhe' ),
@@ -95,7 +95,7 @@ Customizer::big_title(
 );
 
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_page_thumb',
 	array(
 		'label'       => __( 'Show featured image', 'arkhe' ),

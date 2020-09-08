@@ -18,23 +18,17 @@ class Sanitize {
 		switch ( $type ) {
 			case 'checkbox':
 				return array( '\ARKHE_THEME\Customizer\Sanitize', 'checkbox' );
-				break;
 			case 'radio':
 			case 'select':
 				return array( '\ARKHE_THEME\Customizer\Sanitize', 'select' );
-				break;
 			case 'number':
 				return array( '\ARKHE_THEME\Customizer\Sanitize', 'float' );
-				break;
 			case 'image':
 				return array( '\ARKHE_THEME\Customizer\Sanitize', 'image' );
-				break;
 			case 'color':
 				return 'sanitize_hex_color';
-				break;
 			default: // text | textarea
 				return 'wp_kses_post';
-				break;
 		}
 	}
 
@@ -72,7 +66,7 @@ class Sanitize {
 	 * チェックボックス用サニタイズ関数
 	 */
 	public static function checkbox( $checked ) {
-		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}
 
 

@@ -72,7 +72,7 @@ function arkhe_hook__wp_list_categories( $output ) {
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<span class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></span></a><ul',
+		'<button class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></button></a><ul',
 		$output
 	);
 	return $output;
@@ -86,7 +86,7 @@ function arkhe_hook__wp_list_pages( $output ) {
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<span class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></span></a><ul',
+		'<button class="c-submenuToggleBtn" data-onclick="toggleSubmenu"></button></a><ul',
 		$output
 	);
 	return $output;

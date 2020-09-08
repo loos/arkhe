@@ -2,13 +2,13 @@
 use \ARKHE_THEME\Customizer;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-$section = 'arkhe_section_header';
+$arkhe_section = 'arkhe_section_header';
 
 /**
  * セクション : ヘッダー
  */
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Header', 'arkhe' ),
 		'priority' => 21,
@@ -18,7 +18,7 @@ $wp_customize->add_section(
 
 // ヘッダーロゴの設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'header_logo',
 	array(
 		'label'       => __( 'Header logo settings', 'arkhe' ),
@@ -29,7 +29,7 @@ Customizer::big_title(
 
 // 画像サイズ（PC）
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'logo_size_pc',
 	array(
 		'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
@@ -46,7 +46,7 @@ Customizer::add(
 
 // 画像サイズ（SP）
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'logo_size_sp',
 	array(
 		'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
@@ -63,7 +63,7 @@ Customizer::add(
 
 // レイアウト設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'header_layout',
 	array(
 		'label' => __( 'Layout setting', 'arkhe' ),
@@ -72,7 +72,7 @@ Customizer::big_title(
 
 // 検索ボタンをSPで表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_search_btn_sp',
 	array(
 		'label'       => __( 'Show search btn on SP', 'arkhe' ),
@@ -82,7 +82,7 @@ Customizer::add(
 
 // 検索ボタンをPCで表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_search_btn_pc',
 	array(
 		'label'       => __( 'Show search btn on PC', 'arkhe' ),
@@ -92,7 +92,7 @@ Customizer::add(
 
 // ドロワーメニューをPCでも表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_drower_pc',
 	array(
 		'label'       => __( 'Show drawer menu on PC', 'arkhe' ),
@@ -102,7 +102,7 @@ Customizer::add(
 
 // グローバルナビを下側に移動する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'move_gnav_under',
 	array(
 		'label'       => __( 'Move global navigation down', 'arkhe' ),
@@ -114,7 +114,7 @@ Customizer::add(
 
 // ヘッダーの固定設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'fix_head',
 	array(
 		'label' => __( 'Fixed header setting', 'arkhe' ),
@@ -123,7 +123,7 @@ Customizer::big_title(
 
 // ヘッダーを画面上部に固定する （PC）
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'fix_header_pc',
 	array(
 		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (PC)',
@@ -133,7 +133,7 @@ Customizer::add(
 
 // ヘッダーを画面上部に固定する (SP)
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'fix_header_sp',
 	array(
 		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (SP)',
@@ -143,7 +143,7 @@ Customizer::add(
 
 // グローバルナビを画面上部に固定する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'fix_gnav',
 	array(
 		'label'       => __( 'Fixed global navigation at top of screen', 'arkhe' ),
@@ -155,7 +155,7 @@ Customizer::add(
 
 // オーバーレイ設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'top_header',
 	array(
 		'label' => __( 'Overlay settings', 'arkhe' ),
@@ -163,7 +163,7 @@ Customizer::big_title(
 	)
 );
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'header_overlay',
 	array(
 		'type'        => 'select',
@@ -176,7 +176,7 @@ Customizer::add(
 
 // 固定ページでも有効化する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'header_overlay_on_page',
 	array(
 		'classname'   => '-header-overlay',
@@ -187,7 +187,7 @@ Customizer::add(
 
 // オーバーレイ時のロゴ画像
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'head_logo_overlay',
 	array(
 		'classname'   => '-header-overlay',

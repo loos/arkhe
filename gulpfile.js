@@ -30,7 +30,7 @@ const concat = require('gulp-concat');
 const path = {
 	src: {
 		scss: 'src/scss/**/*.scss',
-		lazysizes: 'src/js/plugins/lazysizes/*.min.js',
+		// lazysizes: 'src/js/plugins/lazysizes/*.min.js',
 		adminJs: 'src/js/admin/**/*.js',
 		js: ['src/js/**/*.js', '!src/js/plugin/*js', '!src/js/admin/*js'],
 		block: 'src/block/**/*.js',
@@ -62,12 +62,12 @@ const compileSass = (cb) => {
 /*
  * プラグインスクリプトをまとめる
  */
-const concatPluginScripts = (cb) => {
-	return src(path.src.lazysizes)
-		.pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
-		.pipe(concat('lazysizes.min.js'))
-		.pipe(dest(path.dest.js + '/plugins/'));
-};
+// const concatPluginScripts = (cb) => {
+// 	return src(path.src.lazysizes)
+// 		.pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
+// 		.pipe(concat('lazysizes.min.js'))
+// 		.pipe(dest(path.dest.js + '/plugins/'));
+// };
 
 /**
  * Admin Script系のminify化
@@ -112,4 +112,4 @@ const watchFiles = (cb) => {
 };
 
 exports.default = watchFiles;
-exports.lazysizes = concatPluginScripts;
+// exports.lazysizes = concatPluginScripts;

@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * セクション : 投稿ページ
  */
-$section = 'arkhe_section_single';
+$arkhe_section = 'arkhe_section_single';
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Posts', 'arkhe' ),
 		'priority' => 22,
@@ -17,7 +17,7 @@ $wp_customize->add_section(
 
 // タイトル下の情報
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'post_around_title',
 	array(
 		'label' => __( 'Information under the title', 'arkhe' ),
@@ -26,7 +26,7 @@ Customizer::big_title(
 
 // カテゴリーを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_entry_cat',
 	array(
 		'label'       => __( 'Show categories', 'arkhe' ),
@@ -36,7 +36,7 @@ Customizer::add(
 
 // タグを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_entry_tag',
 	array(
 		'label'       => __( 'Show tags', 'arkhe' ),
@@ -46,7 +46,7 @@ Customizer::add(
 
 // 著者を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_entry_author',
 	array(
 		'label'       => __( 'Show author', 'arkhe' ),
@@ -56,7 +56,7 @@ Customizer::add(
 
 // アイキャッチ画像を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_entry_thumb',
 	array(
 		'label'       => __( 'Show featured image', 'arkhe' ),
@@ -66,7 +66,7 @@ Customizer::add(
 
 // 前の記事・次の記事へのリンク
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'pn_links',
 	array(
 		'label' => __( 'Link to previous/next article', 'arkhe' ),
@@ -75,7 +75,7 @@ Customizer::big_title(
 
 // リンクを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_page_links',
 	array(
 		'label'       => __( 'Show link', 'arkhe' ),
@@ -85,7 +85,7 @@ Customizer::add(
 
 // 同じカテゴリーの記事だけを取得する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'pn_link_is_same_term',
 	array(
 		'label'       => __( 'Get only articles in the same category', 'arkhe' ),
@@ -95,7 +95,7 @@ Customizer::add(
 
 // 著者情報エリア
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'post_author',
 	array(
 		'label' => __( 'Author information area', 'arkhe' ),
@@ -104,7 +104,7 @@ Customizer::big_title(
 
 // 著者の情報を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_author_box',
 	array(
 		'label'       => __( 'Show author information', 'arkhe' ),
@@ -114,7 +114,7 @@ Customizer::add(
 
 // 関連記事エリア
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'related_posts',
 	array(
 		'label' => __( 'Related posts area', 'arkhe' ),
@@ -123,7 +123,7 @@ Customizer::big_title(
 
 // 関連記事を表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_related_posts',
 	array(
 		'label'       => __( 'Show related posts', 'arkhe' ),
@@ -133,7 +133,7 @@ Customizer::add(
 
 // 関連記事のレイアウト
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'related_posts_layout',
 	array(
 		'label'       => __( 'List layout', 'arkhe' ),
@@ -147,7 +147,7 @@ Customizer::add(
 
 // 関連記事の取得方法
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'post_relation_type',
 	array(
 		'classname'   => '-radio-button -related-post',
@@ -163,7 +163,7 @@ Customizer::add(
 
 // コメントエリア
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'comment_area',
 	array(
 		'label' => __( 'Comment area', 'arkhe' ),
@@ -172,7 +172,7 @@ Customizer::big_title(
 
 // コメントエリアを表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'show_comments',
 	array(
 		'label'       => __( 'Show comment area', 'arkhe' ),

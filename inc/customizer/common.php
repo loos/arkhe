@@ -5,9 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * セクション : 全体設定
  */
-$section = 'arkhe_section_global';
+$arkhe_section = 'arkhe_section_global';
 $wp_customize->add_section(
-	$section,
+	$arkhe_section,
 	array(
 		'title'    => __( 'Global settings', 'arkhe' ),
 		'priority' => 21,
@@ -16,7 +16,7 @@ $wp_customize->add_section(
 
 // カラー設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'colors',
 	array(
 		'label' => __( 'Color settings', 'arkhe' ),
@@ -25,7 +25,7 @@ Customizer::big_title(
 
 // メインカラー
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'color_main',
 	array(
 		'label'       => __( 'Main color', 'arkhe' ),
@@ -35,7 +35,7 @@ Customizer::add(
 
 // テキストカラー
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'color_text',
 	array(
 		'label'       => __( 'Text color', 'arkhe' ),
@@ -45,7 +45,7 @@ Customizer::add(
 
 // リンクの色
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'color_link',
 	array(
 		'label'       => __( 'Link color', 'arkhe' ),
@@ -55,7 +55,7 @@ Customizer::add(
 
 // 背景色
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'color_bg',
 	array(
 		'label'       => __( 'Background color', 'arkhe' ),
@@ -66,7 +66,7 @@ Customizer::add(
 
 // コンテンツ幅
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'content_width',
 	array(
 		'label'     => __( 'Content width', 'arkhe' ),
@@ -75,7 +75,7 @@ Customizer::big_title(
 
 // サイト幅の最大値
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'container_size',
 	array(
 		'label'       => __( 'Site width', 'arkhe' ),
@@ -91,7 +91,7 @@ Customizer::add(
 
 // 記事コンテンツ幅の最大値
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'article_size',
 	array(
 		'label'       => __( 'Content width in 1 column', 'arkhe' ),
@@ -107,7 +107,7 @@ Customizer::add(
 
 // NO-IMAGE設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'no_image',
 	array(
 		'label'     => __( 'NO-IMAGE settings', 'arkhe' ),
@@ -116,7 +116,7 @@ Customizer::big_title(
 
 // NO IMAGE画像
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'no_image',
 	array(
 		'label'       => __( '"NO-IMAGE" image', 'arkhe' ),
@@ -129,7 +129,7 @@ Customizer::add(
 
 // パンくずリスト設定
 Customizer::big_title(
-	$section,
+	$arkhe_section,
 	'breadcrumb_list',
 	array(
 		'label'     => __( 'Breadcrumb list settings', 'arkhe' ),
@@ -138,7 +138,7 @@ Customizer::big_title(
 
 // パンくずリストの位置
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'breadcrumbs_pos',
 	array(
 		'label'       => __( 'Breadcrumbs position', 'arkhe' ),
@@ -152,7 +152,7 @@ Customizer::add(
 
 // 「ホーム」の文字列
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'breadcrumbs_home_text',
 	array(
 		'label'       => __( '"Home" string', 'arkhe' ),
@@ -162,7 +162,7 @@ Customizer::add(
 
 // その他の設定
 Customizer::sub_title(
-	$section,
+	$arkhe_section,
 	'breadcrumbs_others',
 	array(
 		'label'     => __( 'Other settings', 'arkhe' ),
@@ -171,7 +171,7 @@ Customizer::sub_title(
 
 // 「投稿ページ」も表示する
 Customizer::add(
-	$section,
+	$arkhe_section,
 	'breadcrumbs_set_home_page',
 	array(
 		'label'       => __( 'Display "Post page"', 'arkhe' ),
