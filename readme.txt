@@ -1,7 +1,7 @@
 === Arkhe ===
 Contributors: looswebstudio
 Tested up to: 5.5
-Stable tag: 0.0.7
+Stable tag: 0.0.8
 Requires at least: 5.2
 Requires PHP: 5.6
 License: GPLv3 or later
@@ -19,7 +19,6 @@ two-columns, one-column, right-sidebar, custom-colors, custom-menu, editor-style
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License version 3.
 
 The exceptions to this license are as follows:
-The script lazysizes.js is licensed under MIT(https://opensource.org/licenses/MIT).
 
 lazysizes.js
 Copyright (c) 2015 Alexander Farkas
@@ -28,10 +27,11 @@ Source: https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE
 
 
 == Screenshots ==
-Image for theme screenshot, Copyright Ryo Yamasaki.
-License: GPLv3 or later (http://www.gnu.org/licenses/gpl-3.0.html).
-
-The images included in this screenshot are photo by theme author (Ryo Yamasaki).
+License: https://arkhe-theme.com/screenshots/
+https://arkhe-theme.com/wp-content/uploads/2020/08/P1020806_s.jpg
+https://arkhe-theme.com/wp-content/uploads/2020/08/photo-1.jpg
+https://arkhe-theme.com/wp-content/uploads/2020/08/photo-2.jpg
+https://arkhe-theme.com/wp-content/uploads/2020/08/photo-3.jpg
 
 
 == Author ==
