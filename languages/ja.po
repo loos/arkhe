@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-08-19 12:29+0900\n"
-"PO-Revision-Date: 2020-08-19 12:30+0900\n"
+"POT-Creation-Date: 2020-09-11 19:44+0900\n"
+"PO-Revision-Date: 2020-09-11 19:46+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: node_modules\n"
 "X-Poedit-SearchPathExcluded-4: vendor\n"
 
-#: 404.php:6 template-parts/others/breadcrumb.php:290
+#: 404.php:6 template-parts/others/breadcrumb.php:296
 msgid "The page was not found."
 msgstr "ページが見つかりませんでした。"
 
@@ -141,7 +141,7 @@ msgstr "「投稿ページ」も表示する"
 msgid "It is valid only when \"Post page\" is set."
 msgstr "「投稿ページ」を設定している時のみ有効です。"
 
-#: inc/customizer/footer.php:12
+#: inc/customizer/footer.php:12 inc/widget.php:40
 msgid "Footer"
 msgstr "フッター"
 
@@ -282,61 +282,61 @@ msgid ""
 "It is valid only when the position of the title is \"Inside the content\"."
 msgstr "タイトルの表示位置が「コンテンツ内部」の時のみ有効です。"
 
-#: inc/customizer/post_list.php:13
-msgid "Post List"
-msgstr "投稿リスト"
-
-#: inc/customizer/post_list.php:24 inc/customizer/single.php:139
-msgid "List layout"
-msgstr "リストのレイアウト"
-
-#: inc/customizer/post_list.php:36 inc/customizer/single.php:142
-msgid "Card type"
-msgstr "カード型"
-
-#: inc/customizer/post_list.php:37 inc/customizer/single.php:143
-msgid "List type"
-msgstr "リスト型"
-
-#: inc/customizer/post_list.php:38
-msgid "Text type"
-msgstr "テキスト型"
-
-#: inc/customizer/post_list.php:49
-msgid "Post information"
-msgstr "投稿情報"
-
-#: inc/customizer/post_list.php:58
-msgid "Show publication date"
-msgstr "公開日を表示する"
-
-#: inc/customizer/post_list.php:68
-msgid "Show update date"
-msgstr "更新日を表示する"
-
-#: inc/customizer/post_list.php:78 inc/customizer/single.php:32
-msgid "Show categories"
-msgstr "カテゴリーを表示する"
-
-#: inc/customizer/post_list.php:88 inc/customizer/single.php:52
-msgid "Show author"
-msgstr "著者を表示する"
-
-#: inc/customizer/post_list.php:98
-msgid "Number of characters in excerpt"
-msgstr "抜粋文の文字数"
-
-#: inc/customizer/post_list.php:115
-msgid "Thumbnail image ratio"
-msgstr "サムネイル画像の比率"
-
-#: inc/customizer/post_list.php:120
+#: inc/customizer/post_list.php:8
 msgid "Silver ratio"
 msgstr "白銀比"
 
-#: inc/customizer/post_list.php:121
+#: inc/customizer/post_list.php:9
 msgid "Golden ratio"
 msgstr "黄金比"
+
+#: inc/customizer/post_list.php:23
+msgid "Post List"
+msgstr "投稿リスト"
+
+#: inc/customizer/post_list.php:34 inc/customizer/single.php:139
+msgid "List layout"
+msgstr "リストのレイアウト"
+
+#: inc/customizer/post_list.php:46 inc/customizer/single.php:142
+msgid "Card type"
+msgstr "カード型"
+
+#: inc/customizer/post_list.php:47 inc/customizer/single.php:143
+msgid "List type"
+msgstr "リスト型"
+
+#: inc/customizer/post_list.php:48
+msgid "Text type"
+msgstr "テキスト型"
+
+#: inc/customizer/post_list.php:59
+msgid "Post information"
+msgstr "投稿情報"
+
+#: inc/customizer/post_list.php:68
+msgid "Show publication date"
+msgstr "公開日を表示する"
+
+#: inc/customizer/post_list.php:78
+msgid "Show update date"
+msgstr "更新日を表示する"
+
+#: inc/customizer/post_list.php:88 inc/customizer/single.php:32
+msgid "Show categories"
+msgstr "カテゴリーを表示する"
+
+#: inc/customizer/post_list.php:98 inc/customizer/single.php:52
+msgid "Show author"
+msgstr "著者を表示する"
+
+#: inc/customizer/post_list.php:108
+msgid "Number of characters in excerpt"
+msgstr "抜粋文の文字数"
+
+#: inc/customizer/post_list.php:125
+msgid "Thumbnail image ratio"
+msgstr "サムネイル画像の比率"
 
 #: inc/customizer/post_list.php:134
 msgid "Ratio in \"card type\""
@@ -346,7 +346,7 @@ msgstr "「カード型」での比率"
 msgid "Ratio in \"list type\""
 msgstr "「リスト型」での比率"
 
-#: inc/customizer/sidebar.php:13
+#: inc/customizer/sidebar.php:13 inc/widget.php:18
 msgid "Sidebar"
 msgstr "サイドバー"
 
@@ -434,9 +434,25 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示する"
 
-#: inc/hooks.php:67
+#: inc/hooks.php:61
 msgid "Skip to the content"
 msgstr "コンテンツへスキップ"
+
+#: inc/widget.php:20
+msgid "Widgets in this area will be displayed in the sidebar."
+msgstr "このエリアのウィジェットはサイドバーに表示されます。"
+
+#: inc/widget.php:29
+msgid "Bottom of Drawer menu"
+msgstr "ドロワーメニュー下部"
+
+#: inc/widget.php:31
+msgid "Widgets in this area will be displayed in bottom of the drawer menu."
+msgstr "このエリアのウィジェットはドロワーメニューの下部に表示されます。"
+
+#: inc/widget.php:42
+msgid "Widgets in this area will be displayed in the footer."
+msgstr "このエリアのウィジェットはフッターに表示されます。"
 
 #. translators: %s is the value of get_search_query().
 #: search.php:15
