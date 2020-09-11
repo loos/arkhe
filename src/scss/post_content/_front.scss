@@ -40,10 +40,20 @@
     }
 }
 
-// 全幅直下は、2emのまま。
+// 全幅の中は、2emのまま。
 .alignfull {
 
     & > * {
         margin-top: 2em;
+    }
+
+    & > .wp-block-column,  // カラム
+    & > .wp-block-cover__inner-container, // カバーブロック
+    & > .wp-block-media-text__content, // メディアと文章ブロック
+    & > .wp-block-group__inner-container { // グループ
+
+        & > * {
+            margin-top: 2em;
+        }
     }
 }

@@ -13,8 +13,9 @@
         }
     }
 
-    .is-root-container > [data-type="core/group"],
-    .is-root-container > [data-type="core/columns"] {
+    // .is-root-container > [data-type="core/group"],
+    :not([data-align="full"]) > [data-type="core/group"],
+    :not([data-align="full"]) > [data-type="core/columns"] {
 
         &::after {
             top: -8px !important;

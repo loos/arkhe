@@ -58,8 +58,9 @@
     "dependencies": {},
     "": "IEは11以上、Androidは4.4以上 その他は最新2バージョンで必要なベンダープレフィックスを付与する設定(scssコンパイル用)",
     "browserslist": [
-        "last 1 versions",
+        "> 0.5%",
+        "last 2 versions",
         "ie >= 11",
-        "Android >= 4.4"
+        "not dead"
     ]
 }

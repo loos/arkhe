@@ -25,7 +25,6 @@
 
 
     // 余白を小さくするエリア。 (全幅や幅広の時は適用しないように .wp-block が一つ上の層にある通常時だけ指定)
-    // .block-editor-inner-blocks, // 5.3用
     .wp-block > .wp-block-column,
     .wp-block > .wp-block-group__inner-container,
     .wp-block > .wp-block-cover__inner-container,
@@ -36,6 +35,8 @@
             // margin-bottom: 1em;
         }
     }
+
+    // data-align="full"
 
     // インナーブロックを持つコアブロックの最初と最後のブロックの余白を打ち消す
     .block-editor-inner-blocks > .block-editor-block-list__layout, //コア以外のインナーブロック
