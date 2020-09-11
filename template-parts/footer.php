@@ -3,6 +3,13 @@
 ?>
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">
+		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+			<div class="l-footer__content">
+				<div class="l-container">
+					<?php dynamic_sidebar( 'footer' ); ?>
+				</div>
+			</div>
+		<?php endif; ?>
 		<div class="l-footer__foot">
 			<div class="l-container">
 				<?php

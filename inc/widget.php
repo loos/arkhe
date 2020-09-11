@@ -15,9 +15,9 @@ function arkhe_hook__widgets_init() {
 	// ウィジェットエリアを登録
 	register_sidebar(
 		array(
-			'name'          => 'サイドバー',
+			'name'          => __( 'Sidebar', 'arkhe' ),
 			'id'            => 'sidebar-1',
-			'description'   => 'サイドバーに表示されます。',
+			'description'   => __( 'Widgets in this area will be displayed in the sidebar.', 'arkhe' ),
 			'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<div class="c-widget__title -side">',
@@ -26,12 +26,23 @@ function arkhe_hook__widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => 'ドロワーメニュー下部',
-			'id'            => 'drawer_bottom',
-			'description'   => 'ドロワーメニューの下部に表示されます。',
+			'name'          => __( 'Bottom of Drawer menu', 'arkhe' ),
+			'id'            => 'drawer-bottom',
+			'description'   => __( 'Widgets in this area will be displayed in bottom of the drawer menu.', 'arkhe' ),
 			'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<div class="c-widget__title -spmenu">',
+			'after_title'   => '</div>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'arkhe' ),
+			'id'            => 'footer',
+			'description'   => __( 'Widgets in this area will be displayed in the footer.', 'arkhe' ),
+			'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="c-widget__title -footer">',
 			'after_title'   => '</div>',
 		)
 	);
