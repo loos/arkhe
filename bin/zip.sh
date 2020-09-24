@@ -1,4 +1,4 @@
-#!/bin/bashx
+#!/bin/bash
 
 version=$1
 version=${version//-/.}

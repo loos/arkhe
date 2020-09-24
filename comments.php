@@ -26,8 +26,6 @@ $comments_num = get_comments_number();
 				<?php
 					paginate_comments_links(
 						array(
-							// 'prev_text' => '&#139',
-							// 'next_text' => '&#155',
 							'mid_size'  => 1,
 						)
 					);

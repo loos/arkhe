@@ -8,6 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_action( 'wp_loaded', 'arkhe_hook__define_theme_const', 11 );
 add_action( 'wp', 'arkhe_hook__define_page_template' );
 
+
 /**
  * カスタマイザーのデータを受け取ってから定義する定数たち。
  */

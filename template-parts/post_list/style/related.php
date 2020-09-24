@@ -13,7 +13,8 @@ $date      = new DateTime( $post_data->post_date );
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
 		<div class="p-postList__thumb c-postThumb<?php echo ! has_post_thumbnail( $the_id ) ? ' has-nothumb' : ''; ?>">
 			<figure class="c-postThumb__figure">
-				<?php // @codingStandardsIgnoreStart
+				<?php
+					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					echo ARKHE_THEME::get_thumbnail(
 						$the_id,
 						array(
@@ -22,7 +23,7 @@ $date      = new DateTime( $post_data->post_date );
 							'class'       => 'c-postThumb__img',
 						)
 					);
-				// @codingStandardsIgnoreEnd ?>
+				?>
 			</figure>
 		</div>
 		<div class="p-postList__body">

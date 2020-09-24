@@ -8,7 +8,9 @@ class Update {
 
 	private function __construct() {}
 
-	// init()
+	/**
+	 * バージョンチェック
+	 */
 	public static function version_check() {
 
 		// 現在のバージョンを取得
@@ -26,14 +28,7 @@ class Update {
 		// アップデート時の処理
 		if ( $now_version !== $old_ver ) {
 			update_option( 'arkhe_version', $now_version );
-			// self::updated_event();
 		}
 	}
-
-
-	/**
-	 * アップデート時に発火する処理
-	 */
-	// private static function updated_event() {}
 
 }

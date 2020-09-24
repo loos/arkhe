@@ -23,11 +23,4 @@ class Javascript {
 		);
 	}
 
-	/**
-	 * 管理画面側に渡すグローバル変数
-	 */
-	// public static function get_admin_global_vars() {
-	// 	return array();
-	// }
-
 }

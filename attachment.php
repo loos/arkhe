@@ -14,7 +14,7 @@ while ( have_posts() ) :
 		<div <?php post_class( ARKHE_THEME::main_body_class( false ) ); ?>>
 			<?php if ( $img_src ) : ?>
 				<h1 class="p-entry__thumb">
-					<img src="<?php echo esc_url( $img_src ); ?>" alt="<?php the_title(); ?>" class="p-entry__thumb__img">
+					<img src="<?php echo esc_url( $img_src ); ?>" alt="<?php the_title_attribute(); ?>" class="p-entry__thumb__img">
 					<figcaption class="p-entry__thumb__figcaption"><?php echo esc_html( $img_cap ); ?></figcaption>
 				</h1>
 			<?php endif; ?>

@@ -160,11 +160,6 @@ class Style {
 		};
 		self::add_root( '--article_size', $article_size . 'px' );
 
-		// ヘッダーオーバーレイ
-		if ( \ARKHE_THEME::is_header_overlay() ) {
-			self::add_module( '-overlay-header' );
-		}
-
 		// 投稿・固定ページ
 		Style\Page::title_bg( $SETTING['ttlbg_overlay_color'], $SETTING['ttlbg_overlay_opacity'] );
 
@@ -196,6 +191,27 @@ class Style {
 
 
 	/**
+	 * メディアクエリ付きスタイルの生成
+	 */
+	public static function get_media_query_style( $size = '', $condition = '' ) {
+		$return     = '';
+		$style      = self::$styles[ $size ];
+		$root_style = self::$root_styles[ $size ];
+
+		// CSS変数
+		if ( $root_style ) $return .= ':root{' . $root_style . '}';
+
+		// スタイル
+		if ( $style ) $return .= ':root{' . $style . '}';
+
+		// スタイルのない場合
+		if ( ! $return ) return '';
+
+		return '@media (' . $condition . '){' . $return . '}';
+	}
+
+
+	/**
 	 * スタイルの出力 : 呼び出されるのはこいつ
 	 */
 	public static function output( $type = 'front' ) {
@@ -209,16 +225,16 @@ class Style {
 		}
 
 		$output_style  = '';
+
+		// 全サイズ共通スタイル
 		$output_style .= ':root{' . self::$root_styles['all'] . '}';
+		$output_style .= self::$styles['all'];
 
-		$styles = self::$styles;
-
-		$output_style .= $styles['all'];
-
-		$output_style .= '@media screen and (min-width: 960px){:root{' . self::$root_styles['pc'] . '}' . $styles['pc'] . '}';
-		$output_style .= '@media screen and (max-width: 959px){:root{' . self::$root_styles['sp'] . '}' . $styles['sp'] . '}';
-		$output_style .= '@media screen and (min-width: 600px){:root{' . self::$root_styles['tab'] . '}' . $styles['tab'] . '}';
-		$output_style .= '@media screen and (max-width: 599px){:root{' . self::$root_styles['mobile'] . '}' . $styles['mobile'] . '}';
+		// メディアクエリ付きスタイル
+		$output_style .= self::get_media_query_style( 'pc', 'min-width: 960px' );
+		$output_style .= self::get_media_query_style( 'sp', 'max-width: 959px' );
+		$output_style .= self::get_media_query_style( 'tab', 'min-width: 600px' );
+		$output_style .= self::get_media_query_style( 'mobile', 'max-width: 599px' );
 
 		// モジュールCSSを読み込んで連結
 		self::$modules;

@@ -1,0 +1,23 @@
+{
+    "core": null,
+    "config": {
+        "WP_DEBUG": true
+    },
+    "themes": [
+        "."
+    ],
+    "plugins": [
+        "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
+    ],
+    "env": {
+        "development": {
+            "port": 2222
+        },
+        "tests": {
+            "port": 2221
+        }
+    },
+    "mappings": {
+        "sql": "~/Dropbox/LOOS/DEV/wpenv/arkhe"
+    }
+}

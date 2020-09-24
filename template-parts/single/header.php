@@ -13,8 +13,6 @@ $modified  = new DateTime( $post_data->post_modified );
 // 公開日 < 更新日かどうか
 $is_modified = ( $date < $modified );
 
-// シェアボタンを表示するかどうか
-// $show_share_btn = apply_filters( 'arkhe_show_share_btn', $SETTING['show_share_btn_top'] );
 ?>
 <header class="p-entry__head">
 	<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
@@ -65,10 +63,6 @@ $is_modified = ( $date < $modified );
 		endif;
 	?>
 </header>
-
 <?php
-
 // 記事上シェアボタン
-// if ( $show_share_btn ) :
-// 	ARKHE_THEME::get_parts( 'single/share_btns', array( 'post_id' => $the_id ) );
-// endif;
+do_action( 'arkhe_show_share_btn_top' );

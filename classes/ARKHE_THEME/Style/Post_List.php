@@ -4,6 +4,9 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Post_List extends \ARKHE_THEME\Style {
 
+	/**
+	 * 設定に合わせた比率を返す
+	 */
 	public static function get_thumb_ratio( $thumb_ratio ) {
 		switch ( $thumb_ratio ) {
 			case 'golden':
@@ -22,6 +25,7 @@ class Post_List extends \ARKHE_THEME\Style {
 				return '100%';
 		}
 	}
+
 
 	/**
 	 * サムネイル比率

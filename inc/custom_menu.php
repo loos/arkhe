@@ -21,6 +21,7 @@ function arkhe_hook__register_nav_menus() {
 	);
 }
 
+
 /**
  * リストのHTMLを組み替える
  * 例：「説明」を追加（ナビゲーションの英語テキストに使用）

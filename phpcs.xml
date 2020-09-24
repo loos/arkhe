@@ -109,8 +109,6 @@
 
 		<!-- 参考演算子を許可 -->
 		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
-		
-		
 
 	</rule>
 	<!-- <rule ref="WPThemeReview"/> -->

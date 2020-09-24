@@ -10,7 +10,8 @@ $sp_sizes = 'card' === $list_type ? '100vw' : '40vw';
 ?>
 <div class="p-postList__thumb c-postThumb<?php echo ! has_post_thumbnail( $the_id ) ? ' has-nothumb' : ''; ?>">
 	<figure class="c-postThumb__figure">
-		<?php // @codingStandardsIgnoreStart
+		<?php
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo ARKHE_THEME::get_thumbnail(
 				$the_id,
 				array(
@@ -19,6 +20,6 @@ $sp_sizes = 'card' === $list_type ? '100vw' : '40vw';
 					'class'       => 'c-postThumb__img',
 				)
 			);
-		// @codingStandardsIgnoreEnd ?>
+		?>
 	</figure>
 </div>

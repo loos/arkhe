@@ -20,13 +20,13 @@ if ( apply_filters( 'arkhe_header_id', $header_id ) ) {
 			'p'         => $header_id,
 		)
 	);
+	wp_reset_postdata();
 
 	if ( $header ) {
 		$header_content = $header[0]->post_content;
 
-		// @codingStandardsIgnoreStart
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo do_blocks( do_shortcode( $header_content ) );
-		// @codingStandardsIgnoreEnd
 	}
 } else {
 	// 通常時

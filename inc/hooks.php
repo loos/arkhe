@@ -119,14 +119,3 @@ function arkhe_hook__navigation_markup_template( $template, $class ) {
 	}
 	return $template;
 }
-
-/**
- * 子テーマでの設定が空の時、親テーマの設定を取得する
- */
-//
-// function arkhe_hook__custom_logo( $val ) {
-// 	if ( is_child_theme() && empty( $val ) ) {
-// 		$arkhe_mods = get_option( 'theme_mods_arkhe' );
-// 		return $arkhe_mods['custom_logo'];
-// 	}
-// }

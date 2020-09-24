@@ -20,10 +20,3 @@ if ( ! ARKHE_THEME::is_show_ttltop() ) : ?>
 		);
 	endif;
 endif;
-
-// コンテンツ上ウィジェット
-// if ( is_active_sidebar( 'page_top' ) ) {
-// 	echo '<div class="w-pageTop">';
-// 		dynamic_sidebar( 'page_top' );
-// 	echo '</div>';
-// }

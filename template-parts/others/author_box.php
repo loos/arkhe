@@ -14,14 +14,8 @@ if ( ! $author_data ) return;
 $author_name = $author_data->display_name;
 $description = $author_data->description;
 $position    = get_the_author_meta( 'position', $author_id ); // 'position' は ADDONから追加される
-$icon_links  = array();
 
 $the_user_link_url = $author_data->user_url;
-if ( $the_user_link_url ) {
-	$icon_links['home'] = $the_user_link_url;
-}
-
-$icon_links = apply_filters( 'arkhe_author_icon_links', $icon_links, $author_id );
 ?>
 <div class="p-authorBox">
 	<figure class="p-authorBox__avatar">
@@ -54,18 +48,9 @@ $icon_links = apply_filters( 'arkhe_author_icon_links', $icon_links, $author_id 
 				</div>
 			<?php endif; ?>
 			<?php
-				// SNS情報があればアイコン表示
-				// if ( ! empty( $icon_links ) ) :
-				// 	ARKHE_THEME::get_parts(
-				// 		'others/icon_list',
-				// 		array(
-				// 			'list_data' => $icon_links,
-				// 			'class'     => 'p-authorBox__iconList',
-				// 		)
-				// 	);
-				// endif;
+				// アイコンリスト表示用
+				do_action( 'arkhe_author_links', $author_id );
 			?>
 		</div>
 	</div>
-
 </div>

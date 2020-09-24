@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 .l-footer {
     position: relative;
     z-index: 0;
@@ -53,6 +52,38 @@
         // #fix_bottom_menuと同じ値
         padding-bottom: calc(env(safe-area-inset-bottom) * .5);
     }
+}
+
+.l-footer__widgets {
+
+    & > .l-container {
+
+        @include pc {
+            display: flex;
+        }
+    }
+
+
+
+    .w-footer {
+
+        @include pc {
+            flex-basis: 100%;
+        }
+
+    }
+
+    .w-footer + .w-footer {
+
+        @include pc {
+            margin-left: 2em;
+        }
+
+        @include sp {
+            margin-top: 2em;
+        }
+    }
+
 }
 
 

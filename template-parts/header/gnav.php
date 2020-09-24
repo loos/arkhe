@@ -15,8 +15,9 @@ $gnav = wp_nav_menu(
 if ( ! $gnav ) return; ?>
 <nav id="gnav" class="c-gnavWrap">
 	<ul class="c-gnav">
-		<?php // @codingStandardsIgnoreStart
+		<?php 
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $gnav;
-		// @codingStandardsIgnoreEnd ?>
+		?>
 	</ul>
 </nav>

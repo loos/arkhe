@@ -14,6 +14,7 @@ class ARKHE_THEME {
 		\ARKHE_THEME\Init::init();
 	}
 
+
 	/**
 	 * Data 取得・セット系
 	 */
@@ -23,12 +24,6 @@ class ARKHE_THEME {
 	public static function set_setting( $key = null, $val = '' ) {
 		Data::set_setting( $key, $val );
 	}
-	// public static function get_option( $key = null ) {
-	// 	return Data::get_option( $key );
-	// }
-	// public static function set_option( $key = null, $val = '' ) {
-	// 	Data::set_option( $key, $val );
-	// }
 
 
 	/**
@@ -47,7 +42,6 @@ class ARKHE_THEME {
 			// 次に、親テーマから探す
 			$include_path = ARKHE_TMP_DIR . '/template-parts/' . $path . '.php';
 			if ( ! file_exists( $include_path ) ) {
-				// echo 'Include Error : "' . $path . '"';
 				return '';
 			}
 		}
@@ -90,9 +84,6 @@ class ARKHE_THEME {
 			$file_content = $wp_filesystem->get_contents( $file );
 			return $file_content;
 		}
-
-		// 	$file_content = file_get_contents( $file );
-		// 	return $file_content;
 
 		return false;
 	}
@@ -138,7 +129,6 @@ class ARKHE_THEME {
 		}
 
 		return apply_filters( 'arkhe_is_show_sidebar', $is_show_sidebar );
-
 	}
 
 
@@ -184,8 +174,6 @@ class ARKHE_THEME {
 	 */
 	public static function root_attrs() {
 
-		// $SETTING = ARKHE_THEME::get_setting();
-
 		// スクロール制御
 		$attrs = 'data-loaded="false"';
 
@@ -202,11 +190,10 @@ class ARKHE_THEME {
 
 		$attrs .= ' data-sidebar="' . $data_sidebar . '"';
 
-		// @codingStandardsIgnoreStart
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo apply_filters( 'arkhe_root_attrs', $attrs );
-		// @codingStandardsIgnoreEnd
-
 	}
+
 
 	/**
 	 * ヘッダーの追加属性
@@ -236,13 +223,11 @@ class ARKHE_THEME {
 
 		$attrs = apply_filters( 'arkhe_header_attr', $attrs );
 		if ( $is_echo ) {
-			// @codingStandardsIgnoreStart
+			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			echo $attrs;
-			// @codingStandardsIgnoreEnd
 		} else {
 			return $attrs;
 		}
-
 	}
 
 
@@ -262,6 +247,7 @@ class ARKHE_THEME {
 
 		echo esc_attr( $class );
 	}
+
 
 	/**
 	 * l-content__main__body クラス
@@ -352,19 +338,20 @@ class ARKHE_THEME {
 				$thumb = preg_replace( '/ sizes="([^"]*)"/', ' sizes="' . $sizes . '"', $thumb );
 			}
 		} else {
-			$thumb = '<img src="' . ARKHE_NOIMG_URL . '" class="' . $class . '">';
+			$thumb = '<img src="' . esc_url( ARKHE_NOIMG_URL ) . '" class="' . esc_attr( $class ) . '">';
 		}
 
 		// 通常のフロント表示の時（Gutenberg上やRESTの時以外）
 		if ( ! defined( 'REST_REQUEST' ) ) {
 			$placeholder = $placeholder ?: ARKHE_PLACEHOLDER;
-			$thumb       = str_replace( ' src="', ' src="' . esc_attr( $placeholder ) . '" data-src="', $thumb );
+			$thumb       = str_replace( ' src="', ' src="' . esc_url( $placeholder ) . '" data-src="', $thumb );
 			$thumb       = str_replace( ' srcset="', ' data-srcset="', $thumb );
 			// loading="lazy"
 		}
 
 		return $thumb;
 	}
+
 
 	/**
 	 * タームリストを出力する
@@ -384,12 +371,15 @@ class ARKHE_THEME {
 		$thelist = '';
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
-			$data_id   = 'data-' . $tax . '-id="' . $term->term_id . '"';
-			$thelist  .= '<a class="c-postMetas__link" href="' . esc_url( $term_link ) . '" ' . $data_id . '>' . $term->name . '</a>';
+			$thelist  .= '<a class="c-postMetas__link" href="' . esc_url( $term_link ) . '"' .
+				' data-' . sanitize_key( $tax ) . '-id="' . esc_attr( $term->term_id ) . '">' .
+				esc_html( $term->name ) .
+			'</a>';
 		}
 
 		return apply_filters( 'arkhe_get_the_term_links', $thelist, $post_id, $tax );
 	}
+
 
 	/**
 	 * 日付を出力する

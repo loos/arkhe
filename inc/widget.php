@@ -37,8 +37,19 @@ function arkhe_hook__widgets_init() {
 	);
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', 'arkhe' ),
-			'id'            => 'footer',
+			'name'          => __( 'Footer', 'arkhe' ) . '1',
+			'id'            => 'footer-1',
+			'description'   => __( 'Widgets in this area will be displayed in the footer.', 'arkhe' ),
+			'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="c-widget__title -footer">',
+			'after_title'   => '</div>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'arkhe' ) . '2',
+			'id'            => 'footer-2',
 			'description'   => __( 'Widgets in this area will be displayed in the footer.', 'arkhe' ),
 			'before_widget' => '<div id="%1$s" class="c-widget %2$s">',
 			'after_widget'  => '</div>',

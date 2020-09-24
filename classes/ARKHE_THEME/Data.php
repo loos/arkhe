@@ -23,15 +23,9 @@ class Data {
 	protected static $default_settings = '';
 
 	/**
-	 * 設定画面のデータ
+	 * DB名
 	 */
-	// protected static $options         = '';
-	// protected static $default_options = '';
-
-	// DB名
 	const DB_NAME_CUSTOMIZER = 'arkhe_settings';
-	// const DB_NAME_OPTIONS    = 'arkhe_options';
-
 
 	/**
 	 * 外部からインスタンス化させない
@@ -135,44 +129,5 @@ class Data {
 		}
 		return self::$default_settings;
 	}
-
-
-	/**
-	 * [オプション設定のデータ] デフォルト値の取得
-	 *   キーが指定されていればそれを、指定がなければ全てを返す。
-	 */
-	// public static function get_default_option( $key = null ) {
-	// 	if ( null !== $key ) {
-	// 		return self::$default_options[ $key ] ?: '';
-	// 	}
-	// 	return self::$default_options;
-	// }
-
-	/**
-	 * [オプション設定のデータ] 初期セット
-	 */
-	// public function set_options() {
-	// 	$db_data       = get_option( self::DB_NAME_OPTIONS ) ?: array();
-	// 	self::$options = array_merge( self::$default_options, $db_data );
-	// }
-
-	/**
-	 * [オプション設定のデータ] データを個別でセット
-	 */
-	// public static function set_option( $key = null, $val = '' ) {
-	// 	if (  null === $key  ) return;
-	// 	self::$options[ $key ] = $val;
-	// }
-
-	/**
-	 * [オプション設定のデータ] 取得
-	 *   キーが指定されていればそれを、指定がなければ全てを返す。
-	 */
-	// public static function get_option( $key = null ) {
-	// 	if ( null !== $key ) {
-	// 		return self::$options[ $key ] ?: '';
-	// 	}
-	// 	return self::$options;
-	// }
 
 }

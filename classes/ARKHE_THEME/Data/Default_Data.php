@@ -58,7 +58,7 @@ class Default_Data {
 
 			// Footer
 			'show_pagetop'              => true,
-			'copyright'                 => '&copy; 2020 ' . get_option( 'blogname' ) . '.',
+			'copyright'                 => '&copy; 2020 ' . esc_html( get_option( 'blogname' ) ) . '.',
 
 			// Sidebar
 			'show_sidebar_top'          => false,

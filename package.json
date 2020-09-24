@@ -4,6 +4,9 @@
     "description": "my gulp modules",
     "main": "index.js",
     "scripts": {
+        "wp-start": "wp-env start && open http://localhost:2222",
+        "wp-stop": "wp-env run cli wp db export sql/local.sql && wp-env stop",
+        "wp-inport": "wp-env run cli wp db inport",
         "build:css": "npx gulp compileScss",
         "build:js": "npx webpack",
         "build:adminJs": "npx gulp minifyAdminJs",
