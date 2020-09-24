@@ -62,13 +62,3 @@ npm run build
 ```
 npm run watch
 ```
-
-
-WordPress環境の立ち上げ&停止
-
-```
-npm run wp-start
-npm run wp-stop
-```
-
-*※ `wp-env`はグローバルインストールしてください*
