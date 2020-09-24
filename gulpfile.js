@@ -15,7 +15,7 @@ const cleanCSS = require( 'gulp-clean-css' );
 const babel = require( 'gulp-babel' );
 const uglify = require( 'gulp-uglify' );
 // const rename = require('gulp-rename');
-// const concat = require('gulp-concat');
+const concat = require('gulp-concat');
 
 /**
  * パス
@@ -23,7 +23,7 @@ const uglify = require( 'gulp-uglify' );
 const path = {
 	src: {
 		scss: 'src/scss/**/*.scss',
-		// lazysizes: 'src/js/plugins/lazysizes/*.min.js',
+		lazysizes: 'src/js/plugin/lazysizes/*.js',
 		adminJs: 'src/js/admin/**/*.js',
 		js: [ 'src/js/**/*.js', '!src/js/plugin/*js', '!src/js/admin/*js' ],
 		block: 'src/block/**/*.js',
@@ -55,12 +55,16 @@ const compileScss = ( cb ) => {
 /*
  * プラグインスクリプトをまとめる
  */
-// const concatPluginScripts = (cb) => {
-// 	return src(path.src.lazysizes)
-// 		.pipe(plumber({ errorHandler: notify.onError('<%= error.message %>') }))
-// 		.pipe(concat('lazysizes.min.js'))
-// 		.pipe(dest(path.dest.js + '/plugins/'));
-// };
+const concatPlugins = (cb) => {
+	return src( path.src.lazysizes )
+		.pipe( concat('lazysizes.js') )
+		.pipe( uglify( {output: {comments: /^!/}} ) ) // ! 付きコメント残して圧縮
+		.on( 'error', function ( e ) {
+			/* eslint no-console: 0 */
+			console.log( e );
+		} )
+		.pipe( dest( path.dest.js + '/plugin' ) );
+};
 
 /**
  * Admin Script系の単純なminify化
@@ -83,4 +87,4 @@ const minifyAdminJs = ( cb ) => {
 
 exports.compileScss = compileScss;
 exports.minifyAdminJs = minifyAdminJs;
-// exports.concatPlugins = concatPlugins;
+exports.concatPlugins = concatPlugins;
