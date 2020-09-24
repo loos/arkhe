@@ -224,7 +224,7 @@ class Style {
 			self::set_post_content_style();
 		}
 
-		$output_style  = '';
+		$output_style = '';
 
 		// 全サイズ共通スタイル
 		$output_style .= ':root{' . self::$root_styles['all'] . '}';

@@ -20,7 +20,7 @@ if ( $thumb_m_url ) : ?>
 				array(
 					'sizes'       => '(min-width: 800px) 800px, 100vw',
 					'class'       => 'p-entry__thumb__img',
-					'placeholder' => $thumb_m_url
+					'placeholder' => $thumb_m_url,
 				)
 			);
 		?>
