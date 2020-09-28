@@ -4,3 +4,14 @@
     list-style: none;
     border-top: solid 1px var(--color_border);
 }
+
+.wp-block-latest-comments,
+.wp-block-latest-posts,
+.wp-block-categories,
+.wp-block-archives,
+.wp-block-tag-cloud {
+
+    a {
+        pointer-events: none;
+    }
+}

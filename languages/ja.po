@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-09-11 19:44+0900\n"
-"PO-Revision-Date: 2020-09-11 19:46+0900\n"
+"POT-Creation-Date: 2020-09-28 17:14+0900\n"
+"PO-Revision-Date: 2020-09-28 17:14+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -41,7 +41,7 @@ msgstr "以下にキーワードを入力して検索してみてください。
 msgid "Home"
 msgstr "ホーム"
 
-#: classes/ARKHE_THEME/Widget/Recent_Posts.php:17
+#: classes/ARKHE_THEME/Widget/Recent_Posts.php:16
 msgid "Recent Posts"
 msgstr "最近の投稿"
 
@@ -56,6 +56,18 @@ msgstr "この投稿へのコメントはまだありません。"
 #: functions.php:16
 msgid "Note : "
 msgstr "※ "
+
+#: functions.php:41
+msgid "\"Arkhe\" is currently in beta."
+msgstr "「Arkhe」は現在ベータ版として稼働中です。"
+
+#: functions.php:42
+msgid ""
+"The theme structure is subject to change significantly until the version "
+"exceeds \"1.0\"."
+msgstr ""
+"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があり"
+"ます。"
 
 #: inc/customizer/common.php:12
 msgid "Global settings"
@@ -94,8 +106,8 @@ msgid "48px padding is attached to the left and right."
 msgstr "左右に48pxのpaddingがつきます。"
 
 #: inc/customizer/common.php:97
-msgid "Content width in 1 column"
-msgstr "１カラム時のコンテンツ幅"
+msgid "Content width for 1 column (slim width)"
+msgstr "１カラム（スリム幅）の時のコンテンツ幅"
 
 #: inc/customizer/common.php:113
 msgid "NO-IMAGE settings"
@@ -141,7 +153,7 @@ msgstr "「投稿ページ」も表示する"
 msgid "It is valid only when \"Post page\" is set."
 msgstr "「投稿ページ」を設定している時のみ有効です。"
 
-#: inc/customizer/footer.php:12 inc/widget.php:40
+#: inc/customizer/footer.php:12 inc/widget.php:40 inc/widget.php:51
 msgid "Footer"
 msgstr "フッター"
 
@@ -450,7 +462,7 @@ msgstr "ドロワーメニュー下部"
 msgid "Widgets in this area will be displayed in bottom of the drawer menu."
 msgstr "このエリアのウィジェットはドロワーメニューの下部に表示されます。"
 
-#: inc/widget.php:42
+#: inc/widget.php:42 inc/widget.php:53
 msgid "Widgets in this area will be displayed in the footer."
 msgstr "このエリアのウィジェットはフッターに表示されます。"
 
@@ -480,7 +492,7 @@ msgstr "閉じる"
 msgid "Menu button"
 msgstr "メニューボタン"
 
-#: template-parts/others/author_box.php:53
+#: template-parts/others/author_box.php:47
 msgid "To article list"
 msgstr "記事一覧へ"
 
@@ -516,10 +528,6 @@ msgstr "2カラム"
 #. Theme Name of the plugin/theme
 msgid "Arkhe"
 msgstr "Arkhe"
-
-#. Theme URI of the plugin/theme
-msgid "https://arkhe-theme.com/"
-msgstr ""
 
 #. Description of the plugin/theme
 msgid "A very simple theme for production templates. Customize as you like."

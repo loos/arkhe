@@ -15,7 +15,7 @@ const cleanCSS = require( 'gulp-clean-css' );
 const babel = require( 'gulp-babel' );
 const uglify = require( 'gulp-uglify' );
 // const rename = require('gulp-rename');
-const concat = require('gulp-concat');
+const concat = require( 'gulp-concat' );
 
 /**
  * パス
@@ -55,10 +55,10 @@ const compileScss = ( cb ) => {
 /*
  * プラグインスクリプトをまとめる
  */
-const concatPlugins = (cb) => {
+const concatPlugins = ( cb ) => {
 	return src( path.src.lazysizes )
-		.pipe( concat('lazysizes.js') )
-		.pipe( uglify( {output: {comments: /^!/}} ) ) // ! 付きコメント残して圧縮
+		.pipe( concat( 'lazysizes.js' ) )
+		.pipe( uglify( { output: { comments: /^!/ } } ) ) // ! 付きコメント残して圧縮
 		.on( 'error', function ( e ) {
 			/* eslint no-console: 0 */
 			console.log( e );

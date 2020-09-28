@@ -4,9 +4,12 @@
         "WP_DEBUG": true
     },
     "themes": [
-        "."
+        ".",
+        "../arkhe_child"
     ],
     "plugins": [
+        "../arkhe-ex-template",
+        "../arkhe-toolkit",
         "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
     ],
     "env": {

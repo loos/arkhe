@@ -6,7 +6,7 @@
 
         @include pc {
             width: calc(100% - 356px);
-            max-width: 100%; //l-artcileにが狭い時を考慮
+            max-width: 100%; //l-artcileが狭い時を考慮
         }
     }
 }

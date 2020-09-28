@@ -9,6 +9,17 @@
 @import "../foundation/setting/placeholder";
 
 // icon
+@font-face {
+    font-weight: normal;
+    font-family: arkhe-icon;
+    font-style: normal;
+    src:
+        url(../../../assets/fonts/icomoon.woff2?7d811) format("woff2"),
+        url(../../../assets/fonts/icomoon.ttf?7d811) format("truetype"),
+        url(../../../assets/fonts/icomoon.woff?7d811) format("woff"),
+        url(../../../assets/fonts/icomoon.svg?7d811#icomoon) format("svg");
+}
+
 @import "../foundation/icon/icomoon";
 
 // utility

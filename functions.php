@@ -34,6 +34,17 @@ spl_autoload_register(
 
 
 /**
+ * ベータ版アラート
+ */
+function arkhe_theme_beta_message() {
+	echo '<div class="notice notice-info"><p>' .
+		esc_html__( '"Arkhe" is currently in beta.', 'arkhe' ) . '<br>' .
+		esc_html__( 'The theme structure is subject to change significantly until the version exceeds "1.0".', 'arkhe' ) .
+	'</p></div>';
+}
+add_action( 'admin_notices', 'arkhe_theme_beta_message' );
+
+/**
  * Init
  */
 new \ARKHE_THEME();

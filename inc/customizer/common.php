@@ -94,7 +94,7 @@ Customizer::add(
 	$arkhe_section,
 	'article_size',
 	array(
-		'label'       => __( 'Content width in 1 column', 'arkhe' ),
+		'label'       => __( 'Content width for 1 column (slim width)', 'arkhe' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step' => '20',
