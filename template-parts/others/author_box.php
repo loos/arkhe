@@ -35,22 +35,21 @@ $the_user_link_url = $author_data->user_url;
 			</p>
 		<?php endif; ?>
 
-		<div class="p-authorBox__links">
-			<?php if ( $the_user_link_url ) : ?>
-				<div class="p-authorBox__weblink">
-					<i class="arkhe-icon-link" role="presentation"></i> : 
-					<a href="<?php echo esc_url( $the_user_link_url ); ?>" target="_blank" rel="noopener" class=""><?php echo esc_html( $the_user_link_url ); ?></a>
-				</div>
-			<?php endif; ?>
+		<div class="p-authorBox__footer">
+			<div class="p-authorBox__links">
+				<?php if ( $the_user_link_url ) : ?>
+					<div class="p-authorBox__weblink">
+						<i class="arkhe-icon-link" role="presentation"></i> : 
+						<a href="<?php echo esc_url( $the_user_link_url ); ?>" target="_blank" rel="noopener" class=""><?php echo esc_html( $the_user_link_url ); ?></a>
+					</div>
+				<?php endif; ?>
+				<?php do_action( 'arkhe_author_links', $author_id ); // アイコンリスト表示用 ?>
+			</div>
 			<?php if ( ! is_author() ) : ?>
 				<div class="p-authorBox__archivelink">
 					<a href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" target="_blank" rel="noopener" class=""><?php esc_html_e( 'To article list', 'arkhe' ); ?></a>
 				</div>
 			<?php endif; ?>
-			<?php
-				// アイコンリスト表示用
-				do_action( 'arkhe_author_links', $author_id );
-			?>
 		</div>
 	</div>
 </div>

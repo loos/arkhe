@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  */
 add_action( 'customize_controls_init', 'arkhe_hook__customize_controls_init' );
 add_action( 'customize_controls_enqueue_scripts', 'arkhe_hook__customize_controls_enqueue_scripts' );
-add_action( 'customize_register', 'arkhe_hook__customize_register', 99 );
+add_action( 'customize_register', 'arkhe_hook__customize_register', 20 );
 
 
 /**
