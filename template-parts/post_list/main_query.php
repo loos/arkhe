@@ -16,7 +16,7 @@ if ( have_posts() ) : ?>
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			ARKHE_THEME::get_parts(
+			Arkhe_Theme::get_parts(
 				'post_list/style/' . $file_name,
 				array(
 					'list_type' => $list_type,

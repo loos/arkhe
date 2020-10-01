@@ -1,14 +1,13 @@
 <?php
-namespace ARKHE_THEME;
+namespace Arkhe_Theme;
 
-use \ARKHE_THEME\Data;
-use \ARKHE_THEME\Customizer\Sanitize;
-use \ARKHE_THEME\Customizer\Control\Base_Control;
-use \ARKHE_THEME\Customizer\Control\Big_Title;
-use \ARKHE_THEME\Customizer\Control\Sub_Title;
-use \ARKHE_THEME\Customizer\Control\Color_Control;
-use \ARKHE_THEME\Customizer\Control\Image_Control;
-use \ARKHE_THEME\Customizer\Control\Media_Control;
+use \Arkhe_Theme\Customizer\Sanitize;
+use \Arkhe_Theme\Customizer\Control\Base_Control;
+use \Arkhe_Theme\Customizer\Control\Big_Title;
+use \Arkhe_Theme\Customizer\Control\Sub_Title;
+use \Arkhe_Theme\Customizer\Control\Color_Control;
+use \Arkhe_Theme\Customizer\Control\Image_Control;
+use \Arkhe_Theme\Customizer\Control\Media_Control;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -51,12 +50,12 @@ class Customizer {
 		global $wp_customize;
 		$customizer = $wp_customize;
 
-		$DEFAULT = Data::get_default_setting();
+		$DEFAULT = \Arkhe_Theme::get_default_setting();
 		$default = $DEFAULT[ $id ];
 
 		$args = self::set_args( $args );
 
-		$customize_id = Data::DB_NAME_CUSTOMIZER . '[' . $id . ']';
+		$customize_id = \Arkhe_Theme::DB_NAME_CUSTOMIZER . '[' . $id . ']';
 		$type         = $args['type'];
 		$partial      = $args['partial'];
 

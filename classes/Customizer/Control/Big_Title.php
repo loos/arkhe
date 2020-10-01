@@ -1,14 +1,24 @@
 <?php
-namespace ARKHE_THEME\Customizer\Control;
+namespace Arkhe_Theme\Customizer\Control;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
- * カスタマイザーの li に好きなクラス名を付与できるようににしたもの
+ * 大タイトル出力用
  */
-class Color_Control extends \WP_Customize_Color_Control {
+class Big_Title extends \WP_Customize_Control {
 
 	public $classname = ''; // 追加したメンバ変数
+
+	// 出力するコンテンツ
+	public function render_content() {
+		if ( isset( $this->label ) ) {
+			echo '<div class="customize-control-title -big">' . esc_html( $this->label ) . '</div>';
+		}
+		if ( isset( $this->description ) ) {
+			echo '<span class="description customize-control-description">' . wp_kses_post( $this->description ) . '</span>';
+		}
+	}
 
 	protected function render() {
 		$id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );

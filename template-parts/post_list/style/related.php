@@ -15,7 +15,7 @@ $date      = new DateTime( $post_data->post_date );
 			<figure class="c-postThumb__figure">
 				<?php
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo ARKHE_THEME::get_thumbnail(
+					echo Arkhe_Theme::get_thumbnail(
 						$the_id,
 						array(
 							'size'        => 'medium',
@@ -30,7 +30,7 @@ $date      = new DateTime( $post_data->post_date );
 			<div class="p-postList__title"><?php the_title(); ?></div>
 			<div class="p-postList__meta">
 				<div class="p-postList__times c-postTimes u-color-thin">
-					<?php ARKHE_THEME::the_date_time( $date, 'posted', false ); ?>
+					<?php Arkhe_Theme::the_date_time( $date, 'posted', false ); ?>
 				</div>
 			</div>
 		</div>

@@ -10,8 +10,8 @@ $show_cat = isset( $args['show_cat'] ) ? $args['show_cat'] : true;
 $show_tag = isset( $args['show_tag'] ) ? $args['show_tag'] : false;
 
 // カテゴリー・タグを取得
-$cat_list = $show_cat ? \ARKHE_THEME::get_the_term_links( $the_id, 'cat' ) : '';
-$tag_list = $show_tag ? \ARKHE_THEME::get_the_term_links( $the_id, 'tag' ) : '';
+$cat_list = $show_cat ? \Arkhe_Theme::get_the_term_links( $the_id, 'cat' ) : '';
+$tag_list = $show_tag ? \Arkhe_Theme::get_the_term_links( $the_id, 'tag' ) : '';
 
 $return                   = '';
 if ( $cat_list ) $return .= '<div class="c-postMetas__item -category">' . $cat_list . '</div>';

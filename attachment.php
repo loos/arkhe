@@ -10,15 +10,15 @@ while ( have_posts() ) :
 	$img_data  = wp_get_attachment_image_src( $img_id, 'full' );
 	$img_src   = ( false !== $img_data ) ? $img_data[0] : '';
 ?>
-	<main id="main_content" class="<?php ARKHE_THEME::main_class(); ?>">
-		<div <?php post_class( ARKHE_THEME::main_body_class( false ) ); ?>>
+	<main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
+		<div <?php post_class( Arkhe_Theme::main_body_class( false ) ); ?>>
 			<?php if ( $img_src ) : ?>
 				<h1 class="p-entry__thumb">
 					<img src="<?php echo esc_url( $img_src ); ?>" alt="<?php the_title_attribute(); ?>" class="p-entry__thumb__img">
 					<figcaption class="p-entry__thumb__figcaption"><?php echo esc_html( $img_cap ); ?></figcaption>
 				</h1>
 			<?php endif; ?>
-			<div class="<?php ARKHE_THEME::post_content_class(); ?>">
+			<div class="<?php Arkhe_Theme::post_content_class(); ?>">
 				<?php the_content(); // 「概要」 ?>
 			</div>
 		</div>

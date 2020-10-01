@@ -1,6 +1,5 @@
 <?php
-use ARKHE_THEME\Style;
-use ARKHE_THEME\Javascript;
+use Arkhe_Theme\Style;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -14,7 +13,7 @@ add_action( 'enqueue_block_editor_assets', 'arkhe_hook__enqueue_block_editor_ass
  * フロントで読み込むファイル
  */
 function arkhe_hook__wp_enqueue_scripts() {
-	$SETTING = \ARKHE_THEME::get_setting();
+	$SETTING = \Arkhe_Theme::get_setting();
 
 	// wp-block-libraryを読み込み
 	wp_enqueue_style( 'wp-block-library' );
@@ -26,7 +25,7 @@ function arkhe_hook__wp_enqueue_scripts() {
 	wp_add_inline_style( 'arkhe_main_style', Style::output( 'front' ) );
 
 	// ヘッダーオーバーレイ時
-	if ( \ARKHE_THEME::is_header_overlay() ) {
+	if ( \Arkhe_Theme::is_header_overlay() ) {
 		wp_enqueue_style( 'arkhe_overlay_header', ARKHE_TMP_DIR_URI . '/dist/css/module/-overlay-header.css', array(), ARKHE_VERSION );
 	}
 
@@ -35,7 +34,7 @@ function arkhe_hook__wp_enqueue_scripts() {
 	wp_enqueue_script( 'arkhe_main_script', ARKHE_TMP_DIR_URI . '/dist/js/main.js', array(), ARKHE_VERSION, true );
 
 	// フロント側に渡すグローバル変数
-	wp_localize_script( 'arkhe_main_script', 'arkheVars', Javascript::get_front_global_vars() );
+	wp_localize_script( 'arkhe_main_script', 'arkheVars', \Arkhe_Theme::get_front_global_vars() );
 
 	// コメント用
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

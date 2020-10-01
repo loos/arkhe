@@ -1,5 +1,5 @@
 <?php
-namespace ARKHE_THEME\Data;
+namespace Arkhe_Theme\Data;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

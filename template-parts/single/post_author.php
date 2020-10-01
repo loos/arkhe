@@ -7,5 +7,5 @@ $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
 ?>
 <section class="p-entry__author c-bottomSection">
 	<h2 class="c-bottomSection__title"><?php esc_html_e( 'Author of this article', 'arkhe' ); ?></h2>
-	<?php ARKHE_THEME::get_parts( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
+	<?php Arkhe_Theme::get_parts( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
 </section>

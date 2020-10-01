@@ -1,8 +1,8 @@
-<?php namespace ARKHE_THEME\Style;
+<?php namespace Arkhe_Theme\Style;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Post_List extends \ARKHE_THEME\Style {
+class Post_List extends \Arkhe_Theme\Style {
 
 	/**
 	 * 設定に合わせた比率を返す

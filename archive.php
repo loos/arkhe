@@ -3,12 +3,12 @@
  * アーカイブページ用
  */
 get_header(); ?>
-	<main id="main_content" class="<?php ARKHE_THEME::main_class(); ?>">
+	<main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
 		<?php
 		if ( is_category() || is_tag() || is_tax() ) :
-			ARKHE_THEME::get_parts( 'archive/content_term' );
+			Arkhe_Theme::get_parts( 'archive/content_term' );
 		else :
-			ARKHE_THEME::get_parts( 'archive/content' );
+			Arkhe_Theme::get_parts( 'archive/content' );
 		endif;
 		?>
 	</main>

@@ -1,29 +1,31 @@
 <?php
+namespace Arkhe_Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * Add hooks
  */
-add_filter( 'excerpt_length', 'arkhe_hook__excerpt_length' );
-add_filter( 'excerpt_mblength', 'arkhe_hook__excerpt_length' );
-add_filter( 'excerpt_more', 'arkhe_hook__excerpt_more' );
+add_filter( 'excerpt_length', '\Arkhe_Theme\hook_excerpt_length' );
+add_filter( 'excerpt_mblength', '\Arkhe_Theme\hook_excerpt_length' );
+add_filter( 'excerpt_more', '\Arkhe_Theme\hook_excerpt_more' );
 
-add_filter( 'the_excerpt_rss', 'arkhe_hook__add_rss_thumb' );
-add_filter( 'the_content_feed', 'arkhe_hook__add_rss_thumb' );
+add_filter( 'the_excerpt_rss', '\Arkhe_Theme\add_rss_thumb' );
+add_filter( 'the_content_feed', '\Arkhe_Theme\add_rss_thumb' );
 
-add_filter( 'navigation_markup_template', 'arkhe_hook__navigation_markup_template', 10, 2 );
+add_filter( 'navigation_markup_template', '\Arkhe_Theme\hook_navigation_markup', 10, 2 );
 
-add_action( 'wp_body_open', 'arkhe_hook__wp_body_open', 5 );
-add_action( 'wp_list_categories', 'arkhe_hook__wp_list_categories' );
-add_action( 'wp_list_pages', 'arkhe_hook__wp_list_pages' );
-add_action( 'get_archives_link', 'arkhe_hook__get_archives_link', 10, 6 );
-add_action( 'wp_terms_checklist_args', 'arkhe_hook__wp_terms_checklist_args', 10, 2 );
-// add_filter( 'theme_mod_custom_logo', 'arkhe_hook__custom_logo' );
+add_action( 'wp_body_open', '\Arkhe_Theme\wp_body_open', 5 );
+add_action( 'wp_list_categories', '\Arkhe_Theme\wp_list_categories' );
+add_action( 'wp_list_pages', '\Arkhe_Theme\wp_list_pages' );
+add_action( 'get_archives_link', '\Arkhe_Theme\hook_get_archives_link', 10, 6 );
+add_action( 'wp_terms_checklist_args', '\Arkhe_Theme\hook_terms_checklist_args', 10, 2 );
+// add_filter( 'theme_mod_custom_logo', '\Arkhe_Theme\custom_logo' );
 
 /**
  * 抜粋文字数を変更する
  */
-function arkhe_hook__excerpt_length( $length ) {
+function hook_excerpt_length( $length ) {
 	if ( is_admin() ) return $length;
 
 	if ( defined( 'ARKHE_EXCERPT_LENGTH' ) ) {
@@ -35,7 +37,7 @@ function arkhe_hook__excerpt_length( $length ) {
 /**
  * 抜粋文の末尾を ... に
  */
-function arkhe_hook__excerpt_more( $more ) {
+function hook_excerpt_more( $more ) {
 	if ( is_admin() ) return $more;
 	return '&hellip;';
 }
@@ -43,7 +45,7 @@ function arkhe_hook__excerpt_more( $more ) {
 /**
  * Feedlyでアイキャッチ画像を取得できるようにする
  */
-function arkhe_hook__add_rss_thumb( $content ) {
+function add_rss_thumb( $content ) {
 	global $post;
 
 	$thumb = get_the_post_thumbnail_url( $post->ID, 'large' );
@@ -57,7 +59,7 @@ function arkhe_hook__add_rss_thumb( $content ) {
 /**
  * Add skip link
  */
-function arkhe_hook__wp_body_open( $output ) {
+function wp_body_open( $output ) {
 	echo '<a class="skip-link screen-reader-text" href="#main_content">' . esc_html__( 'Skip to the content', 'arkhe' ) . '</a>';
 }
 
@@ -65,7 +67,7 @@ function arkhe_hook__wp_body_open( $output ) {
 /**
  * カテゴリーリストの件数を</a>の中に移動 & spanで囲む
  */
-function arkhe_hook__wp_list_categories( $output ) {
+function wp_list_categories( $output ) {
 	$output = str_replace( '</a> (', '<span class="cat-post-count">(', $output );
 	$output = str_replace( ')', ')</span></a>', $output );
 
@@ -81,7 +83,7 @@ function arkhe_hook__wp_list_categories( $output ) {
 /**
  * 固定ページリストへのフック
  */
-function arkhe_hook__wp_list_pages( $output ) {
+function wp_list_pages( $output ) {
 
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
@@ -95,7 +97,7 @@ function arkhe_hook__wp_list_pages( $output ) {
 /**
  * 年別アーカイブリストの投稿件数 を</a>の中に置換
  */
-function arkhe_hook__get_archives_link( $link_html, $url, $text, $format, $before, $after ) {
+function hook_get_archives_link( $link_html, $url, $text, $format, $before, $after ) {
 	if ( 'html' === $format ) {
 		$link_html = '<li>' . $before . '<a href="' . $url . '">' . $text . '<span class="post_count">' . $after . '</span></a></li>';
 	}
@@ -105,7 +107,7 @@ function arkhe_hook__get_archives_link( $link_html, $url, $text, $format, $befor
 /**
  * カテゴリーチェック時、順番をそのままに保つ
  */
-function arkhe_hook__wp_terms_checklist_args( $args, $post_id ) {
+function hook_terms_checklist_args( $args, $post_id ) {
 	$args['checked_ontop'] = false;
 	return $args;
 }
@@ -113,7 +115,7 @@ function arkhe_hook__wp_terms_checklist_args( $args, $post_id ) {
 /**
  * ページネーションの構造を書き換える
  */
-function arkhe_hook__navigation_markup_template( $template, $class ) {
+function hook_navigation_markup( $template, $class ) {
 	if ( 'pagination' === $class ) {
 		return '<nav class="navigation %1$s" role="navigation" aria-label="%4$s">%3$s</nav>';
 	}

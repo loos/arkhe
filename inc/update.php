@@ -1,11 +1,28 @@
 <?php
+namespace Arkhe_Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * ウィジェット登録
  */
-add_action( 'after_setup_theme', 'arkhe_hook__update_check' );
+add_action( 'after_setup_theme', '\Arkhe_Theme\update_check' );
 
-function arkhe_hook__update_check() {
-	\ARKHE_THEME\Update::version_check();
+function update_check() {
+	// 現在のバージョンを取得
+	$now_version = \Arkhe_Theme::$arkhe_version;
+
+	// データベースに保存されているバージョンデータを取得
+	$old_ver = get_theme_mod( 'version' );
+
+	// まだバージョン情報が記憶されていない（インストール時）、 DB更新だけ
+	if ( false === $old_ver ) {
+		set_theme_mod( 'version', $now_version );
+		return;
+	}
+
+	// アップデート時の処理
+	if ( $now_version !== $old_ver ) {
+		set_theme_mod( 'version', $now_version );
+	}
 }

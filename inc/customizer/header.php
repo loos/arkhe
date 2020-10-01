@@ -1,5 +1,5 @@
 <?php
-use \ARKHE_THEME\Customizer;
+use \Arkhe_Theme\Customizer;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 $arkhe_section = 'arkhe_section_header';
@@ -42,7 +42,7 @@ if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
 				'min'     => '32',
 				'max'     => '120',
 			),
-			'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
+			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 		)
 	);
 
@@ -59,7 +59,7 @@ if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
 				'min'     => '32',
 				'max'     => '80',
 			),
-			'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
+			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 		)
 	);
 

@@ -1,21 +1,15 @@
 <?php
-namespace ARKHE_THEME;
+namespace Arkhe_Theme\Utility;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Javascript {
-
-	/**
-	 * パンくずリストのデータを保持する変数
-	 */
-	public static $bread_json_data = array();
-
+trait Javascript {
 
 	/**
 	 * フロント側に渡すグローバル変数
 	 */
 	public static function get_front_global_vars() {
-		$SETTING = \ARKHE_THEME::get_setting();
+		$SETTING = \Arkhe_Theme::get_setting();
 
 		return array(
 			'isFixHeadPC' => $SETTING['fix_header_pc'],

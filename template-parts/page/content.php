@@ -5,19 +5,19 @@
 $the_id = get_the_ID();
 
 // ヘッダー部分
-ARKHE_THEME::get_parts( 'page/header', array( 'post_id' => $the_id ) );
+Arkhe_Theme::get_parts( 'page/header', array( 'post_id' => $the_id ) );
 
 // コンテンツ前フック
 do_action( 'arkhe_before_page_content', $the_id );
 
 ?>
-<div class="<?php ARKHE_THEME::post_content_class(); ?>">
+<div class="<?php Arkhe_Theme::post_content_class(); ?>">
 	<?php the_content(); ?>
 </div>
 <?php
 
 // 改ページナビゲーション
-ARKHE_THEME::get_parts( 'singular/pagination' );
+Arkhe_Theme::get_parts( 'singular/pagination' );
 
 // コンテンツ後フック
 do_action( 'arkhe_after_page_content', $the_id );

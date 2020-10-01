@@ -1,5 +1,5 @@
 <?php
-namespace ARKHE_THEME\Customizer\Control;
+namespace Arkhe_Theme\Customizer\Control;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

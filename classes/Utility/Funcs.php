@@ -1,29 +1,19 @@
 <?php
-use \ARKHE_THEME\Data;
+namespace Arkhe_Theme\Utility;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-/**
- * ARKHE_THEME は 名前空間なしで定義
- */
-class ARKHE_THEME {
-
-	/**
-	 * コンストラクタ
-	 */
-	public function __construct() {
-		\ARKHE_THEME\Init::init();
-	}
-
+trait Funcs {
 
 	/**
 	 * Data 取得・セット系
 	 */
-	public static function get_setting( $key = null ) {
-		return Data::get_setting( $key );
-	}
-	public static function set_setting( $key = null, $val = '' ) {
-		Data::set_setting( $key, $val );
-	}
+	// public static function get_setting( $key = null ) {
+	// 	return \Arkhe_Theme::get_setting( $key );
+	// }
+	// public static function set_setting( $key = null, $val = '' ) {
+	// 	\Arkhe_Theme::set_setting( $key, $val );
+	// }
 
 
 	/**

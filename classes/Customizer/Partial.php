@@ -1,5 +1,5 @@
 <?php
-namespace ARKHE_THEME\Customizer;
+namespace Arkhe_Theme\Customizer;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
@@ -15,7 +15,7 @@ class Partial {
 	 */
 	public static function breadcrumb() {
 		ob_start();
-		\ARKHE_THEME::get_parts( 'others/breadcrumb' );
+		\Arkhe_Theme::get_parts( 'others/breadcrumb' );
 		return ob_get_clean();
 	}
 

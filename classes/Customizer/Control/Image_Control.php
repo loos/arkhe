@@ -1,12 +1,12 @@
 <?php
-namespace ARKHE_THEME\Customizer\Control;
+namespace Arkhe_Theme\Customizer\Control;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * カスタマイザーの li に好きなクラス名を付与できるようににしたもの
  */
-class Media_Control extends \WP_Customize_Media_Control {
+class Image_Control extends \WP_Customize_Image_Control {
 
 	public $classname = ''; // 追加したメンバ変数
 

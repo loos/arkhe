@@ -1,5 +1,5 @@
 <?php
-use \ARKHE_THEME\Customizer;
+use \Arkhe_Theme\Customizer;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 $arkhe_section = 'arkhe_section_post_list';
@@ -112,7 +112,7 @@ Customizer::add(
 			'min'     => '0',
 			'max'     => '320',
 		),
-		'sanitize'    => array( '\ARKHE_THEME\Customizer\Sanitize', 'int' ),
+		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
 );
 

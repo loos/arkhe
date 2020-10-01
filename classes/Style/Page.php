@@ -1,8 +1,8 @@
-<?php namespace ARKHE_THEME\Style;
+<?php namespace Arkhe_Theme\Style;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Page extends \ARKHE_THEME\Style {
+class Page extends \Arkhe_Theme\Style {
 
 	/**
 	 * タイトル背景

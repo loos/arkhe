@@ -1,15 +1,16 @@
 <?php
-use ARKHE_THEME\TinyMCE;
+namespace Arkhe_Theme\TinyMCE;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-add_action( 'admin_init', 'arkhe_hook__add_editor_style' );
-add_action( 'tiny_mce_before_init', 'arkhe_hook__tiny_mce_before_init' );
+add_action( 'admin_init', '\Arkhe_Theme\TinyMCE\add_mce_style' );
+add_action( 'tiny_mce_before_init', '\Arkhe_Theme\TinyMCE\mce_before_init' );
 
 
 /**
  * TinyMCEのエディタ内CSS
  */
-function arkhe_hook__add_editor_style() {
+function add_mce_style() {
 	$editor_style_path = array( ARKHE_TMP_DIR_URI . '/dist/css/editor.css?v=' . ARKHE_VERSION );
 	add_editor_style( $editor_style_path );
 }
@@ -17,7 +18,7 @@ function arkhe_hook__add_editor_style() {
 /**
  * TinyMCE設定
  */
-function arkhe_hook__tiny_mce_before_init( $mceInit ) {
+function mce_before_init( $mceInit ) {
 
 	// 見出し4まで
 	// $mceInit['block_formats'] = '段落=p; 見出し 2=h2; 見出し 3=h3; 見出し 4=h4;';
@@ -40,7 +41,37 @@ function arkhe_hook__tiny_mce_before_init( $mceInit ) {
 	$mceInit['object_resizing']   = 'img';
 
 	// インライン出力するCSS
-	$mceInit = TinyMce::set_content_style( $mceInit );
+	$mceInit = \Arkhe_Theme\TinyMCE\set_content_style( $mceInit );
+
+	return $mceInit;
+}
+
+
+/**
+ * インラインスタイルをセット
+ */
+function set_content_style( $mceInit ) {
+
+	// Gutenberg か Classic を判別するのに使う
+	global $current_screen;
+
+	if ( ! isset( $current_screen ) ) return $mceInit;
+
+	// content_styleがまだなければ空でセット
+	if ( ! isset( $mceInit['content_style'] ) ) {
+		$mceInit['content_style'] = '';
+	}
+
+	$is_gutenberg = method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor();
+
+	// Classic Editor
+	if ( ! $is_gutenberg ) {
+		$add_styles                = \Arkhe_Theme\Style::output( 'editor' );
+		$add_styles                = str_replace( '\\', '', $add_styles );  // contentのバックスラッシュで変になってしまうのでtinymceは別途指定
+		$add_styles                = preg_replace( '/(?:\n|\r|\r\n)/su', '', $add_styles );
+		$add_styles                = str_replace( '"', "'", $add_styles );
+		$mceInit['content_style'] .= $add_styles;
+	}
 
 	return $mceInit;
 }

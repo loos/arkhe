@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
-$SETTING = ARKHE_THEME::get_setting();
-if ( ARKHE_THEME::is_show_sidebar() ) get_sidebar();
+$SETTING = Arkhe_Theme::get_setting();
+if ( Arkhe_Theme::is_show_sidebar() ) get_sidebar();
 ?>
 </div><!-- // l-content__body -->
 </div><!-- // l-content -->
@@ -9,11 +9,11 @@ if ( ARKHE_THEME::is_show_sidebar() ) get_sidebar();
 	do_action( 'arkhe_before_footer' );
 
 	// パンくずリスト
-	if ( 'top' !== $SETTING['breadcrumbs_pos'] ) ARKHE_THEME::get_parts( 'others/breadcrumb' );
+	if ( 'top' !== $SETTING['breadcrumbs_pos'] ) Arkhe_Theme::get_parts( 'others/breadcrumb' );
 
-	ARKHE_THEME::get_parts( 'footer' );
+	Arkhe_Theme::get_parts( 'footer' );
 
-	ARKHE_THEME::get_parts( 'footer/after' );
+	Arkhe_Theme::get_parts( 'footer/after' );
 ?>
 </div><!--/ #wrapper-->
 <?php wp_footer(); ?>

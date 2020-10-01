@@ -1,8 +1,8 @@
-<?php namespace ARKHE_THEME\Style;
+<?php namespace Arkhe_Theme\Style;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Color extends \ARKHE_THEME\Style {
+class Color extends \Arkhe_Theme\Style {
 
 	/**
 	 * カラー変数のセット（フロント & エディターで共通のもの）

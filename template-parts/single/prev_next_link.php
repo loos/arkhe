@@ -3,7 +3,7 @@
  * 前の記事へ & 次の記事へ
  */
 
-$is_same_term = ARKHE_THEME::get_setting( 'pn_link_is_same_term' );
+$is_same_term = Arkhe_Theme::get_setting( 'pn_link_is_same_term' );
 
 ?>
 <ul class="c-pnNav">

@@ -1,5 +1,5 @@
 <?php
-namespace ARKHE_THEME\Widget;
+namespace Arkhe_Theme\Widget;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 

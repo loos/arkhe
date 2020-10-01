@@ -1,6 +1,6 @@
-<?php namespace ARKHE_THEME;
+<?php namespace Arkhe_Theme;
 
-use ARKHE_THEME\Style as Style;
+use Arkhe_Theme\Style as Style;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Style {
@@ -142,7 +142,7 @@ class Style {
 	 * カスタムスタイルの生成 （フロント用）
 	 */
 	public static function set_front_style() {
-		$SETTING = \ARKHE_THEME::get_setting();
+		$SETTING = \Arkhe_Theme::get_setting();
 
 		if ( is_user_logged_in() ) {
 			self::add( '#wpadminbar', 'position: fixed !important' );
@@ -171,7 +171,7 @@ class Style {
 	 */
 	public static function set_post_content_style() {
 
-		$SETTING    = \ARKHE_THEME::get_setting();
+		$SETTING    = \Arkhe_Theme::get_setting();
 		$color_main = $SETTING['color_main'];
 
 		// カラー用CSS変数のセット
@@ -241,7 +241,7 @@ class Style {
 		foreach ( self::$modules as $filename ) {
 			$module_path = self::get_module_path( $filename );
 			if ( $module_path ) {
-				$module_style  = \ARKHE_THEME::get_file_contents( $module_path );
+				$module_style  = \Arkhe_Theme::get_file_contents( $module_path );
 				$module_style  = str_replace( '@charset "UTF-8";', '', $module_style );
 				$output_style .= $module_style;
 			}

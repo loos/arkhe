@@ -1,7 +1,7 @@
 <?php
-namespace ARKHE_THEME;
+namespace Arkhe_Theme;
 
-use \ARKHE_THEME\Data\Default_Data;
+use \Arkhe_Theme\Data\Default_Data;
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Data {
@@ -28,20 +28,14 @@ class Data {
 	const DB_NAME_CUSTOMIZER = 'arkhe_settings';
 
 	/**
+	 * パンくずリストのデータを保持する変数
+	 */
+	public static $bread_json_data = array();
+
+	/**
 	 * 外部からインスタンス化させない
 	 */
 	private function __construct() {}
-
-
-	/**
-	 * インスタンスを取得または生成して返す
-	 */
-	public static function get_instance() {
-		if ( empty( self::$instance ) ) {
-			self::$instance = new Data();
-		}
-		return self::$instance;
-	}
 
 
 	/**
@@ -49,12 +43,8 @@ class Data {
 	 */
 	public static function init() {
 
-		// 一度しか発火させない
-		if ( isset( self::$instance ) ) return;
-		self::$instance = self::get_instance();
-
 		// テーマバージョンを取得
-		self::$instance->get_theme_version();
+		self::get_theme_version();
 
 		// テーマバージョンを定数化しておく(wp_enqueue_ のクエリ付与用)
 		if ( ! defined( 'ARKHE_VERSION' ) ) {
@@ -62,13 +52,13 @@ class Data {
 		}
 
 		// 設定データのデフォルト値をセット
-		self::$instance->set_default();
+		self::set_default();
 
 		// 設定データのセット
-		add_action( 'after_setup_theme', array( self::$instance, 'set_settings' ), 9 );
+		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'set_settings' ), 9 );
 		if ( is_customize_preview() ) {
 			// wp_loaded : カスタマイザーのデータが反映されるタイミング。
-			add_action( 'wp_loaded', array( self::$instance, 'set_settings' ), 10 );
+			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings' ), 10 );
 		}
 	}
 
@@ -95,7 +85,7 @@ class Data {
 	/**
 	 * [カスタマイザーのデータ] 初期セット
 	 */
-	public function set_settings() {
+	public static function set_settings() {
 		$db_data        = get_option( self::DB_NAME_CUSTOMIZER ) ?: array();
 		self::$settings = array_merge( self::$default_settings, $db_data );
 	}

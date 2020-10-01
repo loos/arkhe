@@ -13,7 +13,7 @@ add_action( 'wp', 'arkhe_hook__define_page_template' );
  * カスタマイザーのデータを受け取ってから定義する定数たち。
  */
 function arkhe_hook__define_theme_const() {
-	$SETTING = \ARKHE_THEME::get_setting();
+	$SETTING = \Arkhe_Theme::get_setting();
 
 	// プレースホルダー
 	define( 'ARKHE_PLACEHOLDER', ARKHE_TMP_DIR_URI . '/assets/img/placeholder.gif' );

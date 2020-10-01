@@ -22,10 +22,11 @@ define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
 spl_autoload_register(
 	function( $classname ) {
 
-		// 名前に ARKHE_THEME がなければオートロードしない。
-		if ( strpos( $classname, 'ARKHE_THEME' ) === false && strpos( $classname, 'ARKHE_THEME' ) === false) return;
+		// 名前に Arkhe_Theme がなければオートロードしない。
+		if ( strpos( $classname, 'Arkhe_Theme' ) === false && strpos( $classname, 'Arkhe_Theme' ) === false) return;
 
 		$classname = str_replace( '\\', '/', $classname );
+		$classname = str_replace( 'Arkhe_Theme/', '', $classname );
 		$file      = ARKHE_TMP_DIR . '/classes/' . $classname . '.php';
 
 		if ( file_exists( $file ) ) require $file;
@@ -44,7 +45,53 @@ function arkhe_theme_beta_message() {
 }
 add_action( 'admin_notices', 'arkhe_theme_beta_message' );
 
+
+
+
+/**
+ * Arkhe_Theme
+ */
+class Arkhe_Theme extends \Arkhe_Theme\Data {
+
+	use \Arkhe_Theme\Utility\Funcs,
+		\Arkhe_Theme\Utility\Javascript;
+
+	public function __construct() {
+		// データをセット
+		self::init();
+
+		// 定数定義
+		require_once ARKHE_TMP_DIR . '/inc/consts.php';
+
+		// テーマサポート機能
+		require_once ARKHE_TMP_DIR . '/inc/theme_support.php';
+
+		// ファイル読み込み
+		require_once ARKHE_TMP_DIR . '/inc/enqueue_scripts.php';
+
+		// ウィジェット
+		require_once ARKHE_TMP_DIR . '/inc/widget.php';
+
+		// カスタムメニュー
+		require_once ARKHE_TMP_DIR . '/inc/custom_menu.php';
+
+		// カスタマイザー
+		require_once ARKHE_TMP_DIR . '/inc/customizer.php';
+
+		// クラシックエディター
+		require_once ARKHE_TMP_DIR . '/inc/tinymce.php';
+
+		// その他、フック処理
+		require_once ARKHE_TMP_DIR . '/inc/hooks.php';
+
+		// アップデートチェック
+		if ( is_admin() || is_user_logged_in() ) {
+			require_once ARKHE_TMP_DIR . '/inc/update.php';
+		}
+	}
+}
+
 /**
  * Init
  */
-new \ARKHE_THEME();
+new \Arkhe_Theme();

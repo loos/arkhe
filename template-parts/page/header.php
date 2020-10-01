@@ -6,12 +6,12 @@
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_queried_object();
 $the_title = get_the_title( $the_id );
 
-if ( ! ARKHE_THEME::is_show_ttltop() ) : ?>
+if ( ! Arkhe_Theme::is_show_ttltop() ) : ?>
 	<h1 class="p-page__title c-pageTitle"><?php the_title(); ?></h1>
 	<?php
 	// アイキャッチ画像
-	if ( ARKHE_THEME::get_setting( 'show_page_thumb' ) ) :
-		ARKHE_THEME::get_parts(
+	if ( Arkhe_Theme::get_setting( 'show_page_thumb' ) ) :
+		Arkhe_Theme::get_parts(
 			'singular/thumbnail',
 			array(
 				'post_id'    => $the_id,

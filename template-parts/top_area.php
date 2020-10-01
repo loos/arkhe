@@ -13,7 +13,7 @@ $bgimg_full   = get_the_post_thumbnail_url( $page_id, 'full' );
 $bgimg_medium = $bgimg_full ? get_the_post_thumbnail_url( $page_id, 'medium' ) : '';
 
 // コンテンツヘッダーに追加するクラス。（画像がなければフィルターもなし）
-$add_area_class = $bgimg_full ? '-filter-' . ARKHE_THEME::get_setting( 'title_bg_filter' ) : '-filter-none -noimg';
+$add_area_class = $bgimg_full ? '-filter-' . Arkhe_Theme::get_setting( 'title_bg_filter' ) : '-filter-none -noimg';
 ?>
 <div id="top_title_area" class="l-content__top p-topArea c-filterLayer <?php echo esc_attr( $add_area_class ); ?>">
 	<?php if ( $bgimg_full ) : ?>
@@ -23,6 +23,6 @@ $add_area_class = $bgimg_full ? '-filter-' . ARKHE_THEME::get_setting( 'title_bg
 		></div>
 	<?php endif; ?>
 	<div class="p-topArea__body l-container">
-		<?php ARKHE_THEME::get_parts( 'top_area/content', array( 'post_id' => $page_id ) ); ?>
+		<?php Arkhe_Theme::get_parts( 'top_area/content', array( 'post_id' => $page_id ) ); ?>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit;
 
-	$SETTING = ARKHE_THEME::get_setting();
+	$SETTING = Arkhe_Theme::get_setting();
 
 	// ウィジェットの使用状況
 	$is_active_footer1 = is_active_sidebar( 'footer-1' );
