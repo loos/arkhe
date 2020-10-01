@@ -28,6 +28,7 @@ Customizer::big_title(
 
 // ヘッダーがブロックで管理されているかどうか
 if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
+
 	// 画像サイズ（PC）
 	Customizer::add(
 		$arkhe_section,
@@ -113,20 +114,8 @@ if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
 
 } else {
 
-	$tmplink = '<a href="' . esc_url( admin_url( 'edit.php?post_type=arkhe_template' ) ) . '" target="_blank" rel="noopener">' . __( 'テンプレート一覧ページ', 'arkhe' ) . '</a>';
+	do_action( 'arkhe_customizer_header_blocked_message' );
 
-	// translators: %s is $tmplink.
-	$message = __( '現在、ヘッダーの内容はブロックで管理されています。', 'arkhe' ) . sprintf( __( '%sから編集してください。', 'arkhe' ), $tmplink );
-
-	// ヘッダーの固定設定
-	Customizer::big_title(
-		$arkhe_section,
-		'is_header_block',
-		array(
-			'label'       => __( 'ブロックで管理中...', 'arkhe' ),
-			'description' => $message,
-		)
-	);
 }
 
 

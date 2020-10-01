@@ -1,6 +1,9 @@
 <?php
 namespace Arkhe_Theme;
 
+// 「※」を定数化しておく
+define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
+
 /**
  * 定数定義 （'wp_loaded' は プレビュー画面の即時反映データも受け取れる & AJAXでもギリギリ呼び出されるタイミング。）
  */
@@ -9,9 +12,6 @@ add_action( 'wp_loaded', '\Arkhe_Theme\define_theme_const', 11 );
 function define_theme_const() {
 
 	$setting = \Arkhe_Theme::get_setting();
-
-	// 「※」を定数化しておく
-	define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
 
 	// 投稿リストのレイアウトタイプ
 	define( 'ARKHE_LIST_TYPE', $setting['post_list_layout'] );
