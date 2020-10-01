@@ -29,7 +29,10 @@ export default {
 			const headBody = header.querySelector('.l-header__body');
 			if (null !== headBody) {
 				const headBodyH = headBody.offsetHeight;
-				document.documentElement.style.setProperty('--header_body_height', headBodyH + 'px');
+				document.documentElement.style.setProperty(
+					'--header_body_height',
+					headBodyH + 'px'
+				);
 			}
 		}
 	},

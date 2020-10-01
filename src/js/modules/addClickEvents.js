@@ -5,7 +5,7 @@ import setState, { isModalOpen } from '@js/modules/data/stateData';
  * クリックイベント処理をまとめたオブジェクト
  */
 export const clickEvents = {
-	pageTop: function() {
+	pageTop() {
 		const thisFunc = clickEvents.pageTop;
 		const nowY = window.pageYOffset;
 		window.scrollTo(0, Math.floor(nowY * 0.8));
@@ -13,7 +13,7 @@ export const clickEvents = {
 			window.setTimeout(thisFunc, 10);
 		}
 	},
-	toggleMenu: function(e) {
+	toggleMenu(e) {
 		e.preventDefault();
 
 		const spMenu = DOM.spMenu;
@@ -46,7 +46,7 @@ export const clickEvents = {
 			}
 		}
 	},
-	toggleSearch: function(e) {
+	toggleSearch(e) {
 		e.preventDefault();
 
 		const searchModal = DOM.searchModal;
@@ -114,7 +114,7 @@ export const clickEvents = {
 	/**
 	 * サブメニューのアコーディオン
 	 */
-	toggleSubmenu: function(e) {
+	toggleSubmenu(e) {
 		e.preventDefault();
 		const btn = e.currentTarget;
 		const submenu = btn.parentNode.nextElementSibling;
@@ -128,7 +128,7 @@ export const clickEvents = {
 	/**
 	 * タブ
 	 */
-	tabControl: function(e) {
+	tabControl(e) {
 		e.preventDefault();
 
 		// クリックイベントがキー（Enter / space）によって呼び出されたかどうか
@@ -167,6 +167,7 @@ export const clickEvents = {
 
 /**
  * data-onclick属性を持つ要素にクリックイベントを登録
+ *
  * @param {*} dom 該当要素を検索する親（ AJAXで読み込んだ要素からも探せるように引数化 ）
  */
 export default function addClickEvents(dom) {
@@ -176,7 +177,7 @@ export default function addClickEvents(dom) {
 		if (elem) {
 			const funcName = elem.getAttribute('data-onclick');
 			const clickFunc = clickEvents[funcName];
-			elem.addEventListener('click', function(e) {
+			elem.addEventListener('click', function (e) {
 				clickFunc(e);
 			});
 		}

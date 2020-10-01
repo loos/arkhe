@@ -19,7 +19,7 @@ $the_user_link_url = $author_data->user_url;
 ?>
 <div class="p-authorBox">
 	<figure class="p-authorBox__avatar">
-		<?php echo get_avatar( $author_id, 100, '', $author_name . 'のアバター' ); ?>
+		<?php echo get_avatar( $author_id, 100, '', $author_name ); ?>
 	</figure>
 	<div class="p-authorBox__body">
 		<?php if ( ! is_author() ) : ?>

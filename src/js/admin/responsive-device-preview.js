@@ -1,17 +1,17 @@
 /* global jQuery */
 /* exported CustomizerResponsiveDevicePreview */
 /* eslint consistent-this: [ "error", "section" ], no-magic-numbers: [ "error", { "ignore": [1] } ] */
-let CustomizerResponsiveDevicePreview = (function($) {
+const CustomizerResponsiveDevicePreview = (function ($) {
 	'use strict';
 
-	let component = {
+	const component = {
 		api: null,
 	};
 
 	/**
 	 * Add callbacks to previewUrl and previewedDevice values.
 	 *
-	 * @param {object} api Instance of wp.customize.
+	 * @param {Object} api Instance of wp.customize.
 	 * @returns {void}
 	 */
 	component.init = function init(api) {
@@ -34,8 +34,10 @@ let CustomizerResponsiveDevicePreview = (function($) {
 			}
 			return originalPreviewUrlValidate.call(this, url);
 		};
-		component.api.previewedDevice.bind(function() {
-			let url = component.amendUrlWithPreviewedDevice(component.api.previewer.previewUrl.get());
+		component.api.previewedDevice.bind(function () {
+			const url = component.amendUrlWithPreviewedDevice(
+				component.api.previewer.previewUrl.get()
+			);
 			component.api.previewer.previewUrl.set(url);
 		});
 	};
@@ -56,26 +58,26 @@ let CustomizerResponsiveDevicePreview = (function($) {
 
 		//アドセンスでカスタマイザーのプレビュー画面が小さくなるバグを回避(力技)
 
-		setTimeout(function() {
-			let prevFrame = document.querySelector('#customize-preview iframe');
+		setTimeout(function () {
+			const prevFrame = document.querySelector('#customize-preview iframe');
 			if (prevFrame) {
 				prevFrame.style.height = '100%';
 			}
 		}, 100);
-		setTimeout(function() {
-			let prevFrame = document.querySelector('#customize-preview iframe');
+		setTimeout(function () {
+			const prevFrame = document.querySelector('#customize-preview iframe');
 			if (prevFrame) {
 				prevFrame.style.height = '100%';
 			}
 		}, 500);
-		setTimeout(function() {
-			let prevFrame = document.querySelector('#customize-preview iframe');
+		setTimeout(function () {
+			const prevFrame = document.querySelector('#customize-preview iframe');
 			if (prevFrame) {
 				prevFrame.style.height = '100%';
 			}
 		}, 1000);
-		setTimeout(function() {
-			let prevFrame = document.querySelector('#customize-preview iframe');
+		setTimeout(function () {
+			const prevFrame = document.querySelector('#customize-preview iframe');
 			if (prevFrame) {
 				prevFrame.style.height = '100%';
 			}

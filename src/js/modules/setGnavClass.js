@@ -31,7 +31,7 @@ const setCurrent = (nav) => {
  * setGnavClass
  *
  */
-export default function() {
+export default function () {
 	const gnav = DOM.gnav;
 	if (null === gnav) return;
 	// グロナビに -current つける

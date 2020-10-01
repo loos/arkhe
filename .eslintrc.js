@@ -1,5 +1,5 @@
 module.exports = {
-	extends: [ 'plugin:@wordpress/eslint-plugin/recommended' ],
+	extends: ['plugin:@wordpress/eslint-plugin/recommended'],
 	// extends: ['wordpress', 'plugin:prettier/recommended'], //eslint:recommended
 	// parserOptions: {
 	//     sourceType: 'module', //importを使うときに必要
@@ -8,6 +8,13 @@ module.exports = {
 	//         jsx: true,
 	//     },
 	// },
+	globals: {
+		alert: false,
+		document: false,
+		console: false,
+		fetch: false,
+		location: false,
+	},
 
 	rules: {
 		// 'prettier/prettier': 0,

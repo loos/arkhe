@@ -26,7 +26,7 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 	// firstTabStop.focus();
 
 	// Add keydown event
-	modal.addEventListener('keydown', function(e) {
+	modal.addEventListener('keydown', function (e) {
 		if (!isModalOpen) return;
 
 		// 現在アクティブなトグルボタンを取得
@@ -75,8 +75,8 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 	// The last focusable element within the modal window
 	const lastTabStop = focusableElements[focusableElements.length - 1];
 
-	toggleBtns.forEach(function(btn) {
-		btn.addEventListener('keydown', function(e) {
+	toggleBtns.forEach(function (btn) {
+		btn.addEventListener('keydown', function (e) {
 			if (!isModalOpen) return;
 
 			if (9 === e.keyCode) {
@@ -96,7 +96,7 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 }
 
 // モーダル内でフォーカスをキープする
-export default function(modal, closeBtn) {
+export default function (modal, closeBtn) {
 	// ドロワーモーダルのフォーカス可能要素を取得
 	const drawerFocusableElements = getFocusableElements(DOM.spMenu);
 
