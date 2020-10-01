@@ -35,13 +35,13 @@ trait Attrs {
 	 * ヘッダーの追加属性
 	 */
 	public static function header_attr( $args = null, $is_echo = true ) {
-		$SETTING = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe_Theme::get_setting();
 
 		$logo_pos = isset( $args['logo_pos'] ) ? $args['logo_pos'] : '';
 
 		// 追従設定
-		$pcfix = $SETTING['fix_header_pc'] ? '1' : '0';
-		$spfix = $SETTING['fix_header_sp'] ? '1' : '0';
+		$pcfix = $setting['fix_header_pc'] ? '1' : '0';
+		$spfix = $setting['fix_header_sp'] ? '1' : '0';
 
 		$attrs = 'data-pcfix="' . $pcfix . '" data-spfix="' . $spfix . '"';
 

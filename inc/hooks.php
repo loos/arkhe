@@ -20,7 +20,7 @@ add_action( 'wp_list_categories', '\Arkhe_Theme\wp_list_categories' );
 add_action( 'wp_list_pages', '\Arkhe_Theme\wp_list_pages' );
 add_action( 'get_archives_link', '\Arkhe_Theme\hook_get_archives_link', 10, 6 );
 add_action( 'wp_terms_checklist_args', '\Arkhe_Theme\hook_terms_checklist_args', 10, 2 );
-// add_filter( 'theme_mod_custom_logo', '\Arkhe_Theme\custom_logo' );
+
 
 /**
  * 抜粋文字数を変更する
@@ -34,6 +34,7 @@ function hook_excerpt_length( $length ) {
 	return $length;
 }
 
+
 /**
  * 抜粋文の末尾を ... に
  */
@@ -41,6 +42,7 @@ function hook_excerpt_more( $more ) {
 	if ( is_admin() ) return $more;
 	return '&hellip;';
 }
+
 
 /**
  * Feedlyでアイキャッチ画像を取得できるようにする
@@ -80,6 +82,7 @@ function wp_list_categories( $output ) {
 	return $output;
 }
 
+
 /**
  * 固定ページリストへのフック
  */
@@ -94,6 +97,7 @@ function wp_list_pages( $output ) {
 	return $output;
 }
 
+
 /**
  * 年別アーカイブリストの投稿件数 を</a>の中に置換
  */
@@ -104,6 +108,7 @@ function hook_get_archives_link( $link_html, $url, $text, $format, $before, $aft
 	return $link_html;
 }
 
+
 /**
  * カテゴリーチェック時、順番をそのままに保つ
  */
@@ -111,6 +116,7 @@ function hook_terms_checklist_args( $args, $post_id ) {
 	$args['checked_ontop'] = false;
 	return $args;
 }
+
 
 /**
  * ページネーションの構造を書き換える

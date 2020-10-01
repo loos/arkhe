@@ -96,7 +96,7 @@
 		<!-- クラスコメントが短くても許す -->
 		<exclude name="Generic.Commenting.DocComment.MissingShort" />
 
-		<!-- 変数の snake_case ルールを除外 ( $SETTING などに影響) -->
+		<!-- 変数の snake_case ルールを除外 ( $setting などに影響) -->
 		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
 		
 		<!-- ファイル名を_から始めた時に出るエラーを除外 -->

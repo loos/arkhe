@@ -1,22 +1,24 @@
 <?php
+namespace Arkhe_Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * カスタムメニューの設定
  */
-add_action( 'after_setup_theme', 'arkhe_hook__register_nav_menus', 9 );
-add_filter( 'walker_nav_menu_start_el', 'arkhe_hook__walker_nav_menu_start_el', 10, 4 );
+add_action( 'after_setup_theme', '\Arkhe_Theme\register_nav_locations', 9 );
+add_filter( 'walker_nav_menu_start_el', '\Arkhe_Theme\hook_walker_nav_menu', 10, 4 );
 
 
 /**
  * カスタムメニューのロケーション登録
  */
-function arkhe_hook__register_nav_menus() {
+function register_nav_locations() {
 	register_nav_menus(
 		array(
-			'header_menu'  => 'グローバルナビ',
-			'nav_sp_menu'  => 'スマホ開閉メニュー内',
-			'footer_menu'  => 'フッター',
+			'header_menu'  => __( 'Global Navigation', 'arkhe' ),
+			'nav_sp_menu'  => __( 'Inside the drawer menu', 'arkhe' ),
+			'footer_menu'  => __( 'Footer', 'arkhe' ),
 		)
 	);
 }
@@ -26,7 +28,7 @@ function arkhe_hook__register_nav_menus() {
  * リストのHTMLを組み替える
  * 例：「説明」を追加（ナビゲーションの英語テキストに使用）
  */
-function arkhe_hook__walker_nav_menu_start_el( $item_output, $item, $depth, $args ) {
+function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
 
 	// 特定のメニューに対して処理
 	$menu_location = $args->theme_location;

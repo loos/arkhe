@@ -1,17 +1,17 @@
 <?php
-namespace Arkhe_Theme\TinyMCE;
+namespace Arkhe_Theme;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-add_action( 'admin_init', '\Arkhe_Theme\TinyMCE\add_mce_style' );
-add_action( 'tiny_mce_before_init', '\Arkhe_Theme\TinyMCE\mce_before_init' );
+add_action( 'admin_init', '\Arkhe_Theme\add_mce_style' );
+add_action( 'tiny_mce_before_init', '\Arkhe_Theme\mce_before_init' );
 
 
 /**
  * TinyMCEのエディタ内CSS
  */
 function add_mce_style() {
-	$editor_style_path = array( ARKHE_TMP_DIR_URI . '/dist/css/editor.css?v=' . ARKHE_VERSION );
+	$editor_style_path = array( ARKHE_TMP_DIR_URI . '/dist/css/editor.css?v=' . ARKHE_VER );
 	add_editor_style( $editor_style_path );
 }
 

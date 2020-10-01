@@ -55,7 +55,7 @@ class Customizer {
 
 		$args = self::set_args( $args );
 
-		$customize_id = \Arkhe_Theme::DB_NAME_CUSTOMIZER . '[' . $id . ']';
+		$customize_id = \Arkhe_Theme::DB_NAMES['customizer'] . '[' . $id . ']';
 		$type         = $args['type'];
 		$partial      = $args['partial'];
 

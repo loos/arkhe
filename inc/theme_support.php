@@ -1,12 +1,14 @@
 <?php
+namespace Arkhe_Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * add_theme_supports
  */
-add_action( 'after_setup_theme', 'arkhe_hook__setup_theme' );
+add_action( 'after_setup_theme', '\Arkhe_Theme\setup_theme' );
 
-function arkhe_hook__setup_theme() {
+function setup_theme() {
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \Arkhe_Theme::get_setting( 'container_size' ) );
@@ -80,5 +82,4 @@ function arkhe_hook__setup_theme() {
 			),
 		)
 	);
-
 }

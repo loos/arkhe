@@ -3,7 +3,7 @@
  * 投稿ページのタイトル部分
  * $args['post_id'] : 投稿IDが渡ってくる
  */
-$SETTING = Arkhe_Theme::get_setting();
+$setting = Arkhe_Theme::get_setting();
 
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
@@ -31,13 +31,13 @@ $is_modified = ( $date < $modified );
 				'single/term_list',
 				array(
 					'post_id'  => $the_id,
-					'show_cat' => $SETTING['show_entry_cat'],
-					'show_tag' => $SETTING['show_entry_tag'],
+					'show_cat' => $setting['show_entry_cat'],
+					'show_tag' => $setting['show_entry_tag'],
 				)
 			);
 
 			// 著者アイコン
-			if ( $SETTING['show_entry_author'] ) :
+			if ( $setting['show_entry_author'] ) :
 				$author_id   = $post_data->post_author;
 				$author_data = get_userdata( $author_id );
 				$author_url  = get_author_posts_url( $author_id );

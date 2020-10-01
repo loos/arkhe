@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-09-28 17:14+0900\n"
-"PO-Revision-Date: 2020-09-28 17:14+0900\n"
+"POT-Creation-Date: 2020-10-01 22:29+0900\n"
+"PO-Revision-Date: 2020-10-01 22:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -37,11 +37,11 @@ msgstr "お探しのページは移動または削除された可能性があり
 msgid "Please enter a keyword below to search."
 msgstr "以下にキーワードを入力して検索してみてください。"
 
-#: classes/ARKHE_THEME/Data/Default_Data.php:41
+#: classes/Data/Default_Data.php:41
 msgid "Home"
 msgstr "ホーム"
 
-#: classes/ARKHE_THEME/Widget/Recent_Posts.php:16
+#: classes/Widget/Recent_Posts.php:16
 msgid "Recent Posts"
 msgstr "最近の投稿"
 
@@ -57,17 +57,30 @@ msgstr "この投稿へのコメントはまだありません。"
 msgid "Note : "
 msgstr "※ "
 
-#: functions.php:41
+#: functions.php:42
 msgid "\"Arkhe\" is currently in beta."
 msgstr "「Arkhe」は現在ベータ版として稼働中です。"
 
-#: functions.php:42
+#: functions.php:43
 msgid ""
 "The theme structure is subject to change significantly until the version "
 "exceeds \"1.0\"."
 msgstr ""
 "バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があり"
 "ます。"
+
+#: inc/custom_menu.php:19
+msgid "Global Navigation"
+msgstr "グローバルナビゲーション"
+
+#: inc/custom_menu.php:20
+msgid "Inside the drawer menu"
+msgstr "ドロワーメニュー内"
+
+#: inc/custom_menu.php:21 inc/customizer/footer.php:12 inc/widget.php:40
+#: inc/widget.php:51
+msgid "Footer"
+msgstr "フッター"
 
 #: inc/customizer/common.php:12
 msgid "Global settings"
@@ -153,10 +166,6 @@ msgstr "「投稿ページ」も表示する"
 msgid "It is valid only when \"Post page\" is set."
 msgstr "「投稿ページ」を設定している時のみ有効です。"
 
-#: inc/customizer/footer.php:12 inc/widget.php:40 inc/widget.php:51
-msgid "Footer"
-msgstr "フッター"
-
 #: inc/customizer/footer.php:23
 msgid "\"To the top\" button"
 msgstr "「ページトップへ」ボタン"
@@ -181,55 +190,73 @@ msgstr "ヘッダーロゴ設定"
 msgid "You can set the image to use from the \"Site Identity\" menu."
 msgstr "使用する画像は「サイト基本情報」メニューから設定できます。"
 
-#: inc/customizer/header.php:35 inc/customizer/header.php:52
+#: inc/customizer/header.php:37 inc/customizer/header.php:54
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: inc/customizer/header.php:69
+#: inc/customizer/header.php:71
 msgid "Layout setting"
 msgstr "レイアアウト設定"
 
-#: inc/customizer/header.php:78
+#: inc/customizer/header.php:80
 msgid "Show search btn on SP"
 msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:88
+#: inc/customizer/header.php:90
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:98
+#: inc/customizer/header.php:100
 msgid "Show drawer menu on PC"
 msgstr "ドロワーメニューをPCでも表示する"
 
-#: inc/customizer/header.php:108
+#: inc/customizer/header.php:110
 msgid "Move global navigation down"
 msgstr "グローバルナビを下側に移動する"
 
+#: inc/customizer/header.php:117
+msgid "テンプレート一覧ページ"
+msgstr ""
+
+#. translators: %s is $tmplink.
 #: inc/customizer/header.php:120
+msgid "現在、ヘッダーの内容はブロックで管理されています。"
+msgstr ""
+
+#: inc/customizer/header.php:120
+#, php-format
+msgid "%sから編集してください。"
+msgstr ""
+
+#: inc/customizer/header.php:127
+msgid "ブロックで管理中..."
+msgstr ""
+
+#: inc/customizer/header.php:139
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:129 inc/customizer/header.php:139
+#: inc/customizer/header.php:148 inc/customizer/header.php:158
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
 
-#: inc/customizer/header.php:149
+#: inc/customizer/header.php:168
 msgid "Fixed global navigation at top of screen"
 msgstr "グローバルナビを画面上部に固定する"
 
-#: inc/customizer/header.php:150
+#: inc/customizer/header.php:169
 msgid "Only valid when below the header."
 msgstr "ヘッダーの下にある時のみ有効です。"
 
-#: inc/customizer/header.php:161
+#: inc/customizer/header.php:180
 msgid "Overlay settings"
 msgstr "オーバーレイ設定"
 
-#: inc/customizer/header.php:183
+#: inc/customizer/header.php:201
 msgid "Enable on Pages"
 msgstr "固定ページでも有効化する"
 
-#: inc/customizer/header.php:194
+#: inc/customizer/header.php:212
 msgid "Logo image when overlaying"
 msgstr "オーバーレイ時のロゴ画像"
 
@@ -446,7 +473,7 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示する"
 
-#: inc/hooks.php:61
+#: inc/hooks.php:63
 msgid "Skip to the content"
 msgstr "コンテンツへスキップ"
 
@@ -492,7 +519,7 @@ msgstr "閉じる"
 msgid "Menu button"
 msgstr "メニューボタン"
 
-#: template-parts/others/author_box.php:47
+#: template-parts/others/author_box.php:50
 msgid "To article list"
 msgstr "記事一覧へ"
 
@@ -529,6 +556,10 @@ msgstr "2カラム"
 msgid "Arkhe"
 msgstr "Arkhe"
 
+#. Theme URI of the plugin/theme
+msgid "https://arkhe-theme.com/"
+msgstr ""
+
 #. Description of the plugin/theme
 msgid "A very simple theme for production templates. Customize as you like."
 msgstr ""
@@ -540,7 +571,7 @@ msgid "LOOS,Inc."
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://loos-web-studio.com/"
+msgid "https://loos.co.jp/"
 msgstr ""
 
 #~ msgid "Logo image"

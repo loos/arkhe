@@ -11,11 +11,11 @@ trait Output {
 	 * フロント側に渡すグローバル変数を返す
 	 */
 	public static function get_front_global_vars() {
-		$SETTING = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe_Theme::get_setting();
 
 		return array(
-			'isFixHeadPC' => $SETTING['fix_header_pc'],
-			'isFixHeadSP' => $SETTING['fix_header_sp'],
+			'isFixHeadPC' => $setting['fix_header_pc'],
+			'isFixHeadSP' => $setting['fix_header_sp'],
 		);
 	}
 
@@ -26,12 +26,7 @@ trait Output {
 	public static function output_style( $type = 'front' ) {
 
 		// スタイルを生成
-		if ( 'front' === $type ) {
-			Style::set_common_style();
-			Style::set_front_style();
-		} elseif ( 'editor' === $type ) {
-			Style::set_common_style();
-		}
+		new Style( $type );
 
 		$output_style = '';
 

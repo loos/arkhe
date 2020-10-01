@@ -3,25 +3,9 @@ namespace Arkhe_Theme\Data;
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Default_Data {
+trait Default_Data {
 
-	private function __construct() {}
-
-	public static function options() {
-		return array(
-			// Remove
-			'remove_wpver'       => '1',
-			'remove_srcset'      => '1',
-			'remove_rel_link'    => '1',
-			'remove_wlwmanifest' => '1',
-			'remove_rsd_link'    => '1',
-			'remove_emoji'       => '1',
-			'remove_wptexturize' => '',
-			'remove_feed_link'   => '',
-		);
-	}
-
-	public static function settings() {
+	public static function get_default_settings() {
 		return array(
 			// Colors
 			'color_main'                => '#111',

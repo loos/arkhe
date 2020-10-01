@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit;
 
-	$SETTING = Arkhe_Theme::get_setting();
+	$setting = Arkhe_Theme::get_setting();
 
 	// ウィジェットの使用状況
 	$is_active_footer1 = is_active_sidebar( 'footer-1' );
@@ -39,7 +39,7 @@
 						)
 					);
 				?>
-				<p class="copyright"><?php echo esc_html( $SETTING['copyright'] ); ?></p>
+				<p class="copyright"><?php echo esc_html( $setting['copyright'] ); ?></p>
 				<?php do_action( 'arkhe_after_copyright' ); ?>
 			</div>
 		</div>

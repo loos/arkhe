@@ -9,9 +9,8 @@ class Style {
 	 * trait読み込み
 	 */
 	use Style\Add_Method,
-		Style\Color,
-		Style\Page,
-		Style\Post_List;
+		Style\CSS;
+
 
 	/**
 	 * CSS変数をまとめておく
@@ -24,6 +23,7 @@ class Style {
 		'mobile' => '',
 	);
 
+
 	/**
 	 * 最終的に吐き出すCSS
 	 */
@@ -35,25 +35,34 @@ class Style {
 		'mobile' => '',
 	);
 
+
 	/**
 	 * モジュール化したCSSの一覧
 	 */
-	public static $modules = array();
+	// public static $modules = array();
+
 
 	/**
-	 * 外部からのインタンス呼び出し無効
+	 * コンストラクタ
 	 */
-	private function __construct() {}
+	public function __construct( $type = '' ) {
+		if ( 'front' === $type ) {
+			self::set_common_style();
+			self::set_front_style();
+		} elseif ( 'editor' === $type ) {
+			self::set_common_style();
+		}
+	}
 
 
 	/**
 	 * 動的スタイルの生成 （フロント用）
 	 */
 	public static function set_front_style() {
-		$SETTING = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe_Theme::get_setting();
 
 		// 投稿・固定ページ
-		self::css_title_bg( $SETTING['ttlbg_overlay_color'], $SETTING['ttlbg_overlay_opacity'] );
+		self::css_title_bg( $setting['ttlbg_overlay_color'], $setting['ttlbg_overlay_opacity'] );
 
 		// 管理バー
 		if ( is_user_logged_in() ) {
@@ -68,30 +77,19 @@ class Style {
 	 */
 	public static function set_common_style() {
 
-		$SETTING = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe_Theme::get_setting();
+
+		// カラー用CSS変数
+		self::css_common( $setting );
 
 		// コンテンツサイズ
-		$container_size = $SETTING['container_size'];
-		self::add_root_css( '--container_size', ( (int) $container_size + 96 ) . 'px' );
+		self::css_contents( $setting['container_size'], $setting['article_size'] );
 
-		// 記事コンテンツサイズ
-		$page_template = basename( get_page_template_slug() ) ?: '';
-		$article_size  = ( 'one-column-slim.php' === $page_template ) ? $SETTING['article_size'] : $container_size;
+		// 投稿リスト
+		self::css_thumb_ratio( $setting['card_posts_thumb_ratio'], $setting['list_posts_thumb_ratio'] );
 
-		self::add_root_css( '--article_size', $article_size . 'px' );
-
-		// カラー用CSS変数のセット
-		self::css_common( $SETTING );
-
-		// 投稿リストのサムネイル比率
-		self::css_thumb_ratio(
-			$SETTING['card_posts_thumb_ratio'],
-			$SETTING['list_posts_thumb_ratio']
-		);
-
-		// ヘッダーロゴのサイズ
-		self::add_root_css( '--logo_size_sp', $SETTING['logo_size_sp'] . 'px' );
-		self::add_root_css( '--logo_size_pc', $SETTING['logo_size_pc'] . 'px' );
+		// ヘッダー
+		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );
 
 	}
 
@@ -100,7 +98,8 @@ class Style {
 	 * メディアクエリ付きスタイルの生成
 	 */
 	public static function get_media_query_css( $size = '', $condition = '' ) {
-		$return     = '';
+		$return = '';
+
 		$style      = self::$styles[ $size ];
 		$root_style = self::$root_styles[ $size ];
 
@@ -115,6 +114,5 @@ class Style {
 
 		return '@media (' . $condition . '){' . $return . '}';
 	}
-
 
 }

@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, viewport-fit=cover">
 <?php
 	wp_head();
-	$SETTING = Arkhe_Theme::get_setting(); // SETTING取得
+	$setting = Arkhe_Theme::get_setting(); // SETTING取得
 ?>
 </head>
 <body <?php body_class(); ?>>
@@ -28,6 +28,6 @@
 		do_action( 'arkhe_content_start' );
 
 		// パンくずリスト
-		if ( 'top' === $SETTING['breadcrumbs_pos'] ) Arkhe_Theme::get_parts( 'others/breadcrumb' );
+		if ( 'top' === $setting['breadcrumbs_pos'] ) Arkhe_Theme::get_parts( 'others/breadcrumb' );
 	?>
 		<div class="l-content__body l-container">

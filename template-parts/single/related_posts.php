@@ -4,10 +4,10 @@
  */
 $the_post_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
-$SETTING = Arkhe_Theme::get_setting();
+$setting = Arkhe_Theme::get_setting();
 
 // レイアウト
-$list_type      = $SETTING['related_posts_layout'];
+$list_type      = $setting['related_posts_layout'];
 $posts_per_page = 'card' === $list_type ? 6 : 4;
 
 $related_args = array(
@@ -20,7 +20,7 @@ $related_args = array(
 	'orderby'             => 'rand',
 );
 
-if ( 'category' === $SETTING['post_relation_type'] ) {
+if ( 'category' === $setting['post_relation_type'] ) {
 	// カテゴリ情報から関連記事を呼び出す
 
 	$categories = get_the_category( $the_post_id );

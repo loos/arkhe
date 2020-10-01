@@ -61,6 +61,7 @@ class Arkhe_Theme extends \Arkhe_Theme\Data {
 		\Arkhe_Theme\Utility\Template_Parts;
 
 	public function __construct() {
+
 		// データをセット
 		self::init();
 
