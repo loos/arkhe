@@ -1,5 +1,5 @@
 <?php
-use Arkhe_Theme\Style;
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
@@ -22,7 +22,7 @@ function arkhe_hook__wp_enqueue_scripts() {
 	wp_enqueue_style( 'arkhe_main_style', ARKHE_TMP_DIR_URI . '/dist/css/main.css', array(), ARKHE_VERSION );
 
 	// インライン出力するCSS
-	wp_add_inline_style( 'arkhe_main_style', Style::output( 'front' ) );
+	wp_add_inline_style( 'arkhe_main_style', \Arkhe_Theme::output_style( 'front' ) );
 
 	// ヘッダーオーバーレイ時
 	if ( \Arkhe_Theme::is_header_overlay() ) {
@@ -72,7 +72,7 @@ function arkhe_hook__enqueue_block_editor_assets( $hook_suffix ) {
 	wp_enqueue_style( 'arkhe-block-editor', ARKHE_TMP_DIR_URI . '/dist/css/editor.css', array(), ARKHE_VERSION );
 
 	// Inline CSS
-	wp_add_inline_style( 'arkhe-block-editor', Style::output( 'editor' ) );
+	wp_add_inline_style( 'arkhe-block-editor', \Arkhe_Theme::output_style( 'editor' ) );
 
 	// JS
 	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_TMP_DIR_URI . '/dist/js/block.js', [], ARKHE_VERSION, true);

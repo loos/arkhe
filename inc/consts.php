@@ -6,7 +6,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *   'wp_loaded' は プレビュー画面の即時反映データも受け取れる & AJAXでもギリギリ呼び出されるタイミング。
  */
 add_action( 'wp_loaded', 'arkhe_hook__define_theme_const', 11 );
-add_action( 'wp', 'arkhe_hook__define_page_template' );
 
 
 /**
@@ -34,15 +33,4 @@ function arkhe_hook__define_theme_const() {
 	if ( ! defined( 'ARKHE_EXCERPT_LENGTH' ) ) {
 		define( 'ARKHE_EXCERPT_LENGTH', (int) $SETTING['excerpt_length'] );
 	}
-}
-
-/**
- * ページテンプレートを定数化する。 (wp_loaded ではまだ 取得できない)
- */
-function arkhe_hook__define_page_template() {
-
-	// ページテンプレート名
-	$template_slug = ( is_page() || is_single() ) ? basename( get_page_template_slug() ) : '';
-	define( 'ARKHE_PAGE_TEMPLATE', $template_slug );
-
 }

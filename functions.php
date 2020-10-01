@@ -53,8 +53,12 @@ add_action( 'admin_notices', 'arkhe_theme_beta_message' );
  */
 class Arkhe_Theme extends \Arkhe_Theme\Data {
 
-	use \Arkhe_Theme\Utility\Funcs,
-		\Arkhe_Theme\Utility\Javascript;
+	use \Arkhe_Theme\Utility\Attrs,
+		\Arkhe_Theme\Utility\Parts,
+		\Arkhe_Theme\Utility\Output,
+		\Arkhe_Theme\Utility\Utility,
+		\Arkhe_Theme\Utility\Condition,
+		\Arkhe_Theme\Utility\Template_Parts;
 
 	public function __construct() {
 		// データをセット

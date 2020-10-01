@@ -66,7 +66,7 @@ function set_content_style( $mceInit ) {
 
 	// Classic Editor
 	if ( ! $is_gutenberg ) {
-		$add_styles                = \Arkhe_Theme\Style::output( 'editor' );
+		$add_styles                = \Arkhe_Theme::output( 'editor' );
 		$add_styles                = str_replace( '\\', '', $add_styles );  // contentのバックスラッシュで変になってしまうのでtinymceは別途指定
 		$add_styles                = preg_replace( '/(?:\n|\r|\r\n)/su', '', $add_styles );
 		$add_styles                = str_replace( '"', "'", $add_styles );

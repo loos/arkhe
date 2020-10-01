@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Post_List extends \Arkhe_Theme\Style {
+trait Post_List {
 
 	/**
 	 * 設定に合わせた比率を返す
@@ -30,13 +30,13 @@ class Post_List extends \Arkhe_Theme\Style {
 	/**
 	 * サムネイル比率
 	 */
-	protected static function thumb_ratio( $card_ratio, $list_ratio ) {
+	protected static function css_thumb_ratio( $card_ratio, $list_ratio ) {
 
-		self::add_root(
+		self::add_root_css(
 			'--card_posts_thumb_ratio',
 			self::get_thumb_ratio( $card_ratio )
 		);
-		self::add_root(
+		self::add_root_css(
 			'--list_posts_thumb_ratio',
 			self::get_thumb_ratio( $list_ratio )
 		);
