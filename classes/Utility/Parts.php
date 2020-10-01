@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Utility;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 trait Parts {
 
 	/**

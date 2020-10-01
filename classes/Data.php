@@ -2,7 +2,6 @@
 namespace Arkhe_Theme;
 
 use \Arkhe_Theme\Data\Default_Data;
-if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Data {
 

@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿・固定ページのページャー （改ページ）
  */

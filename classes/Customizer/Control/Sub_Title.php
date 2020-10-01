@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Customizer\Control;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * 大タイトル出力用
  */

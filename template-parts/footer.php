@@ -1,11 +1,10 @@
 <?php
-	if ( ! defined( 'ABSPATH' ) ) exit;
+$setting = Arkhe_Theme::get_setting();
 
-	$setting = Arkhe_Theme::get_setting();
+// ウィジェットの使用状況
+$is_active_footer1 = is_active_sidebar( 'footer-1' );
+$is_active_footer2 = is_active_sidebar( 'footer-2' );
 
-	// ウィジェットの使用状況
-	$is_active_footer1 = is_active_sidebar( 'footer-1' );
-	$is_active_footer2 = is_active_sidebar( 'footer-2' );
 ?>
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">

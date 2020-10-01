@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿リストに表示されるサムネイル画像
  */

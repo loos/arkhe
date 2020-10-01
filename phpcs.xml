@@ -56,6 +56,12 @@
 		<!-- ファイル冒頭のコメントを必要とするルールを除外 -->
 		<exclude name="Squiz.Commenting.FileComment.Missing" />
 
+		<!-- ファイルコメントのあとに空行いれないといけないルールを除外 -->
+		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
+
+		<!-- ファイルコメントに @package なくても許す -->
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+
 		 <!-- コメント分の末尾をフルストップ、ビックリマークやはてなで終わらせる必要があるルールを除外する -->
 		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
 		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />

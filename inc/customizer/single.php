@@ -1,6 +1,5 @@
 <?php
 use \Arkhe_Theme\Customizer;
-if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * セクション : 投稿ページ

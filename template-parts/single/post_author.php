@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 「この記事を書いた人」
  * $args['author_id'] : 著者IDが渡ってくる

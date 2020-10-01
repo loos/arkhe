@@ -1,9 +1,9 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 関連記事リストの出力テンプレート（サブループ内）
  *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
+
 $post_data = get_post();
 $the_id    = $post_data->ID;
 $date      = new DateTime( $post_data->post_date );

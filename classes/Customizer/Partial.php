@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Customizer;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * $wp_customize->selective_refresh->add_partialのコールバックを集めたクラス
  */

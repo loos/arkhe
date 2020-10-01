@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 前の記事へ & 次の記事へ
  */

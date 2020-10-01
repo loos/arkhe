@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Widget;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * 既存の「最新の投稿」ウィジェットのフォーマットを編集（投稿日をaタグの中へ）
  */

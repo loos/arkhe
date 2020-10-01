@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 
 get_header();
 $author_id   = get_queried_object_id();

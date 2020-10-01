@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> <?php Arkhe_Theme::root_attrs(); ?>>
 <head>

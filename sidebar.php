@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php ?>
 <aside id="sidebar" class="l-content__sidebar">
 	<?php
 		if ( is_active_sidebar( 'sidebar-1' ) ) :

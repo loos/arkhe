@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * コンテンツヘッダー用
  * ::is_show_ttltop()が true の時のみ呼び出される。

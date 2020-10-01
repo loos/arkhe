@@ -1,5 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
-get_header(); ?>
+<?php get_header(); ?>
 <main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
 	<div class="<?php Arkhe_Theme::main_body_class(); ?>">
 		<h1 class="p-404__title">

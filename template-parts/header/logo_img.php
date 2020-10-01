@@ -1,9 +1,8 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * ヘッダーロゴ画像の出力テンプレート
  */
+
 $site_title = get_option( 'blogname' );
 $logo_id    = get_theme_mod( 'custom_logo' );
 

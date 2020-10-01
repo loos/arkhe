@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 
 // サイドバー
 if ( Arkhe_Theme::is_show_sidebar() ) get_sidebar();

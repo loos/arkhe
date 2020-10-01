@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * アーカイブタイトルを出力する
  *   $args['title'] : アーカイブタイトル

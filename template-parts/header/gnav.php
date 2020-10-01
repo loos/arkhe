@@ -1,8 +1,8 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * グローバルナビ
  */
+
 $gnav = wp_nav_menu(
 	array(
 		'container'       => '',
@@ -12,6 +12,7 @@ $gnav = wp_nav_menu(
 		'echo'            => false,
 	)
 );
+
 if ( ! $gnav ) return; ?>
 <nav id="gnav" class="c-gnavWrap">
 	<ul class="c-gnav">

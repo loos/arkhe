@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 「投稿ページ」に設定されたページ or ホームページに設定がない場合
  */

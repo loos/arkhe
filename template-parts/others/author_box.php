@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 著者情報を出力する
  *   $args['author_id'] : 著者ID

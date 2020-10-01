@@ -1,10 +1,4 @@
-<?php
-if ( ! defined( 'ABSPATH' ) ) exit;
-/**
- * index.php
- */
-get_header();
-?>
+<?php get_header(); ?>
 <main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
 	<div <?php post_class( Arkhe_Theme::main_body_class( false ) ); ?>>
 	<?php
@@ -21,5 +15,4 @@ get_header();
 	?>
 	</div>
 </main>
-<?php
-get_footer();
+<?php get_footer(); ?>

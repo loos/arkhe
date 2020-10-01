@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 add_action( 'admin_init', '\Arkhe_Theme\add_mce_style' );
 add_action( 'tiny_mce_before_init', '\Arkhe_Theme\mce_before_init' );
 

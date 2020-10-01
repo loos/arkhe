@@ -5,8 +5,6 @@
  * @link https://arkhe-theme.com/
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 // テーマのパス, URI
 define( 'ARKHE_THEME_PATH', get_template_directory() );
 define( 'ARKHE_THEME_URI', get_template_directory_uri() );

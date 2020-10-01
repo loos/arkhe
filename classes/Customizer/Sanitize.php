@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Customizer;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * カスタマイザーで使用するサニタイズ関数たち
  */

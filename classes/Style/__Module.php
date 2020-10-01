@@ -1,9 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
-
 // モジュールCSSを読み込んで連結
 Style::$modules;
 foreach ( Style::$modules as $filename ) {

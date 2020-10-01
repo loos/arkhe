@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Data;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 trait Default_Data {
 
 	public static function get_default_settings() {

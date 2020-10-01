@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 画面右下に固定表示するボタン
  *   他にボタン追加するなら p-fixBtnWrap の中に

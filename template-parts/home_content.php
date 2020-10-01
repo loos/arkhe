@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 「最新の投稿」 or 「投稿一覧」 のページ用
  */

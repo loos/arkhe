@@ -1,8 +1,8 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * ターム用アーカイブページ
  */
+
 $wp_obj  = get_queried_object();
 $term_id = $wp_obj->term_id;
 

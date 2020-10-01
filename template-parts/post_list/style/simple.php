@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 
 /**
  * 投稿一覧リスト（ シンプル型 ）の出力テンプレート

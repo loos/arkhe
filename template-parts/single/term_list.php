@@ -1,10 +1,10 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのタイトル部分
  * $args['post_id'] : 投稿IDが渡ってくる
  * $args['post_title'] : 投稿タイトルが渡ってくる
  */
+
 $the_id   = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $show_cat = isset( $args['show_cat'] ) ? $args['show_cat'] : true;
 $show_tag = isset( $args['show_tag'] ) ? $args['show_tag'] : false;

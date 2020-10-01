@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * ハンバーガーメニューの出力テンプレート
  *   $args['label'] : ボタンしたのラベル

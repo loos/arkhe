@@ -3,8 +3,6 @@ namespace Arkhe_Theme\Utility;
 
 use \Arkhe_Theme\Style;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 trait Output {
 
 	/**

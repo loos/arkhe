@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit; ?>
+<?php ?>
 <form role="search" method="get" class="c-searchForm" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 	<input type="text" value="" name="s" class="c-searchForm__s s"
 		placeholder="<?php esc_attr_e( 'Search', 'arkhe' ); ?>..."

@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * ウィジェット登録
  */

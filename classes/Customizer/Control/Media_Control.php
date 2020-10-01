@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Customizer\Control;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * カスタマイザーの li に好きなクラス名を付与できるようににしたもの
  */

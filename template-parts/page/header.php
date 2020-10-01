@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 固定ページヘッド部分 (コンテンツ内)
  * home.php からも呼ばれることに注意。

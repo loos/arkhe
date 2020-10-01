@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿一覧リストの出力テンプレート（サブループ用）
  *   $args['query_args'] : WP_Queryに渡す引数

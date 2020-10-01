@@ -9,7 +9,6 @@ use \Arkhe_Theme\Customizer\Control\Color_Control;
 use \Arkhe_Theme\Customizer\Control\Image_Control;
 use \Arkhe_Theme\Customizer\Control\Media_Control;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * カスタマイザー

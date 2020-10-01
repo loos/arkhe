@@ -1,4 +1,4 @@
-<?php if ( ! defined( 'ABSPATH' ) ) exit;
+<?php
 /**
  * 投稿ページのフッター部分
  * $args['post_id'] : 投稿IDが渡ってくる

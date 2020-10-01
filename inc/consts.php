@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 /**
  * 定数定義 （'wp_loaded' は プレビュー画面の即時反映データも受け取れる & AJAXでもギリギリ呼び出されるタイミング。）
  */

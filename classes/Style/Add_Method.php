@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme\Style;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
-
 trait Add_Method {
 
 	/**

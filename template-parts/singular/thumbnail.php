@@ -1,10 +1,10 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
 /**
  * 投稿ページのタイトル部分
  * $args['post_id'] : 投稿IDが渡ってくる
  * $args['post_title'] : 投稿タイトルが渡ってくる
  */
+
 $the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // アイキャッチ画像のソースを取得
