@@ -44,7 +44,7 @@ trait Template_Parts {
 	 */
 	public static function get_include_parts_path( $path = '' ) {
 		// 子テーマから探す
-		$include_path = ARKHE_STL_DIR . '/template-parts/' . $path . '.php';
+		$include_path = ARKHE_CHILD_PATH . '/template-parts/' . $path . '.php';
 		if ( file_exists( $include_path ) ) return $include_path;
 
 		// 次に、プラグインのパスが登録されていればそちらを探す
@@ -54,7 +54,7 @@ trait Template_Parts {
 		}
 
 		// 最後に、親テーマを探す
-		$include_path = ARKHE_TMP_DIR . '/template-parts/' . $path . '.php';
+		$include_path = ARKHE_THEME_PATH . '/template-parts/' . $path . '.php';
 		if ( file_exists( $include_path ) ) return $include_path;
 
 		// 見つからなかった時

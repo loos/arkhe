@@ -11,7 +11,7 @@ add_action( 'tiny_mce_before_init', '\Arkhe_Theme\mce_before_init' );
  * TinyMCEのエディタ内CSS
  */
 function add_mce_style() {
-	$editor_style_path = array( ARKHE_TMP_DIR_URI . '/dist/css/editor.css?v=' . ARKHE_VER );
+	$editor_style_path = array( ARKHE_THEME_URI . '/dist/css/editor.css?v=' . ARKHE_VER );
 	add_editor_style( $editor_style_path );
 }
 

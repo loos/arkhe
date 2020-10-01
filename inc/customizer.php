@@ -16,25 +16,25 @@ add_action( 'customize_controls_init', '\Arkhe_Theme\customizer_init' );
 function customizer_setup( $wp_customize ) {
 
 	// 全体設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/common.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/common.php';
 
 	// ヘッダー設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/header.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/header.php';
 
 	// フッター設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/footer.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/footer.php';
 
 	// サイドバー
-	include_once ARKHE_TMP_DIR . '/inc/customizer/sidebar.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/sidebar.php';
 
 	// 固定ページ設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/page.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/page.php';
 
 	// 投稿ページ設定
-	include_once ARKHE_TMP_DIR . '/inc/customizer/single.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/single.php';
 
 	// 記事一覧リスト
-	include_once ARKHE_TMP_DIR . '/inc/customizer/post_list.php';
+	include_once ARKHE_THEME_PATH . '/inc/customizer/post_list.php';
 
 }
 

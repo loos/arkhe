@@ -57,11 +57,11 @@ trait Module {
 	public static function get_module_path( $filename = '' ) {
 
 		// まず子テーマ側から探す
-		$module_path = ARKHE_STL_DIR . '/dist/css/module/' . $filename . '.css';
+		$module_path = ARKHE_CHILD_PATH . '/dist/css/module/' . $filename . '.css';
 		if ( ! file_exists( $module_path ) ) {
 
 			// 小テーマにファイルがなければ 親テーマから探す
-			$module_path = ARKHE_TMP_DIR . '/dist/css/module/' . $filename . '.css';
+			$module_path = ARKHE_THEME_PATH . '/dist/css/module/' . $filename . '.css';
 			if ( ! file_exists( $module_path ) ) {
 
 				// 親テーマにもファイルが無ければ
