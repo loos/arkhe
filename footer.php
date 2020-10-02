@@ -1,9 +1,4 @@
-<?php
-
-// サイドバー
-if ( Arkhe_Theme::is_show_sidebar() ) get_sidebar();
-
-?>
+<?php if ( Arkhe_Theme::is_show_sidebar() ) get_sidebar(); // サイドバー ?>
 	</div><!-- // l-content__body -->
 </div><!-- // l-content -->
 <?php

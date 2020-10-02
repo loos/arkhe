@@ -16,6 +16,9 @@
         "phpcompatibility/phpcompatibility-wp": "*"
     },
     "scripts": {
+        "phpcs": [
+            "./vendor/bin/phpcs"
+        ],
         "set-wpcs": [
             "./vendor/bin/phpcs --config-set installed_paths `pwd -P`/vendor/phpcompatibility/php-compatibility,`pwd -P`/vendor/phpcompatibility/phpcompatibility-paragonie,`pwd -P`/vendor/phpcompatibility/phpcompatibility-wp,`pwd -P`/vendor/wp-coding-standards/wpcs"
         ]
