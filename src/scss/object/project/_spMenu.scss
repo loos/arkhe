@@ -3,7 +3,7 @@
 // メニュークローズ時
 [data-drawer="closed"] {
 
-    .p-spMenu {
+    .p-drawer {
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
@@ -24,7 +24,7 @@
 }
 
 //メニュー
-.p-spMenu {
+.p-drawer {
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@
     }
 }
 
-.p-spMenu__inner {
+.p-drawer__inner {
     position: relative;
     // top: 0;
     z-index: 1;
@@ -60,7 +60,7 @@
 }
 
 
-.p-spMenu__body {
+.p-drawer__body {
     position: relative;
     max-width: 560px;
     // height: 100%;
@@ -74,7 +74,7 @@
 
 }
 
-.c-spnav {
+.c-drawerNav {
     display: block;
     text-align: left;
     border-top: 1px solid rgba(255, 255, 255, .1);
@@ -115,7 +115,7 @@
 [data-drawer-move="fade"] {
 
 
-    .p-spMenu {
+    .p-drawer {
         z-index: 1;
         color: #fff;
         background: rgba(#000, .92);

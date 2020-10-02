@@ -1,6 +1,8 @@
 import DOM from './data/domData';
 import setState, { isModalOpen } from '@js/modules/data/stateData';
 
+/* eslint no-lonely-if: 0 */
+
 // モーダル内のフォーカス可能要素を取得
 function getFocusableElements(modal) {
 	if (!modal) return [];
@@ -49,7 +51,7 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 					}
 				}
 			} else {
-				// if Tab
+				// if Tab key
 				if (document.activeElement === lastTabStop) {
 					// 最後の要素から進もうとする時 -> closeBtn or 最初の要素にフォーカス
 					e.preventDefault();
@@ -98,10 +100,10 @@ function setBtnKeydownEvent(toggleBtns, focusableElements) {
 // モーダル内でフォーカスをキープする
 export default function (modal, closeBtn) {
 	// ドロワーモーダルのフォーカス可能要素を取得
-	const drawerFocusableElements = getFocusableElements(DOM.spMenu);
+	const drawerFocusableElements = getFocusableElements(DOM.drawerMenu);
 
 	// ドロワーモーダルのフォーカスイベント
-	setModalKeydownEvent(DOM.spMenu, drawerFocusableElements, 'drawer');
+	setModalKeydownEvent(DOM.drawerMenu, drawerFocusableElements, 'drawer');
 
 	// ドロワートグルボタンのフォーカスイベント
 	const drawerToggleBtns = document.querySelectorAll('[data-onclick="toggleMenu"]');

@@ -6,7 +6,7 @@
 export default function setDomData(DOM) {
 	DOM.header = document.getElementById('header');
 	DOM.gnav = document.getElementById('gnav');
-	DOM.spMenu = document.getElementById('sp_menu');
+	DOM.drawerMenu = document.getElementById('drawer_menu');
 	DOM.wpadminbar = document.getElementById('wpadminbar');
 	DOM.mainContent = document.getElementById('main_content');
 	DOM.sidebar = document.getElementById('sidebar');

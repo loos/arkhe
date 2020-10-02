@@ -16,8 +16,8 @@ export const clickEvents = {
 	toggleMenu(e) {
 		e.preventDefault();
 
-		const spMenu = DOM.spMenu;
-		if (null === spMenu) return false;
+		const drawerMenu = DOM.drawerMenu;
+		if (null === drawerMenu) return false;
 
 		// マウスクリックで発火したイベントかどうか
 		const isMouseClicked = 0 !== e.screenX && 0 !== e.screenY;

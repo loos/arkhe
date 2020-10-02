@@ -15,7 +15,7 @@ function register_nav_locations() {
 	register_nav_menus(
 		array(
 			'header_menu'  => __( 'Global Navigation', 'arkhe' ),
-			'nav_sp_menu'  => __( 'Inside the drawer menu', 'arkhe' ),
+			'drawer_menu'  => __( 'Inside the drawer menu', 'arkhe' ),
 			'footer_menu'  => __( 'Footer', 'arkhe' ),
 		)
 	);
@@ -34,7 +34,7 @@ function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
 	// サブメニューを持つかどうか
 	$has_child = in_array( 'menu-item-has-children', $item->classes, true );
 
-	if ( 'header_menu' === $menu_location || 'nav_sp_menu' === $menu_location ) {
+	if ( 'header_menu' === $menu_location || 'drawer_menu' === $menu_location ) {
 		if ( 0 === $depth ) {
 			$item_output = preg_replace(
 				'/<a([^>]*)>([^<]*)<\/a>/',

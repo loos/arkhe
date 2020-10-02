@@ -7,7 +7,7 @@ export default {
 	fixBar: null,
 	mainContent: null,
 	sidebar: null,
-	spMenu: null,
+	drawerMenu: null,
 	pageTopBtn: null,
 	searchModal: null,
 	indexModal: null,

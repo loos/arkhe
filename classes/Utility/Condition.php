@@ -70,11 +70,11 @@ trait Condition {
 	 */
 	public static function is_show_ttltop() {
 
-		if ( is_front_page() ) return false;
-
 		if ( is_attachment() ) return false;
 
-		if ( is_page() || is_home() ) {
+		if ( is_front_page() ) {
+			$title_pos = '';
+		} elseif ( is_page() || is_home() ) {
 			$title_pos = \Arkhe_Theme::get_setting( 'page_title_pos' );
 		} else {
 			$title_pos = '';
