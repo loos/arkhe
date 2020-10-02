@@ -15,23 +15,14 @@
 `v 1.0`としてリリースされるまでは、**テーマ構造に大きな変更が加わる可能性が高い**ので、ご注意ください。
 
 
-## 公式ディレクトリ掲載（予定）の無料テーマです。
+## 公式ディレクトリ掲載の無料テーマです。
 
-現在申請中...！
+https://wordpress.org/themes/arkhe/
 
 
 ## ダウンロード方法
-公式ディレクトリに登録されるまでは、以下のリリースページから最新版をダウンロードしてご利用ください。
 
-`arkhe-{version}.zip`ファイルがテーマ本体になります。
-
-https://github.com/ddryo/arkhe/releases
-
-
-## テーマのアップデート方法
-公式ディレクトリに登録されるまでは、以下のプラグインを有効化することで最新版へのアップデートが可能になります。
-
-[arkhe-updater.zip](https://github.com/ddryo/arkhe/files/4940916/arkhe-updater.zip)
+テーマ追加画面で「Arkhe」と検索し、ダウンロードしてください。
 
 
 ## Requirements
@@ -45,7 +36,7 @@ https://github.com/ddryo/arkhe/releases
 - Edge
 - Firefox
 
-**Note: IE is not supported.**
+Note: **IE is not supported.**
 
 
 # 開発コマンド
