@@ -2,20 +2,16 @@
 .c-widget {
 
     & + .c-widget {
-        margin-top: 2em;
+        margin-top: 2.5rem;
     }
 }
 
 .c-widget__title {
     position: relative;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.25rem;
     overflow: hidden;
     font-weight: bold;
-    font-size: 4vw;
-
-    @include tab {
-        font-size: 16px;
-    }
+    font-size: 1.25rem;
 }
 
 

@@ -5,7 +5,7 @@
     width: 100%;
     min-height: 32vh;
     margin: 0;
-    padding: 1.5em 0;
+    padding: 2rem 0;
     overflow: hidden;
     text-align: center;
 
@@ -24,13 +24,13 @@
 }
 
 .p-topArea__excerpt {
-    margin-top: 1em;
+    margin-top: 1rem;
     font-size: .9em;
 }
 
-// // IEでは align-items: center + min-height がきかない
+// IEでは align-items: center + min-height がきかない
 // _:lang(x)::-ms-backdrop,
 // .p-topArea {
 //     min-height: auto !important;
-//     padding: 2em 0 !important;
+//     padding: 2rem 0 !important;
 // }

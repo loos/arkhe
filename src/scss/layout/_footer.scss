@@ -10,41 +10,8 @@
     span {
         color: inherit;
     }
-
-    .copyright {
-        font-size: 12px;
-        text-align: center;
-    }
-
 }
 
-// フッターナビ
-.l-footer__nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: .5em 0 1em;
-
-    a {
-        display: block;
-        padding: .25em .5em;
-        color: inherit;
-        font-size: .8em;
-
-        &:not(:hover) {
-            text-decoration: none;
-        }
-
-        @include tab {
-            padding: 0 .75em;
-            // font-size: 13px;
-        }
-    }
-
-    .sub-menu {
-        display: none;
-    }
-}
 
 .l-footer__inner {
 
@@ -55,7 +22,7 @@
 }
 
 .l-footer__widgets {
-    padding: 2em 0;
+    padding: 2rem 0;
 
     & > .l-container {
 
@@ -75,11 +42,11 @@
     .w-footer + .w-footer {
 
         @include pc {
-            margin-left: 2em;
+            margin-left: 2rem;
         }
 
         @include sp {
-            margin-top: 2em;
+            margin-top: 2rem;
         }
     }
 
@@ -87,18 +54,43 @@
 
 
 .l-footer__foot {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
-    .l-footer__widgetArea + & {
-        border-top: solid 1px rgba(150, 150, 150, .5);
+}
+
+// フッターナビ
+.l-footer__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // padding: .5em 0 1em;
+    margin-bottom: 1rem;
+
+    a {
+        display: block;
+        padding: 0 .5rem;
+        color: inherit;
+        font-size: .8rem;
+
+        &:not(:hover) {
+            text-decoration: none;
+        }
+
+        @include tab {
+            padding: 0 .75em;
+            // font-size: 13px;
+        }
+    }
+
+    .sub-menu {
+        display: none;
     }
 }
 
-.l-footer__widgetArea {
-    padding-top: 1em;
-    padding-bottom: 1em;
+.c-copyright {
+    font-size: .8rem;
+    text-align: center;
 }
-
 
 @import "./footer/modals";

@@ -2,7 +2,23 @@
 .wp-block {
     // max-width: 900px;
     max-width: var(--ark-block_width, 900px);
+
+    &[data-align="wide"] {
+        max-width: calc(var(--ark-block_width, 900px) + 160px);
+    }
 }
+
+[data-align="wide"] {
+
+    & > .wp-block-cover > .wp-block-cover__inner-container,
+    & > .wp-block-group > .wp-block-group__inner-container {
+
+        & > .wp-block {
+            max-width: 100%;
+        }
+    }
+}
+
 
 // フォント
 .block-editor .editor-styles-wrapper {
@@ -20,10 +36,9 @@
 
         & > .wp-block-cover,
         & > .wp-block-group {
-            padding: 4em;
+            padding: 4em 48px;
         }
     }
-
 }
 
 //aligncenterにclearが付くようになったので、それに合わせる

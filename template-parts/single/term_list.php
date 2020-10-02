@@ -14,8 +14,8 @@ $cat_list = $show_cat ? \Arkhe::get_the_term_links( $the_id, 'cat' ) : '';
 $tag_list = $show_tag ? \Arkhe::get_the_term_links( $the_id, 'tag' ) : '';
 
 $return                   = '';
-if ( $cat_list ) $return .= '<div class="c-postMetas__item -category">' . $cat_list . '</div>';
-if ( $tag_list ) $return .= '<div class="c-postMetas__item -tag">' . $tag_list . '</div>';
+if ( $cat_list ) $return .= '<div class="c-postTerms__item -category">' . $cat_list . '</div>';
+if ( $tag_list ) $return .= '<div class="c-postTerms__item -tag">' . $tag_list . '</div>';
 
 // カテゴリー or タグ が取得されていれば出力
-if ( $return ) echo '<div class="c-postMetas">' . wp_kses_post( $return ) . '</div>';
+if ( $return ) echo '<div class="c-postTerms">' . wp_kses_post( $return ) . '</div>';

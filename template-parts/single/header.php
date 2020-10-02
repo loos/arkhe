@@ -16,7 +16,7 @@ $is_modified = ( $date < $modified );
 ?>
 <header class="p-entry__head">
 	<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
-	<div class="p-entry__head__meta">
+	<div class="c-postMetas">
 		<div class="c-postTimes">
 			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
 			<?php

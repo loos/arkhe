@@ -44,9 +44,9 @@
 }
 
 .wp-caption-text {
-    margin-top: 1em;
-    font-size: .8em;
-    opacity: .8;
+    margin-top: .75rem;
+    font-size: .8rem;
+    opacity: $thin_text_opacity;
 }
 
 // TinyMCEでの中央寄せ画像

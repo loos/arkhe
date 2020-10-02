@@ -2,7 +2,7 @@
 
 .p-authorBox {
     padding: 1.5em;
-    background-color: var(--ark-color_gray);
+    background-color: var(--color_gray);
 
     @include tab {
         display: flex;
@@ -150,7 +150,7 @@
         text-decoration: none;
         // border-radius: 1px;
         box-shadow: 0 0 0 1px currentColor;
-        opacity: .8;
+        opacity: $thin_text_opacity;
         transition: opacity .25s;
 
         &:hover {

@@ -2,51 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    // padding-left: 2px;
 
-}
-
-.c-postMetas__item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    &::before {
-        margin-right: .25em;
-
-        @extend %arkheIcon;
+    & > div,
+    & > .c-postAuthor {
+        // margin: 4px 0;
+        margin-bottom: 4px;
     }
 
-    &.-category {
-
-        &::before {
-
-            @extend .arkhe-icon-folder::before;
-        }
-    }
-
-    &.-tag {
-
-        &::before {
-
-            @extend .arkhe-icon-tag::before;
-        }
-    }
-}
-
-.c-postMetas__link {
-    display: block;
-    margin-right: .5em;
-    color: inherit;
-
-    &:not(:hover) {
-        text-decoration: none;
-    }
-
-    &:not(:last-child) {
-
-        &::after {
-            content: ",";
-        }
-    }
 }

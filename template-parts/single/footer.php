@@ -23,7 +23,7 @@ do_action( 'arkhe_show_share_btn_bottom' );
 
 ?>
 <footer class="p-entry__foot">
-	<div class="p-entry__foot__meta">
+	<div class="c-postMetas">
 		<?php
 			Arkhe::get_parts(
 				'single/term_list',

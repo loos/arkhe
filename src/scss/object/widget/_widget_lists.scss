@@ -37,7 +37,6 @@
         display: block;
         padding: .75em .5em;
         color: inherit;
-        line-height: 1.4;
         text-decoration: none;
 
         &:hover {
@@ -77,7 +76,7 @@
     &::before {
         transform: scale(.8) translateX(1px) translateY(-50%);
         transform-origin: 0 0;
-        opacity: .8;
+        opacity: $thin_text_opacity;
 
         @extend %arkheIcon;
         @extend .arkhe-icon-folder::before;

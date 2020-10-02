@@ -30,23 +30,38 @@ trait CSS {
 	 * マージン量
 	 */
 	protected static function css_margin() {
-		self::add_root_css( '--ark-mt', '2em' );
-		self::add_root_css( '--ark-mt_s', '1em' );
-		// self::add_root_css( '--ark-mt_l', '4em' );
+		self::add_root_css( '--ark-mt', '2rem' );
+		self::add_root_css( '--ark-mt_s', '1rem' );
+	}
+
+	/**
+	 * .alignwide の幅
+	 */
+	protected static function css_alignwide( $container_width, $slim_width ) {
+
+		// 1カラムページ用
+		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + 160 + 96 ) . 'px ) {' .
+			'[data-sidebar="off"] .alignwide{left:-80px;width:calc(100% + 160px)}' .
+		'}';
+
+		// 1カラムページ（スリム）用
+		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + 160 + 96 ) . 'px ) {' .
+			'.page-template-one-column-slim .alignwide{left:-80px;width:calc(100% + 160px)}' .
+		'}';
 	}
 
 
 	/**
 	 * コンテンツ幅
 	 */
-	protected static function css_content_width( $container_width, $slim_width, $page_template ) {
+	protected static function css_content_width( $container_width, $slim_width ) {
 
 		// コンテナサイズ
 		self::add_root_css( '--ark-container_width', ( $container_width + 96 ) . 'px' );
 
 		// 記事コンテンツサイズ
-		$article_width = ( 'one-column-slim.php' === $page_template ) ? $slim_width : $container_width;
-		self::add_root_css( '--ark-article_width', $article_width . 'px' );
+		self::add_root_css( '--ark-article_width', $container_width . 'px' );
+		self::add_css( '.page-template-one-column-slim', '--ark-article_width:' . $slim_width . 'px' );
 	}
 
 
@@ -70,7 +85,7 @@ trait CSS {
 
 		} elseif ( 'two-column.php' === $page_template ) {
 			// 2カラム
-			$block_width = '900';
+			$block_width = 900;
 
 		} else {
 			// デフォルトテンプレート時はサイドバーの有無で判定
@@ -82,7 +97,7 @@ trait CSS {
 				$side_key = 'show_sidebar_ppst';
 			}
 
-			$block_width = \Arkhe::get_setting( $side_key ) ? '900' : $container_width;
+			$block_width = \Arkhe::get_setting( $side_key ) ? 900 : $container_width;
 		}
 
 		// ブロック幅

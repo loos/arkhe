@@ -5,7 +5,7 @@
     [data-sidebar="on"] & {
 
         @include pc {
-            width: calc(100% - 356px);
+            width: calc(100% - 368px);
             max-width: 100%; //l-artcileが狭い時を考慮
         }
     }

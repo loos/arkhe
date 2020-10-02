@@ -41,7 +41,7 @@ $cat_data = empty( $cat_data ) ? null : $cat_data[0];
 $author_data = get_userdata( $author_id );
 
 ?>
-<div class="p-postList__meta">
+<div class="p-postList__meta c-postMetas">
 	<?php if ( $show_date || $show_modified ) : ?>
 		<div class="p-postList__times c-postTimes u-color-thin">
 			<?php
@@ -55,13 +55,10 @@ $author_data = get_userdata( $author_id );
 			?>
 		</div>
 	<?php endif; ?>
-	<?php
-		if ( $show_cat && $cat_data ) :
-			echo '<span class="p-postList__cat u-color-thin" data-cat-id="' . esc_attr( $cat_data->term_id ) . '">' .
-				esc_html( $cat_data->name ) .
-			'</span>';
-		endif;
-	?>
+	<?php if ( $show_cat && $cat_data ) : ?>
+
+		<div class="p-postList__cat u-color-thin" data-cat-id="<?php echo esc_attr( $cat_data->term_id ); ?>"><?php echo esc_html( $cat_data->name ); ?></div>
+	<?php endif; ?>
 	<?php if ( $show_author && $author_data ) : ?>
 		<div class="p-postList__author c-postAuthor">
 			<figure class="c-postAuthor__figure">

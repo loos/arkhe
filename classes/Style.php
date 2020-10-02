@@ -47,9 +47,12 @@ class Style {
 
 		$setting = \Arkhe::get_setting();
 
+		// ページテンプレート取得
+		$page_template = basename( get_page_template_slug() ) ?: '';
+
 		self::set_common_style( $setting );
 		if ( 'front' === $type ) self::set_front_style( $setting );
-		if ( 'editor' === $type ) self::set_editor_style( $setting );
+		if ( 'editor' === $type ) self::set_editor_style( $setting, $page_template );
 
 	}
 
@@ -59,11 +62,8 @@ class Style {
 	 */
 	public static function set_common_style( $setting ) {
 
-		// ページテンプレート取得
-		$page_template = basename( get_page_template_slug() ) ?: '';
-
 		// コンテンツ幅
-		self::css_content_width( $setting['container_width'], $setting['slim_width'], $page_template );
+		self::css_content_width( $setting['container_width'], $setting['slim_width'] );
 
 		// カラー用CSS変数
 		self::css_common( $setting );
@@ -89,6 +89,8 @@ class Style {
 	public static function set_front_style( $setting ) {
 		$setting = \Arkhe::get_setting();
 
+		self::css_alignwide( $setting['container_width'], $setting['slim_width'] );
+
 		// 投稿・固定ページ
 		self::css_title_bg( $setting['ttlbg_overlay_color'], $setting['ttlbg_overlay_opacity'] );
 
@@ -103,10 +105,7 @@ class Style {
 	/**
 	 * 動的スタイルの生成 （エディター用）
 	 */
-	public static function set_editor_style( $setting ) {
-
-		// ページテンプレート取得
-		$page_template = basename( get_page_template_slug() ) ?: '';
+	public static function set_editor_style( $setting, $page_template ) {
 
 		// ブロック幅
 		self::css_block_width( $setting['container_width'], $setting['slim_width'], $page_template );

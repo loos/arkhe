@@ -71,7 +71,7 @@ trait Parts {
 		$thelist = '';
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
-			$thelist  .= '<a class="c-postMetas__link" href="' . esc_url( $term_link ) . '"' .
+			$thelist  .= '<a class="c-postTerms__link" href="' . esc_url( $term_link ) . '"' .
 				' data-' . sanitize_key( $tax ) . '-id="' . esc_attr( $term->term_id ) . '">' .
 				esc_html( $term->name ) .
 			'</a>';

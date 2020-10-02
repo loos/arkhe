@@ -38,7 +38,7 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 						)
 					);
 				?>
-				<p class="copyright"><?php echo esc_html( $setting['copyright'] ); ?></p>
+				<p class="c-copyright"><?php echo esc_html( $setting['copyright'] ); ?></p>
 				<?php do_action( 'arkhe_after_copyright' ); ?>
 			</div>
 		</div>

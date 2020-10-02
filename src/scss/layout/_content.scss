@@ -8,7 +8,7 @@
 
 .l-content__body {
 
-    margin: 3em auto;
+    margin: 3rem auto;
 
     .home.page & {
         // フロントページでは上下のマージン0に。
@@ -26,10 +26,3 @@
     }
 }
 
-.l-content__sidebar {
-
-    @include pc {
-        font-size: 14px;
-    }
-
-}

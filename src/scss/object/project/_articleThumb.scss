@@ -1,34 +1,19 @@
 
 .p-entry__thumb {
     width: 100%;
-    margin: 2em 0 0;
+    margin: 2rem 0 0;
     text-align: center;
-
-    // &.-youtube {
-    //     position: relative;
-    //     height: 0;
-    //     padding-bottom: 56.25%; // 高さをpaddingで指定(16:9)
-    // }
 }
-
-// .p-entry__thumb__youtube {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     @extend %imageShadow;
-// }
 
 .p-entry__thumb__img {
     display: block;
     width: 100%;
-
-    @extend %imageShadow;
 }
 
 .p-entry__thumb__figcaption {
-    margin-top: .75em;
-    font-size: .9em;
+    margin-top: .75rem;
+    font-size: .9rem;
     text-align: center;
+
+    @extend %figcaption;
 }

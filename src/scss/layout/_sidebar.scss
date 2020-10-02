@@ -1,21 +1,15 @@
+
 .l-content__sidebar {
     position: relative;
 
     @include sp {
-        margin-top: 4em;
-    }
-
-    @include pc {
-
-        .c-widget + .c-widget {
-            margin-top: 2.5em;
-        }
+        margin-top: 4rem;
     }
 
     [data-sidebar="on"] & {
 
         @include pc {
-            width: 304px;
+            width: 320px;
         }
     }
 

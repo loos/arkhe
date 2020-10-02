@@ -1,11 +1,7 @@
-.u-color-main {
-    color: var(--ark-color_main) !important;
-}
-
-.u-color-note {
-    color: $color_note;
-}
-
 .u-color-thin {
-    opacity: .8;
+    opacity: $thin_text_opacity !important;
 }
+
+// .u-color-main {
+//     color: var(--ark-color_main) !important;
+// }

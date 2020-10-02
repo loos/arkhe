@@ -30,7 +30,7 @@
         border-top: solid 1px currentColor;
         border-right: solid 1px currentColor;
         transform: translateY(-50%) rotate(45deg);
-        opacity: .8;
+        opacity: $thin_text_opacity;
         content: "";
     }
 
@@ -41,7 +41,7 @@
         }
 
         span {
-            opacity: .8;
+            opacity: $thin_text_opacity;
         }
     }
 }
@@ -65,7 +65,7 @@
     &:hover {
 
         span {
-            opacity: .76;
+            opacity: $thin_text_opacity;
         }
     }
 

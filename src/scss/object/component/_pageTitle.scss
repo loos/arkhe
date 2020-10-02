@@ -1,12 +1,12 @@
 .c-pageTitle {
     position: relative;
     font-weight: 700;
-    font-size: 1.75em;
+    font-size: 1.75rem;
     line-height: 1.5;
 
-    // @include tab {
-    //     font-size: 1.5em;
-    // }
+    @include tab {
+        font-size: 2rem;
+    }
 }
 
 //コンテンツ内 表示時
@@ -29,6 +29,10 @@
 .c-bottomSection__title {
     // position: relative;
     // display: block;
-    margin-bottom: 1.5em;
-    font-size: 1.4em;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+
+    @include sp {
+        font-size: 1.25em; // ウィジェットタイトルの大きさと同じ
+    }
 }

@@ -30,9 +30,9 @@
 			?>
 			</div>
 			<?php
-			if ( is_active_sidebar( 'drawer_bottom' ) ) :
+			if ( is_active_sidebar( 'drawer-bottom' ) ) :
 				echo '<div id="drawer_bottom" class="w-drawerBottom">';
-					dynamic_sidebar( 'drawer_bottom' );
+					dynamic_sidebar( 'drawer-bottom' );
 				echo '</div>';
 			endif;
 			?>

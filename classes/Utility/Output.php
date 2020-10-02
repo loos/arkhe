@@ -38,6 +38,8 @@ trait Output {
 		$output_style .= Style::get_media_query_css( 'tab', 'min-width: 600px' );
 		$output_style .= Style::get_media_query_css( 'mobile', 'max-width: 599px' );
 
+		// $output_style .= Style::$custom_styles
+
 		return $output_style;
 	}
 }

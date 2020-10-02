@@ -134,8 +134,6 @@
 // サムネイル画像
 .p-postList__thumb {
 
-    // @extend %thumbShadow;
-
     .-type-card & {
         width: 100%;
     }
@@ -198,14 +196,14 @@
     .p-postList & {
         //ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
         margin: 0;
-        font-weight: bold;
+        font-weight: 700;
         font-size: 1.1em;
-        line-height: 1.5;
+        line-height: 1.6;
     }
 
     .-type-simple & {
 
-        font-size: 1em;
+        font-size: 1rem;
     }
 
     .-type-list & {
@@ -217,7 +215,7 @@
 
     // .l-content__sidebar .-type-card & ,
     .-related & {
-        font-size: .9em;
+        font-size: .9rem;
     }
 
     // .l-content__sidebar .-type-list & {
@@ -231,17 +229,22 @@
 
 // 抜粋文
 .p-postList__excerpt {
-    margin-top: .5em;
-    font-size: 3vw;
-    line-height: 1.5;
+    margin-top: .5rem;
+    font-size: .8rem;
+    // font-size: 3vw;
+    line-height: 1.6;
 
     @include tab {
-        font-size: 13px;
+        font-size: .8rem;
+    }
+
+    .-type-list & {
+        display: none;
     }
 
     .-type-card & {
 
-        margin-top: .5em;
+        margin-top: .5rem;
     }
 
 }
@@ -250,10 +253,7 @@
 // メタ情報
 .p-postList__meta {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: .75em;
+    margin-top: .5rem;
     font-size: 10px;
     line-height: 1.25;
     letter-spacing: .1px;
@@ -271,51 +271,56 @@
     }
 
     .-type-simple & {
-        margin: 0 0 .75em;
+        margin: 0 0 .25rem;
     }
 
 
-    .c-widget & {
-        margin-top: 0;
-    }
+    // .c-widget & {
+    //     margin-top: 0;
+    // }
 
-
-}
-
-.p-postList__cat,
-.p-postList__author {
-    margin-right: .5em;
-    // padding: 4px 0;
 }
 
 // .p-postList__cat {
-
-//     &::before {
-
-//         @extend %arkheIcon;
-//         @extend .arkhe-icon-folder::before;
-//     }
+//     padding-right: 1px;
 // }
 
-.p-postList__times + .p-postList__cat {
+// .p-postList__cat,
+// .p-postList__author {
+//     margin-right: .5rem;
+// }
 
-    position: relative;
-    padding-left: calc(.5em + 1px);
+
+.p-postList__cat {
+    margin-right: .5rem;
 
     &::before {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        display: block;
-        width: 1px;
-        height: 1em;
-        background: currentColor;
-        transform: translateY(-50%);
-        content: "";
 
+        margin-right: .25rem;
+
+        @extend %arkheIcon;
+        @extend .arkhe-icon-folder::before;
     }
-
 }
+
+// .p-postList__times + .p-postList__cat {
+
+//     position: relative;
+//     padding-left: calc(.5rem + 1px);
+
+//     &::before {
+//         position: absolute;
+//         top: 50%;
+//         left: 0;
+//         display: block;
+//         width: 1px;
+//         height: 1em;
+//         background: currentColor;
+//         transform: translateY(-50%);
+//         content: "";
+//     }
+
+// }
 
 // .p-postList__times,
 
@@ -323,9 +328,9 @@
     padding: 0;
 }
 
-.p-postList__author:not(:first-child) {
-    margin-left: auto;
-}
+// .p-postList__author:not(:first-child) {
+//     margin-left: auto;
+// }
 
 // .p-postList__times {}
 

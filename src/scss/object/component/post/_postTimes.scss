@@ -10,10 +10,10 @@
 }
 
 .c-postTimes__item {
-    margin-right: .5em;
+    margin-right: .5rem;
 
     &::before {
-        margin-right: .25em;
+        margin-right: .25rem;
 
         @extend %arkheIcon;
     }

@@ -28,7 +28,7 @@ $date      = new DateTime( $post_data->post_date );
 		</div>
 		<div class="p-postList__body">
 			<div class="p-postList__title"><?php the_title(); ?></div>
-			<div class="p-postList__meta">
+			<div class="p-postList__meta c-postMetas">
 				<div class="p-postList__times c-postTimes u-color-thin">
 					<?php Arkhe::the_date_time( $date, 'posted', false ); ?>
 				</div>

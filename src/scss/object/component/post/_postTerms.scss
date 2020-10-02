@@ -1,0 +1,99 @@
+.c-postTerms {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.c-postTerms__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: .25rem;
+}
+
+.c-postTerms__link {
+    display: block;
+    margin-right: .25rem;
+    color: inherit;
+
+}
+
+// 投稿ページ上部での見た目
+.p-entry__head {
+
+
+    .c-postTerms__item {
+
+        &::before {
+            margin-right: .25rem;
+
+            @extend %arkheIcon;
+        }
+
+        &.-category::before {
+
+            @extend .arkhe-icon-folder::before;
+        }
+
+        &.-tag::before {
+
+            @extend .arkhe-icon-tag::before;
+        }
+    }
+
+    .c-postTerms__link:not(:hover) {
+        text-decoration: none;
+    }
+
+    .c-postTerms__link:not(:last-child) {
+
+        &::after {
+            content: ",";
+        }
+    }
+
+
+}
+
+
+// 投稿ページ下部での見た目
+.p-entry__foot {
+
+    .c-postTerms__link {
+        position: relative;
+        display: block;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+        padding: 6px 8px;
+        color: #333;
+        line-height: 1;
+        text-decoration: none;
+        background: #f7f7f7;
+        border: none;
+        transition: opacity .25s;
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+
+    .-category > .c-postTerms__link {
+
+        &::before {
+
+            margin-right: .25rem;
+
+            @extend %arkheIcon;
+            @extend .arkhe-icon-folder::before;
+        }
+    }
+
+    .-tag > .c-postTerms__link {
+
+        &::before {
+            letter-spacing: 2px;
+            content: "#";
+        }
+    }
+
+}

@@ -12,13 +12,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 3em 0;
+    margin: 3rem 0;
     font-size: 13px;
 
     // ...の部分
     .dots {
         margin: 0;
-        opacity: .8;
+        opacity: $thin_text_opacity;
     }
 
     .prev,

@@ -53,11 +53,6 @@
         padding-left: 2vw;
     }
 
-    // ヘッダーの中にグローバルナビがある時
-    // .c-gnavWrap {
-    //     margin-right: 0;
-    //     margin-left: auto;
-    // }
 }
 
 .l-header__left {
@@ -89,7 +84,7 @@
 
     .c-catchphrase {
         margin-top: 4px;
-        font-size: 12px;
+        font-size: .75rem;
         letter-spacing: .2px;
 
         @include sp {
@@ -128,21 +123,14 @@
     }
 
     &[data-logo="txt"] {
-
-        font-size: 5vw;
-
-        @include tab {
-            font-size: 24px;
-        }
+        font-size: 1.5rem;
     }
 }
 
 .c-headLogo__img {
-    // display: block;
     width: auto;
     height: 100%;
     object-fit: contain;
-    // font-family: "object-fit: contain;";
 }
 
 .l-header__menuBtn,
@@ -153,11 +141,6 @@
     height: 40px;
     line-height: 1.25;
     text-align: center;
-
-    // @include sp {
-    //     // position: absolute;
-    //     margin: 0 2vw;
-    // }
 
     &.has-bg-color {
         width: var(--ark-header_body_height);
