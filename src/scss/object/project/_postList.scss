@@ -9,7 +9,7 @@
 .p-postList {
 
     &.-type-simple {
-        border-top: solid 1px var(--color_border);
+        border-top: solid 1px var(--ark-color_border);
     }
 
     &.-type-card {
@@ -112,12 +112,12 @@
     .-type-simple & {
         display: block;
         padding: .75em .5em;
-        border-bottom: solid 1px var(--color_border);
+        border-bottom: solid 1px var(--ark-color_border);
         transition: background-color .25s;
 
         &:hover {
             // background-color: rgba(150, 150, 150, .05);
-            background-color: var(--color_gray);
+            background-color: var(--ark-color_gray);
         }
     }
 

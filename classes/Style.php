@@ -41,22 +41,52 @@ class Style {
 
 
 	/**
-	 * コンストラクタ
+	 * CSS生成
 	 */
 	public function __construct( $type = '' ) {
-		if ( 'front' === $type ) {
-			self::set_common_style();
-			self::set_front_style();
-		} elseif ( 'editor' === $type ) {
-			self::set_common_style();
-		}
+
+		$setting = \Arkhe_Theme::get_setting();
+
+		self::set_common_style( $setting );
+		if ( 'front' === $type ) self::set_front_style( $setting );
+		if ( 'editor' === $type ) self::set_editor_style( $setting );
+
+	}
+
+
+	/**
+	 * 動的スタイルの生成 （共通）
+	 */
+	public static function set_common_style( $setting ) {
+
+		// ページテンプレート取得
+		$page_template = basename( get_page_template_slug() ) ?: '';
+
+		// コンテンツ幅
+		self::css_content_width( $setting['container_width'], $setting['slim_width'], $page_template );
+
+		// カラー用CSS変数
+		self::css_common( $setting );
+
+		// フォントファミリー
+		self::css_font();
+
+		// マージン量
+		self::css_margin();
+
+		// 投稿リスト
+		self::css_thumb_ratio( $setting['--ark-card_thumb_ratio'], $setting['list_posts_thumb_ratio'] );
+
+		// ヘッダー
+		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );
+
 	}
 
 
 	/**
 	 * 動的スタイルの生成 （フロント用）
 	 */
-	public static function set_front_style() {
+	public static function set_front_style( $setting ) {
 		$setting = \Arkhe_Theme::get_setting();
 
 		// 投稿・固定ページ
@@ -71,23 +101,15 @@ class Style {
 
 
 	/**
-	 * 動的スタイルの生成 （フロント&エディター共通用）
+	 * 動的スタイルの生成 （エディター用）
 	 */
-	public static function set_common_style() {
+	public static function set_editor_style( $setting ) {
 
-		$setting = \Arkhe_Theme::get_setting();
+		// ページテンプレート取得
+		$page_template = basename( get_page_template_slug() ) ?: '';
 
-		// カラー用CSS変数
-		self::css_common( $setting );
-
-		// コンテンツサイズ
-		self::css_contents( $setting['container_size'], $setting['article_size'] );
-
-		// 投稿リスト
-		self::css_thumb_ratio( $setting['card_posts_thumb_ratio'], $setting['list_posts_thumb_ratio'] );
-
-		// ヘッダー
-		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );
+		// ブロック幅
+		self::css_block_width( $setting['container_width'], $setting['slim_width'], $page_template );
 
 	}
 

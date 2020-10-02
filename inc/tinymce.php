@@ -39,7 +39,7 @@ function mce_before_init( $mceInit ) {
 	$mceInit['object_resizing']   = 'img';
 
 	// インライン出力するCSS
-	$mceInit = \Arkhe_Theme\TinyMCE\set_content_style( $mceInit );
+	$mceInit = \Arkhe_Theme\set_content_style( $mceInit );
 
 	return $mceInit;
 }

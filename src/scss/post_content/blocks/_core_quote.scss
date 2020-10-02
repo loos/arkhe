@@ -5,7 +5,7 @@
     }
 
     &.has-text-align-right {
-        border-right: solid 2px var(--color_border);
+        border-right: solid 2px var(--ark-color_border);
         border-left: none;
     }
 
@@ -15,7 +15,7 @@
         position: relative;
         margin: 0;
         padding: 2.5em 3em;
-        background: var(--color_gray);
+        background: var(--ark-color_gray);
         border: none;
 
         .c-postContent & {

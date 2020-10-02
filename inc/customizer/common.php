@@ -72,13 +72,12 @@ Customizer::big_title(
 	)
 );
 
-// サイト幅の最大値
+// サイト幅
 Customizer::add(
 	$arkhe_section,
-	'container_size',
+	'container_width',
 	array(
 		'label'       => __( 'Site width', 'arkhe' ),
-		'description' => ARKHE_NOTE . __( '48px padding is attached to the left and right.', 'arkhe' ),
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step' => '20',
@@ -88,10 +87,10 @@ Customizer::add(
 	)
 );
 
-// 記事コンテンツ幅の最大値
+// スリム幅
 Customizer::add(
 	$arkhe_section,
-	'article_size',
+	'slim_width',
 	array(
 		'label'       => __( 'Content width for 1 column (slim width)', 'arkhe' ),
 		'type'        => 'number',
@@ -102,7 +101,6 @@ Customizer::add(
 		'sanitize'    => 'absint',
 	)
 );
-
 
 // NO-IMAGE設定
 Customizer::big_title(

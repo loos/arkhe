@@ -106,11 +106,11 @@
 
     @include sp {
         justify-content: center;
-        height: var(--logo_size_sp);
+        height: var(--ark-logo_size_sp);
     }
 
     @include pc {
-        height: var(--logo_size_pc);
+        height: var(--ark-logo_size_pc);
 
     }
 
@@ -160,8 +160,8 @@
     // }
 
     &.has-bg-color {
-        width: var(--header_body_height);
-        height: var(--header_body_height);
+        width: var(--ark-header_body_height);
+        height: var(--ark-header_body_height);
         margin: 0;
     }
 

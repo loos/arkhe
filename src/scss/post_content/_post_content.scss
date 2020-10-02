@@ -98,7 +98,7 @@ ol:not([class]) {
 pre {
     padding: 1em;
     overflow-x: auto;
-    background-color: var(--color_gray);
+    background-color: var(--ark-color_gray);
 
     code {
         font-size: 14px;
@@ -110,7 +110,7 @@ pre {
 blockquote {
     padding: .25em 1em;
     background: none;
-    border-left: solid 2px var(--color_border);
+    border-left: solid 2px var(--ark-color_border);
 
     cite {
         display: block;
@@ -162,13 +162,13 @@ thead {
     td,
     th {
         color: #fff;
-        background-color: var(--color_main);
+        background-color: var(--ark-color_main);
     }
 }
 
 tbody th {
     font-weight: bold;
-    background-color: var(--color_gray);
+    background-color: var(--ark-color_gray);
 }
 
 

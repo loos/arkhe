@@ -1,24 +1,19 @@
 // 全体の幅
 .wp-block {
     // max-width: 900px;
-    max-width: var(--article_size, 900px);
+    max-width: var(--ark-block_width, 900px);
 }
 
 // フォント
-.editor-styles-wrapper {
+.block-editor .editor-styles-wrapper {
+    color: var(--ark-color_text);
     font-size: 16px;
-    font-family:
-        "Helvetica Neue",
-        Arial,
-        "Hiragino Kaku Gothic ProN",
-        "Hiragino Sans",
-        Meiryo,
-        sans-serif !important;
+    font-family: var(--ark-font_family);
+    background-color: var(--ark-color_bg);
 }
 
 // 本文エリア
 .block-editor-writing-flow {
-
 
     // padding大きく
     [data-align="full"] {

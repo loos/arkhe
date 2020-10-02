@@ -13,8 +13,8 @@ $logo_size_sp   = isset( $args['logo_size_sp'] ) ? $args['logo_size_sp'] : '';
 $style = '';
 
 // ロゴサイズ
-if ( $logo_size_pc ) $style .= '--logo_size_pc:' . $logo_size_pc . 'px;';
-if ( $logo_size_sp ) $style .= '--logo_size_sp:' . $logo_size_sp . 'px;';
+if ( $logo_size_pc ) $style .= '--ark-logo_size_pc:' . $logo_size_pc . 'px;';
+if ( $logo_size_sp ) $style .= '--ark-logo_size_sp:' . $logo_size_sp . 'px;';
 ?>
 <div class="l-header__center"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
 	<?php if ( is_front_page() ) : ?>

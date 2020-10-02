@@ -12,8 +12,8 @@ trait Default_Data {
 			'color_bg'                  => '#fff',
 
 			// Content width
-			'container_size'            => 1200,
-			'article_size'              => 960,
+			'container_width'           => 1200,
+			'slim_width'                => 960,
 
 			// NO IMAGE
 			'no_image'                  => '',
@@ -56,7 +56,7 @@ trait Default_Data {
 			'show_list_date'            => true,
 			'show_list_mod'             => false,
 			'show_list_author'          => false,
-			'card_posts_thumb_ratio'    => 'wide',
+			'--ark-card_thumb_ratio'    => 'wide',
 			'list_posts_thumb_ratio'    => 'golden',
 
 			// 固定ページ設定

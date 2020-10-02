@@ -155,7 +155,7 @@
 .l-headerUnder:not([data-fix]),
 [data-pcfix="0"] + .l-headerUnder[data-fix] {
     position: absolute;
-    top: var(--header_height);
+    top: var(--ark-header_height);
 }
 
 // ナビだけが fix の場合 (ちょっとチラつくが、このパターンは非推奨で。)
@@ -172,9 +172,9 @@
 // ヘッダーもナビだけも fix の場合
 [data-pcfix="1"] + .l-headerUnder[data-fix] {
     position: fixed;
-    top: calc(var(--header_height));
+    top: calc(var(--ark-header_height));
 }
 
 .admin-bar [data-pcfix="1"] + .l-headerUnder[data-fix] {
-    top: calc(var(--header_height) + 32px);
+    top: calc(var(--ark-header_height) + 32px);
 }

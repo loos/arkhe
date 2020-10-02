@@ -17,7 +17,7 @@
     &::before {
         display: block;
         height: 0;
-        padding-top: var(--card_posts_thumb_ratio);
+        padding-top: var(--ark-card_thumb_ratio);
         content: "";
     }
 
@@ -25,7 +25,7 @@
     // リスト型の比率
     .p-blogCard &::before,
     .-type-list &::before {
-        padding-top: var(--list_posts_thumb_ratio);
+        padding-top: var(--ark-list_thumb_ratio);
     }
 }
 

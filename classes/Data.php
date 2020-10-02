@@ -92,6 +92,7 @@ class Data {
 	 */
 	public static function get_setting( $key = null ) {
 		if ( null !== $key ) {
+			if ( ! isset( self::$settings[ $key ] ) ) return '';
 			return self::$settings[ $key ] ?: '';
 		}
 		return self::$settings;
@@ -103,6 +104,7 @@ class Data {
 	 */
 	public static function get_default_setting( $key = null ) {
 		if ( null !== $key ) {
+			if ( ! isset( self::$default_settings[ $key ] ) ) return '';
 			return self::$default_settings[ $key ] ?: '';
 		}
 		return self::$default_settings;

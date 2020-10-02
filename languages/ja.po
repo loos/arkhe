@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-10-01 23:45+0900\n"
-"PO-Revision-Date: 2020-10-01 23:46+0900\n"
+"POT-Creation-Date: 2020-10-02 10:54+0900\n"
+"PO-Revision-Date: 2020-10-02 10:54+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -114,55 +114,51 @@ msgstr "コンテンツ幅"
 msgid "Site width"
 msgstr "サイト幅"
 
-#: inc/customizer/common.php:81
-msgid "48px padding is attached to the left and right."
-msgstr "左右に48pxのpaddingがつきます。"
-
-#: inc/customizer/common.php:96
+#: inc/customizer/common.php:95
 msgid "Content width for 1 column (slim width)"
 msgstr "１カラム（スリム幅）の時のコンテンツ幅"
 
-#: inc/customizer/common.php:112
+#: inc/customizer/common.php:111
 msgid "NO-IMAGE settings"
 msgstr "NO-IMAGE 設定"
 
-#: inc/customizer/common.php:121
+#: inc/customizer/common.php:120
 msgid "\"NO-IMAGE\" image"
 msgstr "“NO-IMAGE” 画像"
 
-#: inc/customizer/common.php:122
+#: inc/customizer/common.php:121
 msgid "1600px or more recommended width."
 msgstr "横幅1600px以上を推奨。"
 
-#: inc/customizer/common.php:134
+#: inc/customizer/common.php:133
 msgid "Breadcrumb list settings"
 msgstr "パンくずリスト設定"
 
-#: inc/customizer/common.php:143
+#: inc/customizer/common.php:142
 msgid "Breadcrumbs position"
 msgstr "パンくずリストの位置"
 
-#: inc/customizer/common.php:146
+#: inc/customizer/common.php:145
 msgid "Top of page"
 msgstr "ページ上部"
 
-#: inc/customizer/common.php:147
+#: inc/customizer/common.php:146
 msgid "Bottom of page"
 msgstr "ページ下部"
 
-#: inc/customizer/common.php:157
+#: inc/customizer/common.php:156
 msgid "\"Home\" string"
 msgstr "「ホーム」の文字列"
 
-#: inc/customizer/common.php:167
+#: inc/customizer/common.php:166
 msgid "Other settings"
 msgstr "その他の設定"
 
-#: inc/customizer/common.php:176
+#: inc/customizer/common.php:175
 msgid "Display \"Post page\""
 msgstr "「投稿ページ」も表示する"
 
-#: inc/customizer/common.php:177
+#: inc/customizer/common.php:176
 msgid "It is valid only when \"Post page\" is set."
 msgstr "「投稿ページ」を設定している時のみ有効です。"
 
@@ -187,8 +183,8 @@ msgid "Header logo settings"
 msgstr "ヘッダーロゴ設定"
 
 #: inc/customizer/header.php:24
-msgid "You can set the image to use from the \"Site Identity\" menu."
-msgstr "使用する画像は「サイト基本情報」メニューから設定できます。"
+msgid "The logo image can be set from the \"Site Identity\" menu."
+msgstr "ロゴ画像は「サイト基本情報」メニューから設定できます。"
 
 #: inc/customizer/header.php:37 inc/customizer/header.php:54
 msgid "Image size"
@@ -555,6 +551,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "48px padding is attached to the left and right."
+#~ msgstr "左右に48pxのpaddingがつきます。"
 
 #~ msgid "Logo image"
 #~ msgstr "ロゴ画像"

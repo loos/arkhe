@@ -4,7 +4,7 @@
 .c-postContent {
 
     & > * {
-        margin-top: 2em;
+        margin-top: var(--ark-mt, 2em);
         margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
     }
     margin: 4em 0 0;
@@ -35,7 +35,7 @@
 .wp-block-group__inner-container { // グループ
 
     & > * {
-        margin-top: 1em;
+        margin-top: var(--ark-mt_s, 1em);
         margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
     }
 }
@@ -44,7 +44,7 @@
 .alignfull {
 
     & > * {
-        margin-top: 2em;
+        margin-top: var(--ark-mt, 2em);
     }
 
     & > .wp-block-column,  // カラム
@@ -54,6 +54,7 @@
 
         & > * {
             margin-top: 2em;
+            margin-top: var(--ark-mt, 2em);
         }
     }
 }

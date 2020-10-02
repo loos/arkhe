@@ -21,7 +21,7 @@ Customizer::big_title(
 	'header_logo',
 	array(
 		'label'       => __( 'Header logo settings', 'arkhe' ),
-		'description' => __( 'You can set the image to use from the "Site Identity" menu.', 'arkhe' ),
+		'description' => __( 'The logo image can be set from the "Site Identity" menu.', 'arkhe' ),
 	)
 );
 

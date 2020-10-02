@@ -31,7 +31,7 @@
     z-index: 0;
     width: 100%;
     height: 100%;
-    padding-top: var(--header_height);
+    padding-top: var(--ark-header_height);
     transition: opacity .5s, visibility .5s;
     pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 

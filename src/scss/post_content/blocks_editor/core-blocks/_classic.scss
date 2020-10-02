@@ -10,7 +10,7 @@
 
         .block-library-rich-text__tinymce {
             padding: 1em;
-            border: dashed 1px var(--color_border);
+            border: dashed 1px var(--ark-color_border);
             // border: solid 1px #1e1e1e; // #1e1e1e は .block-library-classic__toolbar のボーダーと同じ色
             border-top: none;
         }
@@ -21,7 +21,7 @@
     .block-library-rich-text__tinymce {
 
         blockquote {
-            border-color: var(--color_border);
+            border-color: var(--ark-color_border);
             border-width: 2px;
 
             p {
