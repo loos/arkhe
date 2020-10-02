@@ -82,7 +82,7 @@ trait CSS {
 				$side_key = 'show_sidebar_ppst';
 			}
 
-			$block_width = \Arkhe_Theme::get_setting( $side_key ) ? '900' : $container_width;
+			$block_width = \Arkhe::get_setting( $side_key ) ? '900' : $container_width;
 		}
 
 		// ブロック幅

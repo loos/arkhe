@@ -12,7 +12,7 @@ $sp_sizes = 'card' === $list_type ? '100vw' : '40vw';
 	<figure class="c-postThumb__figure">
 		<?php
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo Arkhe_Theme::get_thumbnail(
+			echo Arkhe::get_thumbnail(
 				$the_id,
 				array(
 					'size'        => 'large',

@@ -8,7 +8,7 @@ add_action( 'after_setup_theme', '\Arkhe_Theme\update_check' );
 
 function update_check() {
 	// 現在のバージョンを取得
-	$now_version = \Arkhe_Theme::$arkhe_version;
+	$now_version = \Arkhe::$arkhe_version;
 
 	// データベースに保存されているバージョンデータを取得
 	$old_ver = get_theme_mod( 'version' );

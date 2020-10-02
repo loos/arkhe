@@ -30,5 +30,5 @@ if ( apply_filters( 'arkhe_header_id', $header_id ) ) {
 	}
 } else {
 	// 通常時
-	Arkhe_Theme::get_parts( 'header/default' );
+	Arkhe::get_parts( 'header/default' );
 }

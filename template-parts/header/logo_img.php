@@ -18,11 +18,11 @@ $logo_type = $logo_id ? 'img' : 'txt';
 		// カスタムロゴのURLを取得
 		$logo_url = apply_filters( 'arkhe_head_logo_url', wp_get_attachment_image_url( $logo_id, 'full' ) );
 
-		if ( Arkhe_Theme::is_header_overlay() ) :
+		if ( Arkhe::is_header_overlay() ) :
 			// ヘッダーオーバーレイ有効時
 
 			// オーバーレイロゴのURLを取得
-			$ovrly_logo_id  = Arkhe_Theme::get_setting( 'head_logo_overlay' ) ?: $logo_id;
+			$ovrly_logo_id  = Arkhe::get_setting( 'head_logo_overlay' ) ?: $logo_id;
 			$ovrly_logo_url = apply_filters( 'arkhe_head_logo_overlay_url', wp_get_attachment_image_url( $ovrly_logo_id, 'full' ) );
 
 			echo '<img src="' . esc_url( $ovrly_logo_url ) . '" alt="' . esc_attr( $site_title ) . '" class="c-headLogo__img -top">';

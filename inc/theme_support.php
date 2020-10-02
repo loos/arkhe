@@ -9,7 +9,7 @@ add_action( 'after_setup_theme', '\Arkhe_Theme\setup_theme' );
 function setup_theme() {
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \Arkhe_Theme::get_setting( 'container_width' ) );
+	$GLOBALS['content_width'] = apply_filters( 'arkhe_content_width', \Arkhe::get_setting( 'container_width' ) );
 
 	// 固定ページでも抜粋文を使用可能にする
 	add_post_type_support( 'page', 'excerpt' );

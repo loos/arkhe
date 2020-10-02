@@ -49,12 +49,12 @@ class Customizer {
 		global $wp_customize;
 		$customizer = $wp_customize;
 
-		$DEFAULT = \Arkhe_Theme::get_default_setting();
+		$DEFAULT = \Arkhe::get_default_setting();
 		$default = $DEFAULT[ $id ];
 
 		$args = self::set_args( $args );
 
-		$customize_id = \Arkhe_Theme::DB_NAMES['customizer'] . '[' . $id . ']';
+		$customize_id = \Arkhe::DB_NAMES['customizer'] . '[' . $id . ']';
 		$type         = $args['type'];
 		$partial      = $args['partial'];
 

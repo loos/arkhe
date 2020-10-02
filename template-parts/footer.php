@@ -1,5 +1,5 @@
 <?php
-$setting = Arkhe_Theme::get_setting();
+$setting = Arkhe::get_setting();
 
 // ウィジェットの使用状況
 $is_active_footer1 = is_active_sidebar( 'footer-1' );

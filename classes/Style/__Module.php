@@ -6,7 +6,7 @@ Style::$modules;
 foreach ( Style::$modules as $filename ) {
 	$module_path = Style::get_module_path( $filename );
 	if ( $module_path ) {
-		$module_style  = \Arkhe_Theme::get_file_contents( $module_path );
+		$module_style  = \Arkhe::get_file_contents( $module_path );
 		$module_style  = str_replace( '@charset "UTF-8";', '', $module_style );
 		$output_style .= $module_style;
 	}

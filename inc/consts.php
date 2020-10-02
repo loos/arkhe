@@ -11,7 +11,7 @@ add_action( 'wp_loaded', '\Arkhe_Theme\define_theme_const', 11 );
 
 function define_theme_const() {
 
-	$setting = \Arkhe_Theme::get_setting();
+	$setting = \Arkhe::get_setting();
 
 	// 投稿リストのレイアウトタイプ
 	define( 'ARKHE_LIST_TYPE', $setting['post_list_layout'] );

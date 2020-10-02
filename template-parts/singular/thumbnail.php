@@ -15,7 +15,7 @@ if ( $thumb_m_url ) : ?>
 	<figure class="p-entry__thumb">
 		<?php
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo Arkhe_Theme::get_thumbnail(
+			echo Arkhe::get_thumbnail(
 				$the_id,
 				array(
 					'sizes'       => '(min-width: 800px) 800px, 100vw',

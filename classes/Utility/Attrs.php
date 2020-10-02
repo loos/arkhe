@@ -20,7 +20,7 @@ trait Attrs {
 		$attrs .= ' data-drawer-move="fade"';
 
 		// サイドバー
-		$data_sidebar = \Arkhe_Theme::is_show_sidebar() ? 'on' : 'off';
+		$data_sidebar = \Arkhe::is_show_sidebar() ? 'on' : 'off';
 
 		$attrs .= ' data-sidebar="' . $data_sidebar . '"';
 
@@ -33,7 +33,7 @@ trait Attrs {
 	 * ヘッダーの追加属性
 	 */
 	public static function header_attr( $args = null, $is_echo = true ) {
-		$setting = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe::get_setting();
 
 		$logo_pos = isset( $args['logo_pos'] ) ? $args['logo_pos'] : '';
 
@@ -50,7 +50,7 @@ trait Attrs {
 
 		// オーバーレイ化
 
-		if ( \Arkhe_Theme::is_header_overlay() ) {
+		if ( \Arkhe::is_header_overlay() ) {
 			// $header_class .= ' is-overlay';
 			$attrs .= ' data-overlay="true"';
 		}

@@ -14,7 +14,7 @@
  *   $args['show_modified'] : 更新日を表示するかどうか
  *   $args['show_author'] : 著者を表示するかどうか
  */
-$setting = \Arkhe_Theme::get_setting();
+$setting = \Arkhe::get_setting();
 
 // 投稿データ
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
@@ -46,11 +46,11 @@ $author_data = get_userdata( $author_id );
 		<div class="p-postList__times c-postTimes u-color-thin">
 			<?php
 				if ( $show_date && $date ) :
-				Arkhe_Theme::the_date_time( $date, 'posted' );
+				Arkhe::the_date_time( $date, 'posted' );
 				endif;
 
 				if ( $show_modified && $modified ) :
-				Arkhe_Theme::the_date_time( $modified, 'modified' );
+				Arkhe::the_date_time( $modified, 'modified' );
 				endif;
 			?>
 		</div>

@@ -28,7 +28,7 @@ if ( $the_query->have_posts() ) : ?>
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
 			$list_args['count'] = $loop_count++;
-			Arkhe_Theme::get_parts( 'post_list/style/' . $file_name, $list_args );
+			Arkhe::get_parts( 'post_list/style/' . $file_name, $list_args );
 		endwhile;
 	?>
 	</ul>

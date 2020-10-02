@@ -10,15 +10,15 @@ $term_id = $wp_obj->term_id;
 $list_type = apply_filters( 'arkhe_list_type_on_term', ARKHE_LIST_TYPE, $term_id );
 
 // アーカイブページのデータ
-$archive_data = Arkhe_Theme::get_archive_data();
+$archive_data = Arkhe::get_archive_data();
 
 // 説明文
 $term_description = $wp_obj->description;
 ?>
-<div <?php post_class( Arkhe_Theme::main_body_class( false ) ); ?>>
+<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 	<?php
-		if ( ! Arkhe_Theme::is_show_ttltop() ) :
-			Arkhe_Theme::get_parts( 'archive/title', $archive_data );
+		if ( ! Arkhe::is_show_ttltop() ) :
+			Arkhe::get_parts( 'archive/title', $archive_data );
 		endif;
 		if ( ! empty( $term_description ) ) :
 	?>
@@ -26,7 +26,7 @@ $term_description = $wp_obj->description;
 	<?php
 		endif;
 		// 投稿リスト
-		Arkhe_Theme::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+		Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 		// ページャー
 		the_posts_pagination(

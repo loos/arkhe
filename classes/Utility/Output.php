@@ -9,7 +9,7 @@ trait Output {
 	 * フロント側に渡すグローバル変数を返す
 	 */
 	public static function get_front_global_vars() {
-		$setting = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe::get_setting();
 
 		return array(
 			'isFixHeadPC' => $setting['fix_header_pc'],

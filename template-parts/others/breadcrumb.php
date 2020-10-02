@@ -4,7 +4,7 @@
  */
 if ( is_front_page() ) return false;
 
-$setting = Arkhe_Theme::get_setting();
+$setting = Arkhe::get_setting();
 
 $wp_obj    = get_queried_object();  // そのページのWPオブジェクトを取得
 $list_data = array();
@@ -349,4 +349,4 @@ echo '<div id="breadcrumb" class="p-breadcrumb">' .
 '</div>';
 
 // JSON-LDデータの受け渡し
-\Arkhe_Theme::$bread_json_data = $json_array;
+\Arkhe::$bread_json_data = $json_array;

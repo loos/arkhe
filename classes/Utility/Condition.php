@@ -24,19 +24,19 @@ trait Condition {
 
 		} elseif ( is_front_page() ) {
 
-			$is_show_sidebar = \Arkhe_Theme::get_setting( 'show_sidebar_top' );
+			$is_show_sidebar = \Arkhe::get_setting( 'show_sidebar_top' );
 
 		} elseif ( is_page() || is_home() ) {
 
-			$is_show_sidebar = \Arkhe_Theme::get_setting( 'show_sidebar_page' );
+			$is_show_sidebar = \Arkhe::get_setting( 'show_sidebar_page' );
 
 		} elseif ( is_single() ) {
 
-			$is_show_sidebar = \Arkhe_Theme::get_setting( 'show_sidebar_post' );
+			$is_show_sidebar = \Arkhe::get_setting( 'show_sidebar_post' );
 
 		} elseif ( is_archive() ) {
 
-			$is_show_sidebar = \Arkhe_Theme::get_setting( 'show_sidebar_archive' );
+			$is_show_sidebar = \Arkhe::get_setting( 'show_sidebar_archive' );
 
 		} else {
 
@@ -53,12 +53,12 @@ trait Condition {
 	 */
 	public static function is_header_overlay() {
 		$return            = false;
-		$is_header_overlay = \Arkhe_Theme::get_setting( 'header_overlay' ) === 'on';
+		$is_header_overlay = \Arkhe::get_setting( 'header_overlay' ) === 'on';
 
 		if ( is_front_page() ) {
 			$return = $is_header_overlay;
 		} elseif ( is_page() || is_home() ) {
-			$return = $is_header_overlay && \Arkhe_Theme::get_setting( 'header_overlay_on_page' );
+			$return = $is_header_overlay && \Arkhe::get_setting( 'header_overlay_on_page' );
 		}
 
 		return apply_filters( 'arkhe_is_header_overlay', $return );
@@ -75,7 +75,7 @@ trait Condition {
 		if ( is_front_page() ) {
 			$title_pos = '';
 		} elseif ( is_page() || is_home() ) {
-			$title_pos = \Arkhe_Theme::get_setting( 'page_title_pos' );
+			$title_pos = \Arkhe::get_setting( 'page_title_pos' );
 		} else {
 			$title_pos = '';
 		}

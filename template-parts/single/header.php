@@ -3,7 +3,7 @@
  * 投稿ページのタイトル部分
  * $args['post_id'] : 投稿IDが渡ってくる
  */
-$setting = Arkhe_Theme::get_setting();
+$setting = Arkhe::get_setting();
 
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
@@ -18,16 +18,16 @@ $is_modified = ( $date < $modified );
 	<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
 	<div class="p-entry__head__meta">
 		<div class="c-postTimes">
-			<?php Arkhe_Theme::the_date_time( $date, 'posted' ); ?>
+			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
 			<?php
 				if ( $is_modified ) :
-					Arkhe_Theme::the_date_time( $modified, 'modified', false );
+					Arkhe::the_date_time( $modified, 'modified', false );
 				endif;
 			?>
 		</div>
 		<?php
 			// カテゴリー・タグ
-			Arkhe_Theme::get_parts(
+			Arkhe::get_parts(
 				'single/term_list',
 				array(
 					'post_id'  => $the_id,
@@ -52,8 +52,8 @@ $is_modified = ( $date < $modified );
 	</div>
 	<?php
 		// アイキャッチ画像
-		if ( Arkhe_Theme::get_setting( 'show_entry_thumb' ) ) :
-			Arkhe_Theme::get_parts(
+		if ( Arkhe::get_setting( 'show_entry_thumb' ) ) :
+			Arkhe::get_parts(
 				'singular/thumbnail',
 				array(
 					'post_id'    => $the_id,

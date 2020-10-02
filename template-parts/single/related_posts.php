@@ -4,7 +4,7 @@
  */
 $the_post_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
-$setting = Arkhe_Theme::get_setting();
+$setting = Arkhe::get_setting();
 
 // レイアウト
 $list_type      = $setting['related_posts_layout'];
@@ -60,7 +60,7 @@ $loop_count = 0;
 			<?php
 				while ( $related_query->have_posts() ) :
 					$related_query->the_post();
-					Arkhe_Theme::get_parts( 'post_list/style/related', array( 'count' => $loop_count++ ) );
+					Arkhe::get_parts( 'post_list/style/related', array( 'count' => $loop_count++ ) );
 				endwhile;
 			?>
 		</ul>

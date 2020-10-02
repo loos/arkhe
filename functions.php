@@ -53,7 +53,7 @@ add_action( 'admin_notices', 'arkhe_theme_beta_message' );
 /**
  * Arkhe_Theme
  */
-class Arkhe_Theme extends \Arkhe_Theme\Data {
+class Arkhe extends \Arkhe_Theme\Data {
 
 	use \Arkhe_Theme\Utility\Attrs,
 		\Arkhe_Theme\Utility\Parts,
@@ -99,6 +99,6 @@ class Arkhe_Theme extends \Arkhe_Theme\Data {
 }
 
 /**
- * Start!
+ * Arkhe start!
  */
-new \Arkhe_Theme();
+new \Arkhe();

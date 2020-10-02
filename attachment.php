@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
-	<div <?php post_class( Arkhe_Theme::main_body_class( false ) ); ?>>
+<main id="main_content" class="<?php Arkhe::main_class(); ?>">
+	<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 		<?php while ( have_posts() ) : ?>
 			<?php
 				the_post();
@@ -16,7 +16,7 @@
 					<figcaption class="p-entry__thumb__figcaption"><?php echo esc_html( $img_cap ); ?></figcaption>
 				</h1>
 			<?php endif; ?>
-			<div class="<?php Arkhe_Theme::post_content_class(); ?>">
+			<div class="<?php Arkhe::post_content_class(); ?>">
 				<?php the_content(); // 「概要」 ?>
 			</div>
 		<?php endwhile; ?>

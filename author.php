@@ -8,15 +8,15 @@ $author_data = get_userdata( $author_id );
 $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $author_id );
 
 ?>
-<main id="main_content" class="<?php Arkhe_Theme::main_class(); ?>">
-	<div <?php post_class( Arkhe_Theme::main_body_class( false ) ); ?>>
+<main id="main_content" class="<?php Arkhe::main_class(); ?>">
+	<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 		<h1 class="p-archive__title c-pageTitle"><?php echo esc_html( $author_data->display_name ); ?></h1>
 		<?php
 			// 著者情報
-			Arkhe_Theme::get_parts( 'others/author_box', array( 'author_id' => $author_id ) );
+			Arkhe::get_parts( 'others/author_box', array( 'author_id' => $author_id ) );
 
 			// 投稿リスト
-			Arkhe_Theme::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
 			the_posts_pagination(

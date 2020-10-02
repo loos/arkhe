@@ -45,7 +45,7 @@ class Style {
 	 */
 	public function __construct( $type = '' ) {
 
-		$setting = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe::get_setting();
 
 		self::set_common_style( $setting );
 		if ( 'front' === $type ) self::set_front_style( $setting );
@@ -87,7 +87,7 @@ class Style {
 	 * 動的スタイルの生成 （フロント用）
 	 */
 	public static function set_front_style( $setting ) {
-		$setting = \Arkhe_Theme::get_setting();
+		$setting = \Arkhe::get_setting();
 
 		// 投稿・固定ページ
 		self::css_title_bg( $setting['ttlbg_overlay_color'], $setting['ttlbg_overlay_opacity'] );
