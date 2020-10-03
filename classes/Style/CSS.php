@@ -99,7 +99,6 @@ trait CSS {
 			} else {
 				$side_key = 'show_sidebar_post';
 			}
-
 			$block_width = \Arkhe::get_setting( $side_key ) ? 900 : $container_width;
 		}
 

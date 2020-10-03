@@ -30,8 +30,13 @@
     padding: .75em 1.5em;
     font-size: 1rem;
     line-height: 1.5;
+    transition: opacity .25s;
 
     .is-style-outline > & {
         border-width: 1px;
+    }
+
+    &:hover {
+        opacity: .75;
     }
 }
