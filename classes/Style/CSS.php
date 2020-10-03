@@ -23,6 +23,9 @@ trait CSS {
 	protected static function css_font() {
 		$ff = '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;';
 		self::add_root_css( '--ark-font_family', $ff );
+
+		self::add_root_css( '--ark-font_size', '16px' );
+		self::add_root_css( '--ark-font_size_sp', '3.8vw' );
 	}
 
 

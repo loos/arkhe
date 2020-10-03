@@ -2,11 +2,6 @@
     リスト系のウィジェットに関するもの
 */
 
-:root {
-    --ark-nav-padding: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
-    --ark-hover_gray: rgba(150, 150, 150, .05);
-}
-
 // 一番最初の ulタグ
 .wp-block-categories-list,
 .wp-block-archives-list,

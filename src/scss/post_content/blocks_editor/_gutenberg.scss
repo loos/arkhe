@@ -23,7 +23,7 @@
 // フォント
 .block-editor .editor-styles-wrapper {
     color: var(--ark-color_text);
-    font-size: 16px;
+    font-size: var(--ark-font_size, 16px);
     font-family: var(--ark-font_family);
     background-color: var(--ark-color_bg);
 }
