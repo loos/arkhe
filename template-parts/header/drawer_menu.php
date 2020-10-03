@@ -6,6 +6,7 @@
 <div id="drawer_menu" class="p-drawer">
 	<div class="p-drawer__inner">
 		<div class="p-drawer__body">
+			<?php do_action( 'arkhe_before_drawer_nav' ); ?>
 			<div class="p-drawer__nav">
 			<?php
 				if ( has_nav_menu( 'drawer_menu' ) ) :

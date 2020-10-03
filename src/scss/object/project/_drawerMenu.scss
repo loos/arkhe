@@ -21,6 +21,12 @@
         }
     }
 
+    .l-header__left,
+    .l-header__center,
+    .l-header__right {
+        pointer-events: none;
+    }
+
 }
 
 //メニュー

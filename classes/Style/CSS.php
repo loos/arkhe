@@ -94,7 +94,7 @@ trait CSS {
 			} elseif ( 'page' === $post_type ) {
 				$side_key = 'show_sidebar_page';
 			} else {
-				$side_key = 'show_sidebar_ppst';
+				$side_key = 'show_sidebar_post';
 			}
 
 			$block_width = \Arkhe::get_setting( $side_key ) ? 900 : $container_width;
