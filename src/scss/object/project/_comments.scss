@@ -5,27 +5,28 @@
 
 // コメントリスト
 .c-commentList {
-    margin: 2em 0 0;
+    margin: 2rem 0 0;
+    font-size: .9rem;
 
     // li
     .comment {
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 
     // & > .comment:not(:last-child),
     & > .comment {
-        padding: 1em;
+        padding: 1rem;
         background-color: var(--ark-color_gray);
     }
 
     .children {
-        margin-left: 1em;
-        padding: 0 0 0 1em;
+        margin-left: 1rem;
+        padding: 0 0 0 1rem;
         border-left: solid 1px var(--ark-color_border);
     }
 
     .reply {
-        margin-top: .5em;
+        margin-top: .5rem;
     }
 
 }
@@ -46,7 +47,8 @@
 
     //名前
     .fn {
-        margin-left: 1em;
+        margin-left: 1rem;
+        font-size: 1.1em;
         //a{}
     }
     // 名前のリンク（サイトURLある時）
@@ -75,8 +77,8 @@
 
 // コメント本文
 .comment-content {
-    margin-top: 1em;
-    font-size: 14px;
+    margin-top: 1rem;
+    // font-size: 14px;
     line-height: 1.5;
 
     & > :first-child {
@@ -84,32 +86,30 @@
     }
 
     p {
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 }
 
 // 「あなたのコメントは承認待ちです。」
 .comment-awaiting-moderation {
     display: block;
-    margin-top: 1em;
+    margin-top: 1rem;
     font-weight: bold;
-    font-size: .9em;
+    // font-size: .9em;
 }
 
 // 「返信」
-.comment-reply-link {
-    font-size: 12px;
-}
+// .comment-reply-link {}
 
 
 // コメント入力エリア
 .comment-respond {
-    margin-top: 2.5em;
+    margin-top: 2.5rem;
 }
 
 .comment-reply-title {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1rem;
 
     &::before {
         margin-right: .5em;
@@ -119,28 +119,39 @@
     }
 }
 
+
+// 「メールアドレスが公開されることはありません」
 .comment-notes {
-    // margin-bottom: 2.5em;
-    font-size: 13px;
+
+    font-size: .75rem;
 }
 
 .comment-form {
-    margin-top: 1em;
+    margin-top: 1rem;
 
     p {
-        margin-top: 1em;
+        margin-top: 1rem;
     }
 
     label {
         display: block;
-        margin-bottom: .5em;
+        margin-bottom: .5rem;
         font-weight: bold;
-        // font-size: .9em;
     }
+
+    // 「コメント」を非表示（「コメントを残す」と被る）
+    .comment-form-comment {
+
+        label {
+            display: none;
+        }
+    }
+
 
     [for="wp-comment-cookies-consent"] {
         font-weight: normal;
     }
+
 
     #comment,
     #author,
@@ -150,11 +161,11 @@
     }
 
     .form-submit {
-        margin-top: 2em;
+        margin-top: 2rem;
     }
 
     .submit {
-        padding: .5em 1.5em;
+        padding: .5rem 1.5rem;
         color: #fff;
         background-color: var(--ark-color_main);
         border: none;
@@ -170,7 +181,7 @@
 // 返信キャンセルリンク
 #cancel-comment-reply-link {
     margin-left: 1em;
-    font-size: 13px;
+    font-size: .9em;
     font-style: italic;
 }
 
@@ -178,9 +189,13 @@
 .comment-form-cookies-consent {
     display: flex;
     align-items: center;
-    line-height: 1.2;
+
+    label {
+        margin-bottom: 0;
+        margin-left: .5em;
+    }
 }
 
 #wp-comment-cookies-consent {
-    margin-right: 8px;
+    margin: 0;
 }

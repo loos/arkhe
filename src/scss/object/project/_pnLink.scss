@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: space-between;
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 
 .c-pnNav__item {
@@ -12,11 +12,11 @@
     flex: 1 0 auto;
     max-width: 100%;
     // min-height: 2em;
-    font-size: 3vw;
+    // font-size: 3vw;
+    font-size: .8rem;
 
     @include tab {
         width: 50%;
-        font-size: 13px;
     }
 
     &.-prev {
@@ -67,7 +67,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: .5em 1em;
+    padding: .5rem .75rem;
     color: inherit;
     line-height: 1.5;
     text-decoration: none;

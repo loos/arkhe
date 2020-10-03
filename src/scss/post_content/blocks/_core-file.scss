@@ -9,13 +9,16 @@
             content: "\e908\0020";
         }
     }
+
+
+    // コアを上書きできるように ネスト
+    .wp-block-file__button {
+        // color: #fff;
+        // background: #32373c;
+        padding: .75em 1.25em;
+        font-size: inherit;
+        font-size: .8rem;
+        border-radius: 2rem;
+    }
 }
 
-.wp-block-file__button {
-    padding: .75em 1.5em;
-    color: #fff;
-    font-size: inherit;
-    background: #32373c;
-    border-radius: 8px;
-
-}

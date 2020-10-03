@@ -2,6 +2,11 @@
     リスト系のウィジェットに関するもの
 */
 
+:root {
+    --ark-nav-padding: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
+    --ark-hover_gray: rgba(150, 150, 150, .05);
+}
+
 // 一番最初の ulタグ
 .wp-block-categories-list,
 .wp-block-archives-list,
@@ -35,33 +40,26 @@
     a {
         position: relative;
         display: block;
-        padding: .75em .5em;
+        padding: var(--ark-nav-padding, .75rem .5rem);
         color: inherit;
         text-decoration: none;
+        transition: background-color .25s;
 
         &:hover {
-            background-color: $hover_gray;
+            background-color: var(--ark-hover_gray);
         }
     }
-}
 
-// アイコン用の before要素
-.wp-block-categories,
-.wp-block-archives,
-.widget_nav_menu,
-.widget_archive,
-.widget_categories,
-.widget_pages {
-
-    a::before {
-        position: absolute;
-        top: 50%;
-        left: 2px;
-        display: inline-block;
-        color: inherit;
-        vertical-align: middle;
-        transform: translateY(-50%);
-    }
+    // アイコン用の before要素
+    // &::before {
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 2px;
+    //     display: inline-block;
+    //     color: inherit;
+    //     vertical-align: middle;
+    //     transform: translateY(-50%);
+    // }
 
 }
 
@@ -71,10 +69,16 @@
 .wp-block-categories > .cat-item > a,
 .widget_categories > ul > .cat-item > a {
 
-    padding-left: 1.5em;
+    padding-left: 1.75rem;
 
     &::before {
-        transform: scale(.8) translateX(1px) translateY(-50%);
+        position: absolute;
+        top: 50%;
+        left: .5rem;
+        display: inline-block;
+        color: inherit;
+        vertical-align: middle;
+        transform: scale(.9) translateY(-50%);
         transform-origin: 0 0;
         opacity: $thin_text_opacity;
 
@@ -86,6 +90,10 @@
 .widget_categories,
 .wp-block-categories {
 
+    .children a {
+        padding-left: 1.75rem; //カテゴリーアイコンがある分、少し他より大きく
+    }
+
     label {
         display: none;
     }
@@ -95,15 +103,14 @@
 .tag-link-count,
 .cat-post-count {
     position: relative;
-    right: -1px;
-    color: #666;
-    font-size: 3vw;
-
-    @include tab {
-        font-size: 13px;
-    }
+    display: inline-block;
+    margin-left: .25em;
+    color: inherit;
+    letter-spacing: .5px;
+    transform: scale(.8);
+    opacity: $thin_text_opacity;
 }
 
-.cat-post-count {
-    margin-left: 4px;
-}
+// .cat-post-count {
+//     margin-left: 2px;
+// }

@@ -15,6 +15,7 @@
     padding: 6px 8px;
     // color: #333;
     color: #333 !important; //footerで inherit になるので
+    font-size: .75rem !important; //タグクラウドは使用頻度でフォントサイズ変えてくるので !important 付ける
     line-height: 1;
     text-decoration: none;
     background: #f7f7f7;
@@ -25,18 +26,10 @@
         margin-right: .25em;
         opacity: .75;
         content: "#";
-
     }
 
     &:hover {
         opacity: .75;
     }
 
-    @include mobile {
-        font-size: 12px !important; //タグクラウドは使用頻度でフォントサイズ変えてくる
-    }
-
-    @include tab {
-        font-size: 13px !important; //タグクラウドは使用頻度でフォントサイズ変えてくる
-    }
 }

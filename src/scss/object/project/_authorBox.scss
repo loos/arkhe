@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 .p-authorBox {
-    padding: 1.5em;
-    background-color: var(--color_gray);
+    padding: 1.5rem;
+    background-color: var(--ark-color_gray);
 
     @include tab {
         display: flex;
         align-items: center;
-        padding: 1.5em 2em;
+        padding: 1.5rem 2rem;
     }
 
     // 著者一覧ページ
     .author & {
-        margin-bottom: 4em;
+        margin-bottom: 4rem;
     }
 }
 
@@ -40,8 +40,7 @@
 .p-authorBox__name {
     display: block;
     color: inherit;
-    font-weight: bold;
-    line-height: 1.25;
+    font-weight: 700;
     text-decoration: none;
 
     @include mobile {
@@ -51,9 +50,12 @@
 
 .p-authorBox__position {
     display: block;
-    margin-top: .5em;
-    font-size: .75em;
-    line-height: 1.25;
+    margin-top: .25rem;
+    font-size: .75rem;
+
+    @include mobile {
+        text-align: center;
+    }
 }
 
 .p-authorBox__body {
@@ -66,22 +68,16 @@
 
 .p-authorBox__description {
     // width: 100%;
-    margin-top: .75em;
-
-    @include tab {
-        font-size: .9em;
-        line-height: 1.5;
-    }
+    margin-top: .75rem;
+    font-size: .9rem;
 }
 
 .p-authorBox__footer {
-    margin-top: 1em;
-    font-size: .9em;
-    line-height: 1.5;
+    margin-top: 1rem;
+    font-size: .9rem;
 
     @include tab {
         display: flex;
-        // flex-wrap: wrap;
         align-items: center;
 
     }
@@ -90,17 +86,13 @@
 .p-authorBox__links {
 
     @include tab {
-        margin-right: 1em;
+        margin-right: 1rem;
     }
 
     @media (min-width: 1200px) {
         display: flex;
         flex-wrap: wrap;
     }
-    // @include tab {
-    //     display: flex;
-    //     flex-wrap: wrap;
-    // }
 }
 
 .p-authorBox__weblink {
@@ -136,29 +128,31 @@
     }
 
     @include mobile {
-        margin-top: 1em;
+        margin-top: 1.25rem;
     }
 
     a {
         display: block;
-
         margin: 0 auto;
-        padding: .5em 1.5em;
         color: inherit;
         letter-spacing: 1px;
         text-align: center;
         text-decoration: none;
-        // border-radius: 1px;
         box-shadow: 0 0 0 1px currentColor;
         opacity: $thin_text_opacity;
         transition: opacity .25s;
+
+        @include tab {
+            padding: .5rem 1.5rem;
+            font-size: .8rem;
+        }
 
         &:hover {
             opacity: 1;
         }
 
         @include mobile {
-            padding: .75em 1em;
+            padding: .75rem 1rem;
             // width: 120px;
         }
     }

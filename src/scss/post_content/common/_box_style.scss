@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
 .has-drop-cap {
-    min-height: 3em;
+    min-height: 3rem;
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-    font-size: 4em;
+    font-size: 4rem;
 }
 
 
 // has-
 p.has-background,
 div.has-background {
-    padding: 1.5em;
+    padding: 1.5rem;
 }
 
 @include tab {
 
     div.has-background {
-        padding: 2em;
+        padding: 2rem;
     }
 }

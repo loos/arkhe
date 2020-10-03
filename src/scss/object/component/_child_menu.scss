@@ -9,7 +9,7 @@
     // a + ul がある時
     a:not(:last-child) {
 
-        padding-right: 3em;
+        padding-right: 3rem;
 
         @include tab {
             padding-right: 40px;
@@ -33,16 +33,13 @@
     }
 
     a {
-        padding-left: 1.5em;
-
-        // @include pc {
-        font-size: .9em;
-        // }
-
+        padding-left: 1.5rem;
+        font-size: .9em; //em
     }
 
+    // さらに子メニュー
     ul a {
-        padding-left: 2.25em;
+        padding-left: 2.5rem;
     }
 
 }

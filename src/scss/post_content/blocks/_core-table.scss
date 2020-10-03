@@ -20,14 +20,14 @@ table.is-style-stripes,
 
 .is-style-stripes {
 
-    tbody th,
-    tbody td {
-        background: none !important; //th風tdの詳細度を上書き
-    }
+    // tbody th,
+    // tbody td {
+    //     background: none !important; //th風tdの詳細度を上書き
+    // }
 
     figcaption {
         margin-top: 0;
-        padding: .5em 0;
+        padding: .5rem 0;
         border-top: 1px solid #ededed;
     }
 }

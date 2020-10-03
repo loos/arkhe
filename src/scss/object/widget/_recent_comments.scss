@@ -4,11 +4,12 @@
     .recentcomments {
         position: relative;
         margin: 0;
-        padding: .75em .5em;
+        padding: var(--ark-nav-padding, .75rem .5rem);
         border-bottom: solid 1px var(--ark-color_border);
+        transition: background-color .25s;
 
         &:hover {
-            background-color: $hover_gray;
+            background-color: var(--ark-hover_gray);
         }
     }
 }

@@ -9,7 +9,7 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">
 		<?php if ( $is_active_footer1 || $is_active_footer2 ) : ?>
-			<div class="l-footer__widgets">
+			<div class="l-footer__widgets<?php if ( $is_active_footer1 && $is_active_footer2 ) echo ' has-columns'; ?>">
 				<div class="l-container">
 					<?php if ( $is_active_footer1 ) : ?>
 						<div class="w-footer -widget1">

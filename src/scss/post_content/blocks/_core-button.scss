@@ -1,3 +1,19 @@
+.wp-block-buttons {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &.aligncenter {
+        justify-content: center;
+    }
+
+    .wp-block-button {
+        display: block;
+        margin: 0;
+        padding: 4px;
+    }
+}
 //WPコアのボタンブロック
 .wp-block-button {
 
@@ -10,8 +26,10 @@
 }
 
 .wp-block-button__link {
-    min-width: 8em;
-    padding: .5em 1em;
+    min-width: 8rem;
+    padding: .75em 1.5em;
+    font-size: 1rem;
+    line-height: 1.5;
 
     .is-style-outline > & {
         border-width: 1px;

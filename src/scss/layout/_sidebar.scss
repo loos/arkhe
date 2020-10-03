@@ -2,6 +2,10 @@
 .l-content__sidebar {
     position: relative;
 
+    @include pc {
+        font-size: .9rem;
+    }
+
     @include sp {
         margin-top: 4rem;
     }

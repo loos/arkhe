@@ -14,8 +14,8 @@
     &.-type-card {
         display: flex;
         flex-wrap: wrap;
-        margin-right: -.75em;
-        margin-left: -.75em;
+        margin-right: -.75rem;
+        margin-left: -.75rem;
     }
 
 }
@@ -31,7 +31,7 @@
     // リスト
     .-type-list & {
         margin-top: 0;
-        margin-bottom: 2em;
+        margin-bottom: 2rem;
     }
 
 
@@ -39,8 +39,8 @@
     .-type-card & {
         width: 100%;
         margin-top: 0;
-        margin-bottom: 2.5em;
-        padding: 0 .75em;
+        margin-bottom: 2.5rem;
+        padding: 0 .75rem;
 
         @include tab {
             width: 50%;
@@ -68,14 +68,13 @@
     }
 
 
-    // widget ではマージン少し狭く
-    .c-widget .-type-card & {
-        margin-bottom: 2em;
-    }
-
-    .c-widget .-type-list & {
-        margin-bottom: 1.5em;
-    }
+    // ウィジェットエリアではマージン少し狭く
+    // .c-widget .-type-card & {
+    //     margin-bottom: 2rem;
+    // }
+    // .c-widget .-type-list & {
+    //     margin-bottom: 1.5rem;
+    // }
 
 }
 
@@ -95,22 +94,19 @@
 
     &:hover {
 
-        .c-postThumb {
-
-            &::before {
-                opacity: .1;
-            }
+        .c-postThumb::before {
+            opacity: .1;
         }
 
         .c-postThumb__img {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
     }
 
 
     .-type-simple & {
         display: block;
-        padding: .75em .5em;
+        padding: .75rem .5rem;
         border-bottom: solid 1px var(--ark-color_border);
         transition: background-color .25s;
 
@@ -170,7 +166,7 @@
 
 
     .-type-card & {
-        padding-top: calc(1em + 2px);
+        padding-top: 1.25rem;
     }
 
     .-type-card .p-postList__item:hover &,
@@ -180,10 +176,10 @@
 
     .-type-list & {
         flex: 1 1 auto;
-        padding-left: 1em;
+        padding-left: 1rem;
 
         @include tab {
-            padding-left: 1.5em;
+            padding-left: 1.5rem;
         }
     }
 }
@@ -196,7 +192,7 @@
         //ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
         margin: 0;
         font-weight: 700;
-        font-size: 1.1em;
+        font-size: 1.1rem;
         line-height: 1.6;
     }
 
@@ -218,7 +214,6 @@
     }
 
     // .l-content__sidebar .-type-list & {
-
     //     @include tab {
     //         font-size: 13px;
     //     }
@@ -254,11 +249,10 @@
     position: relative;
     margin-top: .5rem;
     font-size: 10px;
-    line-height: 1.25;
     letter-spacing: .1px;
 
     .p-postList__title + & {
-        margin-top: .25em;
+        margin-top: .25rem;
     }
 
     @include tab {
@@ -335,16 +329,16 @@
     &.-type-card {
 
         @include mobile {
-            margin-right: -.5em;
-            margin-left: -.5em;
+            margin-right: -.5rem;
+            margin-left: -.5rem;
         }
 
         .p-postList__item {
             width: 50%;
-            margin-bottom: 1.5em;
+            margin-bottom: 1.5rem;
 
             @include mobile {
-                padding: 0 .5em;
+                padding: 0 .5rem;
             }
 
             @include pc {
@@ -371,7 +365,7 @@
     }
 }
 
-
+/*
 // 記事内での呼び出し
 .c-postContent {
 
@@ -407,3 +401,4 @@
         }
     }
 }
+*/

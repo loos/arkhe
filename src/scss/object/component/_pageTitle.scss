@@ -12,27 +12,21 @@
 //コンテンツ内 表示時
 .p-page__title,
 .p-archive__title {
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5rem;
 }
 
 .p-404__title {
-    padding-top: 2em;
-    font-size: 4.6vw;
+    padding-top: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-
-    @include tab {
-        font-size: 24px;
-    }
 }
 
 .c-secTitle,
 .c-bottomSection__title {
-    // position: relative;
-    // display: block;
     margin-bottom: 2rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
 
     @include sp {
-        font-size: 1.25em; // ウィジェットタイトルの大きさと同じ
+        font-size: 1.25rem; // ウィジェットタイトルの大きさと同じ
     }
 }

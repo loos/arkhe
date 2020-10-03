@@ -24,6 +24,16 @@
 .l-footer__widgets {
     padding: 2rem 0;
 
+    // 複数列の時、フォントサイズ小さく。
+    &.has-columns,
+    .wp-block-columns {
+
+        @include pc {
+            font-size: .9rem;
+        }
+
+    }
+
     & > .l-container {
 
         @include pc {

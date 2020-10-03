@@ -2,15 +2,11 @@
 .wp-block-image {
     text-align: center;
 
-    // .is-resized は 50& とかにすると付くクラス。 エディターをはみ出さないように。
-    // &.is-resized {
-    //     display: block !important;  // -> フロント側と共通で指定
-    // }
+    // .is-resized は 50& とかにすると付くクラス。
+    // &.is-resized {}
     .components-resizable-box__container {
         max-width: 100% !important;
         height: auto !important;
     }
 
 }
-
-// .branch-5-5 {}

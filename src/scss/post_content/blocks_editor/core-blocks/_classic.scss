@@ -9,7 +9,7 @@
         }
 
         .block-library-rich-text__tinymce {
-            padding: 1em;
+            padding: 1rem;
             border: dashed 1px var(--ark-color_border);
             // border: solid 1px #1e1e1e; // #1e1e1e は .block-library-classic__toolbar のボーダーと同じ色
             border-top: none;
@@ -29,7 +29,7 @@
             }
 
             p + p {
-                margin-top: 1em;
+                margin-top: 1rem;
             }
         }
     }

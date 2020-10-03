@@ -24,14 +24,14 @@ $media_tablet_yoko: 960px;
 //pc以上
 @mixin pc {
 
-    @media (min-width: 960px) {
+    @media (min-width: 1000px) {
         @content;
     }
 }
 
 @mixin sp {
 
-    @media (max-width: 959px) {
+    @media (max-width: 999px) {
         @content;
     }
 }

@@ -1,7 +1,3 @@
-// .editor-styles-wrapper {
-//     .wp-block-group {}
-// }
-
 .branch-5-4 {
     // 5.4 で 全幅の時、div.is-block-content が挟まってきて上下マージンが謎に -32pxされるのを防ぐ。
     [data-type="core/group"] > div > .wp-block-group.has-background > .wp-block-group__inner-container > .block-editor-inner-blocks {

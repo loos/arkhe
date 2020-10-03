@@ -1,0 +1,8 @@
+//プルクォート
+[data-type="core/pullquote"] {
+
+    & > [data-align="left"],
+    & > [data-align="right"] {
+        height: auto;
+    }
+}
