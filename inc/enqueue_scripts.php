@@ -58,6 +58,9 @@ function enqueue_admin_scripts( $hook_suffix ) {
 	} elseif ( 'edit.php' === $hook_suffix ) {
 		// 投稿一覧
 		wp_enqueue_style( 'arkhe-edit-table', $css_path . '/admin/edit-table.css', array(), ARKHE_VER );
+	} elseif ( 'appearance_page_arkhe' === $hook_suffix ) {
+		// テーマ設定ページ
+		wp_enqueue_style( 'arkhe-menu', $css_path . '/admin/menu.css', array(), ARKHE_VER );
 	}
 }
 

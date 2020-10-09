@@ -76,4 +76,46 @@ trait Utility {
 		return $data;
 	}
 
+	/**
+	 * ライセンスチェック
+	 */
+	public static function check_licence( $licence_key = '' ) {
+
+		$url = 'https://looscdn.com/cdn/curltest/testpage/';
+
+		$data = array(
+			'type'        => 'get_status',
+			'licence_key' => $licence_key,
+		);
+		// $headers = ['Content-Type: application/json' ];
+
+		$response = wp_remote_post(
+			$url,
+			array(
+				'method'      => 'POST',
+				'timeout'     => 15,
+				'redirection' => 5,
+				// 'httpversion' => '1.0',
+				// 'blocking'    => true,
+				// 'data_format' => 'body',
+				// 'headers'     => array(),
+				'sslverify'   => false,
+				'body'        => $data,
+			)
+		);
+
+		if ( is_wp_error( $response ) ) {
+			return wp_json_encode(
+				array(
+					'valid'   => false,
+					'error'   => true,
+					'path'    => '',
+					'message' => $response->get_error_message(),
+				)
+			);
+		}
+
+		return $response['body']; // json
+	}
+
 }

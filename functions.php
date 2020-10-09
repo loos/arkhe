@@ -39,18 +39,6 @@ spl_autoload_register(
 
 
 /**
- * ベータ版アラート （1.0 で消す）
- */
-function arkhe_theme_beta_message() {
-	echo '<div class="notice notice-info"><p>' .
-		esc_html__( '"Arkhe" is currently in beta.', 'arkhe' ) . '<br>' .
-		esc_html__( 'The theme structure is subject to change significantly until the version exceeds "1.0".', 'arkhe' ) .
-	'</p></div>';
-}
-add_action( 'admin_notices', 'arkhe_theme_beta_message' );
-
-
-/**
  * Arkhe_Theme
  */
 class Arkhe extends \Arkhe_Theme\Data {
@@ -88,10 +76,16 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
 
+		// テーマページ
+		require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
+
+		// Notice
+		require_once ARKHE_THEME_PATH . '/inc/notice.php';
+
 		// その他、フック処理
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
 
-		// アップデートチェック
+		// アップデート時の処理
 		if ( is_admin() || is_user_logged_in() ) {
 			require_once ARKHE_THEME_PATH . '/inc/update.php';
 		}

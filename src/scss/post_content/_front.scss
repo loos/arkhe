@@ -11,6 +11,10 @@
     padding: 0;
     line-height: 1.8;
 
+    .c-pageTitle + & {
+        margin-top: 0;
+    }
+
     @import "./post_content";
 
     // 先頭要素は上側の余白なし

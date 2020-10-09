@@ -12,11 +12,17 @@ trait Template_Parts {
 
 		if ( '' === $path ) return '';
 
+		// フック名に流用する
+		$path_key = str_replace( '/', '_', $path );
+
 		// ファイルまでのパスを取得
 		$include_path = self::get_include_parts_path( $path );
 
-		// フック名に流用する
-		$path_key = str_replace( '/', '_', $path );
+		// $include_path を任意のパスに書き換え可能に。
+		$ex_path_filter = 'arkhe_ex_path_' . $path_key;
+		if ( has_filter( $ex_path_filter ) ) {
+			$include_path = apply_filters( $ex_path_filter, $include_path );
+		}
 
 		// キャッシュ取得用フックがあれば通す
 		$cache_filter_name = 'arkhe_get_cache_' . $path_key;
@@ -45,7 +51,7 @@ trait Template_Parts {
 		$include_path = ARKHE_CHILD_PATH . '/template-parts/' . $path . '.php';
 		if ( file_exists( $include_path ) ) return $include_path;
 
-		// 次に、プラグインのパスが登録されていればそちらを探す
+		// 次に、プラグインのパスが登録されていればそちらを探す -> memo: 要検討
 		if ( defined( 'ARKHE_EX_PARTS_PATH' ) ) {
 			$include_path = ARKHE_EX_PARTS_PATH . '/template-parts/' . $path . '.php';
 			if ( file_exists( $include_path ) ) return $include_path;

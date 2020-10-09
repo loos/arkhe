@@ -27,6 +27,8 @@
 		do_action( 'arkhe_content_start' );
 
 		// パンくずリスト
-		if ( 'top' === $setting['breadcrumbs_pos'] ) Arkhe::get_parts( 'others/breadcrumb' );
+		if ( 'top' === Arkhe::get_breadcrumbs_position() ) {
+			Arkhe::get_parts( 'others/breadcrumb' );
+		}
 	?>
 		<div class="l-content__body l-container">

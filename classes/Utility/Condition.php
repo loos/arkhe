@@ -84,4 +84,14 @@ trait Condition {
 		return apply_filters( 'arkhe_is_show_ttltop', $is_show_ttltop );
 	}
 
+
+	/**
+	 * パンくずリストの位置
+	 */
+	public static function get_breadcrumbs_position() {
+
+		$breadcrumbs_pos = \Arkhe::get_setting( 'breadcrumbs_pos' );
+		return apply_filters( 'arkhe_breadcrumbs_position', $breadcrumbs_pos );
+	}
+
 }

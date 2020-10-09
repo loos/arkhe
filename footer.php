@@ -6,7 +6,7 @@
 	do_action( 'arkhe_before_footer' );
 
 	// パンくずリスト
-	if ( 'top' !== Arkhe::get_setting( 'breadcrumbs_pos' ) ) {
+	if ( 'bottom' === Arkhe::get_breadcrumbs_position() ) {
 		Arkhe::get_parts( 'others/breadcrumb' );
 	}
 

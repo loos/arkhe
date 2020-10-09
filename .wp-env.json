@@ -10,6 +10,8 @@
     "plugins": [
         "../arkhe-ex-template",
         "../arkhe-toolkit",
+        "../arkhe-woocommerce",
+        "../arkhe-pro-licence",
         "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
     ],
     "env": {
@@ -21,6 +23,7 @@
         }
     },
     "mappings": {
-        "sql": "~/Dropbox/LOOS/DEV/wpenv/arkhe"
+        "sql": "~/Dropbox/LOOS/DEV/wpenv/arkhe",
+        "licence": "../licence"
     }
 }

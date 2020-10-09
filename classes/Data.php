@@ -12,6 +12,7 @@ class Data {
 	 */
 	const DB_NAMES = array(
 		'customizer'  => 'arkhe_settings',
+		'licence_key' => 'arkhe_licence_key',
 	);
 
 
@@ -26,6 +27,25 @@ class Data {
 	 */
 	protected static $settings         = '';
 	protected static $default_settings = '';
+
+
+	/**
+	 * ライセンスキー
+	 */
+	public static $licence_key     = '';
+	public static $licence_status  = '';
+	public static $has_pro_licence = false;
+
+	/**
+	 * プラグイン更新用パス
+	 */
+	public static $ex_update_path = false;
+
+
+	/**
+	 * 日本語かどうか
+	 */
+	public static $is_ja = false;
 
 
 	/**
@@ -47,6 +67,12 @@ class Data {
 			define( 'ARKHE_VER', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? date_i18n( 'mdGis' ) : self::$arkhe_version );
 		}
 
+		// 日本語かどうか
+		self::$is_ja = 'ja' === get_locale();
+
+		// ライセンス情報をセット
+		self::set_licence_data();
+
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
 
@@ -57,6 +83,7 @@ class Data {
 		if ( is_customize_preview() ) {
 			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ), 10 );
 		}
+
 	}
 
 
@@ -66,6 +93,49 @@ class Data {
 	private static function set_theme_version() {
 		$theme_data          = wp_get_theme( 'arkhe' );
 		self::$arkhe_version = $theme_data->get( 'Version' );
+	}
+
+	/**
+	 * ライセンス情報をセット
+	 */
+	private static function set_licence_data() {
+
+		// ライセンスキー
+		self::$licence_key = get_option( self::DB_NAMES['licence_key'] ) ?: '';
+
+		// ライセンスキーの指定があれば、ステータスチェック
+		if ( self::$licence_key ) {
+
+			self::$licence_status = self::get_licence_status( self::$licence_key );
+
+			// ステータスを配列に
+			$status = json_decode( self::$licence_status, true );
+			if ( ! is_array( $status ) || ! isset( $status['valid'] ) ) return;
+
+			// ステータスを元に情報をセット
+			self::$has_pro_licence = $status['valid'];
+			if ( isset( $status['path'] ) ) {
+				self::$ex_update_path = $status['path'];
+			}
+		}
+	}
+
+	/**
+	 * ライセンスステータスを取得( キャッシュがあれば優先 )
+	 *
+	 * @return json
+	 */
+	private static function get_licence_status( $licence_key ) {
+
+		$cache_key = 'arkhe_licence_status';
+
+		$status = get_transient( $cache_key );
+		if ( $status ) return $status;
+
+		// ライセンスデータベースからチェック
+		$status = \Arkhe::check_licence( self::$licence_key );
+		set_transient( $cache_key, $status, DAY_IN_SECONDS ); // キャッシュ期間 : １日
+		return $status;
 	}
 
 
