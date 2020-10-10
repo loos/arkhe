@@ -32,7 +32,7 @@ $licence_status = json_decode( $licence_status, true );
 $message      = '';
 $message_type = 'normal';
 if ( (int) $check_count > 5 ) {
-	$message      = __( '認証リクエストの回数が多すぎます。しばらく時間を空けてから再試行してください。', 'arkhe' );
+	$message      = __( 'There are too many authentication requests. Please wait a while and try again.', 'arkhe' );
 	$message_type = 'warning';
 } elseif ( $licence_status ) {
 
@@ -45,36 +45,34 @@ if ( (int) $check_count > 5 ) {
 
 		$message_type = 'error';
 		$email        = $licence_status['message'];
-		$message      = __( 'このライセンスは現在停止中です。', 'arkhe' );
+		$message      = __( 'This license is currently suspended.', 'arkhe' );
 
 		// translators: %s is email;
-		$message .= sprintf( __( '所有者は %s です。', 'arkhe' ), $email );
+		$message .= sprintf( __( 'The owner is %s .', 'arkhe' ), $email );
 
 	} elseif ( $licence_status['valid'] ) {
 
 		$message_type = 'ok';
 		$email        = $licence_status['message'];
-		$message      = __( '有効なライセンスキーを確認しました。', 'arkhe' );
+		$message      = __( 'Your license key is valid.', 'arkhe' );
 
 		// translators: %s is email;
-		$message .= sprintf( __( '所有者は %s です。', 'arkhe' ), $email );
+		$message .= sprintf( __( 'The owner is %s .', 'arkhe' ), $email );
 
 	}
 }
 
 
 ?>
-<h3>Arkhe Pro ライセンスの認証</h3>
-<p>
-	Arkhe Pro ライセンスを購入すると、全てのArkhe専用プラグインをいつでも最新版へアップデートできるようになります。
-</p>
+<h3><?php esc_html_e( 'License key', 'arkhe' ); ?></h3>
+<p><?php esc_html_e( 'With the purchase of the "Arkhe PRO License", you will be able to update all Arche-specific plug-ins to the latest version at any time.', 'arkhe' ); ?></p>
 <form method="POST" action="">
 	<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
 	<?php
 		wp_nonce_field( 'arkhe_licence_nonce', 'arkhe_licence_nonce' );
 
 		if ( 'warning' !== $message_type ) {
-		echo '<button type="submit" class="button button-primary">' . esc_html__( 'ライセンス確認', 'arkhe' ) . '</button>';
+		echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
 		}
 
 		if ( $message ) {

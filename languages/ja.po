@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-10-02 10:54+0900\n"
-"PO-Revision-Date: 2020-10-02 10:54+0900\n"
+"POT-Creation-Date: 2020-10-10 15:18+0900\n"
+"PO-Revision-Date: 2020-10-10 15:18+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -24,6 +24,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: bin\n"
 "X-Poedit-SearchPathExcluded-3: node_modules\n"
 "X-Poedit-SearchPathExcluded-4: vendor\n"
+"X-Poedit-SearchPathExcluded-5: src/js/plugin\n"
 
 #: 404.php:5 template-parts/others/breadcrumb.php:296
 msgid "The page was not found."
@@ -52,18 +53,6 @@ msgstr "コメント"
 #: comments.php:21
 msgid "There are no comments for this post yet."
 msgstr "この投稿へのコメントはまだありません。"
-
-#: functions.php:46
-msgid "\"Arkhe\" is currently in beta."
-msgstr "「Arkhe」は現在ベータ版として稼働中です。"
-
-#: functions.php:47
-msgid ""
-"The theme structure is subject to change significantly until the version "
-"exceeds \"1.0\"."
-msgstr ""
-"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があり"
-"ます。"
 
 #: inc/consts.php:5
 msgid "Note : "
@@ -118,47 +107,47 @@ msgstr "サイト幅"
 msgid "Content width for 1 column (slim width)"
 msgstr "１カラム（スリム幅）の時のコンテンツ幅"
 
-#: inc/customizer/common.php:111
+#: inc/customizer/common.php:110
 msgid "NO-IMAGE settings"
 msgstr "NO-IMAGE 設定"
 
-#: inc/customizer/common.php:120
+#: inc/customizer/common.php:119
 msgid "\"NO-IMAGE\" image"
 msgstr "“NO-IMAGE” 画像"
 
-#: inc/customizer/common.php:121
+#: inc/customizer/common.php:120
 msgid "1600px or more recommended width."
 msgstr "横幅1600px以上を推奨。"
 
-#: inc/customizer/common.php:133
+#: inc/customizer/common.php:132
 msgid "Breadcrumb list settings"
 msgstr "パンくずリスト設定"
 
-#: inc/customizer/common.php:142
+#: inc/customizer/common.php:141
 msgid "Breadcrumbs position"
 msgstr "パンくずリストの位置"
 
-#: inc/customizer/common.php:145
+#: inc/customizer/common.php:144
 msgid "Top of page"
 msgstr "ページ上部"
 
-#: inc/customizer/common.php:146
+#: inc/customizer/common.php:145
 msgid "Bottom of page"
 msgstr "ページ下部"
 
-#: inc/customizer/common.php:156
+#: inc/customizer/common.php:155
 msgid "\"Home\" string"
 msgstr "「ホーム」の文字列"
 
-#: inc/customizer/common.php:166
+#: inc/customizer/common.php:165
 msgid "Other settings"
 msgstr "その他の設定"
 
-#: inc/customizer/common.php:175
+#: inc/customizer/common.php:174
 msgid "Display \"Post page\""
 msgstr "「投稿ページ」も表示する"
 
-#: inc/customizer/common.php:176
+#: inc/customizer/common.php:175
 msgid "It is valid only when \"Post page\" is set."
 msgstr "「投稿ページ」を設定している時のみ有効です。"
 
@@ -451,9 +440,93 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示する"
 
-#: inc/hooks.php:63
+#: inc/hooks.php:50
 msgid "Skip to the content"
 msgstr "コンテンツへスキップ"
+
+#: inc/notice.php:12
+msgid "\"Arkhe\" is currently in beta."
+msgstr "「Arkhe」は現在ベータ版として稼働中です。"
+
+#: inc/notice.php:13
+msgid ""
+"The theme structure is subject to change significantly until the version "
+"exceeds \"1.0\"."
+msgstr ""
+"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があり"
+"ます。"
+
+#. Theme Name of the plugin/theme
+#: inc/theme_menu.php:9
+msgid "Arkhe"
+msgstr "Arkhe"
+
+#: inc/theme_menu.php:28
+msgid "To Arkhe official website"
+msgstr "Arkhe公式サイトへ"
+
+#: inc/theme_menu.php:31
+msgid "See the manual"
+msgstr "マニュアルを見る"
+
+#: inc/theme_menu.php:34
+msgid "See update information"
+msgstr "アップデート情報を見る"
+
+#: inc/theme_menu.php:44
+msgctxt "tab"
+msgid "Information"
+msgstr "インフォメーション"
+
+#: inc/theme_menu.php:45
+msgid "Pro Licence"
+msgstr "PROライセンス"
+
+#: inc/theme_menu/info.php:2
+msgid "Arkhe plugin"
+msgstr "Arkhe専用プラグイン"
+
+#: inc/theme_menu/info.php:17
+msgid "Information about the theme"
+msgstr "テーマに関するお知らせ情報"
+
+#: inc/theme_menu/licence.php:35
+msgid ""
+"There are too many authentication requests. Please wait a while and try "
+"again."
+msgstr ""
+"認証リクエストの回数が多すぎます。しばらく時間を空けてから再試行してくださ"
+"い。"
+
+#: inc/theme_menu/licence.php:48
+msgid "This license is currently suspended."
+msgstr "このライセンスは現在停止中です。"
+
+#. translators: %s is email;
+#: inc/theme_menu/licence.php:51 inc/theme_menu/licence.php:60
+#, php-format
+msgid "The owner is %s ."
+msgstr "所有者は %s です。"
+
+#: inc/theme_menu/licence.php:57
+msgid "Your license key is valid."
+msgstr "有効なライセンスキーが確認できました。"
+
+#: inc/theme_menu/licence.php:67
+msgid "License key"
+msgstr "ライセンスキー"
+
+#: inc/theme_menu/licence.php:68
+msgid ""
+"With the purchase of the \"Arkhe PRO License\", you will be able to update "
+"all Arche-specific plug-ins to the latest version at any time."
+msgstr ""
+"「Arkhe PROライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最"
+"新版へアップデートできるようになります。"
+
+#: inc/theme_menu/licence.php:75
+msgid "Check licence"
+msgstr "ライセンス確認"
 
 #: inc/widget.php:20
 msgid "Widgets in this area will be displayed in the sidebar."
@@ -477,19 +550,19 @@ msgstr "このエリアのウィジェットはフッターに表示されます
 msgid "Search results for \"%s\""
 msgstr "「%s」の検索結果"
 
-#: searchform.php:4
+#: searchform.php:3
 msgid "Search"
 msgstr "検索"
 
-#: searchform.php:5
+#: searchform.php:4
 msgid "Search word"
 msgstr "検索ワード"
 
-#: searchform.php:8 template-parts/header/custom_btn.php:24
+#: searchform.php:7 template-parts/header/custom_btn.php:24
 msgid "Search button"
 msgstr "検索ボタン"
 
-#: searchform.php:13
+#: searchform.php:12
 msgid "CLOSE"
 msgstr "閉じる"
 
@@ -530,10 +603,6 @@ msgstr "1カラム(スリム幅)"
 msgid "Two column"
 msgstr "2カラム"
 
-#. Theme Name of the plugin/theme
-msgid "Arkhe"
-msgstr "Arkhe"
-
 #. Theme URI of the plugin/theme
 msgid "https://arkhe-theme.com/"
 msgstr ""
@@ -551,6 +620,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "License authentication"
+#~ msgstr "ライセンス認証"
 
 #~ msgid "48px padding is attached to the left and right."
 #~ msgstr "左右に48pxのpaddingがつきます。"

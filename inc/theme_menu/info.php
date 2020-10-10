@@ -1,18 +1,20 @@
-<h3>Arkhe専用プラグイン</h3>
+<?php if ( 0 ) : ?>
+<h3><?php esc_html_e( 'Arkhe plugin', 'arkhe' ); ?></h3>
 <div class="arkhe-page__plugins">
 	<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/plugins/">
 		<img class="__img" src="<?php echo esc_url( ARKHE_NOIMG_URL ); ?>" alt="">
 		<div class="__title">Arkhe Toolkit</div>
-		<div class="__desc">Arkheの機能を拡張するプラグイン。</div>
+		<!-- <div class="__desc">Arkheの機能を拡張するプラグイン。</div> -->
 	</a>
 	<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/plugins/">
 		<img class="__img" src="<?php echo esc_url( ARKHE_NOIMG_URL ); ?>" alt="">
 		<div class="__title">Arkhe Blocks</div>
-		<div class="__desc">Arkhe専用のブロック拡張プラグイン</div>
+		<!-- <div class="__desc">Arkhe専用のブロック拡張プラグイン</div> -->
 	</a>
 </div>
+<?php endif; ?>
 
-<h3>テーマに関するお知らせ情報</h3>
+<h3><?php esc_html_e( 'Information about the theme', 'arkhe' ); ?></h3>
 <?php
 
 // delete_transient( 'arkhe_informations' );
@@ -34,8 +36,3 @@ $info_data = json_decode( $json, true );
 		</li>
 	<?php endforeach; ?>
 </ul>
-
-
-<h3>アップデート情報</h3>
-
-<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">アップデート情報を見る</a>

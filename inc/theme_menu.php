@@ -24,8 +24,15 @@ function display_theme_menu() {
 			<img class="arkhe-page__logo" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe_logo.png' ); ?>" alt="Arkhe">
 		</h1>
 		<div class="arkhe-page__header">
-			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">公式サイトへ</a>
-			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/document/">マニュアルを見る</a>
+			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">
+				<?php esc_html_e( 'To Arkhe official website', 'arkhe' ); ?>
+			</a>
+			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/document/">
+				<?php esc_html_e( 'See the manual', 'arkhe' ); ?>
+			</a>
+			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">
+				<?php esc_html_e( 'See update information', 'arkhe' ); ?>
+			</a>
 		</div>
 
 		<?php
@@ -34,7 +41,7 @@ function display_theme_menu() {
 
 			// タブ
 			$tabs = array(
-				'info'    => __( 'Information', 'arkhe' ),
+				'info'    => _x( 'Information', 'tab', 'arkhe' ),
 				'licence' => __( 'Pro Licence', 'arkhe' ),
 			);
 
