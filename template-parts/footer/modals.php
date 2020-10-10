@@ -1,9 +1,7 @@
 <?php
 /**
- * フッターの後にあるコンテンツ
+ * フッターの後に配置するモーダルコンテンツ
  */
-
-Arkhe::get_parts( 'footer/fix_btns' );
 ?>
 <?php // 検索モーダル ?>
 <div id="search_modal" class="c-modal p-searchModal">

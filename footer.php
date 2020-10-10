@@ -1,19 +1,17 @@
-<?php if ( Arkhe::is_show_sidebar() ) get_sidebar(); // サイドバー ?>
-	</div><!-- // l-content__body -->
-</div><!-- // l-content -->
 <?php
+	// コンテンツエリアの終了タグやサイドバーなど
+	Arkhe::get_parts( 'content_close' );
 
+	// フッター
 	do_action( 'arkhe_before_footer' );
-
-	// パンくずリスト
-	if ( 'bottom' === Arkhe::get_breadcrumbs_position() ) {
-		Arkhe::get_parts( 'others/breadcrumb' );
-	}
-
-	// フッターコンテンツ
 	Arkhe::get_parts( 'footer' );
-	Arkhe::get_parts( 'footer/after' );
+	do_action( 'arkhe_after_footer' );
+
+	Arkhe::get_parts( 'footer/fix_btns' );
+	Arkhe::get_parts( 'footer/modals' );
 ?>
-</div><!--/ #wrapper-->
+</div>
+<!-- End: #wrapper-->
 <?php wp_footer(); ?>
-</body></html>
+</body>
+</html>

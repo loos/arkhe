@@ -27,7 +27,12 @@ Customizer::big_title(
 
 
 // ヘッダーがブロックで管理されているかどうか
-if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
+if ( defined( 'ARKHE_TMPID_KEY' ) && ARKHE_TMPID_KEY ) {
+
+	// ブロック化される時に代わりに表示されるメッセージ
+	do_action( 'arkhe_customizer_header_blocked_message' );
+
+} else {
 
 	// 画像サイズ（PC）
 	Customizer::add(
@@ -111,10 +116,6 @@ if ( ! defined( 'ARKHE_TMPID_KEY' ) ) {
 			'type'        => 'checkbox',
 		)
 	);
-
-} else {
-
-	do_action( 'arkhe_customizer_header_blocked_message' );
 
 }
 

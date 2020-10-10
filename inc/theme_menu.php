@@ -16,7 +16,6 @@ function add_theme_menu() {
 		);
 }
 
-
 function display_theme_menu() {
 	?>
 	<div class="wrap arkhe-page" id="arkhe-page-wrap">
@@ -36,15 +35,17 @@ function display_theme_menu() {
 		</div>
 
 		<?php
+			// タブデータ
+			$tabs = array(
+				'info'    => _x( 'Information', 'tab', 'arkhe' ),
+				// 'licence' => __( 'Pro Licence', 'arkhe' ),
+			);
+
+			// 現在表示中のタブ
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$now_tab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'info';
 
-			// タブ
-			$tabs = array(
-				'info'    => _x( 'Information', 'tab', 'arkhe' ),
-				'licence' => __( 'Pro Licence', 'arkhe' ),
-			);
-
+			// タブリスト
 			echo '<div class="nav-tab-wrapper">';
 			foreach ( $tabs as $key => $val ) :
 				$tab_url   = admin_url( 'themes.php?page=arkhe' ) . '&tab=' . $key;

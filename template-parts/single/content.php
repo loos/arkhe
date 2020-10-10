@@ -8,7 +8,7 @@ $the_id = get_the_ID();
 Arkhe::get_parts( 'single/header', array( 'post_id' => $the_id ) );
 
 // 記事前フック
-do_action( 'arkhe_before_entry_content', $the_id );
+do_action( 'arkhe_before_single_content', $the_id );
 
 ?>
 <div class="<?php Arkhe::post_content_class(); ?>">
@@ -20,7 +20,7 @@ do_action( 'arkhe_before_entry_content', $the_id );
 Arkhe::get_parts( 'singular/pagination' );
 
 // 記事後フック
-do_action( 'arkhe_after_entry_content', $the_id );
+do_action( 'arkhe_after_single_content', $the_id );
 
 // フッターエリア
 Arkhe::get_parts( 'single/footer', $the_id );

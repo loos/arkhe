@@ -33,6 +33,7 @@ class Customizer {
 			// 'sanitize' => '',
 			'transport'   => 'refresh',
 			'partial'     => array(),
+			'db'          => \Arkhe::DB_NAMES['customizer'],
 		);
 		return array_merge( $defaults, $args );
 	}
@@ -49,14 +50,14 @@ class Customizer {
 		global $wp_customize;
 		$customizer = $wp_customize;
 
-		$DEFAULT = \Arkhe::get_default_setting();
-		$default = $DEFAULT[ $id ];
-
 		$args = self::set_args( $args );
 
-		$customize_id = \Arkhe::DB_NAMES['customizer'] . '[' . $id . ']';
+		$customize_id = $args['db'] . '[' . $id . ']';
 		$type         = $args['type'];
 		$partial      = $args['partial'];
+
+		// デフォルト値は args で指定されていなければ get_default_setting() で取得
+		$default = isset( $args['default'] ) ? $args['default'] : \Arkhe::get_default_setting( $id );
 
 		// setting 用
 		$setting_args = array(

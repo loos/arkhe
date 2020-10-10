@@ -12,23 +12,13 @@
 </head>
 <body <?php body_class(); ?>>
 <?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
+<!-- Start : #wrapper -->
 <div id="wrapper" class="l-wrapper">
-	<?php
-		// ヘッダー
-		do_action( 'arkhe_before_header' );
-		Arkhe::get_parts( 'header' );
-		do_action( 'arkhe_after_header' );
-	?>
-	<div id="content" class="l-content">
-	<?php
-		// コンテンツヘッダー
-		if ( Arkhe::is_show_ttltop() ) Arkhe::get_parts( 'top_area' );
+<?php
+	// ヘッダー
+	do_action( 'arkhe_before_header' );
+	Arkhe::get_parts( 'header' );
+	do_action( 'arkhe_after_header' );
 
-		do_action( 'arkhe_content_start' );
-
-		// パンくずリスト
-		if ( 'top' === Arkhe::get_breadcrumbs_position() ) {
-			Arkhe::get_parts( 'others/breadcrumb' );
-		}
-	?>
-		<div class="l-content__body l-container">
+	// コンテンツエリアの開始タグなど
+	Arkhe::get_parts( 'content_open' );

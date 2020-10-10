@@ -5,7 +5,7 @@
     },
     "themes": [
         ".",
-        "../arkhe_child"
+        "../arkhe_official_child"
     ],
     "plugins": [
         "../arkhe-ex-template",
