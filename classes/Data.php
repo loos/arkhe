@@ -30,11 +30,18 @@ class Data {
 
 
 	/**
+	 * プラグインのデータ
+	 */
+	protected static $plugin_data = array();
+
+
+	/**
 	 * ライセンスキー
 	 */
-	public static $licence_key     = '';
-	public static $licence_status  = '';
-	public static $has_pro_licence = false;
+	public static $licence_key       = '';
+	public static $licence_status    = '';
+	public static $has_pro_licence   = false;
+	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/check_licence/';
 
 	/**
 	 * プラグイン更新用パス
@@ -81,7 +88,7 @@ class Data {
 
 		// カスタマイザーでは、データが即時反映されるタイミング（ wp_loaded ）で再セット
 		if ( is_customize_preview() ) {
-			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ), 10 );
+			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ) );
 		}
 
 	}
@@ -160,8 +167,8 @@ class Data {
 	/**
 	 * カスタマイザーのデータを取得
 	 */
-	public static function get_setting( $key = null ) {
-		if ( null !== $key ) {
+	public static function get_setting( $key = '' ) {
+		if ( $key ) {
 			if ( ! isset( self::$settings[ $key ] ) ) return '';
 			return self::$settings[ $key ] ?: '';
 		}
@@ -172,8 +179,8 @@ class Data {
 	/**
 	 * カスタマイザーのデフォルト値を取得
 	 */
-	public static function get_default_setting( $key = null ) {
-		if ( null !== $key ) {
+	public static function get_default_setting( $key = '' ) {
+		if ( $key ) {
 			if ( ! isset( self::$default_settings[ $key ] ) ) return '';
 			return self::$default_settings[ $key ] ?: '';
 		}
@@ -184,9 +191,30 @@ class Data {
 	/**
 	 * カスタマイザーのデータを上書きするメソッド
 	 */
-	public static function overwrite_setting( $key = null, $val = '' ) {
-		if (  null === $key ) return;
+	public static function overwrite_setting( $key = '', $val = '' ) {
+		if ( ! $key ) return;
 		self::$settings[ $key ] = $val;
+	}
+
+
+	/**
+	 * プラグインのデータを取得
+	 */
+	public static function get_plugin_data( $key = '' ) {
+		if ( $key ) {
+			if ( ! isset( self::$plugin_data[ $key ] ) ) return '';
+			return self::$plugin_data[ $key ] ?: '';
+		}
+		return self::$plugin_data;
+	}
+
+
+	/**
+	 * プラグインのデータをセット
+	 */
+	public static function set_plugin_data( $key = '', $val = '' ) {
+		if ( ! $key ) return;
+		self::$plugin_data[ $key ] = $val;
 	}
 
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: LOOS\n"
-"POT-Creation-Date: 2020-10-10 15:18+0900\n"
-"PO-Revision-Date: 2020-10-10 15:18+0900\n"
+"Project-Id-Version: Arkhe\n"
+"POT-Creation-Date: 2020-10-11 22:04+0900\n"
+"PO-Revision-Date: 2020-10-11 22:05+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -16,8 +16,8 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
@@ -175,55 +175,73 @@ msgstr "ヘッダーロゴ設定"
 msgid "The logo image can be set from the \"Site Identity\" menu."
 msgstr "ロゴ画像は「サイト基本情報」メニューから設定できます。"
 
-#: inc/customizer/header.php:37 inc/customizer/header.php:54
+#: inc/customizer/header.php:42 inc/customizer/header.php:59
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: inc/customizer/header.php:71
+#: inc/customizer/header.php:76
 msgid "Layout setting"
 msgstr "レイアアウト設定"
 
-#: inc/customizer/header.php:80
+#: inc/customizer/header.php:85 searchform.php:3
+#: template-parts/header/custom_btn.php:14
+#: template-parts/header/search_btn.php:24
+msgid "Search button"
+msgstr "検索ボタン"
+
+#: inc/customizer/header.php:94
 msgid "Show search btn on SP"
 msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:90
+#: inc/customizer/header.php:104
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:100
-msgid "Show drawer menu on PC"
-msgstr "ドロワーメニューをPCでも表示する"
+#: inc/customizer/header.php:114
+msgid "Drawer button"
+msgstr "ドロワーボタン"
 
-#: inc/customizer/header.php:110
+#: inc/customizer/header.php:123
+msgid "Show drawer button on SP"
+msgstr "ドロワーボタンをSPで表示する"
+
+#: inc/customizer/header.php:133
+msgid "Show drawer button on PC"
+msgstr "ドロワーボタンをPCで表示する"
+
+#: inc/customizer/header.php:143
+msgid "Global navigation"
+msgstr "グローバルナビゲーション"
+
+#: inc/customizer/header.php:152
 msgid "Move global navigation down"
 msgstr "グローバルナビを下側に移動する"
 
-#: inc/customizer/header.php:127
+#: inc/customizer/header.php:165
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:136 inc/customizer/header.php:146
+#: inc/customizer/header.php:174 inc/customizer/header.php:184
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
 
-#: inc/customizer/header.php:156
+#: inc/customizer/header.php:194
 msgid "Fixed global navigation at top of screen"
 msgstr "グローバルナビを画面上部に固定する"
 
-#: inc/customizer/header.php:157
+#: inc/customizer/header.php:195
 msgid "Only valid when below the header."
 msgstr "ヘッダーの下にある時のみ有効です。"
 
-#: inc/customizer/header.php:168
+#: inc/customizer/header.php:206
 msgid "Overlay settings"
 msgstr "オーバーレイ設定"
 
-#: inc/customizer/header.php:189
+#: inc/customizer/header.php:227
 msgid "Enable on Pages"
 msgstr "固定ページでも有効化する"
 
-#: inc/customizer/header.php:200
+#: inc/customizer/header.php:238
 msgid "Logo image when overlaying"
 msgstr "オーバーレイ時のロゴ画像"
 
@@ -453,34 +471,30 @@ msgid ""
 "The theme structure is subject to change significantly until the version "
 "exceeds \"1.0\"."
 msgstr ""
-"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があり"
-"ます。"
+"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性がありま"
+"す。"
 
 #. Theme Name of the plugin/theme
 #: inc/theme_menu.php:9
 msgid "Arkhe"
 msgstr "Arkhe"
 
-#: inc/theme_menu.php:28
+#: inc/theme_menu.php:27
 msgid "To Arkhe official website"
 msgstr "Arkhe公式サイトへ"
 
-#: inc/theme_menu.php:31
+#: inc/theme_menu.php:30
 msgid "See the manual"
 msgstr "マニュアルを見る"
 
-#: inc/theme_menu.php:34
+#: inc/theme_menu.php:33
 msgid "See update information"
 msgstr "アップデート情報を見る"
 
-#: inc/theme_menu.php:44
+#: inc/theme_menu.php:40
 msgctxt "tab"
 msgid "Information"
 msgstr "インフォメーション"
-
-#: inc/theme_menu.php:45
-msgid "Pro Licence"
-msgstr "PROライセンス"
 
 #: inc/theme_menu/info.php:2
 msgid "Arkhe plugin"
@@ -521,8 +535,8 @@ msgid ""
 "With the purchase of the \"Arkhe PRO License\", you will be able to update "
 "all Arche-specific plug-ins to the latest version at any time."
 msgstr ""
-"「Arkhe PROライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最"
-"新版へアップデートできるようになります。"
+"「Arkhe PROライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最新"
+"版へアップデートできるようになります。"
 
 #: inc/theme_menu/licence.php:75
 msgid "Check licence"
@@ -550,27 +564,23 @@ msgstr "このエリアのウィジェットはフッターに表示されます
 msgid "Search results for \"%s\""
 msgstr "「%s」の検索結果"
 
-#: searchform.php:3
+#: searchform.php:2
 msgid "Search"
 msgstr "検索"
 
-#: searchform.php:4
+#: searchform.php:2
 msgid "Search word"
 msgstr "検索ワード"
 
-#: searchform.php:7 template-parts/header/custom_btn.php:24
-msgid "Search button"
-msgstr "検索ボタン"
-
-#: searchform.php:12
+#: template-parts/footer/modals.php:12 template-parts/header/drawer_menu.php:41
 msgid "CLOSE"
 msgstr "閉じる"
 
-#: template-parts/header/menu_btn.php:12
+#: template-parts/header/drawer_btn.php:9
 msgid "Menu button"
 msgstr "メニューボタン"
 
-#: template-parts/others/author_box.php:50
+#: template-parts/others/author_box.php:46
 msgid "To article list"
 msgstr "記事一覧へ"
 
@@ -610,8 +620,8 @@ msgstr ""
 #. Description of the plugin/theme
 msgid "A very simple theme for production templates. Customize as you like."
 msgstr ""
-"とてもシンプルな制作テンプレート用テーマです。あなたの思い通りにカスタマイ"
-"ズしてください。"
+"とてもシンプルな制作テンプレート用テーマです。あなたの思い通りにカスタマイズ"
+"してください。"
 
 #. Author of the plugin/theme
 msgid "LOOS,Inc."
@@ -620,6 +630,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "Pro Licence"
+#~ msgstr "PROライセンス"
 
 #~ msgid "License authentication"
 #~ msgstr "ライセンス認証"

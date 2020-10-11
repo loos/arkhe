@@ -42,7 +42,7 @@ function setModalKeydownEvent(modal, focusableElements, modalType) {
 			if (e.shiftKey) {
 				// If Shift + Tab
 				if (document.activeElement === firstTabStop) {
-					// 最初の要素から戻ろうとする時 -> closeBtnor 最後の要素にフォーカス
+					// 最初の要素から戻ろうとする時 -> closeBtn or 最後の要素にフォーカス
 					e.preventDefault();
 					if (closeBtn) {
 						closeBtn.focus();
@@ -106,7 +106,7 @@ export default function (modal, closeBtn) {
 	setModalKeydownEvent(DOM.drawerMenu, drawerFocusableElements, 'drawer');
 
 	// ドロワートグルボタンのフォーカスイベント
-	const drawerToggleBtns = document.querySelectorAll('[data-onclick="toggleMenu"]');
+	const drawerToggleBtns = document.querySelectorAll('.c-iconBtn[data-onclick="toggleMenu"]');
 	setBtnKeydownEvent(drawerToggleBtns, drawerFocusableElements);
 
 	// ---

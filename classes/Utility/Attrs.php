@@ -8,24 +8,25 @@ trait Attrs {
 	 */
 	public static function root_attrs() {
 
-		// スクロール制御
-		$attrs = 'data-loaded="false"';
+		$attrs = array(
+			'data-loaded'      => 'false',
+			'data-scrolled'    => 'false',
+			'data-drawer'      => 'closed', // ドロワーメニューの状態
+			'data-drawer-move' => 'fade', // ドロワーメニューの展開方法
+			'data-sidebar'     => \Arkhe::is_show_sidebar() ? 'on' : 'off', // サイドバー
+		);
 
-		$attrs .= ' data-scrolled="false"';
+		// フック通す
+		$attrs = apply_filters( 'arkhe_root_attrs', $attrs );
 
-		// ドロワーメニューの形式
-		$attrs .= ' data-drawer="closed"';
-
-		// ドロワーメニューの形式
-		$attrs .= ' data-drawer-move="fade"';
-
-		// サイドバー
-		$data_sidebar = \Arkhe::is_show_sidebar() ? 'on' : 'off';
-
-		$attrs .= ' data-sidebar="' . $data_sidebar . '"';
+		// 最終的に出力する文字列
+		$attr_string = '';
+		foreach ( $attrs as $key => $val ) {
+			$attr_string .= " $key=\"$val\"";
+		}
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo apply_filters( 'arkhe_root_attrs', $attrs );
+		echo trim( $attr_string );
 	}
 
 
@@ -33,34 +34,69 @@ trait Attrs {
 	 * ヘッダーの追加属性
 	 */
 	public static function header_attr( $args = null, $is_echo = true ) {
-		$setting = \Arkhe::get_setting();
 
-		$logo_pos = isset( $args['logo_pos'] ) ? $args['logo_pos'] : '';
+		$args = array_merge(
+			array(
+				'show_drawer_sp' => false,
+				'show_drawer_pc' => false,
+				'show_search_sp' => false,
+				'show_search_pc' => false,
+				'btn_layout'     => 'l-r',
+				'logo_pos'       => 'center',
+			),
+			$args
+		);
+
+		$attrs = array();
+
+		// ロゴのポジション
+		$attrs['data-logo'] = $args['logo_pos'];
+
+		// ボタンレイアウト
+		$attrs['data-btns'] = $args['btn_layout'];
+
+		// メニューの表示
+		$data_drawer                                 = '';
+		if ( $args['show_drawer_sp'] ) $data_drawer .= 'sp';
+		if ( $args['show_drawer_pc'] ) $data_drawer .= 'pc';
+
+		$attrs['data-drawer'] = $data_drawer;
+
+		// サーチボタンの表示
+		$data_search                                 = '';
+		if ( $args['show_search_sp'] ) $data_search .= 'sp';
+		if ( $args['show_search_pc'] ) $data_search .= 'pc';
+
+		$attrs['data-search'] = $data_search;
 
 		// 追従設定
-		$pcfix = $setting['fix_header_pc'] ? '1' : '0';
-		$spfix = $setting['fix_header_sp'] ? '1' : '0';
+		$setting = \Arkhe::get_setting();
+		$pcfix   = $setting['fix_header_pc'] ? '1' : '0';
+		$spfix   = $setting['fix_header_sp'] ? '1' : '0';
 
-		$attrs = 'data-pcfix="' . $pcfix . '" data-spfix="' . $spfix . '"';
-
-		// ロゴを中央表示するかどうか
-		if ( 'center' === $logo_pos ) {
-			$attrs .= ' data-logo-pos="center"';
-		}
+		$attrs['data-pcfix'] = $pcfix;
+		$attrs['data-spfix'] = $spfix;
 
 		// オーバーレイ化
-
 		if ( \Arkhe::is_header_overlay() ) {
-			// $header_class .= ' is-overlay';
-			$attrs .= ' data-overlay="true"';
+			$attrs['data-overlay'] = '1';
 		}
 
-		$attrs = apply_filters( 'arkhe_header_attr', $attrs );
+		// フック通す
+		$attrs = apply_filters( 'arkhe_header_attrs', $attrs );
+
+		// 最終的に出力する文字列
+		$attr_string = '';
+		foreach ( $attrs as $key => $val ) {
+			$attr_string .= " $key=\"$val\"";
+		}
+
+		// 出力するか、returnで返すか
 		if ( $is_echo ) {
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $attrs;
+			echo trim( $attr_string );
 		} else {
-			return $attrs;
+			return trim( $attr_string );
 		}
 	}
 

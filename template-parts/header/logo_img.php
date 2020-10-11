@@ -9,7 +9,7 @@ $logo_id    = get_theme_mod( 'custom_logo' );
 // ロゴ画像の設定があるかどうか
 $logo_type = $logo_id ? 'img' : 'txt';
 ?>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo" data-logo="<?php echo esc_attr( $logo_type ); ?>" rel="home">
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo -<?php echo esc_attr( $logo_type ); ?>" rel="home">
 <?php
 	if ( 'txt' === $logo_type ) :
 	echo esc_html( $site_title );

@@ -14,35 +14,44 @@
 
     body {
         // ( iOSでスクロールできてしまうことはひとまず無視 )
-        @include sp {
-            // height: 100%;
-            overflow-y: hidden;
-            touch-action: none;
-        }
+        // @include sp {
+        // height: 100%;
+        overflow-y: hidden;
+        touch-action: none;
+        // }
     }
 
     .l-header__left,
     .l-header__center,
-    .l-header__right {
+    .l-header__right,
+    .l-header__searchBtn {
         pointer-events: none;
     }
 
 }
+
 
 //メニュー
 .p-drawer {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 1; //ロゴなどより上に
     width: 100%;
     height: 100%;
-    padding-top: var(--ark-header_height);
+    padding: var(--ark-header_height) 0 1rem;
+    color: #fff;
+    font-size: .9rem;
+    background: rgba(#000, .92);
     transition: opacity .5s, visibility .5s;
     pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
     --ark-nav-padding: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
     --ark-color_border: rgba(255, 255, 255, .15);
+
+    @include pc {
+        padding-bottom: var(--ark-header_height);
+    }
 
     [data-loaded="false"] & {
         display: none;
@@ -53,7 +62,8 @@
     }
 
     .admin-bar & {
-        top: 32px;
+        top: var(--ark-adminbar_height);
+        height: calc(100% - var(--ark-adminbar_height));
     }
 }
 
@@ -124,17 +134,31 @@
 // menuアイコンだけを見せたい
 [data-drawer-move="fade"] {
 
-
-    .p-drawer {
-        z-index: 1;
-        color: #fff;
-        background: rgba(#000, .92);
-    }
-
     &[data-drawer="opened"] {
 
-        .l-header__menuBtn {
+        .l-header__drawerBtn {
             color: #fff;
         }
     }
+}
+
+
+.p-drawer__close {
+
+    // position: absolute;
+    // top: 100%;
+    // left: 50%;
+    display: flex;
+    align-items: center;
+    margin: 1rem auto .5em;
+    color: inherit;
+    background: none;
+    border: none;
+    // transform: translateX(-50%);
+
+    i {
+        margin-right: .5em;
+        line-height: 1;
+    }
+
 }

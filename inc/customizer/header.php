@@ -27,7 +27,7 @@ Customizer::big_title(
 
 
 // ヘッダーがブロックで管理されているかどうか
-if ( defined( 'ARKHE_TMPID_KEY' ) && ARKHE_TMPID_KEY ) {
+if ( \Arkhe::get_plugin_data( 'use_temlate_block' ) ) {
 
 	// ブロック化される時に代わりに表示されるメッセージ
 	do_action( 'arkhe_customizer_header_blocked_message' );
@@ -77,10 +77,19 @@ if ( defined( 'ARKHE_TMPID_KEY' ) && ARKHE_TMPID_KEY ) {
 		)
 	);
 
+	// 検索ボタン
+	Customizer::sub_title(
+		$arkhe_section,
+		'head_search_btn',
+		array(
+			'label' => __( 'Search button', 'arkhe' ),
+		)
+	);
+
 	// 検索ボタンをSPで表示する
 	Customizer::add(
 		$arkhe_section,
-		'show_search_btn_sp',
+		'show_search_sp',
 		array(
 			'label'       => __( 'Show search btn on SP', 'arkhe' ),
 			'type'        => 'checkbox',
@@ -90,9 +99,28 @@ if ( defined( 'ARKHE_TMPID_KEY' ) && ARKHE_TMPID_KEY ) {
 	// 検索ボタンをPCで表示する
 	Customizer::add(
 		$arkhe_section,
-		'show_search_btn_pc',
+		'show_search_pc',
 		array(
 			'label'       => __( 'Show search btn on PC', 'arkhe' ),
+			'type'        => 'checkbox',
+		)
+	);
+
+	// ドロワーメニュー
+	Customizer::sub_title(
+		$arkhe_section,
+		'head_drawer_btn',
+		array(
+			'label' => __( 'Drawer button', 'arkhe' ),
+		)
+	);
+
+	// ドロワーメニューをSPでも表示する
+	Customizer::add(
+		$arkhe_section,
+		'show_drawer_sp',
+		array(
+			'label'       => __( 'Show drawer button on SP', 'arkhe' ),
 			'type'        => 'checkbox',
 		)
 	);
@@ -100,10 +128,19 @@ if ( defined( 'ARKHE_TMPID_KEY' ) && ARKHE_TMPID_KEY ) {
 	// ドロワーメニューをPCでも表示する
 	Customizer::add(
 		$arkhe_section,
-		'show_drower_pc',
+		'show_drawer_pc',
 		array(
-			'label'       => __( 'Show drawer menu on PC', 'arkhe' ),
+			'label'       => __( 'Show drawer button on PC', 'arkhe' ),
 			'type'        => 'checkbox',
+		)
+	);
+
+	// グローバルナビ
+	Customizer::sub_title(
+		$arkhe_section,
+		'head_nav',
+		array(
+			'label' => __( 'Global navigation', 'arkhe' ),
 		)
 	);
 

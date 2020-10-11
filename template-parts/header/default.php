@@ -2,34 +2,32 @@
 /**
  * デフォルトヘッダー用テンプレート
  */
-$setting            = Arkhe::get_setting();
-$show_drower_pc     = $setting['show_drower_pc'];
-$show_search_btn_pc = $setting['show_search_btn_pc'];
-$show_search_btn_sp = $setting['show_search_btn_sp'];
-$move_gnav_under    = $setting['move_gnav_under'];
-$logo_pos           = $move_gnav_under ? 'center' : '';
+$setting         = Arkhe::get_setting();
+$move_gnav_under = $setting['move_gnav_under'];
+$attr_data       = array(
+	'logo_pos'       => $move_gnav_under ? 'center' : 'left',
+	'show_drawer_sp' => $setting['show_drawer_sp'],
+	'show_drawer_pc' => $setting['show_drawer_pc'],
+	'show_search_sp' => $setting['show_search_sp'],
+	'show_search_pc' => $setting['show_search_pc'],
+);
 ?>
-<header id="header" class="l-header" <?php \Arkhe::header_attr( array( 'logo_pos' => $logo_pos ) ); ?>>
+<header id="header" class="l-header" <?php \Arkhe::header_attr( $attr_data ); ?>>
 	<div class="l-header__body l-container">
-		<?php \Arkhe::get_parts( 'header/menu_btn', array( 'show_pc' => $show_drower_pc ) ); ?>
-		<div class="l-header__left u-only-pc"></div>
+		<?php \Arkhe::get_parts( 'header/drawer_btn' ); ?>
+		<div class="l-header__left">
+			<?php do_action( 'arkhe_haader_left_content' ); ?>
+		</div>
 		<?php \Arkhe::get_parts( 'header/logo' ); ?>
-		<!-- <div class="l-header__main"></div> -->
 		<div class="l-header__right">
 			<?php
 				if ( ! $move_gnav_under ) :
-				\Arkhe::get_parts( 'header/gnav' );
+					\Arkhe::get_parts( 'header/gnav' );
 				endif;
-
-				\Arkhe::get_parts(
-					'header/custom_btn',
-					array(
-						'show_pc' => $show_search_btn_pc,
-						'show_sp' => $show_search_btn_sp,
-					)
-				);
+				do_action( 'arkhe_haader_left_content' );
 			?>
 		</div>
+		<?php \Arkhe::get_parts( 'header/search_btn' ); ?>
 		<?php \Arkhe::get_parts( 'header/drawer_menu' ); ?>
 	</div>
 </header>

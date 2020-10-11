@@ -8,6 +8,9 @@
 	<div class="c-overlay" data-onclick="toggleSearch"></div>
 	<div class="p-searchModal__inner">
 		<?php echo get_search_form(); ?>
+		<button type="button" class="p-searchModal__close" data-onclick="toggleSearch">
+			<i class="arkhe-icon-close"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
+		</button>
 	</div>
 </div>
 <?php // ドロワーメニューの下側に敷いておく ?>

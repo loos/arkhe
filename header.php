@@ -12,7 +12,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
-<!-- Start : #wrapper -->
+<!-- Start: #wrapper -->
 <div id="wrapper" class="l-wrapper">
 <?php
 	// ヘッダー

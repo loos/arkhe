@@ -5,7 +5,6 @@
  */
 $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
 
-
 // 著者データを取得
 $author_data = get_userdata( $author_id );
 if ( ! $author_data ) return;
@@ -13,7 +12,6 @@ if ( ! $author_data ) return;
 // ユーザーデータ
 $author_name = $author_data->display_name;
 $description = $author_data->description;
-$position    = get_the_author_meta( 'position', $author_id ); // 'position' は ADDONから追加される
 
 $the_user_link_url = $author_data->user_url;
 ?>
@@ -25,10 +23,7 @@ $the_user_link_url = $author_data->user_url;
 		<?php if ( ! is_author() ) : ?>
 			<span class="p-authorBox__name"><?php echo esc_html( $author_name ); ?></span>
 		<?php endif; ?>
-		<?php if ( $position ) : ?>
-			<span class="p-authorBox__position u-color-thin"><?php echo esc_html( $position ); ?></span>
-		<?php endif; ?>
-
+		<?php do_action( 'arkhe_after_author_name', $author_id ); // 役職表示用 ?>
 		<?php if ( $description ) : ?>
 			<p class="p-authorBox__description u-color-thin">
 				<?php echo wp_kses_post( nl2br( $description ) ); ?>

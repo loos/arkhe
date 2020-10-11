@@ -81,8 +81,6 @@ trait Utility {
 	 */
 	public static function check_licence( $licence_key = '' ) {
 
-		$url = 'https://looscdn.com/cdn/curltest/testpage/';
-
 		$data = array(
 			'type'        => 'get_status',
 			'licence_key' => $licence_key,
@@ -90,17 +88,17 @@ trait Utility {
 		// $headers = ['Content-Type: application/json' ];
 
 		$response = wp_remote_post(
-			$url,
+			\Arkhe::$licence_check_url,
 			array(
 				'method'      => 'POST',
 				'timeout'     => 15,
 				'redirection' => 5,
+				'sslverify'   => false,
+				'body'        => $data,
 				// 'httpversion' => '1.0',
 				// 'blocking'    => true,
 				// 'data_format' => 'body',
 				// 'headers'     => array(),
-				'sslverify'   => false,
-				'body'        => $data,
 			)
 		);
 

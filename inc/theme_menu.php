@@ -7,13 +7,13 @@ namespace Arkhe_Theme;
 add_action( 'admin_menu', '\Arkhe_Theme\add_theme_menu' );
 function add_theme_menu() {
 	$menu_title = __( 'Arkhe', 'arkhe' );
-		add_theme_page(
-			$menu_title,
-			$menu_title,
-			'edit_theme_options',
-			'arkhe',
-			'\Arkhe_Theme\display_theme_menu'
-		);
+	add_theme_page(
+		$menu_title,
+		$menu_title,
+		'edit_theme_options',
+		'arkhe',
+		'\Arkhe_Theme\display_theme_menu'
+	);
 }
 
 function display_theme_menu() {
@@ -38,7 +38,7 @@ function display_theme_menu() {
 			// タブデータ
 			$tabs = array(
 				'info'    => _x( 'Information', 'tab', 'arkhe' ),
-				// 'licence' => __( 'Pro Licence', 'arkhe' ),
+				'licence' => __( 'Pro Licence', 'arkhe' ),
 			);
 
 			// 現在表示中のタブ

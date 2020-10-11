@@ -29,11 +29,11 @@
         }
 
         .admin-bar & {
-            top: 32px;
+            top: var(--ark-adminbar_height);
         }
 
         .admin-bar [data-pcfix="1"] + & {
-            top: calc(var(--ark-header_height) + 32px);
+            top: calc(var(--ark-header_height) + var(--ark-adminbar_height));
         }
     }
 }

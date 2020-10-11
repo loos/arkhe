@@ -33,9 +33,10 @@ trait Default_Data {
 			'fix_header_pc'             => true,
 			'fix_header_sp'             => true,
 			'fix_gnav'                  => false,
-			'show_search_btn_sp'        => true,
-			'show_search_btn_pc'        => false,
-			'show_drower_pc'            => false,
+			'show_search_sp'            => true,
+			'show_search_pc'            => false,
+			'show_drawer_sp'            => true,
+			'show_drawer_pc'            => false,
 			'move_gnav_under'           => false,
 
 			// Footer

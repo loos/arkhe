@@ -4,7 +4,7 @@
  *   ブロックで生成されている場合はそちらを優先する
  */
 $header_id = 0;
-if ( defined( 'ARKHE_TMPID_KEY' ) ) {
+if ( defined( 'ARKHE_TMPID_KEY' ) && \Arkhe::get_plugin_data( 'use_temlate_block' ) ) {
 
 	$template_id_data = get_option( ARKHE_TMPID_KEY );
 	if ( isset( $template_id_data['header'] ) ) {

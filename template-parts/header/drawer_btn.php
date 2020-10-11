@@ -1,14 +1,11 @@
 <?php
 /**
  * ハンバーガーメニューの出力テンプレート
- *   $args['label'] : ボタンしたのラベル
- *   $args['show_pc'] : PCでもボタンを表示するかどうか
+ *   $args['label'] : ボタン下のラベル
  */
-$label   = isset( $args['label'] ) ? $args['label'] : '';
-$show_pc = isset( $args['show_pc'] ) ? $args['show_pc'] : false;
-
+$label = isset( $args['label'] ) ? $args['label'] : '';
 ?>
-<div class="l-header__menuBtn<?php if ( ! $show_pc ) echo ' u-only-sp'; ?>">
+<div class="l-header__drawerBtn">
 	<button class="c-iconBtn -menuBtn" data-onclick="toggleMenu" aria-label="<?php esc_attr_e( 'Menu button', 'arkhe' ); ?>">
 		<div class="c-iconBtn__icon">
 			<i class='__icon -open arkhe-icon-menu'></i>

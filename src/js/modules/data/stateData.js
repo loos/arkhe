@@ -26,14 +26,14 @@ export default {
 			headH = header.offsetHeight;
 
 			document.documentElement.style.setProperty('--ark-header_height', headH + 'px');
-			const headBody = header.querySelector('.l-header__body');
-			if (null !== headBody) {
-				const headBodyH = headBody.offsetHeight;
-				document.documentElement.style.setProperty(
-					'--ark-header_body_height',
-					headBodyH + 'px'
-				);
-			}
+			// const headBody = header.querySelector('.l-header__body');
+			// if (null !== headBody) {
+			// 	const headBodyH = headBody.offsetHeight;
+			// 	document.documentElement.style.setProperty(
+			// 		'--ark-header_body_height',
+			// 		headBodyH + 'px'
+			// 	);
+			// }
 		}
 	},
 	adminbarH: (adminbar) => {
