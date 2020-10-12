@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-10-11 22:04+0900\n"
-"PO-Revision-Date: 2020-10-11 22:05+0900\n"
+"POT-Creation-Date: 2020-10-12 16:23+0900\n"
+"PO-Revision-Date: 2020-10-12 16:26+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -184,8 +184,7 @@ msgid "Layout setting"
 msgstr "レイアアウト設定"
 
 #: inc/customizer/header.php:85 searchform.php:3
-#: template-parts/header/custom_btn.php:14
-#: template-parts/header/search_btn.php:24
+#: template-parts/header/search_btn.php:13
 msgid "Search button"
 msgstr "検索ボタン"
 
@@ -496,6 +495,10 @@ msgctxt "tab"
 msgid "Information"
 msgstr "インフォメーション"
 
+#: inc/theme_menu.php:41
+msgid "Pro Licence"
+msgstr "PROライセンス"
+
 #: inc/theme_menu/info.php:2
 msgid "Arkhe plugin"
 msgstr "Arkhe専用プラグイン"
@@ -504,7 +507,7 @@ msgstr "Arkhe専用プラグイン"
 msgid "Information about the theme"
 msgstr "テーマに関するお知らせ情報"
 
-#: inc/theme_menu/licence.php:35
+#: inc/theme_menu/licence.php:38
 msgid ""
 "There are too many authentication requests. Please wait a while and try "
 "again."
@@ -512,25 +515,34 @@ msgstr ""
 "認証リクエストの回数が多すぎます。しばらく時間を空けてから再試行してくださ"
 "い。"
 
-#: inc/theme_menu/licence.php:48
+#: inc/theme_menu/licence.php:54
 msgid "This license is currently suspended."
 msgstr "このライセンスは現在停止中です。"
 
-#. translators: %s is email;
-#: inc/theme_menu/licence.php:51 inc/theme_menu/licence.php:60
-#, php-format
-msgid "The owner is %s ."
-msgstr "所有者は %s です。"
-
-#: inc/theme_menu/licence.php:57
+#: inc/theme_menu/licence.php:60 inc/theme_menu/licence.php:70
 msgid "Your license key is valid."
 msgstr "有効なライセンスキーが確認できました。"
 
-#: inc/theme_menu/licence.php:67
+#. translators: %s is owner;
+#: inc/theme_menu/licence.php:63
+msgid "This is a \"personal license\","
+msgstr "これは「個人用ライセンス」で、"
+
+#: inc/theme_menu/licence.php:63 inc/theme_menu/licence.php:73
+#, php-format
+msgid "and the owner is %s ."
+msgstr "所有者は %s です。"
+
+#. translators: %s is owner;
+#: inc/theme_menu/licence.php:73
+msgid "This is a \"developer license\","
+msgstr "これは「開発者用ライセンス」で、"
+
+#: inc/theme_menu/licence.php:80
 msgid "License key"
 msgstr "ライセンスキー"
 
-#: inc/theme_menu/licence.php:68
+#: inc/theme_menu/licence.php:81
 msgid ""
 "With the purchase of the \"Arkhe PRO License\", you will be able to update "
 "all Arche-specific plug-ins to the latest version at any time."
@@ -538,7 +550,7 @@ msgstr ""
 "「Arkhe PROライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最新"
 "版へアップデートできるようになります。"
 
-#: inc/theme_menu/licence.php:75
+#: inc/theme_menu/licence.php:88
 msgid "Check licence"
 msgstr "ライセンス確認"
 
@@ -580,7 +592,7 @@ msgstr "閉じる"
 msgid "Menu button"
 msgstr "メニューボタン"
 
-#: template-parts/others/author_box.php:46
+#: template-parts/others/author_box.php:45
 msgid "To article list"
 msgstr "記事一覧へ"
 
@@ -630,9 +642,6 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
-
-#~ msgid "Pro Licence"
-#~ msgstr "PROライセンス"
 
 #~ msgid "License authentication"
 #~ msgstr "ライセンス認証"

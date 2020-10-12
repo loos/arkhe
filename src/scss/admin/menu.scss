@@ -94,5 +94,31 @@
 
 .arkhe-info {
     padding: 1em;
+    font-size: 14px;
     background: #fdfdfd;
+
+    li {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 8px 4px;
+    }
+
+    .__date {
+        display: block;
+        min-width: 5em;
+        margin-right: 8px;
+        padding: 2px 8px;
+        color: #3f3f3f;
+        font-size: 13px;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        background: #193b6514;
+        border-radius: 3px;
+    }
+
+    .__title {
+        display: block;
+        // font-size: 13px;
+    }
 }

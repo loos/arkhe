@@ -10,8 +10,12 @@ define( 'ARKHE_THEME_PATH', get_template_directory() );
 define( 'ARKHE_THEME_URI', get_template_directory_uri() );
 
 // 子テーマのパス, URI
-define( 'ARKHE_CHILD_PATH', get_stylesheet_directory() );
-define( 'ARKHE_CHILD_URI', get_stylesheet_directory_uri() );
+if ( ! defined( 'ARKHE_CHILD_PATH' ) ) {
+	define( 'ARKHE_CHILD_PATH', get_stylesheet_directory() );
+}
+if ( ! defined( 'ARKHE_CHILD_URI' ) ) {
+	define( 'ARKHE_CHILD_URI', get_stylesheet_directory_uri() );
+}
 
 
 /**
@@ -47,6 +51,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 		\Arkhe_Theme\Utility\Parts,
 		\Arkhe_Theme\Utility\Output,
 		\Arkhe_Theme\Utility\Utility,
+		\Arkhe_Theme\Utility\Licence,
 		\Arkhe_Theme\Utility\Condition,
 		\Arkhe_Theme\Utility\Template_Parts;
 

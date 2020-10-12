@@ -17,14 +17,14 @@
 <h3><?php esc_html_e( 'Information about the theme', 'arkhe' ); ?></h3>
 <?php
 
+$info_json = \Arkhe::$is_ja ? 'information.json' : 'information_en.json';
 // delete_transient( 'arkhe_informations' );
 $json = get_transient( 'arkhe_informations' );
 if ( ! $json ) {
-	$response = wp_remote_get( 'https://looscdn.com/cdn/curltest/json/info.json' );
+	$response = wp_remote_get( 'https://looscdn.com/cdn/arkhe/' . $info_json );
 	$json     = wp_remote_retrieve_body( $response );
 	set_transient( 'arkhe_informations', $json, 1 * DAY_IN_SECONDS );
 }
-
 $info_data = json_decode( $json, true );
 
 ?>
@@ -32,7 +32,13 @@ $info_data = json_decode( $json, true );
 	<?php foreach ( $info_data as $date => $info ) : ?>
 		<li>
 			<span class="__date"><?php echo esc_html( $date ); ?></span>
-			<a href="<?php echo esc_url( $info['url'] ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $info['text'] ); ?></a>
+			<?php if ( $info['url'] ) : ?>
+				<a class="__title" href="<?php echo esc_url( $info['url'] ); ?>" target="_blank" rel="noopener">
+					<?php echo esc_html( $info['text'] ); ?>
+				</a>
+			<?php else : ?>
+				<span class="__title"><?php echo esc_html( $info['text'] ); ?></span>
+			<?php endif; ?>
 		</li>
 	<?php endforeach; ?>
 </ul>

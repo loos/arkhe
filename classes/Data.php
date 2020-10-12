@@ -39,9 +39,9 @@ class Data {
 	 * ライセンスキー
 	 */
 	public static $licence_key       = '';
-	public static $licence_status    = '';
+	public static $licence_data      = array();
 	public static $has_pro_licence   = false;
-	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/check_licence/';
+	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/licence/check';
 
 	/**
 	 * プラグイン更新用パス
@@ -102,6 +102,7 @@ class Data {
 		self::$arkhe_version = $theme_data->get( 'Version' );
 	}
 
+
 	/**
 	 * ライセンス情報をセット
 	 */
@@ -113,36 +114,17 @@ class Data {
 		// ライセンスキーの指定があれば、ステータスチェック
 		if ( self::$licence_key ) {
 
-			self::$licence_status = self::get_licence_status( self::$licence_key );
+			$licence_data       = \Arkhe::get_licence_data( self::$licence_key );
+			self::$licence_data = $licence_data;
 
-			// ステータスを配列に
-			$status = json_decode( self::$licence_status, true );
-			if ( ! is_array( $status ) || ! isset( $status['valid'] ) ) return;
+			$status = (int) $licence_data['status'];
 
-			// ステータスを元に情報をセット
-			self::$has_pro_licence = $status['valid'];
-			if ( isset( $status['path'] ) ) {
-				self::$ex_update_path = $status['path'];
+			// 有効なライセンスキーだった場合
+			if ( 1 === $status || 2 === $status ) {
+				self::$has_pro_licence = true;
+				self::$ex_update_path  = isset( $licence_data['path'] ) ? $licence_data['path'] : '';
 			}
-		}
-	}
-
-	/**
-	 * ライセンスステータスを取得( キャッシュがあれば優先 )
-	 *
-	 * @return json
-	 */
-	private static function get_licence_status( $licence_key ) {
-
-		$cache_key = 'arkhe_licence_status';
-
-		$status = get_transient( $cache_key );
-		if ( $status ) return $status;
-
-		// ライセンスデータベースからチェック
-		$status = \Arkhe::check_licence( self::$licence_key );
-		set_transient( $cache_key, $status, DAY_IN_SECONDS ); // キャッシュ期間 : １日
-		return $status;
+}
 	}
 
 
