@@ -17,28 +17,37 @@ function add_theme_menu() {
 }
 
 function display_theme_menu() {
+
+	if ( \Arkhe::$is_ja ) {
+		$theme_url = 'https://arkhe-theme.com/ja';
+	} else {
+		$theme_url = 'https://arkhe-theme.com';
+	}
+
 	?>
 	<div class="wrap arkhe-page" id="arkhe-page-wrap">
 		<h1 class="arkhe-page__title">
 			<img class="arkhe-page__logo" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe_logo.png' ); ?>" alt="Arkhe">
 		</h1>
 		<div class="arkhe-page__header">
-			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">
+			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/">
 				<?php esc_html_e( 'To Arkhe official website', 'arkhe' ); ?>
 			</a>
-			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/document/">
+			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/document/">
 				<?php esc_html_e( 'See the manual', 'arkhe' ); ?>
 			</a>
-			<a class="button button-primary" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/update/">
-				<?php esc_html_e( 'See update information', 'arkhe' ); ?>
-			</a>
+			<?php if ( 0 ) : ?>
+				<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/update/">
+					<?php esc_html_e( 'See update information', 'arkhe' ); ?>
+				</a>
+			<?php endif; ?>
 		</div>
 
 		<?php
 			// タブデータ
 			$tabs = array(
 				'info'    => _x( 'Information', 'tab', 'arkhe' ),
-				'licence' => __( 'Pro Licence', 'arkhe' ),
+				'licence' => __( 'Licence registration', 'arkhe' ),
 			);
 
 			// 現在表示中のタブ

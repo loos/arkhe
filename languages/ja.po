@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-10-12 16:23+0900\n"
-"PO-Revision-Date: 2020-10-13 23:57+0900\n"
+"POT-Creation-Date: 2020-10-16 11:49+0900\n"
+"PO-Revision-Date: 2020-10-16 12:07+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -181,7 +181,7 @@ msgstr "画像サイズ"
 
 #: inc/customizer/header.php:76
 msgid "Layout setting"
-msgstr "レイアアウト設定"
+msgstr "レイアウト設定"
 
 #: inc/customizer/header.php:85 searchform.php:3
 #: template-parts/header/search_btn.php:13
@@ -478,26 +478,26 @@ msgstr ""
 msgid "Arkhe"
 msgstr "Arkhe"
 
-#: inc/theme_menu.php:27
+#: inc/theme_menu.php:34
 msgid "To Arkhe official website"
 msgstr "Arkhe公式サイトへ"
 
-#: inc/theme_menu.php:30
+#: inc/theme_menu.php:37
 msgid "See the manual"
 msgstr "マニュアルを見る"
 
-#: inc/theme_menu.php:33
+#: inc/theme_menu.php:41
 msgid "See update information"
 msgstr "アップデート情報を見る"
 
-#: inc/theme_menu.php:40
+#: inc/theme_menu.php:49
 msgctxt "tab"
 msgid "Information"
 msgstr "インフォメーション"
 
-#: inc/theme_menu.php:41
-msgid "Pro Licence"
-msgstr "PROライセンス"
+#: inc/theme_menu.php:50
+msgid "Licence registration"
+msgstr "ライセンス認証"
 
 #: inc/theme_menu/info.php:2
 msgid "Arkhe plugin"
@@ -507,7 +507,7 @@ msgstr "Arkhe専用プラグイン"
 msgid "Information about the theme"
 msgstr "テーマに関するお知らせ情報"
 
-#: inc/theme_menu/licence.php:38
+#: inc/theme_menu/licence.php:41
 msgid ""
 "There are too many authentication requests. Please wait a while and try "
 "again."
@@ -515,42 +515,42 @@ msgstr ""
 "認証リクエストの回数が多すぎます。しばらく時間を空けてから再試行してくださ"
 "い。"
 
-#: inc/theme_menu/licence.php:54
+#: inc/theme_menu/licence.php:57
 msgid "This license is currently suspended."
 msgstr "このライセンスは現在停止中です。"
 
-#: inc/theme_menu/licence.php:60 inc/theme_menu/licence.php:70
+#: inc/theme_menu/licence.php:63 inc/theme_menu/licence.php:73
 msgid "Your license key is valid."
 msgstr "有効なライセンスキーが確認できました。"
 
-#. translators: %s is owner;
-#: inc/theme_menu/licence.php:63
+#. translators: %s is email;
+#: inc/theme_menu/licence.php:66
 msgid "This is a \"personal license\","
 msgstr "これは「個人用ライセンス」で、"
 
-#: inc/theme_menu/licence.php:63 inc/theme_menu/licence.php:73
+#: inc/theme_menu/licence.php:66 inc/theme_menu/licence.php:76
 #, php-format
 msgid "and the owner is %s ."
 msgstr "所有者は %s です。"
 
 #. translators: %s is owner;
-#: inc/theme_menu/licence.php:73
+#: inc/theme_menu/licence.php:76
 msgid "This is a \"developer license\","
 msgstr "これは「開発者用ライセンス」で、"
 
-#: inc/theme_menu/licence.php:80
+#: inc/theme_menu/licence.php:82
 msgid "License key"
 msgstr "ライセンスキー"
 
-#: inc/theme_menu/licence.php:81
+#: inc/theme_menu/licence.php:83
 msgid ""
-"With the purchase of the \"Arkhe PRO License\", you will be able to update "
-"all Arche-specific plug-ins to the latest version at any time."
+"With the purchase of the \"Arkhe License\", you will be able to update all "
+"Arkhe-specific plugins to the latest version at any time."
 msgstr ""
-"「Arkhe PROライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最新"
-"版へアップデートできるようになります。"
+"「Arkhe ライセンス」を購入すると、全てのArkhe専用プラグインをいつでも最新版へ"
+"アップデートできるようになります。"
 
-#: inc/theme_menu/licence.php:88
+#: inc/theme_menu/licence.php:90
 msgid "Check licence"
 msgstr "ライセンス確認"
 
@@ -632,8 +632,8 @@ msgstr ""
 #. Description of the plugin/theme
 msgid "A very simple theme for production templates. Customize as you like."
 msgstr ""
-"とてもシンプルな制作テンプレート用テーマです。あなたの思い通りにカスタマイズ"
-"してください。"
+"制作テンプレート用のとてもシンプルなテーマです。あなたの好きなようにカスタマ"
+"イズしてください。"
 
 #. Author of the plugin/theme
 msgid "LOOS,Inc."
@@ -643,8 +643,8 @@ msgstr ""
 msgid "https://loos.co.jp/"
 msgstr ""
 
-#~ msgid "License authentication"
-#~ msgstr "ライセンス認証"
+#~ msgid "Pro Licence"
+#~ msgstr "PROライセンス"
 
 #~ msgid "48px padding is attached to the left and right."
 #~ msgstr "左右に48pxのpaddingがつきます。"

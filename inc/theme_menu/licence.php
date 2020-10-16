@@ -75,13 +75,12 @@ if ( (int) $check_count > 5 ) {
 		// translators: %s is owner;
 		$result .= __( 'This is a "developer license",', 'arkhe' ) . sprintf( __( 'and the owner is %s .', 'arkhe' ), $the_owner ?: $the_email );
 
-
 	}
 }
 
 ?>
 <h3><?php esc_html_e( 'License key', 'arkhe' ); ?></h3>
-<p><?php esc_html_e( 'With the purchase of the "Arkhe PRO License", you will be able to update all Arche-specific plug-ins to the latest version at any time.', 'arkhe' ); ?></p>
+<p><?php esc_html_e( 'With the purchase of the "Arkhe License", you will be able to update all Arkhe-specific plugins to the latest version at any time.', 'arkhe' ); ?></p>
 <form method="POST" action="">
 	<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
 	<?php

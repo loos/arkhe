@@ -36,6 +36,8 @@ function setup_theme() {
 	// Gutenberg用
 	add_theme_support( 'align-wide' ); // 画像の全幅表示などを可能に
 	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
+	add_theme_support( 'custom-line-height' );
+	add_theme_support( 'custom-units', 'px', 'vw', 'vh' );
 
 	// html5サポート
 	$html5s = array(
