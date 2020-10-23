@@ -1,8 +1,7 @@
 /*
 Theme Name: Arkhe
 Theme URI: https://arkhe-theme.com/
-Text Domain: arkhe
-Version: 0.4.1
+Version: 0.4.2
 Requires at least: 5.5
 Tested up to: 5.5
 Requires PHP: 7.0
@@ -10,6 +9,8 @@ Description: A very simple theme for production templates. Customize as you like
 Tags: two-columns, one-column, right-sidebar, custom-colors, custom-menu, editor-style, theme-options, block-styles, wide-blocks
 Author: LOOS,Inc.
 Author URI: https://loos.co.jp/
+Text Domain: arkhe
+Domain Path: /languages
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */

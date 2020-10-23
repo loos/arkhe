@@ -11,8 +11,8 @@
     "plugins": [
         "../arkhe-ex-template",
         "../arkhe-toolkit",
-        "../arkhe-woocommerce",
-        "https://downloads.wordpress.org/plugin/wp-multibyte-patch.zip"
+        "../arkhe-blocks",
+        "../arkhe-woocommerce"
     ],
     "env": {
         "development": {

@@ -2,6 +2,13 @@
 namespace Arkhe_Theme;
 
 /**
+ * Arkheを使用しているかどうかを判別するためのJSグローバル変数を出力
+ */
+add_action( 'admin_head', function() {
+	echo '<script>window.arkheTheme = 1;</script>' . PHP_EOL;
+} );
+
+/**
  * 抜粋文字数を変更する
  */
 add_filter( 'excerpt_length', '\Arkhe_Theme\hook_excerpt_length' );

@@ -26,7 +26,6 @@
 
     // 余白を小さくするエリア。
     // の中 / 全幅じゃないカラムブロックメディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
-
     .wp-block > .wp-block-cover__inner-container,
     .wp-block > .wp-block-group__inner-containe,
     :not([data-align="full"]) > .wp-block-columns > .wp-block-column,
@@ -39,20 +38,39 @@
     }
 
     // インナーブロックを持つコアブロックの最初と最後のブロックの余白を打ち消す
-    .block-editor-inner-blocks > .block-editor-block-list__layout, //コア以外のインナーブロック
-    .wp-block-column,
-    .wp-block-media-text__content,
-    .wp-block-cover__inner-container,
-    .wp-block-group__inner-container {
+    // .block-editor-inner-blocks > .block-editor-block-list__layout, //コア以外のインナーブロック
+    // .wp-block-column,
+    // .wp-block-media-text__content,
+    // .wp-block-cover__inner-container,
+    // .wp-block-group__inner-container {
 
-        & > :first-child {
+    //     & > :first-child {
+    //         margin-top: 0 !important;
+    //     }
+
+
+    //     & > .block-list-appender {
+    //         margin-top: var(--ark-mt_s, 1rem);
+    //         margin-bottom: 0;
+
+    //         .block-editor-default-block-appender__content {
+    //             margin-top: 0;
+    //             margin-bottom: 0;
+    //         }
+    //     }
+
+    //     [data-type="core/paragraph"] + .block-list-appender {
+    //         margin-top: 0;
+    //     }
+    // }
+
+    // インナーブロック
+    .block-editor-block-list__layout {
+
+        & > .block-editor-block-list__block:first-child,
+        & > .block-list-appender:first-child {
             margin-top: 0 !important;
         }
-
-        // & > :last-child,
-        // & > :nth-last-child(2) {
-        //     margin-bottom: 0 !important;
-        // }
 
         & > .block-list-appender {
             margin-top: var(--ark-mt_s, 1rem);
@@ -64,6 +82,7 @@
             }
         }
 
+        // 段落下の透明になってる .block-list-appender の無駄な余白を消す。
         [data-type="core/paragraph"] + .block-list-appender {
             margin-top: 0;
         }
