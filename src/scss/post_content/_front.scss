@@ -3,13 +3,19 @@
 // マージン
 .c-postContent {
 
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+
     & > * {
         margin-top: var(--ark-mt, 2rem);
         margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
     }
-    margin: 4rem 0 0;
-    padding: 0;
-    line-height: 1.8;
+
+    .l-content__main__body > & {
+        margin-top: 4rem;
+    }
+
 
     .c-pageTitle + & {
         margin-top: 0;
