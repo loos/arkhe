@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-10-16 11:49+0900\n"
-"PO-Revision-Date: 2020-10-16 12:07+0900\n"
+"POT-Creation-Date: 2020-10-29 11:38+0900\n"
+"PO-Revision-Date: 2020-10-29 11:38+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -292,19 +292,6 @@ msgstr "色"
 msgid "Opacity"
 msgstr "不透明度"
 
-#: inc/customizer/page.php:92
-msgid "Featured image"
-msgstr "アイキャッチ画像"
-
-#: inc/customizer/page.php:100 inc/customizer/single.php:61
-msgid "Show featured image"
-msgstr "アイキャッチ画像を表示する"
-
-#: inc/customizer/page.php:101
-msgid ""
-"It is valid only when the position of the title is \"Inside the content\"."
-msgstr "タイトルの表示位置が「コンテンツ内部」の時のみ有効です。"
-
 #: inc/customizer/post_list.php:7
 msgid "Silver ratio"
 msgstr "白銀比"
@@ -317,15 +304,15 @@ msgstr "黄金比"
 msgid "Post List"
 msgstr "投稿リスト"
 
-#: inc/customizer/post_list.php:33 inc/customizer/single.php:138
+#: inc/customizer/post_list.php:33 inc/customizer/single.php:157
 msgid "List layout"
 msgstr "リストのレイアウト"
 
-#: inc/customizer/post_list.php:45 inc/customizer/single.php:141
+#: inc/customizer/post_list.php:45 inc/customizer/single.php:160
 msgid "Card type"
 msgstr "カード型"
 
-#: inc/customizer/post_list.php:46 inc/customizer/single.php:142
+#: inc/customizer/post_list.php:46 inc/customizer/single.php:161
 msgid "List type"
 msgstr "リスト型"
 
@@ -339,19 +326,19 @@ msgstr "投稿情報"
 
 #: inc/customizer/post_list.php:67
 msgid "Show publication date"
-msgstr "公開日を表示する"
+msgstr "公開日を表示"
 
 #: inc/customizer/post_list.php:77
 msgid "Show update date"
-msgstr "更新日を表示する"
+msgstr "更新日を表示"
 
 #: inc/customizer/post_list.php:87 inc/customizer/single.php:31
 msgid "Show categories"
-msgstr "カテゴリーを表示する"
+msgstr "カテゴリーを表示"
 
 #: inc/customizer/post_list.php:97 inc/customizer/single.php:51
 msgid "Show author"
-msgstr "著者を表示する"
+msgstr "著者を表示"
 
 #: inc/customizer/post_list.php:107
 msgid "Number of characters in excerpt"
@@ -407,57 +394,69 @@ msgstr "タイトル下の情報"
 
 #: inc/customizer/single.php:41
 msgid "Show tags"
-msgstr "タグを表示する"
+msgstr "タグを表示"
+
+#: inc/customizer/single.php:61
+msgid "Show featured image"
+msgstr "アイキャッチ画像を表示する"
 
 #: inc/customizer/single.php:71
+msgid "Term information below the content"
+msgstr "本文下のターム情報"
+
+#: inc/customizer/single.php:80
+msgid "Show terms"
+msgstr "ターム情報を表示"
+
+#: inc/customizer/single.php:90
 msgid "Link to previous/next article"
 msgstr "前の記事・次の記事へのリンク"
 
-#: inc/customizer/single.php:80
+#: inc/customizer/single.php:99
 msgid "Show link"
-msgstr "リンクを表示する"
+msgstr "リンクを表示"
 
-#: inc/customizer/single.php:90
+#: inc/customizer/single.php:109
 msgid "Get only articles in the same category"
-msgstr "同じカテゴリーの記事だけを取得する"
+msgstr "同じカテゴリーの記事のみを取得"
 
-#: inc/customizer/single.php:100
+#: inc/customizer/single.php:119
 msgid "Author information area"
 msgstr "著者情報エリア"
 
-#: inc/customizer/single.php:109
+#: inc/customizer/single.php:128
 msgid "Show author information"
-msgstr "著者の情報を表示する"
+msgstr "著者の情報を表示"
 
-#: inc/customizer/single.php:119
+#: inc/customizer/single.php:138
 msgid "Related posts area"
 msgstr "関連記事エリア"
 
-#: inc/customizer/single.php:128
+#: inc/customizer/single.php:147
 msgid "Show related posts"
-msgstr "関連記事を表示する"
+msgstr "関連記事を表示"
 
-#: inc/customizer/single.php:153
+#: inc/customizer/single.php:172
 msgid "How to get related posts"
 msgstr "関連記事の取得方法"
 
-#: inc/customizer/single.php:156
+#: inc/customizer/single.php:175
 msgid "Category"
 msgstr "カテゴリー"
 
-#: inc/customizer/single.php:157
+#: inc/customizer/single.php:176
 msgid "Tag"
 msgstr "タグ"
 
-#: inc/customizer/single.php:168
+#: inc/customizer/single.php:187
 msgid "Comment area"
 msgstr "コメントエリア"
 
-#: inc/customizer/single.php:177
+#: inc/customizer/single.php:196
 msgid "Show comment area"
-msgstr "コメントエリアを表示する"
+msgstr "コメントエリアを表示"
 
-#: inc/hooks.php:50
+#: inc/hooks.php:57
 msgid "Skip to the content"
 msgstr "コンテンツへスキップ"
 
@@ -627,7 +626,7 @@ msgstr "2カラム"
 
 #. Theme URI of the plugin/theme
 msgid "https://arkhe-theme.com/"
-msgstr ""
+msgstr "https://arkhe-theme.com/ja/"
 
 #. Description of the plugin/theme
 msgid "A very simple theme for production templates. Customize as you like."
@@ -642,6 +641,13 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "Featured image"
+#~ msgstr "アイキャッチ画像"
+
+#~ msgid ""
+#~ "It is valid only when the position of the title is \"Inside the content\"."
+#~ msgstr "タイトルの表示位置が「コンテンツ内部」の時のみ有効です。"
 
 #~ msgid "Pro Licence"
 #~ msgstr "PROライセンス"

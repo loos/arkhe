@@ -82,23 +82,3 @@ Customizer::add(
 		),
 	)
 );
-
-
-// アイキャッチ画像の設定
-Customizer::big_title(
-	$arkhe_section,
-	'page_thumb',
-	array(
-		'label' => __( 'Featured image', 'arkhe' ),
-	)
-);
-
-Customizer::add(
-	$arkhe_section,
-	'show_page_thumb',
-	array(
-		'label'       => __( 'Show featured image', 'arkhe' ),
-		'description' => ARKHE_NOTE . __( 'It is valid only when the position of the title is "Inside the content".', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);

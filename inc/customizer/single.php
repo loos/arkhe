@@ -63,6 +63,25 @@ Customizer::add(
 	)
 );
 
+// 本文下のターム情報
+Customizer::big_title(
+	$arkhe_section,
+	'foot_terms',
+	array(
+		'label' => __( 'Term information below the content', 'arkhe' ),
+	)
+);
+
+// ターム情報を表示
+Customizer::add(
+	$arkhe_section,
+	'show_foot_terms',
+	array(
+		'label'       => __( 'Show terms', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
 // 前の記事・次の記事へのリンク
 Customizer::big_title(
 	$arkhe_section,
@@ -75,7 +94,7 @@ Customizer::big_title(
 // リンクを表示する
 Customizer::add(
 	$arkhe_section,
-	'show_page_links',
+	'show_prev_next_link',
 	array(
 		'label'       => __( 'Show link', 'arkhe' ),
 		'type'        => 'checkbox',

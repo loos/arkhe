@@ -9,36 +9,41 @@ $setting = Arkhe::get_setting();
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 $post_data = get_post( $the_id );
 
-// 記事上ウィジェットを表示するか
-$show_widget_bottom = apply_filters( 'arkhe_show_widget_single_bottom', is_active_sidebar( 'single_bottom' ) );
+// 本文下のターム情報を表示するかどうか
+$show_foot_terms = apply_filters( 'arkhe_show_show_foot_terms', $setting['show_foot_terms'], $the_id );
+
+// 前の記事・次の記事を表示するか
+$show_prev_next_link = apply_filters( 'arkhe_show_show_prev_next_link', $setting['show_prev_next_link'], $the_id );
 
 // 著者情報を表示するか
-$show_author_box = apply_filters( 'arkhe_show_author_box', $setting['show_author_box'] );
+$show_author_box = apply_filters( 'arkhe_show_author_box', $setting['show_author_box'], $the_id );
 
 // 関連記事を表示するか
-$show_related_posts = apply_filters( 'arkhe_show_related_posts', $setting['show_related_posts'] );
+$show_related_posts = apply_filters( 'arkhe_show_related_posts', $setting['show_related_posts'], $the_id );
 
 // 下部シェアボタン
 do_action( 'arkhe_show_share_btn_bottom' );
 
 ?>
 <footer class="p-entry__foot">
-	<div class="c-postMetas">
-		<?php
-			Arkhe::get_parts(
-				'single/term_list',
-				array(
-					'post_id'  => $the_id,
-					'show_cat' => true,
-					'show_tag' => true,
-				)
-			);
-		?>
-	</div>
+	<?php if ( $show_foot_terms ) : ?>
+		<div class="c-postMetas">
+			<?php
+				Arkhe::get_parts(
+					'single/term_list',
+					array(
+						'post_id'  => $the_id,
+						'show_cat' => true,
+						'show_tag' => true,
+					)
+				);
+			?>
+		</div>
+	<?php endif; ?>
 	<?php
 
 		// 前の記事・次の記事
-		if ( $setting['show_page_links'] ) :
+		if ( $show_prev_next_link ) :
 			Arkhe::get_parts( 'single/prev_next_link' );
 		endif;
 

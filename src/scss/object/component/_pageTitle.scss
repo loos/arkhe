@@ -9,6 +9,21 @@
     }
 }
 
+.c-pageTitle__subtitle {
+    position: relative;
+    margin-left: 1em;
+    font-weight: normal;
+    font-size: 1rem;
+    font-style: italic;
+    vertical-align: middle;
+
+    &::before {
+        margin-right: 1em;
+        vertical-align: baseline;
+        content: "–";
+    }
+}
+
 //コンテンツ内 表示時
 .p-page__title,
 .p-archive__title {

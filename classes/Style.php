@@ -75,7 +75,7 @@ class Style {
 		self::css_margin();
 
 		// 投稿リスト
-		self::css_thumb_ratio( $setting['--ark-card_thumb_ratio'], $setting['list_posts_thumb_ratio'] );
+		self::css_thumb_ratio( $setting['thumb_ratio_card'], $setting['thumb_ratio_list'] );
 
 		// ヘッダー
 		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );

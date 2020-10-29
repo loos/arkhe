@@ -15,7 +15,9 @@ $is_modified = ( $date < $modified );
 
 ?>
 <header class="p-entry__head">
-	<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
+	<?php if ( ! Arkhe::is_show_ttltop() ) : ?>
+		<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
+	<?php endif; ?>
 	<div class="c-postMetas">
 		<div class="c-postTimes">
 			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
@@ -52,7 +54,8 @@ $is_modified = ( $date < $modified );
 	</div>
 	<?php
 		// アイキャッチ画像
-		if ( Arkhe::get_setting( 'show_entry_thumb' ) ) :
+		$show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show_entry_thumb' ), $the_id );
+		if ( $show_thumb ) :
 			Arkhe::get_parts(
 				'singular/thumbnail',
 				array(

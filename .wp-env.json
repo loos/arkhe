@@ -11,8 +11,8 @@
     "plugins": [
         "../arkhe-ex-template",
         "../arkhe-toolkit",
-        "../arkhe-blocks",
-        "../arkhe-woocommerce"
+        "../arkhe-blocks-pro",
+        "../arkhe-wookit"
     ],
     "env": {
         "development": {

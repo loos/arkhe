@@ -9,8 +9,17 @@
 $page_id = get_queried_object_id();  // get_the_ID() は is_home() でアウト。
 
 // 背景の画像
-$bgimg_full   = get_the_post_thumbnail_url( $page_id, 'full' );
-$bgimg_medium = $bgimg_full ? get_the_post_thumbnail_url( $page_id, 'medium' ) : '';
+// $bgimg_full   = get_the_post_thumbnail_url( $page_id, 'full' );
+// $bgimg_medium = $bgimg_full ? get_the_post_thumbnail_url( $page_id, 'medium' ) : '';
+$bgimg_full   = '';
+$bgimg_medium = '';
+
+$bgimg_id = apply_filters( 'arkhe_ttlbg_img_id', get_post_thumbnail_id( $page_id ), $page_id );
+if ( $bgimg_id ) {
+	$bgimg_full   = wp_get_attachment_image_url( $bgimg_id, 'full' ) ?: '';
+	$bgimg_medium = wp_get_attachment_image_url( $bgimg_id, 'medium' ) ?: '';
+}
+
 
 // コンテンツヘッダーに追加するクラス。（画像がなければフィルターもなし）
 $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filter' ) : '-filter-none -noimg';
