@@ -62,6 +62,12 @@ class Data {
 
 
 	/**
+	 * 一時的に抜粋分を変更するために変数化
+	 */
+	public static $excerpt_length = null;
+
+
+	/**
 	 * init()
 	 */
 	public static function init() {

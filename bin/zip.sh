@@ -18,4 +18,4 @@ zip -r arkhe.zip arkhe -x "*/.*" "*/__*" "*bin*" "*node_modules*" "*vendor*" "*p
 # zipから不要なファイルを削除#設定ファイル系削除
 zip --delete arkhe.zip  "arkhe/.*" "arkhe/README.md" "arkhe/phpcs.xml"
 
-mv arkhe.zip _version/arkhe-${1}.zip
+mv arkhe.zip _version/arkhe-${1}.ziptopArea__title

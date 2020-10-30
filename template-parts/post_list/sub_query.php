@@ -22,6 +22,11 @@ $file_name = ( 'simple' === $list_type ) ? 'simple' : 'normal';
 // ループのカウント用変数
 $loop_count = 0;
 
+// 抜粋分の文字数の指定があれば
+if ( isset( $list_args['excerpt_length'] ) ) {
+	\Arkhe::$excerpt_length = $list_args['excerpt_length'];
+}
+
 if ( $the_query->have_posts() ) : ?>
 	<ul class="p-postList -type-<?php echo esc_attr( $list_type ); ?>">
 		<?php
@@ -39,4 +44,6 @@ if ( $the_query->have_posts() ) : ?>
 <?php
 endif;
 
+// データリセット
 wp_reset_postdata();
+\Arkhe::$excerpt_length = ARKHE_EXCERPT_LENGTH;

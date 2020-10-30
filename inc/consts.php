@@ -18,6 +18,7 @@ function define_theme_const() {
 
 	// 抜粋文の文字数
 	define( 'ARKHE_EXCERPT_LENGTH', (int) $setting['excerpt_length'] );
+	\Arkhe::$excerpt_length = ARKHE_EXCERPT_LENGTH;
 
 	// プレースホルダー画像
 	define( 'ARKHE_PLACEHOLDER', ARKHE_THEME_URI . '/assets/img/placeholder.gif' );

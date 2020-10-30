@@ -16,8 +16,8 @@ add_filter( 'excerpt_mblength', '\Arkhe_Theme\hook_excerpt_length' );
 function hook_excerpt_length( $length ) {
 	if ( is_admin() ) return $length;
 
-	if ( defined( 'ARKHE_EXCERPT_LENGTH' ) ) {
-		return ARKHE_EXCERPT_LENGTH;
+	if ( null !== \Arkhe::$excerpt_length ) {
+		return \Arkhe::$excerpt_length;
 	}
 	return $length;
 }

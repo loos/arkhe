@@ -5,7 +5,7 @@
  * @param $args
  *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
-$list_type = isset( $args['type'] ) ? $args['type'] : ARKHE_LIST_TYPE;
+$list_type = isset( $args['list_type'] ) ? $args['list_type'] : ARKHE_LIST_TYPE;
 
 // 投稿情報
 $post_data = get_post();
@@ -16,6 +16,7 @@ $args['post_id']   = $the_id;
 $args['author_id'] = $post_data->post_author;
 $args['date']      = new DateTime( $post_data->post_date );
 $args['modified']  = new DateTime( $post_data->post_modified );
+
 ?>
 <li class="p-postList__item">
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
@@ -30,7 +31,7 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 		?>
 		<div class="p-postList__body">
 			<h2 class="p-postList__title"><?php the_title(); ?></h2>
-			<?php if ( 0 !== ARKHE_EXCERPT_LENGTH ) : ?>
+			<?php if ( \Arkhe::$excerpt_length ) : ?>
 				<div class="p-postList__excerpt u-thin">
 					<?php the_excerpt(); ?>
 				</div>
