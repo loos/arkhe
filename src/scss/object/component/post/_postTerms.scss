@@ -25,6 +25,8 @@
     .c-postTerms__item {
 
         &::before {
+            position: relative;
+            top: 1px;
             margin-right: .25rem;
 
             @extend %arkheIcon;
