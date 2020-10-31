@@ -20,5 +20,19 @@
     .u-only-sp {
         display: block !important;
     }
+
+    @include pc {
+
+        .u-only-sp {
+            opacity: .5;
+        }
+    }
+
+    @include sp {
+
+        .u-only-pc {
+            opacity: .5;
+        }
+    }
 }
 

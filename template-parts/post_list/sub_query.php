@@ -27,12 +27,22 @@ if ( isset( $list_args['excerpt_length'] ) ) {
 	\Arkhe::$excerpt_length = $list_args['excerpt_length'];
 }
 
+$list_class = '';
+if ( isset( $list_args['list_count_pc'] ) && isset( $list_args['list_count_sp'] ) ) {
+	$min        = min( $list_args['list_count_pc'], $list_args['list_count_sp'] );
+	$list_class = $min === $list_args['list_count_pc'] ? 'u-only-sp' : 'u-only-pc';
+}
+
 if ( $the_query->have_posts() ) : ?>
 	<ul class="p-postList -type-<?php echo esc_attr( $list_type ); ?>">
 		<?php
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-			$list_args['count'] = $loop_count++;
+			$loop_count++;
+			$list_args['count'] = $loop_count;
+			if ( $min < $loop_count ) {
+				$list_args['list_class'] = $list_class;
+			}
 			Arkhe::get_parts( 'post_list/style/' . $file_name, $list_args );
 		endwhile;
 	?>
