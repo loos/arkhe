@@ -1,23 +1,16 @@
 <?php
 /**
- * 投稿一覧リストの出力テンプレート
- *
- * @param $args
- *   $args['count'] : 現在のループカウント数 (フック用に用意)
+ * RSSフィードの出力テンプレート
  */
 $list_args = isset( $args['list_args'] ) ? $args['list_args'] : null;
 $feed_data = isset( $args['feed_data'] ) ? $args['feed_data'] : null;
-
-// echo '<pre style="margin-left: 100px;">';
-// var_dump( $list_args );
-// var_dump( $feed_data );
-// echo '</pre>';
 
 // リスト情報
 $list_type   = isset( $list_args['list_type'] ) ? $list_args['list_type'] : ARKHE_LIST_TYPE;
 $show_site   = isset( $list_args['show_site'] ) ? $list_args['show_site'] : true;
 $show_date   = isset( $list_args['show_date'] ) ? $list_args['show_date'] : true;
 $show_author = isset( $list_args['show_author'] ) ? $list_args['show_author'] : false;
+$show_thumb  = isset( $list_args['show_thumb'] ) ? $list_args['show_thumb'] : true;
 $site_title  = isset( $list_args['site_title'] ) ? $list_args['site_title'] : '';
 $favicon     = isset( $list_args['favicon'] ) ? $list_args['favicon'] : '';
 $h_tag       = isset( $list_args['h_tag'] ) ? $list_args['h_tag'] : 'h2';
@@ -46,7 +39,7 @@ $meta_args = array(
 ?>
 <li class="<?php echo esc_attr( $list_class ); ?>">
 	<a href="<?php echo esc_url( $feed_link ); ?>" class="p-postList__link">
-		<?php if ( $feed_thumb ) : ?>
+		<?php if ( $show_thumb && $feed_thumb ) : ?>
 			<div class="p-postList__thumb c-postThumb">
 				<figure class="c-postThumb__figure">
 					<img class="c-postThumb__img" src="<?php echo esc_url( $feed_thumb ); ?>" alt="">
