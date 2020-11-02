@@ -1,7 +1,8 @@
 <?php
 /**
- * 投稿一覧リストの出力テンプレート（サブループ用）
- *   $args['list_args'] : リストの表示に関する設定値（メインループでは 'type' しか渡されてこない）
+ * RSSリストの出力テンプレート
+ *   $args['rss_items'] : 各記事の情報
+ *   $args['list_args'] : リストの表示に関する設定値
  */
 $rss_items = isset( $args['rss_items'] ) ? $args['rss_items'] : array();
 $list_args = isset( $args['list_args'] ) ? $args['list_args'] : array();
@@ -16,11 +17,6 @@ $file_name = ( 'simple' === $list_type ) ? 'simple' : 'normal';
 
 // ループのカウント用変数
 $loop_count = 0;
-
-// 抜粋分の文字数の指定があれば
-// if ( isset( $list_args['excerpt_length'] ) ) {
-// 	\Arkhe::$excerpt_length = $list_args['excerpt_length'];
-// }
 
 $list_count_pc = $list_args['list_count_pc'];
 $list_count_sp = $list_args['list_count_sp'];
@@ -50,8 +46,3 @@ $list_class = $min === $list_count_pc ? 'u-only-sp' : 'u-only-pc';
 	}
 ?>
 </ul>
-<?php
-
-// データリセット
-// wp_reset_postdata();
-// \Arkhe::$excerpt_length = ARKHE_EXCERPT_LENGTH;

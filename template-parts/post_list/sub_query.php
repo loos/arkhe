@@ -2,7 +2,7 @@
 /**
  * 投稿一覧リストの出力テンプレート（サブループ用）
  *   $args['query_args'] : WP_Queryに渡す引数
- *   $args['list_args'] : リストの表示に関する設定値（メインループでは 'type' しか渡されてこない）
+ *   $args['list_args'] : リストの表示に関する設定値
  */
 $query_args = isset( $args['query_args'] ) ? $args['query_args'] : null;
 $list_args  = isset( $args['list_args'] ) ? $args['list_args'] : array();
