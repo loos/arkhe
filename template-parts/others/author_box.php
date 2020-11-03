@@ -34,7 +34,7 @@ $the_user_link_url = $author_data->user_url;
 			<div class="p-authorBox__links">
 				<?php if ( $the_user_link_url ) : ?>
 					<div class="p-authorBox__weblink">
-						<i class="arkhe-icon-link" role="presentation"></i> : 
+						<i class="arkhe-icon-link" role="img" aria-hidden="true"></i> : 
 						<a href="<?php echo esc_url( $the_user_link_url ); ?>" target="_blank" rel="noopener" class=""><?php echo esc_html( $the_user_link_url ); ?></a>
 					</div>
 				<?php endif; ?>

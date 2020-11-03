@@ -16,6 +16,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.arkhe-icon-person::before {
+    content: "\e910";
+}
+
 .arkhe-icon-check::before {
     content: "\e900";
 }

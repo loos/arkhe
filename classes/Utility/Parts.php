@@ -96,37 +96,15 @@ trait Parts {
 
 		if ( $is_time ) {
 			echo '<time class="' . esc_attr( $time_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
-				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '"></i>' .
+				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '" role="img" aria-hidden="true"></i>' .
 				esc_html( $date->format( 'Y.m.d' ) ) .
 			'</time>';
 		} else {
 			echo '<span class="' . esc_attr( $time_class ) . '">' .
-				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '"></i>' .
+				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '" role="img" aria-hidden="true"></i>' .
 				esc_html( $date->format( 'Y.m.d' ) ) .
 			'</span>';
 		}
-	}
-
-
-	/**
-	 * 日付を出力する
-	 */
-	public static function svg( $name = '', $class = '' ) {
-
-		if ( '' === $name ) return;
-
-		switch ( $name ) {
-			case 'person':
-				$view_box = '0 0 32 32';
-				$path     = '<path d="M16 17.6c4.8 0 14.4 2.4 14.4 7.44v4.56c0 0.48-0.32 0.8-0.8 0.8h-27.2c-0.48 0-0.8-0.32-0.8-0.8v-4.56c0-5.040 9.6-7.44 14.4-7.44z"></path>' .
-					'<path d="M23.12 8.72c0 3.932-3.188 7.12-7.12 7.12s-7.12-3.188-7.12-7.12c0-3.932 3.188-7.12 7.12-7.12s7.12 3.188 7.12 7.12z"></path>';
-				break;
-			default:
-				break;
-		}
-
-		return '<svg class="arkhe-svg ' . $class . '" viewBox="' . $view_box . '">' . $path . '</svg>';
-
 	}
 
 }

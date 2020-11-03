@@ -10,7 +10,7 @@ $favicon     = $args['favicon'];
 $feed_date   = $args['feed_date'];
 $feed_author = $args['feed_author'];
 ?>
-<div class="p-postList__meta c-postMetas">
+<div class="p-postList__meta c-postMetas u-flex--aicw">
 	<?php if ( $show_site ) : ?>
 		<div class="p-postList__site c-rssSite u-color-thin u-flex--aic">
 			<?php if ( $favicon ) : ?>
@@ -22,16 +22,16 @@ $feed_author = $args['feed_author'];
 	<?php if ( $show_date ) : ?>
 		<div class="p-postList__times c-postTimes u-color-thin">
 			<?php if ( $show_date && $feed_date ) : ?>
-				<span class="c-postTimes__item -posted"><?php echo esc_html( $feed_date ); ?></span>
+				<span class="c-postTimes__item -posted u-flex--aic">
+					<i class="c-postMetas__icon arkhe-icon-posted" role="img" aria-hidden="true"></i>
+					<?php echo esc_html( $feed_date ); ?>
+				</span>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
 	<?php if ( $show_author && $feed_author ) : ?>
 		<div class="p-postList__author c-rssAuthor u-color-thin u-flex--aic">
-			<?php
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo \Arkhe::svg( 'person', 'c-postMetas__icon' );
-			?>
+			<i class="c-postMetas__icon arkhe-icon-person" role="img" aria-hidden="true"></i>
 			<span class="c-rssAuthor__name"><?php echo esc_html( $feed_author ); ?></span>
 		</div>
 	<?php endif; ?>

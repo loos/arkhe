@@ -38,7 +38,7 @@
 			endif;
 			?>
 			<button type="button" class="p-drawer__close u-flex--aic" data-onclick="toggleMenu">
-				<i class="arkhe-icon-close"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
+				<i class="arkhe-icon-close" role="img" aria-hidden="true"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
 			</button>
 		</div>
 	</div>

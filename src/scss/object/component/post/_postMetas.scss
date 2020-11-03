@@ -8,15 +8,16 @@
 }
 
 .c-postMetas__icon {
+    display: block;
     margin-right: .25rem;
 
-    &.arkhe-svg {
-        width: 1em;
-        height: 1em;
-        fill: currentColor;
-    }
+    // &.arkhe-svg {
+    //     width: 1em;
+    //     height: 1em;
+    //     fill: currentColor;
+    // }
 
-    path {
-        fill: inherit;
-    }
+    // path {
+    //     fill: inherit;
+    // }
 }

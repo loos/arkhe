@@ -341,7 +341,7 @@ echo '<div id="breadcrumb" class="p-breadcrumb">' .
 	'<ol class="p-breadcrumb__list l-container">' .
 		'<li class="p-breadcrumb__item">' .
 			'<a href="' . esc_url( home_url( '/' ) ) . '" class="p-breadcrumb__text">' .
-				'<i class="arkhe-icon-home"></i>' .
+				'<i class="arkhe-icon-home" role="img" aria-hidden="true"></i>' .
 				'<span>' . esc_html( $setting['breadcrumbs_home_text'] ) . '</span>' .
 			'</a>' .
 		'</li>' .

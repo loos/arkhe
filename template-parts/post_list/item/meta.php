@@ -57,7 +57,7 @@ $author_data = get_userdata( $author_id );
 	<?php endif; ?>
 	<?php if ( $show_cat && $cat_data ) : ?>
 		<div class="p-postList__cat u-color-thin u-flex--aic" data-cat-id="<?php echo esc_attr( $cat_data->term_id ); ?>">
-		<i class="c-postMetas__icon arkhe-icon-folder"></i>
+		<i class="c-postMetas__icon arkhe-icon-folder" role="img" aria-hidden="true"></i>
 		<?php echo esc_html( $cat_data->name ); ?></div>
 	<?php endif; ?>
 	<?php if ( $show_author && $author_data ) : ?>
