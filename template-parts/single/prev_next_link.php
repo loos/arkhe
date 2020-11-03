@@ -15,7 +15,7 @@ $is_same_term = Arkhe::get_setting( 'pn_link_is_same_term' );
 			$prev_id    = $prev_post->ID;
 			$prev_title = esc_attr( $prev_post->post_title );
 		?>
-			<a href="<?php echo esc_url( get_permalink( $prev_id ) ); ?>" rel="prev" class="c-pnNav__link">
+			<a href="<?php echo esc_url( get_permalink( $prev_id ) ); ?>" rel="prev" class="c-pnNav__link u-flex--aic">
 				<span class="c-pnNav__title"><?php echo esc_html( $prev_title ); ?></span>
 			</a>
 		<?php endif; ?>
@@ -28,7 +28,7 @@ $is_same_term = Arkhe::get_setting( 'pn_link_is_same_term' );
 		$next_id    = $next_post->ID;
 		$next_title = esc_attr( $next_post->post_title );
 	?>
-		<a href="<?php echo esc_url( get_permalink( $next_id ) ); ?>" rel="next" class="c-pnNav__link">
+		<a href="<?php echo esc_url( get_permalink( $next_id ) ); ?>" rel="next" class="c-pnNav__link u-flex--aic">
 			<span class="c-pnNav__title"><?php echo esc_html( $next_title ); ?></span>
 		</a>
 	<?php endif; ?>

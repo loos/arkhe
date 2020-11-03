@@ -41,26 +41,27 @@ $cat_data = empty( $cat_data ) ? null : $cat_data[0];
 $author_data = get_userdata( $author_id );
 
 ?>
-<div class="p-postList__meta c-postMetas">
+<div class="p-postList__meta c-postMetas u-flex--aicw">
 	<?php if ( $show_date || $show_modified ) : ?>
-		<div class="p-postList__times c-postTimes u-color-thin">
+		<div class="p-postList__times c-postTimes u-color-thin u-flex--aic">
 			<?php
 				if ( $show_date && $date ) :
-				Arkhe::the_date_time( $date, 'posted' );
+					Arkhe::the_date_time( $date, 'posted' );
 				endif;
 
 				if ( $show_modified && $modified ) :
-				Arkhe::the_date_time( $modified, 'modified' );
+					Arkhe::the_date_time( $modified, 'modified' );
 				endif;
 			?>
 		</div>
 	<?php endif; ?>
 	<?php if ( $show_cat && $cat_data ) : ?>
-
-		<div class="p-postList__cat u-color-thin" data-cat-id="<?php echo esc_attr( $cat_data->term_id ); ?>"><?php echo esc_html( $cat_data->name ); ?></div>
+		<div class="p-postList__cat u-color-thin u-flex--aic" data-cat-id="<?php echo esc_attr( $cat_data->term_id ); ?>">
+		<i class="c-postMetas__icon arkhe-icon-folder"></i>
+		<?php echo esc_html( $cat_data->name ); ?></div>
 	<?php endif; ?>
 	<?php if ( $show_author && $author_data ) : ?>
-		<div class="p-postList__author c-postAuthor">
+		<div class="p-postList__author c-postAuthor u-flex--aic">
 			<figure class="c-postAuthor__figure">
 				<?php echo get_avatar( $author_id, 100, '', '' ); ?>
 			</figure>

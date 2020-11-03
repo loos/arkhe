@@ -12,7 +12,7 @@ $feed_author = $args['feed_author'];
 ?>
 <div class="p-postList__meta c-postMetas">
 	<?php if ( $show_site ) : ?>
-		<div class="p-postList__site c-rssSite u-color-thin">
+		<div class="p-postList__site c-rssSite u-color-thin u-flex--aic">
 			<?php if ( $favicon ) : ?>
 				<img class="c-rssSite__favi" width="16" height="16" src="<?php echo esc_url( $favicon ); ?>" alt="">
 			<?php endif; ?>
@@ -27,7 +27,7 @@ $feed_author = $args['feed_author'];
 		</div>
 	<?php endif; ?>
 	<?php if ( $show_author && $feed_author ) : ?>
-		<div class="p-postList__author c-rssAuthor u-color-thin">
+		<div class="p-postList__author c-rssAuthor u-color-thin u-flex--aic">
 			<?php
 				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				echo \Arkhe::svg( 'person', 'c-postMetas__icon' );

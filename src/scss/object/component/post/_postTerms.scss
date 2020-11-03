@@ -1,13 +1,6 @@
-.c-postTerms {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
+// .c-postTerms {}
 
 .c-postTerms__item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     margin-right: .25rem;
 }
 
@@ -22,26 +15,7 @@
 .p-entry__head {
 
 
-    .c-postTerms__item {
-
-        &::before {
-            position: relative;
-            top: 1px;
-            margin-right: .25rem;
-
-            @extend %arkheIcon;
-        }
-
-        &.-category::before {
-
-            @extend .arkhe-icon-folder::before;
-        }
-
-        &.-tag::before {
-
-            @extend .arkhe-icon-tag::before;
-        }
-    }
+    // .c-postTerms__item {}
 
     .c-postTerms__link:not(:hover) {
         text-decoration: none;
@@ -53,7 +27,6 @@
             content: ",";
         }
     }
-
 
 }
 

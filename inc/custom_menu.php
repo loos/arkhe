@@ -54,7 +54,7 @@ function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
 		if ( $has_child ) {
 			$item_output = str_replace(
 				'</a>',
-				'<button class="c-submenuToggleBtn" role="button" data-onclick="toggleSubmenu"></button></a>',
+				'<button class="c-submenuToggleBtn u-flex--c" role="button" data-onclick="toggleSubmenu"></button></a>',
 				$item_output
 			);
 		}
@@ -62,7 +62,7 @@ function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
 		if ( $has_child ) {
 			$item_output = str_replace(
 				'</a>',
-				'<button class="c-submenuToggleBtn" role="button" data-onclick="toggleSubmenu"></button></a>',
+				'<button class="c-submenuToggleBtn u-flex--c" role="button" data-onclick="toggleSubmenu"></button></a>',
 				$item_output
 			);
 		}

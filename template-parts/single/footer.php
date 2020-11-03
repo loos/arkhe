@@ -27,7 +27,7 @@ do_action( 'arkhe_show_share_btn_bottom' );
 ?>
 <footer class="p-entry__foot">
 	<?php if ( $show_foot_terms ) : ?>
-		<div class="c-postMetas">
+		<div class="c-postMetas u-flex--aicw">
 			<?php
 				Arkhe::get_parts(
 					'single/term_list',
@@ -35,6 +35,7 @@ do_action( 'arkhe_show_share_btn_bottom' );
 						'post_id'  => $the_id,
 						'show_cat' => true,
 						'show_tag' => true,
+						'is_head'  => false,
 					)
 				);
 			?>

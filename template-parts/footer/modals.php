@@ -8,7 +8,7 @@
 	<div class="c-overlay" data-onclick="toggleSearch"></div>
 	<div class="p-searchModal__inner">
 		<?php echo get_search_form(); ?>
-		<button type="button" class="p-searchModal__close" data-onclick="toggleSearch">
+		<button type="button" class="p-searchModal__close u-flex--aic" data-onclick="toggleSearch">
 			<i class="arkhe-icon-close"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
 		</button>
 	</div>

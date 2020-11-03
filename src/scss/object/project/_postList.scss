@@ -259,10 +259,6 @@
         font-size: 11px;
     }
 
-    ::before {
-        margin-right: .25em;
-    }
-
     .-type-simple & {
         margin: 0 0 .25rem;
     }
@@ -282,13 +278,6 @@
 .p-postList__cat {
     margin-right: .5rem;
 
-    &::before {
-
-        margin-right: .25rem;
-
-        @extend %arkheIcon;
-        @extend .arkhe-icon-folder::before;
-    }
 }
 
 // .p-postList__times + .p-postList__cat {

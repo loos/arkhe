@@ -32,7 +32,7 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 							'container'       => false,
 							'fallback_cb'     => '',
 							'theme_location'  => 'footer_menu',
-							'items_wrap'      => '<ul class="l-footer__nav">%3$s</ul>',
+							'items_wrap'      => '<ul class="l-footer__nav u-flex--c">%3$s</ul>',
 							'link_before'     => '',
 							'link_after'      => '',
 						)

@@ -1,33 +1,7 @@
 
-.c-postTimes {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    // .-posted + .-modified {
-    //     margin-left: .5em;
-    // }
-}
+// .c-postTimes {
+// }
 
 .c-postTimes__item {
     margin-right: .5rem;
-
-    &::before {
-        position: relative;
-        top: 1px;
-        margin-right: .25rem;
-
-        @extend %arkheIcon;
-    }
-
-    &.-posted::before {
-
-        @extend .arkhe-icon-posted::before;
-    }
-
-    &.-modified::before {
-
-        @extend .arkhe-icon-modified::before;
-    }
-
 }

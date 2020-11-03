@@ -6,7 +6,7 @@
 $label = isset( $args['label'] ) ? $args['label'] : '';
 ?>
 <div class="l-header__drawerBtn">
-	<button class="c-iconBtn -menuBtn" data-onclick="toggleMenu" aria-label="<?php esc_attr_e( 'Menu button', 'arkhe' ); ?>">
+	<button class="c-iconBtn -menuBtn u-flex--c" data-onclick="toggleMenu" aria-label="<?php esc_attr_e( 'Menu button', 'arkhe' ); ?>">
 		<div class="c-iconBtn__icon">
 			<i class='__icon -open arkhe-icon-menu'></i>
 			<i class="__icon -close arkhe-icon-close"></i>

@@ -56,23 +56,27 @@ trait Parts {
 	/**
 	 * タームリストを出力する
 	 */
-	public static function get_the_term_links( $post_id = '', $tax = '' ) {
+	public static function get_the_term_links( $post_id = '', $tax = '', $is_head = true ) {
 
 		if ( 'cat' === $tax ) {
 			$terms = get_the_category( $post_id );
+			$icon  = 'arkhe-icon-folder';
 		} elseif ( 'tag' === $tax ) {
 			$terms = get_the_tags( $post_id );
+			$icon  = 'arkhe-icon-tag';
 		} else {
 			$terms = get_the_terms( $post_id, $tax );
+			$icon  = 'arkhe-icon-' . $tax;
 		}
 
 		if ( empty( $terms ) ) return '';
 
-		$thelist = '';
+		// is_head なら リスト全体の前にアイコンを一つ
+		$thelist = $is_head ? '<i class="c-postMetas__icon ' . esc_attr( $icon ) . '"></i>' : '';
+
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
-			$thelist  .= '<a class="c-postTerms__link" href="' . esc_url( $term_link ) . '"' .
-				' data-' . sanitize_key( $tax ) . '-id="' . esc_attr( $term->term_id ) . '">' .
+			$thelist  .= '<a class="c-postTerms__link" href="' . esc_url( $term_link ) . '" data-' . sanitize_key( $tax ) . '-id="' . esc_attr( $term->term_id ) . '">' .
 				esc_html( $term->name ) .
 			'</a>';
 		}
@@ -88,12 +92,16 @@ trait Parts {
 
 		if ( null === $date ) return;
 
+		$time_class = 'c-postTimes__item -' . $type . ' u-flex--aic';
+
 		if ( $is_time ) {
-			echo '<time class="c-postTimes__item -' . esc_attr( $type ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
+			echo '<time class="' . esc_attr( $time_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
+				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '"></i>' .
 				esc_html( $date->format( 'Y.m.d' ) ) .
 			'</time>';
 		} else {
-			echo '<span class="c-postTimes__item -' . esc_attr( $type ) . '">' .
+			echo '<span class="' . esc_attr( $time_class ) . '">' .
+				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '"></i>' .
 				esc_html( $date->format( 'Y.m.d' ) ) .
 			'</span>';
 		}

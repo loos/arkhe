@@ -341,7 +341,8 @@ echo '<div id="breadcrumb" class="p-breadcrumb">' .
 	'<ol class="p-breadcrumb__list l-container">' .
 		'<li class="p-breadcrumb__item">' .
 			'<a href="' . esc_url( home_url( '/' ) ) . '" class="p-breadcrumb__text">' .
-				'<span class="arkhe-icon-home"> ' . esc_html( $setting['breadcrumbs_home_text'] ) . '</span>' .
+				'<i class="arkhe-icon-home"></i>' .
+				'<span>' . esc_html( $setting['breadcrumbs_home_text'] ) . '</span>' .
 			'</a>' .
 		'</li>' .
 		wp_kses_post( $list_html ) .

@@ -18,8 +18,8 @@ $is_modified = ( $date < $modified );
 	<?php if ( ! Arkhe::is_show_ttltop() ) : ?>
 		<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
 	<?php endif; ?>
-	<div class="c-postMetas">
-		<div class="c-postTimes">
+	<div class="c-postMetas u-flex--aicw">
+		<div class="c-postTimes u-flex--aicw">
 			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
 			<?php
 				if ( $is_modified ) :
@@ -35,6 +35,7 @@ $is_modified = ( $date < $modified );
 					'post_id'  => $the_id,
 					'show_cat' => $setting['show_entry_cat'],
 					'show_tag' => $setting['show_entry_tag'],
+					'is_head'  => true,
 				)
 			);
 
@@ -44,7 +45,7 @@ $is_modified = ( $date < $modified );
 				$author_data = get_userdata( $author_id );
 				$author_url  = get_author_posts_url( $author_id );
 			?>
-				<a href="<?php echo esc_url( $author_url ); ?>" class="c-postAuthor">
+				<a href="<?php echo esc_url( $author_url ); ?>" class="c-postAuthor u-flex--aic">
 					<figure class="c-postAuthor__figure">
 						<?php echo get_avatar( $author_id, 100, '', '' ); ?>
 					</figure>
