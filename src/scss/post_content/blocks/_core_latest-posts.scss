@@ -1,43 +1,45 @@
 .wp-block-latest-posts {
+    // margin: 0;
+    padding: 0;
+
+    & > li::after {
+        display: block;
+        clear: both;
+        height: 0;
+        content: "";
+    }
+
+
     // リスト型
     &:not(.is-grid) {
-        border-top: solid 1px #dcdcdc;
+        border-top: solid 1px var(--ark-color_border);
 
         li {
-            // display: flex;
-            // flex-wrap: wrap;
             padding: 1em .25em;
-            border-bottom: solid 1px #dcdcdc;
+            border-bottom: solid 1px var(--ark-color_border);
         }
 
-        // .wp-block-latest-posts__featured-image {
-        //     width: 120px;
-        //     margin-right: 24px;
-        // }
     }
+
+    // グリッド型
+    // &.is-grid{}
 
 
     // タイトル
-    a{
-
-    }
-    // 日付表示
-    &.has-dates{
-
-    }
+    // a{}
 }
-
-.wp-block-latest-posts__list{}
-
-
-// 日付
-// .wp-block-latest-posts__post-date{}
 
 // サムネイル
 .wp-block-latest-posts__featured-image {
 
-    .wp-post-image{}
-}
+    // エディター側にはクラスついていない
+    & > img {
+        display: block;
+        width: 100%;
+    }
 
-// 抜粋文
-// .wp-block-latest-posts__post-excerpt{}
+    &.alignleft,
+    &.alignright {
+        max-width: 40%;
+    }
+}
