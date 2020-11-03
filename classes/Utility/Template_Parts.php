@@ -18,7 +18,7 @@ trait Template_Parts {
 		// ファイルまでのパスを取得
 		$include_path = self::get_include_parts_path( $path );
 
-		// $include_path を任意のパスに書き換え可能に。
+		// $include_path を任意のパスに上書き可能なフック
 		$ex_path_filter = 'arkhe_ex_path_' . $path_key;
 		if ( has_filter( $ex_path_filter ) ) {
 			$include_path = apply_filters( $ex_path_filter, $include_path );
@@ -51,9 +51,9 @@ trait Template_Parts {
 		$include_path = ARKHE_CHILD_PATH . '/template-parts/' . $path . '.php';
 		if ( file_exists( $include_path ) ) return $include_path;
 
-		// 次に、プラグインのパスが登録されていればそちらを探す -> memo: 要検討
-		if ( defined( 'ARKHE_EX_PARTS_PATH' ) ) {
-			$include_path = ARKHE_EX_PARTS_PATH . '/template-parts/' . $path . '.php';
+		// 次に、独自のパスが設定されていればそちらを探す
+		if ( '' !== \Arkhe::$ex_parts_path ) {
+			$include_path = \Arkhe::$ex_parts_path . '/template-parts/' . $path . '.php';
 			if ( file_exists( $include_path ) ) return $include_path;
 		}
 
@@ -61,8 +61,7 @@ trait Template_Parts {
 		$include_path = ARKHE_THEME_PATH . '/template-parts/' . $path . '.php';
 		if ( file_exists( $include_path ) ) return $include_path;
 
-		// 見つからなかった時
-		return '';
+		return ''; // どこにもファイルが見つからなかった時
 	}
 
 
