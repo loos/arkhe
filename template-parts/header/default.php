@@ -16,7 +16,7 @@ $attr_data       = array(
 	<div class="l-header__body l-container">
 		<?php \Arkhe::get_parts( 'header/drawer_btn' ); ?>
 		<div class="l-header__left">
-			<?php do_action( 'arkhe_haader_left_content' ); ?>
+			<?php do_action( 'arkhe_header_left_content' ); ?>
 		</div>
 		<?php \Arkhe::get_parts( 'header/logo' ); ?>
 		<div class="l-header__right">
@@ -24,7 +24,7 @@ $attr_data       = array(
 				if ( ! $move_gnav_under ) :
 					\Arkhe::get_parts( 'header/gnav' );
 				endif;
-				do_action( 'arkhe_haader_left_content' );
+				do_action( 'arkhe_header_right_content' );
 			?>
 		</div>
 		<?php \Arkhe::get_parts( 'header/search_btn' ); ?>
