@@ -68,12 +68,6 @@ class Style {
 		// カラー用CSS変数
 		self::css_common( $setting );
 
-		// フォントファミリー
-		self::css_font();
-
-		// マージン量
-		self::css_margin();
-
 		// 投稿リスト
 		self::css_thumb_ratio( $setting['thumb_ratio_card'], $setting['thumb_ratio_list'] );
 

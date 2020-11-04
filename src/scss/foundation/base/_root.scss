@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+:root {
+
+	// フォントファミリー
+	--ark-font_family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+	// フォントサイズ
+	--ark-font_size: 16px;
+	--ark-font_size_sp: 3.8vw;
+
+	// マージン量
+	--ark-mt: 2rem;
+	--ark-mt_s: 1rem;
+	--ark-mt_h: 2.25em; // 見出しタグ用
+
+	// カラー変数 (設定には紐づいていないもの)
+	--ark-color_border: rgba(200,200,200,.5);
+	--ark-color_gray: rgba(200,200,200,.15);
+
+	//ヘッダー
+	--ark-header_height: 0; //実際の数値は JSでセット
+	// --ark-header_body_height: 40px; //実際の数値は JSでセット
+
+	// ドロワーメニューのカラー変数
+	// --ark-color_drawer_bg: 
+
+	// ウィジェットなどのナビ・メニュー用変数
+	--ark-nav-padding: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
+	--ark-hover_gray: rgba(150, 150, 150, .05);
+
+
+	// 管理バーの高さ
+	--ark-adminbar_height: 32px;
+	@media screen and (max-width: 782px) {
+		--ark-adminbar_height: 46px;
+	}
+
+}

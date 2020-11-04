@@ -11,31 +11,8 @@ trait CSS {
 		self::add_root_css( '--ark-color_text', $setting['color_text'] );
 		self::add_root_css( '--ark-color_link', $setting['color_link'] );
 		self::add_root_css( '--ark-color_bg', $setting['color_bg'] );
-		self::add_root_css( '--ark-color_border', 'rgba(200,200,200,.5)' );
-		self::add_root_css( '--ark-color_gray', 'rgba(200,200,200,.15)' );
-		// self::add_root_css( '--ark-color_sub', 'red' );
 	}
 
-
-	/**
-	 * フォント
-	 */
-	protected static function css_font() {
-		$ff = '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;';
-		self::add_root_css( '--ark-font_family', $ff );
-
-		self::add_root_css( '--ark-font_size', '16px' );
-		self::add_root_css( '--ark-font_size_sp', '3.8vw' );
-	}
-
-
-	/**
-	 * マージン量
-	 */
-	protected static function css_margin() {
-		self::add_root_css( '--ark-mt', '2rem' );
-		self::add_root_css( '--ark-mt_s', '1rem' );
-	}
 
 	/**
 	 * .alignwide の幅

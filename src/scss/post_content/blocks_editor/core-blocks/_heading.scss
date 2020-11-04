@@ -1,1 +1,34 @@
-// [data-type="core/heading"] {}
+.editor-styles-wrapper {
+
+    h1.wp-block {
+        font-size: 1.75rem;
+
+        @include tab {
+            font-size: 2rem;
+        }
+    }
+
+    h2.wp-block {
+        // z-index: 1;
+        font-size: 1.75rem;
+    }
+
+    h3.wp-block {
+        font-weight: bold;
+        font-size: 1.5rem;
+
+    }
+
+    h4.wp-block {
+        font-size: 1.25rem;
+    }
+
+    h5.wp-block {
+        font-size: 1.1rem;
+    }
+
+    h6.wp-block {
+        font-size: 1rem;
+    }
+
+}

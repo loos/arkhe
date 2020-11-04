@@ -10,6 +10,10 @@
     .block-editor-block-list__block {
         margin-top: var(--ark-mt, 2rem);
         margin-bottom: 0;
+
+        &[data-type="core/heading"] {
+            margin-top: var(--ark-mt_h, 2.25em);
+        }
     }
 
     // block-editor-block-list__layout is-root-container

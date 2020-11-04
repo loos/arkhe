@@ -12,8 +12,10 @@
 @import "icon";
 @import "foundation/icon/icomoon";
 
+// root 変数
+@import "foundation/base/root";
 
-// レイアウト(テンプレート用に読み込んでいる)
+// レイアウト系 (EXテンプレート用) -> ファイル分ける？
 @import "layout/article";
 @import "layout/container";
 @import "layout/header";
