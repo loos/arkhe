@@ -27,11 +27,8 @@ Source: https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE
 
 
 == Screenshots ==
-License: https://arkhe-theme.com/screenshots/
-https://arkhe-theme.com/wp-content/uploads/2020/08/P1020806_s.jpg
-https://arkhe-theme.com/wp-content/uploads/2020/08/photo-1.jpg
-https://arkhe-theme.com/wp-content/uploads/2020/08/photo-2.jpg
-https://arkhe-theme.com/wp-content/uploads/2020/08/photo-3.jpg
+License: https://stock.adobe.com/jp/license-terms#standardLicenses
+https://stock.adobe.com/jp/images/empty-long-light-corridor-modern-white-background-futuristic-sci-fi-triangle-tunnel-3d-rendering/274929177
 
 
 == Author ==
