@@ -55,7 +55,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 			do_action( 'arkhe_before_search_post_list' );
 
 			// 投稿一覧
-			Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
 			the_posts_pagination(

@@ -5,7 +5,7 @@
 $the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // ヘッダー部分
-Arkhe::get_parts( 'page/header', array( 'post_id' => $the_id ) );
+Arkhe::get_part( 'page/header', array( 'post_id' => $the_id ) );
 
 // コンテンツ前フック
 do_action( 'arkhe_before_page_content', $the_id );
@@ -17,7 +17,7 @@ do_action( 'arkhe_before_page_content', $the_id );
 <?php
 
 // 改ページナビゲーション
-Arkhe::get_parts( 'singular/pagination' );
+Arkhe::get_part( 'singular/pagination' );
 
 // コンテンツ後フック
 do_action( 'arkhe_after_page_content', $the_id );

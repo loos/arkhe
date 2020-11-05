@@ -16,13 +16,13 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 		<h1 class="p-archive__title c-pageTitle"><?php echo esc_html( $author_data->display_name ); ?></h1>
 		<?php
 			// 著者情報
-			Arkhe::get_parts( 'others/author_box', array( 'author_id' => $author_id ) );
+			Arkhe::get_part( 'others/author_box', array( 'author_id' => $author_id ) );
 
 			// 投稿リスト前フック
 			do_action( 'arkhe_before_author_post_list', $author_id );
 
 			// 投稿リスト
-			Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
 			the_posts_pagination(

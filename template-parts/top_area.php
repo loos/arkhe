@@ -30,6 +30,6 @@ $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filte
 		></div>
 	<?php endif; ?>
 	<div class="p-topArea__body l-container">
-		<?php Arkhe::get_parts( 'top_area/body', array( 'the_id' => $the_id ) ); ?>
+		<?php Arkhe::get_part( 'top_area/body', array( 'the_id' => $the_id ) ); ?>
 	</div>
 </div>

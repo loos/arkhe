@@ -24,7 +24,7 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 <li class="<?php echo esc_attr( $list_class ); ?>">
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
 		<?php
-			Arkhe::get_parts(
+			Arkhe::get_part(
 				'post_list/item/thumb',
 				array(
 					'post_id'   => $the_id,
@@ -43,7 +43,7 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 					<?php the_excerpt(); ?>
 				</div>
 			<?php endif; ?>
-			<?php Arkhe::get_parts( 'post_list/item/meta', $args ); ?>
+			<?php Arkhe::get_part( 'post_list/item/meta', $args ); ?>
 		</div>
 	</a>
 </li>

@@ -18,5 +18,5 @@ add_filter( 'arkhe_author_area_title', function() {
 			);
 		?>
 	</h2>
-	<?php Arkhe::get_parts( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
+	<?php Arkhe::get_part( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
 </section>

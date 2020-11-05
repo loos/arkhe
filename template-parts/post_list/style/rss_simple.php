@@ -38,7 +38,7 @@ $meta_args = array(
 <li class="<?php echo esc_attr( $list_class ); ?>">
 	<a href="<?php echo esc_url( $feed_link ); ?>" class="p-postList__link">
 		<div class="p-postList__body">
-			<?php Arkhe::get_parts( 'post_list/item/rss_meta', $meta_args ); ?>
+			<?php Arkhe::get_part( 'post_list/item/rss_meta', $meta_args ); ?>
 			<?php
 				echo '<' . esc_attr( $h_tag ) . ' class="p-postList__title">';
 				echo esc_html( $feed_title );

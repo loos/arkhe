@@ -43,7 +43,7 @@ if ( $the_query->have_posts() ) : ?>
 			if ( $min < $loop_count ) {
 				$list_args['list_class'] = $list_class;
 			}
-			Arkhe::get_parts( 'post_list/style/' . $file_name, $list_args );
+			Arkhe::get_part( 'post_list/style/' . $file_name, $list_args );
 		endwhile;
 	?>
 	</ul>

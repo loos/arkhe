@@ -16,7 +16,7 @@ $archive_data = Arkhe::get_archive_data();
 $term_description = $wp_obj->description;
 
 if ( ! Arkhe::is_show_ttltop() ) :
-	Arkhe::get_parts( 'archive/title', $archive_data );
+	Arkhe::get_part( 'archive/title', $archive_data );
 endif;
 if ( ! empty( $term_description ) ) :
 ?>
@@ -28,7 +28,7 @@ endif;
 do_action( 'arkhe_before_term_post_list', $term_id );
 
 // 投稿リスト
-Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 // ページャー
 the_posts_pagination(

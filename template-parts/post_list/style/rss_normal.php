@@ -53,7 +53,7 @@ $meta_args = array(
 				echo esc_html( $feed_title );
 				echo '</' . esc_attr( $h_tag ) . '>';
 			?>
-			<?php Arkhe::get_parts( 'post_list/item/rss_meta', $meta_args ); ?>
+			<?php Arkhe::get_part( 'post_list/item/rss_meta', $meta_args ); ?>
 		</div>
 	</a>
 </li>

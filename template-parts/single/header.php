@@ -29,7 +29,7 @@ $is_modified = ( $date < $modified );
 		</div>
 		<?php
 			// カテゴリー・タグ
-			Arkhe::get_parts(
+			Arkhe::get_part(
 				'single/term_list',
 				array(
 					'post_id'  => $the_id,
@@ -57,7 +57,7 @@ $is_modified = ( $date < $modified );
 		// アイキャッチ画像
 		$show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show_entry_thumb' ), $the_id );
 		if ( $show_thumb ) :
-			Arkhe::get_parts(
+			Arkhe::get_part(
 				'singular/thumbnail',
 				array(
 					'post_id'    => $the_id,

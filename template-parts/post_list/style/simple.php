@@ -20,7 +20,7 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 <li class="<?php echo esc_attr( $list_class ); ?>">
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
 		<div class="p-postList__body">
-			<?php Arkhe::get_parts( 'post_list/item/meta', $args ); ?>
+			<?php Arkhe::get_part( 'post_list/item/meta', $args ); ?>
 			<?php
 				echo '<' . esc_attr( $h_tag ) . ' class="p-postList__title">';
 				the_title();

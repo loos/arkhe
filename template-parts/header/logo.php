@@ -19,11 +19,11 @@ if ( $logo_size_sp ) $style .= '--ark-logo_size_sp:' . $logo_size_sp . 'px;';
 <div class="l-header__center"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
 	<?php if ( is_front_page() ) : ?>
 			<h1 class="l-header__logo">
-				<?php Arkhe::get_parts( 'header/logo_img' ); ?>
+				<?php Arkhe::get_part( 'header/logo_img' ); ?>
 			</h1>
 		<?php else : ?>
 			<div class="l-header__logo">
-				<?php Arkhe::get_parts( 'header/logo_img' ); ?>
+				<?php Arkhe::get_part( 'header/logo_img' ); ?>
 			</div>
 		<?php endif; ?>
 	<?php if ( $show_phrase ) : ?>

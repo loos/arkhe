@@ -39,7 +39,7 @@ $list_class = $min === $list_count_pc ? 'u-only-sp' : 'u-only-pc';
 
 		$list_args['count'] = $loop_count;
 
-		Arkhe::get_parts( 'post_list/style/rss_' . $file_name, array(
+		Arkhe::get_part( 'post_list/style/rss_' . $file_name, array(
 			'list_args' => $list_args,
 			'feed_data' => $feed_data,
 		) );

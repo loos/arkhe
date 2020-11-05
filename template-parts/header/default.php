@@ -14,27 +14,27 @@ $attr_data       = array(
 ?>
 <header id="header" class="l-header" <?php \Arkhe::header_attr( $attr_data ); ?>>
 	<div class="l-header__body l-container">
-		<?php \Arkhe::get_parts( 'header/drawer_btn' ); ?>
+		<?php \Arkhe::get_part( 'header/drawer_btn' ); ?>
 		<div class="l-header__left">
 			<?php do_action( 'arkhe_header_left_content' ); ?>
 		</div>
-		<?php \Arkhe::get_parts( 'header/logo' ); ?>
+		<?php \Arkhe::get_part( 'header/logo' ); ?>
 		<div class="l-header__right">
 			<?php
 				if ( ! $move_gnav_under ) :
-					\Arkhe::get_parts( 'header/gnav' );
+					\Arkhe::get_part( 'header/gnav' );
 				endif;
 				do_action( 'arkhe_header_right_content' );
 			?>
 		</div>
-		<?php \Arkhe::get_parts( 'header/search_btn' ); ?>
-		<?php \Arkhe::get_parts( 'header/drawer_menu' ); ?>
+		<?php \Arkhe::get_part( 'header/search_btn' ); ?>
+		<?php \Arkhe::get_part( 'header/drawer_menu' ); ?>
 	</div>
 </header>
 <?php if ( $move_gnav_under ) : ?>
 	<div class="l-headerUnder" <?php if ( \Arkhe::get_setting( 'fix_gnav' ) )  echo ' data-fix="1"'; ?>>
 		<div class="l-headerUnder__inner l-container">
-			<?php \Arkhe::get_parts( 'header/gnav' ); ?>
+			<?php \Arkhe::get_part( 'header/gnav' ); ?>
 		</div>
 	</div>
 <?php endif; ?>

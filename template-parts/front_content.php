@@ -11,7 +11,7 @@ echo '<div class="p-front__content c-postContent">';
 echo '</div>';
 
 // 改ページナビゲーション
-Arkhe::get_parts( 'singular/pagination' );
+Arkhe::get_part( 'singular/pagination' );
 
 // コンテンツ後フック
 do_action( 'arkhe_after_front_content' );

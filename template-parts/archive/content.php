@@ -12,13 +12,13 @@ $list_type = apply_filters( 'arkhe_list_type_on_archive', ARKHE_LIST_TYPE, $arch
 <div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 <?php
 	// タイトル
-	Arkhe::get_parts( 'archive/title', $archive_data );
+	Arkhe::get_part( 'archive/title', $archive_data );
 
 	// 投稿リスト前フック
 	do_action( 'arkhe_before_archive_post_list' );
 
 	// 投稿リスト
-	Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+	Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 	// ページャー
 	the_posts_pagination(

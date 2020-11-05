@@ -10,12 +10,12 @@
 <?php
 	// フッター
 	do_action( 'arkhe_before_footer' ); // テーマ側でも使用
-	Arkhe::get_parts( 'footer_content' );
+	Arkhe::get_part( 'footer_content' );
 	do_action( 'arkhe_after_footer' );
 
 	// モーダルや固定ボタンなど
-	Arkhe::get_parts( 'footer/fix_btns' );
-	Arkhe::get_parts( 'footer/modals' );
+	Arkhe::get_part( 'footer/fix_btns' );
+	Arkhe::get_part( 'footer/modals' );
 ?>
 </div>
 <!-- End: #wrapper-->

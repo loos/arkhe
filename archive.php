@@ -8,9 +8,9 @@ get_header(); ?>
 			<?php
 				do_action( 'arkhe_start_archive_main_content' );
 				if ( is_category() || is_tag() || is_tax() ) :
-					Arkhe::get_parts( 'archive/content_term' );
+					Arkhe::get_part( 'archive/content_term' );
 				else :
-					Arkhe::get_parts( 'archive/content' );
+					Arkhe::get_part( 'archive/content' );
 				endif;
 				do_action( 'arkhe_end_archive_main_content' );
 			?>

@@ -65,7 +65,7 @@ $loop_count = 0;
 			<?php
 				while ( $related_query->have_posts() ) :
 					$related_query->the_post();
-					Arkhe::get_parts( 'post_list/style/related', array( 'count' => $loop_count++ ) );
+					Arkhe::get_part( 'post_list/style/related', array( 'count' => $loop_count++ ) );
 				endwhile;
 			?>
 		</ul>
