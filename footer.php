@@ -1,12 +1,19 @@
 <?php
-	// コンテンツエリアの終了タグやサイドバーなど
-	Arkhe::get_parts( 'content_close' );
-
+/**
+ * フッターテンプレート
+ */
+	if ( Arkhe::is_show_sidebar() ) get_sidebar(); // サイドバー
+?>
+	</div><!-- End: l-content__body -->
+	<?php do_action( 'arkhe_end_content' ); ?>
+</div><!-- End: l-content -->
+<?php
 	// フッター
-	do_action( 'arkhe_before_footer' );
-	Arkhe::get_parts( 'footer' );
+	do_action( 'arkhe_before_footer' ); // テーマ側でも使用
+	Arkhe::get_parts( 'footer_content' );
 	do_action( 'arkhe_after_footer' );
 
+	// モーダルや固定ボタンなど
 	Arkhe::get_parts( 'footer/fix_btns' );
 	Arkhe::get_parts( 'footer/modals' );
 ?>

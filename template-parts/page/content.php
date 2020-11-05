@@ -2,7 +2,7 @@
 /**
  * 固定ページのコンテンツ部分
  */
-$the_id = get_the_ID();
+$the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // ヘッダー部分
 Arkhe::get_parts( 'page/header', array( 'post_id' => $the_id ) );

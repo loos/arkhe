@@ -1,8 +1,11 @@
 <?php
+/**
+ * 各種フックへの処理
+ */
 namespace Arkhe_Theme;
 
 /**
- * Arkheを使用しているかどうかを判別するためのJSグローバル変数を出力
+ * Arkheを使用しているかどうかをJS側で判別するためのグローバル変数を出力
  */
 add_action( 'admin_head', function() {
 	echo '<script>window.arkheTheme = 1;</script>' . PHP_EOL;

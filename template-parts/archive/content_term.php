@@ -14,26 +14,26 @@ $archive_data = Arkhe::get_archive_data();
 
 // 説明文
 $term_description = $wp_obj->description;
-?>
-<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
-	<?php
-		if ( ! Arkhe::is_show_ttltop() ) :
-			Arkhe::get_parts( 'archive/title', $archive_data );
-		endif;
-		if ( ! empty( $term_description ) ) :
-	?>
-			<div class="p-archive__desc"><?php echo do_shortcode( $term_description ); ?></div>
-	<?php
-		endif;
-		// 投稿リスト
-		Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
-		// ページャー
-		the_posts_pagination(
-			array(
-				'mid_size'           => 2,
-				'screen_reader_text' => null,
-			)
-		);
-	?>
-</div>
+if ( ! Arkhe::is_show_ttltop() ) :
+	Arkhe::get_parts( 'archive/title', $archive_data );
+endif;
+if ( ! empty( $term_description ) ) :
+?>
+	<div class="p-archive__desc"><?php echo do_shortcode( $term_description ); ?></div>
+<?php
+endif;
+
+// 投稿リスト前フック
+do_action( 'arkhe_before_term_post_list', $term_id );
+
+// 投稿リスト
+Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
+
+// ページャー
+the_posts_pagination(
+	array(
+		'mid_size'           => 2,
+		'screen_reader_text' => null,
+	)
+);

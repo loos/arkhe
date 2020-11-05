@@ -21,11 +21,9 @@ $show_author_box = apply_filters( 'arkhe_show_author_box', $setting['show_author
 // 関連記事を表示するか
 $show_related_posts = apply_filters( 'arkhe_show_related_posts', $setting['show_related_posts'], $the_id );
 
-// 下部シェアボタン
-do_action( 'arkhe_show_share_btn_bottom' );
-
 ?>
 <footer class="p-entry__foot">
+	<?php do_action( 'arkhe_start_entry_foot', $the_id ); ?>
 	<?php if ( $show_foot_terms ) : ?>
 		<div class="c-postMetas u-flex--aicw">
 			<?php
@@ -57,5 +55,7 @@ do_action( 'arkhe_show_share_btn_bottom' );
 		if ( $show_related_posts ) :
 			Arkhe::get_parts( 'single/related_posts', $the_id );
 		endif;
+
+		do_action( 'arkhe_end_entry_foot', $the_id );
 	?>
 </footer>

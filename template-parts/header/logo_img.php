@@ -2,7 +2,6 @@
 /**
  * ヘッダーロゴ画像の出力テンプレート
  */
-
 $site_title = get_option( 'blogname' );
 $logo_id    = get_theme_mod( 'custom_logo' );
 
@@ -12,9 +11,8 @@ $logo_type = $logo_id ? 'img' : 'txt';
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo -<?php echo esc_attr( $logo_type ); ?>" rel="home">
 <?php
 	if ( 'txt' === $logo_type ) :
-	echo esc_html( $site_title );
+		echo esc_html( $site_title );
 	else :
-
 		// カスタムロゴのURLを取得
 		$logo_url = apply_filters( 'arkhe_head_logo_url', wp_get_attachment_image_url( $logo_id, 'full' ) );
 

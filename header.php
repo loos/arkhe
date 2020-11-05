@@ -17,8 +17,9 @@
 <?php
 	// ヘッダー
 	do_action( 'arkhe_before_header' );
-	Arkhe::get_parts( 'header' );
+	Arkhe::get_parts( 'header_content' );
 	do_action( 'arkhe_after_header' );
-
-	// コンテンツエリアの開始タグなど
-	Arkhe::get_parts( 'content_open' );
+?>
+	<div id="content" class="l-content">
+		<?php do_action( 'arkhe_start_content' ); // テーマ側でも使用 ?>
+		<div class="l-content__body l-container">

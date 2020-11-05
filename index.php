@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/**
+ * index.php
+ */
+get_header(); ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 	<?php

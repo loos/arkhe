@@ -1,6 +1,6 @@
 <?php
 /**
- * 検索結果画面
+ * 検索結果ページ用テンプレート
  */
 get_header();
 
@@ -9,6 +9,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div class="<?php Arkhe::main_body_class(); ?>">
+		<?php do_action( 'arkhe_start_search_main_content' ); ?>
 		<h1 class="p-archive__title c-pageTitle">
 			<?php
 				// translators: %s is the value of get_search_query().
@@ -16,6 +17,9 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 			?>
 		</h1>
 		<?php
+			// 投稿リスト前フック
+			do_action( 'arkhe_before_search_post_list' );
+
 			// 投稿一覧
 			Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
@@ -27,6 +31,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 				)
 			);
 		?>
+		<?php do_action( 'arkhe_end_search_main_content' ); ?>
 	</div>
 </main>
 <?php get_footer(); ?>

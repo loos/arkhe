@@ -14,6 +14,9 @@ $list_type = apply_filters( 'arkhe_list_type_on_archive', ARKHE_LIST_TYPE, $arch
 	// タイトル
 	Arkhe::get_parts( 'archive/title', $archive_data );
 
+	// 投稿リスト前フック
+	do_action( 'arkhe_before_archive_post_list' );
+
 	// 投稿リスト
 	Arkhe::get_parts( 'post_list/main_query', array( 'list_type' => $list_type ) );
 

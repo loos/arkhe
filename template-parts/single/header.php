@@ -67,6 +67,3 @@ $is_modified = ( $date < $modified );
 		endif;
 	?>
 </header>
-<?php
-// 記事上シェアボタン
-do_action( 'arkhe_show_share_btn_top' );

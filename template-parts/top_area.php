@@ -6,15 +6,13 @@
  */
 
 // ページのID
-$page_id = get_queried_object_id();  // get_the_ID() は is_home() でアウト。
+$the_id = get_queried_object_id();  // get_the_ID() は is_home() でアウト。
 
 // 背景の画像
-// $bgimg_full   = get_the_post_thumbnail_url( $page_id, 'full' );
-// $bgimg_medium = $bgimg_full ? get_the_post_thumbnail_url( $page_id, 'medium' ) : '';
 $bgimg_full   = '';
 $bgimg_medium = '';
 
-$bgimg_id = apply_filters( 'arkhe_ttlbg_img_id', get_post_thumbnail_id( $page_id ), $page_id );
+$bgimg_id = apply_filters( 'arkhe_ttlbg_img_id', get_post_thumbnail_id( $the_id ), $the_id );
 if ( $bgimg_id ) {
 	$bgimg_full   = wp_get_attachment_image_url( $bgimg_id, 'full' ) ?: '';
 	$bgimg_medium = wp_get_attachment_image_url( $bgimg_id, 'medium' ) ?: '';
@@ -32,6 +30,6 @@ $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filte
 		></div>
 	<?php endif; ?>
 	<div class="p-topArea__body l-container">
-		<?php Arkhe::get_parts( 'top_area/content', array( 'post_id' => $page_id ) ); ?>
+		<?php Arkhe::get_parts( 'top_area/body', array( 'the_id' => $the_id ) ); ?>
 	</div>
 </div>

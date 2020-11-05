@@ -74,6 +74,25 @@ class Data {
 
 
 	/**
+	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
+	 */
+	public static $allowed_text_html = array(
+		'a'      => array(
+			'href'   => true,
+			'rel'    => true,
+			'target' => true,
+			'class'  => true,
+		),
+		'b'      => array( 'class' => true ),
+		'br'     => array( 'class' => true ),
+		'i'      => array( 'class' => true ),
+		'em'     => array( 'class' => true ),
+		'span'   => array( 'class' => true ),
+		'strong' => array( 'class' => true ),
+	);
+
+
+	/**
 	 * init()
 	 */
 	public static function init() {

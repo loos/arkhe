@@ -2,12 +2,11 @@
 /**
  * グローバルナビ
  */
-
 $gnav = wp_nav_menu(
 	array(
 		'container'       => '',
 		'fallback_cb'     => '',
-		'theme_location'  => 'header_menu',
+		'theme_location'  => apply_filters( 'arkhe_gnav_location_name', 'header_menu' ),
 		'items_wrap'      => '%3$s',
 		'echo'            => false,
 	)

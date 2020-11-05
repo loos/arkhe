@@ -13,7 +13,7 @@ if ( ! Arkhe::is_show_ttltop() ) :
 			echo get_the_title( $the_id ); // the_title() に倣ってエスケープ関数はなし
 
 			// サブタイトル表示用
-			do_action( 'arkhe_page_subtitle', $the_id );
+			do_action( 'arkhe_page_subtitle', $the_id, 'inner' );
 		?>
 	</h1>
 <?php

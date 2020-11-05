@@ -4,8 +4,19 @@
  * $args['author_id'] : 著者IDが渡ってくる
  */
 $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
+
+add_filter( 'arkhe_author_area_title', function() {
+	return 'hoge<span class="u-fz-l">AAA</span>';
+} );
 ?>
 <section class="p-entry__author c-bottomSection">
-	<h2 class="c-bottomSection__title"><?php esc_html_e( 'Author of this article', 'arkhe' ); ?></h2>
+	<h2 class="c-bottomSection__title">
+		<?php
+			echo wp_kses(
+				apply_filters( 'arkhe_author_area_title', __( 'Author of this article', 'arkhe' ) ),
+				\Arkhe::$allowed_text_html
+			);
+		?>
+	</h2>
 	<?php Arkhe::get_parts( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
 </section>

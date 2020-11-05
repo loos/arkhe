@@ -5,12 +5,14 @@ const setCurrent = (nav) => {
 	const currentItem = nav.querySelector('li.-current');
 	if (currentItem) currentItem.classList.remove('-current');
 
-	// トップページは、カレントクラス付与しない
-	const locationPath = window.location.pathname;
-	if ('/' === locationPath) return;
+	// トップページのURL
+	const homeUrl = window.arkheVars.homeUrl || '';
 
-	//現在のURLを取得 （? や # はをのぞいて）
-	const nowHref = window.location.origin + locationPath;
+	//現在のURLを取得 （? や # はのぞいたもの）
+	const nowHref = window.location.origin + window.location.pathname;
+
+	// トップページは、カレントクラス付与しない
+	if (homeUrl === nowHref) return;
 
 	// 全liを取得
 	const navItem = nav.querySelectorAll('.c-gnav > li');

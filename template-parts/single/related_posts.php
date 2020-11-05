@@ -53,7 +53,12 @@ $loop_count = 0;
 ?>
 <section class="p-entry__related c-bottomSection">
 	<h2 class="c-bottomSection__title">
-		<?php echo wp_kses_post( apply_filters( 'arkhe_related_area_title', __( 'Related posts', 'arkhe' ) ) ); ?>
+		<?php
+			echo wp_kses(
+				apply_filters( 'arkhe_related_area_title', __( 'Related posts', 'arkhe' ) ),
+				\Arkhe::$allowed_text_html
+			);
+		?>
 	</h2>
 	<?php if ( $related_query->have_posts() ) : ?>
 		<ul class="p-postList -type-<?php echo esc_attr( $list_type ); ?> -related">
