@@ -45,7 +45,8 @@ export function smoothScroll(target, offset, divisor) {
  * @param {*} dom #付きリンクを検索する親要素
  */
 export function addSmoothScrollEvent(dom) {
-	const linkElems = dom.querySelectorAll('a[href*="#"]');
+	const root = dom || document;
+	const linkElems = root.querySelectorAll('a[href*="#"]');
 	for (let i = 0; i < linkElems.length; i++) {
 		linkElems[i].addEventListener('click', function (e) {
 			const href = e.currentTarget.getAttribute('href'); // href取得

@@ -13,10 +13,8 @@ import setState, { smoothOffset, ua } from '@js/modules/data/stateData';
  * モジュール読み込み
  */
 import setScrollEvent from '@js/modules/setScrollEvent';
-// import setLuminous from '@js/modules/setLuminous';
 import setGnavClass from '@js/modules/setGnavClass';
 import changeDeviceSize from '@js/modules/changeDeviceSize';
-// import fixHead from '@js/modules/fixHead';
 import addClickEvents from '@js/modules/addClickEvents';
 import setEscEvent from '@js/modules/setEscEvent';
 import setKeepFocus from '@js/modules/setKeepFocus';
@@ -102,6 +100,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('load', function () {
+	const arkheVars = window.arkheVars;
+
 	// html のdata-loadedをセット
 	document.documentElement.setAttribute('data-loaded', 'true');
 
@@ -112,15 +112,12 @@ window.addEventListener('load', function () {
 	setState.smoothOffset(DOM.wpadminbar);
 
 	/**
-	 * ヘッダー固定スクリプト
-	 */
-	// fixHead();
-
-	/**
 	 * スムースリンクの処理を登録
 	 *  !!! 目次リスト生成よりあとに !!!
 	 */
-	addSmoothScrollEvent(document);
+	if ('on' === arkheVars.smoothScroll) {
+		addSmoothScrollEvent();
+	}
 
 	// #つきリンクでページ遷移してきたときに明示的にスクロールさせる
 	if (urlHash) {
@@ -147,8 +144,5 @@ window.addEventListener('orientationchange', function () {
 
 		/** スマホ・タブレット縦 と PC・タブレット横による分岐処理 */
 		changeDeviceSize();
-
-		/** ヘッダー固定スクリプト */
-		// fixHead();
 	}, 5);
 });

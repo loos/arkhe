@@ -73,26 +73,6 @@ trait Default_Data {
 			'show_entry_author'         => false,
 			'show_entry_thumb'          => true,
 
-			// シェアボタン
-			// 'share_btn_style'           => 'block',
-			// 'show_share_btn_top'        => false,
-			// 'show_share_btn_bottom'     => true,
-			// 'show_share_btn_fb'         => true,
-			// 'show_share_btn_tw'         => true,
-			// 'show_share_btn_hatebu'     => true,
-			// 'show_share_btn_pocket'     => true,
-			// 'show_share_btn_pin'        => true,
-			// 'show_share_btn_line'       => true,
-
-			// SNSアクション
-			// 'show_fb_like_box'          => false,
-			// 'show_tw_follow_btn'        => false,
-			// 'share_hashtags'            => '',
-			// 'share_via'                 => '',
-			// 'fb_like_url'               => esc_url( home_url( '/' ) ),
-			// 'fb_like_appID'             => '',
-			// 'tw_follow_id'              => '',
-
 			// 下部エリア
 			'show_foot_terms'           => true,
 			'show_prev_next_link'       => true,

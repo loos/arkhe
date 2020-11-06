@@ -8,15 +8,13 @@ export let headH = 0,
 	isMobile = false, // mobile以下
 	isTab = false, //Tab縦「以上」か ( = !isMobile)
 	isModalOpen = false,
-	smoothOffset = 0,
-	// isMobile = window.isMobile,
-	isFixHeadSP = window.isFixHeadSP;
+	smoothOffset = 0;
 
 export const ua = navigator.userAgent.toLowerCase();
 
 export default {
 	mediaSize: () => {
-		isPC = 959 < window.innerWidth ? true : false;
+		isPC = 999 < window.innerWidth ? true : false;
 		isMobile = 600 > window.innerWidth ? true : false;
 		isSP = !isPC;
 		isTab = !isMobile;
@@ -26,14 +24,6 @@ export default {
 			headH = header.offsetHeight;
 
 			document.documentElement.style.setProperty('--ark-header_height', headH + 'px');
-			// const headBody = header.querySelector('.l-header__body');
-			// if (null !== headBody) {
-			// 	const headBodyH = headBody.offsetHeight;
-			// 	document.documentElement.style.setProperty(
-			// 		'--ark-header_body_height',
-			// 		headBodyH + 'px'
-			// 	);
-			// }
 		}
 	},
 	adminbarH: (adminbar) => {
@@ -47,18 +37,31 @@ export default {
 	smoothOffset: () => {
 		smoothOffset = 8; //初期値
 
-		if (window.arkheVars === undefined) return;
 		const arkheVars = window.arkheVars;
+		if (arkheVars === undefined) return;
 
+		// PC表示でヘッダー固定時
 		if (isPC && arkheVars.isFixHeadPC) {
-			// PC表示でヘッダー固定時
-			smoothOffset += headH;
-		} else if (isSP && arkheVars.isFixHeadSP) {
-			// SP表示でヘッダー固定時
 			smoothOffset += headH;
 		}
+
+		// PC表示でグロナビー固定時
+		if (isPC && arkheVars.fixGnav) {
+			const headerUnder = document.querySelector('.l-headerUnder');
+			if (null !== headerUnder) smoothOffset += headerUnder.offsetHeight;
+		}
+
+		// SP表示でヘッダー固定時
+		if (isSP && arkheVars.isFixHeadSP) {
+			smoothOffset += headH;
+		}
+
+		// 管理バーがある時
 		if (0 < adminbarH) {
 			smoothOffset += adminbarH;
 		}
+
+		// CSS変数にもセット
+		document.documentElement.style.setProperty('--ark-offset_y', smoothOffset + 'px');
 	},
 };

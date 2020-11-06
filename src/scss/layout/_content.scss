@@ -3,7 +3,10 @@
     position: relative;
     z-index: 0;
     flex: 1 0 auto;
-    overflow: hidden;
+    // overflow: hidden;
+    // [data-sidebar="off"] & {
+    //     overflow: hidden;
+    // }
 }
 
 .l-content__body {

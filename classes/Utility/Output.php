@@ -12,9 +12,11 @@ trait Output {
 		$setting = \Arkhe::get_setting();
 
 		return array(
-			'homeUrl'     => home_url( '/' ),
-			'isFixHeadPC' => $setting['fix_header_pc'],
-			'isFixHeadSP' => $setting['fix_header_sp'],
+			'homeUrl'        => home_url( '/' ),
+			'isFixHeadPC'    => $setting['fix_header_pc'],
+			'isFixHeadSP'    => $setting['fix_header_sp'],
+			'fixGnav'        => $setting['fix_gnav'],
+			'smoothScroll'   => 'on',
 		);
 	}
 

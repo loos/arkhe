@@ -14,12 +14,12 @@ $arkhe_thumb_ratios = array(
 );
 
 /**
- * セクション : 投稿リスト
+ * セクション : アーカイブ
  */
 $wp_customize->add_section(
 	$arkhe_section,
 	array(
-		'title'    => __( 'Post List', 'arkhe' ),
+		'title'    => __( 'Archive', 'arkhe' ),
 		'priority' => 23,
 	)
 );
