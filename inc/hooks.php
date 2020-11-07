@@ -68,6 +68,7 @@ add_action( 'wp_list_categories', '\Arkhe_Theme\hook_wp_list_categories' );
 function hook_wp_list_categories( $output ) {
 	$output = str_replace( '</a> (', '<span class="cat-post-count">(', $output );
 	$output = str_replace( ')', ')</span></a>', $output );
+	// $output = preg_replace( '/<\/a>\s*\((\d+)\)/', ' <span class="cat-post-count">($1)</span></a>', $output );
 
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
