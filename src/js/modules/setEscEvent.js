@@ -1,5 +1,5 @@
 import DOM from './data/domData';
-import setState, { isModalOpen } from '@js/modules/data/stateData';
+import { setState, isModalOpen } from '@js/modules/data/stateData';
 
 /**
  * Escキーを押した時の処理

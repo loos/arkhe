@@ -1,5 +1,5 @@
 import DOM from './data/domData';
-import setState, { isModalOpen } from '@js/modules/data/stateData';
+import { setState } from '@js/modules/data/stateData';
 
 /**
  * クリックイベント処理をまとめたオブジェクト

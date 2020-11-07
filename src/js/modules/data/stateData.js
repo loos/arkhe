@@ -12,7 +12,7 @@ export let headH = 0,
 
 export const ua = navigator.userAgent.toLowerCase();
 
-export default {
+export const setState = {
 	mediaSize: () => {
 		isPC = 999 < window.innerWidth ? true : false;
 		isMobile = 600 > window.innerWidth ? true : false;
@@ -63,5 +63,9 @@ export default {
 
 		// CSS変数にもセット
 		document.documentElement.style.setProperty('--ark-offset_y', smoothOffset + 'px');
+	},
+	scrollbarW: () => {
+		const scrollbarW = window.innerWidth - document.body.clientWidth;
+		document.documentElement.style.setProperty('--ark-scrollbar_width', scrollbarW + 'px');
 	},
 };

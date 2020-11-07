@@ -7,7 +7,7 @@ import setDomData from '@js/modules/setDomData';
 /**
  * 状態を管理する変数データ
  */
-import setState, { smoothOffset, ua } from '@js/modules/data/stateData';
+import { setState, smoothOffset, ua } from '@js/modules/data/stateData';
 
 /**
  * モジュール読み込み
@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	/* smoothOffsetをセット */
 	setState.smoothOffset(DOM.wpadminbar);
+
+	// スクロールバーの幅
+	setState.scrollbarW();
 
 	/**
 	 * objectFitImages

@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 html{
-    font-size: var(--ark-font_size, 16px);
+    font-size: var(--ark-font_size);
     @include mobile {
-        font-size: var(--ark-font_size_sp, 3.8vw);
+        font-size: var(--ark-font_size_sp);
     }
 }
 
@@ -20,7 +20,6 @@ body {
     overflow-wrap: break-word;
     background-color: var(--ark-color_bg);
     -webkit-text-size-adjust: 100%;
-
 }
 
 

@@ -33,7 +33,7 @@ function display_theme_menu() {
 			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/">
 				<?php esc_html_e( 'To Arkhe official website', 'arkhe' ); ?>
 			</a>
-			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/document/">
+			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/manual/">
 				<?php esc_html_e( 'See the manual', 'arkhe' ); ?>
 			</a>
 			<?php if ( 0 ) : ?>

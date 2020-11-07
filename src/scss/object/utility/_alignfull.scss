@@ -1,9 +1,13 @@
 .alignfull {
     position: relative;
-
     left: calc(50% - 50vw);
-    width: 100vw;
+    width: calc(100vw);
     max-width: 100vw;
+
+    @supports (--css: variables) {
+        left: calc(50% - ( 50vw - var(--ark-scrollbar_width) / 2 ));
+        width: calc(100vw - var(--ark-scrollbar_width));
+    }
 
     & + .alignfull {
         margin-top: 0;

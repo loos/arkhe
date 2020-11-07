@@ -8,7 +8,7 @@
     line-height: 1.8;
 
     & > * {
-        margin-top: var(--ark-mt, 2rem);
+        margin-top: var(--ark-mt);
         margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
     }
 
@@ -42,7 +42,7 @@
 .wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt, 2rem);
+        margin-top: var(--ark-mt);
         margin-bottom: 0;
     }
 }
@@ -55,6 +55,6 @@
 :not(.alignfull):not(.alignwide) > .wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt_s, 1rem);
+        margin-top: var(--ark-mt_s);
     }
 }

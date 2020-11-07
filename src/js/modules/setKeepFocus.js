@@ -1,5 +1,5 @@
 import DOM from './data/domData';
-import setState, { isModalOpen } from '@js/modules/data/stateData';
+import { isModalOpen } from '@js/modules/data/stateData';
 
 /* eslint no-lonely-if: 0 */
 
