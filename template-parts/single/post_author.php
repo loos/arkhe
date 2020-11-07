@@ -4,10 +4,6 @@
  * $args['author_id'] : 著者IDが渡ってくる
  */
 $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
-
-add_filter( 'arkhe_author_area_title', function() {
-	return 'hoge<span class="u-fz-l">AAA</span>';
-} );
 ?>
 <section class="p-entry__author c-bottomSection">
 	<h2 class="c-bottomSection__title">
