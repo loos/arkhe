@@ -19,14 +19,12 @@ $feed_author = $args['feed_author'];
 			<span class="c-rssSite__title"><?php echo esc_html( $site_title ); ?></span>
 		</div>
 	<?php endif; ?>
-	<?php if ( $show_date ) : ?>
+	<?php if ( $show_date && $feed_date ) : ?>
 		<div class="p-postList__times c-postTimes u-color-thin">
-			<?php if ( $show_date && $feed_date ) : ?>
-				<span class="c-postTimes__item -posted u-flex--aic">
-					<i class="c-postMetas__icon arkhe-icon-posted" role="img" aria-hidden="true"></i>
-					<?php echo esc_html( $feed_date ); ?>
-				</span>
-			<?php endif; ?>
+			<span class="c-postTimes__item -posted u-flex--aic">
+				<i class="c-postMetas__icon arkhe-icon-posted" role="img" aria-hidden="true"></i>
+				<?php echo esc_html( $feed_date ); ?>
+			</span>
 		</div>
 	<?php endif; ?>
 	<?php if ( $show_author && $feed_author ) : ?>
