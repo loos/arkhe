@@ -11,23 +11,11 @@
     z-index: 0;
     width: 100%;
     margin: 0;
+    padding-top: var(--ark-thumb_ratio);
     overflow: hidden;
     transform: perspective(0);
     backface-visibility: hidden;
 
-    &::before {
-        display: block;
-        height: 0;
-        padding-top: var(--ark-thumb_ratio_card);
-        content: "";
-    }
-
-
-    // リスト型の比率
-    .p-blogCard &::before,
-    .-type-list &::before {
-        padding-top: var(--ark-thumb_ratio_list);
-    }
 }
 
 
@@ -37,7 +25,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: scale(1.01) perspective(0);
+    transform: scale(1) perspective(0);
     backface-visibility: hidden;
     transition: transform .25s;
 }

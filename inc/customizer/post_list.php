@@ -128,20 +128,9 @@ Customizer::big_title(
 // カード型リストでの比率
 Customizer::add(
 	$arkhe_section,
-	'thumb_ratio_card',
+	'thumb_ratio',
 	array(
-		'label'       => __( 'Ratio in "card type"', 'arkhe' ),
-		'type'        => 'select',
-		'choices'     => $arkhe_thumb_ratios,
-	)
-);
-
-// リスト型リストでの比率
-Customizer::add(
-	$arkhe_section,
-	'thumb_ratio_list',
-	array(
-		'label'       => __( 'Ratio in "list type"', 'arkhe' ),
+		// 'label'       => '',
 		'type'        => 'select',
 		'choices'     => $arkhe_thumb_ratios,
 	)

@@ -57,8 +57,7 @@ trait Default_Data {
 			'show_list_date'            => true,
 			'show_list_mod'             => false,
 			'show_list_author'          => false,
-			'thumb_ratio_card'          => 'wide',
-			'thumb_ratio_list'          => 'golden',
+			'thumb_ratio'               => 'wide',
 
 			// 固定ページ設定
 			'page_title_pos'            => 'top',

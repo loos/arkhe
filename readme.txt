@@ -27,8 +27,11 @@ Source: https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE
 
 
 == Screenshots ==
-License: https://stock.adobe.com/jp/license-terms#standardLicenses
-https://stock.adobe.com/jp/images/empty-long-light-corridor-modern-white-background-futuristic-sci-fi-triangle-tunnel-3d-rendering/274929177
+Image used in Screenshot
+    Source: https://pxhere.com/en/photo/344
+    License: Creative Commons Zero (CC0) license.
+    License Url : https://pxhere.com/en/license
+
 
 
 == Author ==

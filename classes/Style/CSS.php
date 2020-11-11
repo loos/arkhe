@@ -133,15 +133,11 @@ trait CSS {
 	/**
 	 * サムネイル比率
 	 */
-	protected static function css_thumb_ratio( $card_ratio, $list_ratio ) {
+	protected static function css_thumb_ratio( $thumb_ratio ) {
 
 		self::add_root_css(
-			'--ark-thumb_ratio_card',
-			self::get_thumb_ratio( $card_ratio )
-		);
-		self::add_root_css(
-			'--ark-thumb_ratio_list',
-			self::get_thumb_ratio( $list_ratio )
+			'--ark-thumb_ratio',
+			self::get_thumb_ratio( $thumb_ratio )
 		);
 	}
 }

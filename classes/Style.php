@@ -69,7 +69,7 @@ class Style {
 		self::css_common( $setting );
 
 		// 投稿リスト
-		self::css_thumb_ratio( $setting['thumb_ratio_card'], $setting['thumb_ratio_list'] );
+		self::css_thumb_ratio( $setting['thumb_ratio'] );
 
 		// ヘッダー
 		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );
