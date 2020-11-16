@@ -6,4 +6,6 @@
  */
 $the_title = isset( $args['title'] ) ? $args['title'] : '';
 ?>
-<h1 class="p-archive__title c-pageTitle"><?php echo esc_html( $the_title ); ?></h1>
+<div class="p-archive__title c-pageTitle">
+	<h1 class="c-pageTitle__main"><?php echo esc_html( $the_title ); ?></h1>
+</div>

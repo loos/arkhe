@@ -16,7 +16,9 @@ $is_modified = ( $date < $modified );
 ?>
 <header class="p-entry__head">
 	<?php if ( ! Arkhe::is_show_ttltop() ) : ?>
-		<h1 class="p-entry__title c-pageTitle"><?php the_title(); ?></h1>
+		<div class="p-entry__title c-pageTitle">
+			<h1 class="c-pageTitle__main"><?php the_title(); ?></h1>
+		</div>
 	<?php endif; ?>
 	<div class="c-postMetas u-flex--aicw">
 		<div class="c-postTimes u-flex--aicw">

@@ -13,7 +13,9 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 		<?php do_action( 'arkhe_start_author_main_content', $author_id ); ?>
-		<h1 class="p-archive__title c-pageTitle"><?php echo esc_html( $author_data->display_name ); ?></h1>
+		<div class="p-archive__title c-pageTitle">
+			<h1 class="c-pageTitle__main"><?php echo esc_html( $author_data->display_name ); ?></h1>
+		</div>
 		<?php
 			// 著者情報
 			Arkhe::get_part( 'others/author_box', array( 'author_id' => $author_id ) );

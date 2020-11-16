@@ -1,4 +1,6 @@
-.c-pageTitle {
+// .c-pageTitle {}
+
+.c-pageTitle__main {
     position: relative;
     font-weight: 700;
     font-size: 1.75rem;
@@ -9,16 +11,16 @@
     }
 }
 
-.c-pageTitle__subtitle {
+.c-pageTitle__sub {
     position: relative;
-    margin-left: 1em;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: .9rem;
     font-style: italic;
     vertical-align: middle;
 
-    &::before {
-        margin-right: 1em;
+    &::before,
+    &::after {
+        margin: 0 1em;
         vertical-align: baseline;
         content: "–";
     }
