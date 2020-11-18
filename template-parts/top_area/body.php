@@ -3,12 +3,7 @@
  * 固定ページヘッド部分 (コンテンツ上)
  * ※ ここはループ外なことに注意。
  */
-$the_id    = isset( $args['the_id'] ) ? $args['the_id'] : get_queried_object_id();
-$post_data = get_post( $the_id );
-$excerpt   = empty( $post_data ) ? '' : $post_data->post_excerpt;
-$excerpt   = apply_filters( 'arkhe_top_area_excerpt', $excerpt, $the_id );
-
-
+$the_id   = isset( $args['the_id'] ) ? $args['the_id'] : get_queried_object_id();
 $subtitle = apply_filters( 'arkhe_page_subtitle', '', $the_id, 'top' );
 $excerpt  = apply_filters( 'arkhe_top_area_excerpt', '', $the_id );
 ?>
@@ -24,7 +19,7 @@ $excerpt  = apply_filters( 'arkhe_top_area_excerpt', '', $the_id );
 	?>
 </div>
 
-<?php if ( $excerpt ) : ?>
+<?php if ( '' !== $excerpt ) : ?>
 	<div class="p-topArea__excerpt u-mt-10">
 		<?php echo wp_kses_post( $excerpt ); ?>
 	</div>
