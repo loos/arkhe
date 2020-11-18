@@ -14,7 +14,8 @@
         "watch:css": "nodemon --watch src -e scss -x \"npm run build:css\"",
         "watch:adminJs": "nodemon --watch src/js/admin -e js -x \"npm run build:adminJs\"",
         "watch:js": "nodemon --watch src/js --ignore **/plugin/** --ignore **/admin/** -e js -x \"npm run build:js\"",
-        "watch": "npx npm-run-all --parallel watch:css watch:js watch:adminJs"
+        "watch": "npx npm-run-all --parallel watch:css watch:js watch:adminJs",
+        "update": "bash ./bin/zip.sh"
     },
     "author": "",
     "license": "ISC",
