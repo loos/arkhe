@@ -41,7 +41,10 @@ trait CSS {
 
 		// 記事コンテンツサイズ
 		self::add_root_css( '--ark-article_width', $container_width . 'px' );
-		self::add_css( '.page-template-one-column-slim', '--ark-article_width:' . $slim_width . 'px' );
+		self::add_css(
+			array( '.page-template-one-column-slim', '.post-template-one-column-slim' ),
+			'--ark-article_width:' . $slim_width . 'px'
+		);
 	}
 
 

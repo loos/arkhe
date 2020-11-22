@@ -14,12 +14,6 @@
         display: block !important;
     }
 
-    figcaption {
-
-        @extend %figcaption;
-
-    }
-
     // リンク付きの場合
     a {
         display: block;

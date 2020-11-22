@@ -16,9 +16,15 @@
         border-top: none;
         border-right: none;
 
-        &:not([class*="has-text-align-"]) {
-            text-align: left;
-        }
+        // &:not([class*="has-text-align-"]) {
+        //     text-align: left;
+        // }
+
     }
+
+    // th:not([data-align]),
+    // td:not([data-align]) {
+    //     text-align: left;
+    // }
 
 }

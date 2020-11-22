@@ -23,16 +23,6 @@
 
     @import "./post_content";
 
-    // 先頭要素は上側の余白なし
-    & > :first-child,
-    div > :first-child {
-        margin-top: 0;
-    }
-
-    th:not([data-align]),
-    td:not([data-align]) {
-        text-align: left;
-    }
 }
 
 
@@ -49,8 +39,10 @@
 
 // マージン小さくする
 // 全幅じゃないカラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
-:not(.alignfull) > .wp-block-column,
-:not(.alignfull) > .wp-block-media-text__content,
+// :not(.alignfull) > .wp-block-column,
+// :not(.alignfull) > .wp-block-media-text__content,
+.wp-block-column,
+.wp-block-media-text__content,
 :not(.alignfull):not(.alignwide) > .wp-block-cover__inner-container,
 :not(.alignfull):not(.alignwide) > .wp-block-group__inner-container {
 
@@ -58,3 +50,11 @@
         margin-top: var(--ark-mt_s);
     }
 }
+
+
+// 先頭要素は上側のマージンを打ち消す。
+.c-postContent > :first-child,
+.c-postContent div > :first-child {
+    margin-top: 0 !important;
+}
+

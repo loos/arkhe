@@ -1,8 +1,9 @@
 .wp-block-video {
     text-align: center;
 
-    figcaption {
-
-        @extend %figcaption;
+    video {
+        display: block;
+        width: 100%;
     }
+
 }

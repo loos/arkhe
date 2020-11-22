@@ -92,15 +92,15 @@ blockquote {
     }
 }
 
-
 /* ---------- テーブル ---------- */
 // borderを分けて指定しているのはSPでの縦並びも考慮しているため。
 table {
     width: 100%;
     max-width: 100%;
+    text-align: left;
     border: none;
-    border-top: solid 1px #ededed;
-    border-right: solid 1px #ededed;
+    border-top: solid 1px var(--ark-color_table_border);
+    border-right: solid 1px var(--ark-color_table_border);
     // border-collapse: separate;
     border-spacing: 0;
 
@@ -115,8 +115,8 @@ th,
 td {
     padding: .5em .75em;
     vertical-align: top;
-    border-bottom: solid 1px #ededed;
-    border-left: solid 1px #ededed;
+    border-bottom: solid 1px var(--ark-color_table_border);
+    border-left: solid 1px var(--ark-color_table_border);
 }
 
 thead {
@@ -161,4 +161,11 @@ iframe {
     max-width: 100%;
     margin-right: auto;
     margin-left: auto;
+}
+
+
+figcaption {
+
+    @extend %figcaption;
+
 }

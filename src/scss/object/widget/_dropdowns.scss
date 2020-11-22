@@ -1,16 +1,25 @@
 .widget_archive,
-.widget_categories {
+.widget_categories,
+.wp-block-categories-dropdown,
+.wp-block-archives-dropdown {
 
+    /* stylelint-disable function-url-quotes */
     select {
         display: block;
         width: 100%;
         height: auto;
         padding: 0 1em;
         padding: 4px 24px 4px 12px;
+        color: #333;
         line-height: 32px;
+        background-color: #fff;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.984 9.984h10.031l-5.016 5.016z"></path></svg>');
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 24px 24px;
         border: solid 1px var(--ark-color_border);
-        border-radius: 5px;
         border-radius: 2px;
+        cursor: pointer;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -21,9 +30,10 @@
     }
 }
 
-.widget_archive {
+.wp-block-categories-dropdown,
+.wp-block-archives-dropdown {
 
-    .screen-reader-text {
-        display: none;
+    select {
+        max-width: 400px;
     }
 }

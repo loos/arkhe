@@ -1,10 +1,13 @@
 /*
     リスト系のウィジェットに関するもの
+
+    ※ エディター側は .wp-block-categories__list
 */
 
 // 一番最初の ulタグ
 .wp-block-categories-list,
 .wp-block-archives-list,
+.wp-block-latest-comments,
 .widget_nav_menu .menu,
 .widget_recent_entries ul,
 .widget_recent_comments ul,

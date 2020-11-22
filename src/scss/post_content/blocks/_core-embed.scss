@@ -43,13 +43,6 @@
 
 .wp-block-embed {
     max-width: 100%;
-    // overflow: hidden; //ブログカードがおかしくなるよ
-
-    // Youtubeとかには figcaption も設定できる
-    & > figcaption {
-
-        @extend %figcaption;
-    }
 }
 
 .wp-block-embed-facebook,

@@ -31,10 +31,8 @@
 .wp-block-calendar,
 .widget_calendar {
 
-    // 5.3まではtableにクラスついていない
-    table {
+    .wp-calendar-table {
         width: 100%;
-        text-align: center;
         border: none;
     }
 
@@ -48,15 +46,12 @@
         }
     }
 
-    // th,
-    // td {
-    //     text-align: center;
-    // }
-
-    thead th {
+    // thead th より 詳細度強めに。
+    .wp-calendar-table th {
         padding: 0 0 10px;
         color: inherit;
         font-weight: 700;
+        text-align: center;
         background: none;
         border: none;
     }
@@ -69,15 +64,15 @@
             line-height: 36px;
             background-color: var(--ark-color_main);
         }
-    }
 
-    tbody td {
-        padding: 0;
-        font-family: arial, sans-serif;
-        line-height: 36px;
-        text-align: center;
-        background: #f7f7f7;
-        border: 1px solid #fff;
+        td {
+            padding: 0;
+            font-family: arial, sans-serif;
+            line-height: 36px;
+            text-align: center;
+            background: #f7f7f7;
+            border: 1px solid #fff;
+        }
     }
 
     .pad {
