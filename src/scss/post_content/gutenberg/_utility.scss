@@ -1,12 +1,5 @@
 // 全幅コンテンツの直下で左右paddingを0にされてしまうのを防ぐ
-p.has-background,
-div.has-background {
+.has-background {
     padding: 1.5rem !important;
 }
 
-@include tab {
-
-    div.has-background {
-        padding: 2rem !important;
-    }
-}

@@ -4,6 +4,10 @@
     ※ エディター側は .wp-block-categories__list
 */
 
+.wp-block-rss .wp-block-rss__item {
+    padding: .5rem 0;
+}
+
 // 一番最初の ulタグ
 .wp-block-categories-list,
 .wp-block-archives-list,

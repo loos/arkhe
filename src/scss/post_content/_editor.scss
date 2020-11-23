@@ -5,15 +5,15 @@
 
     @import "./post_content";
 
-    li {
-        // 前後のブロックまでフォーカスがぶっとんでいくの防止
-        // line-height: 1.5;
+    // li {
+    // 前後のブロックまでフォーカスがぶっとんでいくの防止
+    // line-height: 1.5;
 
-        @include mobile {
-            //relativeだと スマホで日本語入力できなくなる。（スタイルは崩れるので、バグフィックスされたら外す。）
-            position: static;
-        }
-    }
+    //relativeだと スマホで日本語入力できなくなる。（スタイルは崩れるので、バグフィックスされたら外す。）
+    // @include mobile {
+    //     position: static;
+    // }
+    // }
 
     // エディターではどちらも表示させる（編集できるように）
     .u-only-pc,

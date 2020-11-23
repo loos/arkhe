@@ -1,4 +1,4 @@
-Here is the license for the fonts loaded as "arkhe-icon" in this WordPress theme "Arkhē".
+Here is the license for the fonts loaded as "arkhe-icon" in this WordPress theme "Arkhe".
 
 "arkhe-icon" includes icons distributed as "material-design-icons".
 

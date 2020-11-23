@@ -30,12 +30,21 @@
 }
 
 // 
+[data-type="core/rss"] .wp-block-rss,
 [data-type="core/archives"] .wp-block-archives-list,
 [data-type="core/categories"] .wp-block-categories__list {
     margin: 0 !important;
     padding: 0 !important;
     list-style: none;
+}
+
+.wp-block-archives-list,
+.wp-block-categories__list {
     border-top: solid 1px var(--ark-color_border);
+}
+
+[data-type="core/rss"] {
+    padding: 0 !important;
 }
 
 // 子メニューの表示関連

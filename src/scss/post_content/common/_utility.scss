@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.has-drop-cap {
+    min-height: 3rem;
+}
+
+.has-drop-cap:not(:focus)::first-letter {
+    font-size: 4rem;
+}
+
+.has-background {
+    padding: 1.5rem;
+}
+
+// has-
+// p.has-background,
+// div.has-background {
+//     padding: 1.5rem;
+// }
+
+// @include tab {
+
+//     div.has-background {
+//         padding: 2rem;
+//     }
+// }

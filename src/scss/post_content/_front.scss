@@ -26,28 +26,26 @@
 }
 
 
+// マージン小さく維持
 .wp-block-column,
 .wp-block-media-text__content,
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt);
+        margin-top: var(--ark-mt--s);
         margin-bottom: 0;
     }
 }
 
-// マージン小さくする
-// 全幅じゃないカラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
-// :not(.alignfull) > .wp-block-column,
-// :not(.alignfull) > .wp-block-media-text__content,
-.wp-block-column,
-.wp-block-media-text__content,
-:not(.alignfull):not(.alignwide) > .wp-block-cover__inner-container,
-:not(.alignfull):not(.alignwide) > .wp-block-group__inner-container {
+// マージン通常コンテンツと同じエリアに広げる : 幅広のカバー・グループ
+.alignwide > .wp-block-cover__inner-container,
+.alignfull > .wp-block-cover__inner-container,
+.alignwide > .wp-block-group__inner-container,
+.alignfull > .wp-block-group__inner-container {
 
     & > * {
-        margin-top: var(--ark-mt_s);
+        margin-top: var(--ark-mt);
     }
 }
 
