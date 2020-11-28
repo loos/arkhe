@@ -13,6 +13,13 @@ a {
     }
 }
 
+// ブロッククラッシュ時の表示
+// .block-editor-warning {
+//     max-width: var(--ark-block_width, 900px);
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
 [data-align="wide"] {
 
     & > .wp-block-cover > .wp-block-cover__inner-container,

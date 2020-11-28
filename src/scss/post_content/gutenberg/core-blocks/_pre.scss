@@ -1,5 +1,4 @@
 .wp-block-code {
-    padding: 0 !important;
     background-color: var(--ark-color_gray);
     border: none;
 
@@ -10,6 +9,10 @@
         overflow-x: auto !important;
         font-size: .9rem;
         white-space: pre;
+        background: none;
+    }
+
+    code.rich-text {
         background: none;
     }
 }
