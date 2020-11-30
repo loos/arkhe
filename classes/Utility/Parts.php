@@ -13,7 +13,7 @@ trait Parts {
 		$placeholder = isset( $args['placeholder'] ) ? $args['placeholder'] : '';
 
 		// memo : image_downsize( $img_id, 'medium' );
-		$class           = $class . ' lazyload -no-lb';
+		$class           = $class . ' lazyload u-lb-off';
 		$attachment_args = array(
 			'class' => $class,
 			'alt'   => '',
