@@ -16,13 +16,10 @@ if ( have_posts() ) : ?>
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			Arkhe::get_part(
-				'post_list/style/' . $file_name,
-				array(
-					'list_type' => $list_type,
-					'count'     => $loop_count++,
-				)
-			);
+			Arkhe::get_part( 'post_list/style/' . $file_name, array(
+				'list_type' => $list_type,
+				'count'     => $loop_count++,
+			) );
 		endwhile;
 	?>
 	</ul>

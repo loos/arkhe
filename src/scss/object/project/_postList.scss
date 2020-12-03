@@ -18,6 +18,11 @@
         margin-left: -.75rem;
     }
 
+    .c-postContent & {
+        padding: 0;
+        list-style: none;
+    }
+
 }
 
 // li
@@ -348,41 +353,3 @@
         width: 100%;
     }
 }
-
-/*
-// 記事内での呼び出し
-.c-postContent {
-
-    .p-postList {
-        margin-bottom: 0;
-        list-style: none;
-        // padding-left: 0;
-    }
-
-    .-type-simple {
-        //liにmarginがないもの
-        margin-bottom: 2em;
-    }
-
-    .p-postList__item {
-        // padding-left: 0;
-        &::before {
-            content: none; //liのbeforeを表示させない
-        }
-    }
-
-    .p-postList__title {
-        display: block;
-        padding: 0;
-        // margin: 0;
-        color: inherit;
-        background: none;
-        border: none;
-
-        &::before,
-        &::after {
-            content: none;
-        }
-    }
-}
-*/

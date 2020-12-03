@@ -15,14 +15,11 @@ $date      = new DateTime( $post_data->post_date );
 			<figure class="c-postThumb__figure">
 				<?php
 					// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					echo Arkhe::get_thumbnail(
-						$the_id,
-						array(
-							'size'        => 'medium',
-							'sizes'       => '(min-width: 600px) 400px, 50vw',
-							'class'       => 'c-postThumb__img',
-						)
-					);
+					echo ark_get__thumbnail( $the_id, array(
+						'size'        => 'medium',
+						'sizes'       => '(min-width: 600px) 400px, 50vw',
+						'class'       => 'c-postThumb__img',
+					) );
 				?>
 			</figure>
 		</div>
@@ -30,7 +27,7 @@ $date      = new DateTime( $post_data->post_date );
 			<div class="p-postList__title"><?php the_title(); ?></div>
 			<div class="p-postList__meta c-postMetas">
 				<div class="p-postList__times c-postTimes u-color-thin">
-					<?php Arkhe::the_date_time( $date, 'posted', false ); ?>
+					<?php ark_the__postdate( $date, 'posted', false ); ?>
 				</div>
 			</div>
 		</div>

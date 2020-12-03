@@ -24,13 +24,10 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 <li class="<?php echo esc_attr( $list_class ); ?>">
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
 		<?php
-			Arkhe::get_part(
-				'post_list/item/thumb',
-				array(
-					'post_id'   => $the_id,
-					'list_type' => $list_type,
-				)
-			);
+			Arkhe::get_part( 'post_list/item/thumb', array(
+				'post_id'   => $the_id,
+				'list_type' => $list_type,
+			) );
 		?>
 		<div class="p-postList__body">
 			<?php

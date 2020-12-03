@@ -2,11 +2,11 @@
     max-width: var(--ark-container_width);
     margin-right: auto;
     margin-left: auto;
-    padding-right: 4vw;
-    padding-left: 4vw;
+    padding-right: var(--ark-pad--container);
+    padding-left: var(--ark-pad--container);
 
-    @include pc {
-        padding-right: 48px;
-        padding-left: 48px;
-    }
+    // @include pc {
+    //     padding-right: 48px;
+    //     padding-left: 48px;
+    // }
 }

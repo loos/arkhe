@@ -13,6 +13,8 @@ $modified  = new DateTime( $post_data->post_modified );
 // 公開日 < 更新日かどうか
 $is_modified = ( $date < $modified );
 
+$show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show_entry_thumb' ), $the_id );
+
 ?>
 <header class="p-entry__head">
 	<?php if ( ! Arkhe::is_show_ttltop() ) : ?>
@@ -22,24 +24,22 @@ $is_modified = ( $date < $modified );
 	<?php endif; ?>
 	<div class="c-postMetas u-flex--aicw">
 		<div class="c-postTimes u-flex--aicw">
-			<?php Arkhe::the_date_time( $date, 'posted' ); ?>
 			<?php
+				ark_the__postdate( $date, 'posted' );
+
 				if ( $is_modified ) :
-					Arkhe::the_date_time( $modified, 'modified', false );
+					ark_the__postdate( $modified, 'modified' );
 				endif;
 			?>
 		</div>
 		<?php
 			// カテゴリー・タグ
-			Arkhe::get_part(
-				'single/term_list',
-				array(
-					'post_id'  => $the_id,
-					'show_cat' => $setting['show_entry_cat'],
-					'show_tag' => $setting['show_entry_tag'],
-					'is_head'  => true,
-				)
-			);
+			Arkhe::get_part( 'single/term_list', array(
+				'post_id'  => $the_id,
+				'show_cat' => $setting['show_entry_cat'],
+				'show_tag' => $setting['show_entry_tag'],
+				'is_head'  => true,
+			) );
 
 			// 著者アイコン
 			if ( $setting['show_entry_author'] ) :
@@ -57,15 +57,11 @@ $is_modified = ( $date < $modified );
 	</div>
 	<?php
 		// アイキャッチ画像
-		$show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show_entry_thumb' ), $the_id );
 		if ( $show_thumb ) :
-			Arkhe::get_part(
-				'singular/thumbnail',
-				array(
-					'post_id'    => $the_id,
-					'post_title' => $post_data->post_title,
-				)
-			);
+			Arkhe::get_part( 'singular/thumbnail', array(
+				'post_id'    => $the_id,
+				'post_title' => $post_data->post_title,
+			) );
 		endif;
 	?>
 </header>

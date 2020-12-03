@@ -38,7 +38,7 @@ $cat_data = get_the_category( $the_id );
 $cat_data = empty( $cat_data ) ? null : $cat_data[0];
 
 // 著者データ
-$author_data = get_userdata( $author_id );
+$author_data = $show_author ? get_userdata( $author_id ) : null;
 
 ?>
 <div class="p-postList__meta c-postMetas u-flex--aicw">
@@ -46,11 +46,10 @@ $author_data = get_userdata( $author_id );
 		<div class="p-postList__times c-postTimes u-color-thin u-flex--aic">
 			<?php
 				if ( $show_date && $date ) :
-					Arkhe::the_date_time( $date, 'posted' );
+					ark_the__postdate( $date, 'posted' );
 				endif;
-
 				if ( $show_modified && $modified ) :
-					Arkhe::the_date_time( $modified, 'modified' );
+					ark_the__postdate( $modified, 'modified' );
 				endif;
 			?>
 		</div>
@@ -60,7 +59,7 @@ $author_data = get_userdata( $author_id );
 		<i class="c-postMetas__icon arkhe-icon-folder" role="img" aria-hidden="true"></i>
 		<?php echo esc_html( $cat_data->name ); ?></div>
 	<?php endif; ?>
-	<?php if ( $show_author && $author_data ) : ?>
+	<?php if ( $author_data ) : ?>
 		<div class="p-postList__author c-postAuthor u-flex--aic">
 			<figure class="c-postAuthor__figure">
 				<?php echo get_avatar( $author_id, 100, '', '' ); ?>

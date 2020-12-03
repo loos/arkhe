@@ -19,7 +19,16 @@
     .u-only-pc,
     .u-only-sp {
         display: block !important;
+
+        &.wp-block-columns {
+            display: flex !important;
+        }
     }
+
+    // .u-only-pc.wp-block-columns {
+    //     display: flex !important;
+    // }
+
 
     @include pc {
 
@@ -33,6 +42,11 @@
         .u-only-pc {
             opacity: .5;
         }
+    }
+
+    // コアのCSSで auto にされるので詳細度高めに上書き
+    img.u-obf-cover {
+        height: 100%;
     }
 }
 

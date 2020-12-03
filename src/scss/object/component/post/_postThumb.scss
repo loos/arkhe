@@ -21,7 +21,7 @@
 
 .c-postThumb__img {
 
-    @extend %objFitCover;
+    @extend .u-obf-cover;
     position: absolute;
     top: 0;
     left: 0;

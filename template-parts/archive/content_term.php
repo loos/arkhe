@@ -9,14 +9,11 @@ $term_id = $wp_obj->term_id;
 // リストタイプ
 $list_type = apply_filters( 'arkhe_list_type_on_term', ARKHE_LIST_TYPE, $term_id );
 
-// アーカイブページのデータ
-$archive_data = Arkhe::get_archive_data();
-
 // 説明文
 $term_description = $wp_obj->description;
 
 if ( ! Arkhe::is_show_ttltop() ) :
-	Arkhe::get_part( 'archive/title', $archive_data );
+	Arkhe::get_part( 'archive/title', ark_get__archive_data() );
 endif;
 if ( ! empty( $term_description ) ) :
 ?>

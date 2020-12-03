@@ -7,12 +7,14 @@
 
     .blocks-gallery-grid {
         width: 100%;
+        padding: 0;
+        list-style: none;
     }
 
-    .blocks-gallery-grid,
-    .blocks-gallery-item {
-        padding: 0;
-    }
+    // .blocks-gallery-grid,
+    // .blocks-gallery-item {
+    //     padding: 0;
+    // }
 
     figure {
         margin: 0;

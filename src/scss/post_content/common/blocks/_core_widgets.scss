@@ -1,0 +1,16 @@
+// リストの list-style, padding を打ち消す
+.wp-block-rss,
+.wp-block-categories-list,
+.wp-block-archives-list,
+.wp-block-latest-posts,
+.wp-block-latest-comments {
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+
+// .wp-block-archives-list ul,
+.wp-block-categories-list .children {
+    padding-left: 0;
+    list-style: none;
+}

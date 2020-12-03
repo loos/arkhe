@@ -18,14 +18,11 @@ if ( ! has_post_thumbnail( $the_id ) ) {
 	<figure class="c-postThumb__figure">
 		<?php
 			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo Arkhe::get_thumbnail(
-				$the_id,
-				array(
-					'size'        => 'large',
-					'sizes'       => '(min-width: 600px) 400px, ' . $sp_sizes,
-					'class'       => 'c-postThumb__img',
-				)
-			);
+			echo ark_get__thumbnail( $the_id, array(
+				'size'        => 'large',
+				'sizes'       => '(min-width: 600px) 400px, ' . $sp_sizes,
+				'class'       => 'c-postThumb__img',
+			) );
 		?>
 	</figure>
 </div>

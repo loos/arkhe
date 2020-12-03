@@ -14,6 +14,9 @@
 	--ark-mt--s: 1rem;
 	--ark-mt--h: 2.25em; // 見出しタグ用
 
+	// l-containerのサイドのpadding量
+	--ark-pad--container: 48px;
+
 	// カラー変数 (設定には紐づいていないもの)
 	--ark-color_border: rgba(200,200,200,.5);
 	--ark-color_gray: rgba(200,200,200,.15);
@@ -38,6 +41,10 @@
 
 	// 固定コンテンツを考慮したオフセット値
 	--ark-offset_y: 0px;
+
+	@include sp {
+		--ark-pad--container: 4vw;
+	}
 
 }
 

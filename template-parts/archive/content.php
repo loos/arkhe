@@ -4,10 +4,10 @@
  */
 
 // アーカイブページのデータ
-$archive_data = Arkhe::get_archive_data();
+$archive_data = ark_get__archive_data();
 
 // リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_archive', ARKHE_LIST_TYPE, $archive_data );
+$list_type = apply_filters( 'arkhe_list_type_on_archive', ARKHE_LIST_TYPE, $archive_data['type'] );
 ?>
 <div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
 <?php

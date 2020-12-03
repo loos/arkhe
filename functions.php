@@ -48,9 +48,7 @@ spl_autoload_register(
 class Arkhe extends \Arkhe_Theme\Data {
 
 	use \Arkhe_Theme\Utility\Attrs,
-		\Arkhe_Theme\Utility\Parts,
 		\Arkhe_Theme\Utility\Output,
-		\Arkhe_Theme\Utility\Utility,
 		\Arkhe_Theme\Utility\Licence,
 		\Arkhe_Theme\Utility\Condition,
 		\Arkhe_Theme\Utility\Template_Parts;
@@ -86,6 +84,9 @@ class Arkhe extends \Arkhe_Theme\Data {
 
 		// Notice
 		require_once ARKHE_THEME_PATH . '/inc/notice.php';
+
+		// パーツ生成関数
+		require_once ARKHE_THEME_PATH . '/inc/parts.php';
 
 		// その他、フック処理
 		require_once ARKHE_THEME_PATH . '/inc/hooks_arkhe.php';

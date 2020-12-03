@@ -11,8 +11,8 @@ $show_tag = isset( $args['show_tag'] ) ? $args['show_tag'] : false;
 $is_head  = isset( $args['is_head'] ) ? $args['is_head'] : true;
 
 // カテゴリー・タグを取得
-$cat_list = $show_cat ? \Arkhe::get_the_term_links( $the_id, 'cat', $is_head ) : '';
-$tag_list = $show_tag ? \Arkhe::get_the_term_links( $the_id, 'tag', $is_head ) : '';
+$cat_list = $show_cat ? ark_get__term_links( $the_id, 'cat', $is_head ) : '';
+$tag_list = $show_tag ? ark_get__term_links( $the_id, 'tag', $is_head ) : '';
 
 $return = '';
 if ( $cat_list ) {
