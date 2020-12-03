@@ -1,5 +1,25 @@
 
 .wp-block-social-links {
-    align-items: center;
-}
 
+    align-items: center;
+
+    .c-postContent & {
+        padding: 0;
+        list-style: none;
+    }
+
+    .wp-block-social-link {
+        margin: 0 8px 8px 0;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    &.is-style-logos-only {
+
+        a {
+            padding: 0;
+        }
+    }
+}

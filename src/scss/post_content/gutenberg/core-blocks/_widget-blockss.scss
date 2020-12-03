@@ -107,7 +107,22 @@
 
 
     // ソーシャルリンク
-    .wp-social-link {
+
+    .wp-block-social-links {
+
+        &.is-style-logos-only {
+
+            .wp-block-social-link button {
+                padding: 0;
+            }
+        }
+
+        .block-list-appender {
+            margin-top: 0 !important;
+        }
+    }
+
+    .wp-block-social-link {
         margin: 0 8px 8px 0 !important;
     }
 
