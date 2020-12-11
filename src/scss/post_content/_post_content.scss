@@ -170,33 +170,8 @@ figcaption {
 
 }
 
-// コアブロック
-ul,
-ol {
-    margin-left: 0;
-    padding-left: 1.5em;
 
-    &.has-background {
-        padding: 1.5rem 2.5rem;
-    }
-
-    ul {
-        margin-left: 0;
-        padding-left: 1.5em;
-        list-style: circle;
-    }
-
-    ol {
-        margin-left: 0;
-        padding-left: 1.5em;
-    }
-
-}
-
-li {
-    margin: .25em 0;
-}
-
+// リスト
 ul {
     list-style: disc;
 }
@@ -204,3 +179,31 @@ ul {
 ol {
     list-style: decimal;
 }
+
+li {
+    margin: .25em 0;
+}
+
+ul,
+ol {
+    // margin-left: 0;
+    padding-left: 1.5em;
+
+    &.has-background {
+        // padding: 1.5rem 2.5rem;
+        padding: 1.5em 1.5em 1.5em 3em;
+    }
+
+    ul {
+        // margin-left: 0;
+        padding-left: 1.5em;
+        list-style: circle;
+    }
+
+    ol {
+        // margin-left: 0;
+        padding-left: 1.5em;
+    }
+
+}
+

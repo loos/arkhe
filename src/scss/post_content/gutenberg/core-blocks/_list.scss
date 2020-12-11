@@ -14,7 +14,7 @@
         white-space: normal;
 
         &.has-background {
-            padding: 1.5rem 2.5rem !important;
+            padding: 1.5em 1.5em 1.5em 3em !important;
         }
 
         li {
@@ -25,12 +25,12 @@
         }
 
         ol {
-            margin-left: 0;
+            // margin-left: 0;
             padding-left: 1.5em;
         }
 
         ul {
-            margin-left: 0;
+            // margin-left: 0;
             padding-left: 1.5em;
             list-style: circle;
         }
