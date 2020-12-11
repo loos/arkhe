@@ -28,7 +28,7 @@ Source: https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE
 
 == Screenshots ==
 Image used in Screenshot
-    Source: https://pxhere.com/en/photo/344
+    Source: https://pxhere.com/en/photo/155920
     License: Creative Commons Zero (CC0) license.
     License Url : https://pxhere.com/en/license
 
