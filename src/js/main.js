@@ -149,3 +149,10 @@ window.addEventListener('orientationchange', function () {
 		changeDeviceSize();
 	}, 5);
 });
+
+/**
+ * 画面リサイズ時の処理
+ */
+window.addEventListener('resize', function () {
+	setState.scrollbarW();
+});
