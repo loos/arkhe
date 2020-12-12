@@ -47,6 +47,9 @@ const urlHash = location.hash;
  */
 // method.LazyHook(isPC);
 
+// スクロールバーの幅
+setState.scrollbarW();
+
 /**
  * DOMContentLoaded
  */
@@ -62,9 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	/* smoothOffsetをセット */
 	setState.smoothOffset(DOM.wpadminbar);
-
-	// スクロールバーの幅
-	setState.scrollbarW();
 
 	/**
 	 * objectFitImages

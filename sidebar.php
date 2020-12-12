@@ -3,7 +3,7 @@
  * サイドバーテンプレート
  */
 ?>
-<aside id="sidebar" class="l-content__sidebar">
+<aside id="sidebar" class="l-sidebar">
 	<?php
 		do_action( 'arkhe_before_sidebar_content' );
 		Arkhe::get_part( 'sidebar_content' );

@@ -1,0 +1,10 @@
+// リスト
+.editor-styles-wrapper {
+
+    // 全幅コンテンツの直下で左右 padding を 0 にされてしまうのを防ぐ
+    [data-align="full"] .wp-block-group > .wp-block-group__inner-container > .has-background,
+    [data-align="full"] .wp-block-group > .wp-block-group__inner-container > [data-type="core/list"].has-background {
+        padding: 1.5rem 1.75rem;
+    }
+
+}

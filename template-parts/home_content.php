@@ -16,7 +16,7 @@ Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 the_posts_pagination(
 	array(
 		'mid_size'           => 2,
-		'screen_reader_text' => null,
+		// 'screen_reader_text' => 'ページネーション',
 	)
 );
 

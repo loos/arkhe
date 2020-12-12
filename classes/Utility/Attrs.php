@@ -102,11 +102,11 @@ trait Attrs {
 
 
 	/**
-	 * l-content__main クラス
+	 * l-main クラス
 	 */
 	public static function main_class() {
 
-		$class = 'l-content__main';
+		$class = 'l-main';
 		if ( is_front_page() && ! is_home() ) {
 			$class .= ' l-article';
 		} elseif ( is_page() || is_single() || is_404() ) {
@@ -120,11 +120,11 @@ trait Attrs {
 
 
 	/**
-	 * l-content__main__body クラス
+	 * l-main__body クラス
 	 */
 	public static function main_body_class( $is_echo = true ) {
 
-		$class = 'l-content__main__body';
+		$class = 'l-main__body';
 
 		if ( is_front_page() || is_home() ) {
 			$class .= ' p-front';

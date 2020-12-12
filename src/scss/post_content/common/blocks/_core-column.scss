@@ -19,11 +19,6 @@
 
     @include sp {
         flex-wrap: wrap; //(min-width: 782px) で nowrap にされるので明示的に指定
-
-        //スマホは1列
-        // .wp-block-column {
-        //     flex-basis: 100%; //(min-width: 782px) から表示になるので明示的に指定
-        // }
     }
 }
 

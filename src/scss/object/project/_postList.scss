@@ -65,7 +65,7 @@
         width: 100%;
     }
 
-    .l-content__sidebar .-type-card & {
+    .l-sidebar .-type-card & {
 
         @include pc {
             width: 100%;
@@ -213,16 +213,9 @@
         }
     }
 
-    // .l-content__sidebar .-type-card & ,
     .-related & {
         font-size: .9rem;
     }
-
-    // .l-content__sidebar .-type-list & {
-    //     @include tab {
-    //         font-size: 13px;
-    //     }
-    // }
 }
 
 
@@ -263,17 +256,7 @@
         margin: 0 0 .25rem;
     }
 
-
-    // .c-widget & {
-    //     margin-top: 0;
-    // }
-
 }
-
-// .p-postList__cat {
-//     padding-right: 1px;
-// }
-
 
 .p-postList__cat {
     margin-right: .5rem;

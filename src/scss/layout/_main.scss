@@ -1,4 +1,4 @@
-.l-content__main {
+.l-main {
     position: static !important; //色々と重要
     width: 100%;
 
@@ -11,7 +11,7 @@
     }
 }
 
-.l-content__main__body {
+.l-main__body {
 
     & > :first-child {
         margin-top: 0 !important;

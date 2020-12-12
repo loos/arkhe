@@ -20,16 +20,32 @@ a {
 //     margin-left: auto;
 // }
 
-[data-align="wide"] {
+.wp-block-cover__inner-container,
+.wp-block-group__inner-container,
+.wp-block-media-text__content,
+.wp-block-column {
 
-    & > .wp-block-cover > .wp-block-cover__inner-container,
-    & > .wp-block-group > .wp-block-group__inner-container {
+    & > .wp-block {
+        max-width: 100%;
+    }
+}
 
-        & > .wp-block {
-            max-width: 100%;
+
+[data-align="full"] {
+
+    & > .wp-block-cover {
+        padding: 4em 48px;
+    }
+
+    & > .wp-block-group.has-background {
+        padding: 4em 48px;
+
+        & > .wp-block-group__inner-container > .wp-block {
+            max-width: var(--ark-block_width, 900px);
         }
     }
 }
+
 
 
 // フォント
@@ -45,17 +61,8 @@ a {
 }
 
 // 本文エリア
-.block-editor-writing-flow {
+// .block-editor-writing-flow {}
 
-    // padding大きく
-    [data-align="full"] {
-
-        & > .wp-block-cover,
-        & > .wp-block-group {
-            padding: 4em 48px;
-        }
-    }
-}
 
 //aligncenterにclearが付くようになったので、それに合わせる
 [data-align="center"] {

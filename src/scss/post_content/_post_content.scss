@@ -186,22 +186,18 @@ li {
 
 ul,
 ol {
-    // margin-left: 0;
     padding-left: 1.5em;
 
     &.has-background {
-        // padding: 1.5rem 2.5rem;
-        padding: 1.5em 1.5em 1.5em 3em;
+        padding: 1.5em 1.75em 1.5em 3em;
     }
 
     ul {
-        // margin-left: 0;
         padding-left: 1.5em;
         list-style: circle;
     }
 
     ol {
-        // margin-left: 0;
         padding-left: 1.5em;
     }
 

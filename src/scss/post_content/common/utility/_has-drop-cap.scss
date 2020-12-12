@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.has-drop-cap {
+    min-height: 3rem;
+
+    &:not(:focus)::first-letter {
+        font-size: 4rem;
+    }
+}
+

@@ -12,7 +12,6 @@ trait Template_Parts {
 
 		if ( '' === $path ) return '';
 
-		// フック名に使う
 		// $path_key = str_replace( '/', '_', $path );
 
 		// パーツ読み込み前に発火するフック
@@ -43,8 +42,7 @@ trait Template_Parts {
 
 			// キャッシュがあればそれを出力
 			if ( $cache_data ) {
-				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				echo $cache_data;
+				echo $cache_data; // phpcs:ignore
 				return;
 			}
 		}
@@ -105,13 +103,4 @@ trait Template_Parts {
 		}
 	}
 
-	/**
-	 * 0.7時の関数名変更の後方互換用 -> 1.0 で消す
-	 */
-	public static function get_parts( $path = '', $args = null ) {
-		self::get_part( $path, $args );
-	}
-	public static function the_parts_content( $path = '', $include_path = '', $args = null ) {
-		self::the_part_content( $path, $include_path, $args );
-	}
 }

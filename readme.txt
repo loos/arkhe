@@ -33,7 +33,6 @@ Image used in Screenshot
     License Url : https://pxhere.com/en/license
 
 
-
 == Author ==
 The theme built by Ryo Yamasaki (looswebstudio) at LOOS,Inc.
 You can contact me at Twitter.

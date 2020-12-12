@@ -10,29 +10,26 @@
     }
 
     [data-type="core/list"] {
-        padding-left: 1.5em !important; //全幅グループブロック内で 0 にされるのを防ぐ
+        // .editor-styles-wrapper ul, .editor-styles-wrapper ol の padding-left に負けないように。
+        padding-left: 1.5em;
         white-space: normal;
 
-        &.has-background {
-            padding: 1.5em 1.5em 1.5em 3em !important;
-        }
-
-        li {
-            // li {
-            margin: .1em 0;
-            // margin-left: 0;
-            // }
-        }
-
         ol {
-            // margin-left: 0;
             padding-left: 1.5em;
         }
 
         ul {
-            // margin-left: 0;
             padding-left: 1.5em;
             list-style: circle;
         }
+    }
+}
+
+//全幅グループブロック内で 0 にされるのを防ぐ
+[data-align="full"] .wp-block-group > .wp-block-group__inner-container > .wp-block[data-type="core/list"] {
+    padding-left: 1.5em;
+
+    &.has-background {
+        padding-left: 3em;
     }
 }

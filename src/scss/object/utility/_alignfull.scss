@@ -15,7 +15,7 @@
 
 
     // サイドバー有りの時、コンテンツエリアでは幅を制限
-    [data-sidebar="on"] .l-content__main & {
+    [data-sidebar="on"] .l-main & {
 
         @include pc {
             left: -16px;
@@ -23,15 +23,16 @@
         }
     }
 
-    // グループ・カバーブロックの余白量を大きく。SP表示はコンテンツ幅に揃える。
-    &.wp-block-group,
-    &.wp-block-cover {
-        padding: 4em 48px;
+    // グループ（背景色あり）・カバーブロックの余白量を大きく。
+    &.wp-block-cover,
+    &.wp-block-group.has-background {
+        padding: 4em var(--ark-pad--container, 48px);
+    }
 
-        @include sp {
-            padding-right: 4vw;
-            padding-left: 4vw;
-        }
+    // グループのインナーコンテンツの最大幅を他のコンテンツと揃える。
+    &.has-background > .wp-block-group__inner-container {
+        max-width: var(--ark-article_width);
+        margin: 0 auto;
     }
 
     // メディアと文章ブロック
@@ -41,13 +42,6 @@
             padding-right: 2.5em;
             padding-left: 2.5em;
         }
-    }
-
-    // グループ・カバーブロックのインナーコンテンツの最大幅を他のコンテンツと揃える。
-    & > .wp-block-group__inner-container,
-    & > .wp-block-cover__inner-container {
-        max-width: var(--ark-article_width);
-        margin: 0 auto;
     }
 
 }
