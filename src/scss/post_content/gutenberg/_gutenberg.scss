@@ -31,23 +31,6 @@ a {
 }
 
 
-[data-align="full"] {
-
-    & > .wp-block-cover {
-        padding: 4em 48px;
-    }
-
-    & > .wp-block-group.has-background {
-        padding: 4em 48px;
-
-        & > .wp-block-group__inner-container > .wp-block {
-            max-width: var(--ark-block_width, 900px);
-        }
-    }
-}
-
-
-
 // フォント
 .block-editor .editor-styles-wrapper {
     color: var(--ark-color_text);

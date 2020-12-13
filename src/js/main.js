@@ -154,5 +154,19 @@ window.addEventListener('orientationchange', function () {
  * 画面リサイズ時の処理
  */
 window.addEventListener('resize', function () {
-	setState.scrollbarW();
+	setTimeout(() => {
+		setState.scrollbarW();
+
+		/* 状態変数のセット */
+		setState.mediaSize();
+
+		/* ヘッダーの高さ取得 */
+		setState.headH(DOM.header);
+
+		/* smoothOffsetをセット */
+		setState.smoothOffset(DOM.wpadminbar);
+
+		/** スマホ・タブレット縦 と PC・タブレット横による分岐処理 */
+		changeDeviceSize();
+	}, 5);
 });

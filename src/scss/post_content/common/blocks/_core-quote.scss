@@ -13,7 +13,7 @@
     &.is-style-large {
 
         position: relative;
-        margin: var(--ark-mt) 0 0;// コアのスタイルでマージンが指定されているのを上書き
+        margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
         padding: 2.5rem 3rem;
         background: var(--ark-color_gray);
         border: none;

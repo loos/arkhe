@@ -1,6 +1,22 @@
+.wp-block-separator {
+    height: 1px;
+    background-color: currentColor;
+    border: none;
+    opacity: .5;
+
+    &.has-background {
+        opacity: 1;
+    }
+
+}
 // デフォルトスタイル
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-    max-width: 100px;
+    max-width: 6em;
+    height: 2px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.wp-block-separator.is-style-wide {
+    height: 1px; // ブロックエディター側で -wide が 2px にされる。
 }

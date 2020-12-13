@@ -1,0 +1,75 @@
+[data-align="full"] {
+
+    & > .wp-block-cover {
+        padding: 4em 48px;
+    }
+
+    & > .wp-block-group.has-background {
+        padding: 4em 48px;
+
+        & > .wp-block-group__inner-container {
+            // max-width: var(--ark-block_width, 900px);
+            // margin-right: auto;
+            // margin-left: auto;
+
+            & > .wp-block {
+                max-width: var(--ark-block_width, 900px);
+            }
+
+            & > [data-align="wide"] {
+                max-width: calc(var(--ark-block_width, 900px) + 160px);
+            }
+
+            & > [data-align="full"] {
+                width: calc(100% + 96px);
+                max-width: calc(100% + 96px);
+                margin-left: -48px;
+            }
+
+        }
+
+
+    }
+}
+
+// fullwideコンテンツを使うと少し左右にスクロールできてしまうのを防ぐ
+.interface-interface-skeleton__content {
+    overflow-x: hidden;
+}
+
+
+// 左右寄せ
+.wp-block[data-align="left"],
+.wp-block[data-align="right"] {
+    height: auto;
+    margin-top: var(--ark-mt);
+}
+
+[data-align="left"],
+[data-align="right"] {
+    height: auto;
+
+    & > .wp-block-pullquote {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+
+[data-align="left"] {
+
+    & > .wp-block-pullquote {
+        text-align: left;
+    }
+}
+
+
+[data-align="right"] {
+
+    & > .wp-block-pullquote {
+        text-align: right;
+    }
+}
+

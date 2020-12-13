@@ -1,11 +1,15 @@
 .wp-block-buttons {
-
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    float: none !important;
 
     &.aligncenter {
         justify-content: center;
+    }
+
+    &.alignright {
+        justify-content: flex-end;
     }
 
     .wp-block-button {

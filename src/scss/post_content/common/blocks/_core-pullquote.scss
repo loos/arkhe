@@ -1,20 +1,20 @@
 //プルクォート
 .wp-block-pullquote {
-    float: none !important; //ブロックエディター側にも届くように
-    width: 100%;
+    // float: none !important; //ブロックエディター側にも届くように
+    // width: 100%;
     padding: 2rem 0;
     text-align: center;
     border-top: solid 2px currentColor;
     border-bottom: solid 2px currentColor;
 
-
     &.alignleft {
+        float: none;
         max-width: 100%;
         text-align: left;
-
     }
 
     &.alignright {
+        float: none;
         max-width: 100%;
         text-align: right;
     }
@@ -35,6 +35,12 @@
     }
 
     &.is-style-solid-color {
+        padding: 2rem;
         background-color: var(--ark-color_gray);
+
+        blockquote {
+            max-width: 100%;
+            text-align: inherit;
+        }
     }
 }

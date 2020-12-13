@@ -22,7 +22,12 @@
     margin-top: 1rem;
 }
 
-// .wp-block-quote{}
+.wp-block-quote.is-style-large {
+
+    &::after {
+        left: initial;
+    }
+}
 
 // [data-type="core/pullquote"] {
 
