@@ -16,22 +16,22 @@ function customizer_setup( $wp_customize ) {
 	// 全体設定
 	include_once ARKHE_THEME_PATH . '/inc/customizer/common.php';
 
-	// ヘッダー設定
+	// ヘッダー
 	include_once ARKHE_THEME_PATH . '/inc/customizer/header.php';
 
-	// フッター設定
+	// フッター
 	include_once ARKHE_THEME_PATH . '/inc/customizer/footer.php';
 
 	// サイドバー
 	include_once ARKHE_THEME_PATH . '/inc/customizer/sidebar.php';
 
-	// 固定ページ設定
+	// 固定ページ
 	include_once ARKHE_THEME_PATH . '/inc/customizer/page.php';
 
-	// 投稿ページ設定
+	// 投稿ページ
 	include_once ARKHE_THEME_PATH . '/inc/customizer/single.php';
 
-	// 記事一覧リスト
+	// アーカイブ
 	include_once ARKHE_THEME_PATH . '/inc/customizer/post_list.php';
 
 }

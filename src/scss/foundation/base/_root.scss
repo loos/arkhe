@@ -15,9 +15,11 @@
 	// フォントファミリー
 	--ark-font_family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
-
 	// l-containerのサイドのpadding量
 	--ark-pad--container: 48px;
+	@include sp {
+		--ark-pad--container: 4vw;
+	}
 
 	// カラー変数 (設定には紐づいていないもの)
 	--ark-color_border: rgba(200,200,200,.5);
@@ -43,10 +45,6 @@
 
 	// 固定コンテンツを考慮したオフセット値
 	--ark-offset_y: 0px;
-
-	@include sp {
-		--ark-pad--container: 4vw;
-	}
 
 }
 

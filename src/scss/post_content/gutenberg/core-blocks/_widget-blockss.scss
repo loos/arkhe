@@ -29,7 +29,7 @@
     }
 }
 
-// 
+// リスト系
 [data-type="core/rss"] .wp-block-rss,
 [data-type="core/archives"] .wp-block-archives-list,
 [data-type="core/categories"] .wp-block-categories__list {
@@ -43,11 +43,17 @@
     border-top: solid 1px var(--ark-color_border);
 }
 
+
+// RSSブロック調整
 [data-type="core/rss"] {
     padding: 0 !important;
 }
 
-// 子メニューの表示関連
+/*
+ * カテゴリーブロック調整
+ * エディター上でだけ wp_list_categories フックが通っていない。
+ */
+// 子メニューを薄くする（本当はアコーディオン）
 .wp-block-categories__list .wp-block-categories__list {
     font-size: .9rem;
     border-top: none;
@@ -62,11 +68,25 @@
     }
 }
 
-.wp-block-latest-posts {
-    // margin: 0 !important;
-    padding: 0 !important;
+// 投稿数を右端に（本当は a の中）
+ul.wp-block-categories__list {
+
+    li {
+        position: relative;
+    }
+
+    .wp-block-categories__post-count {
+        position: absolute;
+        top: .75rem;
+        right: .5em;
+        transform: scale(.9);
+        opacity: .8;
+        // transform: translateY(-50%);
+    }
 }
 
+
+// 最近の投稿ブロック
 [data-type="core/latest-posts"] {
 
     .wp-block-latest-posts {
@@ -74,67 +94,43 @@
     }
 }
 
-.editor-styles-wrapper {
+[data-type="core/archives"],
+[data-type="core/categories"] {
 
-    [data-type="core/archives"],
-    [data-type="core/categories"] {
+    select {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        padding: 4px 24px 4px 12px;
+        color: #333;
+        line-height: 32px;
+        background-color: #fff !important;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.984 9.984h10.031l-5.016 5.016z"></path></svg>') !important;
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 24px 24px;
+        border: solid 1px var(--ark-color_border);
+        border-radius: 2px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
 
-        select {
-            display: block;
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            padding: 0 1em;
-            padding: 4px 24px 4px 12px;
-            color: #333;
-            line-height: 32px;
-            background-color: #fff !important;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.984 9.984h10.031l-5.016 5.016z"></path></svg>') !important;
-            background-repeat: no-repeat;
-            background-position: right center;
-            background-size: 24px 24px;
-            border: solid 1px var(--ark-color_border);
-            border-radius: 2px;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-
-            &::-ms-expand {
-                display: none;
-            }
+        &::-ms-expand {
+            display: none;
         }
     }
+}
 
 
-    // ソーシャルリンク
+// 検索
+.wp-block-search {
 
-    .wp-block-social-links {
-
-        &.is-style-logos-only {
-
-            .wp-block-social-link button {
-                padding: 0;
-            }
-        }
-
-        .block-list-appender {
-            margin-top: 0 !important;
-        }
-    }
-
-    .wp-block-social-link {
-        margin: 0 8px 8px 0 !important;
-    }
-
-    // 検索
-    .wp-block-search {
-
-        .wp-block-search__button {
-            font-size: 14px;
-            background: #f7f7f7;
-            border: none;
-            box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
-        }
+    .wp-block-search__button {
+        font-size: 14px;
+        background: #f7f7f7;
+        border: none;
+        box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
     }
 
     .wp-block-search__button-inside {
@@ -145,5 +141,32 @@
             box-shadow: none;
         }
     }
+}
+
+
+// カレンダー
+[data-type="core/calendar"].wp-block-calendar {
+    border: none;
+}
+
+
+// ソーシャルリンク
+.wp-block-social-links {
+
+    &.is-style-logos-only {
+
+        .wp-block-social-link button {
+            padding: 0;
+        }
+    }
+
+    .block-list-appender {
+        margin-top: 0 !important;
+    }
+
+    .wp-block-social-link {
+        margin: 0 8px 8px 0 !important;
+    }
 
 }
+

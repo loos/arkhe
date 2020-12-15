@@ -25,8 +25,8 @@ if ( isset( $_POST['arkhe_licence_nonce'] ) && isset( $_POST['arkhe_licence_key'
 }
 
 // ライセンスデータ
-$is_error   = (bool) $licence_data['error'];
-$the_status = (int) $licence_data['status'];
+$is_error   = isset( $licence_data['error'] ) ? (bool) $licence_data['error'] : false;
+$the_status = isset( $licence_data['status'] ) ? (int) $licence_data['status'] : 0;
 $the_owner  = isset( $licence_data['owner'] ) ? $licence_data['owner'] : '';
 $the_email  = isset( $licence_data['email'] ) ? $licence_data['email'] : '';
 
@@ -87,11 +87,11 @@ if ( (int) $check_count > 5 ) {
 		wp_nonce_field( 'arkhe_licence_nonce', 'arkhe_licence_nonce' );
 
 		if ( 'warning' !== $result_type ) {
-		echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
+			echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
 		}
 
 		if ( $result ) {
-		echo '<div class="arkhe-notice -' . esc_attr( $result_type ) . '">' . esc_html( $result ) . '</div>';
+			echo '<div class="arkhe-notice -' . esc_attr( $result_type ) . '">' . esc_html( $result ) . '</div>';
 		}
 	?>
 </form>

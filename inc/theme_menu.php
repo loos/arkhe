@@ -6,7 +6,11 @@ namespace Arkhe_Theme;
  */
 add_action( 'admin_menu', '\Arkhe_Theme\add_theme_menu' );
 function add_theme_menu() {
-	$menu_title = __( 'Arkhe', 'arkhe' );
+
+	// メニューのロゴ
+	$logo = '<img class="" src="' . ARKHE_THEME_URI . '/assets/img/arkhe-logo-white.png" alt="" style="width:16px;height:16px;margin: 1px 4px 0 0;vertical-align: top;">';
+
+	$menu_title = $logo . __( 'Arkhe', 'arkhe' );
 	add_theme_page(
 		$menu_title,
 		$menu_title,
@@ -27,7 +31,7 @@ function display_theme_menu() {
 	?>
 	<div class="wrap arkhe-page" id="arkhe-page-wrap">
 		<h1 class="arkhe-page__title">
-			<img class="arkhe-page__logo" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe_logo.png' ); ?>" alt="Arkhe">
+			<img class="arkhe-page__logo" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe-logo.png' ); ?>" alt="Arkhe">
 		</h1>
 		<div class="arkhe-page__header">
 			<a class="button button-primary" target="_blank" rel="noopener" href="<?php echo esc_url( $theme_url ); ?>/">

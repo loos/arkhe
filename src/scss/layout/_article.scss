@@ -1,3 +1,10 @@
+// スリム幅
+.post-template-default,
+.page-template-one-column-slim,
+.post-template-one-column-slim {
+    --ark-article_width: var(--ark-slim_width);
+}
+
 .l-article {
     max-width: var(--ark-article_width);
 

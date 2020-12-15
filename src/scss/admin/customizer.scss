@@ -84,6 +84,22 @@
     }
 }
 
+// Arkhe独自メニューにアイコンを表示する
+[id^="accordion-section-arkhe_section_"] .accordion-section-title {
+    position: relative;
+    display: flex;
+
+    &::before {
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        background: url(../../../assets/img/arkhe-logo.svg) no-repeat center / contain;
+        content: "";
+    }
+}
+
+
 #customize-controls {
 
     // label タイトル
@@ -177,7 +193,6 @@
             padding-bottom: 4px;
         }
     }
-
 
 }
 

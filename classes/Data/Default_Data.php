@@ -45,8 +45,8 @@ trait Default_Data {
 
 			// Sidebar
 			'show_sidebar_top'          => false,
-			'show_sidebar_post'         => true,
 			'show_sidebar_page'         => false,
+			'show_sidebar_post'         => true,
 			'show_sidebar_archive'      => true,
 
 			// 投稿リスト

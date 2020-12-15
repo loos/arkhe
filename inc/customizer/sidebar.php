@@ -34,22 +34,22 @@ Customizer::add(
 	)
 );
 
-// 投稿ページに表示する
-Customizer::add(
-	$arkhe_section,
-	'show_sidebar_post',
-	array(
-		'label'       => __( 'Display on posts', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
-
 // 固定ページに表示する
 Customizer::add(
 	$arkhe_section,
 	'show_sidebar_page',
 	array(
 		'label'       => __( 'Display on pages', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// 投稿ページに表示する
+Customizer::add(
+	$arkhe_section,
+	'show_sidebar_post',
+	array(
+		'label'       => __( 'Display on posts', 'arkhe' ),
 		'type'        => 'checkbox',
 	)
 );

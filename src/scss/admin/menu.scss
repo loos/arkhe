@@ -45,11 +45,17 @@
 
 
 .arkhe-page__logo {
-    max-width: 240px;
+    max-width: 160px;
 }
 
 .arkhe-page__header {
-    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 24px 0;
+
+    .button {
+        margin-right: 8px;
+    }
 }
 
 .arkhe-page__body {
@@ -59,11 +65,12 @@
 .arkhe-page__plugins {
     display: flex;
     flex-wrap: wrap;
-    // padding: 20px 0;
+
 
     .__plugin {
         display: block;
-        max-width: 200px;
+        flex-basis: 320px;
+        box-sizing: border-box;
         margin: 8px;
         padding: 1em;
         color: #333;
@@ -73,22 +80,30 @@
         box-shadow: 0 0 12px -2px rgba(0, 0, 0, .15);
         transition: box-shadow .25s;
 
+        @media ( max-width: 900px ) {
+            flex-basis: 46%;
+            margin: 2%;
+        }
+
         &:hover {
             box-shadow: 0 0 16px 0 rgba(0, 0, 0, .2);
         }
     }
 
     .__img {
+        display: block;
         width: 100%;
     }
 
     .__title {
-        margin: 16px 0 12px;
+        margin: 16px 0 0;
+        font-weight: bold;
         font-size: 16px;
     }
 
     .__desc {
-        font-size: 14px;
+        margin-top: 8px;
+        font-size: 13px;
     }
 }
 

@@ -28,7 +28,13 @@
 
     @include sp {
 
-        flex-basis: 100% !important; //tab縦サイズの時にもコアと同じ指定を
+        // :only-child の時用
+        flex-basis: 100%; //tab縦サイズの時にもコアと同じ指定を
+
+        // 5.6 から詳細度アップ
+        &:not(:only-child) {
+            flex-basis: 100% !important;
+        }
 
         &:not(:first-child) {
             //600px以上で :nth-child(2n)に、782px以上で:not(:first-child)に 32pxついてしまう

@@ -19,15 +19,22 @@ trait CSS {
 	 */
 	protected static function css_alignwide( $container_width, $slim_width ) {
 
+		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 80 );
+		$pad_width     = apply_filters( 'arkhe_alignwide_pad_width', 48 );
+		$plus_width_2  = $plus_width * 2;
+		$pad_width_2   = $pad_width * 2;
+		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_2 . 'px)';
+
 		// 1カラムページ用
-		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + 160 + 96 ) . 'px ) {' .
-			'[data-sidebar="off"] .alignwide{left:-80px;width:calc(100% + 160px)}' .
+		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_2 + $pad_width_2 ) . 'px ) {' .
+			'.alignwide{' . $alignwide_css . '}' .
 		'}';
 
 		// 1カラムページ（スリム）用
-		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + 160 + 96 ) . 'px ) {' .
-			'.page-template-one-column-slim .alignwide{left:-80px;width:calc(100% + 160px)}' .
+		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_2 + $pad_width_2 ) . 'px ) {' .
+			'.page-template-one-column-slim .alignwide,.post-template-one-column-slim .alignwide{' . $alignwide_css . '}' .
 		'}';
+
 	}
 
 
@@ -37,19 +44,18 @@ trait CSS {
 	protected static function css_content_width( $container_width, $slim_width ) {
 
 		// コンテナサイズ
-		self::add_root_css( '--ark-container_width', ( $container_width + 96 ) . 'px' );
+		self::add_root_css( '--ark-container_width', $container_width . 'px' );
+		self::add_root_css( '--ark-article_width', $container_width . 'px' );
+
+		// スリムサイズ
+		self::add_root_css( '--ark-slim_width', $slim_width . 'px' );
 
 		// 記事コンテンツサイズ
-		self::add_root_css( '--ark-article_width', $container_width . 'px' );
-		self::add_css(
-			array( '.page-template-one-column-slim', '.post-template-one-column-slim' ),
-			'--ark-article_width:' . $slim_width . 'px'
-		);
 	}
 
 
 	/**
-	 * コンテンツサイズ
+	 * ブロックサイズ
 	 */
 	protected static function css_block_width( $container_width, $slim_width, $page_template ) {
 
@@ -70,8 +76,12 @@ trait CSS {
 			// 2カラム
 			$block_width = 900;
 
+		} elseif ( 'post' === $post_type ) {
+			// 投稿ページのデフォルトはスリム幅。
+			$block_width = $slim_width;
+
 		} else {
-			// デフォルトテンプレート時はサイドバーの有無で判定
+			// 投稿以外のデフォルトテンプレート時 -> サイドバーの有無でサイズを決める
 			if ( $front_id === $post_id ) {
 				$side_key = 'show_sidebar_top';
 			} elseif ( 'page' === $post_type ) {

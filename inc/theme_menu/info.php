@@ -1,19 +1,3 @@
-<?php if ( 0 ) : ?>
-<h3><?php esc_html_e( 'Arkhe plugin', 'arkhe' ); ?></h3>
-<div class="arkhe-page__plugins">
-	<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/plugins/">
-		<img class="__img" src="<?php echo esc_url( ARKHE_NOIMG_URL ); ?>" alt="">
-		<div class="__title">Arkhe Toolkit</div>
-		<!-- <div class="__desc">Arkheの機能を拡張するプラグイン。</div> -->
-	</a>
-	<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/plugins/">
-		<img class="__img" src="<?php echo esc_url( ARKHE_NOIMG_URL ); ?>" alt="">
-		<div class="__title">Arkhe Blocks</div>
-		<!-- <div class="__desc">Arkhe専用のブロック拡張プラグイン</div> -->
-	</a>
-</div>
-<?php endif; ?>
-
 <h3><?php esc_html_e( 'Information about the theme', 'arkhe' ); ?></h3>
 <?php
 
@@ -42,3 +26,24 @@ $info_data = json_decode( $json, true );
 		</li>
 	<?php endforeach; ?>
 </ul>
+
+<?php if ( \Arkhe::$is_ja ) : ?>
+	<h3><?php esc_html_e( 'Arkhe plugin', 'arkhe' ); ?></h3>
+	<div class="arkhe-page__plugins">
+		<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/product/arkhe-toolkit/">
+			<img class="__img" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe-toolkit.jpg' ); ?>" alt="">
+			<div class="__title">Arkhe Toolkit</div>
+			<div class="__desc">Arkheの機能を拡張し、便利な設定項目を追加するプラグインです。</div>
+		</a>
+		<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/product/arkhe-blocks-pro/">
+			<img class="__img" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe-blocks.jpg' ); ?>" alt="">
+			<div class="__title">Arkhe Blocks</div>
+			<div class="__desc">Arkhe専用のブロック機能を拡張できるプラグインです。</div>
+		</a>
+		<a class="__plugin" target="_blank" rel="noopener" href="https://arkhe-theme.com/ja/product/arkhe-wookit/">
+			<img class="__img" src="<?php echo esc_url( ARKHE_THEME_URI . '/assets/img/arkhe-wookit.jpg' ); ?>" alt="">
+			<div class="__title">Arkhe Wookit</div>
+			<div class="__desc">ArkheWOWooCommerceへ対応させることができるプラグインです。</div>
+		</a>
+	</div>
+<?php endif; ?>

@@ -155,7 +155,7 @@ class Data {
 				self::$has_pro_licence = true;
 				self::$ex_update_path  = isset( $licence_data['path'] ) ? $licence_data['path'] : '';
 			}
-}
+		}
 	}
 
 
@@ -163,7 +163,6 @@ class Data {
 	 * デフォルト値を変数にセット
 	 */
 	private static function set_default_data() {
-
 		self::$default_settings = self::get_default_settings();
 	}
 

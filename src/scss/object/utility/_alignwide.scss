@@ -2,4 +2,9 @@
 
 .alignwide {
     position: relative;
+
+    [data-sidebar="on"] & {
+        left: 0;
+        max-width: 100%;
+    }
 }
