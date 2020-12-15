@@ -27,10 +27,10 @@
 
 
 // マージン小さく維持
-.wp-block-column,
-.wp-block-media-text__content,
-.wp-block-cover__inner-container,
-.wp-block-group__inner-container {
+.c-postContent .wp-block-column,
+.c-postContent .wp-block-media-text__content,
+.c-postContent .wp-block-cover__inner-container,
+.c-postContent .wp-block-group__inner-container {
 
     & > * {
         margin-top: var(--ark-mt--s);

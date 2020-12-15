@@ -41,6 +41,17 @@
         }
     }
 
+    // 余白普通サイズエリア (hタグを考慮して明示的に記述しておく)
+    [data-align="wide"] > .wp-block-cover > .wp-block-cover__inner-container,
+    [data-align="wide"] > .wp-block-group > .wp-block-group__inner-container,
+    [data-align="full"] > .wp-block-cover > .wp-block-cover__inner-container,
+    [data-align="full"] > .wp-block-group > .wp-block-group__inner-container {
+
+        & > .block-editor-block-list__block {
+            margin-top: var(--ark-mt);
+        }
+    }
+
     // インナーブロック
     .block-editor-block-list__layout {
 
