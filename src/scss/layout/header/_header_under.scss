@@ -5,16 +5,11 @@
     width: 100%;
     background: #fff;
 
-    @include sp {
-        display: none;
-    }
-
     .c-gnav {
         justify-content: center;
         width: 100%;
 
         & > .menu-item > a {
-            // flex: 1 1 auto;
             padding: 16px 24px;
         }
     }

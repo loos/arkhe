@@ -36,20 +36,18 @@
     .admin-bar & {
         top: var(--ark-adminbar_height);
     }
-
-
-    // 配置され得るが、スマホでは非表示にする要素
-    @include sp {
-
-        .c-gnavWrap,
-        .c-customBox,
-        .wp-block-social-links {
-            display: none;
-        }
-    }
-
 }
 
+// スマホでは非表示にする要素
+@include sp {
+
+    .l-header__bar,
+    .l-header__left,
+    .l-header__right,
+    .l-header__under {
+        display: none;
+    }
+}
 
 .l-header__body {
     position: relative;
@@ -74,7 +72,7 @@
 }
 
 // spのみ
-[data-drawer="sp"] {
+[data-has-drawer="sp"] {
 
     @include pc {
         --ark-drawerW: 1px;
@@ -85,17 +83,8 @@
     }
 }
 
-
-[data-drawer=""] {
-
-    --ark-drawerW: 1px;
-
-    .l-header__drawerBtn {
-        display: none;
-    }
-}
 // pcのみ
-[data-drawer="pc"] {
+[data-has-drawer="pc"] {
 
     @include sp {
 
@@ -107,7 +96,17 @@
     }
 }
 
-[data-search=""] {
+// pcもspも表示なし
+[data-has-drawer=""] {
+
+    --ark-drawerW: 1px;
+
+    .l-header__drawerBtn {
+        display: none;
+    }
+}
+
+[data-has-search=""] {
 
     --ark-searchW: 1px;
 
@@ -117,7 +116,7 @@
 }
 
 // spのみ
-[data-search="sp"] {
+[data-has-search="sp"] {
 
 
     @include pc {
@@ -130,7 +129,7 @@
 }
 
 // pcのみ
-[data-search="pc"] {
+[data-has-search="pc"] {
 
     @include sp {
 
@@ -220,7 +219,6 @@
 .l-header__center {
     grid-area: center;
     padding: 8px 0;
-    line-height: 1;
 
     [data-logo="center"] & {
         text-align: center;
@@ -230,46 +228,22 @@
         flex-basis: 100%;
     }
 
-}
+    // ロゴ下のキャッチフレーズ（プラグインから表示可能）
+    .c-tagline {
+        font-size: .75rem;
+        line-height: 1.5;
+        letter-spacing: .2px;
 
-.l-header__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @include sp {
-        height: var(--ark-logo_size_sp);
-    }
-
-    @include pc {
-        height: var(--ark-logo_size_pc);
-
-        [data-logo="left"] & {
-            justify-content: flex-start;
+        @include sp {
+            width: 100%;
+            font-size: 10px;
+            text-align: center;
         }
     }
-}
 
-.c-headLogo {
-    display: block;
-    // max-width: 400px;
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
-
-    &.-img {
-        height: 100%;
+    .has-image + .c-tagline {
+        margin-top: .25em;
     }
-
-    &.-txt {
-        font-size: 1.5rem;
-    }
-}
-
-.c-headLogo__img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
 }
 
 
@@ -292,27 +266,5 @@
     height: 40px;
     line-height: 1.25;
     text-align: center;
-
-    // &.has-bg-color {
-    //     width: var(--ark-header_body_height);
-    //     height: var(--ark-header_body_height);
-    //     margin: 0;
-    // }
 }
-
-
-// ロゴ下のキャッチフレーズ（プラグインで表示可能）
-// .l-header__center {
-
-//     .c-catchphrase {
-//         margin-top: 4px;
-//         font-size: .75rem;
-//         letter-spacing: .2px;
-
-//         @include sp {
-//             width: 100%;
-//             font-size: 10px;
-//         }
-//     }
-// }
 

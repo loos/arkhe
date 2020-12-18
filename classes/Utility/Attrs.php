@@ -35,17 +35,15 @@ trait Attrs {
 	 */
 	public static function header_attr( $args = null, $is_echo = true ) {
 
-		$args = array_merge(
-			array(
-				'show_drawer_sp' => false,
-				'show_drawer_pc' => false,
-				'show_search_sp' => false,
-				'show_search_pc' => false,
-				'btn_layout'     => 'l-r',
-				'logo_pos'       => 'center',
-			),
-			$args
-		);
+		$setting = \Arkhe::get_setting();
+		$args    = array_merge( array(
+			'show_drawer_sp' => $setting['show_drawer_sp'],
+			'show_drawer_pc' => $setting['show_drawer_pc'],
+			'show_search_sp' => $setting['show_search_sp'],
+			'show_search_pc' => $setting['show_search_pc'],
+			'btn_layout'     => 'l-r',
+			'logo_pos'       => 'center',
+		), $args );
 
 		$attrs = array();
 
@@ -55,19 +53,27 @@ trait Attrs {
 		// ボタンレイアウト
 		$attrs['data-btns'] = $args['btn_layout'];
 
-		// メニューの表示
-		$data_drawer                                 = '';
-		if ( $args['show_drawer_sp'] ) $data_drawer .= 'sp';
-		if ( $args['show_drawer_pc'] ) $data_drawer .= 'pc';
-
-		$attrs['data-drawer'] = $data_drawer;
+		// ドロワーボタンの表示
+		$data_has_drawer = '';
+		if ( $args['show_drawer_sp'] && $args['show_drawer_pc'] ) {
+			$data_has_drawer = 'both';
+		} elseif ( $args['show_drawer_sp'] ) {
+			$data_has_drawer = 'sp';
+		} elseif ( $args['show_drawer_pc'] ) {
+			$data_has_drawer = 'pc';
+		}
+		$attrs['data-has-drawer'] = $data_has_drawer;
 
 		// サーチボタンの表示
-		$data_search                                 = '';
-		if ( $args['show_search_sp'] ) $data_search .= 'sp';
-		if ( $args['show_search_pc'] ) $data_search .= 'pc';
-
-		$attrs['data-search'] = $data_search;
+		$data_has_search = '';
+		if ( $args['show_search_sp'] && $args['show_search_pc'] ) {
+			$data_has_search = 'both';
+		} elseif ( $args['show_search_sp'] ) {
+			$data_has_search = 'sp';
+		} elseif ( $args['show_search_pc'] ) {
+			$data_has_search = 'pc';
+		}
+		$attrs['data-has-search'] = $data_has_search;
 
 		// 追従設定
 		$setting = \Arkhe::get_setting();

@@ -39,6 +39,10 @@
 
     .is-style-outline > & {
         border-width: 1px;
+
+        &:not(.has-text-color) {
+            color: var(--ark-color_main);
+        }
     }
 
     &:hover {

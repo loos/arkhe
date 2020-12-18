@@ -2,23 +2,25 @@
 /**
  * デフォルトヘッダー用テンプレート
  */
-$setting         = Arkhe::get_setting();
-$move_gnav_under = $setting['move_gnav_under'];
-$attr_data       = array(
-	'logo_pos'       => $move_gnav_under ? 'center' : 'left',
-	'show_drawer_sp' => $setting['show_drawer_sp'],
-	'show_drawer_pc' => $setting['show_drawer_pc'],
-	'show_search_sp' => $setting['show_search_sp'],
-	'show_search_pc' => $setting['show_search_pc'],
-);
+$move_gnav_under = Arkhe::get_setting( 'move_gnav_under' );
+$logo_pos        = $move_gnav_under ? 'center' : 'left';
 ?>
-<header id="header" class="l-header" <?php \Arkhe::header_attr( $attr_data ); ?>>
+<header id="header" class="l-header" <?php \Arkhe::header_attr( array( 'logo_pos' => $logo_pos ) ); ?>>
+	<?php if ( has_filter( 'arkhe_header_bar_content' ) ) : ?>
+		<div class="l-header__bar">
+			<div class="l-header__barInner l-container">
+				<?php do_action( 'arkhe_header_bar_content' ); ?>
+			</div>
+		</div>
+	<?php endif; ?>
 	<div class="l-header__body l-container">
 		<?php \Arkhe::get_part( 'header/drawer_btn' ); ?>
 		<div class="l-header__left">
 			<?php do_action( 'arkhe_header_left_content' ); ?>
 		</div>
-		<?php \Arkhe::get_part( 'header/logo' ); ?>
+		<div class="l-header__center">
+			<?php \Arkhe::get_part( 'header/logo' ); ?>
+		</div>
 		<div class="l-header__right">
 			<?php
 				if ( ! $move_gnav_under ) :

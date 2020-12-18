@@ -19,6 +19,9 @@
 @import "layout/article";
 @import "layout/container";
 @import "layout/header";
+@import "layout/header/*.scss";
+// @import "layout/footer";
+// @import "layout/footer/*.scss";
 @import "object/component/gnav";
 
 // object

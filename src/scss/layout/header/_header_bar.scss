@@ -1,0 +1,20 @@
+// ヘッダーバー
+.l-header__bar {
+    position: relative;
+
+    .l-header__barInner {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .c-tagline {
+        width: 50%;
+        margin-right: auto;
+        padding: 4px 0;
+        overflow: hidden;
+        font-size: 11px;
+        letter-spacing: .2px;
+        white-space: nowrap;
+    }
+
+}

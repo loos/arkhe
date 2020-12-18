@@ -1,0 +1,51 @@
+
+.l-header__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+    @include sp {
+        font-size: var(--ark-logo_size_sp);
+    }
+
+    @include pc {
+        font-size: var(--ark-logo_size_pc);
+
+        [data-logo="left"] & {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.c-headLogo {
+    display: block;
+    // max-width: 400px;
+    color: inherit;
+    font-weight: normal;
+    text-decoration: none;
+
+    &.-img {
+        // height: 100%;
+
+        @include sp {
+            height: var(--ark-logo_size_sp);
+        }
+
+        @include pc {
+            height: var(--ark-logo_size_pc);
+        }
+    }
+
+    &.-txt {
+        font-size: .75em;
+        line-height: 1.5;
+    }
+}
+
+.c-headLogo__img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+

@@ -2,8 +2,8 @@
 /**
  * ヘッダーロゴ画像の出力テンプレート
  */
+$logo_id    = isset( $args['logo_id'] ) ? $args['logo_id'] : 0;
 $site_title = get_option( 'blogname' );
-$logo_id    = get_theme_mod( 'custom_logo' );
 
 // ロゴ画像の設定があるかどうか
 $logo_type = $logo_id ? 'img' : 'txt';
@@ -24,7 +24,7 @@ $logo_type = $logo_id ? 'img' : 'txt';
 			$ovrly_logo_url = apply_filters( 'arkhe_head_logo_overlay_url', wp_get_attachment_image_url( $ovrly_logo_id, 'full' ) );
 
 			echo '<img src="' . esc_url( $ovrly_logo_url ) . '" alt="' . esc_attr( $site_title ) . '" class="c-headLogo__img -top">';
-			echo '<img src="' . esc_url( $logo_url ) . '" alt="" class="c-headLogo__img -common" role="presentation">';
+			echo '<img src="' . esc_url( $logo_url ) . '" alt="" class="c-headLogo__img -common" aria-hidden="true">';
 		else :
 			// 通常時
 			echo '<img src="' . esc_url( $logo_url ) . '" alt="' . esc_attr( $site_title ) . '" class="c-headLogo__img">';

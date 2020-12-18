@@ -12,23 +12,26 @@ $logo_size_sp   = isset( $args['logo_size_sp'] ) ? $args['logo_size_sp'] : '';
 // 追加スタイル
 $style = '';
 
-// ロゴサイズ
+// ロゴサイズの設定があれば
 if ( $logo_size_pc ) $style .= '--ark-logo_size_pc:' . $logo_size_pc . 'px;';
 if ( $logo_size_sp ) $style .= '--ark-logo_size_sp:' . $logo_size_sp . 'px;';
-?>
-<div class="l-header__center"<?php if ( $style ) echo ' style="' . esc_attr( $style ) . '"'; ?>>
-	<?php if ( is_front_page() ) : ?>
-			<h1 class="l-header__logo">
-				<?php Arkhe::get_part( 'header/logo_img' ); ?>
-			</h1>
-		<?php else : ?>
-			<div class="l-header__logo">
-				<?php Arkhe::get_part( 'header/logo_img' ); ?>
-			</div>
-		<?php endif; ?>
-	<?php if ( $show_phrase ) : ?>
-		<div class="c-catchphrase u-color-thin<?php if ( ! $show_phrase_sp ) echo ' u-only-pc'; ?>">
-			<?php echo esc_html( get_option( 'blogdescription' ) ); ?>
-		</div>
-	<?php endif; ?>
-</div>
+
+// ロゴ部分のタグ
+$logo_tag = is_front_page() ? 'h1' : 'div';
+$logo_tag = apply_filters( 'arkhe_logo_tag', $logo_tag );
+
+// ロゴ画像の設定があるかどうか
+$logo_id   = get_theme_mod( 'custom_logo' );
+$logo_type = $logo_id ? 'image' : 'text';
+
+echo '<' . esc_attr( $logo_tag ) . ' class="l-header__logo has-' . esc_attr( $logo_type ) . '"',
+		( $style ) ? ' style="' . esc_attr( $style ) . '"' : '',
+	'>';
+	Arkhe::get_part( 'header/logo_img', array( 'logo_id' => $logo_id ) );
+echo '</' . esc_attr( $logo_tag ) . '>';
+
+if ( $show_phrase ) :
+	echo '<div class="c-tagline u-color-thin',
+		( ! $show_phrase_sp ) ? ' u-only-pc' : '',
+	'">' . esc_html( get_option( 'blogdescription' ) ) . '</div>';
+endif;
