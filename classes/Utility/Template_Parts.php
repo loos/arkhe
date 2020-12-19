@@ -19,6 +19,11 @@ trait Template_Parts {
 			do_action( 'arkhe_pre_get_part__' . $path );
 		}
 
+		// $args 上書き用フック
+		if ( has_filter( 'arkhe_part_args__' . $path ) ) {
+			$args = apply_filters( 'arkhe_part_args__' . $path, $args );
+		}
+
 		// ファイルまでのパスを取得
 		$inc_path = self::get_include_part_path( $path );
 
