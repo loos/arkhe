@@ -34,6 +34,8 @@ class Customizer {
 			'transport'   => 'refresh',
 			'partial'     => array(),
 			'db'          => \Arkhe::DB_NAMES['customizer'],
+			'priority'    => 10,
+			'is_off'      => false,
 		);
 		return array_merge( $defaults, $args );
 	}
@@ -47,10 +49,16 @@ class Customizer {
 
 		if ( '' === $id ) return;
 
+		$args = self::set_args( $args );
+
+		// $args 上書き用フック。 設定を 'is_off' で非表示にしたり、 'priority' いじれるように。
+		$args = apply_filters( 'arkhe_customizer_args', $args, $section, $id, 'setting' );
+
+		// 設定非表示の場合。
+		if ( $args['is_off'] ) return;
+
 		global $wp_customize;
 		$customizer = $wp_customize;
-
-		$args = self::set_args( $args );
 
 		$customize_id = $args['db'] . '[' . $id . ']';
 		$type         = $args['type'];
@@ -83,6 +91,7 @@ class Customizer {
 			'settings'    => $customize_id,
 			'type'        => $type,
 			'classname'   => $args['classname'],
+			'priority'    => $args['priority'],
 		);
 
 		$control_instance = null;
@@ -136,16 +145,23 @@ class Customizer {
 
 		if ( '' === $id ) return;
 
+		$args = self::set_args( $args );
+
+		// $args 上書き用フック。
+		$args = apply_filters( 'arkhe_customizer_args', $args, $section, $id, 'big_title' );
+
+		// 設定非表示の場合。
+		if ( $args['is_off'] ) return;
+
 		global $wp_customize;
 		$customizer = $wp_customize;
-
-		$args = self::set_args( $args );
 
 		$control_args = array(
 			'label'       => $args['label'],
 			'description' => $args['description'],
 			'section'     => $section,
 			'classname'   => $args['classname'],
+			'priority'    => $args['priority'],
 		);
 
 		$customizer->add_setting( 'big_ttl_' . $id, array() );
@@ -162,16 +178,23 @@ class Customizer {
 
 		if ( '' === $id ) return;
 
+		$args = self::set_args( $args );
+
+		// $args 上書き用フック。
+		$args = apply_filters( 'arkhe_customizer_args', $args, $section, $id, 'sub_title' );
+
+		// 設定非表示の場合。
+		if ( $args['is_off'] ) return;
+
 		global $wp_customize;
 		$customizer = $wp_customize;
-
-		$args = self::set_args( $args );
 
 		$control_args = array(
 			'label'       => $args['label'],
 			'description' => $args['description'],
 			'section'     => $section,
 			'classname'   => $args['classname'],
+			'priority'    => $args['priority'],
 		);
 
 		$customizer->add_setting( 'sub_ttl_' . $id, array() );

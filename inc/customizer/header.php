@@ -25,137 +25,125 @@ Customizer::big_title(
 	)
 );
 
+// 画像サイズ（PC）
+Customizer::add(
+	$arkhe_section,
+	'logo_size_pc',
+	array(
+		'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
+		'description' => '32~120px',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'    => '1',
+			'min'     => '32',
+			'max'     => '120',
+		),
+		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
+	)
+);
 
-// ヘッダーがブロックで管理されているかどうか
-if ( \Arkhe::get_plugin_data( 'use_temlate_block' ) ) {
+// 画像サイズ（SP）
+Customizer::add(
+	$arkhe_section,
+	'logo_size_sp',
+	array(
+		'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
+		'description' => '32~80px',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'    => '1',
+			'min'     => '32',
+			'max'     => '80',
+		),
+		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
+	)
+);
 
-	// ブロック化される時に代わりに表示されるメッセージ
-	do_action( 'arkhe_customizer_header_blocked_message' );
+// レイアウト設定
+Customizer::big_title(
+	$arkhe_section,
+	'header_layout',
+	array(
+		'label' => __( 'Layout setting', 'arkhe' ),
+	)
+);
 
-} else {
+// 検索ボタン
+Customizer::sub_title(
+	$arkhe_section,
+	'head_search_btn',
+	array(
+		'label' => __( 'Search button', 'arkhe' ),
+	)
+);
 
-	// 画像サイズ（PC）
-	Customizer::add(
-		$arkhe_section,
-		'logo_size_pc',
-		array(
-			'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
-			'description' => '32~120px',
-			'type'        => 'number',
-			'input_attrs' => array(
-				'step'    => '1',
-				'min'     => '32',
-				'max'     => '120',
-			),
-			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
-		)
-	);
+// 検索ボタンをSPで表示する
+Customizer::add(
+	$arkhe_section,
+	'show_search_sp',
+	array(
+		'label'       => __( 'Show search btn on SP', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
-	// 画像サイズ（SP）
-	Customizer::add(
-		$arkhe_section,
-		'logo_size_sp',
-		array(
-			'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
-			'description' => '32~80px',
-			'type'        => 'number',
-			'input_attrs' => array(
-				'step'    => '1',
-				'min'     => '32',
-				'max'     => '80',
-			),
-			'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
-		)
-	);
+// 検索ボタンをPCで表示する
+Customizer::add(
+	$arkhe_section,
+	'show_search_pc',
+	array(
+		'label'       => __( 'Show search btn on PC', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
-	// レイアウト設定
-	Customizer::big_title(
-		$arkhe_section,
-		'header_layout',
-		array(
-			'label' => __( 'Layout setting', 'arkhe' ),
-		)
-	);
+// ドロワーメニュー
+Customizer::sub_title(
+	$arkhe_section,
+	'head_drawer_btn',
+	array(
+		'label' => __( 'Drawer button', 'arkhe' ),
+	)
+);
 
-	// 検索ボタン
-	Customizer::sub_title(
-		$arkhe_section,
-		'head_search_btn',
-		array(
-			'label' => __( 'Search button', 'arkhe' ),
-		)
-	);
+// ドロワーメニューをSPでも表示する
+Customizer::add(
+	$arkhe_section,
+	'show_drawer_sp',
+	array(
+		'label'       => __( 'Show drawer button on SP', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
-	// 検索ボタンをSPで表示する
-	Customizer::add(
-		$arkhe_section,
-		'show_search_sp',
-		array(
-			'label'       => __( 'Show search btn on SP', 'arkhe' ),
-			'type'        => 'checkbox',
-		)
-	);
+// ドロワーメニューをPCでも表示する
+Customizer::add(
+	$arkhe_section,
+	'show_drawer_pc',
+	array(
+		'label'       => __( 'Show drawer button on PC', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
-	// 検索ボタンをPCで表示する
-	Customizer::add(
-		$arkhe_section,
-		'show_search_pc',
-		array(
-			'label'       => __( 'Show search btn on PC', 'arkhe' ),
-			'type'        => 'checkbox',
-		)
-	);
+// グローバルナビ
+Customizer::sub_title(
+	$arkhe_section,
+	'head_nav',
+	array(
+		'label' => __( 'Global navigation', 'arkhe' ),
+	)
+);
 
-	// ドロワーメニュー
-	Customizer::sub_title(
-		$arkhe_section,
-		'head_drawer_btn',
-		array(
-			'label' => __( 'Drawer button', 'arkhe' ),
-		)
-	);
-
-	// ドロワーメニューをSPでも表示する
-	Customizer::add(
-		$arkhe_section,
-		'show_drawer_sp',
-		array(
-			'label'       => __( 'Show drawer button on SP', 'arkhe' ),
-			'type'        => 'checkbox',
-		)
-	);
-
-	// ドロワーメニューをPCでも表示する
-	Customizer::add(
-		$arkhe_section,
-		'show_drawer_pc',
-		array(
-			'label'       => __( 'Show drawer button on PC', 'arkhe' ),
-			'type'        => 'checkbox',
-		)
-	);
-
-	// グローバルナビ
-	Customizer::sub_title(
-		$arkhe_section,
-		'head_nav',
-		array(
-			'label' => __( 'Global navigation', 'arkhe' ),
-		)
-	);
-
-	// グローバルナビを下側に移動する
-	Customizer::add(
-		$arkhe_section,
-		'move_gnav_under',
-		array(
-			'label'       => __( 'Move global navigation down', 'arkhe' ),
-			'type'        => 'checkbox',
-		)
-	);
-
-}
-
+// グローバルナビを下側に移動する
+Customizer::add(
+	$arkhe_section,
+	'move_gnav_under',
+	array(
+		'label'       => __( 'Move global navigation down', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
 
 // ヘッダーの固定設定
 Customizer::big_title(
@@ -196,7 +184,6 @@ Customizer::add(
 		'type'        => 'checkbox',
 	)
 );
-
 
 // オーバーレイ設定
 Customizer::big_title(
