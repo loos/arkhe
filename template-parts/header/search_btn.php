@@ -1,23 +1,15 @@
 <?php
 /**
  * 検索ボタンの出力テンプレート
+ *   $args['label'] : ボタン下のラベル
  */
-$label     = isset( $args['label'] ) ? $args['label'] : '';
-$href      = isset( $args['href'] ) ? $args['href'] : '';
-$icon      = isset( $args['icon'] ) ? $args['icon'] : '';
-$is_search = isset( $args['is_search'] ) ? $args['is_search'] : true;
-
+$label = isset( $args['label'] ) ? $args['label'] : '';
 ?>
 <div class="l-header__searchBtn">
-	<?php if ( $is_search ) : ?>
-		<button class="c-iconBtn u-flex--c" data-onclick="toggleSearch" aria-label="<?php esc_attr_e( 'Search button', 'arkhe' ); ?>">
-			<span class="c-iconBtn__icon"><i class="__icon arkhe-icon-search" role="img" aria-hidden="true"></i></span>
+	<button class="c-iconBtn u-flex--c" data-onclick="toggleSearch" aria-label="<?php esc_attr_e( 'Search button', 'arkhe' ); ?>">
+		<span class="c-iconBtn__icon"><i class="arkhe-icon-search" role="img" aria-hidden="true"></i></span>
+		<?php if ( $label ) : ?>
 			<span class="c-iconBtn__label"><?php echo esc_html( $label ); ?></span>
-		</button>
-	<?php else : ?>
-		<a href="<?php echo esc_url( $href ); ?>" class="c-iconBtn u-flex--c">
-			<span class="c-iconBtn__icon"><i class="<?php echo esc_attr( $icon ); ?>" role="img" aria-hidden="true"></i></span>
-			<span class="c-iconBtn__label"><?php echo esc_html( $label ); ?></span>
-		</a>
-	<?php endif; ?>
+		<?php endif; ?>
+	</button>
 </div>

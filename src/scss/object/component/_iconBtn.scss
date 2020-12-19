@@ -1,10 +1,5 @@
 // ヘッダー内で使われるハンバーガーメニューボタンやサーチアイコン
 .c-iconBtn {
-    // display: flex;
-    // flex-wrap: wrap;
-    // align-content: center;
-    // align-items: center;
-    // justify-content: center;
     width: 100%;
     height: 100%;
     padding: 0;
@@ -22,10 +17,18 @@
 .c-iconBtn__icon {
     position: relative;
     display: block;
+    width: 24px;
+    height: 24px;
     font-size: 24px;
     line-height: 1;
 
-    .__icon {
+    svg {
+        display: block;
+        width: 100% !important; // fa に負けないように
+        height: 100% !important;
+    }
+
+    i {
         display: block;
         transform-origin: 50% 50%;
         transition: .25s;
@@ -35,7 +38,7 @@
         }
     }
 
-    .-close {
+    .__close {
 
         @extend %absLayer;
         transform: rotate(180deg);
@@ -45,12 +48,12 @@
 
     [data-drawer="opened"] & {
 
-        .-close {
+        .__close {
             transform: rotate(0);
             opacity: 1;
         }
 
-        .-open {
+        .__open {
             transform: rotate(-180deg);
             opacity: 0;
         }
@@ -61,6 +64,5 @@
     display: block;
     width: 100%;
     font-size: 10px;
-    // text-align: center;
     transform: scale(.9);
 }
