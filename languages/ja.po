@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-10-29 11:38+0900\n"
-"PO-Revision-Date: 2020-10-29 11:38+0900\n"
+"POT-Creation-Date: 2020-12-20 19:08+0900\n"
+"PO-Revision-Date: 2020-12-20 19:08+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -26,15 +26,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-4: vendor\n"
 "X-Poedit-SearchPathExcluded-5: src/js/plugin\n"
 
-#: 404.php:5 template-parts/others/breadcrumb.php:296
+#: 404.php:12 template-parts/other/breadcrumb.php:296
 msgid "The page was not found."
 msgstr "ページが見つかりませんでした。"
 
-#: 404.php:9
+#: 404.php:21
 msgid "The page you are looking for may have been moved or deleted."
 msgstr "お探しのページは移動または削除された可能性があります。"
 
-#: 404.php:12
+#: 404.php:23
 msgid "Please enter a keyword below to search."
 msgstr "以下にキーワードを入力して検索してみてください。"
 
@@ -175,72 +175,72 @@ msgstr "ヘッダーロゴ設定"
 msgid "The logo image can be set from the \"Site Identity\" menu."
 msgstr "ロゴ画像は「サイト基本情報」メニューから設定できます。"
 
-#: inc/customizer/header.php:42 inc/customizer/header.php:59
+#: inc/customizer/header.php:33 inc/customizer/header.php:50
 msgid "Image size"
 msgstr "画像サイズ"
 
-#: inc/customizer/header.php:76
+#: inc/customizer/header.php:67
 msgid "Layout setting"
 msgstr "レイアウト設定"
 
-#: inc/customizer/header.php:85 searchform.php:3
-#: template-parts/header/search_btn.php:13
+#: inc/customizer/header.php:76 searchform.php:3
+#: template-parts/header/btn/search.php:9
 msgid "Search button"
 msgstr "検索ボタン"
 
-#: inc/customizer/header.php:94
+#: inc/customizer/header.php:85
 msgid "Show search btn on SP"
 msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:104
+#: inc/customizer/header.php:95
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:114
+#: inc/customizer/header.php:105
 msgid "Drawer button"
 msgstr "ドロワーボタン"
 
-#: inc/customizer/header.php:123
+#: inc/customizer/header.php:114
 msgid "Show drawer button on SP"
 msgstr "ドロワーボタンをSPで表示する"
 
-#: inc/customizer/header.php:133
+#: inc/customizer/header.php:124
 msgid "Show drawer button on PC"
 msgstr "ドロワーボタンをPCで表示する"
 
-#: inc/customizer/header.php:143
+#: inc/customizer/header.php:134
 msgid "Global navigation"
 msgstr "グローバルナビゲーション"
 
-#: inc/customizer/header.php:152
+#: inc/customizer/header.php:143
 msgid "Move global navigation down"
 msgstr "グローバルナビを下側に移動する"
 
-#: inc/customizer/header.php:165
+#: inc/customizer/header.php:153
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:174 inc/customizer/header.php:184
+#: inc/customizer/header.php:162 inc/customizer/header.php:172
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
 
-#: inc/customizer/header.php:194
+#: inc/customizer/header.php:182
 msgid "Fixed global navigation at top of screen"
 msgstr "グローバルナビを画面上部に固定する"
 
-#: inc/customizer/header.php:195
+#: inc/customizer/header.php:183
 msgid "Only valid when below the header."
 msgstr "ヘッダーの下にある時のみ有効です。"
 
-#: inc/customizer/header.php:206
+#: inc/customizer/header.php:193
 msgid "Overlay settings"
 msgstr "オーバーレイ設定"
 
-#: inc/customizer/header.php:227
+#: inc/customizer/header.php:214
 msgid "Enable on Pages"
 msgstr "固定ページでも有効化する"
 
-#: inc/customizer/header.php:238
+#: inc/customizer/header.php:225
 msgid "Logo image when overlaying"
 msgstr "オーバーレイ時のロゴ画像"
 
@@ -301,8 +301,8 @@ msgid "Golden ratio"
 msgstr "黄金比"
 
 #: inc/customizer/post_list.php:22
-msgid "Post List"
-msgstr "投稿リスト"
+msgid "Archive"
+msgstr ""
 
 #: inc/customizer/post_list.php:33 inc/customizer/single.php:157
 msgid "List layout"
@@ -348,14 +348,6 @@ msgstr "抜粋文の文字数"
 msgid "Thumbnail image ratio"
 msgstr "サムネイル画像の比率"
 
-#: inc/customizer/post_list.php:133
-msgid "Ratio in \"card type\""
-msgstr "「カード型」での比率"
-
-#: inc/customizer/post_list.php:144
-msgid "Ratio in \"list type\""
-msgstr "「リスト型」での比率"
-
 #: inc/customizer/sidebar.php:12 inc/widget.php:18
 msgid "Sidebar"
 msgstr "サイドバー"
@@ -373,12 +365,12 @@ msgid "Display on homepage"
 msgstr "トップページに表示する"
 
 #: inc/customizer/sidebar.php:42
-msgid "Display on posts"
-msgstr "投稿ページに表示する"
-
-#: inc/customizer/sidebar.php:52
 msgid "Display on pages"
 msgstr "固定ページに表示する"
+
+#: inc/customizer/sidebar.php:52
+msgid "Display on posts"
+msgstr "投稿ページに表示する"
 
 #: inc/customizer/sidebar.php:62
 msgid "Display on archive pages"
@@ -456,7 +448,7 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示"
 
-#: inc/hooks.php:57
+#: inc/hooks.php:60
 msgid "Skip to the content"
 msgstr "コンテンツへスキップ"
 
@@ -473,38 +465,38 @@ msgstr ""
 "す。"
 
 #. Theme Name of the plugin/theme
-#: inc/theme_menu.php:9
+#: inc/theme_menu.php:13
 msgid "Arkhe"
 msgstr "Arkhe"
 
-#: inc/theme_menu.php:34
+#: inc/theme_menu.php:38
 msgid "To Arkhe official website"
 msgstr "Arkhe公式サイトへ"
 
-#: inc/theme_menu.php:37
+#: inc/theme_menu.php:41
 msgid "See the manual"
 msgstr "マニュアルを見る"
 
-#: inc/theme_menu.php:41
+#: inc/theme_menu.php:45
 msgid "See update information"
 msgstr "アップデート情報を見る"
 
-#: inc/theme_menu.php:49
+#: inc/theme_menu.php:53
 msgctxt "tab"
 msgid "Information"
 msgstr "インフォメーション"
 
-#: inc/theme_menu.php:50
+#: inc/theme_menu.php:54
 msgid "Licence registration"
 msgstr "ライセンス認証"
 
-#: inc/theme_menu/info.php:2
-msgid "Arkhe plugin"
-msgstr "Arkhe専用プラグイン"
-
-#: inc/theme_menu/info.php:17
+#: inc/theme_menu/info.php:1
 msgid "Information about the theme"
 msgstr "テーマに関するお知らせ情報"
+
+#: inc/theme_menu/info.php:31
+msgid "Arkhe plugin"
+msgstr "Arkhe専用プラグイン"
 
 #: inc/theme_menu/licence.php:41
 msgid ""
@@ -553,6 +545,30 @@ msgstr ""
 msgid "Check licence"
 msgstr "ライセンス確認"
 
+#: inc/theme_support.php:55
+msgid "Extra small"
+msgstr "極小"
+
+#: inc/theme_support.php:61
+msgid "Small"
+msgstr "小"
+
+#: inc/theme_support.php:67
+msgid "Normal"
+msgstr "標準"
+
+#: inc/theme_support.php:73
+msgid "Large"
+msgstr "大"
+
+#: inc/theme_support.php:79
+msgid "Extra large"
+msgstr "特大"
+
+#: inc/theme_support.php:85
+msgid "Huge"
+msgstr "巨大"
+
 #: inc/widget.php:20
 msgid "Widgets in this area will be displayed in the sidebar."
 msgstr "このエリアのウィジェットはサイドバーに表示されます。"
@@ -569,10 +585,10 @@ msgstr "このエリアのウィジェットはドロワーメニューの下部
 msgid "Widgets in this area will be displayed in the footer."
 msgstr "このエリアのウィジェットはフッターに表示されます。"
 
-#. translators: %s is the value of get_search_query().
-#: search.php:15
+#. translators: %s is the value of $searched_text.
+#: search.php:37
 #, php-format
-msgid "Search results for \"%s\""
+msgid "Search results for %s"
 msgstr "「%s」の検索結果"
 
 #: searchform.php:2
@@ -583,32 +599,32 @@ msgstr "検索"
 msgid "Search word"
 msgstr "検索ワード"
 
-#: template-parts/footer/modals.php:12 template-parts/header/drawer_menu.php:41
+#: template-parts/footer/modals.php:12 template-parts/header/drawer_menu.php:45
 msgid "CLOSE"
 msgstr "閉じる"
 
-#: template-parts/header/drawer_btn.php:9
+#: template-parts/header/btn/drawer.php:9
 msgid "Menu button"
 msgstr "メニューボタン"
 
-#: template-parts/others/author_box.php:45
+#: template-parts/other/author_box.php:45
 msgid "To article list"
 msgstr "記事一覧へ"
 
-#: template-parts/post_list/main_query.php:31
-#: template-parts/post_list/sub_query.php:37
+#: template-parts/post_list/main_query.php:28
+#: template-parts/post_list/sub_query.php:52
 msgid "No posts were found."
 msgstr "記事が見つかりませんでした。"
 
-#: template-parts/single/post_author.php:9
+#: template-parts/single/item/post_author.php:12
 msgid "Author of this article"
 msgstr "この記事を書いた人"
 
-#: template-parts/single/related_posts.php:56
+#: template-parts/single/item/related_posts.php:58
 msgid "Related posts"
 msgstr "関連記事"
 
-#: template-parts/single/related_posts.php:69
+#: template-parts/single/item/related_posts.php:74
 msgid "No related posts were found."
 msgstr "関連記事が見つかりませんでした。"
 
@@ -641,6 +657,15 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "Post List"
+#~ msgstr "投稿リスト"
+
+#~ msgid "Ratio in \"card type\""
+#~ msgstr "「カード型」での比率"
+
+#~ msgid "Ratio in \"list type\""
+#~ msgstr "「リスト型」での比率"
 
 #~ msgid "Featured image"
 #~ msgstr "アイキャッチ画像"

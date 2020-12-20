@@ -1,5 +1,5 @@
 // rem
-.has-xs-font-size {
+.has-xsmall-font-size {
     font-size: .75rem !important;
 }
 
@@ -11,17 +11,19 @@
     font-size: 1rem !important;
 }
 
-.has-medium-font-size {
+.has-large-font-size {
     font-size: 1.25rem !important;
 }
 
-.has-large-font-size {
+.has-xlarge-font-size {
     font-size: 1.5rem !important;
 }
 
 .has-huge-font-size {
     font-size: 2rem !important;
 }
+
+// .has-giant-font-size
 
 
 // em
@@ -37,14 +39,14 @@
     font-size: 1em !important;
 }
 
-.u-fz-m {
+.u-fz-l {
     font-size: 1.25em !important;
 }
 
-.u-fz-l {
+.u-fz-xl {
     font-size: 1.5em !important;
 }
 
-.u-fz-xl {
+.u-fz-xxl {
     font-size: 2em !important;
 }
