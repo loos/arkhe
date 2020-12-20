@@ -47,7 +47,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 				<?php
 					echo wp_kses(
 						apply_filters( 'arkhe_search_title', $searched_text, $search_query, $cat_name, $tag_name ),
-						\Arkhe::$allowed_text_html
+						Arkhe::$allowed_text_html
 					);
 				?>
 			</h1>

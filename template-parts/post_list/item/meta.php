@@ -14,7 +14,7 @@
  *   $args['show_modified'] : 更新日を表示するかどうか
  *   $args['show_author'] : 著者を表示するかどうか
  */
-$setting = \Arkhe::get_setting();
+$setting = Arkhe::get_setting();
 
 // 投稿データ
 $the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();

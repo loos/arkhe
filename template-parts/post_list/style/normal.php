@@ -35,7 +35,7 @@ $args['modified']  = new DateTime( $post_data->post_modified );
 				the_title();
 				echo '</' . esc_attr( $h_tag ) . '>';
 			?>
-			<?php if ( \Arkhe::$excerpt_length ) : ?>
+			<?php if ( Arkhe::$excerpt_length ) : ?>
 				<div class="p-postList__excerpt u-thin">
 					<?php the_excerpt(); ?>
 				</div>

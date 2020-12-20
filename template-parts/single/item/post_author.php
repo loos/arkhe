@@ -10,7 +10,7 @@ $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
 		<?php
 			echo wp_kses(
 				apply_filters( 'arkhe_author_area_title', __( 'Author of this article', 'arkhe' ) ),
-				\Arkhe::$allowed_text_html
+				Arkhe::$allowed_text_html
 			);
 		?>
 	</h2>

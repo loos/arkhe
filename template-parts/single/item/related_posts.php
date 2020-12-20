@@ -56,7 +56,7 @@ $loop_count = 0;
 		<?php
 			echo wp_kses(
 				apply_filters( 'arkhe_related_area_title', __( 'Related posts', 'arkhe' ) ),
-				\Arkhe::$allowed_text_html
+				Arkhe::$allowed_text_html
 			);
 		?>
 	</h2>

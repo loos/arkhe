@@ -10,7 +10,7 @@ get_header(); ?>
 			<?php
 				echo wp_kses(
 					apply_filters( 'arkhe_404_title', __( 'The page was not found.', 'arkhe' ) ),
-					\Arkhe::$allowed_text_html
+					Arkhe::$allowed_text_html
 				);
 			?>
 		</h1>
