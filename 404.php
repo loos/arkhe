@@ -5,7 +5,7 @@
 get_header(); ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div class="<?php Arkhe::main_body_class(); ?>">
-		<?php do_action( 'arkhe_start_404_main_content' ); ?>
+		<?php do_action( 'arkhe_start_404_main' ); ?>
 		<h1 class="p-404__title">
 			<?php
 				echo wp_kses(
@@ -28,6 +28,6 @@ get_header(); ?>
 		</div>
 		<?php do_action( 'arkhe_after_404_content' ); ?>
 	</div>
-	<?php do_action( 'arkhe_end_404_main_content' ); ?>
+	<?php do_action( 'arkhe_end_404_main' ); ?>
 </main>
 <?php get_footer(); ?>

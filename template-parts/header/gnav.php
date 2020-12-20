@@ -11,13 +11,10 @@ $gnav = wp_nav_menu(
 		'echo'            => false,
 	)
 );
-
-if ( ! $gnav ) return; ?>
+if ( ! $gnav ) return;
+?>
 <nav id="gnav" class="c-gnavWrap">
 	<ul class="c-gnav u-flex--aic">
-		<?php
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo $gnav;
-		?>
+		<?php echo $gnav; // phpcs:ignore ?>
 	</ul>
 </nav>

@@ -13,7 +13,7 @@ class Partial {
 	 */
 	public static function breadcrumb() {
 		ob_start();
-		\Arkhe::get_part( 'others/breadcrumb' );
+		\Arkhe::get_part( 'other/breadcrumb' );
 		return ob_get_clean();
 	}
 

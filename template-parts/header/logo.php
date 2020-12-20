@@ -21,13 +21,13 @@ $logo_tag = is_front_page() ? 'h1' : 'div';
 $logo_tag = apply_filters( 'arkhe_logo_tag', $logo_tag );
 
 // ロゴ画像の設定があるかどうか
-$logo_id   = get_theme_mod( 'custom_logo' );
+$logo_id   = get_theme_mod( 'custom_logo' ) ?: 0;
 $logo_type = $logo_id ? 'image' : 'text';
 
 echo '<' . esc_attr( $logo_tag ) . ' class="l-header__logo has-' . esc_attr( $logo_type ) . '"',
 		( $style ) ? ' style="' . esc_attr( $style ) . '"' : '',
 	'>';
-	Arkhe::get_part( 'header/logo_img', array( 'logo_id' => $logo_id ) );
+	Arkhe::get_part( 'header/logo/' . $logo_type, array( 'logo_id' => $logo_id ) );
 echo '</' . esc_attr( $logo_tag ) . '>';
 
 if ( $show_phrase ) :

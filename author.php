@@ -11,14 +11,14 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div <?php post_class( Arkhe::main_body_class( false ) ); ?>>
-		<?php do_action( 'arkhe_start_author_main_content', $author_id ); ?>
+	<div <?php post_class( Arkhe::get_main_body_class() ); ?>>
+		<?php do_action( 'arkhe_start_author_main', $author_id ); ?>
 		<div class="p-archive__title c-pageTitle">
 			<h1 class="c-pageTitle__main"><?php echo esc_html( $author_data->display_name ); ?></h1>
 		</div>
 		<?php
 			// 著者情報
-			Arkhe::get_part( 'others/author_box', array( 'author_id' => $author_id ) );
+			Arkhe::get_part( 'other/author_box', array( 'author_id' => $author_id ) );
 
 			// 投稿リスト前フック
 			do_action( 'arkhe_before_author_post_list', $author_id );
@@ -34,7 +34,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 				)
 			);
 		?>
-		<?php do_action( 'arkhe_end_author_main_content', $author_id ); ?>
+		<?php do_action( 'arkhe_end_author_main', $author_id ); ?>
 	</div>
 </main>
 <?php get_footer(); ?>

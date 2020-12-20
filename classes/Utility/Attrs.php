@@ -6,8 +6,7 @@ trait Attrs {
 	/**
 	 * htmlタグに付与する属性値
 	 */
-	public static function root_attrs() {
-
+	public static function get_root_attrs() {
 		$attrs = array(
 			'data-loaded'      => 'false',
 			'data-scrolled'    => 'false',
@@ -25,15 +24,23 @@ trait Attrs {
 			$attr_string .= " $key=\"$val\"";
 		}
 
+		return trim( $attr_string );
+	}
+
+
+	/**
+	 * get_root_attrs() の出力
+	 */
+	public static function root_attrs() {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo trim( $attr_string );
+		echo self::get_root_attrs();
 	}
 
 
 	/**
 	 * ヘッダーの追加属性
 	 */
-	public static function header_attr( $args = null, $is_echo = true ) {
+	public static function get_header_attrs( $args = null ) {
 
 		$setting = \Arkhe::get_setting();
 		$args    = array_merge( array(
@@ -97,20 +104,23 @@ trait Attrs {
 			$attr_string .= " $key=\"$val\"";
 		}
 
-		// 出力するか、returnで返すか
-		if ( $is_echo ) {
-			// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			echo trim( $attr_string );
-		} else {
-			return trim( $attr_string );
-		}
+		return trim( $attr_string );
+	}
+
+
+	/**
+	 * get_header_attrs() の出力
+	 */
+	public static function header_attrs( $args = null ) {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::get_header_attrs( $args );
 	}
 
 
 	/**
 	 * l-main クラス
 	 */
-	public static function main_class() {
+	public static function get_main_class() {
 
 		$class = 'l-main';
 		if ( is_front_page() && ! is_home() ) {
@@ -119,16 +129,22 @@ trait Attrs {
 			$class .= ' l-article';
 		}
 
-		$class = apply_filters( 'arkhe_main_class', $class );
+		return apply_filters( 'arkhe_main_class', $class );
+	}
 
-		echo esc_attr( $class );
+
+	/**
+	 * get_main_class() の出力
+	 */
+	public static function main_class() {
+		echo esc_attr( self::get_main_class() );
 	}
 
 
 	/**
 	 * l-main__body クラス
 	 */
-	public static function main_body_class( $is_echo = true ) {
+	public static function get_main_body_class() {
 
 		$class = 'l-main__body';
 
@@ -144,20 +160,22 @@ trait Attrs {
 			$class .= ' p-404';
 		}
 
-		$class = apply_filters( 'arkhe_main_body_class', $class );
+		return apply_filters( 'arkhe_main_body_class', $class );
+	}
 
-		if ( $is_echo ) {
-			echo esc_attr( $class );
-		} else {
-			return $class;
-		}
+
+	/**
+	 * get_main_body_class() の出力
+	 */
+	public static function main_body_class() {
+		echo esc_attr( self::get_main_body_class() );
 	}
 
 
 	/**
 	 * c-postContent クラス
 	 */
-	public static function post_content_class() {
+	public static function get_post_content_class() {
 
 		$class = 'c-postContent';
 
@@ -173,8 +191,14 @@ trait Attrs {
 			$class .= ' p-404__content';
 		}
 
-		$class = apply_filters( 'arkhe_post_content_class', $class );
+		return apply_filters( 'arkhe_post_content_class', $class );
+	}
 
-		echo esc_attr( $class );
+
+	/**
+	 * get_post_content_class() の出力
+	 */
+	public static function post_content_class() {
+		echo esc_attr( self::get_post_content_class() );
 	}
 }

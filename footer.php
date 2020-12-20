@@ -2,7 +2,7 @@
 /**
  * フッターテンプレート
  */
-	if ( Arkhe::is_show_sidebar() ) get_sidebar(); // サイドバー
+if ( Arkhe::is_show_sidebar() ) get_sidebar(); // サイドバー
 ?>
 	</div><!-- End: l-content__body -->
 	<?php do_action( 'arkhe_end_content' ); ?>
@@ -10,7 +10,7 @@
 <?php
 	// フッター
 	do_action( 'arkhe_before_footer' ); // テーマ側でも使用
-	Arkhe::get_part( 'footer_content' );
+	Arkhe::get_part( 'footer' );
 	do_action( 'arkhe_after_footer' );
 
 	// モーダルや固定ボタンなど

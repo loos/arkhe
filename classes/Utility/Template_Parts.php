@@ -107,30 +107,4 @@ trait Template_Parts {
 
 		}
 	}
-
-
-	/**
-	 * ブロック化されたヘッダーを取得
-	 */
-	public static function get_header_block_content() {
-
-		$template_id_data = get_option( \Arkhe::get_plugin_data( 'template_option_key' ) );
-
-		if ( ! isset( $template_id_data['header'] ) ) return '';
-
-		$header_id = $template_id_data['header'] ?: 0;
-
-		// ブロックで構成する場合
-		$header = get_posts( array(
-			'post_type' => 'arkhe_template',
-			'p'         => $header_id,
-		) );
-		wp_reset_postdata();
-
-		if ( empty( $header ) ) return '';
-
-		return $header[0]->post_content;
-	}
-
-
 }

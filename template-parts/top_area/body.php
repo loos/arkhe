@@ -14,7 +14,7 @@ $excerpt  = apply_filters( 'arkhe_top_area_excerpt', '', $the_id );
 
 		// サブタイトル
 		if ( '' !== $subtitle ) :
-		echo '<div class="c-pageTitle__sub u-mt-5">' . wp_kses( $subtitle, \Arkhe::$allowed_text_html ) . '</div>';
+		echo '<div class="c-pageTitle__sub u-mt-5">' . wp_kses( $subtitle, Arkhe::$allowed_text_html ) . '</div>';
 		endif;
 	?>
 </div>

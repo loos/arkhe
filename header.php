@@ -17,7 +17,7 @@
 <?php
 	// ヘッダー
 	do_action( 'arkhe_before_header' );
-	Arkhe::get_part( 'header_content' );
+	Arkhe::get_part( 'header' );
 	do_action( 'arkhe_after_header' );
 ?>
 	<div id="content" class="l-content">

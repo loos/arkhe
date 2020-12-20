@@ -14,5 +14,5 @@ $author_id = isset( $args['author_id'] ) ? $args['author_id'] : 0;
 			);
 		?>
 	</h2>
-	<?php Arkhe::get_part( 'others/author_box', array( 'author_id' => $author_id ) ); ?>
+	<?php Arkhe::get_part( 'other/author_box', array( 'author_id' => $author_id ) ); ?>
 </section>

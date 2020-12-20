@@ -13,13 +13,13 @@ add_filter( 'arkhe_start_content', function() {
 
 	// パンくずリスト（上部表示の場合）
 	if ( 'top' === \Arkhe::get_breadcrumbs_position() ) {
-		\Arkhe::get_part( 'others/breadcrumb' );
+		\Arkhe::get_part( 'other/breadcrumb' );
 	}
 } );
 
 add_filter( 'arkhe_before_footer', function() {
 	// パンくずリスト（下部表示の場合）
 	if ( 'bottom' === \Arkhe::get_breadcrumbs_position() ) {
-		\Arkhe::get_part( 'others/breadcrumb' );
+		\Arkhe::get_part( 'other/breadcrumb' );
 	}
 } );

@@ -28,7 +28,7 @@ $show_related_posts = apply_filters( 'arkhe_show_related_posts', $setting['show_
 		<div class="c-postMetas u-flex--aicw">
 			<?php
 				Arkhe::get_part(
-					'single/term_list',
+					'single/item/term_list',
 					array(
 						'post_id'  => $the_id,
 						'show_cat' => true,
@@ -43,17 +43,17 @@ $show_related_posts = apply_filters( 'arkhe_show_related_posts', $setting['show_
 
 		// 前の記事・次の記事
 		if ( $show_prev_next_link ) :
-			Arkhe::get_part( 'single/prev_next_link' );
+			Arkhe::get_part( 'single/item/prev_next_link' );
 		endif;
 
 		// 著者情報
 		if ( $show_author_box ) :
-			Arkhe::get_part( 'single/post_author', array( 'author_id' => $post_data->post_author ) );
+			Arkhe::get_part( 'single/item/post_author', array( 'author_id' => $post_data->post_author ) );
 		endif;
 
 		// 関連記事
 		if ( $show_related_posts ) :
-			Arkhe::get_part( 'single/related_posts', $the_id );
+			Arkhe::get_part( 'single/item/related_posts', $the_id );
 		endif;
 
 		do_action( 'arkhe_end_entry_foot', $the_id );

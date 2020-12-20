@@ -5,24 +5,23 @@
 $the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
 
 // ヘッダー部分
-Arkhe::get_part( 'page/header', array( 'post_id' => $the_id ) );
+if ( ! Arkhe::is_show_ttltop() ) {
+	Arkhe::get_part( 'page/head', array( 'post_id' => $the_id ) );
+}
 
 // コンテンツ前フック
 do_action( 'arkhe_before_page_content', $the_id );
 
-?>
-<div class="<?php Arkhe::post_content_class(); ?>">
-	<?php the_content(); ?>
-</div>
-<?php
+// コンテンツ
+echo '<div class="' . esc_attr( Arkhe::get_post_content_class() ) . '">';
+	the_content();
+echo '</div>';
 
 // 改ページナビゲーション
-Arkhe::get_part( 'singular/pagination' );
+Arkhe::get_part( 'other/pagination' );
 
 // コンテンツ後フック
 do_action( 'arkhe_after_page_content', $the_id );
 
 // コメント
-if ( comments_open( $the_id ) && ! post_password_required( $the_id ) ) :
-	comments_template();
-endif;
+Arkhe::get_part( 'page/comment', array( 'post_id' => $the_id ) );

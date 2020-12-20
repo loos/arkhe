@@ -34,7 +34,7 @@ $show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show
 		</div>
 		<?php
 			// カテゴリー・タグ
-			Arkhe::get_part( 'single/term_list', array(
+			Arkhe::get_part( 'single/item/term_list', array(
 				'post_id'  => $the_id,
 				'show_cat' => $setting['show_entry_cat'],
 				'show_tag' => $setting['show_entry_tag'],
@@ -58,7 +58,7 @@ $show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show
 	<?php
 		// アイキャッチ画像
 		if ( $show_thumb ) :
-			Arkhe::get_part( 'singular/thumbnail', array(
+			Arkhe::get_part( 'single/item/thumbnail', array(
 				'post_id'    => $the_id,
 				'post_title' => $post_data->post_title,
 			) );

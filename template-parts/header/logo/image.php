@@ -1,18 +1,13 @@
 <?php
 /**
- * ヘッダーロゴ画像の出力テンプレート
+ * ロゴ画像のテンプレート
  */
 $logo_id    = isset( $args['logo_id'] ) ? $args['logo_id'] : 0;
 $site_title = get_option( 'blogname' );
 
-// ロゴ画像の設定があるかどうか
-$logo_type = $logo_id ? 'img' : 'txt';
 ?>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo -<?php echo esc_attr( $logo_type ); ?>" rel="home">
-<?php
-	if ( 'txt' === $logo_type ) :
-		echo esc_html( $site_title );
-	else :
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="c-headLogo -img" rel="home">
+	<?php
 		// カスタムロゴのURLを取得
 		$logo_url = apply_filters( 'arkhe_head_logo_url', wp_get_attachment_image_url( $logo_id, 'full' ) );
 
@@ -29,6 +24,5 @@ $logo_type = $logo_id ? 'img' : 'txt';
 			// 通常時
 			echo '<img src="' . esc_url( $logo_url ) . '" alt="' . esc_attr( $site_title ) . '" class="c-headLogo__img">';
 		endif;
-	endif;
-?>
+	?>
 </a>
