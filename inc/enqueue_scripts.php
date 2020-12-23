@@ -19,19 +19,19 @@ function enqueue_front_scripts() {
 	wp_enqueue_style( 'wp-block-library' );
 
 	// main.css
-	wp_enqueue_style( 'arkhe-main-style', ARKHE_THEME_URI . '/dist/css/main.css', array(), ARKHE_VER );
+	wp_enqueue_style( 'arkhe-main-style', ARKHE_THEME_URI . '/dist/css/main.css', array(), ARKHE_VERSION );
 	wp_add_inline_style( 'arkhe-main-style', \Arkhe::output_style( 'front' ) );
 
 	// ヘッダーオーバーレイ時
 	if ( \Arkhe::is_header_overlay() ) {
-		wp_enqueue_style( 'arkhe-overlay-header', ARKHE_THEME_URI . '/dist/css/module/-overlay-header.css', array(), ARKHE_VER );
+		wp_enqueue_style( 'arkhe-overlay-header', ARKHE_THEME_URI . '/dist/css/module/-overlay-header.css', array(), ARKHE_VERSION );
 	}
 
 	// Lazysizes
-	wp_enqueue_script( 'arkhe-lazysizes', ARKHE_THEME_URI . '/dist/js/plugin/lazysizes.js', array(), ARKHE_VER, true );
+	wp_enqueue_script( 'arkhe-lazysizes', ARKHE_THEME_URI . '/dist/js/plugin/lazysizes.js', array(), ARKHE_VERSION, true );
 
 	// main.js
-	wp_enqueue_script( 'arkhe-main-script', ARKHE_THEME_URI . '/dist/js/main.js', array(), ARKHE_VER, true );
+	wp_enqueue_script( 'arkhe-main-script', ARKHE_THEME_URI . '/dist/js/main.js', array(), ARKHE_VERSION, true );
 	wp_localize_script( 'arkhe-main-script', 'arkheVars', \Arkhe::get_front_global_vars() );
 
 	// コメント用
@@ -49,18 +49,18 @@ function enqueue_admin_scripts( $hook_suffix ) {
 
 	if ( is_customize_preview() ) {
 		// カスタマイザー
-		wp_enqueue_style( 'arkhe-customizer', $css_path . '/admin/customizer.css', array(), ARKHE_VER );
+		wp_enqueue_style( 'arkhe-customizer', $css_path . '/admin/customizer.css', array(), ARKHE_VERSION );
 
 	} elseif ( 'nav-menus.php' === $hook_suffix ) {
 		// カスタムメニュー
-		wp_enqueue_style( 'arkhe-nav-menus', $css_path . '/admin/nav-menus.css', array(), ARKHE_VER );
+		wp_enqueue_style( 'arkhe-nav-menus', $css_path . '/admin/nav-menus.css', array(), ARKHE_VERSION );
 
 	} elseif ( 'edit.php' === $hook_suffix ) {
 		// 投稿一覧
-		wp_enqueue_style( 'arkhe-edit-table', $css_path . '/admin/edit-table.css', array(), ARKHE_VER );
+		wp_enqueue_style( 'arkhe-edit-table', $css_path . '/admin/edit-table.css', array(), ARKHE_VERSION );
 	} elseif ( 'appearance_page_arkhe' === $hook_suffix ) {
 		// テーマ設定ページ
-		wp_enqueue_style( 'arkhe-menu', $css_path . '/admin/menu.css', array(), ARKHE_VER );
+		wp_enqueue_style( 'arkhe-menu', $css_path . '/admin/menu.css', array(), ARKHE_VERSION );
 	}
 }
 
@@ -70,13 +70,13 @@ function enqueue_admin_scripts( $hook_suffix ) {
 function enqueue_block_scripts( $hook_suffix ) {
 
 	// CSS
-	wp_enqueue_style( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/css/editor.css', array(), ARKHE_VER );
+	wp_enqueue_style( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/css/editor.css', array(), ARKHE_VERSION );
 
 	// Inline CSS
 	wp_add_inline_style( 'arkhe-block-editor', \Arkhe::output_style( 'editor' ) );
 
 	// JS
-	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/js/block.js', [], ARKHE_VER, true);
+	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/js/block.js', [], ARKHE_VERSION, true);
 }
 
 
@@ -90,7 +90,7 @@ function enqueue_customizer_scripts() {
 		'arkhe-customizer-preview',
 		ARKHE_THEME_URI . '/dist/js/admin/responsive-device-preview.js',
 		array( 'customize-controls' ),
-		ARKHE_VER,
+		ARKHE_VERSION,
 		false
 	);
 	wp_add_inline_script( 'arkhe-customizer-preview', 'CustomizerResponsiveDevicePreview.init( wp.customize );', 'after' );
@@ -100,7 +100,7 @@ function enqueue_customizer_scripts() {
 		'arkhe-customizer-controls',
 		ARKHE_THEME_URI . '/dist/js/admin/customizer-controls.js',
 		array(),
-		ARKHE_VER,
+		ARKHE_VERSION,
 		false
 	);
 }

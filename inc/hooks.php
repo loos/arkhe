@@ -126,33 +126,3 @@ function hook_navigation_markup( $template, $class ) {
 	}
 	return $template;
 }
-
-
-/**
- * コアのリストブロックにクラスをつける
- */
-// add_filter( 'render_block', '\Arkhe_Theme\add_core_list_class', 99, 2 );
-// function add_core_list_class( $block_content, $block ) {
-// 	if ( 'core/list' !== $block['blockName'] ) return $block_content;
-
-// 	// 最初の ul, olをいじる
-// 	$block_content = preg_replace_callback(
-// 		'/^<(ul|ol)([^>]*)>/im',
-// 		function( $matches ) {
-// 			$tag   = $matches[1];
-// 			$props = $matches[2];
-
-// 			// クラスの追加
-// 			if ( strpos( $props, 'class=' ) === false ) {
-// 				$props .= ' class="is-core-list" ';
-// 			} elseif ( strpos( $props, 'is-core-list' ) === false ) {
-// 				$props = str_replace( 'class="', 'class="is-core-list ', $props );
-// 			}
-
-// 			return '<' . $tag . $props . '>';
-// 		},
-// 		$block_content
-// 	);
-
-// 	return $block_content;
-// }

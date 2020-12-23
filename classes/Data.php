@@ -101,8 +101,8 @@ class Data {
 		self::set_theme_version();
 
 		// テーマバージョンを定数化しておく(wp_enqueue_ のクエリ付与用)
-		if ( ! defined( 'ARKHE_VER' ) ) {
-			define( 'ARKHE_VER', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? date_i18n( 'mdGis' ) : self::$arkhe_version );
+		if ( ! defined( 'ARKHE_VERSION' ) ) {
+			define( 'ARKHE_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? date_i18n( 'mdGis' ) : self::$arkhe_version );
 		}
 
 		// 日本語かどうか
