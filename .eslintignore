@@ -1,2 +1,3 @@
-src/js/plugin/*.js
+src/js/plugin/**/*.js
+dist/**/*.js
 assets

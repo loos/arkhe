@@ -1,14 +1,14 @@
 // const webpack = require('webpack');
-const path = require( 'path' );
+const path = require('path');
 
 module.exports = {
 	mode: 'production',
 
 	entry: {
-		main: './src/js/main.js',
+		main: path.resolve(__dirname, 'src/js/main.js'),
 	},
 	output: {
-		path: path.resolve( __dirname, 'dist/js' ),
+		path: path.resolve(__dirname, 'dist/js'),
 		filename: '[name].js',
 	},
 	module: {
@@ -68,7 +68,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			'@js': path.resolve( __dirname, 'src/js/' ),
+			'@js': path.resolve(__dirname, 'src/js/'),
 		},
 	},
 	performance: { hints: false },

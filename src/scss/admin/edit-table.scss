@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 // mixin
-@import "../foundation/mixin/**";
+@import "../foundation/mixin/media";
 
 // setting
 @import "../foundation/setting/variable";
 
 // utility
-@import "object/utility/**";
+// @import "object/utility/**";
 
 
 // 投稿一覧の「クラシックエディター」などの文字を小さく薄く表示
