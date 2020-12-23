@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-12-20 19:08+0900\n"
-"PO-Revision-Date: 2020-12-20 19:08+0900\n"
+"POT-Creation-Date: 2020-12-23 17:35+0900\n"
+"PO-Revision-Date: 2020-12-23 17:35+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -196,17 +196,17 @@ msgstr "検索ボタンをSPで表示する"
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:105
-msgid "Drawer button"
-msgstr "ドロワーボタン"
+#: inc/customizer/header.php:105 template-parts/header/btn/drawer.php:9
+msgid "Menu button"
+msgstr "メニューボタン"
 
 #: inc/customizer/header.php:114
-msgid "Show drawer button on SP"
-msgstr "ドロワーボタンをSPで表示する"
+msgid "Show menu button on SP"
+msgstr "メニューボタンをSPで表示する"
 
 #: inc/customizer/header.php:124
-msgid "Show drawer button on PC"
-msgstr "ドロワーボタンをPCで表示する"
+msgid "Show menu button on PC"
+msgstr "メニューボタンをPCで表示する"
 
 #: inc/customizer/header.php:134
 msgid "Global navigation"
@@ -603,10 +603,6 @@ msgstr "検索ワード"
 msgid "CLOSE"
 msgstr "閉じる"
 
-#: template-parts/header/btn/drawer.php:9
-msgid "Menu button"
-msgstr "メニューボタン"
-
 #: template-parts/other/author_box.php:45
 msgid "To article list"
 msgstr "記事一覧へ"
@@ -657,6 +653,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "Drawer button"
+#~ msgstr "ドロワーボタン"
 
 #~ msgid "Post List"
 #~ msgstr "投稿リスト"

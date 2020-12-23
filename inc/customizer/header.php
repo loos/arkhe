@@ -102,16 +102,16 @@ Customizer::sub_title(
 	$arkhe_section,
 	'head_drawer_btn',
 	array(
-		'label' => __( 'Drawer button', 'arkhe' ),
+		'label' => __( 'Menu button', 'arkhe' ),
 	)
 );
 
-// ドロワーメニューをSPでも表示する
+// ドロワーメニューをSPで表示する
 Customizer::add(
 	$arkhe_section,
 	'show_drawer_sp',
 	array(
-		'label'       => __( 'Show drawer button on SP', 'arkhe' ),
+		'label'       => __( 'Show menu button on SP', 'arkhe' ),
 		'type'        => 'checkbox',
 	)
 );
@@ -121,7 +121,7 @@ Customizer::add(
 	$arkhe_section,
 	'show_drawer_pc',
 	array(
-		'label'       => __( 'Show drawer button on PC', 'arkhe' ),
+		'label'       => __( 'Show menu button on PC', 'arkhe' ),
 		'type'        => 'checkbox',
 	)
 );
