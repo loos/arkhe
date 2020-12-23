@@ -1,7 +1,7 @@
 .alignfull {
     position: relative;
     left: calc(50% - 50vw);
-    width: calc(100vw);
+    width: 100vw;
     max-width: 100vw;
 
     @supports (--css: variables) {
@@ -29,10 +29,17 @@
         padding: 4em var(--ark-pad--container, 48px);
     }
 
-    // グループのインナーコンテンツの最大幅を他のコンテンツと揃える。
+    // カバー & 背景色付きグループのインナーコンテンツの最大幅を他のコンテンツと揃える。
+    & > .wp-block-cover__inner-container,
     &.has-background > .wp-block-group__inner-container {
         max-width: var(--ark-article_width);
         margin: 0 auto;
+
+        // さらにその中の全幅は、内部に収まるように。（左右のpaddingまで）
+        & > .alignfull {
+            left: calc(50% - ( 50vw - var(--ark-pad--container) ));
+            width: calc(100vw - var(--ark-pad--container) * 2);
+        }
     }
 
     // メディアと文章ブロック
