@@ -67,23 +67,17 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// ファイル読み込み
 		require_once ARKHE_THEME_PATH . '/inc/enqueue_scripts.php';
 
-		// ウィジェット
-		require_once ARKHE_THEME_PATH . '/inc/widget.php';
+		// カスタマイザー
+		require_once ARKHE_THEME_PATH . '/inc/customizer.php';
 
 		// カスタムメニュー
 		require_once ARKHE_THEME_PATH . '/inc/custom_menu.php';
 
-		// カスタマイザー
-		require_once ARKHE_THEME_PATH . '/inc/customizer.php';
+		// ウィジェット
+		require_once ARKHE_THEME_PATH . '/inc/widget.php';
 
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
-
-		// テーマページ
-		require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
-
-		// Notice
-		require_once ARKHE_THEME_PATH . '/inc/notice.php';
 
 		// パーツ生成関数
 		require_once ARKHE_THEME_PATH . '/inc/parts.php';
@@ -91,6 +85,17 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// その他、フック処理
 		require_once ARKHE_THEME_PATH . '/inc/hooks_arkhe.php';
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
+
+		if ( is_admin() ) {
+			// Notice
+			require_once ARKHE_THEME_PATH . '/inc/notice.php';
+
+			// テーマページ
+			require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
+
+			// TGMPA
+			require_once ARKHE_THEME_PATH . '/inc/tgmpa.php';
+		}
 
 		// アップデート時の処理
 		if ( is_admin() || is_user_logged_in() ) {
