@@ -28,7 +28,7 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 		<div class="l-footer__foot">
 			<div class="l-container">
 				<?php
-				do_action( 'arkhe_start_footer_foot_content' );
+					do_action( 'arkhe_start_footer_foot_content' );
 					wp_nav_menu(
 						array(
 							'container'       => false,
