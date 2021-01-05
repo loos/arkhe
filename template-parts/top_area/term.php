@@ -8,7 +8,7 @@ $term_description = apply_filters( 'arkhe_term_description', $term_obj->descript
 $show_description = apply_filters( 'arkhe_show_term_description', ! empty( $term_description ), $term_id );
 
 // 背景の画像
-$bgimg_id     = apply_filters( 'arkhe_ttlbg_id', 0, $term_id );
+$bgimg_id     = apply_filters( 'arkhe_ttlbg_img_id', 0, $term_id );
 $bgimg_full   = '';
 $bgimg_medium = '';
 if ( $bgimg_id ) {

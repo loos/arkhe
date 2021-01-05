@@ -7,7 +7,7 @@ $subtitle = apply_filters( 'arkhe_page_subtitle', '', $the_id, 'top' );
 $excerpt  = apply_filters( 'arkhe_top_area_excerpt', '', $the_id );
 
 // 背景の画像
-$bgimg_id     = apply_filters( 'arkhe_ttlbg_id', get_post_thumbnail_id( $the_id ), $the_id );
+$bgimg_id     = apply_filters( 'arkhe_ttlbg_img_id', get_post_thumbnail_id( $the_id ), $the_id );
 $bgimg_full   = '';
 $bgimg_medium = '';
 if ( $bgimg_id ) {
