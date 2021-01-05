@@ -54,6 +54,11 @@ class Data {
 	 */
 	public static $is_ja = false;
 
+	/**
+	 * リストレイアウト
+	 */
+	public static $list_layouts = array();
+
 
 	/**
 	 * テンプレートパーツまでのパス（子テーマ > this > 親テーマ）
@@ -107,6 +112,13 @@ class Data {
 
 		// 日本語かどうか
 		self::$is_ja = 'ja' === get_locale();
+
+		// レイアウト
+		self::$list_layouts = array(
+			'card'   => __( 'Card type', 'arkhe' ),
+			'list'   => __( 'List type', 'arkhe' ),
+			'simple' => __( 'Text type', 'arkhe' ),
+		);
 
 		// ライセンス情報をセット
 		self::set_licence_data();

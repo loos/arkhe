@@ -41,11 +41,7 @@ Customizer::add(
 	array(
 		// 'label'       => __( 'List layout', 'arkhe' ),
 		'type'        => 'select',
-		'choices'     => array(
-			'card'   => __( 'Card type', 'arkhe' ),
-			'list'   => __( 'List type', 'arkhe' ),
-			'simple' => __( 'Text type', 'arkhe' ),
-		),
+		'choices'     => \Arkhe::$list_layouts,
 	)
 );
 
