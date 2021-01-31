@@ -4,4 +4,17 @@
     .block-editor-media-flow__url-input {
         overflow: hidden;
     }
+
+    // 画像が飛び出るバグを回避
+    .interface-interface-skeleton__editor {
+        width: 100%;
+    }
+
+    .block-library-block__reusable-block-container {
+
+        .wp-block-image > div {
+            max-width: 100%;
+        }
+    }
+
 }

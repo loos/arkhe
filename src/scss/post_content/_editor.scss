@@ -23,11 +23,11 @@
         &.wp-block-columns {
             display: flex !important;
         }
-    }
 
-    // .u-only-pc.wp-block-columns {
-    //     display: flex !important;
-    // }
+        &.wp-block-media-text {
+            display: grid !important;
+        }
+    }
 
 
     @include pc {

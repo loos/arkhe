@@ -12,7 +12,8 @@
         "../arkhe-ex-template",
         "../arkhe-toolkit",
         "../arkhe-blocks-pro",
-        "../arkhe-wookit"
+        "../arkhe-wookit",
+        "../my-arkhe-addon"
     ],
     "env": {
         "development": {
