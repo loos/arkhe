@@ -18,7 +18,7 @@
         "scss:admin/menu": "node-sass src/scss/admin/menu.scss dist/css/admin/menu.css",
         "scss:admin/customizer": "node-sass src/scss/admin/customizer.scss dist/css/admin/customizer.css",
         "scss:admin/nav-menus": "node-sass src/scss/admin/nav-menus.scss dist/css/admin/nav-menus.css",
-        "scss:admin/edit-table": "node-sass src/scss/admin/edit-table.scss dist/css/admin/edit-table..css",
+        "scss:admin/edit-table": "node-sass src/scss/admin/edit-table.scss dist/css/admin/edit-table.css",
         "postcss": "postcss dist/css/*.css -d dist/css && postcss dist/css/admin/*.css -d dist/css/admin && postcss dist/css/module/*.css -d dist/css/module",
         "watch": "npx npm-run-all --parallel watch:css watch:js watch:adminJs",
         "watch:css": "nodemon --watch src -e scss -x \"npm run build:css\"",
