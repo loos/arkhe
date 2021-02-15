@@ -37,6 +37,7 @@ trait Default_Data {
 			'show_search_pc'            => false,
 			'show_drawer_sp'            => true,
 			'show_drawer_pc'            => false,
+			'header_btn_layout'         => 'l-r',
 			'move_gnav_under'           => false,
 
 			// Footer

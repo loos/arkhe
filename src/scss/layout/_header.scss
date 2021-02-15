@@ -75,7 +75,7 @@
 [data-has-drawer="sp"] {
 
     @include pc {
-        --ark-drawerW: 1px;
+        --ark-drawerW: 0px;
 
         .l-header__drawerBtn {
             display: none;
@@ -88,7 +88,7 @@
 
     @include sp {
 
-        --ark-drawerW: 1px;
+        --ark-drawerW: 0px;
 
         .l-header__drawerBtn {
             display: none;
@@ -99,7 +99,7 @@
 // pcもspも表示なし
 [data-has-drawer=""] {
 
-    --ark-drawerW: 1px;
+    --ark-drawerW: 0px;
 
     .l-header__drawerBtn {
         display: none;
@@ -108,7 +108,7 @@
 
 [data-has-search=""] {
 
-    --ark-searchW: 1px;
+    --ark-searchW: 0px;
 
     .l-header__searchBtn {
         display: none;
@@ -118,9 +118,8 @@
 // spのみ
 [data-has-search="sp"] {
 
-
     @include pc {
-        --ark-searchW: 1px;
+        --ark-searchW: 0px;
 
         .l-header__searchBtn {
             display: none;
@@ -133,7 +132,7 @@
 
     @include sp {
 
-        --ark-searchW: 1px;
+        --ark-searchW: 0px;
 
         .l-header__searchBtn {
             display: none;
@@ -141,62 +140,42 @@
     }
 }
 
-[data-btns="l-r"] {
-
-    .l-header__body {
-        grid-template-areas: "menu left center right search";
-        grid-template-columns: min-content auto 1fr auto min-content;
-    }
-
-    &[data-logo="center"] {
-
-        .l-header__body {
-            grid-template-columns: var(--ark-drawerW) calc(25% - var(--ark-drawerW)) 50% calc(25% - var(--ark-searchW)) var(--ark-searchW);
-        }
-    }
+[data-btns="l-r"] .l-header__body {
+    grid-template-areas: "menu left center right search";
+    grid-template-columns: var(--ark-drawerW) calc(25% - var(--ark-drawerW)) 50% calc(25% - var(--ark-searchW)) var(--ark-searchW);
 }
 
-[data-btns="r-l"] {
-
-    .l-header__body {
-        grid-template-areas: "search left center right menu";
-        grid-template-columns: min-content auto 1fr auto min-content;
-    }
-
-    &[data-logo="center"] {
-
-        .l-header__body {
-            grid-template-columns: var(--ark-searchW) calc(25% - var(--ark-searchW)) 50% calc(25% - var(--ark-drawerW)) var(--ark-drawerW);
-        }
-    }
+[data-btns="r-l"] .l-header__body {
+    grid-template-areas: "search left center right menu";
+    grid-template-columns: var(--ark-searchW) calc(25% - var(--ark-searchW)) 50% calc(25% - var(--ark-drawerW)) var(--ark-drawerW);
 }
 
-[data-btns="rl-rr"] {
-
-    .l-header__body {
-        grid-template-areas: "left center right menu search";
-        grid-template-columns: auto 1fr auto min-content min-content;
-    }
-
-    &[data-logo="center"] {
-
-        .l-header__body {
-            grid-template-columns: 25% 50% auto var(--ark-drawerW) var(--ark-searchW);
-        }
-    }
+[data-btns="rl-rr"] .l-header__body {
+    grid-template-areas: "left center right menu search";
+    grid-template-columns: 25% 50% auto var(--ark-drawerW) var(--ark-searchW);
 }
 
-[data-btns="rr-rl"] {
+[data-btns="rr-rl"] .l-header__body {
+    grid-template-areas: "left center right search menu";
+    grid-template-columns: 25% 50% auto var(--ark-searchW) var(--ark-drawerW);
+}
 
-    .l-header__body {
-        grid-template-areas: "left center right search menu";
-        grid-template-columns: auto 1fr auto min-content min-content;
-    }
+// PCでロゴ左詰めの時（グロナビと同列の時）
+@include pc {
 
-    &[data-logo="center"] {
+    [data-btns="l-r"][data-logo="left"],
+    [data-btns="r-l"][data-logo="left"] {
 
         .l-header__body {
-            grid-template-columns: 25% 50% auto var(--ark-searchW) var(--ark-drawerW);
+            grid-template-columns: min-content auto 1fr auto min-content;
+        }
+    }
+
+    [data-btns="rl-rr"][data-logo="left"],
+    [data-btns="rr-rl"][data-logo="left"] {
+
+        .l-header__body {
+            grid-template-columns: auto 1fr auto min-content min-content;
         }
     }
 }

@@ -1,7 +1,7 @@
 /* global jQuery */
 /* exported CustomizerResponsiveDevicePreview */
 /* eslint consistent-this: [ "error", "section" ], no-magic-numbers: [ "error", { "ignore": [1] } ] */
-const CustomizerResponsiveDevicePreview = (function ($) {
+window.CustomizerResponsiveDevicePreview = (function ($) {
 	'use strict';
 
 	const component = {

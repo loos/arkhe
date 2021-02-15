@@ -68,6 +68,36 @@ Customizer::big_title(
 	)
 );
 
+// メニューボタン
+Customizer::sub_title(
+	$arkhe_section,
+	'head_drawer_btn',
+	array(
+		'label' => __( 'Menu button', 'arkhe' ),
+	)
+);
+
+// メニューボタンをSPで表示する
+Customizer::add(
+	$arkhe_section,
+	'show_drawer_sp',
+	array(
+		'label'       => __( 'Show menu button on SP', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// メニューボタンをPCでも表示する
+Customizer::add(
+	$arkhe_section,
+	'show_drawer_pc',
+	array(
+		'label'       => __( 'Show menu button on PC', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+
 // 検索ボタン
 Customizer::sub_title(
 	$arkhe_section,
@@ -97,32 +127,20 @@ Customizer::add(
 	)
 );
 
-// ドロワーメニュー
-Customizer::sub_title(
-	$arkhe_section,
-	'head_drawer_btn',
-	array(
-		'label' => __( 'Menu button', 'arkhe' ),
-	)
-);
-
-// ドロワーメニューをSPで表示する
+// ボタン配置
 Customizer::add(
 	$arkhe_section,
-	'show_drawer_sp',
+	'header_btn_layout',
 	array(
-		'label'       => __( 'Show menu button on SP', 'arkhe' ),
-		'type'        => 'checkbox',
-	)
-);
-
-// ドロワーメニューをPCでも表示する
-Customizer::add(
-	$arkhe_section,
-	'show_drawer_pc',
-	array(
-		'label'       => __( 'Show menu button on PC', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label'       => __( 'Buttons layout', 'arkhe' ),
+		'classname'   => '-btn-layout',
+		'type'        => 'radio',
+		'choices'     => array(
+			'l-r'    => 'L-R',
+			'r-l'    => 'R-L',
+			'rl-rr'  => 'RL-RR',
+			'rr-rl'  => 'RR-RL',
+		),
 	)
 );
 
@@ -140,10 +158,11 @@ Customizer::add(
 	$arkhe_section,
 	'move_gnav_under',
 	array(
-		'label'       => __( 'Move global navigation down', 'arkhe' ),
+		'label'       => __( 'Move global navigation down', 'arkhe' ) . '(PC)',
 		'type'        => 'checkbox',
 	)
 );
+
 
 // ヘッダーの固定設定
 Customizer::big_title(

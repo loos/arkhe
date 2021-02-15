@@ -9,6 +9,7 @@ module.exports = {
     ignoreFiles: ['./src/scss/foundation/base/**/*.scss', './src/js/**/*.js', './**/plugins/*.scss','./assets/**/*.css'],
     rules: {
         'max-line-length': null, //max文字数を無視
+        'length-zero-no-unit': [ true, {ignore: ["custom-properties"]} ],
         'selector-class-pattern': null,
         indentation: 4, //スペースでサイズは4
         // 'string-quotes': 'double', //ダブルクォーテーションに (wordpress でそうなってる)

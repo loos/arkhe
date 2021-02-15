@@ -48,7 +48,7 @@ trait Attrs {
 			'show_drawer_pc' => $setting['show_drawer_pc'],
 			'show_search_sp' => $setting['show_search_sp'],
 			'show_search_pc' => $setting['show_search_pc'],
-			'btn_layout'     => 'l-r',
+			'btn_layout'     => $setting['header_btn_layout'],
 			'logo_pos'       => 'center',
 		), $args );
 

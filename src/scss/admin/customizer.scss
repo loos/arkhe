@@ -297,3 +297,42 @@
     width: 50%;
 }
 
+
+// ヘッダーボタン配置
+.customize-control-radio.-btn-layout {
+
+    .customize-inside-control-row {
+        display: flex;
+        align-items: center;
+        margin: 8px 0;
+    }
+
+    input {
+        margin: 0 8px 0 0;
+    }
+
+    label {
+        display: inline-block;
+        width: calc(100% - 40px);
+        height: 32px;
+        color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+[for="_customize-input-arkhe_settings[header_btn_layout]-radio-l-r"] {
+    background: url(../../../assets/img/customizer/header-L-R.png);
+}
+
+[for="_customize-input-arkhe_settings[header_btn_layout]-radio-r-l"] {
+    background: url(../../../assets/img/customizer/header-R-L.png);
+}
+
+[for="_customize-input-arkhe_settings[header_btn_layout]-radio-rl-rr"] {
+    background: url(../../../assets/img/customizer/header-RL-RR.png);
+}
+
+[for="_customize-input-arkhe_settings[header_btn_layout]-radio-rr-rl"] {
+    background: url(../../../assets/img/customizer/header-RR-RL.png);
+}
