@@ -39,21 +39,20 @@ trait Template_Parts {
 			return;
 		}
 
+		$cache_data = '';
+
 		// キャッシュ取得用フック
 		if ( has_filter( 'arkhe_part_cache__' . $path ) ) {
-
-			// 引数3つ
 			$cache_data = apply_filters( 'arkhe_part_cache__' . $path, '', $path, $inc_path, $args );
-
-			// キャッシュがあればそれを出力
-			if ( $cache_data ) {
-				echo $cache_data; // phpcs:ignore
-				return;
-			}
 		}
 
-		// パーツ出力
-		self::the_part_content( $path, $inc_path, $args );
+		// キャッシュがあればそれを出力
+		if ( $cache_data ) {
+			echo $cache_data; // phpcs:ignore
+		} else {
+			// キャッシュなければ普通にパーツを読み込んで出力
+			self::the_part_content( $path, $inc_path, $args );
+		}
 
 		// パーツ読み込み後に発火するフック
 		if ( has_filter( 'arkhe_did_get_part__' . $path ) ) {
