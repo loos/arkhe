@@ -34,7 +34,7 @@ if ( isset( $_GET['tag'] ) ) {
 $searched_text = $searched_text ? $searched_text . ' ( ' . $searched_term . ' )' : $searched_term;
 
 // translators: %s is the value of $searched_text.
-$searched_text = sprintf( __( 'Search results for %s', 'arkhe' ), $searched_text );
+$searched_title = sprintf( __( 'Search results for %s', 'arkhe' ), $searched_text );
 
 // リストタイプ
 $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
@@ -46,7 +46,7 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 			<h1 class="c-pageTitle__main">
 				<?php
 					echo wp_kses(
-						apply_filters( 'arkhe_search_title', $searched_text, $search_query, $cat_name, $tag_name ),
+						apply_filters( 'arkhe_search_title', $searched_title, $search_query, $cat_name, $tag_name ),
 						Arkhe::$allowed_text_html
 					);
 				?>
@@ -60,12 +60,10 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
-			the_posts_pagination(
-				array(
-					'mid_size'           => 2,
-					'screen_reader_text' => null,
-				)
-			);
+			the_posts_pagination( array(
+				'mid_size'           => 2,
+				'screen_reader_text' => null,
+			) );
 		?>
 		<?php do_action( 'arkhe_end_search_main' ); ?>
 	</div>

@@ -109,8 +109,8 @@ function hook_get_archives_link( $link_html, $url, $text, $format, $before, $aft
 /**
  * カテゴリーチェック時、順番をそのままに保つ
  */
-add_action( 'wp_terms_checklist_args', '\Arkhe_Theme\hook_terms_checklist_args', 10, 2 );
-function hook_terms_checklist_args( $args, $post_id ) {
+add_action( 'wp_terms_checklist_args', '\Arkhe_Theme\hook_terms_checklist_args', 10 );
+function hook_terms_checklist_args( $args ) {
 	$args['checked_ontop'] = false;
 	return $args;
 }

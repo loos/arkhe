@@ -7,7 +7,7 @@
  * アイキャッチ画像を取得
  */
 if ( ! function_exists( 'ark_get__thumbnail' ) ) {
-	function ark_get__thumbnail( $post_id = null, $args = array() ) {
+	function ark_get__thumbnail( $the_id = null, $args = array() ) {
 		$size        = isset( $args['size'] ) ? $args['size'] : 'full';
 		$sizes       = isset( $args['sizes'] ) ? $args['sizes'] : '';
 		$class       = isset( $args['class'] ) ? $args['class'] : '';
@@ -21,10 +21,10 @@ if ( ! function_exists( 'ark_get__thumbnail' ) ) {
 
 		$thumb = '';
 
-		if ( has_post_thumbnail( $post_id ) ) {
+		if ( has_post_thumbnail( $the_id ) ) {
 
 			// アイキャッチ画像の設定がある場合
-			$thumb = get_the_post_thumbnail( $post_id, $size, $attachment_args );
+			$thumb = get_the_post_thumbnail( $the_id, $size, $attachment_args );
 
 		} elseif ( ARKHE_NOIMG_ID ) {
 
@@ -49,7 +49,7 @@ if ( ! function_exists( 'ark_get__thumbnail' ) ) {
 			// loading="lazy"
 		}
 
-		return apply_filters( 'ark_get__thumbnail', $thumb, $post_id, $args );
+		return apply_filters( 'ark_get__thumbnail', $thumb, $the_id, $args );
 	}
 }
 
@@ -58,17 +58,17 @@ if ( ! function_exists( 'ark_get__thumbnail' ) ) {
  * タームリストを出力する
  */
 if ( ! function_exists( 'ark_get__term_links' ) ) {
-	function ark_get__term_links( $post_id = '', $tax = '', $is_head = true ) {
+	function ark_get__term_links( $the_id = '', $tax_slug = '', $is_head = true ) {
 
-		if ( 'cat' === $tax ) {
-			$terms = get_the_category( $post_id );
+		if ( 'cat' === $tax_slug ) {
+			$terms = get_the_category( $the_id );
 			$icon  = 'arkhe-icon-folder';
-		} elseif ( 'tag' === $tax ) {
-			$terms = get_the_tags( $post_id );
+		} elseif ( 'tag' === $tax_slug ) {
+			$terms = get_the_tags( $the_id );
 			$icon  = 'arkhe-icon-tag';
 		} else {
-			$terms = get_the_terms( $post_id, $tax );
-			$icon  = 'arkhe-icon-' . $tax;
+			$terms = get_the_terms( $the_id, $tax_slug );
+			$icon  = 'arkhe-icon-' . $tax_slug;
 		}
 
 		if ( empty( $terms ) ) return '';
@@ -78,12 +78,12 @@ if ( ! function_exists( 'ark_get__term_links' ) ) {
 
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
-			$return   .= '<a class="c-postTerms__link" href="' . esc_url( $term_link ) . '" data-' . sanitize_key( $tax ) . '-id="' . esc_attr( $term->term_id ) . '">' .
+			$return   .= '<a class="c-postTerms__link" href="' . esc_url( $term_link ) . '" data-' . sanitize_key( $tax_slug ) . '-id="' . esc_attr( $term->term_id ) . '">' .
 				esc_html( $term->name ) .
 			'</a>';
 		}
 
-		return apply_filters( 'ark_get__term_links', $return, $post_id, $tax );
+		return apply_filters( 'ark_get__term_links', $return, $the_id, $tax_slug );
 	}
 }
 

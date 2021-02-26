@@ -27,12 +27,10 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
 
 			// ページャー
-			the_posts_pagination(
-				array(
-					'mid_size'           => 2,
-					'screen_reader_text' => null,
-				)
-			);
+			the_posts_pagination( array(
+				'mid_size'           => 2,
+				'screen_reader_text' => null,
+			) );
 		?>
 		<?php do_action( 'arkhe_end_author_main', $author_id ); ?>
 	</div>
