@@ -134,7 +134,8 @@ tbody th {
 
 
 /* ---------- テキスト装飾 ---------- */
-//インラインコード
+//インラインコード,
+kbd,
 :not(pre) > code {
     display: inline-block;
     margin: 0 .25em;
@@ -144,10 +145,14 @@ tbody th {
     font-family: Menlo, Consolas, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", sans-serif;
     line-height: 1.5;
     letter-spacing: 0;
-    background: #193b6514;
+    background: #edf0f3;
     border-radius: 3px;
 }
 
+kbd {
+    background-color: #fbfbfb;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .15), 0 0 1px rgba(0, 0, 0, .1);
+}
 
 small {
     font-size: .75rem;

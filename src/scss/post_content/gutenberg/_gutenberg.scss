@@ -44,7 +44,14 @@ a {
 }
 
 // 本文エリア
-// .block-editor-writing-flow {}
+.block-editor-writing-flow {
+
+    // 5.7 ~ エディターの縦幅の最小値がなくなっている
+    .branch-5-7 & {
+        padding-bottom: 80px;
+    }
+
+}
 
 
 //aligncenterにclearが付くようになったので、それに合わせる
