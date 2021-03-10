@@ -1,0 +1,15 @@
+// <kbd> の優先度上げる
+.block-editor .editor-styles-wrapper kbd {
+    display: inline-block;
+    margin: 0 .25em;
+    padding: .2em .5em;
+    color: #3f3f3f;
+    font-size: .9em;
+    font-family: Menlo, Consolas, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", sans-serif;
+    line-height: 1.5;
+    letter-spacing: 0;
+    background: #edf0f3;
+    background-color: #fbfbfb;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, .15), 0 0 1px rgba(0, 0, 0, .1);
+}

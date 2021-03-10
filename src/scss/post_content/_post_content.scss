@@ -155,10 +155,14 @@ kbd {
 }
 
 small {
-    font-size: .75rem;
+    font-size: .75em;
     opacity: $thin_text_opacity;
 }
 
+sup,
+sub {
+    font-size: .75em;
+}
 
 iframe {
     display: block;
@@ -166,7 +170,6 @@ iframe {
     margin-right: auto;
     margin-left: auto;
 }
-
 
 figcaption {
 
