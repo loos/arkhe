@@ -162,25 +162,92 @@ if ( ! function_exists( 'ark_get__archive_data' ) ) {
 
 
 /**
- * 日付を出力する
+ * 日付を出力 (アーカイブと投稿ページで使われている)
  */
 if ( ! function_exists( 'ark_the__postdate' ) ) {
 	function ark_the__postdate( $date = null, $type = 'posted', $use_time_tag = true ) {
 
 		if ( null === $date ) return;
 
-		$time_class = 'c-postTimes__item -' . $type . ' u-flex--aic';
+		$date_format = get_option( 'date_format' );
+		$time_class  = 'c-postTimes__item -' . $type . ' u-flex--aic';
 
 		if ( $use_time_tag ) {
 			echo '<time class="' . esc_attr( $time_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
 				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '" role="img" aria-hidden="true"></i>' .
-				esc_html( $date->format( 'Y.m.d' ) ) .
+				esc_html( $date->format( $date_format ) ) .
 			'</time>';
 		} else {
 			echo '<span class="' . esc_attr( $time_class ) . '">' .
 				'<i class="c-postMetas__icon arkhe-icon-' . esc_attr( $type ) . '" role="img" aria-hidden="true"></i>' .
-				esc_html( $date->format( 'Y.m.d' ) ) .
+				esc_html( $date->format( $date_format ) ) .
 			'</span>';
 		}
+	}
+}
+
+
+/**
+ * 投稿リスト用の日付
+ */
+if ( ! function_exists( 'ark_the__post_list_times' ) ) {
+	function ark_the__post_list_times( $show_date, $show_modified, $date, $modified ) {
+
+		$date     = $show_date ? $date : null;
+		$modified = $show_modified ? $modified : null;
+
+		// どっちも非表示の場合
+		if ( ! $date && ! $modified ) return;
+
+		// 両方表示する設定の場合、更新日は公開日より遅い場合だけ表示
+		if ( $date && $modified ) {
+			$modified = ( $date < $modified ) ? $modified : null;
+		}
+	?>
+		<div class="p-postList__times c-postTimes u-color-thin u-flex--aic">
+			<?php
+				if ( $date ) ark_the__postdate( $date, 'posted' );
+				if ( $modified ) ark_the__postdate( $modified, 'modified' );
+			?>
+		</div>
+	<?php
+	}
+}
+
+
+/**
+ * 投稿リスト用のカテゴリー
+ */
+if ( ! function_exists( 'ark_the__post_list_category' ) ) {
+	function ark_the__post_list_category( $post_id ) {
+		$categories = get_the_category( $post_id );
+		if ( empty( $categories ) ) return;
+
+		$cat = $categories[0];
+	?>
+		<div class="p-postList__category u-color-thin u-flex--aic">
+			<i class="c-postMetas__icon arkhe-icon-folder" role="img" aria-hidden="true"></i>
+			<span data-cat-id="<?php echo esc_attr( $cat->term_id ); ?>"><?php echo esc_html( $cat->name ); ?></span>
+		</div>
+	<?php
+	}
+}
+
+
+/**
+ * 投稿リスト用の著者情報
+ */
+if ( ! function_exists( 'ark_the__post_list_author' ) ) {
+	function ark_the__post_list_author( $author_id ) {
+		$author_data = get_userdata( $author_id );
+		if ( empty( $author_data ) ) return;
+	?>
+		<div class="p-postList__author c-postAuthor u-flex--aic">
+			<figure class="c-postAuthor__figure">
+				<?php echo get_avatar( $author_id, 100, '', '' ); ?>
+			</figure>
+			<span class="c-postAuthor__name u-color-thin"><?php echo esc_html( $author_data->display_name ); ?></span>
+		</div>
+	<?php
 	}
 }
