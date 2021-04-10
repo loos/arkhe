@@ -1,10 +1,8 @@
 <?php
-$setting = Arkhe::get_setting();
 
 // ウィジェットの使用状況
 $is_active_footer1 = is_active_sidebar( 'footer-1' );
 $is_active_footer2 = is_active_sidebar( 'footer-2' );
-
 ?>
 <footer id="footer" class="l-footer">
 	<div class="l-footer__inner">
@@ -41,7 +39,9 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 					);
 				?>
 				<?php do_action( 'arkhe_before_copyright' ); ?>
-				<p class="c-copyright"><?php echo esc_html( $setting['copyright'] ); ?></p>
+				<p class="c-copyright">
+					<?php echo wp_kses( Arkhe::get_setting( 'copyright' ), Arkhe::$allowed_text_html ); ?>
+				</p>
 				<?php do_action( 'arkhe_after_copyright' ); ?>
 			</div>
 		</div>
