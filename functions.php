@@ -31,7 +31,7 @@ spl_autoload_register(
 	function( $classname ) {
 
 		// 名前に Arkhe_Theme がなければオートロードしない。
-		if ( strpos( $classname, 'Arkhe_Theme' ) === false && strpos( $classname, 'Arkhe_Theme' ) === false) return;
+		if ( strpos( $classname, 'Arkhe_Theme' ) === false ) return;
 
 		$classname = str_replace( '\\', '/', $classname );
 		$classname = str_replace( 'Arkhe_Theme/', '', $classname );

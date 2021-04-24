@@ -1,8 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-use \Arkhe_Theme\Data\Default_Data;
-
 class Data {
 
 	use \Arkhe_Theme\Data\Default_Data;
