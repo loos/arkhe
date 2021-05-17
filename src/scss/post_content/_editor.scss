@@ -45,9 +45,6 @@
     }
 
     // コアのCSSで auto にされるので詳細度高めに上書き
-    img.u-obf-cover,
-    img.u-obf-contain {
-        height: 100%;
-    }
+    // img.u-obf-cover, img.u-obf-contain {height: 100%;}
 }
 
