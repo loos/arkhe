@@ -31,7 +31,13 @@ if ( isset( $_GET['tag'] ) ) {
 	$searched_term = $searched_term ? $searched_term . ' / ' . $tag_name : $tag_name;
 }
 
-$searched_text = $searched_text ? $searched_text . ' ( ' . $searched_term . ' )' : $searched_term;
+// 検索結果タイトル
+if ( $searched_text && $searched_term ) {
+	$searched_text .= ' ( ' . $searched_term . ' )';
+} elseif ( $searched_term ) {
+	$searched_text = $searched_term;
+}
+
 
 // translators: %s is the value of $searched_text.
 $searched_title = sprintf( __( 'Search results for %s', 'arkhe' ), $searched_text );
