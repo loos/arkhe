@@ -124,45 +124,6 @@ export const clickEvents = {
 
 		e.stopPropagation();
 	},
-
-	/**
-	 * タブ
-	 */
-	tabControl(e) {
-		e.preventDefault();
-
-		// クリックイベントがキー（Enter / space）によって呼び出されたかどうか
-		const iskeyClick = 0 === e.clientX;
-
-		// クリックされたボタン要素
-		const clickedButton = e.currentTarget;
-		const isOpend = 'true' === clickedButton.getAttribute('aria-selected');
-
-		if (!iskeyClick) {
-			// マウスクリック時はフォーカスを外す
-			clickedButton.blur();
-		}
-		if (isOpend)
-			// すでにオープンされているタブの場合はなにもしない
-			return;
-
-		// 展開させるタブボックスを取得
-		const targetID = clickedButton.getAttribute('aria-controls');
-		const targetBox = document.getElementById(targetID);
-
-		// すでに選択済みのタブボタンを取得 : closest('[aria-selected="true"]') だと取得できなかった。
-		const parentTabList = clickedButton.closest('[role="tablist"]');
-		const selectedButton = parentTabList.querySelector('[aria-selected="true"]');
-
-		// すでに展開済みのタブボックスを取得
-		const openedBox = targetBox.parentNode.querySelector('[aria-hidden="false"]');
-
-		// ariaの処理
-		clickedButton.setAttribute('aria-selected', 'true');
-		selectedButton.setAttribute('aria-selected', 'false');
-		targetBox.setAttribute('aria-hidden', 'false');
-		openedBox.setAttribute('aria-hidden', 'true');
-	},
 };
 
 /**
