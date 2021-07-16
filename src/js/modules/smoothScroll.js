@@ -62,10 +62,10 @@ export function addSmoothScrollEvent(dom) {
 				document.documentElement.setAttribute('data-drawer', 'closed');
 
 				// 目次メニューが開いていれば閉じる
-				const indexModal = DOM.indexModal;
-				if (null !== indexModal && indexModal.classList.contains('is-open')) {
-					indexModal.classList.remove('is-open');
-				}
+				// const indexModal = DOM.indexModal;
+				// if (null !== indexModal && indexModal.classList.contains('is-open')) {
+				// 	indexModal.classList.remove('is-open');
+				// }
 			} else {
 				return true;
 			}

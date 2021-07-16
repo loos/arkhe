@@ -1,7 +1,4 @@
 <?php
-/**
- * Arkhe側で用意しているフックへの処理
- */
 namespace Arkhe_Theme;
 
 /**

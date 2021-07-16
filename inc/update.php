@@ -5,7 +5,6 @@ namespace Arkhe_Theme;
  * ウィジェット登録
  */
 add_action( 'after_setup_theme', '\Arkhe_Theme\update_check' );
-
 function update_check() {
 	// 現在のバージョンを取得
 	$now_version = \Arkhe::$arkhe_version;

@@ -10,10 +10,11 @@ export default {
 	drawerMenu: null,
 	pageTopBtn: null,
 	searchModal: null,
-	indexModal: null,
+
 	fixBottomMenu: null,
 	wpadminbar: null,
 	lastFocusedElem: null,
 	drawerToggleBtn: null,
+	// indexModal: null,
 	// searchToggleBtn: null,
 };

@@ -20,13 +20,6 @@ const setFooterPaddingBottom = (fixBottomMenu) => {
  * 向きが変わった時の処理
  */
 export default function () {
-	const wpadminbar = DOM.wpadminbar;
-
-	// アドミンバーの有無による処理
-	// if (null !== wpadminbar) {
-	// fixBar.style.marginTop = '32px';
-	// }
-
 	// 固定フッターメニューがあれば footerの下に余白つける
 	if (null !== DOM.fixBottomMenu) {
 		setFooterPaddingBottom(DOM.fixBottomMenu);

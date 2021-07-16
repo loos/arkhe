@@ -13,5 +13,5 @@ export default function setDomData(DOM) {
 	DOM.fixBottomMenu = document.getElementById('fix_bottom_menu');
 	DOM.pageTopBtn = document.getElementById('pagetop');
 	DOM.searchModal = document.getElementById('search_modal');
-	DOM.indexModal = document.getElementById('index_modal'); // テーマ本体にはない。
+	// DOM.indexModal = document.getElementById('index_modal'); // テーマ本体にはない。
 }

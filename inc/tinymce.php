@@ -1,13 +1,10 @@
 <?php
-namespace Arkhe_Theme;
-
-add_action( 'admin_init', '\Arkhe_Theme\add_mce_style' );
-add_action( 'tiny_mce_before_init', '\Arkhe_Theme\mce_before_init' );
-
+namespace Arkhe_Theme\TinyMce;
 
 /**
  * TinyMCEのエディタ内CSS
  */
+add_action( 'admin_init', __NAMESPACE__ . '\add_mce_style' );
 function add_mce_style() {
 	$editor_style_path = array( ARKHE_THEME_URI . '/dist/css/editor.css?v=' . ARKHE_VERSION );
 	add_editor_style( $editor_style_path );
@@ -16,6 +13,7 @@ function add_mce_style() {
 /**
  * TinyMCE設定
  */
+add_action( 'tiny_mce_before_init', __NAMESPACE__ . '\mce_before_init' );
 function mce_before_init( $mceInit ) {
 
 	// 見出し4まで
@@ -39,7 +37,7 @@ function mce_before_init( $mceInit ) {
 	$mceInit['object_resizing']   = 'img';
 
 	// インライン出力するCSS
-	$mceInit = \Arkhe_Theme\set_content_style( $mceInit );
+	$mceInit = set_tinymce_content_style( $mceInit );
 
 	return $mceInit;
 }
@@ -48,7 +46,7 @@ function mce_before_init( $mceInit ) {
 /**
  * インラインスタイルをセット
  */
-function set_content_style( $mceInit ) {
+function set_tinymce_content_style( $mceInit ) {
 
 	// Gutenberg か Classic を判別するのに使う
 	global $current_screen;

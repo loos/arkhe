@@ -35,7 +35,7 @@ export const setState = {
 		isModalOpen = val;
 	},
 	smoothOffset: () => {
-		smoothOffset = 8; //初期値
+		smoothOffset = 0;
 
 		const arkheVars = window.arkheVars;
 		if (arkheVars === undefined) return;
@@ -63,6 +63,8 @@ export const setState = {
 
 		// CSS変数にもセット
 		document.documentElement.style.setProperty('--ark-offset_y', smoothOffset + 'px');
+
+		smoothOffset += 8; //スクロール位置を少しだけ下へ。
 	},
 	scrollbarW: () => {
 		const scrollbarW = window.innerWidth - document.body.clientWidth;

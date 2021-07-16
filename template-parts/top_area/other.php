@@ -28,7 +28,7 @@ $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filte
 	<div class="p-topArea__body l-container">
 		<div class="p-topArea__title c-pageTitle">
 			<?php
-				echo '<h1 class="c-pageTitle__main">' . 'タイトル' . '</h1>';
+				echo '<h1 class="c-pageTitle__main">タイトル</h1>';
 			?>
 		</div>
 		<?php if ( '' !== $excerpt ) : ?>

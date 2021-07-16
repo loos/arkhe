@@ -5,7 +5,6 @@ namespace Arkhe_Theme;
  * add_theme_supports
  */
 add_action( 'after_setup_theme', '\Arkhe_Theme\setup_theme' );
-
 function setup_theme() {
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
@@ -38,7 +37,6 @@ function setup_theme() {
 	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
 	add_theme_support( 'custom-line-height' );
 	add_theme_support( 'custom-units', 'px', 'vw', 'vh' );
-	// add_theme_support( 'custom-spacing' );
 
 	// html5サポート
 	$html5s = array(
