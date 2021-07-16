@@ -94,4 +94,12 @@ trait Condition {
 		return apply_filters( 'arkhe_breadcrumbs_position', $breadcrumbs_pos );
 	}
 
+
+	/**
+	 * ブロックアセットの分離が有効かどうか
+	 */
+	public static function is_separate_block_assets() {
+		return function_exists( 'wp_should_load_separate_core_block_assets' ) && wp_should_load_separate_core_block_assets();
+	}
+
 }

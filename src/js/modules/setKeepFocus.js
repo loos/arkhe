@@ -18,6 +18,8 @@ function getFocusableElements(modal) {
 }
 
 function setModalKeydownEvent(modal, focusableElements, modalType) {
+	if (!modal) return;
+
 	// The first focusable element within the modal window
 	const firstTabStop = focusableElements[0];
 

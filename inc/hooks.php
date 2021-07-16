@@ -1,15 +1,5 @@
 <?php
-/**
- * 各種フックへの処理
- */
 namespace Arkhe_Theme;
-
-/**
- * Arkheを使用しているかどうかをJS側で判別するためのグローバル変数を出力
- */
-add_action( 'admin_head', function() {
-	echo '<script>window.arkheTheme = 1;</script>' . PHP_EOL;
-} );
 
 /**
  * 抜粋文字数を変更する
@@ -47,17 +37,8 @@ function add_rss_thumb( $content ) {
 	$thumb = get_the_post_thumbnail_url( $post->ID, 'large' );
 	if ( $thumb ) {
 		$content = '<p><img src="' . esc_url( $thumb ) . '" class="webfeedsFeaturedVisual" /></p>' . $content;
-		}
+	}
 	return $content;
-}
-
-
-/**
- * Add skip link
- */
-add_action( 'wp_body_open', '\Arkhe_Theme\hook_wp_body_open', 5 );
-function hook_wp_body_open( $output ) {
-	echo '<a class="skip-link screen-reader-text" href="#main_content">' . esc_html__( 'Skip to the content', 'arkhe' ) . '</a>';
 }
 
 

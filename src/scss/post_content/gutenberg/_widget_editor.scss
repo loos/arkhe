@@ -1,0 +1,14 @@
+// サイドバーの「ブロック」タブが変なとこで改行されるのを防ぐ。https://github.com/WordPress/gutenberg/issues/33108
+#widgets-editor {
+
+    .edit-widgets-sidebar__panel-tabs [data-label="ブロック"] {
+        white-space: nowrap;
+    }
+}
+
+.wp-block-widget-area {
+
+    .block-editor-block-list__layout > .block-list-appender:last-child {
+        margin-top: 40px;
+    }
+}

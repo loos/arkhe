@@ -1,11 +1,10 @@
 <?php
-namespace Arkhe_Theme;
+namespace Arkhe_Theme\Widget;
 
 /**
  * ウィジェット登録
  */
-add_action( 'widgets_init', '\Arkhe_Theme\setup_widgets' );
-
+add_action( 'widgets_init', __NAMESPACE__ . '\setup_widgets' );
 function setup_widgets() {
 
 	// 標準の「最新の投稿」ウィジェットを削除して上書き
@@ -57,4 +56,17 @@ function setup_widgets() {
 			'after_title'   => '</div>',
 		)
 	);
+}
+
+/**
+ * 選択できないレガシーウィジェット選択可能にする
+ */
+add_filter( 'widget_types_to_hide_from_legacy_widget_block', __NAMESPACE__ . '\filter_hide_legacy_widget' );
+function filter_hide_legacy_widget( $widget_types ) {
+	/**
+	 * コアのレガシーウィジェット："pages", "calendar", "archives", "media_audio", "media_image", "media_gallery", "media_video", "search", "text", "categories", "recent-posts", "recent-comments", "rss", "tag_cloud", "custom_html", "block"
+	 */
+	$widget_types = array_diff( $widget_types, array( 'search', 'custom_html', 'text', 'recent-posts', 'categories' ) );
+	$widget_types = array_values( $widget_types );
+	return $widget_types;
 }

@@ -76,14 +76,20 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// ウィジェット
 		require_once ARKHE_THEME_PATH . '/inc/widget.php';
 
+		// Gutenberg
+		require_once ARKHE_THEME_PATH . '/inc/gutenberg.php';
+
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
 
 		// パーツ生成関数
 		require_once ARKHE_THEME_PATH . '/inc/parts.php';
 
+		// 出力処理
+		require_once ARKHE_THEME_PATH . '/inc/output.php';
+
 		// その他、フック処理
-		require_once ARKHE_THEME_PATH . '/inc/hooks_arkhe.php';
+		require_once ARKHE_THEME_PATH . '/inc/hooks_to_arkhe.php';
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
 
 		if ( is_admin() ) {
