@@ -1,0 +1,11 @@
+.l-scrollObserver {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    width: 100%;
+    height: 1px;
+    visibility: hidden;
+    pointer-events: none;
+}

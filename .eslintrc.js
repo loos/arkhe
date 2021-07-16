@@ -14,6 +14,8 @@ module.exports = {
 		console: false,
 		fetch: false,
 		location: false,
+		IntersectionObserver: false,
+		IntersectionObserverEntry: false,
 	},
 
 	rules: {

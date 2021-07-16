@@ -2,27 +2,30 @@
  * スクロールイベントを登録
  */
 export default function setScrollEvent() {
-	let scrTop = 0; // スクロール値
-	let timeout = false;
-	let ptFlag = true;
-	const timer = null;
-	window.addEventListener('scroll', function () {
-		// clearTimeout(timer);
-		if (timeout) return;
-		timeout = true;
-		setTimeout(function () {
-			timeout = false;
+	// IntersectionObserverをブラウザがサポートしているかどうか
+	const isObserveSupported =
+		window.IntersectionObserver && 'isIntersecting' in IntersectionObserverEntry.prototype;
+	if (!isObserveSupported) return;
 
-			scrTop = window.pageYOffset;
+	const observerOptions = {
+		root: null,
+		rootMargin: '0px',
+		threshold: 0,
+	};
+	const scrollObserver = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			toggleScrollClass(!entry.isIntersecting);
+		});
+	}, observerOptions);
 
-			// スクロールされたかどうかをHTMLのdata属性にセット
-			if (ptFlag && 160 <= scrTop) {
-				document.documentElement.setAttribute('data-scrolled', 'true');
-				ptFlag = false;
-			} else if (!ptFlag && 160 > scrTop) {
-				document.documentElement.setAttribute('data-scrolled', 'false');
-				ptFlag = true;
-			}
-		}, 250);
-	});
+	const theObserver = document.querySelector('.l-scrollObserver');
+	scrollObserver.observe(theObserver);
+}
+
+function toggleScrollClass(isScrolled) {
+	if (isScrolled) {
+		document.documentElement.setAttribute('data-scrolled', 'true');
+	} else {
+		document.documentElement.setAttribute('data-scrolled', 'false');
+	}
 }
