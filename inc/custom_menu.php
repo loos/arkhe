@@ -45,7 +45,7 @@ function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
 			if ( ! empty( $item->description ) ) {
 				$item_output = str_replace(
 					'</a>',
-					'</span><small class="__subText">' . esc_html( $item->description ) . '</small></a>',
+					'<small class="__subText">' . esc_html( $item->description ) . '</small></a>',
 					$item_output
 				);
 			}
