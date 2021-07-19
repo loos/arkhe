@@ -1,20 +1,16 @@
 <?php
 /**
- * 投稿ページのタイトル部分
- * $args['post_id'] : 投稿IDが渡ってくる
- * $args['post_title'] : 投稿タイトルが渡ってくる
+ * 投稿ページのタームリスト
  */
-
-$the_id   = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+$the_id   = get_the_ID();
+$is_head  = isset( $args['is_head'] ) ? $args['is_head'] : true;
 $show_cat = isset( $args['show_cat'] ) ? $args['show_cat'] : true;
 $show_tag = isset( $args['show_tag'] ) ? $args['show_tag'] : false;
-$is_head  = isset( $args['is_head'] ) ? $args['is_head'] : true;
+$cat_data = $show_cat ? Arkhe::get_the_terms_data( $the_id, 'category' ) : null;
+$tag_data = $show_tag ? Arkhe::get_the_terms_data( $the_id, 'post_tag' ) : null;
 
-// カテゴリー・タグデータを取得
-$cat_data = Arkhe::get_the_terms_data( $the_id, 'category' );
-$tag_data = Arkhe::get_the_terms_data( $the_id, 'post_tag' );
-$has_cat  = ! empty( $cat_data );
-$has_tag  = ! empty( $tag_data );
+$has_cat = ! empty( $cat_data );
+$has_tag = ! empty( $tag_data );
 
 if ( ! $has_cat && ! $has_tag ) return;
 ?>

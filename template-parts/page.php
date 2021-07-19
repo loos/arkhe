@@ -2,11 +2,11 @@
 /**
  * 固定ページのコンテンツ部分
  */
-$the_id = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+$the_id = get_the_ID();
 
 // ヘッダー部分
 if ( ! Arkhe::is_show_ttltop() ) {
-	Arkhe::get_part( 'page/head', array( 'post_id' => $the_id ) );
+	Arkhe::get_part( 'page/title' );
 }
 
 // コンテンツ前フック
@@ -24,4 +24,4 @@ Arkhe::get_part( 'other/pagination' );
 do_action( 'arkhe_after_page_content', $the_id );
 
 // コメント
-Arkhe::get_part( 'page/comment', array( 'post_id' => $the_id ) );
+Arkhe::get_part( 'page/comment' );

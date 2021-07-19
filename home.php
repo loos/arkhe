@@ -3,9 +3,6 @@
  * 「投稿ページ」に設定されたページ or ホームページに指定がない場合のトップページ
  */
 get_header();
-
-$post_data = get_queried_object();
-$the_id    = isset( $post_data->ID ) ? $post_data->ID : 0;
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div class="<?php Arkhe::main_body_class(); ?>">
@@ -13,8 +10,8 @@ $the_id    = isset( $post_data->ID ) ? $post_data->ID : 0;
 			do_action( 'arkhe_start_home_main' );
 
 			// ページタイトル
-			if ( $the_id && ! Arkhe::is_show_ttltop() ) :
-				Arkhe::get_part( 'page/head', array( 'post_id' => $the_id ) );
+			if ( ! Arkhe::is_show_ttltop() ) :
+				Arkhe::get_part( 'page/title' );
 			endif;
 
 			// コンテンツ

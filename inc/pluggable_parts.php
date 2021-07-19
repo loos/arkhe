@@ -165,3 +165,19 @@ if ( ! function_exists( 'ark_part__post_list_author' ) ) {
 		'</div>';
 	}
 }
+
+
+/**
+ * 投稿リスト用の著者情報
+ */
+if ( ! function_exists( 'ark_part__pnlink' ) ) {
+	function ark_part__pnlink( $args ) {
+		$id    = isset( $args['id'] ) ? $args['id'] : 0;
+		$type  = isset( $args['type'] ) ? $args['type'] : '';
+		$title = isset( $args['title'] ) ? $args['title'] : '';
+
+		return '<a href="' . esc_url( get_permalink( $id ) ) . '" rel="' . esc_url( $type ) . '" class="c-pnNav__link u-flex--aic">' .
+			'<span class="c-pnNav__title">' . esc_html( $title ) . '</span>' .
+		'</a>';
+	}
+}

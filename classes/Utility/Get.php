@@ -39,6 +39,8 @@ trait Get {
 	 */
 	public static function get_author_icon_data( $author_id ) {
 
+		if ( ! $author_id ) return null;
+
 		// cache
 		$cache_key = "post_author_icon_{$author_id}";
 		$data      = wp_cache_get( $cache_key, 'arkhe' );
