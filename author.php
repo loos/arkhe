@@ -5,10 +5,6 @@
 get_header();
 $author_id   = get_queried_object_id();
 $author_data = get_userdata( $author_id );
-
-// リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $author_id );
-
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div <?php post_class( Arkhe::get_main_body_class() ); ?>>
@@ -24,7 +20,9 @@ $list_type = apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $autho
 			do_action( 'arkhe_before_author_post_list', $author_id );
 
 			// 投稿リスト
-			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_part( 'post_list/main_query', array(
+				'list_type' => apply_filters( 'arkhe_list_type_on_author', ARKHE_LIST_TYPE, $author_id ),
+			) );
 
 			// ページャー
 			the_posts_pagination( array(

@@ -48,10 +48,11 @@ spl_autoload_register(
 class Arkhe extends \Arkhe_Theme\Data {
 
 	use \Arkhe_Theme\Utility\Attrs,
+		\Arkhe_Theme\Utility\Get,
+		\Arkhe_Theme\Utility\Parts,
 		\Arkhe_Theme\Utility\Output,
 		\Arkhe_Theme\Utility\Licence,
-		\Arkhe_Theme\Utility\Condition,
-		\Arkhe_Theme\Utility\Template_Parts;
+		\Arkhe_Theme\Utility\Condition;
 
 	public function __construct() {
 
@@ -83,7 +84,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
 
 		// パーツ生成関数
-		require_once ARKHE_THEME_PATH . '/inc/parts.php';
+		require_once ARKHE_THEME_PATH . '/inc/pluggable_parts.php';
 
 		// 出力処理
 		require_once ARKHE_THEME_PATH . '/inc/output.php';
@@ -91,6 +92,9 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// その他、フック処理
 		require_once ARKHE_THEME_PATH . '/inc/hooks_to_arkhe.php';
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
+
+		// 後方互換用関数
+		require_once ARKHE_THEME_PATH . '/inc/backward.php';
 
 		if ( is_admin() ) {
 			// Notice

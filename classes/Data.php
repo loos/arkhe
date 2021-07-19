@@ -79,6 +79,23 @@ class Data {
 	/**
 	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
 	 */
+	public static $allowed_img_html = array(
+		'img' => array(
+			'alt'     => true,
+			'src'     => true,
+			'secset'  => true,
+			'class'   => true,
+			'seizes'  => true,
+			'width'   => true,
+			'height'  => true,
+			'loading' => true,
+		),
+	);
+
+
+	/**
+	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
+	 */
 	public static $allowed_text_html = array(
 		'a'      => array(
 			'href'   => true,

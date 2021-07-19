@@ -38,12 +38,8 @@ if ( $searched_text && $searched_term ) {
 	$searched_text = $searched_term;
 }
 
-
 // translators: %s is the value of $searched_text.
 $searched_title = sprintf( __( 'Search results for %s', 'arkhe' ), $searched_text );
-
-// リストタイプ
-$list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
 	<div class="<?php Arkhe::main_body_class(); ?>">
@@ -63,7 +59,9 @@ $list_type = apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE );
 			do_action( 'arkhe_before_search_post_list' );
 
 			// 投稿一覧
-			Arkhe::get_part( 'post_list/main_query', array( 'list_type' => $list_type ) );
+			Arkhe::get_part( 'post_list/main_query', array(
+				'list_type' => apply_filters( 'arkhe_list_type_on_search', ARKHE_LIST_TYPE ),
+			) );
 
 			// ページャー
 			the_posts_pagination( array(

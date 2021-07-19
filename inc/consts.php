@@ -21,7 +21,7 @@ function define_theme_const() {
 	\Arkhe::$excerpt_length = ARKHE_EXCERPT_LENGTH;
 
 	// プレースホルダー画像
-	define( 'ARKHE_PLACEHOLDER', ARKHE_THEME_URI . '/assets/img/placeholder.png' );
+	define( 'ARKHE_PLACEHOLDER', 'data:image/gif;base64,R0lGODlhBgACAPAAAP///wAAACH5BAEAAAAALAAAAAAGAAIAAAIDhI9WADs=' );
 
 	// NO IMAGE画像
 	$noimg_id  = (int) $setting['no_image'] ?: 0;

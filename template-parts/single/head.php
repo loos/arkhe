@@ -25,10 +25,17 @@ $show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show
 	<div class="c-postMetas u-flex--aicw">
 		<div class="c-postTimes u-flex--aicw">
 			<?php
-				ark_the__postdate( $date, 'posted' );
-
+				\Arkhe::the_pluggable_part( 'post_time', array(
+					'date' => $date,
+					'type' => 'posted',
+					'tag'  => 'time',
+				) );
 				if ( $is_modified ) :
-					ark_the__postdate( $modified, 'modified' );
+					\Arkhe::the_pluggable_part( 'post_time', array(
+						'date' => $modified,
+						'type' => 'modified',
+						'tag'  => 'time',
+					) );
 				endif;
 			?>
 		</div>
@@ -43,15 +50,11 @@ $show_thumb = apply_filters( 'arkhe_show_entry_thumb', Arkhe::get_setting( 'show
 
 			// 著者アイコン
 			if ( $setting['show_entry_author'] ) :
-				$author_id   = $post_data->post_author;
-				$author_data = get_userdata( $author_id );
-				$author_url  = get_author_posts_url( $author_id );
+				$author_icon = Arkhe::get_author_icon_data( $post_data->post_author );
 			?>
-				<a href="<?php echo esc_url( $author_url ); ?>" class="c-postAuthor u-flex--aic">
-					<figure class="c-postAuthor__figure">
-						<?php echo get_avatar( $author_id, 100, '', '' ); ?>
-					</figure>
-					<span class="c-postAuthor__name"><?php echo esc_html( $author_data->display_name ); ?></span>
+				<a href="<?php echo esc_url( $author_icon['url'] ); ?>" class="c-postAuthor u-flex--aic">
+					<figure class="c-postAuthor__figure"><?php echo wp_kses( $author_icon['avatar'], Arkhe::$allowed_img_html ); ?></figure>
+					<span class="c-postAuthor__name"><?php echo esc_html( $author_icon['name'] ); ?></span>
 				</a>
 			<?php endif; ?>
 	</div>

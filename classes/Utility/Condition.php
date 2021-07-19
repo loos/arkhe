@@ -102,4 +102,28 @@ trait Condition {
 		return function_exists( 'wp_should_load_separate_core_block_assets' ) && wp_should_load_separate_core_block_assets();
 	}
 
+
+	/**
+	 * RESTリクエスト中かどうか
+	 */
+	public static function is_rest() {
+		return ( defined( 'REST_REQUEST' ) && REST_REQUEST );
+	}
+
+
+	/**
+	 * ウィジェットプレビューiframeの中かどうか
+	 */
+	public static function is_iframe() {
+		return ( defined( 'IFRAME_REQUEST' ) && IFRAME_REQUEST );
+	}
+
+
+	/**
+	 * ウィジェットプレビューiframeの中かどうか
+	 */
+	public static function is_widget_iframe() {
+		return ! empty( $_GET['legacy-widget-preview'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	}
+
 }

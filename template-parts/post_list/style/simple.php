@@ -5,23 +5,29 @@
  * @param $args
  *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
-$post_data  = get_post();
-$the_id     = $post_data->ID;
-$h_tag      = isset( $args['h_tag'] ) ? $args['h_tag'] : 'h2';
-$list_class = isset( $args['list_class'] ) ? $args['list_class'] : '';
-$list_class = $list_class ? 'p-postList__item ' . $list_class : 'p-postList__item';
+$h_tag         = isset( $args['h_tag'] ) ? $args['h_tag'] : 'h2';
+$list_class    = isset( $args['list_class'] ) ? $args['list_class'] : '';
+$show_date     = isset( $args['show_date'] ) ? $args['show_date'] : Arkhe::get_setting( 'show_list_date' );
+$show_modified = isset( $args['show_modified'] ) ? $args['show_modified'] : Arkhe::get_setting( 'show_list_mod' );
+$show_cat      = isset( $args['show_cat'] ) ? $args['show_cat'] : Arkhe::get_setting( 'show_list_cat' );
+$show_author   = isset( $args['show_author'] ) ? $args['show_author'] : Arkhe::get_setting( 'show_list_author' );
 
-// メタデータ用テンプレに渡す配列
-$args['post_id']   = $the_id;
-$args['author_id'] = $post_data->post_author;
-$args['date']      = new DateTime( $post_data->post_date );
-$args['modified']  = new DateTime( $post_data->post_modified );
+// 投稿データ取得
+$post_data = get_post();
+$the_id    = $post_data->ID;
 ?>
-<li class="<?php echo esc_attr( $list_class ); ?>">
+<li class="<?php echo esc_attr( trim( 'p-postList__item ' . $list_class ) ); ?>">
 	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
 		<div class="p-postList__body">
-			<?php Arkhe::get_part( 'post_list/item/meta', $args ); ?>
 			<?php
+				Arkhe::get_part( 'post_list/item/meta', array(
+					'post_id'       => $the_id,
+					'date'          => $show_date ? $post_data->post_date : null,
+					'modified'      => $show_modified ? $post_data->post_modified : null,
+					'author_id'     => $show_author ? $post_data->post_author : 0,
+					'show_cat'      => $show_cat,
+				) );
+
 				echo '<' . esc_attr( $h_tag ) . ' class="p-postList__title">';
 				the_title();
 				echo '</' . esc_attr( $h_tag ) . '>';

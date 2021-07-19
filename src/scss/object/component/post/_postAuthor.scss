@@ -4,6 +4,10 @@
     text-decoration: none;
 }
 
+a.c-postAuthor:hover {
+    text-decoration: underline;
+}
+
 .c-postAuthor__figure {
     width: 16px;
     height: 16px;
