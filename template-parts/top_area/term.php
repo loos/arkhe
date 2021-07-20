@@ -34,7 +34,7 @@ $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filte
 		</div>
 		<?php if ( $show_description ) : ?>
 			<div class="p-topArea__excerpt u-mt-10">
-				<?php echo wp_kses_post( $term_description ); ?>
+				<?php echo wp_kses( $term_description, Arkhe::$allowed_text_html ); ?>
 			</div>
 		<?php endif; ?>
 	</div>

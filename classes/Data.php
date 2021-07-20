@@ -109,6 +109,10 @@ class Data {
 		'em'     => array( 'class' => true ),
 		'span'   => array( 'class' => true ),
 		'strong' => array( 'class' => true ),
+		'ul'     => array( 'class' => true ),
+		'ol'     => array( 'class' => true ),
+		'li'     => array( 'class' => true ),
+		'p'      => array( 'class' => true ),
 	);
 
 

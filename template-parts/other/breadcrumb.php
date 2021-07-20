@@ -4,14 +4,12 @@
  */
 if ( is_front_page() ) return false;
 
-$setting = Arkhe::get_setting();
-
 $wp_obj    = get_queried_object();  // そのページのWPオブジェクトを取得
 $list_data = array();
 
 // 「投稿ページ」をリストに入れる場合
 $home_data = null;
-if ( $setting['breadcrumbs_set_home_page'] ) {
+if ( Arkhe::get_setting( 'breadcrumbs_set_home_page' ) ) {
 	$home_page_id = (int) get_option( 'page_for_posts' );
 	if ( $home_page_id ) {
 		$home_data = array(
@@ -307,6 +305,7 @@ if ( is_attachment() ) {
 	);
 }
 
+
 /**
  * 出力処理
  */
@@ -336,18 +335,19 @@ foreach ( $list_data as $data ) {
 	}
 }
 
-// HTMLの出力
-echo '<div id="breadcrumb" class="p-breadcrumb">' .
-	'<ol class="p-breadcrumb__list l-container">' .
-		'<li class="p-breadcrumb__item">' .
-			'<a href="' . esc_url( home_url( '/' ) ) . '" class="p-breadcrumb__text">' .
-				'<i class="arkhe-icon-home" role="img" aria-hidden="true"></i>' .
-				'<span>' . esc_html( $setting['breadcrumbs_home_text'] ) . '</span>' .
-			'</a>' .
-		'</li>' .
-		wp_kses_post( $list_html ) .
-	'</ol>' .
-'</div>';
-
 // JSON-LDデータの受け渡し
 \Arkhe::$bread_json_data = $json_array;
+
+// HTMLの出力
+?>
+<div id="breadcrumb" class="p-breadcrumb">
+	<ol class="p-breadcrumb__list l-container">
+		<li class="p-breadcrumb__item">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-breadcrumb__text">
+				<i class="arkhe-icon-home" role="img" aria-hidden="true"></i>
+				<span><?php echo esc_html( Arkhe::get_setting( 'breadcrumbs_home_text' ) ); ?></span>
+			</a>
+		</li>
+		<?php echo $list_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	</ol>
+</div>

@@ -26,7 +26,7 @@ $the_user_link_url = $author_data->user_url;
 		<?php do_action( 'arkhe_after_author_name', $author_id ); // 役職表示用 ?>
 		<?php if ( $description ) : ?>
 			<p class="p-authorBox__description u-color-thin">
-				<?php echo wp_kses_post( nl2br( $description ) ); ?>
+				<?php echo wp_kses( nl2br( $description ), Arkhe::$allowed_text_html ); ?>
 			</p>
 		<?php endif; ?>
 
