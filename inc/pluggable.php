@@ -9,7 +9,7 @@
 if ( ! function_exists( 'ark_get__head_logo_img' ) ) {
 	function ark_get__head_logo_img( $logo_id ) {
 		$return     = '';
-		$logo_sizes = apply_filters( 'arkge_head_logo_sizes', '(max-width: 999px) 50vw, 800px' );
+		$logo_sizes = apply_filters( 'arkhe_head_logo_sizes', '(max-width: 999px) 50vw, 800px' );
 
 		if ( ! Arkhe::is_header_overlay() ) {
 			// 通常時
@@ -43,6 +43,7 @@ if ( ! function_exists( 'ark_get__head_logo_img' ) ) {
 		return apply_filters( 'ark_get__head_logo_img', $return, $logo_id );
 	}
 }
+
 
 /**
  * キャッチフレーズの出力

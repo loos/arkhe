@@ -126,4 +126,12 @@ trait Condition {
 		return ! empty( $_GET['legacy-widget-preview'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	}
 
+
+	/**
+	 * FSEブロックをオンにするかどうか
+	 */
+	public static function use_fse_blocks() {
+		return apply_filters( 'arkhe_use_fse_blocks', false );
+	}
+
 }

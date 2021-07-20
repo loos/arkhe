@@ -5,11 +5,13 @@
  * @link https://arkhe-theme.com/
  */
 
-// テーマのパス, URI
+/**
+ * パス・URIの定数化
+ */
 define( 'ARKHE_THEME_PATH', get_template_directory() );
 define( 'ARKHE_THEME_URI', get_template_directory_uri() );
 
-// 子テーマのパス, URI
+// 子テーマ用のパス, URI
 if ( ! defined( 'ARKHE_CHILD_PATH' ) ) {
 	define( 'ARKHE_CHILD_PATH', get_stylesheet_directory() );
 }
@@ -114,7 +116,8 @@ class Arkhe extends \Arkhe_Theme\Data {
 	}
 }
 
+
 /**
- * Arkhe start!
+ * Start!
  */
 new \Arkhe();

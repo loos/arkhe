@@ -36,14 +36,13 @@ function setup_theme() {
 	add_theme_support( 'align-wide' ); // 画像の全幅表示などを可能に
 	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
 	add_theme_support( 'custom-line-height' );
-	add_theme_support( 'custom-units', 'px', 'vw', 'vh' );
+	add_theme_support( 'custom-units', 'px', 'rem', 'em', '%', 'vw', 'vh' );
 
 	// html5サポート
-	$html5s = array(
+	add_theme_support( 'html5', array(
 		'comment-form',
 		'comment-list',
-	);
-	add_theme_support( 'html5', $html5s );
+	) );
 
 	// フォントサイズ
 	add_theme_support(

@@ -45,13 +45,13 @@ function limit_block_types( $allowed_block_types, $block_editor_context ) {
 
 	global $hook_suffix;
 	if ( 'widgets.php' === $hook_suffix || 'customize.php' === $hook_suffix ) {
-		// ウィジェットではFSE & more / nextpage も オフ。
+		// ウィジェットではFSE & more / nextpage を オフ。
 		$disallowed_blocks = array_merge( $FSE_blocks, array(
 			'core/more',
 			'core/nextpage',
 		) );
-	} else {
-		// その他、FSEオフ
+	} elseif ( ! \Arkhe::use_fse_blocks() ) {
+		// その他のページでも、FSEブロックをオフにする
 		$disallowed_blocks = $FSE_blocks;
 	}
 
