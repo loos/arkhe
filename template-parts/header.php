@@ -6,13 +6,7 @@ $move_gnav_under = Arkhe::get_setting( 'move_gnav_under' );
 $logo_pos        = $move_gnav_under ? 'center' : 'left';
 ?>
 <header id="header" class="l-header" <?php Arkhe::header_attrs( array( 'logo_pos' => $logo_pos ) ); ?>>
-	<?php if ( has_filter( 'arkhe_header_bar_content' ) ) : ?>
-		<div class="l-header__bar">
-			<div class="l-header__barInner l-container">
-				<?php do_action( 'arkhe_header_bar_content' ); ?>
-			</div>
-		</div>
-	<?php endif; ?>
+	<?php Arkhe::get_part( 'header/header_bar' ); ?>
 	<div class="l-header__body l-container">
 		<?php Arkhe::get_part( 'header/btn/drawer' ); ?>
 		<div class="l-header__left">
@@ -24,7 +18,7 @@ $logo_pos        = $move_gnav_under ? 'center' : 'left';
 		<div class="l-header__right">
 			<?php
 				if ( ! $move_gnav_under ) :
-				Arkhe::get_part( 'header/gnav' );
+					Arkhe::get_part( 'header/gnav' );
 				endif;
 				do_action( 'arkhe_header_right_content' );
 			?>

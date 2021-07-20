@@ -1,5 +1,65 @@
 <?php
 /**
+ * プラガブル（上書き可能）な関数を定義
+ */
+
+/**
+ * ロゴ画像の取得
+ */
+if ( ! function_exists( 'ark_get__head_logo_img' ) ) {
+	function ark_get__head_logo_img( $logo_id ) {
+		$return     = '';
+		$logo_sizes = apply_filters( 'arkge_head_logo_sizes', '(max-width: 999px) 50vw, 800px' );
+
+		if ( ! Arkhe::is_header_overlay() ) {
+			// 通常時
+
+			$return = wp_get_attachment_image( $logo_id, 'full', false, array(
+				'class' => 'c-headLogo__img',
+				'sizes' => $logo_sizes,
+				'alt'   => get_option( 'blogname' ),
+			) );
+
+		} else {
+			// ヘッダーオーバーレイ有効時
+
+			$ovrly_logo_id = Arkhe::get_setting( 'head_logo_overlay' ) ?: $logo_id;
+			$ovrly_logo    = wp_get_attachment_image( $ovrly_logo_id, 'full', false, array(
+				'class' => 'c-headLogo__img -top',
+				'sizes' => $logo_sizes,
+				'alt'   => get_option( 'blogname' ),
+			) );
+
+			$common_logo = wp_get_attachment_image( $logo_id, 'full', false, array(
+				'class'   => 'c-headLogo__img -common',
+				'sizes'   => $logo_sizes,
+				'alt'     => '',
+				'loading' => 'lazy',
+			) );
+			$common_logo = str_replace( '<img ', '<img aria-hidden="true" ', $common_logo );
+
+			$return = $ovrly_logo . $common_logo;
+		}
+		return apply_filters( 'ark_get__head_logo_img', $return, $logo_id );
+	}
+}
+
+/**
+ * キャッチフレーズの出力
+ */
+if ( ! function_exists( 'ark_the__tagline' ) ) {
+	function ark_the__tagline( $add_class = '' ) {
+		$return = '<div class="' . esc_attr( trim( 'c-tagline ' . $add_class ) ) . '">' .
+			esc_html( get_option( 'blogdescription' ) ) .
+		'</div>';
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo apply_filters( 'ark_the__tagline', $return, $args );
+	}
+}
+
+
+/**
  * アイキャッチ画像を取得
  */
 if ( ! function_exists( 'ark_the__thumbnail' ) ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * ロゴ画像のテンプレート
+ * for ~1.4
  */
 $logo_id    = isset( $args['logo_id'] ) ? $args['logo_id'] : 0;
 $site_title = get_option( 'blogname' );
