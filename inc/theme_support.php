@@ -37,6 +37,7 @@ function setup_theme() {
 	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
 	add_theme_support( 'custom-line-height' );
 	add_theme_support( 'custom-units', 'px', 'rem', 'em', '%', 'vw', 'vh' );
+	remove_theme_support( 'core-block-patterns' );
 
 	// html5サポート
 	add_theme_support( 'html5', array(
