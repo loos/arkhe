@@ -14,17 +14,9 @@ $show_author = Arkhe::get_setting( 'show_entry_author' );
 <div class="c-postMetas u-flex--aicw">
 	<div class="c-postTimes u-flex--aicw">
 		<?php
-			\Arkhe::the_pluggable_part( 'post_time', array(
-				'date' => $date,
-				'type' => 'posted',
-				'tag'  => 'time',
-			) );
+			ark_the__postdate( $date, 'posted' );
 			if ( $date < $modified ) :
-				\Arkhe::the_pluggable_part( 'post_time', array(
-					'date' => $modified,
-					'type' => 'modified',
-					'tag'  => 'time',
-				) );
+				ark_the__postdate( $modified, 'modified' );
 			endif;
 		?>
 	</div>

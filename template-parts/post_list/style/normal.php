@@ -15,14 +15,12 @@ $list_type     = isset( $args['list_type'] ) ? $args['list_type'] : ARKHE_LIST_T
 
 // 投稿データ取得
 $post_data = get_post();
-$the_id    = $post_data->ID;
 ?>
 <li class="<?php echo esc_attr( trim( 'p-postList__item ' . $list_class ) ); ?>">
-	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
+	<a href="<?php the_permalink(); ?>" class="p-postList__link">
 		<?php
 			Arkhe::get_part( 'post_list/item/thumb', array(
-				'post_id' => $the_id,
-				'sizes'   => 'card' === $list_type ? '(min-width: 600px) 400px, 100vw' : '(min-width: 600px) 400px, 40vw',
+				'sizes' => 'card' === $list_type ? '(min-width: 600px) 400px, 100vw' : '(min-width: 600px) 400px, 40vw',
 			) );
 		?>
 		<div class="p-postList__body">
@@ -38,11 +36,10 @@ $the_id    = $post_data->ID;
 			<?php endif; ?>
 			<?php
 				Arkhe::get_part( 'post_list/item/meta', array(
-					'post_id'       => $the_id,
-					'date'          => $show_date ? $post_data->post_date : null,
-					'modified'      => $show_modified ? $post_data->post_modified : null,
-					'author_id'     => $show_author ? $post_data->post_author : 0,
-					'show_cat'      => $show_cat,
+					'date'      => $show_date ? $post_data->post_date : null,
+					'modified'  => $show_modified ? $post_data->post_modified : null,
+					'author_id' => $show_author ? $post_data->post_author : 0,
+					'show_cat'  => $show_cat,
 				) );
 			?>
 		</div>

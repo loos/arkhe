@@ -14,14 +14,12 @@ $show_author   = isset( $args['show_author'] ) ? $args['show_author'] : Arkhe::g
 
 // 投稿データ取得
 $post_data = get_post();
-$the_id    = $post_data->ID;
 ?>
 <li class="<?php echo esc_attr( trim( 'p-postList__item ' . $list_class ) ); ?>">
-	<a href="<?php the_permalink( $the_id ); ?>" class="p-postList__link">
+	<a href="<?php the_permalink(); ?>" class="p-postList__link">
 		<div class="p-postList__body">
 			<?php
 				Arkhe::get_part( 'post_list/item/meta', array(
-					'post_id'       => $the_id,
 					'date'          => $show_date ? $post_data->post_date : null,
 					'modified'      => $show_modified ? $post_data->post_modified : null,
 					'author_id'     => $show_author ? $post_data->post_author : 0,

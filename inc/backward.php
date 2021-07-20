@@ -4,8 +4,7 @@
  */
 function ark_get__thumbnail( $the_id = null, $args = array() ) {
 	$args['post_id'] = $the_id;
-	ark_part__thumbnail( $args );
-	return apply_filters( 'ark_get__thumbnail', ark_part__thumbnail( $args ), $the_id, $args );
+	return ark_the__thumbnail( $args );
 }
 
 
@@ -18,19 +17,6 @@ function ark_get__archive_data() {
 
 
 /**
- * 日付を出力 for ~1.4
- */
-function ark_the__postdate( $date = null, $type = 'posted', $use_time_tag = true ) {
-	if ( null === $date ) return;
-	\Arkhe::the_pluggable_part( 'post_time', array(
-		'date' => $date,
-		'type' => $type,
-		'tag'  => $use_time_tag ? 'time' : 'span',
-	) );
-}
-
-
-/**
  * 投稿リスト用の日付 for ~1.4
  */
 function ark_the__post_list_times( $show_date, $show_modified, $date, $modified ) {
@@ -38,7 +24,7 @@ function ark_the__post_list_times( $show_date, $show_modified, $date, $modified 
 	$modified = $show_modified ? $modified : null;
 	if ( ! $date && ! $modified ) return;
 
-	\Arkhe::the_pluggable_part( 'post_list_times', array(
+	\Arkhe::get_part( 'post_list/item/meta/times', array(
 		'date'     => $date,
 		'modified' => $modified,
 	) );
@@ -48,8 +34,8 @@ function ark_the__post_list_times( $show_date, $show_modified, $date, $modified 
 /**
  * 投稿リスト用のカテゴリー for ~1.4
  */
-function ark_the__post_list_category( $post_id ) {
-	\Arkhe::the_pluggable_part( 'post_list_category', array( 'post_id' => $post_id ) );
+function ark_the__post_list_category() {
+	\Arkhe::get_part( 'post_list/item/meta/category' );
 }
 
 
@@ -57,7 +43,7 @@ function ark_the__post_list_category( $post_id ) {
  * 投稿リスト用の著者情報
  */
 function ark_the__post_list_author( $author_id ) {
-	\Arkhe::the_pluggable_part( 'post_list_author', array( 'author_id' => $author_id ) );
+	\Arkhe::get_part( 'post_list/item/meta/author', array( 'author_id' => $author_id ) );
 }
 
 

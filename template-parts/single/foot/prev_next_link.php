@@ -11,7 +11,7 @@ $next_post = get_adjacent_post( $is_same_term, '', false );
 	<li class="c-pnNav__item -prev">
 		<?php
 			if ( $prev_post ) :
-				Arkhe::the_pluggable_part( 'pnlink', array(
+				ark_the__pnlink( array(
 					'type'  => 'prev',
 					'id'    => $prev_post->ID,
 					'title' => $prev_post->post_title,
@@ -22,7 +22,7 @@ $next_post = get_adjacent_post( $is_same_term, '', false );
 	<li class="c-pnNav__item -next">
 		<?php
 			if ( $next_post ) :
-				Arkhe::the_pluggable_part( 'pnlink', array(
+				ark_the__pnlink( array(
 					'type'  => 'next',
 					'id'    => $next_post->ID,
 					'title' => $next_post->post_title,

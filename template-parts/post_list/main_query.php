@@ -14,14 +14,14 @@ $loop_count = 0;
 if ( have_posts() ) : ?>
 	<ul class="p-postList -type-<?php echo esc_attr( $list_type ); ?>">
 		<?php
-		while ( have_posts() ) :
-			the_post();
-			Arkhe::get_part( 'post_list/style/' . $file_name, array(
-				'list_type' => $list_type,
-				'count'     => $loop_count++,
-			) );
-		endwhile;
-	?>
+			while ( have_posts() ) :
+				the_post();
+				Arkhe::get_part( 'post_list/style/' . $file_name, array(
+					'list_type' => $list_type,
+					'count'     => $loop_count++,
+				) );
+			endwhile;
+		?>
 	</ul>
 <?php else : ?>
 	<div class="p-postList--notfound">

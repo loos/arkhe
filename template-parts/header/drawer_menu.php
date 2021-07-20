@@ -10,23 +10,19 @@
 			<div class="p-drawer__nav">
 			<?php
 				if ( has_nav_menu( 'drawer_menu' ) ) :
-				wp_nav_menu(
-					array(
+					wp_nav_menu( array(
 						'container'       => false,
 						'fallback_cb'     => '',
 						'theme_location'  => 'drawer_menu',
 						'items_wrap'      => '<ul class="c-drawerNav">%3$s</ul>',
-					)
-				);
+					) );
 				else :
-					wp_nav_menu(
-						array(
-							'container'       => '',
-							'fallback_cb'     => '',
-							'theme_location'  => 'header_menu',
-							'items_wrap'      => '<ul class="c-drawerNav">%3$s</ul>',
-						)
-					);
+					wp_nav_menu( array(
+						'container'       => '',
+						'fallback_cb'     => '',
+						'theme_location'  => 'header_menu',
+						'items_wrap'      => '<ul class="c-drawerNav">%3$s</ul>',
+					) );
 				endif;
 			?>
 			</div>

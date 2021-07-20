@@ -11,8 +11,8 @@ trait Get {
 		$cache_key = "the_terms_data_{$post_id}_{$tax}";
 
 		// キャッシュ取得
-		$data = wp_cache_get( $cache_key, 'arkhe' );
-		if ( $data ) return $data;
+		$cache_data = wp_cache_get( $cache_key, 'arkhe' );
+		if ( $cache_data ) return $cache_data;
 
 		$data  = array();
 		$terms = get_the_terms( $post_id, $tax );
@@ -29,6 +29,7 @@ trait Get {
 		}
 
 		$data = apply_filters( 'arkhe_get_the_terms_data', $data );
+
 		wp_cache_set( $cache_key, $data, 'arkhe' );
 		return $data;
 	}
@@ -42,9 +43,9 @@ trait Get {
 		if ( ! $author_id ) return null;
 
 		// cache
-		$cache_key = "post_author_icon_{$author_id}";
-		$data      = wp_cache_get( $cache_key, 'arkhe' );
-		if ( $data ) return $data;
+		$cache_key  = "post_author_icon_{$author_id}";
+		$cache_data = wp_cache_get( $cache_key, 'arkhe' );
+		if ( $cache_data ) return $cache_data;
 
 		$author_data = get_userdata( $author_id );
 		if ( empty( $author_data ) ) return;
@@ -54,11 +55,10 @@ trait Get {
 			'url'    => get_author_posts_url( $author_id ),
 			'avatar' => get_avatar( $author_id, 24, '', '' ),
 		);
-
 		$data = apply_filters( 'arkhe_get_author_icon_data', $data );
+
 		wp_cache_set( $cache_key, $data, 'arkhe' );
 		return $data;
-
 	}
 
 
@@ -68,9 +68,9 @@ trait Get {
 	public static function get_archive_data( $key = '' ) {
 
 		// キャッシュ取得
-		$data = wp_cache_get( 'archive_data', 'arkhe' );
-		if ( $data ) {
-			return $key ? $data[ $key ] : $data;
+		$cache_data = wp_cache_get( 'archive_data', 'arkhe' );
+		if ( $cache_data ) {
+			return $key ? $cache_data[ $key ] : $cache_data;
 		}
 
 		$data = array(
@@ -134,9 +134,9 @@ trait Get {
 		}
 
 		$data = apply_filters( 'arkhe_get_archive_data', $data );
+
 		wp_cache_set( 'archive_data', $data, 'arkhe' );
 		return $key ? $data[ $key ] : $data;
-
 	}
 
 }

@@ -5,8 +5,7 @@
 ?>
 <figure class="p-entry__thumb">
 	<?php
-		Arkhe::the_pluggable_part( 'thumbnail', array(
-			'post_id'          => get_the_ID(),
+		ark_the__thumbnail( array(
 			'sizes'            => '(min-width: 800px) 800px, 100vw',
 			'class'            => 'p-entry__thumb__img',
 			'placeholder_size' => 'medium',

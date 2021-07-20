@@ -107,25 +107,4 @@ trait Parts {
 		}
 	}
 
-
-	/**
-	 * pluggableパーツ 取得版
-	 */
-	public static function get_pluggable_part( $name, $args = array() ) {
-		$func_name = "ark_part__{$name}";
-		if ( ! function_exists( $func_name ) ) return '';
-
-		$return = $func_name( $args );
-		return apply_filters( "arkhe_pluggable_part__{$name}", $return, $args );
-	}
-
-
-	/**
-	 * pluggableパーツ出力版
-	 */
-	public static function the_pluggable_part( $name, $args = array() ) {
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo self::get_pluggable_part( $name, $args );
-	}
-
 }

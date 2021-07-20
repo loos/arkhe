@@ -83,8 +83,8 @@ class Arkhe extends \Arkhe_Theme\Data {
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';
 
-		// パーツ生成関数
-		require_once ARKHE_THEME_PATH . '/inc/pluggable_parts.php';
+		// プラガブル関数
+		require_once ARKHE_THEME_PATH . '/inc/pluggable.php';
 
 		// 出力処理
 		require_once ARKHE_THEME_PATH . '/inc/output.php';
