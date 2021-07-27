@@ -104,9 +104,6 @@ class Arkhe extends \Arkhe_Theme\Data {
 
 			// テーマページ
 			require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
-
-			// TGMPA
-			require_once ARKHE_THEME_PATH . '/inc/tgmpa.php';
 		}
 
 		// アップデート時の処理

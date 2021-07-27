@@ -1,5 +1,6 @@
 <?php
 /**
+ * 導入してみたがちょっと鬱陶しかったので停止中
  * See details: http://tgmpluginactivation.com/configuration/
  */
 namespace Arkhe_Theme;
