@@ -12,3 +12,9 @@
         margin-top: 40px;
     }
 }
+
+
+// カスタマイザー上のブロックエディターのヘッダーが半分消えるのを阻止
+#customize-controls [class*="customize-widgets"] .customize-control {
+    overflow: visible;
+}
