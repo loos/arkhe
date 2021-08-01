@@ -28,20 +28,20 @@
 // li
 .p-postList__item {
 
-    .-type-simple & {
+    .p-postList.-type-simple & {
         margin-top: 0;
         margin-bottom: 0;
     }
 
     // リスト
-    .-type-list & {
+    .p-postList.-type-list & {
         margin-top: 0;
         margin-bottom: 2rem;
     }
 
 
     // カード ベースは2列
-    .-type-card & {
+    .p-postList.-type-card & {
         width: 100%;
         margin-top: 0;
         margin-bottom: 2.5rem;
@@ -52,7 +52,7 @@
         }
     }
 
-    [data-sidebar="off"] .-type-card & {
+    [data-sidebar="off"] .p-postList.-type-card & {
 
         @include pc {
             width: 33.3%;
@@ -65,7 +65,7 @@
         width: 100%;
     }
 
-    .l-sidebar .-type-card & {
+    .l-sidebar .p-postList.-type-card & {
 
         @include pc {
             width: 100%;
@@ -80,7 +80,6 @@
     // .c-widget .-type-list & {
     //     margin-bottom: 1.5rem;
     // }
-
 }
 
 
@@ -109,7 +108,7 @@
     }
 
 
-    .-type-simple & {
+    .p-postList.-type-simple & {
         display: block;
         padding: .75rem .5rem;
         border-bottom: solid 1px var(--ark-color_border);
@@ -122,7 +121,7 @@
     }
 
 
-    .-type-list & {
+    .p-postList.-type-list & {
         display: flex;
         align-items: flex-start;
         // justify-content: space-between;
@@ -134,11 +133,11 @@
 // サムネイル画像
 .p-postList__thumb {
 
-    .-type-card & {
+    .p-postList.-type-card & {
         width: 100%;
     }
 
-    .-type-list & {
+    .p-postList.-type-list & {
         flex-shrink: 0;
         width: 36%;
         max-width: 280px;
@@ -170,22 +169,22 @@
     transition: opacity .25s;
 
 
-    .-type-card & {
+    .p-postList.-type-card & {
         padding-top: 1.25rem;
     }
 
-    .-type-card .p-postList__item:hover &,
-    .-type-list .p-postList__item:hover & {
-        opacity: .75;
-    }
-
-    .-type-list & {
+    .p-postList.-type-list & {
         flex: 1 1 auto;
         padding-left: 1rem;
 
         @include tab {
             padding-left: 1.5rem;
         }
+    }
+
+    .-type-card > .p-postList__item:hover &,
+    .-type-list > .p-postList__item:hover & {
+        opacity: .75;
     }
 }
 
@@ -201,12 +200,12 @@
         line-height: 1.6;
     }
 
-    .-type-simple & {
+    .p-postList.-type-simple & {
 
         font-size: 1rem;
     }
 
-    .-type-list & {
+    .p-postList.-type-list & {
 
         @include mobile {
             font-size: 4vw;
@@ -230,9 +229,9 @@
         font-size: .8rem;
     }
 
-    // .-type-list & {}
+    // .p-postList.-type-list & {}
 
-    // .-type-card & {}
+    // .p-postList.-type-card & {}
 
 }
 
@@ -252,7 +251,7 @@
         font-size: 11px;
     }
 
-    .-type-simple & {
+    .p-postList.-type-simple & {
         margin: 0 0 .25rem;
     }
 
@@ -262,40 +261,13 @@
     margin-right: .5rem;
 }
 
-// .p-postList__times + .p-postList__category {
-
-//     position: relative;
-//     padding-left: calc(.5rem + 1px);
-
-//     &::before {
-//         position: absolute;
-//         top: 50%;
-//         left: 0;
-//         display: block;
-//         width: 1px;
-//         height: 1em;
-//         background: currentColor;
-//         transform: translateY(-50%);
-//         content: "";
-//     }
-
-// }
-
-// .p-postList__times,
-
-.-type-simple .p-postList__author {
+.p-postList.-type-simple .p-postList__author {
     padding: 0;
 }
 
-// .p-postList__author:not(:first-child) {
-//     margin-left: auto;
-// }
-
-// .p-postList__times {}
-
 
 // 関連記事
-.-related {
+.p-postList.-related {
 
     &.-type-card {
 
@@ -331,7 +303,7 @@
 // インフィード
 @include mobile {
 
-    .-type-card .c-infeedAd {
+    .p-postList.-type-card .c-infeedAd {
         width: 100%;
     }
 }
