@@ -31,11 +31,12 @@ a {
 }
 
 
-// フォント
+// フォント系
 .block-editor .editor-styles-wrapper {
     color: var(--ark-color_text);
     font-size: var(--ark-font_size, 16px);
     font-family: var(--ark-font_family);
+    line-height: var(--ark-line_height, 1.8);
     background-color: var(--ark-color_bg);
 }
 
