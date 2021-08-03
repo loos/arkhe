@@ -9,8 +9,9 @@
         list-style: decimal;
     }
 
+    // .editor-styles-wrapper ul, .editor-styles-wrapper ol の padding-left に負けないように。
     [data-type="core/list"] {
-        // .editor-styles-wrapper ul, .editor-styles-wrapper ol の padding-left に負けないように。
+        box-sizing: border-box;
         padding-left: 1.5em;
         white-space: normal;
 
