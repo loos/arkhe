@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2021-08-04 22:28+0900\n"
-"PO-Revision-Date: 2021-08-04 22:29+0900\n"
+"POT-Creation-Date: 2021-08-04 22:36+0900\n"
+"PO-Revision-Date: 2021-08-04 22:36+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -453,10 +453,6 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示"
 
-#: inc/dashboard.php:9
-msgid "Arkhe informations"
-msgstr "Arkhe 情報"
-
 #: inc/notice.php:11
 msgid "Thank you for using \"Arkhe\" !"
 msgstr ""
@@ -658,6 +654,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#~ msgid "Arkhe informations"
+#~ msgstr "Arkhe 情報"
 
 #, fuzzy
 #~| msgid "Whether to show the sidebar"
