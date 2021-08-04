@@ -145,7 +145,9 @@ class Data {
 		self::set_licence_data();
 
 		// テーマインフォメーション取得
-		self::set_theme_info();
+		if ( is_admin() ) {
+			self::set_theme_info();
+		}
 
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
