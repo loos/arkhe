@@ -6,7 +6,7 @@ namespace Arkhe_Theme\Dashboard;
  */
 add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\dashboard_setup', 1 );
 function dashboard_setup() {
-	wp_add_dashboard_widget( 'custom_help_widget', __( 'Arkhe 新着情報', 'arkhe' ), __NAMESPACE__ . '\cb_info_widget' );
+	wp_add_dashboard_widget( 'custom_help_widget', __( 'Arkhe informations', 'arkhe' ), __NAMESPACE__ . '\cb_info_widget' );
 }
 
 function cb_info_widget() {

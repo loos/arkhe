@@ -1,10 +1,10 @@
 <?php
-namespace Arkhe_Theme;
+namespace Arkhe_Theme\Update;
 
 /**
  * ウィジェット登録
  */
-add_action( 'after_setup_theme', '\Arkhe_Theme\update_check' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\update_check' );
 function update_check() {
 	// 現在のバージョンを取得
 	$now_version = \Arkhe::$theme_ver;

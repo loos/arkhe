@@ -1,5 +1,5 @@
 <?php
-namespace Arkhe_Theme;
+namespace Arkhe_Theme\Hooks;
 
 /**
  * コンテンツの出力

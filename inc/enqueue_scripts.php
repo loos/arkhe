@@ -4,10 +4,10 @@ namespace Arkhe_Theme;
 /**
  * ファイルの読み込み
  */
-add_action( 'wp_enqueue_scripts', '\Arkhe_Theme\enqueue_front_scripts', 8 );
-add_action( 'admin_enqueue_scripts', '\Arkhe_Theme\enqueue_admin_scripts' );
-add_action( 'enqueue_block_editor_assets', '\Arkhe_Theme\enqueue_block_scripts' );
-add_action( 'customize_controls_enqueue_scripts', '\Arkhe_Theme\enqueue_customizer_scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_scripts', 8 );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin_scripts' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_scripts' );
+add_action( 'customize_controls_enqueue_scripts', __NAMESPACE__ . '\enqueue_customizer_scripts' );
 
 /**
  * フロントで読み込むファイル

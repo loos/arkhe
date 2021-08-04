@@ -1,10 +1,10 @@
 <?php
-namespace Arkhe_Theme;
+namespace Arkhe_Theme\Menu;
 
 /**
  * 管理画面へ表示するメッセージ
  */
-add_action( 'admin_menu', '\Arkhe_Theme\add_theme_menu' );
+add_action( 'admin_menu', __NAMESPACE__ . '\add_theme_menu' );
 function add_theme_menu() {
 
 	// メニューのロゴ
@@ -16,11 +16,11 @@ function add_theme_menu() {
 		$menu_title,
 		'edit_theme_options',
 		'arkhe',
-		'\Arkhe_Theme\display_theme_menu'
+		__NAMESPACE__ . '\cb_theme_menu'
 	);
 }
 
-function display_theme_menu() {
+function cb_theme_menu() {
 
 	if ( \Arkhe::$is_ja ) {
 		$theme_url = 'https://arkhe-theme.com/ja';

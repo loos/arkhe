@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2021-08-04 21:27+0900\n"
-"PO-Revision-Date: 2021-08-04 21:28+0900\n"
+"POT-Creation-Date: 2021-08-04 22:28+0900\n"
+"PO-Revision-Date: 2021-08-04 22:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -39,15 +39,15 @@ msgstr "お探しのページは移動または削除された可能性があり
 msgid "Please enter a keyword below to search."
 msgstr "以下にキーワードを入力して検索してみてください。"
 
-#: classes/Data.php:137 inc/customizer/single.php:160
+#: classes/Data.php:139 inc/customizer/single.php:160
 msgid "Card type"
 msgstr "カード型"
 
-#: classes/Data.php:138 inc/customizer/single.php:161
+#: classes/Data.php:140 inc/customizer/single.php:161
 msgid "List type"
 msgstr "リスト型"
 
-#: classes/Data.php:139
+#: classes/Data.php:141
 msgid "Text type"
 msgstr "テキスト型"
 
@@ -453,6 +453,10 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示"
 
+#: inc/dashboard.php:9
+msgid "Arkhe informations"
+msgstr "Arkhe 情報"
+
 #: inc/notice.php:11
 msgid "Thank you for using \"Arkhe\" !"
 msgstr ""
@@ -491,11 +495,11 @@ msgstr "インフォメーション"
 msgid "Licence registration"
 msgstr "ライセンス認証"
 
-#: inc/theme_menu/info.php:1
+#: inc/theme_menu/info.php:4
 msgid "Information about the theme"
 msgstr "テーマに関するお知らせ情報"
 
-#: inc/theme_menu/info.php:31
+#: inc/theme_menu/info.php:21
 msgid "Arkhe plugin"
 msgstr "Arkhe専用プラグイン"
 
@@ -546,27 +550,27 @@ msgstr ""
 msgid "Check licence"
 msgstr "ライセンス確認"
 
-#: inc/theme_support.php:53
+#: inc/theme_support.php:52
 msgid "Extra small"
 msgstr "極小"
 
-#: inc/theme_support.php:59
+#: inc/theme_support.php:58
 msgid "Small"
 msgstr "小"
 
-#: inc/theme_support.php:65
+#: inc/theme_support.php:64
 msgid "Normal"
 msgstr "標準"
 
-#: inc/theme_support.php:71
+#: inc/theme_support.php:70
 msgid "Large"
 msgstr "大"
 
-#: inc/theme_support.php:77
+#: inc/theme_support.php:76
 msgid "Extra large"
 msgstr "特大"
 
-#: inc/theme_support.php:83
+#: inc/theme_support.php:82
 msgid "Huge"
 msgstr "巨大"
 

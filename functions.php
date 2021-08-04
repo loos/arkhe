@@ -92,7 +92,6 @@ class Arkhe extends \Arkhe_Theme\Data {
 		require_once ARKHE_THEME_PATH . '/inc/output.php';
 
 		// その他、フック処理
-		require_once ARKHE_THEME_PATH . '/inc/hooks_to_arkhe.php';
 		require_once ARKHE_THEME_PATH . '/inc/hooks.php';
 
 		// 後方互換用関数

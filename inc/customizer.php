@@ -1,11 +1,11 @@
 <?php
-namespace Arkhe_Theme;
+namespace Arkhe_Theme\Customizer;
 
 /**
  * カスタマイザーの設定
  */
-add_action( 'customize_register', '\Arkhe_Theme\customizer_setup', 20 );
-add_action( 'customize_controls_init', '\Arkhe_Theme\customizer_init' );
+add_action( 'customize_register', __NAMESPACE__ . '\customizer_setup', 20 );
+add_action( 'customize_controls_init', __NAMESPACE__ . '\customizer_init' );
 
 
 /**
