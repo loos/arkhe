@@ -78,6 +78,12 @@ class Data {
 
 
 	/**
+	 * 管理画面に表示するインフォメーション
+	 */
+	public static $arkhe_info = null;
+
+
+	/**
 	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
 	 */
 	public static $allowed_img_html = array(
@@ -138,6 +144,9 @@ class Data {
 		// ライセンス情報をセット
 		self::set_licence_data();
 
+		// テーマインフォメーション取得
+		self::set_theme_info();
+
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
 
@@ -187,6 +196,23 @@ class Data {
 			}
 		}
 	}
+
+
+	/**
+	 * インフォメーション情報をセット
+	 */
+	private static function set_theme_info() {
+		$json = get_transient( 'arkhe_informations' );
+		if ( ! $json ) {
+			$info_json = self::$is_ja ? 'information.json' : 'information_en.json';
+			$response  = wp_remote_get( 'https://looscdn.com/cdn/arkhe/' . $info_json );
+			$json      = wp_remote_retrieve_body( $response );
+			set_transient( 'arkhe_informations', $json, 1 * DAY_IN_SECONDS );
+		}
+
+		self::$arkhe_info = json_decode( $json, true );
+	}
+
 
 
 	/**

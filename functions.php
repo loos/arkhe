@@ -103,6 +103,9 @@ class Arkhe extends \Arkhe_Theme\Data {
 			require_once ARKHE_THEME_PATH . '/inc/notice.php';
 
 			// テーマページ
+			require_once ARKHE_THEME_PATH . '/inc/dashboard.php';
+
+			// テーマページ
 			require_once ARKHE_THEME_PATH . '/inc/theme_menu.php';
 		}
 

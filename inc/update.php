@@ -21,5 +21,6 @@ function update_check() {
 	// アップデート時の処理
 	if ( $now_version !== $old_ver ) {
 		set_theme_mod( 'version', $now_version );
+		delete_transient( 'arkhe_informations' );
 	}
 }
