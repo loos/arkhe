@@ -4,7 +4,7 @@ namespace Arkhe_Theme;
 /**
  * add_theme_supports
  */
-add_action( 'after_setup_theme', '\Arkhe_Theme\setup_theme' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_theme' );
 function setup_theme() {
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
@@ -34,7 +34,6 @@ function setup_theme() {
 
 	// Gutenberg用
 	add_theme_support( 'align-wide' ); // 画像の全幅表示などを可能に
-	add_theme_support( 'disable-custom-font-sizes' ); // フォントサイズのピクセル指定を不可に
 	add_theme_support( 'custom-line-height' );
 	add_theme_support( 'custom-units', 'px', 'rem', 'em', '%', 'vw', 'vh' );
 	remove_theme_support( 'core-block-patterns' );
@@ -52,37 +51,37 @@ function setup_theme() {
 			array(
 				'name'      => __( 'Extra small', 'arkhe' ),
 				'shortName' => 'XS',
-				'size'      => 10,
+				'size'      => '.75rem',
 				'slug'      => 'xsmall',
 			),
 			array(
 				'name'      => __( 'Small', 'arkhe' ),
 				'shortName' => 'S',
-				'size'      => 12,
+				'size'      => '.9rem',
 				'slug'      => 'small',
 			),
 			array(
 				'name'      => __( 'Normal', 'arkhe' ),
 				'shortName' => 'N',
-				'size'      => 16,
+				'size'      => '1rem',
 				'slug'      => 'normal',
 			),
 			array(
 				'name'      => __( 'Large', 'arkhe' ),
 				'shortName' => 'L',
-				'size'      => 18,
+				'size'      => '1.25rem',
 				'slug'      => 'large',
 			),
 			array(
 				'name'      => __( 'Extra large', 'arkhe' ),
 				'shortName' => 'XL',
-				'size'      => 20,
+				'size'      => '1.5rem',
 				'slug'      => 'xlarge',
 			),
 			array(
 				'name'      => __( 'Huge', 'arkhe' ),
 				'shortName' => 'XXL',
-				'size'      => 24,
+				'size'      => '2rem',
 				'slug'      => 'huge',
 			),
 		)
