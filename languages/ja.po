@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Arkhe\n"
-"POT-Creation-Date: 2020-12-23 17:35+0900\n"
-"PO-Revision-Date: 2020-12-23 17:35+0900\n"
+"POT-Creation-Date: 2021-08-04 21:27+0900\n"
+"PO-Revision-Date: 2021-08-04 21:28+0900\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -25,8 +25,9 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: node_modules\n"
 "X-Poedit-SearchPathExcluded-4: vendor\n"
 "X-Poedit-SearchPathExcluded-5: src/js/plugin\n"
+"X-Poedit-SearchPathExcluded-6: **tgma\n"
 
-#: 404.php:12 template-parts/other/breadcrumb.php:296
+#: 404.php:12 template-parts/other/breadcrumb.php:294
 msgid "The page was not found."
 msgstr "ページが見つかりませんでした。"
 
@@ -37,6 +38,18 @@ msgstr "お探しのページは移動または削除された可能性があり
 #: 404.php:23
 msgid "Please enter a keyword below to search."
 msgstr "以下にキーワードを入力して検索してみてください。"
+
+#: classes/Data.php:137 inc/customizer/single.php:160
+msgid "Card type"
+msgstr "カード型"
+
+#: classes/Data.php:138 inc/customizer/single.php:161
+msgid "List type"
+msgstr "リスト型"
+
+#: classes/Data.php:139
+msgid "Text type"
+msgstr "テキスト型"
 
 #: classes/Data/Default_Data.php:23
 msgid "Home"
@@ -66,8 +79,8 @@ msgstr "グローバルナビゲーション"
 msgid "Inside the drawer menu"
 msgstr "ドロワーメニュー内"
 
-#: inc/custom_menu.php:19 inc/customizer/footer.php:11 inc/widget.php:40
-#: inc/widget.php:51
+#: inc/custom_menu.php:19 inc/customizer/footer.php:11 inc/widget.php:39
+#: inc/widget.php:50
 msgid "Footer"
 msgstr "フッター"
 
@@ -183,64 +196,68 @@ msgstr "画像サイズ"
 msgid "Layout setting"
 msgstr "レイアウト設定"
 
-#: inc/customizer/header.php:76 searchform.php:3
+#: inc/customizer/header.php:76 template-parts/header/btn/drawer.php:9
+msgid "Menu button"
+msgstr "メニューボタン"
+
+#: inc/customizer/header.php:85
+msgid "Show menu button on SP"
+msgstr "メニューボタンをSPで表示する"
+
+#: inc/customizer/header.php:95
+msgid "Show menu button on PC"
+msgstr "メニューボタンをPCで表示する"
+
+#: inc/customizer/header.php:106 searchform.php:3
 #: template-parts/header/btn/search.php:9
 msgid "Search button"
 msgstr "検索ボタン"
 
-#: inc/customizer/header.php:85
+#: inc/customizer/header.php:115
 msgid "Show search btn on SP"
 msgstr "検索ボタンをSPで表示する"
 
-#: inc/customizer/header.php:95
+#: inc/customizer/header.php:125
 msgid "Show search btn on PC"
 msgstr "検索ボタンをPCで表示する"
 
-#: inc/customizer/header.php:105 template-parts/header/btn/drawer.php:9
-msgid "Menu button"
-msgstr "メニューボタン"
+#: inc/customizer/header.php:135
+msgid "Buttons layout"
+msgstr "ボタン配置"
 
-#: inc/customizer/header.php:114
-msgid "Show menu button on SP"
-msgstr "メニューボタンをSPで表示する"
-
-#: inc/customizer/header.php:124
-msgid "Show menu button on PC"
-msgstr "メニューボタンをPCで表示する"
-
-#: inc/customizer/header.php:134
+#: inc/customizer/header.php:152
 msgid "Global navigation"
 msgstr "グローバルナビゲーション"
 
-#: inc/customizer/header.php:143
+#: inc/customizer/header.php:161
 msgid "Move global navigation down"
 msgstr "グローバルナビを下側に移動する"
 
-#: inc/customizer/header.php:153
+#: inc/customizer/header.php:172
 msgid "Fixed header setting"
 msgstr "ヘッダーの固定設定"
 
-#: inc/customizer/header.php:162 inc/customizer/header.php:172
+#: inc/customizer/header.php:181 inc/customizer/header.php:191
 msgid "Fixed header at top of screen"
 msgstr "ヘッダーを画面上部に固定する"
 
-#: inc/customizer/header.php:182
+#: inc/customizer/header.php:201
 msgid "Fixed global navigation at top of screen"
 msgstr "グローバルナビを画面上部に固定する"
 
-#: inc/customizer/header.php:183
+#: inc/customizer/header.php:202
 msgid "Only valid when below the header."
 msgstr "ヘッダーの下にある時のみ有効です。"
 
-#: inc/customizer/header.php:193
+#: inc/customizer/header.php:212
 msgid "Overlay settings"
 msgstr "オーバーレイ設定"
 
-#: inc/customizer/header.php:214
+#: inc/customizer/header.php:233
 msgid "Enable on Pages"
 msgstr "固定ページでも有効化する"
 
-#: inc/customizer/header.php:225
+#: inc/customizer/header.php:244
 msgid "Logo image when overlaying"
 msgstr "オーバーレイ時のロゴ画像"
 
@@ -308,47 +325,35 @@ msgstr ""
 msgid "List layout"
 msgstr "リストのレイアウト"
 
-#: inc/customizer/post_list.php:45 inc/customizer/single.php:160
-msgid "Card type"
-msgstr "カード型"
-
-#: inc/customizer/post_list.php:46 inc/customizer/single.php:161
-msgid "List type"
-msgstr "リスト型"
-
-#: inc/customizer/post_list.php:47
-msgid "Text type"
-msgstr "テキスト型"
-
-#: inc/customizer/post_list.php:58
+#: inc/customizer/post_list.php:54
 msgid "Post information"
 msgstr "投稿情報"
 
-#: inc/customizer/post_list.php:67
+#: inc/customizer/post_list.php:63
 msgid "Show publication date"
 msgstr "公開日を表示"
 
-#: inc/customizer/post_list.php:77
+#: inc/customizer/post_list.php:73
 msgid "Show update date"
 msgstr "更新日を表示"
 
-#: inc/customizer/post_list.php:87 inc/customizer/single.php:31
+#: inc/customizer/post_list.php:83 inc/customizer/single.php:31
 msgid "Show categories"
 msgstr "カテゴリーを表示"
 
-#: inc/customizer/post_list.php:97 inc/customizer/single.php:51
+#: inc/customizer/post_list.php:93 inc/customizer/single.php:51
 msgid "Show author"
 msgstr "著者を表示"
 
-#: inc/customizer/post_list.php:107
+#: inc/customizer/post_list.php:103
 msgid "Number of characters in excerpt"
 msgstr "抜粋文の文字数"
 
-#: inc/customizer/post_list.php:124
+#: inc/customizer/post_list.php:120
 msgid "Thumbnail image ratio"
 msgstr "サムネイル画像の比率"
 
-#: inc/customizer/sidebar.php:12 inc/widget.php:18
+#: inc/customizer/sidebar.php:12 inc/widget.php:17
 msgid "Sidebar"
 msgstr "サイドバー"
 
@@ -448,21 +453,17 @@ msgstr "コメントエリア"
 msgid "Show comment area"
 msgstr "コメントエリアを表示"
 
-#: inc/hooks.php:60
-msgid "Skip to the content"
-msgstr "コンテンツへスキップ"
-
-#: inc/notice.php:12
-msgid "\"Arkhe\" is currently in beta."
-msgstr "「Arkhe」は現在ベータ版として稼働中です。"
+#: inc/notice.php:11
+msgid "Thank you for using \"Arkhe\" !"
+msgstr ""
 
 #: inc/notice.php:13
-msgid ""
-"The theme structure is subject to change significantly until the version "
-"exceeds \"1.0\"."
+msgid "Go to the theme page"
 msgstr ""
-"バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性がありま"
-"す。"
+
+#: inc/output.php:17
+msgid "Skip to the content"
+msgstr "コンテンツへスキップ"
 
 #. Theme Name of the plugin/theme
 #: inc/theme_menu.php:13
@@ -517,7 +518,7 @@ msgstr "有効なライセンスキーが確認できました。"
 #. translators: %s is email;
 #: inc/theme_menu/licence.php:66
 msgid "This is a \"personal license\","
-msgstr "これは「個人用ライセンス」で、"
+msgstr "これは「個人ライセンス」で、"
 
 #: inc/theme_menu/licence.php:66 inc/theme_menu/licence.php:76
 #, php-format
@@ -526,8 +527,8 @@ msgstr "所有者は %s です。"
 
 #. translators: %s is owner;
 #: inc/theme_menu/licence.php:76
-msgid "This is a \"developer license\","
-msgstr "これは「開発者用ライセンス」で、"
+msgid "This is a \"creator license\","
+msgstr "これは「制作ライセンス」で、"
 
 #: inc/theme_menu/licence.php:82
 msgid "License key"
@@ -545,48 +546,48 @@ msgstr ""
 msgid "Check licence"
 msgstr "ライセンス確認"
 
-#: inc/theme_support.php:55
+#: inc/theme_support.php:53
 msgid "Extra small"
 msgstr "極小"
 
-#: inc/theme_support.php:61
+#: inc/theme_support.php:59
 msgid "Small"
 msgstr "小"
 
-#: inc/theme_support.php:67
+#: inc/theme_support.php:65
 msgid "Normal"
 msgstr "標準"
 
-#: inc/theme_support.php:73
+#: inc/theme_support.php:71
 msgid "Large"
 msgstr "大"
 
-#: inc/theme_support.php:79
+#: inc/theme_support.php:77
 msgid "Extra large"
 msgstr "特大"
 
-#: inc/theme_support.php:85
+#: inc/theme_support.php:83
 msgid "Huge"
 msgstr "巨大"
 
-#: inc/widget.php:20
+#: inc/widget.php:19
 msgid "Widgets in this area will be displayed in the sidebar."
 msgstr "このエリアのウィジェットはサイドバーに表示されます。"
 
-#: inc/widget.php:29
+#: inc/widget.php:28
 msgid "Bottom of Drawer menu"
 msgstr "ドロワーメニュー下部"
 
-#: inc/widget.php:31
+#: inc/widget.php:30
 msgid "Widgets in this area will be displayed in bottom of the drawer menu."
 msgstr "このエリアのウィジェットはドロワーメニューの下部に表示されます。"
 
-#: inc/widget.php:42 inc/widget.php:53
+#: inc/widget.php:41 inc/widget.php:52
 msgid "Widgets in this area will be displayed in the footer."
 msgstr "このエリアのウィジェットはフッターに表示されます。"
 
 #. translators: %s is the value of $searched_text.
-#: search.php:37
+#: search.php:42
 #, php-format
 msgid "Search results for %s"
 msgstr "「%s」の検索結果"
@@ -599,7 +600,7 @@ msgstr "検索"
 msgid "Search word"
 msgstr "検索ワード"
 
-#: template-parts/footer/modals.php:12 template-parts/header/drawer_menu.php:45
+#: template-parts/footer/modals.php:12 template-parts/header/drawer_menu.php:41
 msgid "CLOSE"
 msgstr "閉じる"
 
@@ -612,15 +613,15 @@ msgstr "記事一覧へ"
 msgid "No posts were found."
 msgstr "記事が見つかりませんでした。"
 
-#: template-parts/single/item/post_author.php:12
+#: template-parts/single/foot/post_author.php:12
 msgid "Author of this article"
 msgstr "この記事を書いた人"
 
-#: template-parts/single/item/related_posts.php:58
+#: template-parts/single/foot/related_posts.php:56
 msgid "Related posts"
 msgstr "関連記事"
 
-#: template-parts/single/item/related_posts.php:74
+#: template-parts/single/foot/related_posts.php:72
 msgid "No related posts were found."
 msgstr "関連記事が見つかりませんでした。"
 
@@ -653,6 +654,26 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://loos.co.jp/"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Whether to show the sidebar"
+#~ msgid "Return to the Dashboard"
+#~ msgstr "サイドバーを表示するかどうか"
+
+#, fuzzy
+#~| msgid "Show tags"
+#~ msgid "Show Details"
+#~ msgstr "タグを表示"
+
+#~ msgid "\"Arkhe\" is currently in beta."
+#~ msgstr "「Arkhe」は現在ベータ版として稼働中です。"
+
+#~ msgid ""
+#~ "The theme structure is subject to change significantly until the version "
+#~ "exceeds \"1.0\"."
+#~ msgstr ""
+#~ "バージョンが「1.0」を超えるまでは、テーマ構造が大きく変更される可能性があ"
+#~ "ります。"
 
 #~ msgid "Drawer button"
 #~ msgstr "ドロワーボタン"

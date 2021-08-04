@@ -73,7 +73,7 @@ if ( (int) $check_count > 5 ) {
 		$result      = __( 'Your license key is valid.', 'arkhe' );
 
 		// translators: %s is owner;
-		$result .= __( 'This is a "developer license",', 'arkhe' ) . sprintf( __( 'and the owner is %s .', 'arkhe' ), $the_owner ?: $the_email );
+		$result .= __( 'This is a "creator license",', 'arkhe' ) . sprintf( __( 'and the owner is %s .', 'arkhe' ), $the_owner ?: $the_email );
 
 	}
 }
