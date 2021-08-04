@@ -17,7 +17,8 @@ class Data {
 	/**
 	 * テーマバージョン
 	 */
-	public static $arkhe_version = '';
+	public static $theme_ver = '';
+	public static $file_ver  = '';
 
 
 	/**
@@ -124,11 +125,6 @@ class Data {
 		// テーマバージョンを取得
 		self::set_theme_version();
 
-		// テーマバージョンを定数化しておく(wp_enqueue_ のクエリ付与用)
-		if ( ! defined( 'ARKHE_VERSION' ) ) {
-			define( 'ARKHE_VERSION', ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? date_i18n( 'mdGis' ) : self::$arkhe_version );
-		}
-
 		// 日本語かどうか
 		self::$is_ja = 'ja' === get_locale();
 
@@ -160,8 +156,11 @@ class Data {
 	 * テーマバージョンをセット
 	 */
 	private static function set_theme_version() {
-		$theme_data          = wp_get_theme( 'arkhe' );
-		self::$arkhe_version = $theme_data->get( 'Version' );
+		$theme_data      = wp_get_theme( 'arkhe' );
+		self::$theme_ver = $theme_data->get( 'Version' );
+
+		// ファイルにクエリとして付与するバージョン番号
+		self::$file_ver = ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? wp_date( 'mdGis' ) : self::$theme_ver;
 	}
 
 

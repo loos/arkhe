@@ -6,7 +6,7 @@ namespace Arkhe_Theme\TinyMce;
  */
 add_action( 'admin_init', __NAMESPACE__ . '\add_mce_style' );
 function add_mce_style() {
-	$editor_style_path = array( ARKHE_THEME_URI . '/dist/css/editor.css?v=' . ARKHE_VERSION );
+	$editor_style_path = array( ARKHE_THEME_URI . '/dist/css/editor.css?v=' . \Arkhe::$file_ver );
 	add_editor_style( $editor_style_path );
 }
 
