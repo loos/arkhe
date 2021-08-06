@@ -7,6 +7,12 @@
     // [data-sidebar="off"] & {
     //     overflow: hidden;
     // }
+
+    // (iPhoneだけ？)bodyのoverflow-x: hidden;が効かないのでこっちに。（追尾サイドバーのstickyがあるのでPCサイズではhiddenしない。）
+    @include sp {
+        overflow-x: hidden;
+    }
+
 }
 
 .l-content__body {
