@@ -1,10 +1,8 @@
 module.exports = {
-    plugins: ['stylelint-scss'],
+    // plugins: ['stylelint-scss'],
     extends: [
-        // 'stylelint-config-standard',
-        'stylelint-config-wordpress',
+        '@wordpress/stylelint-config/scss',
         'stylelint-config-rational-order',
-        // './node_modules/prettier-stylelint/config.js',
     ],
     ignoreFiles: ['./src/scss/foundation/base/**/*.scss', './src/js/**/*.js', './**/plugins/*.scss','./assets/**/*.css'],
     rules: {

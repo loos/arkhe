@@ -1,13 +1,8 @@
+const defaultConfig = require('@wordpress/scripts/config/.eslintrc.js');
+
 module.exports = {
-	extends: ['plugin:@wordpress/eslint-plugin/recommended'],
-	// extends: ['wordpress', 'plugin:prettier/recommended'], //eslint:recommended
-	// parserOptions: {
-	//     sourceType: 'module', //importを使うときに必要
-	//     ecmaFeatures: {
-	//         experimentalObjectRestSpread: true, //非推奨項目も注意してくれる ??
-	//         jsx: true,
-	//     },
-	// },
+	...defaultConfig,
+
 	globals: {
 		alert: false,
 		document: false,
@@ -27,6 +22,12 @@ module.exports = {
 		// 'no-var': 'error', //varを許可しない
 		// 'no-console': 'off', //console.logがあってもエラーにしない
 		// camelcase: ['warn', { properties: 'never' }], //オブジェクトのキーはキャメルじゃなくてよい
+
+		// wp-scripts最新版でのバグに対応
+		'import/no-extraneous-dependencies': 'off',
+		'import/no-unresolved': 'off',
+		'@wordpress/no-unsafe-wp-apis': 'off',
+		'@wordpress/no-global-event-listener': 'off',
 
 		// jsdoc関連
 		'require-jsdoc': 0, //Docコメントなくてもエラーにしない

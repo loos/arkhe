@@ -1,75 +1,67 @@
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
+const defaultConfig = require('@wordpress/scripts/config/webpack.config');
 
+/**
+ * CleanWebpackPlugin （ビルド先のほかのファイルを勝手に削除するやつ） はオフに。
+ */
+defaultConfig.plugins.shift();
+
+let entryFiles = {};
+let srcDir = 'js';
+let distDir = 'js';
+if ('guten' === process.env.TYPE) {
+	srcDir = 'js/gutenberg';
+	distDir = 'js/gutenberg';
+	entryFiles = ['post_editor'];
+} else {
+	// asset.php 出力しない
+	for (let i = 0; i < defaultConfig.plugins.length; i++) {
+		const pluginInstance = defaultConfig.plugins[i];
+		if ('DependencyExtractionWebpackPlugin' === pluginInstance.constructor.name) {
+			defaultConfig.plugins.splice(i, i);
+		}
+	}
+
+	if ('front' === process.env.TYPE) {
+		entryFiles = ['main'];
+	} else if ('admin' === process.env.TYPE) {
+		srcDir = 'js/admin';
+		distDir = 'js/admin';
+		entryFiles = ['customizer-controls', 'responsive-device-preview'];
+	} else if ('guten' === process.env.TYPE) {
+		entryFiles = ['guten_post'];
+	}
+}
+const entryPoints = {};
+entryFiles.forEach((name) => {
+	entryPoints[name] = path.resolve('./src', srcDir, `${name}.js`);
+});
+
+// ソースマップファイルを生成しない。
+delete defaultConfig.devtool;
+
+/**
+ * exports
+ */
 module.exports = {
-	mode: 'production',
+	...defaultConfig, //@wordpress/scriptを引き継ぐ
 
-	entry: {
-		main: path.resolve(__dirname, 'src/js/main.js'),
-	},
+	mode: 'production', // より圧縮させる
+
+	entry: entryPoints,
+
 	output: {
-		path: path.resolve(__dirname, 'dist/js'),
+		path: path.resolve('./dist', distDir),
 		filename: '[name].js',
 	},
-	module: {
-		rules: [
-			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				// query: {
-				//     presets: ['react', 'es2015']
-				// },
-				use: [
-					{
-						// Babel を利用する
-						loader: 'babel-loader',
-						// Babel のオプションを指定する
-						options: {
-							presets: [
-								[
-									'@babel/preset-env',
-									{
-										modules: false,
-										useBuiltIns: 'usage', //core-js@3から必要なpolyfillだけを読み込む
-										corejs: 3,
-										targets: {
-											esmodules: true,
-										},
-									},
-								],
-							],
-							// plugins: [['@babel/plugin-transform-react-jsx']],
-						},
-					},
-				],
-			},
-			// {
-			// 	test: /\.scss/,
-			// 	use: [
-			// 		// linkタグに出力する機能
-			// 		'style-loader',
-			// 		{
-			// 			// CSSをバンドルするための機能
-			// 			loader: 'css-loader',
-			// 			options: { url: false }, // CSS内のurl()メソッドの取り込みを禁止する
-			// 			// sourceMap: false, // ソースマップの利用有無
-			// 			// importLoaders: 2, //sass-loaderの読み込みに必要?
-			// 		},
-			// 		{
-			// 			loader: 'sass-loader',
-			// 			options: {
-			// 				// ソースマップの利用有無
-			// 				// sourceMap: false,
-			// 			},
-			// 		},
-			// 	],
-			// },
-		],
-	},
+
 	resolve: {
 		alias: {
 			'@js': path.resolve(__dirname, 'src/js/'),
 		},
 	},
-	performance: { hints: false },
+	plugins: [...defaultConfig.plugins, new webpack.EnvironmentPlugin(['TYPE'])],
+	// performance: { hints: false },
+	// devtool: 'none',
 };
