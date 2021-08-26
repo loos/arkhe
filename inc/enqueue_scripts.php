@@ -70,13 +70,24 @@ function enqueue_admin_scripts( $hook_suffix ) {
 function enqueue_block_scripts( $hook_suffix ) {
 
 	// CSS
-	wp_enqueue_style( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/css/editor.css', array(), \Arkhe::$file_ver );
-
-	// Inline CSS
-	wp_add_inline_style( 'arkhe-block-editor', \Arkhe::output_style( 'editor' ) );
+	wp_enqueue_style( 'arkhe-editor', ARKHE_THEME_URI . '/dist/css/editor.css', array(), \Arkhe::$file_ver );
+	wp_add_inline_style( 'arkhe-editor', \Arkhe::output_style( 'editor' ) );
 
 	// JS
-	// wp_enqueue_script( 'arkhe-block-editor', ARKHE_THEME_URI . '/dist/js/block.js', [], \Arkhe::$file_ver, true);
+	global $hook_suffix;
+	if ( 'post.php' === $hook_suffix || 'post-new.php' === $hook_suffix ) {
+		$asset = include ARKHE_THEME_PATH . '/dist/js/gutenberg/post_editor.asset.php';
+		wp_enqueue_script(
+			'arkhe-post_editor',
+			ARKHE_THEME_URI . '/dist/js/gutenberg/post_editor.js',
+			$asset['dependencies'],
+			$asset['version'],
+			true
+		);
+		wp_localize_script( 'arkhe-post_editor', 'arkPostEditorVars', array(
+			'useFseBlocks' => \Arkhe::use_fse_blocks(),
+		) );
+	}
 }
 
 
