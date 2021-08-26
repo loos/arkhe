@@ -23,13 +23,33 @@ Customizer::big_title(
 	)
 );
 
+// 公開日を表示する
+Customizer::add(
+	$arkhe_section,
+	'show_entry_posted',
+	array(
+		'label' => __( 'Show posted date', 'arkhe' ),
+		'type'  => 'checkbox',
+	)
+);
+
+// 更新日を表示する
+Customizer::add(
+	$arkhe_section,
+	'show_entry_modified',
+	array(
+		'label' => __( 'Show modified date', 'arkhe' ),
+		'type'  => 'checkbox',
+	)
+);
+
 // カテゴリーを表示する
 Customizer::add(
 	$arkhe_section,
 	'show_entry_cat',
 	array(
-		'label'       => __( 'Show categories', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show categories', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -38,8 +58,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_entry_tag',
 	array(
-		'label'       => __( 'Show tags', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show tags', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -48,8 +68,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_entry_author',
 	array(
-		'label'       => __( 'Show author', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show author', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -58,8 +78,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_entry_thumb',
 	array(
-		'label'       => __( 'Show featured image', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show featured image', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -77,8 +97,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_foot_terms',
 	array(
-		'label'       => __( 'Show terms', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show terms', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -96,8 +116,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_prev_next_link',
 	array(
-		'label'       => __( 'Show link', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show link', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -106,8 +126,8 @@ Customizer::add(
 	$arkhe_section,
 	'pn_link_is_same_term',
 	array(
-		'label'       => __( 'Get only articles in the same category', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Get only articles in the same category', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -125,8 +145,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_author_box',
 	array(
-		'label'       => __( 'Show author information', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show author information', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -144,8 +164,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_related_posts',
 	array(
-		'label'       => __( 'Show related posts', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show related posts', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -154,9 +174,9 @@ Customizer::add(
 	$arkhe_section,
 	'related_posts_layout',
 	array(
-		'label'       => __( 'List layout', 'arkhe' ),
-		'type'        => 'select',
-		'choices'     => array(
+		'label'   => __( 'List layout', 'arkhe' ),
+		'type'    => 'select',
+		'choices' => array(
 			'card' => __( 'Card type', 'arkhe' ),
 			'list' => __( 'List type', 'arkhe' ),
 		),
@@ -168,10 +188,10 @@ Customizer::add(
 	$arkhe_section,
 	'post_relation_type',
 	array(
-		'classname'   => '-radio-button -related-post',
-		'label'       => __( 'How to get related posts', 'arkhe' ),
-		'type'        => 'radio',
-		'choices'     => array(
+		'classname' => '-radio-button -related-post',
+		'label'     => __( 'How to get related posts', 'arkhe' ),
+		'type'      => 'radio',
+		'choices'   => array(
 			'category' => __( 'Category', 'arkhe' ),
 			'tag'      => __( 'Tag', 'arkhe' ),
 		),
@@ -193,7 +213,7 @@ Customizer::add(
 	$arkhe_section,
 	'show_comments',
 	array(
-		'label'       => __( 'Show comment area', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show comment area', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );

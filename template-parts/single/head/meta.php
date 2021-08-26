@@ -7,15 +7,20 @@ $date      = new DateTime( $post_data->post_date );
 $modified  = new DateTime( $post_data->post_modified );
 $author_id = $post_data->post_author;
 
-$show_cat    = Arkhe::get_setting( 'show_entry_cat' );
-$show_tag    = Arkhe::get_setting( 'show_entry_tag' );
-$show_author = Arkhe::get_setting( 'show_entry_author' );
+$show_posted   = Arkhe::get_setting( 'show_entry_posted' );
+$show_modified = Arkhe::get_setting( 'show_entry_modified' );
+$show_cat      = Arkhe::get_setting( 'show_entry_cat' );
+$show_tag      = Arkhe::get_setting( 'show_entry_tag' );
+$show_author   = Arkhe::get_setting( 'show_entry_author' );
+$only_modified = ! $show_posted && $show_modified;
 ?>
 <div class="c-postMetas u-flex--aicw">
 	<div class="c-postTimes u-flex--aicw">
 		<?php
-			ark_the__postdate( $date, 'posted' );
-			if ( $date < $modified ) :
+			if ( $show_posted ) :
+				ark_the__postdate( $date, 'posted' );
+			endif;
+			if ( $only_modified || $show_modified && $date < $modified ) :
 				ark_the__postdate( $modified, 'modified' );
 			endif;
 		?>

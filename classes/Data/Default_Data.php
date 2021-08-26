@@ -68,6 +68,8 @@ trait Default_Data {
 			'ttlbg_overlay_opacity'     => 0.2,
 
 			// 投稿ページ
+			'show_entry_posted'         => true,
+			'show_entry_modified'       => true,
 			'show_entry_cat'            => true,
 			'show_entry_tag'            => false,
 			'show_entry_author'         => false,
