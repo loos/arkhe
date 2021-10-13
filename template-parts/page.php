@@ -24,4 +24,4 @@ Arkhe::get_part( 'other/pagination' );
 do_action( 'arkhe_after_page_content', $the_id );
 
 // コメント
-Arkhe::get_part( 'page/comment' );
+if ( Arkhe::is_show_comments() ) comments_template();

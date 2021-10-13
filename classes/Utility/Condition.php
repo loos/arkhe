@@ -94,6 +94,32 @@ trait Condition {
 		return apply_filters( 'arkhe_breadcrumbs_position', $breadcrumbs_pos );
 	}
 
+	/**
+	 * コメントを呼び出すかどうか
+	 */
+	public static function is_show_comments() {
+
+		$the_id = get_the_ID();
+		if ( ! $the_id ) return false;
+
+		$is_show = true;
+
+		if ( post_password_required( $the_id ) ) {
+			// パスワード保護記事ではコメントエリア非表示
+			$is_show = false;
+
+		} elseif ( ! comments_open( $the_id ) && intval( get_comments_number( $the_id ) ) < 1 ) {
+			// コメント非許可、かつコメントがまだない時
+			$is_show = false;
+
+		} elseif ( is_single() ) {
+			// カスタマイザーの設定に依存
+			$is_show = self::get_setting( 'show_comments' );
+		}
+
+		return apply_filters( 'arkhe_is_show_comments', $is_show, $the_id );
+	}
+
 
 	/**
 	 * ブロックアセットの分離が有効かどうか

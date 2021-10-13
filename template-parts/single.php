@@ -25,4 +25,4 @@ do_action( 'arkhe_after_entry_content', $the_id );
 Arkhe::get_part( 'single/foot' );
 
 // コメントエリア
-Arkhe::get_part( 'single/comment' );
+if ( Arkhe::is_show_comments() ) comments_template();
