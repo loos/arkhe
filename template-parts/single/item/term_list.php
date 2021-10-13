@@ -21,7 +21,7 @@ if ( ! $has_cat && ! $has_tag ) return;
 				<i class="c-postMetas__icon arkhe-icon-folder"></i>
 			<?php endif; ?>
 			<?php foreach ( $cat_data as $data ) : ?>
-				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>'" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
+				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
 					<?php echo esc_html( $data['name'] ); ?>
 				</a>
 			<?php endforeach; ?>
@@ -33,7 +33,7 @@ if ( ! $has_cat && ! $has_tag ) return;
 				<i class="c-postMetas__icon arkhe-icon-tag"></i>
 			<?php endif; ?>
 			<?php foreach ( $tag_data as $data ) : ?>
-				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>'" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
+				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
 					<?php echo esc_html( $data['name'] ); ?>
 				</a>
 			<?php endforeach; ?>
