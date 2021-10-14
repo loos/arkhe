@@ -68,6 +68,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 		require_once ARKHE_THEME_PATH . '/inc/theme_support.php';
 
 		// ファイル読み込み
+		require_once ARKHE_THEME_PATH . '/inc/separate.php';
 		require_once ARKHE_THEME_PATH . '/inc/enqueue_scripts.php';
 
 		// カスタマイザー
