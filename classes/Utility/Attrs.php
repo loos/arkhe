@@ -148,8 +148,10 @@ trait Attrs {
 
 		$class = 'l-main__body';
 
-		if ( is_front_page() || is_home() ) {
+		if ( is_front_page() ) {
 			$class .= ' p-front';
+		} elseif ( is_home() ) {
+			$class .= ' p-home';
 		} elseif ( is_attachment() || is_single() ) {
 			$class .= ' p-entry';
 		} elseif ( is_page() ) {
@@ -179,8 +181,10 @@ trait Attrs {
 
 		$class = 'c-postContent';
 
-		if ( is_front_page() || is_home() ) {
+		if ( is_front_page() ) {
 			$class .= ' p-front__content';
+		} elseif ( is_home() ) {
+			$class .= ' p-home__content u-mb-20';
 		} elseif ( is_attachment() || is_single() ) {
 			$class .= ' p-entry__content';
 		} elseif ( is_page() ) {
