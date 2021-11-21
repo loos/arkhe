@@ -7,8 +7,9 @@
         "wp-start": "wp-env start && open http://localhost:2222",
         "wp-stop": "wp-env run cli wp db export sql/local.sql && wp-env stop",
         "wp-inport": "wp-env run cli wp db inport",
-        "build": "run-s build:js build:adminJs build:css",
+        "build": "run-s build:js build:css",
         "build:css": "run-s scss postcss",
+        "build:js": "run-s build:js:front build:js:admin build:js:guten",
         "build:js:front": "cross-env TYPE=front npx webpack",
         "build:js:admin": "cross-env TYPE=admin npx webpack",
         "build:js:guten": "cross-env TYPE=guten npx webpack",
@@ -45,9 +46,5 @@
         "prettier": "^2.1.2",
         "stylelint-config-rational-order": "^0.1.2"
     },
-    "dependencies": {},
-    "browserslist": [
-        "extends @wordpress/browserslist-config",
-        "ie > 11"
-    ]
+    "dependencies": {}
 }
