@@ -1,6 +1,4 @@
-.wp-block-search{
-
-}
+// .wp-block-search{}
 
 .wp-block-search__label {
     font-weight: 700;
@@ -9,7 +7,7 @@
 .wp-block-search__button {
     font-size: 14px;
     background: #f7f7f7;
-    border: none;
+    border: none !important;
     border-radius: 2px;
     box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
 }
@@ -30,7 +28,6 @@
 
     .wp-block-search__button {
         background: none;
-        border: none;
         box-shadow: none;
     }
 }

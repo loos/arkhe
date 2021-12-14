@@ -6,6 +6,8 @@ import { addFilter } from '@wordpress/hooks';
 	if (window.arkPostEditorVars.useFseBlocks) return;
 
 	addFilter('blocks.registerBlockType', 'arkhe/filter-fse-blocks', function (settings, name) {
+		if (!settings.supports) return settings;
+
 		const fseBlocks = [
 			'core/loginout',
 			'core/page-list',
