@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# to use: bash ./bin/zip.sh 1-6-2
+
 version=$1
 version=${version//-/.}
 
