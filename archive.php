@@ -14,7 +14,7 @@ get_header(); ?>
 				endif;
 				do_action( 'arkhe_end_archive_main' );
 			?>
-		<div>
+		</div>
 	</main>
 <?php
 get_footer();
