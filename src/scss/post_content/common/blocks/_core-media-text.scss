@@ -3,15 +3,63 @@
  *   コアのCSSが .wp-block-media-text のブレークポイントだけ 600px なのでそれに合わせることに注意。
 */
 
-// .wp-block-media-text {}
+.wp-block-media-text {
+    --ark-mediatext--space: 1.5rem;
 
-.wp-block-media-text__media {
-
-    img {
-        display: block;
+    @media (max-width: 600px) {
+        --ark-mediatext--space: 1rem;
     }
 
-    .wp-block-media-text.is-image-fill & {
+    gap: var(--ark-mediatext--space);
+
+    .wp-block-media-text__content {
+        padding: 0; // core の 0 8% を打ち消す
+    }
+
+    // 全幅のとき、テキストの端に余白をとる。
+    &.alignfull {
+        --ark-mediatext--margin: var(--ark-mediatext--space); // 左右の余白量
+
+        // デバイス幅広めのときに余白感も広くする
+        @media (min-width: 1200px) {
+            --ark-mediatext--space: 2rem;
+        }
+
+        // コンテンツ右のときは右に余白
+        &:not(.has-media-on-the-right) .wp-block-media-text__content {
+            margin-right: var(--ark-mediatext--margin);
+        }
+
+        // コンテンツ左のときは左に余白
+        &.has-media-on-the-right .wp-block-media-text__content {
+            margin-left: var(--ark-mediatext--margin);
+        }
+    }
+
+    &.has-background {
+        gap: 0;
+        --ark-mediatext--margin: 0; // 全幅時の左右マージンなし
+
+        .wp-block-media-text__content {
+            padding: var(--ark-mediatext--space); // 背景色付きのときは全方向にpadding
+        }
+    }
+}
+
+
+.wp-block-media-text__media img {
+    display: block;
+}
+
+// 画像切り抜き時のスマホでの高さを調整
+.is-image-fill.wp-block-media-text {
+
+    .wp-block-media-text__content {
+        padding-top: var(--ark-mediatext--space, 1.5rem);
+        padding-bottom: var(--ark-mediatext--space, 1.5rem);
+    }
+
+    .wp-block-media-text__media {
 
         @media (max-width: 600px) {
             min-height: 56vw;
@@ -19,19 +67,13 @@
     }
 }
 
-.wp-block-media-text__content {
-
-    // コアを上書き できるように .wp-block-media-text から指定
-    .wp-block-media-text & {
-        padding: 1.5rem;
-    }
-}
-
 
 // 「モバイルで重ねる」の対応
 @media (max-width: 600px) {
 
-    .is-stacked-on-mobile {
+    .wp-block-media-text.is-stacked-on-mobile {
+        gap: 0;
+        --ark-mediatext--margin: 0; // 全幅時の左右マージンなし
 
         .wp-block-media-text__media {
             grid-row: 1 !important; //画像を上に。
@@ -39,6 +81,7 @@
 
         .wp-block-media-text__content {
             grid-row: 2 !important;
+            padding: var(--ark-mediatext--space); // 全方向にpadding
         }
     }
 

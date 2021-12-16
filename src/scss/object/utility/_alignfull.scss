@@ -9,7 +9,7 @@
         width: calc(100vw - var(--ark-scrollbar_width));
     }
 
-    & + .alignfull {
+    + .alignfull {
         margin-top: 0;
     }
 
@@ -30,25 +30,15 @@
     }
 
     // カバー & 背景色付きグループのインナーコンテンツの最大幅を他のコンテンツと揃える。
-    & > .wp-block-cover__inner-container,
+    > .wp-block-cover__inner-container,
     &.has-background > .wp-block-group__inner-container {
         max-width: var(--ark-article_width);
         margin: 0 auto;
 
         // さらにその中の全幅は、内部に収まるように。（左右のpaddingまで）
-        & > .alignfull {
+        > .alignfull {
             left: calc(50% - ( 50vw - var(--ark-pad--container) ));
             width: calc(100vw - var(--ark-pad--container) * 2);
         }
     }
-
-    // メディアと文章ブロック
-    &.wp-block-media-text .wp-block-media-text__content {
-
-        @include pc {
-            padding-right: 2.5em;
-            padding-left: 2.5em;
-        }
-    }
-
 }
