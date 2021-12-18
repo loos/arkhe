@@ -19,7 +19,7 @@ Customizer::sub_title(
 	$arkhe_section,
 	'pagetop',
 	array(
-		'label'     => __( '"To the top" button', 'arkhe' ),
+		'label' => __( '"To the top" button', 'arkhe' ),
 	)
 );
 
@@ -28,8 +28,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_pagetop',
 	array(
-		'label'       => __( 'Show button', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show button', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -38,7 +38,7 @@ Customizer::add(
 	$arkhe_section,
 	'copyright',
 	array(
-		'label'       => __( 'Copyright text', 'arkhe' ),
-		'type'        => 'text',
+		'label' => __( 'Copyright text', 'arkhe' ),
+		'type'  => 'text',
 	)
 );

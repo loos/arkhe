@@ -29,8 +29,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_sidebar_top',
 	array(
-		'label'       => __( 'Display on homepage', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Display on homepage', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -39,8 +39,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_sidebar_page',
 	array(
-		'label'       => __( 'Display on pages', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Display on pages', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -49,8 +49,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_sidebar_post',
 	array(
-		'label'       => __( 'Display on posts', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Display on posts', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -59,7 +59,7 @@ Customizer::add(
 	$arkhe_section,
 	'show_sidebar_archive',
 	array(
-		'label'       => __( 'Display on archive pages', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Display on archive pages', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );

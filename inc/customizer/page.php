@@ -27,9 +27,9 @@ Customizer::add(
 	$arkhe_section,
 	'page_title_pos',
 	array(
-		'label'       => __( 'Position of title', 'arkhe' ),
-		'type'        => 'radio',
-		'choices'     => array(
+		'label'   => __( 'Position of title', 'arkhe' ),
+		'type'    => 'radio',
+		'choices' => array(
 			'top'   => __( 'Top of content', 'arkhe' ),
 			'inner' => __( 'Inside the content', 'arkhe' ),
 		),
@@ -49,9 +49,9 @@ Customizer::add(
 	$arkhe_section,
 	'title_bg_filter',
 	array(
-		'label'       => __( 'Image filtering', 'arkhe' ),
-		'type'        => 'select',
-		'choices'     => array(
+		'label'   => __( 'Image filtering', 'arkhe' ),
+		'type'    => 'select',
+		'choices' => array(
 			'none' => __( 'None', 'arkhe' ),
 			'dot'  => __( 'Dot', 'arkhe' ),
 		),
@@ -72,7 +72,6 @@ Customizer::add(
 	$arkhe_section,
 	'ttlbg_overlay_opacity',
 	array(
-		// 'label'       => '不透明度',
 		'description' => __( 'Opacity', 'arkhe' ),
 		'type'        => 'number',
 		'input_attrs' => array(

@@ -30,7 +30,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'post_list_layout',
 	array(
-		'label'     => __( 'List layout', 'arkhe' ),
+		'label' => __( 'List layout', 'arkhe' ),
 	)
 );
 
@@ -39,9 +39,8 @@ Customizer::add(
 	$arkhe_section,
 	'post_list_layout',
 	array(
-		// 'label'       => __( 'List layout', 'arkhe' ),
-		'type'        => 'select',
-		'choices'     => \Arkhe::$list_layouts,
+		'type'    => 'select',
+		'choices' => \Arkhe::$list_layouts,
 	)
 );
 
@@ -51,7 +50,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'post_list_design',
 	array(
-		'label'     => __( 'Post information', 'arkhe' ),
+		'label' => __( 'Post information', 'arkhe' ),
 	)
 );
 
@@ -60,8 +59,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_list_date',
 	array(
-		'label'       => __( 'Show publication date', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show publication date', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -70,8 +69,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_list_mod',
 	array(
-		'label'       => __( 'Show update date', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show update date', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -80,8 +79,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_list_cat',
 	array(
-		'label'       => __( 'Show categories', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show categories', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -90,8 +89,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_list_author',
 	array(
-		'label'       => __( 'Show author', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show author', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -117,7 +116,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'thumb_ratio',
 	array(
-		'label'     => __( 'Thumbnail image ratio', 'arkhe' ),
+		'label' => __( 'Thumbnail image ratio', 'arkhe' ),
 	)
 );
 
@@ -126,8 +125,7 @@ Customizer::add(
 	$arkhe_section,
 	'thumb_ratio',
 	array(
-		// 'label'       => '',
-		'type'        => 'select',
-		'choices'     => $arkhe_thumb_ratios,
+		'type'    => 'select',
+		'choices' => $arkhe_thumb_ratios,
 	)
 );

@@ -82,8 +82,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_drawer_sp',
 	array(
-		'label'       => __( 'Show menu button on SP', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show menu button on SP', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -92,8 +92,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_drawer_pc',
 	array(
-		'label'       => __( 'Show menu button on PC', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show menu button on PC', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -112,8 +112,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_search_sp',
 	array(
-		'label'       => __( 'Show search btn on SP', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show search btn on SP', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -122,8 +122,8 @@ Customizer::add(
 	$arkhe_section,
 	'show_search_pc',
 	array(
-		'label'       => __( 'Show search btn on PC', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Show search btn on PC', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -132,14 +132,14 @@ Customizer::add(
 	$arkhe_section,
 	'header_btn_layout',
 	array(
-		'label'       => __( 'Buttons layout', 'arkhe' ),
-		'classname'   => '-btn-layout',
-		'type'        => 'radio',
-		'choices'     => array(
-			'l-r'    => 'L-R',
-			'r-l'    => 'R-L',
-			'rl-rr'  => 'RL-RR',
-			'rr-rl'  => 'RR-RL',
+		'label'     => __( 'Buttons layout', 'arkhe' ),
+		'classname' => '-btn-layout',
+		'type'      => 'radio',
+		'choices'   => array(
+			'l-r'   => 'L-R',
+			'r-l'   => 'R-L',
+			'rl-rr' => 'RL-RR',
+			'rr-rl' => 'RR-RL',
 		),
 	)
 );
@@ -158,8 +158,8 @@ Customizer::add(
 	$arkhe_section,
 	'move_gnav_under',
 	array(
-		'label'       => __( 'Move global navigation down', 'arkhe' ) . '(PC)',
-		'type'        => 'checkbox',
+		'label' => __( 'Move global navigation down', 'arkhe' ) . '(PC)',
+		'type'  => 'checkbox',
 	)
 );
 
@@ -178,8 +178,8 @@ Customizer::add(
 	$arkhe_section,
 	'fix_header_pc',
 	array(
-		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (PC)',
-		'type'        => 'checkbox',
+		'label' => __( 'Fixed header at top of screen', 'arkhe' ) . ' (PC)',
+		'type'  => 'checkbox',
 	)
 );
 
@@ -188,8 +188,8 @@ Customizer::add(
 	$arkhe_section,
 	'fix_header_sp',
 	array(
-		'label'       => __( 'Fixed header at top of screen', 'arkhe' ) . ' (SP)',
-		'type'        => 'checkbox',
+		'label' => __( 'Fixed header at top of screen', 'arkhe' ) . ' (SP)',
+		'type'  => 'checkbox',
 	)
 );
 
@@ -216,8 +216,8 @@ Customizer::add(
 	$arkhe_section,
 	'header_overlay',
 	array(
-		'type'        => 'select',
-		'choices'     => array(
+		'type'    => 'select',
+		'choices' => array(
 			'off' => 'OFF',
 			'on'  => 'ON',
 		),
@@ -229,9 +229,9 @@ Customizer::add(
 	$arkhe_section,
 	'header_overlay_on_page',
 	array(
-		'classname'   => '-header-overlay',
-		'label'       => __( 'Enable on Pages', 'arkhe' ),
-		'type'        => 'checkbox',
+		'classname' => '-header-overlay',
+		'label'     => __( 'Enable on Pages', 'arkhe' ),
+		'type'      => 'checkbox',
 	)
 );
 
@@ -240,9 +240,9 @@ Customizer::add(
 	$arkhe_section,
 	'head_logo_overlay',
 	array(
-		'classname'   => '-header-overlay',
-		'label'       => __( 'Logo image when overlaying', 'arkhe' ),
-		'type'        => 'media',
-		'mime_type'   => 'image',
+		'classname' => '-header-overlay',
+		'label'     => __( 'Logo image when overlaying', 'arkhe' ),
+		'type'      => 'media',
+		'mime_type' => 'image',
 	)
 );

@@ -27,8 +27,8 @@ Customizer::add(
 	$arkhe_section,
 	'color_main',
 	array(
-		'label'       => __( 'Main color', 'arkhe' ),
-		'type'        => 'color',
+		'label' => __( 'Main color', 'arkhe' ),
+		'type'  => 'color',
 	)
 );
 
@@ -37,8 +37,8 @@ Customizer::add(
 	$arkhe_section,
 	'color_text',
 	array(
-		'label'       => __( 'Text color', 'arkhe' ),
-		'type'        => 'color',
+		'label' => __( 'Text color', 'arkhe' ),
+		'type'  => 'color',
 	)
 );
 
@@ -47,8 +47,8 @@ Customizer::add(
 	$arkhe_section,
 	'color_link',
 	array(
-		'label'       => __( 'Link color', 'arkhe' ),
-		'type'        => 'color',
+		'label' => __( 'Link color', 'arkhe' ),
+		'type'  => 'color',
 	)
 );
 
@@ -57,8 +57,8 @@ Customizer::add(
 	$arkhe_section,
 	'color_bg',
 	array(
-		'label'       => __( 'Background color', 'arkhe' ),
-		'type'        => 'color',
+		'label' => __( 'Background color', 'arkhe' ),
+		'type'  => 'color',
 	)
 );
 
@@ -68,7 +68,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'content_width',
 	array(
-		'label'     => __( 'Content width', 'arkhe' ),
+		'label' => __( 'Content width', 'arkhe' ),
 	)
 );
 
@@ -107,7 +107,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'no_image',
 	array(
-		'label'     => __( 'NO-IMAGE settings', 'arkhe' ),
+		'label' => __( 'NO-IMAGE settings', 'arkhe' ),
 	)
 );
 
@@ -129,7 +129,7 @@ Customizer::big_title(
 	$arkhe_section,
 	'breadcrumb_list',
 	array(
-		'label'     => __( 'Breadcrumb list settings', 'arkhe' ),
+		'label' => __( 'Breadcrumb list settings', 'arkhe' ),
 	)
 );
 
@@ -152,8 +152,8 @@ Customizer::add(
 	$arkhe_section,
 	'breadcrumbs_home_text',
 	array(
-		'label'       => __( '"Home" string', 'arkhe' ),
-		'type'        => 'text',
+		'label' => __( '"Home" string', 'arkhe' ),
+		'type'  => 'text',
 	)
 );
 
@@ -162,7 +162,7 @@ Customizer::sub_title(
 	$arkhe_section,
 	'breadcrumbs_others',
 	array(
-		'label'     => __( 'Other settings', 'arkhe' ),
+		'label' => __( 'Other settings', 'arkhe' ),
 	)
 );
 
