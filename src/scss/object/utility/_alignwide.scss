@@ -2,9 +2,11 @@
 
 .alignwide {
     position: relative;
+    max-width: unset !important; // embedなどのmax100%のものを上書き
+}
 
-    [data-sidebar="on"] & {
-        left: 0;
-        max-width: 100%;
-    }
+// サイドバーありの時、コンテンツエリアでは幅を制限
+[data-sidebar="on"] .l-main .alignwide {
+    left: 0;
+    width: 100%;
 }

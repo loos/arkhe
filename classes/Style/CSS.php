@@ -19,19 +19,17 @@ trait CSS {
 	 */
 	protected static function css_alignwide( $container_width, $slim_width ) {
 
-		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 80 );
-		$pad_width     = apply_filters( 'arkhe_alignwide_pad_width', 48 );
-		$plus_width_2  = $plus_width * 2;
-		$pad_width_2   = $pad_width * 2;
-		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_2 . 'px)';
+		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 100 );
+		$plus_width_x2 = $plus_width * 2;
+		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_x2 . 'px)';
 
-		// 1カラムページ用
-		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_2 + $pad_width_2 ) . 'px ) {' .
+		// 基本 ( +4 で少しだけ余裕持たせてる ）
+		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_x2 + 4 ) . 'px ) {' .
 			'.alignwide{' . $alignwide_css . '}' .
 		'}';
 
 		// 1カラムページ（スリム）用
-		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_2 + $pad_width_2 ) . 'px ) {' .
+		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_x2 + 4 ) . 'px ) {' .
 			'.page-template-one-column-slim .alignwide,.post-template-one-column-slim .alignwide{' . $alignwide_css . '}' .
 		'}';
 

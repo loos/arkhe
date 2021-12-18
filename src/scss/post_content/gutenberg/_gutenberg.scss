@@ -25,7 +25,7 @@ a {
 .wp-block-media-text__content,
 .wp-block-column {
 
-    & > .wp-block {
+    > .wp-block {
         max-width: 100%;
     }
 }
