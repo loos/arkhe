@@ -15,13 +15,15 @@
         "build:js:guten": "cross-env TYPE=guten npx webpack",
         "watch:css": "nodemon --watch src -e scss -x \"npm run build:css\"",
         "watch:js": "nodemon --watch src/js --ignore **/plugin/** --ignore **/admin/** -e js -x \"npm run build:js\"",
-        "update": "bash ./bin/zip.sh"
+        "update": "bash ./bin/zip.sh",
+        "packages-update": "wp-scripts packages-update",
+        "postpackages-update": "npm run build"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@wordpress/browserslist-config": "^2.7.0",
-        "@wordpress/scripts": "^18.1.0",
+        "@wordpress/browserslist-config": "^4.1.0",
+        "@wordpress/scripts": "^19.2.2",
         "autoprefixer": "^9.8.8",
         "cross-env": "^7.0.3",
         "css-mqpacker": "^7.0.0",
