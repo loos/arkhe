@@ -9,7 +9,7 @@ a {
     max-width: var(--ark-block_width, 900px);
 
     &[data-align="wide"] {
-        max-width: calc(var(--ark-block_width, 900px) + 160px);
+        max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
     }
 }
 

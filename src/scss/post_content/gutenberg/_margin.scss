@@ -21,13 +21,13 @@
     // block-editor-block-list__layout is-root-container
     .is-root-container {
 
-        & > [data-align="full"] + [data-align="full"],
-        & > [data-align="full"] + style + [data-align="full"] {
+        > [data-align="full"] + [data-align="full"],
+        > [data-align="full"] + style + [data-align="full"] {
 
             margin-top: 0;
 
             // ~WP5.7用
-            & > .block-editor-block-list__block {
+            > .block-editor-block-list__block {
                 margin-top: 0;
             }
         }
@@ -41,7 +41,7 @@
     .wp-block > .wp-block-cover__inner-container,
     .wp-block > .wp-block-group__inner-container {
 
-        & > .wp-block {
+        > .wp-block {
             margin-top: var(--ark-mt--s);
         }
     }
@@ -52,7 +52,7 @@
     [data-align="full"] > .wp-block-cover > .wp-block-cover__inner-container,
     [data-align="full"] > .wp-block-group > .wp-block-group__inner-container {
 
-        & > .wp-block {
+        > .wp-block {
             margin-top: var(--ark-mt);
         }
     }
@@ -60,12 +60,12 @@
     // インナーブロック
     .block-editor-block-list__layout {
 
-        & > .wp-block:first-child,
-        & > .block-list-appender:first-child {
+        > .wp-block:first-child,
+        > .block-list-appender:first-child {
             margin-top: 0 !important;
         }
 
-        & > .block-list-appender {
+        > .block-list-appender {
             margin-top: var(--ark-mt--s);
             margin-bottom: 0;
 

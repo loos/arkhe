@@ -15,28 +15,6 @@ trait CSS {
 
 
 	/**
-	 * .alignwide の幅
-	 */
-	protected static function css_alignwide( $container_width, $slim_width ) {
-
-		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 100 );
-		$plus_width_x2 = $plus_width * 2;
-		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_x2 . 'px)';
-
-		// 基本 ( +4 で少しだけ余裕持たせてる ）
-		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_x2 + 4 ) . 'px ) {' .
-			'.alignwide{' . $alignwide_css . '}' .
-		'}';
-
-		// 1カラムページ（スリム）用
-		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_x2 + 4 ) . 'px ) {' .
-			'.page-template-one-column-slim .alignwide,.post-template-one-column-slim .alignwide{' . $alignwide_css . '}' .
-		'}';
-
-	}
-
-
-	/**
 	 * コンテンツ幅
 	 */
 	protected static function css_content_width( $container_width, $slim_width ) {
@@ -48,7 +26,9 @@ trait CSS {
 		// スリムサイズ
 		self::add_root_css( '--ark-slim_width', $slim_width . 'px' );
 
-		// 記事コンテンツサイズ
+		// alignwide
+		$plus_width = apply_filters( 'arkhe_alignwide_plus_width', 100 );
+		self::add_root_css( '--ark-alignwide_plus_width', $plus_width * 2 . 'px' );
 	}
 
 
@@ -92,6 +72,27 @@ trait CSS {
 
 		// ブロック幅
 		self::add_root_css( '--ark-block_width', $block_width . 'px' );
+	}
+
+
+	/**
+	 * .alignwide の幅
+	 */
+	protected static function css_alignwide( $container_width, $slim_width ) {
+
+		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 100 );
+		$plus_width_x2 = $plus_width * 2;
+		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_x2 . 'px)';
+
+		// 基本 ( +4 で少しだけ余裕持たせてる ）
+		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_x2 + 4 ) . 'px ) {' .
+			'.alignwide{' . $alignwide_css . '}' .
+		'}';
+
+		// 1カラムページ（スリム）用
+		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_x2 + 4 ) . 'px ) {' .
+			'.page-template-one-column-slim .alignwide,.post-template-one-column-slim .alignwide{' . $alignwide_css . '}' .
+		'}';
 	}
 
 
