@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "Ryo Yamasaki",
-            "homepage": "https://swell-theme.com/"
+            "homepage": "https://arkhe-theme.com/"
         }
     ],
     "require-dev": {
@@ -20,7 +20,7 @@
             "./vendor/bin/phpcs"
         ],
         "set-wpcs": [
-            "./vendor/bin/phpcs --config-set installed_paths `pwd -P`/vendor/phpcompatibility/php-compatibility,`pwd -P`/vendor/phpcompatibility/phpcompatibility-paragonie,`pwd -P`/vendor/phpcompatibility/phpcompatibility-wp,`pwd -P`/vendor/wp-coding-standards/wpcs"
+            "phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/phpcompatibility/phpcompatibility-paragonie,vendor/phpcompatibility/phpcompatibility-wp,vendor/wp-coding-standards/wpcs"
         ]
     }
 }

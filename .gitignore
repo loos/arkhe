@@ -2,3 +2,4 @@
 /node_modules/*
 /vendor/*
 /.vscode/*
+.wp-env.override.json
