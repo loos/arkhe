@@ -107,9 +107,9 @@ ul.wp-block-categories__list {
         line-height: 32px;
         background-color: #fff !important;
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.984 9.984h10.031l-5.016 5.016z"></path></svg>') !important;
-        background-repeat: no-repeat;
-        background-position: right center;
-        background-size: 24px 24px;
+        background-repeat: no-repeat !important;
+        background-position: right center !important;
+        background-size: 24px 24px !important;
         border: solid 1px var(--ark-color_border);
         border-radius: 2px;
         -webkit-appearance: none;
