@@ -15,6 +15,11 @@
     code.rich-text {
         background: none;
     }
+
+    > code {
+        padding: 0;
+        border: none;
+    }
 }
 
 .wp-block-preformatted {
