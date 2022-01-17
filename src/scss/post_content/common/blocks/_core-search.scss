@@ -12,6 +12,10 @@
     box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
 }
 
+.wp-block-search__input {
+    padding: .25em .5em;
+}
+
 
 .wp-block-search .wp-block-search__input,
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
