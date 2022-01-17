@@ -10,11 +10,15 @@ import { addFilter } from '@wordpress/hooks';
 
 		const fseBlocks = [
 			'core/loginout',
+			'core/navigation',
 			'core/page-list',
+			'core/post-author',
+			'core/post-comments',
 			'core/post-content',
 			'core/post-date',
 			'core/post-excerpt',
 			'core/post-featured-image',
+			'core/post-navigation-link',
 			'core/post-terms',
 			'core/post-title',
 			'core/post-template',
@@ -28,6 +32,7 @@ import { addFilter } from '@wordpress/hooks';
 			'core/site-logo',
 			'core/site-title',
 			'core/site-tagline',
+			'core/term-description',
 		];
 		if (-1 !== fseBlocks.indexOf(name)) {
 			settings.supports.inserter = false;
