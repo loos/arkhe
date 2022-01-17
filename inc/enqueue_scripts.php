@@ -96,7 +96,6 @@ function enqueue_block_scripts( $hook_suffix ) {
  */
 function enqueue_customizer_scripts() {
 	// プレビュー画面の更新 & デバイス情報の受け渡し
-	$prev_handle = 'customizer-responsive-device-preview';
 	wp_enqueue_script(
 		'arkhe-customizer-preview',
 		ARKHE_THEME_URI . '/dist/js/admin/responsive-device-preview.js',
