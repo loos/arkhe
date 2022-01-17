@@ -52,4 +52,10 @@
         }
 
     }
+
+    // スタイル：「プレーン」
+    &.is-style-plain {
+        padding: 0;
+        border: none;
+    }
 }
