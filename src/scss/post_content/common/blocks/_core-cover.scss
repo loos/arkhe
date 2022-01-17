@@ -4,4 +4,8 @@
         padding: 2em;
     }
 
+    // 5.9 ~ 背景色の濃さによって文字色が#000になるのを上書きする
+    &.is-light .wp-block-cover__inner-container {
+        color: #fff;
+    }
 }
