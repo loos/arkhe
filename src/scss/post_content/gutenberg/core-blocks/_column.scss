@@ -1,1 +1,4 @@
-// .wp-block-columns {}
+// 5.9 ~ コアから消えたmargin-topを明示的に指定
+.block-editor-block-list__block.wp-block-column {
+    margin-top: 0;
+}
