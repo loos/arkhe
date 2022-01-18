@@ -34,10 +34,13 @@
         max-width: var(--ark-article_width);
         margin: 0 auto;
 
-        // さらにその中の全幅は、内部に収まるように。（左右のpaddingまで）
+        // さらにその中の全幅は、内部に収まるように。（サイドバーなしの時は左右のpaddingまで）
         > .alignfull {
-            left: calc(50% - ( 50vw - var(--ark-pad--container) ));
-            width: calc(100vw - var(--ark-pad--container) * 2);
+
+            [data-sidebar="off"] .l-main & {
+                left: calc(50% - ( 50vw - var(--ark-pad--container) ));
+                width: calc(100vw - var(--ark-pad--container) * 2);
+            }
         }
     }
 }
