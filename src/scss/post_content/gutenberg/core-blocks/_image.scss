@@ -13,5 +13,9 @@
         max-width: 100% !important;
         height: auto !important;
     }
+}
 
+// 5.9でグリッドレイアウトになったため、上書きする
+*:not([data-align]) > .wp-block-image {
+    display: block;
 }
