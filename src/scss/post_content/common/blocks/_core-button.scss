@@ -16,6 +16,18 @@
         display: block;
         margin: 0;
         padding: 4px;
+
+        &.wp-block-button__width-25 {
+            width: calc(25% - .375em);
+        }
+
+        &.wp-block-button__width-50 {
+            width: calc(50% - .25em);
+        }
+
+        &.wp-block-button__width-75 {
+            width: calc(75% - .125em);
+        }
     }
 }
 //WPコアのボタンブロック
