@@ -17,5 +17,5 @@
 
 // 5.9でグリッドレイアウトになったため、上書きする
 *:not([data-align]) > .wp-block-image {
-    display: block;
+    display: block !important;
 }
