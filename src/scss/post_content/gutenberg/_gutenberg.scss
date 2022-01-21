@@ -33,12 +33,21 @@ a {
 
 // フォント系
 .block-editor .editor-styles-wrapper,
-.blocks-widgets-container .editor-styles-wrapper {
+.blocks-widgets-container .editor-styles-wrapper,
+body.editor-styles-wrapper {
     color: var(--ark-color_text);
     font-size: var(--ark-font_size, 16px);
     font-family: var(--ark-font_family);
     line-height: var(--ark-line_height, 1.8);
     background-color: var(--ark-color_bg);
+}
+
+// 5.9 ~ モバイル・タブレットプレビュー用スタイル
+body.editor-styles-wrapper {
+
+    @include mobile {
+        font-size: var(--ark-font_size_sp);
+    }
 }
 
 .editor-post-title .editor-post-title__input {
