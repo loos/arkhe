@@ -1,44 +1,44 @@
 // 背景が白 / テキスト 黒 で固定された要素
 %bgfff {
-    color: #333;
-    background-color: #fff;
+	color: #333;
+	background-color: #fff;
 }
 
 // レイヤー要素
 %absLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	content: "";
 }
 
 %figcaption {
-    display: block !important;
-    margin-top: .75rem;
-    margin-bottom: 0; //core上書き
-    color: inherit; //core上書き
-    font-size: .8rem;
-    line-height: 1.5;
-    text-align: center;
-    opacity: $thin_text_opacity;
+	display: block !important;
+	margin-top: .75rem;
+	margin-bottom: 0; //core上書き
+	color: inherit; //core上書き
+	font-size: .8rem;
+	line-height: 1.5;
+	text-align: center;
+	opacity: $thin_text_opacity;
 }
 
 // 画像用のシャドウ
 %imageShadow {
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, .1),
-        0 4px 8px -4px rgba(0, 0, 0, .2);
+	box-shadow:
+		0 2px 4px rgba(0, 0, 0, .1),
+		0 4px 8px -4px rgba(0, 0, 0, .2);
 }
 
 
 // before要素でアイコンを使う時用
 %arkheIcon {
-    font-weight: 400;
-    font-family: arkhe-icon !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    // vertical-align: bottom;
+	font-weight: 400;
+	font-family: arkhe-icon !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	// vertical-align: bottom;
 }

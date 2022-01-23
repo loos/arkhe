@@ -1,23 +1,23 @@
 @charset "UTF-8";
 
 body {
-    font-size: 1rem;
-    position: relative;
-    min-width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    color: var(--ark-color_text);
-    font-weight: 400;
-    font-family: var(--ark-font_family);
-    line-height: 1.5;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    background-color: var(--ark-color_bg);
-    -webkit-text-size-adjust: 100%;
+	position: relative;
+	min-width: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+	color: var(--ark-color_text);
+	font-weight: 400;
+	font-size: 1rem;
+	font-family: var(--ark-font_family);
+	line-height: 1.5;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	background-color: var(--ark-color_bg);
+	-webkit-text-size-adjust: 100%;
 }
 
 
 // リンクカラー
 a {
-    color: var(--ark-color_link);
+	color: var(--ark-color_link);
 }

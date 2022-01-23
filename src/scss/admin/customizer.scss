@@ -5,19 +5,18 @@
 
 // setting
 @import "../foundation/setting/variable";
-@import "../foundation/setting/keyframes";
 @import "../foundation/setting/placeholder";
 
 // icon
 @font-face {
-    font-weight: normal;
-    font-family: arkhe-icon;
-    font-style: normal;
-    src:
-        url(../../../assets/fonts/icomoon.woff2?s7d81) format("woff2"),
-        url(../../../assets/fonts/icomoon.ttf?s7d81) format("truetype"),
-        url(../../../assets/fonts/icomoon.woff?s7d81) format("woff"),
-        url(../../../assets/fonts/icomoon.svg?s7d81#icomoon) format("svg");
+	font-weight: normal;
+	font-family: arkhe-icon;
+	font-style: normal;
+	src:
+		url(../../../assets/fonts/icomoon.woff2?s7d81) format("woff2"),
+		url(../../../assets/fonts/icomoon.ttf?s7d81) format("truetype"),
+		url(../../../assets/fonts/icomoon.woff?s7d81) format("woff"),
+		url(../../../assets/fonts/icomoon.svg?s7d81#icomoon) format("svg");
 }
 
 @import "../foundation/icon/icomoon";
@@ -27,172 +26,172 @@
 
 // カスタマイザーの横幅 少し広く。
 .wp-customizer .wp-full-overlay-sidebar {
-    width: 20%;
-    min-width: 324px;
+	width: 20%;
+	min-width: 324px;
 }
 
 .wp-full-overlay.expanded {
-    margin-left: 324px;
+	margin-left: 324px;
 }
 
 @media screen and (min-width: 1667px) {
 
-    .wp-full-overlay.expanded {
-        margin-left: 20%;
-    }
+	.wp-full-overlay.expanded {
+		margin-left: 20%;
+	}
 }
 
 
 // モバイルサイズ
 .preview-mobile .wp-full-overlay-main {
-    width: 400px;
-    height: 680px;
+	width: 400px;
+	height: 680px;
 }
 
 // サイドバーのカスタマイズ
 .wp-full-overlay-sidebar-content {
 
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
 
-    &::-webkit-scrollbar-track {
-        background: #fff;
-    }
+	&::-webkit-scrollbar-track {
+		background: #fff;
+	}
 
-    &::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 8px;
-        box-shadow: inset 0 0 0 1px #fff;
-    }
+	&::-webkit-scrollbar-thumb {
+		background: #ccc;
+		border-radius: 8px;
+		box-shadow: inset 0 0 0 1px #fff;
+	}
 
 }
 
 
 // 項目の表示切り替えた時にサイドバーばぐらないようにする。
 #customize-theme-controls .customize-pane-child.open {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 #customize-theme-controls .customize-pane-child.accordion-section-content {
-    padding: 12px 0;
+	padding: 12px 0;
 
-    & > li {
-        box-sizing: border-box;
-        padding-right: 12px;
-        padding-left: 12px;
-    }
+	& > li {
+		box-sizing: border-box;
+		padding-right: 12px;
+		padding-left: 12px;
+	}
 }
 
 // Arkhe独自メニューにアイコンを表示する
 [id^="accordion-section-arkhe_section_"] .accordion-section-title {
-    position: relative;
-    display: flex;
+	position: relative;
+	display: flex;
 
-    &::before {
-        display: block;
-        width: 16px;
-        height: 16px;
-        margin-right: 8px;
-        background: url(../../../assets/img/arkhe-logo.svg) no-repeat center / contain;
-        content: "";
-    }
+	&::before {
+		display: block;
+		width: 16px;
+		height: 16px;
+		margin-right: 8px;
+		background: url(../../../assets/img/arkhe-logo.svg) no-repeat center / contain;
+		content: "";
+	}
 }
 
 
 #customize-controls {
 
-    // label タイトル
-    .customize-control-title {
-        display: block;
-        margin: 16px 0 8px;
-        font-weight: bold;
-        font-size: 14px;
+	// label タイトル
+	.customize-control-title {
+		display: block;
+		margin: 16px 0 8px;
+		font-weight: bold;
+		font-size: 14px;
 
-        // Big title
-        &.-big {
-            position: relative;
-            margin: 24px -12px 12px;
-            padding: 12px 12px;
-            color: #2a2a2a;
-            background: #fffffe;
+		// Big title
+		&.-big {
+			position: relative;
+			margin: 24px -12px 12px;
+			padding: 12px 12px;
+			color: #2a2a2a;
+			background: #fffffe;
 
-        }
-    }
+		}
+	}
 
-    .customize-control > .customize-control-title:not(.-big):first-child {
-        margin-top: 8px;
-    }
+	.customize-control > .customize-control-title:not(.-big):first-child {
+		margin-top: 8px;
+	}
 
-    .customize-control-title:not(.-big) + div + .customize-control-description {
-        margin-top: -4px;
-    }
-    // 一番上のビッグタイトルのmt削除
-    .customize-section-description-container + .customize-control {
+	.customize-control-title:not(.-big) + div + .customize-control-description {
+		margin-top: -4px;
+	}
+	// 一番上のビッグタイトルのmt削除
+	.customize-section-description-container + .customize-control {
 
-        .customize-control-title.-big {
-            margin-top: 0;
-        }
-    }
+		.customize-control-title.-big {
+			margin-top: 0;
+		}
+	}
 
-    // 説明文の隠し
-    .-desc-hidden .customize-control-description {
-        display: none;
-    }
+	// 説明文の隠し
+	.-desc-hidden .customize-control-description {
+		display: none;
+	}
 
-    // 各項目
-    .customize-control {
-        height: auto;
-        margin-bottom: 8px;
-        overflow: hidden;
-        transition: .25s;
+	// 各項目
+	.customize-control {
+		height: auto;
+		margin-bottom: 8px;
+		overflow: hidden;
+		transition: .25s;
 
-        &.-hide {
-            height: 0;
-            margin-top: 0 !important;
-            margin-bottom: 0 !important;
-            padding-top: 0;
-            padding-bottom: 0;
-            // transform: translateY(-8px);
-            visibility: hidden;
-            opacity: 0;
-        }
+		&.-hide {
+			height: 0;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding-top: 0;
+			padding-bottom: 0;
+			// transform: translateY(-8px);
+			visibility: hidden;
+			opacity: 0;
+		}
 
-    }
+	}
 
 
-    // 説明
-    .description {
-        display: block;
-        margin-top: 0;
-        margin-bottom: 8px;
-        color: #656e77;
-        font-style: italic;
-        line-height: 1.25;
-    }
+	// 説明
+	.description {
+		display: block;
+		margin-top: 0;
+		margin-bottom: 8px;
+		color: #656e77;
+		font-style: italic;
+		line-height: 1.25;
+	}
 
-    .customize-section-description {
-        margin: 1em 0;
-    }
+	.customize-section-description {
+		margin: 1em 0;
+	}
 
-    // セレクト
-    .customize-control-select select {
-        width: 90%;
-        margin: 4px 0;
-    }
+	// セレクト
+	.customize-control-select select {
+		width: 90%;
+		margin: 4px 0;
+	}
 
-    // チェックボタン
-    // .customize-control-checkbox + .customize-control-checkbox {
-    //     margin-top: -4px;
-    // }
+	// チェックボタン
+	// .customize-control-checkbox + .customize-control-checkbox {
+	//     margin-top: -4px;
+	// }
 
-    .customize-control-checkbox {
+	.customize-control-checkbox {
 
-        .customize-inside-control-row {
-            padding-top: 0;
-            padding-bottom: 4px;
-        }
-    }
+		.customize-inside-control-row {
+			padding-top: 0;
+			padding-bottom: 4px;
+		}
+	}
 
 }
 
@@ -200,86 +199,86 @@
 /* ラジオボタン */
 .customize-control-radio {
 
-    &:not(.-radio-button) {
+	&:not(.-radio-button) {
 
-        .customize-inside-control-row {
-            padding-top: 4px;
-            padding-bottom: 4px;
-        }
-    }
+		.customize-inside-control-row {
+			padding-top: 4px;
+			padding-bottom: 4px;
+		}
+	}
 
-    &.-radio-button {
+	&.-radio-button {
 
 
-        .customize-inside-control-row {
-            display: inline-flex;
-            margin: 0;
-            vertical-align: middle;
+		.customize-inside-control-row {
+			display: inline-flex;
+			margin: 0;
+			vertical-align: middle;
 
-            & + .customize-inside-control-row {
-                margin-left: -4px;
-            }
+			& + .customize-inside-control-row {
+				margin-left: -4px;
+			}
 
-            & > input {
-                width: 0;
-                min-width: 0;
-                margin: 0 !important;
-                border: none;
-                visibility: hidden;
-            }
+			& > input {
+				width: 0;
+				min-width: 0;
+				margin: 0 !important;
+				border: none;
+				visibility: hidden;
+			}
 
-            & > label {
-                min-width: 2em;
-                padding: 4px 8px;
-                color: #0075af;
-                text-align: center;
-                background: #f3f5f6;
-                border: solid 1px #0075af;
-                transition: .25s;
-            }
+			& > label {
+				min-width: 2em;
+				padding: 4px 8px;
+				color: #0075af;
+				text-align: center;
+				background: #f3f5f6;
+				border: solid 1px #0075af;
+				transition: .25s;
+			}
 
-            & > input:checked + label {
-                color: #fff;
-                background: #007cba;
-            }
-        }
-    }
+			& > input:checked + label {
+				color: #fff;
+				background: #007cba;
+			}
+		}
+	}
 
-    &.-related-post {
+	&.-related-post {
 
-        .customize-inside-control-row > label::before {
-            margin-right: 4px;
-            color: inherit;
+		.customize-inside-control-row > label::before {
+			margin-right: 4px;
+			color: inherit;
 
-            @extend %arkheIcon;
-        }
+			@extend %arkheIcon;
+		}
 
-        // カテゴリー
-        .customize-inside-control-row:nth-last-child(2) {
+		// カテゴリー
+		.customize-inside-control-row:nth-last-child(2) {
 
-            & > label::before {
+			& > label::before {
 
-                @extend .arkhe-icon-folder::before;
+				@extend .arkhe-icon-folder::before;
 
-            }
-        }
+			}
+		}
 
-        // タグ
-        .customize-inside-control-row:last-child {
+		// タグ
+		.customize-inside-control-row:last-child {
 
-            & > label::before {
+			& > label::before {
 
-                @extend .arkhe-icon-tag::before;
-            }
-        }
-    }
+				@extend .arkhe-icon-tag::before;
+			}
+		}
+	}
 
 }
 
 
 /* 画像アップロード */
 #customize-controls .attachment-media-view {
-    padding-bottom: 8px;
+	padding-bottom: 8px;
 }
 
 /* テキストエリア */
@@ -290,49 +289,49 @@
 .customize-control input[type="tel"],
 .customize-control input[type="text"],
 .customize-control input[type="url"] {
-    margin: 0 0 8px;
+	margin: 0 0 8px;
 }
 
 .customize-control input[type="number"] {
-    width: 50%;
+	width: 50%;
 }
 
 
 // ヘッダーボタン配置
 .customize-control-radio.-btn-layout {
 
-    .customize-inside-control-row {
-        display: flex;
-        align-items: center;
-        margin: 8px 0;
-    }
+	.customize-inside-control-row {
+		display: flex;
+		align-items: center;
+		margin: 8px 0;
+	}
 
-    input {
-        margin: 0 8px 0 0;
-    }
+	input {
+		margin: 0 8px 0 0;
+	}
 
-    label {
-        display: inline-block;
-        width: calc(100% - 40px);
-        height: 32px;
-        color: transparent;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+	label {
+		display: inline-block;
+		width: calc(100% - 40px);
+		height: 32px;
+		color: transparent;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
 }
 
 [for="_customize-input-arkhe_settings[header_btn_layout]-radio-l-r"] {
-    background: url(../../../assets/img/customizer/header-L-R.png);
+	background: url(../../../assets/img/customizer/header-L-R.png);
 }
 
 [for="_customize-input-arkhe_settings[header_btn_layout]-radio-r-l"] {
-    background: url(../../../assets/img/customizer/header-R-L.png);
+	background: url(../../../assets/img/customizer/header-R-L.png);
 }
 
 [for="_customize-input-arkhe_settings[header_btn_layout]-radio-rl-rr"] {
-    background: url(../../../assets/img/customizer/header-RL-RR.png);
+	background: url(../../../assets/img/customizer/header-RL-RR.png);
 }
 
 [for="_customize-input-arkhe_settings[header_btn_layout]-radio-rr-rl"] {
-    background: url(../../../assets/img/customizer/header-RR-RL.png);
+	background: url(../../../assets/img/customizer/header-RR-RL.png);
 }

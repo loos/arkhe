@@ -1,16 +1,16 @@
 // リンクカラー
 a {
-    color: var(--ark-color_link);
+	color: var(--ark-color_link);
 }
 
 // 全体の幅
 .wp-block {
-    // max-width: 900px;
-    max-width: var(--ark-block_width, 900px);
+	// max-width: 900px;
+	max-width: var(--ark-block_width, 900px);
 
-    &[data-align="wide"] {
-        max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
-    }
+	&[data-align="wide"] {
+		max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
+	}
 }
 
 // ブロッククラッシュ時の表示
@@ -25,9 +25,9 @@ a {
 .wp-block-media-text__content,
 .wp-block-column {
 
-    > .wp-block {
-        max-width: 100%;
-    }
+	> .wp-block {
+		max-width: 100%;
+	}
 }
 
 
@@ -36,71 +36,71 @@ a {
 .blocks-widgets-container .editor-styles-wrapper,
 body.editor-styles-wrapper {
 
-    // wp5.9 から導入されたCSS変数を流用する
-    @include set-wp-preset--fz;
+	// wp5.9 から導入されたCSS変数を流用する
+	@include set-wp-preset--fz;
 
-    color: var(--ark-color_text);
-    font-size: var(--ark-font_size, 16px);
-    font-family: var(--ark-font_family);
-    line-height: var(--ark-line_height, 1.8);
-    background-color: var(--ark-color_bg);
+	color: var(--ark-color_text);
+	font-size: var(--ark-font_size, 16px);
+	font-family: var(--ark-font_family);
+	line-height: var(--ark-line_height, 1.8);
+	background-color: var(--ark-color_bg);
 
-    @include mobile {
-        font-size: var(--ark-font_size--mobile);
-    }
+	@include mobile {
+		font-size: var(--ark-font_size--mobile);
+	}
 }
 
 
 // 本文エリア
 .block-editor-writing-flow {
 
-    // タイトル
-    .editor-post-title textarea.editor-post-title__input, // ~5.8
-    h1.editor-post-title.editor-post-title__input { // 5.9
-        font-size: 2rem;
-    }
+	// タイトル
+	.editor-post-title textarea.editor-post-title__input, // ~5.8
+	h1.editor-post-title.editor-post-title__input { // 5.9
+		font-size: 2rem;
+	}
 
-    // 5.7 ~ エディターの縦幅の最小値がなくなっている
-    .branch-5-7 &,
-    .branch-5-8 & {
-        padding-bottom: 40px;
-    }
+	// 5.7 ~ エディターの縦幅の最小値がなくなっている
+	.branch-5-7 &,
+	.branch-5-8 & {
+		padding-bottom: 40px;
+	}
 }
 
 // タイトル下の余白が亡くなったことへの対応
 .branch-5-8 {
 
-    .edit-post-visual-editor__post-title-wrapper {
-        margin-bottom: 2em;
-    }
+	.edit-post-visual-editor__post-title-wrapper {
+		margin-bottom: 2em;
+	}
 }
 
 //aligncenterにclearが付くようになったので、それに合わせる
 [data-align="center"] {
-    clear: both;
+	clear: both;
 }
 
 
 // ブロックの「Move To」モードで出てくる ::before のバーが崩れないように、CSS強める
 #wpbody .is-block-moving-mode {
 
-    .wp-block.is-selected {
+	.wp-block.is-selected {
 
-        &::before {
-            position: absolute;
-            top: -14px;
-            right: 0;
-            bottom: auto;
-            left: 0;
-            z-index: 0;
-            display: inline;
-            margin: 0;
-            padding: 0;
-            border: none;
-            border-top: 4px solid var(--wp-admin-theme-color);
-            border-radius: 2px;
-            transform: none;
-            content: "";
-        }
-    }
+		&::before {
+			position: absolute;
+			top: -14px;
+			right: 0;
+			bottom: auto;
+			left: 0;
+			z-index: 0;
+			display: inline;
+			margin: 0;
+			padding: 0;
+			border: none;
+			border-top: 4px solid var(--wp-admin-theme-color);
+			border-radius: 2px;
+			transform: none;
+			content: "";
+		}
+	}
 }

@@ -8,32 +8,32 @@ $media_tablet_yoko: 960px;
 // mobileのみ
 @mixin mobile {
 
-    @media (max-width: 599px) {
-        @content;
-    }
+	@media (max-width: 599px) {
+		@content;
+	}
 }
 
 //tab以上
 @mixin tab {
 
-    @media (min-width: 600px) {
-        @content;
-    }
+	@media (min-width: 600px) {
+		@content;
+	}
 }
 
 //pc以上
 @mixin pc {
 
-    @media (min-width: 1000px) {
-        @content;
-    }
+	@media (min-width: 1000px) {
+		@content;
+	}
 }
 
 @mixin sp {
 
-    @media (max-width: 999px) {
-        @content;
-    }
+	@media (max-width: 999px) {
+		@content;
+	}
 }
 
 // @mixin sp {
@@ -57,8 +57,8 @@ $media_tablet_yoko: 960px;
 //任意の数値
 @mixin max-width($break-point) {
 
-    @media (max-width: $break-point) {
-        @content;
-    }
+	@media (max-width: $break-point) {
+		@content;
+	}
 
 }
