@@ -60,9 +60,9 @@ html {
 }
 
 body.admin-bar {
-	--ark-adminbar_height: 32px;
+	--ark-adminbar_height: var(--wp-admin--admin-bar--height, 32px);
 
 	@media screen and (max-width: 782px) {
-		--ark-adminbar_height: 46px;
+		--ark-adminbar_height: var(--wp-admin--admin-bar--height, 46px);
 	}
 }
