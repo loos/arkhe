@@ -53,76 +53,39 @@
 		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
 		
-		<!-- ファイル冒頭のコメントを必要とするルールを除外 -->
-		<exclude name="Squiz.Commenting.FileComment.Missing" />
-
-		<!-- ファイルコメントを /** で開始しないといけないルールを除外 -->
-		<exclude name="Squiz.Commenting.FileComment.WrongStyle" />
-
-		<!-- ファイルコメントのあとに空行いれないといけないルールを除外 -->
-		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
-
-		<!-- ファイルコメントに @package なくても許す -->
-		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
-
-		 <!-- コメント分の末尾をフルストップ、ビックリマークやはてなで終わらせる必要があるルールを除外する -->
-		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-		<exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
+		<!-- コメント系の制約を除外 -->
+		<exclude name="Squiz.Commenting" />
+		<exclude name="Generic.Commenting" />
 
 		<!-- コードをコメントアウトした時の警告を除去 -->
 		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
-		<!-- コメント文は大文字で始める制約を除外 -->
-		<exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
-
-		<!-- ifなどは1行で書いてはいけないルールを除外 -->
+		<!-- ifなどを1行で書いた時の警告を除外 -->
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 
-		<!-- クラスのファイル名を "class-" 出始めないといけないルールを除外 -->
+		<!-- クラスのファイル名を "class-" で始めないといけないルールを除外 -->
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
-		<!-- 関数へのコメント強制を除外 -->
-		<exclude name="Squiz.Commenting.FunctionComment.Missing" />
-
-		<!-- 関数へのコメントを /** で始めないといけない制限を除外 -->
-		<exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
-
-		<!-- 関数の引数へのコメント強制を除外 -->
-		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-		
-		<!-- クラスへのコメント強制を除外 -->
-		<exclude name="Squiz.Commenting.ClassComment.Missing" />
-
-		<!-- クラス変数へのコメント強制を除外 -->
-		<exclude name="Squiz.Commenting.VariableComment.Missing" />
-
-		<!-- クラス変数へのコメントに @var がなくても許す -->
-		<exclude name="Squiz.Commenting.VariableComment.MissingVar" />
-
-		<!-- クラスメソッドのコメントで @param の説明がなくても許す -->
-		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
-
-		<!-- クラスコメントが短くても許す -->
-		<exclude name="Generic.Commenting.DocComment.MissingShort" />
-
-		<!-- 変数の snake_case ルールを除外 ( $setting などに影響) -->
-		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
-		
 		<!-- ファイル名を_から始めた時に出るエラーを除外 -->
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 
-		<!-- インデント -->
-		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<!-- 変数の snake_case ルールを除外 ( $setting などに影響) -->
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+
+		<!-- インデント系 -->
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-		<exclude name="Squiz.Commenting.InlineComment.SpacingBefore" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 
 		<!-- 参考演算子を許可 -->
 		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
 
-		<!-- 無名関数 のフックが改行されないように -->
+		<!-- 無名関数 のフックが改行されないようにする -->
 		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+
+		<!-- Prefix関連の警告を除外 -->
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals" />
 
 	</rule>
 	<!-- <rule ref="WPThemeReview"/> -->
@@ -169,29 +132,8 @@
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
-			<property name="prefixes" type="array" value="_s" />
+			<property name="prefixes" type="array" value="arkhe" />
 		</properties>
-	</rule>
-
-
-	<!--
-	#############################################################################
-	USE THE PHPCompatibility RULESET
-	#############################################################################
-	-->
-
-	<config name="testVersion" value="5.6-"/>
-	<rule ref="PHPCompatibilityWP">
-
-		<!-- 無名関数を許可 -->
-		<!-- <exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" /> -->
-		
-		<!-- namespace を許可 -->
-		<!-- <exclude name="PHPCompatibility.Keywords.NewKeywords.t_namespaceFound" /> -->
-
-		<!-- / 始まりの関数を許可 -->
-		<!-- <exclude name="PHPCompatibility.LanguageConstructs.NewLanguageConstructs.t_ns_separatorFound" /> -->
-
 	</rule>
 
 </ruleset>
