@@ -1,13 +1,7 @@
 @charset "UTF-8";
 
-html{
-    font-size: var(--ark-font_size);
-    @include mobile {
-        font-size: var(--ark-font_size_sp);
-    }
-}
-
 body {
+    font-size: 1rem;
     position: relative;
     min-width: 100%;
     max-width: 100%;

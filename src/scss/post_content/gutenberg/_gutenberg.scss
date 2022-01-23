@@ -40,15 +40,12 @@ body.editor-styles-wrapper {
     font-family: var(--ark-font_family);
     line-height: var(--ark-line_height, 1.8);
     background-color: var(--ark-color_bg);
-}
-
-// 5.9 ~ モバイル・タブレットプレビュー用スタイル
-body.editor-styles-wrapper {
 
     @include mobile {
-        font-size: var(--ark-font_size_sp);
+        font-size: var(--ark-font_size--mobile);
     }
 }
+
 
 .editor-post-title .editor-post-title__input {
     font-size: 2rem;
