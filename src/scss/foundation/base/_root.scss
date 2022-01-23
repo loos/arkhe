@@ -7,7 +7,6 @@
 	--ark-mt--s: 1rem;
 	--ark-mt--h: 2.5em; // 見出しタグ用
 
-
 	// フォントサイズ
 	--ark-font_size: 16px;
 	--ark-font_size--mobile: 3.8vw;
@@ -16,17 +15,18 @@
 	--ark-line_height: 1.8;
 
 	// フォントファミリー
-	--ark-font_family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+	--ark-font_family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 
 	// l-containerのサイドのpadding量
 	--ark-pad--container: 48px;
+
 	@include sp {
 		--ark-pad--container: 4vw;
 	}
 
 	// カラー変数 (設定には紐づいていないもの)
-	--ark-color_border: rgba(200,200,200,.5);
-	--ark-color_gray: rgba(200,200,200,.15);
+	--ark-color_border: rgba(200, 200, 200, .5);
+	--ark-color_gray: rgba(200, 200, 200, .15);
 	--ark-color_table_border: #ededed;
 
 	//ヘッダー
@@ -34,7 +34,7 @@
 	// --ark-header_body_height: 40px; //実際の数値は JSでセット
 
 	// ドロワーメニューのカラー変数
-	// --ark-color_drawer_bg: 
+	// --ark-color_drawer_bg:
 
 	// ウィジェットなどのナビ・メニュー用変数
 	--ark-nav-padding: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
@@ -50,15 +50,17 @@
 	--ark-offset_y: 0px;
 }
 
-html{
+html {
 	font-size: var(--ark-font_size);
+
 	@include mobile {
 		font-size: var(--ark-font_size--mobile);
 	}
 }
 
-body.admin-bar{
+body.admin-bar {
 	--ark-adminbar_height: 32px;
+
 	@media screen and (max-width: 782px) {
 		--ark-adminbar_height: 46px;
 	}
