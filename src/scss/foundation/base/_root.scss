@@ -52,6 +52,7 @@
 
 html {
 	font-size: var(--ark-font_size);
+	letter-spacing: .025em;
 
 	@include mobile {
 		font-size: var(--ark-font_size--mobile);
