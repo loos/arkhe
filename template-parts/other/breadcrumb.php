@@ -20,13 +20,19 @@ if ( Arkhe::get_setting( 'breadcrumbs_set_home_page' ) ) {
 }
 
 /**
- * 生成処理
+ * リスト生成処理
  */
-if ( is_attachment() ) {
+if ( is_search() ) {
+	/* 検索結果ページ  memo: is_archive() 等もtrueになる場合があるので先に分岐 */
 
-	/**
-	 * 添付ファイルページ ※ is_single()もtrueになるので先に分岐
-	 */
+	$list_data[] = array(
+		'url'  => '',
+		'name' => __( 'Search results', 'arkhe' ),
+	);
+
+} elseif ( is_attachment() ) {
+	/* 添付ファイルページ  memo: is_single() もtrueになるので先に分岐 */
+
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 	$post_title = apply_filters( 'the_title', $wp_obj->post_title, $wp_obj->ID );
 
@@ -37,10 +43,8 @@ if ( is_attachment() ) {
 
 
 } elseif ( is_single() ) {
+	/* 投稿ページ */
 
-	/**
-	 * 投稿ページ
-	 */
 	$the_id        = $wp_obj->ID;
 	$the_post_type = $wp_obj->post_type;
 
@@ -144,11 +148,8 @@ if ( is_attachment() ) {
 
 
 } elseif ( is_page() || is_home() ) {
+	/* 固定ページ  memo: $wp_obj = WP_Post */
 
-	/**
-	 * 固定ページ
-	 * $wp_obj : WP_Post
-	 */
 	$page_id = $wp_obj->ID;
 
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
@@ -174,21 +175,16 @@ if ( is_attachment() ) {
 	);
 
 } elseif ( is_post_type_archive() ) {
+	/* 投稿タイプアーカイブページ  memo: $wp_obj = WP_Post_Type */
 
-	/**
-	 * 投稿タイプアーカイブページ
-	 * $wp_obj : WP_Post_Type
-	 */
 	$list_data[] = array(
 		'url'  => '',
 		'name' => $wp_obj->label,
 	);
 
 } elseif ( is_date() ) {
+	/* 日付アーカイブ  memo: $wp_obj = null */
 
-	/**
-	 * 日付アーカイブ ※ $wp_obj : null
-	 */
 	$the_year  = get_query_var( 'year' );
 	$the_month = get_query_var( 'monthnum' );
 	$the_day   = get_query_var( 'day' );
@@ -228,19 +224,14 @@ if ( is_attachment() ) {
 	}
 } elseif ( is_author() ) {
 
-	/**
-	 * 投稿者アーカイブ
-	 */
+	/* 投稿者アーカイブ */
 	$list_data[] = array(
 		'url'  => '',
 		'name' => $wp_obj->display_name . ' の執筆記事',
 	);
 
-} elseif ( is_archive() ) {
-
-	/**
-	 * その他アーカイブ（タームアーカイブ）
-	 */
+} elseif ( is_category() || is_tag() || is_tax() ) {
+	/* タームアーカイブ */
 
 	// 「投稿ページ」をパンくずリストに入れる場合
 	if ( $home_data && ( is_category() || is_tag() ) ) {
@@ -274,31 +265,17 @@ if ( is_attachment() ) {
 		'name' => $term_name,
 	);
 
-} elseif ( is_search() ) {
-
-	/**
-	 * 検索結果ページ
-	 */
-	$list_data[] = array(
-		'url'  => '',
-		'name' => '「' . get_search_query() . '」で検索した結果',
-	);
-
 } elseif ( is_404() ) {
+	/* 404ページ */
 
-	/**
-	 * 404ページ
-	 */
 	$list_data[] = array(
 		'url'  => '',
 		'name' => __( 'The page was not found.', 'arkhe' ),
 	);
 
 } else {
+	/* その他のページ（一応） */
 
-	/**
-	 * その他のページ（一応）
-	 */
 	$list_data[] = array(
 		'url'  => '',
 		'name' => get_the_title(),
@@ -348,6 +325,6 @@ foreach ( $list_data as $data ) {
 				<span><?php echo esc_html( Arkhe::get_setting( 'breadcrumbs_home_text' ) ); ?></span>
 			</a>
 		</li>
-		<?php echo $list_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+		<?php echo $list_html; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 	</ol>
 </div>

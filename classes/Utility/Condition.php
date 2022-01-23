@@ -70,7 +70,7 @@ trait Condition {
 	 */
 	public static function is_show_ttltop() {
 
-		if ( is_attachment() ) return false;
+		if ( is_attachment() || is_search() ) return false;
 
 		if ( is_front_page() ) {
 			$title_pos = '';
