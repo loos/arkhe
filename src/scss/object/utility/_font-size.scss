@@ -1,32 +1,31 @@
-// rem
+
+// 単位：rem (memo: ブロック単位で変化するサイズなので、remにしている
 .has-xsmall-font-size {
 	font-size: .75rem !important;
 }
 
 .has-small-font-size {
-	font-size: .9rem !important;
+	font-size: var(--wp--preset--font-size--small) !important;
 }
 
 .has-normal-font-size {
-	font-size: 1rem !important;
+	font-size: var(--wp--preset--font-size--normal) !important;
 }
 
 .has-large-font-size {
-	font-size: 1.25rem !important;
+	font-size: var(--wp--preset--font-size--large) !important;
 }
 
 .has-xlarge-font-size {
-	font-size: 1.5rem !important;
+	font-size: var(--wp--preset--font-size--x-large) !important;
 }
 
 .has-huge-font-size {
-	font-size: 2rem !important;
+	font-size: var(--wp--preset--font-size--huge) !important;
 }
 
-// .has-giant-font-size
 
-
-// em
+// 単位: em （memo: インラインテキストでも使われる想定）
 .u-fz-xs {
 	font-size: .75em !important;
 }

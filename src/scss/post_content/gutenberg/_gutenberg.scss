@@ -35,6 +35,10 @@ a {
 .block-editor .editor-styles-wrapper,
 .blocks-widgets-container .editor-styles-wrapper,
 body.editor-styles-wrapper {
+
+    // wp5.9 から導入されたCSS変数を流用する
+    @include set-wp-preset--fz;
+
     color: var(--ark-color_text);
     font-size: var(--ark-font_size, 16px);
     font-family: var(--ark-font_family);
