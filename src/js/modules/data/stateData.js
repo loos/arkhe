@@ -27,13 +27,8 @@ export const setState = {
 		}
 	},
 	adminbarH: (adminbar) => {
-		// 5.9ではコアのCSS変数を使う
-		const coreAdminBarH = window
-			.getComputedStyle(document.documentElement)
-			.getPropertyValue('--wp-admin--admin-bar--height');
-
 		if (null !== adminbar) {
-			adminbarH = coreAdminBarH ? parseInt(coreAdminBarH) : adminbar.offsetHeight;
+			adminbarH = adminbar.offsetHeight;
 		}
 	},
 	modalOpen: (val) => {
