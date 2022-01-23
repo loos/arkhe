@@ -156,21 +156,22 @@ ul.wp-block-categories__list {
 
 // ソーシャルリンク
 .wp-block-social-links {
+    // wp5.9 からはgapが使われるようになったのでそれに合わせる。
+    gap: .5em;
 
-    &.is-style-logos-only {
+    .wp-block-social-link {
+        margin: 0 !important;
+    }
 
-        .wp-block-social-link button {
-            padding: 0;
-        }
+    // memo: 5.9からはコア側で 0 にしてくれているの不要だが後方互換のために残す
+    &.is-style-logos-only .wp-block-social-link button {
+        padding: 0;
     }
 
     .block-list-appender {
         margin-top: 0 !important;
     }
 
-    .wp-block-social-link {
-        margin: 0 8px 8px 0 !important;
-    }
 
 }
 
