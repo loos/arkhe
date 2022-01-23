@@ -47,12 +47,14 @@ body.editor-styles-wrapper {
 }
 
 
-.editor-post-title .editor-post-title__input {
-    font-size: 2rem;
-}
-
 // 本文エリア
 .block-editor-writing-flow {
+
+    // タイトル
+    .editor-post-title textarea.editor-post-title__input, // ~5.8
+    h1.editor-post-title.editor-post-title__input { // 5.9
+        font-size: 2rem;
+    }
 
     // 5.7 ~ エディターの縦幅の最小値がなくなっている
     .branch-5-7 &,
