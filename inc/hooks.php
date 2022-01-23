@@ -3,6 +3,15 @@ namespace Arkhe_Theme\Hooks;
 
 require_once __DIR__ . '/hooks/self_hooks.php';
 
+
+/**
+ * 5.9から最初の画像に loading lazy が付かなくなるのを回避する
+ */
+add_filter( 'wp_omit_loading_attr_threshold', function() {
+	return 0;
+} );
+
+
 /**
  * 抜粋文字数を変更する
  */
