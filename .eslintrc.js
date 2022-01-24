@@ -11,6 +11,7 @@ module.exports = {
 		location: false,
 		IntersectionObserver: false,
 		IntersectionObserverEntry: false,
+		navigator: false,
 	},
 
 	rules: {
