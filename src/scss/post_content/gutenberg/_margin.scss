@@ -65,7 +65,8 @@
 			margin-top: 0 !important;
 		}
 
-		> .block-list-appender {
+		// 5.9からセレクタ強くなった
+		> .block-list-appender.block-list-appender {
 			margin-top: var(--ark-mt--s);
 			margin-bottom: 0;
 
