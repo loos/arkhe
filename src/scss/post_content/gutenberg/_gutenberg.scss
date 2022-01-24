@@ -67,12 +67,9 @@ body.editor-styles-wrapper {
 	}
 }
 
-// タイトル下の余白が亡くなったことへの対応
-.branch-5-8 {
-
-	.edit-post-visual-editor__post-title-wrapper {
-		margin-bottom: 2em;
-	}
+// 5.8でタイトル下の余白がなくなったが5.9で復活。ただしデバイスプレビューには効いてないので明示的に書き続ける
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+	margin-bottom: 2em;
 }
 
 //aligncenterにclearが付くようになったので、それに合わせる
