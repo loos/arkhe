@@ -25,7 +25,8 @@
 
 	&.-filter-dot::after {
 		background-color: rgba(0, 0, 0, .1);
-		background-image: url(../../assets/img/dot_texture.png);
+		// background-image: url(../../assets/img/dot_texture.png);
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFAQMAAAC3obSmAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAGUExURUdwTAAAAJ8qhFEAAAABdFJOUwBA5thmAAAAEklEQVQI12MwYDBgYGBoYGAAAASKAOH8MS30AAAAAElFTkSuQmCC);
 		background-size: 2px;
 		opacity: .5;
 	}
@@ -40,7 +41,7 @@
 	background-size: cover;
 	backface-visibility: hidden;
 	// transform: perspective(0);
-	& > img {
+	> img {
 		width: 100%;
 	}
 }
