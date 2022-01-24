@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
+// 変な影響がでないようにコアブロックに対してだけ
 p.has-background,
-// div.has-background,
 .wp-block-group.has-background,
 .wp-block-columns.has-background {
-    padding: 1.5rem 1.75rem;
+	padding: 1.5rem 1.75rem;
 }

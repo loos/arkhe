@@ -1,51 +1,51 @@
 
 .l-header__logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
 
-    @include sp {
-        font-size: var(--ark-logo_size_sp);
-    }
+	@include sp {
+		font-size: var(--ark-logo_size_sp);
+	}
 
-    @include pc {
-        font-size: var(--ark-logo_size_pc);
+	@include pc {
+		font-size: var(--ark-logo_size_pc);
 
-        [data-logo="left"] & {
-            justify-content: flex-start;
-        }
-    }
+		[data-logo="left"] & {
+			justify-content: flex-start;
+		}
+	}
 }
 
 .c-headLogo {
-    display: block;
-    // max-width: 400px;
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
+	display: block;
+	// max-width: 400px;
+	color: inherit;
+	font-weight: normal;
+	text-decoration: none;
 
-    .has-image > & {
-        // height: 100%;
+	.has-image > & {
+		// height: 100%;
 
-        @include sp {
-            height: var(--ark-logo_size_sp);
-        }
+		@include sp {
+			height: var(--ark-logo_size_sp);
+		}
 
-        @include pc {
-            height: var(--ark-logo_size_pc);
-        }
-    }
+		@include pc {
+			height: var(--ark-logo_size_pc);
+		}
+	}
 
-    .has-text > & {
-        font-size: .75em;
-        line-height: 1.5;
-    }
+	.has-text > & {
+		font-size: .75em;
+		line-height: 1.5;
+	}
 }
 
 .c-headLogo__img {
-    width: auto;
-    height: 100%;
-    object-fit: contain;
+	width: auto;
+	height: 100%;
+	object-fit: contain;
 }
 

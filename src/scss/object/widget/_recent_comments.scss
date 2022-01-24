@@ -2,25 +2,25 @@
 // .wp-block-rss,
 .wp-block-latest-comments,
 .widget_recent_comments {
-    // ウィジェット : .recentcomments / ブロック : wp-block-latest-comments__comment
-    li {
-        position: relative;
-        margin: 0;
-        padding: var(--ark-nav-padding, .75rem .5rem);
-        border-bottom: solid 1px var(--ark-color_border);
-        // transition: background-color .25s;
-        // &:hover {
-        //     background-color: var(--ark-hover_gray);
-        // }
-    }
+	// ウィジェット : .recentcomments / ブロック : wp-block-latest-comments__comment
+	li {
+		position: relative;
+		margin: 0;
+		padding: var(--ark-nav-padding, .75rem .5rem);
+		border-bottom: solid 1px var(--ark-color_border);
+		// transition: background-color .25s;
+		// &:hover {
+		//     background-color: var(--ark-hover_gray);
+		// }
+	}
 }
 
 .wp-block-latest-comments__comment {
 
-    &::after {
-        display: block;
-        clear: both;
-        height: 0;
-        content: "";
-    }
+	&::after {
+		display: block;
+		clear: both;
+		height: 0;
+		content: "";
+	}
 }

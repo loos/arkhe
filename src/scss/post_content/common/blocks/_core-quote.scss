@@ -1,61 +1,61 @@
 .wp-block-quote {
 
-    &.has-text-align-center {
-        border-left: none;
-    }
+	&.has-text-align-center {
+		border-left: none;
+	}
 
-    &.has-text-align-right {
-        border-right: solid 2px var(--ark-color_border);
-        border-left: none;
-    }
+	&.has-text-align-right {
+		border-right: solid 2px var(--ark-color_border);
+		border-left: none;
+	}
 
-    // スタイル：「大」
-    &.is-style-large {
+	// スタイル：「大」
+	&.is-style-large {
 
-        position: relative;
-        margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
-        padding: 2.5rem 3rem;
-        background: var(--ark-color_gray);
-        border: none;
+		position: relative;
+		margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
+		padding: 2.5rem 3rem;
+		background: var(--ark-color_gray);
+		border: none;
 
-        &::before,
-        &::after {
-            position: absolute;
-            z-index: 0;
-            display: inline-block;
-            color: #000;
-            font-size: 5rem;
-            font-family: Arial, sans-serif;
-            line-height: 1;
-            opacity: .1;
-            content: "\00201c";
-        }
+		&::before,
+		&::after {
+			position: absolute;
+			z-index: 0;
+			display: inline-block;
+			color: #000;
+			font-size: 5rem;
+			font-family: Arial, sans-serif;
+			line-height: 1;
+			opacity: .1;
+			content: "\00201c";
+		}
 
-        &::before {
-            top: .25rem;
-            left: .5rem;
-        }
+		&::before {
+			top: .25rem;
+			left: .5rem;
+		}
 
-        &::after {
-            right: .5rem;
-            bottom: .25rem;
-            transform: rotate(180deg);
-        }
+		&::after {
+			right: .5rem;
+			bottom: .25rem;
+			transform: rotate(180deg);
+		}
 
-        p {
-            font-size: 1.25rem;
-        }
+		p {
+			font-size: 1.25rem;
+		}
 
-        cite {
-            font-size: 1rem;
-            text-align: inherit;
-        }
+		cite {
+			font-size: 1rem;
+			text-align: inherit;
+		}
 
-    }
+	}
 
-    // スタイル：「プレーン」
-    &.is-style-plain {
-        padding: 0;
-        border: none;
-    }
+	// スタイル：「プレーン」
+	&.is-style-plain {
+		padding: 0;
+		border: none;
+	}
 }

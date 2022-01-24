@@ -1,24 +1,24 @@
 
 .wp-block-social-links {
-    gap: .5em; // wp5.9 からはgapが使われるようになったのでそれに合わせる。
-    align-items: center;
+	gap: .5em; // wp5.9 からはgapが使われるようになったのでそれに合わせる。
+	align-items: center;
 
-    .c-postContent & {
-        padding: 0;
-        list-style: none;
-    }
+	.c-postContent & {
+		padding: 0;
+		list-style: none;
+	}
 
-    .wp-block-social-link {
-        // 「.c-postContent ul li」と 5.8までの 「.wp-block-social-links .wp-social-link.wp-social-link.wp-social-link」 に対する margin を打ち消す
-        margin: 0 !important;
-    }
+	.wp-block-social-link {
+		// 「.c-postContent ul li」と 5.8までの 「.wp-block-social-links .wp-social-link.wp-social-link.wp-social-link」 に対する margin を打ち消す
+		margin: 0 !important;
+	}
 
-    a {
-        color: inherit;
-    }
+	a {
+		color: inherit;
+	}
 
-    // memo: 5.9からはコア側で 0 にしてくれているの不要だが後方互換のために残す
-    &.is-style-logos-only a {
-        padding: 0;
-    }
+	// memo: 5.9からはコア側で 0 にしてくれているの不要だが後方互換のために残す
+	&.is-style-logos-only a {
+		padding: 0;
+	}
 }

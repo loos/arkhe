@@ -1,85 +1,82 @@
 
 .c-pnNav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
-    margin: 1rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: space-between;
+	margin: 1rem 0;
 }
 
 .c-pnNav__item {
-    position: relative;
-    flex: 1 0 auto;
-    max-width: 100%;
-    // min-height: 2em;
-    // font-size: 3vw;
-    font-size: .8rem;
+	position: relative;
+	flex: 1 0 auto;
+	max-width: 100%;
+	font-size: .8rem;
 
-    @include tab {
-        width: 50%;
-    }
+	@include tab {
+		width: 50%;
+	}
 
-    &.-prev {
+	&.-prev {
 
-        .c-pnNav__link {
-            padding-left: 1.5em;
+		.c-pnNav__link {
+			padding-left: 1.5em;
 
-            &::before {
-                position: absolute;
-                top: 50%;
-                left: 0;
-                display: inline-block;
-                font-size: 1.2em;
-                transform: translateY(-50%);
+			&::before {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				display: inline-block;
+				font-size: 1.2em;
+				transform: translateY(-50%);
 
-                @extend %arkheIcon;
-                @extend .arkhe-icon-chevron-left::before;
-            }
-        }
+				@extend %arkheIcon;
+				@extend .arkhe-icon-chevron-left::before;
+			}
+		}
+	}
 
-    }
+	&.-next {
 
-    &.-next {
+		.c-pnNav__link {
+			justify-content: flex-end;
+			padding-right: 1.5em;
 
-        .c-pnNav__link {
-            justify-content: flex-end;
-            padding-right: 1.5em;
+			&::before {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				display: inline-block;
+				font-size: 1.2em;
+				transform: translateY(-50%);
 
-            &::before {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                display: inline-block;
-                font-size: 1.2em;
-                transform: translateY(-50%);
+				@extend %arkheIcon;
+				@extend .arkhe-icon-chevron-right::before;
+			}
+		}
 
-                @extend %arkheIcon;
-                @extend .arkhe-icon-chevron-right::before;
-            }
-        }
-
-    }
+	}
 }
 
 .c-pnNav__link {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: .5rem .75rem;
-    color: inherit;
-    line-height: 1.5;
-    text-decoration: none;
-    transition: .25s;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: .5rem .75rem;
+	color: inherit;
+	line-height: 1.5;
+	text-decoration: none;
+	transition: .25s;
 
-    &:hover {
-        opacity: .75;
-    }
+	&:hover {
+		opacity: .75;
+	}
 }
 
 .c-pnNav__title {
-    // hover時に動くように relative
-    position: relative;
-    left: 0;
-    transition: all .25s;
+	// hover時に動くように relative
+	position: relative;
+	left: 0;
+	transition: all .25s;
 }
 

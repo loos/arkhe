@@ -1,4 +1,4 @@
-// センターチェック
+// センターチェック用
 // #header::before {
 //     position: absolute;
 //     top: 0;
@@ -12,239 +12,239 @@
 // }
 
 .l-header {
-    top: 0; //fixされた時用
-    z-index: 100;
-    width: 100%;
-    color: #333;
-    background: #fff;
+	top: 0; //fixされた時用
+	z-index: 100;
+	width: 100%;
+	color: #333;
+	background: #fff;
 
-    &[data-pcfix="1"] {
+	&[data-pcfix="1"] {
 
-        @include pc {
-            position: sticky;
-        }
-    }
+		@include pc {
+			position: sticky;
+		}
+	}
 
-    &[data-spfix="1"] {
+	&[data-spfix="1"] {
 
-        @include sp {
-            position: sticky;
-        }
-    }
+		@include sp {
+			position: sticky;
+		}
+	}
 
-    // Stickeyの時
-    .admin-bar & {
-        top: var(--ark-adminbar_height);
-    }
+	// Stickeyの時
+	.admin-bar & {
+		top: var(--ark-adminbar_height);
+	}
 }
 
 // スマホでは非表示にする要素
 @include sp {
 
-    .l-header__bar,
-    .l-header__left,
-    .l-header__right,
-    .l-headerUnder {
-        display: none;
-    }
+	.l-header__bar,
+	.l-header__left,
+	.l-header__right,
+	.l-headerUnder {
+		display: none;
+	}
 }
 
 .l-header__body {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    // display: flex;
-    align-items: center;
-    // justify-items: center;
-    width: 100%;
-    column-gap: 0;
+	position: relative;
+	z-index: 1;
+	display: grid;
+	// display: flex;
+	align-items: center;
+	// justify-items: center;
+	width: 100%;
+	column-gap: 0;
 
-    @include sp {
+	@include sp {
 
-        padding-right: 2vw;
-        padding-left: 2vw;
-    }
+		padding-right: 2vw;
+		padding-left: 2vw;
+	}
 }
 
 :root {
-    --ark-drawerW: 40px;
-    --ark-searchW: 40px;
+	--ark-drawerW: 40px;
+	--ark-searchW: 40px;
 }
 
 // spのみ
 [data-has-drawer="sp"] {
 
-    @include pc {
-        --ark-drawerW: 0px;
+	@include pc {
+		--ark-drawerW: 0px;
 
-        .l-header__drawerBtn {
-            display: none;
-        }
-    }
+		.l-header__drawerBtn {
+			display: none;
+		}
+	}
 }
 
 // pcのみ
 [data-has-drawer="pc"] {
 
-    @include sp {
+	@include sp {
 
-        --ark-drawerW: 0px;
+		--ark-drawerW: 0px;
 
-        .l-header__drawerBtn {
-            display: none;
-        }
-    }
+		.l-header__drawerBtn {
+			display: none;
+		}
+	}
 }
 
 // pcもspも表示なし
 [data-has-drawer=""] {
 
-    --ark-drawerW: 0px;
+	--ark-drawerW: 0px;
 
-    .l-header__drawerBtn {
-        display: none;
-    }
+	.l-header__drawerBtn {
+		display: none;
+	}
 }
 
 [data-has-search=""] {
 
-    --ark-searchW: 0px;
+	--ark-searchW: 0px;
 
-    .l-header__searchBtn {
-        display: none;
-    }
+	.l-header__searchBtn {
+		display: none;
+	}
 }
 
 // spのみ
 [data-has-search="sp"] {
 
-    @include pc {
-        --ark-searchW: 0px;
+	@include pc {
+		--ark-searchW: 0px;
 
-        .l-header__searchBtn {
-            display: none;
-        }
-    }
+		.l-header__searchBtn {
+			display: none;
+		}
+	}
 }
 
 // pcのみ
 [data-has-search="pc"] {
 
-    @include sp {
+	@include sp {
 
-        --ark-searchW: 0px;
+		--ark-searchW: 0px;
 
-        .l-header__searchBtn {
-            display: none;
-        }
-    }
+		.l-header__searchBtn {
+			display: none;
+		}
+	}
 }
 
 [data-btns="l-r"] .l-header__body {
-    grid-template-areas: "menu left center right search";
-    grid-template-columns: var(--ark-drawerW) calc(25% - var(--ark-drawerW)) 50% calc(25% - var(--ark-searchW)) var(--ark-searchW);
+	grid-template-areas: "menu left center right search";
+	grid-template-columns: var(--ark-drawerW) calc(25% - var(--ark-drawerW)) 50% calc(25% - var(--ark-searchW)) var(--ark-searchW);
 }
 
 [data-btns="r-l"] .l-header__body {
-    grid-template-areas: "search left center right menu";
-    grid-template-columns: var(--ark-searchW) calc(25% - var(--ark-searchW)) 50% calc(25% - var(--ark-drawerW)) var(--ark-drawerW);
+	grid-template-areas: "search left center right menu";
+	grid-template-columns: var(--ark-searchW) calc(25% - var(--ark-searchW)) 50% calc(25% - var(--ark-drawerW)) var(--ark-drawerW);
 }
 
 [data-btns="rl-rr"] .l-header__body {
-    grid-template-areas: "left center right menu search";
-    grid-template-columns: 25% 50% auto var(--ark-drawerW) var(--ark-searchW);
+	grid-template-areas: "left center right menu search";
+	grid-template-columns: 25% 50% auto var(--ark-drawerW) var(--ark-searchW);
 }
 
 [data-btns="rr-rl"] .l-header__body {
-    grid-template-areas: "left center right search menu";
-    grid-template-columns: 25% 50% auto var(--ark-searchW) var(--ark-drawerW);
+	grid-template-areas: "left center right search menu";
+	grid-template-columns: 25% 50% auto var(--ark-searchW) var(--ark-drawerW);
 }
 
 // PCでロゴ左詰めの時（グロナビと同列の時）
 @include pc {
 
-    [data-btns="l-r"][data-logo="left"],
-    [data-btns="r-l"][data-logo="left"] {
+	[data-btns="l-r"][data-logo="left"],
+	[data-btns="r-l"][data-logo="left"] {
 
-        .l-header__body {
-            grid-template-columns: min-content auto 1fr auto min-content;
-        }
-    }
+		.l-header__body {
+			grid-template-columns: min-content auto 1fr auto min-content;
+		}
+	}
 
-    [data-btns="rl-rr"][data-logo="left"],
-    [data-btns="rr-rl"][data-logo="left"] {
+	[data-btns="rl-rr"][data-logo="left"],
+	[data-btns="rr-rl"][data-logo="left"] {
 
-        .l-header__body {
-            grid-template-columns: auto 1fr auto min-content min-content;
-        }
-    }
+		.l-header__body {
+			grid-template-columns: auto 1fr auto min-content min-content;
+		}
+	}
 }
 
 .l-header__left {
-    display: flex;
-    grid-area: left;
-    align-items: center;
-    justify-self: start;
+	display: flex;
+	grid-area: left;
+	align-items: center;
+	justify-self: start;
 }
 
 .l-header__right {
-    display: flex;
-    grid-area: right;
-    align-items: center;
-    align-self: stretch;
-    justify-self: end;
+	display: flex;
+	grid-area: right;
+	align-items: center;
+	align-self: stretch;
+	justify-self: end;
 }
 
 .l-header__center {
-    grid-area: center;
-    padding: 8px 0;
+	grid-area: center;
+	padding: 8px 0;
 
-    [data-logo="center"] & {
-        text-align: center;
-    }
+	[data-logo="center"] & {
+		text-align: center;
+	}
 
-    @include sp {
-        flex-basis: 100%;
-    }
+	@include sp {
+		flex-basis: 100%;
+	}
 
-    // ロゴ下のキャッチフレーズ（プラグインから表示可能）
-    .c-tagline {
-        font-size: .75rem;
-        line-height: 1.5;
-        letter-spacing: .2px;
+	// ロゴ下のキャッチフレーズ（プラグインから表示可能）
+	.c-tagline {
+		font-size: .75rem;
+		line-height: 1.5;
+		letter-spacing: .2px;
 
-        @include sp {
-            width: 100%;
-            font-size: 10px;
-            text-align: center;
-        }
-    }
+		@include sp {
+			width: 100%;
+			font-size: 10px;
+			text-align: center;
+		}
+	}
 
-    .has-image + .c-tagline {
-        margin-top: .25em;
-    }
+	.has-image + .c-tagline {
+		margin-top: .25em;
+	}
 }
 
 
 // ボタン関連
 .l-header__drawerBtn {
-    z-index: 2;
-    grid-area: menu;
+	z-index: 2;
+	grid-area: menu;
 }
 
 .l-header__searchBtn {
-    z-index: 1;
-    grid-area: search;
+	z-index: 1;
+	grid-area: search;
 }
 
 .l-header__customBtn,
 .l-header__drawerBtn,
 .l-header__searchBtn {
-    position: relative;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    line-height: 1.25;
-    text-align: center;
+	position: relative;
+	flex-shrink: 0;
+	width: 40px;
+	height: 40px;
+	line-height: 1.25;
+	text-align: center;
 }
 

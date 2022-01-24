@@ -1,21 +1,21 @@
 //画像
 .wp-block-image {
-    text-align: center;
+	text-align: center;
 
-    // .is-resized は 50& とかにすると付くクラス。
-    // &.is-resized {}
-    .components-resizable-box__container {
-        max-width: 100% !important;
-        height: auto !important;
-    }
+	// .is-resized は 50& とかにすると付くクラス。
+	// &.is-resized {}
+	.components-resizable-box__container {
+		max-width: 100% !important;
+		height: auto !important;
+	}
 
-    &.is-resized > div:not(.components-resizable-box__container) {
-        max-width: 100% !important;
-        height: auto !important;
-    }
+	&.is-resized > div:not(.components-resizable-box__container) {
+		max-width: 100% !important;
+		height: auto !important;
+	}
 }
 
 // 5.9でグリッドレイアウトになったため、上書きする
 *:not([data-align]) > .wp-block-image {
-    display: block !important;
+	display: block !important;
 }

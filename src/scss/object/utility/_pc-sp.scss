@@ -1,21 +1,21 @@
 @include pc {
 
-    .u-only-sp {
-        display: none !important;
-    }
+	.u-only-sp {
+		display: none !important;
+	}
 
-    .u-hide-pc {
-        display: none !important;
-    }
+	.u-hide-pc {
+		display: none !important;
+	}
 }
 
 @include sp {
 
-    .u-only-pc {
-        display: none !important;
-    }
+	.u-only-pc {
+		display: none !important;
+	}
 
-    .u-hide-sp {
-        display: none !important;
-    }
+	.u-hide-sp {
+		display: none !important;
+	}
 }

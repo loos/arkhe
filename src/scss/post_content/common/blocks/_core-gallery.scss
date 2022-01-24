@@ -1,28 +1,23 @@
-//5.3からは figure.wp-block-gallery > ul.blocks-gallery-grid
+// 5.3~ は figure.wp-block-gallery > ul.blocks-gallery-grid
+// 5.9~ は .wp-block-gallery > .wp-block-image
 .wp-block-gallery {
 
-    .blocks-gallery-grid {
-        width: 100%;
-        padding: 0;
-        list-style: none;
-    }
+	.blocks-gallery-grid {
+		width: 100%;
+		padding: 0;
+		list-style: none;
+	}
 
-    // .blocks-gallery-grid,
-    // .blocks-gallery-item {
-    //     padding: 0;
-    // }
-
-    figure {
-        margin: 0;
-    }
-
+	figure {
+		margin: 0;
+	}
 
 }
 
 .gallery-caption,
 .blocks-gallery-caption {
-    width: 100%;
-    font-size: .8rem;
-    text-align: center;
-    opacity: $thin_text_opacity;
+	width: 100%;
+	font-size: .8rem;
+	text-align: center;
+	opacity: $thin_text_opacity;
 }

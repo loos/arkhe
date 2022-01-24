@@ -1,63 +1,63 @@
 .wp-block-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    float: none !important;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	float: none !important;
 
-    &.aligncenter {
-        justify-content: center;
-    }
+	&.aligncenter {
+		justify-content: center;
+	}
 
-    &.alignright {
-        justify-content: flex-end;
-    }
+	&.alignright {
+		justify-content: flex-end;
+	}
 
-    .wp-block-button {
-        display: block;
-        margin: 0;
-        padding: 4px;
+	.wp-block-button {
+		display: block;
+		margin: 0;
+		padding: 4px;
 
-        &.wp-block-button__width-25 {
-            width: calc(25% - .375em);
-        }
+		&.wp-block-button__width-25 {
+			width: calc(25% - .375em);
+		}
 
-        &.wp-block-button__width-50 {
-            width: calc(50% - .25em);
-        }
+		&.wp-block-button__width-50 {
+			width: calc(50% - .25em);
+		}
 
-        &.wp-block-button__width-75 {
-            width: calc(75% - .125em);
-        }
-    }
+		&.wp-block-button__width-75 {
+			width: calc(75% - .125em);
+		}
+	}
 }
 //WPコアのボタンブロック
 .wp-block-button {
 
-    &:not(.is-style-outline) {
+	&:not(.is-style-outline) {
 
-        .wp-block-button__link:not(.has-text-color) {
-            color: #fff;
-        }
-    }
+		.wp-block-button__link:not(.has-text-color) {
+			color: #fff;
+		}
+	}
 }
 
 .wp-block-button__link {
-    min-width: 8rem;
-    padding: .75em 1.5em;
-    font-size: 1rem;
-    line-height: 1.5;
-    background-color: var(--ark-color_main);
-    transition: opacity .25s;
+	min-width: 8rem;
+	padding: .75em 1.5em;
+	font-size: 1rem;
+	line-height: 1.5;
+	background-color: var(--ark-color_main);
+	transition: opacity .25s;
 
-    .is-style-outline > & {
-        border-width: 1px;
+	.is-style-outline > & {
+		border-width: 1px;
 
-        &:not(.has-text-color) {
-            color: var(--ark-color_main);
-        }
-    }
+		&:not(.has-text-color) {
+			color: var(--ark-color_main);
+		}
+	}
 
-    &:hover {
-        opacity: .75;
-    }
+	&:hover {
+		opacity: .75;
+	}
 }

@@ -2,40 +2,39 @@
  * サイドバー用のスタイル
  */
 .edit-post-sidebar {
-    // 5.3からinline-blockに急に切り替わったのでblockに上書き
-    .components-base-control__label {
-        display: block;
-    }
+	// 5.3からinline-blockに急に切り替わったのでblockに上書き
+	.components-base-control__label {
+		display: block;
+	}
 
-    // カラーパレットの透明パターンの背景柄を非表示
-    .components-circular-option-picker__option-wrapper::before {
-        background: none;
-    }
+	// カラーパレットの透明パターンの背景柄を非表示
+	.components-circular-option-picker__option-wrapper::before {
+		background: none;
+	}
 
-    // 5.5から出現したサイドバーのメタボックスのボタンサイズを小さく。
-    .postbox .handle-actions {
+	// 5.5から出現したサイドバーのメタボックスのボタンサイズを小さく。
+	.postbox .handle-actions {
 
-        button {
-            width: 28px;
-            height: 28px;
+		button {
+			width: 28px;
+			height: 28px;
+		}
 
-        }
+		.handlediv {
+			margin-right: 4px;
+		}
 
-        .handlediv {
-            margin-right: 4px;
-        }
+		.order-higher-indicator,
+		.order-lower-indicator {
 
-        .order-higher-indicator,
-        .order-lower-indicator {
+			&::before {
+				font-size: 16px;
+			}
+		}
 
-            &::before {
-                font-size: 16px;
-            }
-        }
-
-    }
+	}
 }
 
 .components-base-control__label {
-    margin-bottom: 8px;
+	margin-bottom: 8px;
 }

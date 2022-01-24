@@ -1,159 +1,157 @@
 @charset "UTF-8";
 
 .p-authorBox {
-    padding: 1.5rem;
-    background-color: var(--ark-color_gray);
+	padding: 1.5rem;
+	background-color: var(--ark-color_gray);
 
-    @include tab {
-        display: flex;
-        align-items: center;
-        padding: 1.5rem 2rem;
-    }
+	@include tab {
+		display: flex;
+		align-items: center;
+		padding: 1.5rem 2rem;
+	}
 
-    // 著者一覧ページ
-    .author & {
-        margin-bottom: 4rem;
-    }
+	// 著者一覧ページ
+	.author & {
+		margin-bottom: 4rem;
+	}
 }
 
 
 .p-authorBox__avatar {
-    flex: 1 0 auto;
+	flex: 1 0 auto;
 
-    @include mobile {
-        margin-bottom: .75em;
-    }
+	@include mobile {
+		margin-bottom: .75em;
+	}
 
-    .avatar {
-        display: block;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
+	.avatar {
+		display: block;
+		width: 100px;
+		height: 100px;
+		object-fit: cover;
+		border-radius: 50%;
 
-        @include mobile {
-            margin: 0 auto;
-        }
-    }
+		@include mobile {
+			margin: 0 auto;
+		}
+	}
 }
 
 .p-authorBox__name {
-    display: block;
-    color: inherit;
-    font-weight: 700;
-    text-decoration: none;
+	display: block;
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
 
-    @include mobile {
-        text-align: center;
-    }
+	@include mobile {
+		text-align: center;
+	}
 }
 
 .p-authorBox__position {
-    display: block;
-    margin-top: .25rem;
-    font-size: .75rem;
+	display: block;
+	margin-top: .25rem;
+	font-size: .75rem;
 
-    @include mobile {
-        text-align: center;
-    }
+	@include mobile {
+		text-align: center;
+	}
 }
 
 .p-authorBox__body {
 
-    @include tab {
-        flex: 1 1 100%;
-        margin-left: 1.5em;
-    }
+	@include tab {
+		flex: 1 1 100%;
+		margin-left: 1.5em;
+	}
 }
 
 .p-authorBox__description {
-    // width: 100%;
-    margin-top: .75rem;
-    font-size: .9rem;
+	// width: 100%;
+	margin-top: .75rem;
+	font-size: .9rem;
 }
 
 .p-authorBox__footer {
-    margin-top: 1rem;
-    font-size: .9rem;
+	margin-top: 1rem;
+	font-size: .9rem;
 
-    @include tab {
-        display: flex;
-        align-items: center;
-
-    }
+	@include tab {
+		display: flex;
+		align-items: center;
+	}
 }
 
 .p-authorBox__links {
 
-    @include tab {
-        margin-right: 1rem;
-    }
+	@include tab {
+		margin-right: 1rem;
+	}
 
-    @media (min-width: 1200px) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+	@media (min-width: 1200px) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 
 .p-authorBox__weblink {
 
-    @include mobile {
-        text-align: center;
-    }
+	@include mobile {
+		text-align: center;
+	}
 
-    i {
-        font-size: .95em;
-        line-height: inherit;
-        // vertical-align: baseline;
-    }
+	i {
+		font-size: .95em;
+		line-height: inherit;
+	}
 }
 
 .p-authorBox__weblink + .p-authorBox__iconList {
 
-    @media (min-width: 1200px) {
-        margin-left: 1em;
-    }
+	@media (min-width: 1200px) {
+		margin-left: 1em;
+	}
 
-    @media (max-width: 1199px) {
-        margin-top: 8px;
-    }
+	@media (max-width: 1199px) {
+		margin-top: 8px;
+	}
 
 }
 
 .p-authorBox__archivelink {
 
-    @include tab {
-        align-self: flex-end;
-        margin-left: auto;
-    }
+	@include tab {
+		align-self: flex-end;
+		margin-left: auto;
+	}
 
-    @include mobile {
-        margin-top: 1.25rem;
-    }
+	@include mobile {
+		margin-top: 1.25rem;
+	}
 
-    a {
-        display: block;
-        margin: 0 auto;
-        color: inherit;
-        letter-spacing: 1px;
-        text-align: center;
-        text-decoration: none;
-        box-shadow: 0 0 0 1px currentColor;
-        opacity: $thin_text_opacity;
-        transition: opacity .25s;
+	a {
+		display: block;
+		margin: 0 auto;
+		color: inherit;
+		letter-spacing: 1px;
+		text-align: center;
+		text-decoration: none;
+		box-shadow: 0 0 0 1px currentColor;
+		opacity: $thin_text_opacity;
+		transition: opacity .25s;
 
-        @include tab {
-            padding: .5rem 1.5rem;
-            font-size: .8rem;
-        }
+		@include tab {
+			padding: .5rem 1.5rem;
+			font-size: .8rem;
+		}
 
-        &:hover {
-            opacity: 1;
-        }
+		&:hover {
+			opacity: 1;
+		}
 
-        @include mobile {
-            padding: .75rem 1rem;
-            // width: 120px;
-        }
-    }
+		@include mobile {
+			padding: .75rem 1rem;
+			// width: 120px;
+		}
+	}
 }

@@ -2,34 +2,34 @@
 //タグクラウド
 .tagcloud,
 .wp-block-tag-cloud {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .tag-cloud-link {
-    position: relative;
-    display: block;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    padding: 6px 8px;
-    // color: #333;
-    color: #333 !important; //footerで inherit になるので
-    font-size: .75rem !important; //タグクラウドは使用頻度でフォントサイズ変えてくるので !important 付ける
-    line-height: 1;
-    text-decoration: none;
-    background: #f7f7f7;
-    border: none;
-    transition: opacity .25s;
+	position: relative;
+	display: block;
+	margin-right: 8px;
+	margin-bottom: 8px;
+	padding: 6px 8px;
+	// color: #333;
+	color: #333 !important; //footerで inherit になるので
+	font-size: .75rem !important; //タグクラウドは使用頻度でフォントサイズ変えてくるので !important 付ける
+	line-height: 1;
+	text-decoration: none;
+	background: #f7f7f7;
+	border: none;
+	transition: opacity .25s;
 
-    &::before {
-        margin-right: .25em;
-        opacity: .75;
-        content: "#";
-    }
+	&::before {
+		margin-right: .25em;
+		opacity: .75;
+		content: "#";
+	}
 
-    &:hover {
-        opacity: .75;
-    }
+	&:hover {
+		opacity: .75;
+	}
 
 }

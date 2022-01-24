@@ -1,27 +1,27 @@
 //フリーワード検索
 .c-searchForm {
-    position: relative;
+	position: relative;
 }
 
 .c-searchForm__s {
-    width: 100%;
-    padding: 4px 44px 4px 8px;
-    line-height: 2;
+	width: 100%;
+	padding: 4px 44px 4px 8px;
+	line-height: 2;
 }
 
 .c-searchForm__submit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 100%;
-    overflow: hidden;
-    background: none;
-    border: none;
-    transition: opacity .25s;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 100%;
+	overflow: hidden;
+	background: none;
+	border: none;
+	transition: opacity .25s;
 
-    &:hover {
-        opacity: .75;
-    }
+	&:hover {
+		opacity: .75;
+	}
 }
 

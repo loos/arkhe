@@ -1,19 +1,13 @@
 [data-type="core/media-text"] {
 
-    &.is-selected,
-    &.has-child-selected {
+	&.is-selected,
+	&.has-child-selected {
 
-        // コンテンツ側にガイドをつける
-        .wp-block-media-text__content {
-            border-top: dashed 1px $color_guide;
-            border-bottom: dashed 1px $color_guide;
-        }
-    }
-
-    // コンテンツ側のさらなるインナーブロックにも左右に余白できるのを阻止 -> ?
-    // .wp-block-group__inner-container .block-editor-inner-blocks {
-    //     padding-right: 0;
-    //     padding-left: 0;
-    // }
+		// コンテンツ側にガイドをつける
+		.wp-block-media-text__content {
+			border-top: dashed 1px $color_guide;
+			border-bottom: dashed 1px $color_guide;
+		}
+	}
 
 }

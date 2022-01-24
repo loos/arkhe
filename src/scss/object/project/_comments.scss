@@ -2,100 +2,99 @@
 
 // .p-comments {}
 
-
 // コメントリスト
 .c-commentList {
-    margin: 2rem 0 0;
-    font-size: .9rem;
+	margin: 2rem 0 0;
+	font-size: .9rem;
 
-    // li
-    .comment {
-        margin-top: 1rem;
-    }
+	// li
+	.comment {
+		margin-top: 1rem;
+	}
 
-    // & > .comment:not(:last-child),
-    & > .comment {
-        padding: 1rem;
-        background-color: var(--ark-color_gray);
-    }
+	// > .comment:not(:last-child),
+	> .comment {
+		padding: 1rem;
+		background-color: var(--ark-color_gray);
+	}
 
-    .children {
-        margin-left: 1rem;
-        padding: 0 0 0 1rem;
-        border-left: solid 1px var(--ark-color_border);
-    }
+	.children {
+		margin-left: 1rem;
+		padding: 0 0 0 1rem;
+		border-left: solid 1px var(--ark-color_border);
+	}
 
-    .reply {
-        margin-top: .5rem;
-    }
+	.reply {
+		margin-top: .5rem;
+	}
 
 }
 
 // article
 .comment-body {
-    padding: 8px;
+	padding: 8px;
 }
 
 // コメント主
 .comment-author {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    .avatar {
-        border-radius: 50%;
-    }
+	.avatar {
+		border-radius: 50%;
+	}
 
-    //名前
-    .fn {
-        margin-left: 1rem;
-        font-size: 1.1em;
-        //a{}
-    }
-    // 名前のリンク（サイトURLある時）
-    .url {
-        color: inherit;
-        text-decoration: none;
-    }
+	//名前
+	.fn {
+		margin-left: 1rem;
+		font-size: 1.1em;
+		//a{}
+	}
+	// 名前のリンク（サイトURLある時）
+	.url {
+		color: inherit;
+		text-decoration: none;
+	}
 
-    //「より」
-    .says {
-        display: none;
-    }
+	//「より」
+	.says {
+		display: none;
+	}
 }
 
 // 日付
 .comment-metadata {
 
-    a {
-        color: inherit;
-        font-size: 11px;
-        text-decoration: none;
-        opacity: $thin_text_opacity;
-    }
+	a {
+		color: inherit;
+		font-size: 11px;
+		text-decoration: none;
+		opacity: $thin_text_opacity;
+	}
 
 }
 
 // コメント本文
 .comment-content {
-    margin-top: 1rem;
-    // font-size: 14px;
-    line-height: 1.5;
+	margin-top: 1rem;
+	// font-size: 14px;
+	line-height: 1.5;
 
-    & > :first-child {
-        margin-top: 0;
-    }
+	> :first-child {
+		margin-top: 0;
+	}
 
-    p {
-        margin-top: 1rem;
-    }
+	p {
+		margin-top: 1rem;
+	}
 }
 
 // 「あなたのコメントは承認待ちです。」
 .comment-awaiting-moderation {
-    display: block;
-    margin-top: 1rem;
-    font-weight: bold;
-    // font-size: .9em;
+	display: block;
+	margin-top: 1rem;
+	font-weight: bold;
+	// font-size: .9em;
 }
 
 // 「返信」
@@ -104,98 +103,98 @@
 
 // コメント入力エリア
 .comment-respond {
-    margin-top: 2.5rem;
+	margin-top: 2.5rem;
 }
 
 .comment-reply-title {
-    font-weight: bold;
-    font-size: 1rem;
+	font-weight: bold;
+	font-size: 1rem;
 
-    &::before {
-        margin-right: .5em;
+	&::before {
+		margin-right: .5em;
 
-        @extend .arkhe-icon-comment;
-        @extend %arkheIcon;
-    }
+		@extend .arkhe-icon-comment;
+		@extend %arkheIcon;
+	}
 }
 
 
 // 「メールアドレスが公開されることはありません」
 .comment-notes {
 
-    font-size: .75rem;
+	font-size: .75rem;
 }
 
 .comment-form {
-    margin-top: 1rem;
+	margin-top: 1rem;
 
-    p {
-        margin-top: 1rem;
-    }
+	p {
+		margin-top: 1rem;
+	}
 
-    label {
-        display: block;
-        margin-bottom: .5rem;
-        font-weight: bold;
-    }
+	label {
+		display: block;
+		margin-bottom: .5rem;
+		font-weight: bold;
+	}
 
-    // 「コメント」を非表示（「コメントを残す」と被る）
-    .comment-form-comment {
+	// 「コメント」を非表示（「コメントを残す」と被る）
+	.comment-form-comment {
 
-        label {
-            display: none;
-        }
-    }
-
-
-    [for="wp-comment-cookies-consent"] {
-        font-weight: normal;
-    }
+		label {
+			display: none;
+		}
+	}
 
 
-    #comment,
-    #author,
-    #email,
-    #url {
-        width: 100%;
-    }
+	[for="wp-comment-cookies-consent"] {
+		font-weight: normal;
+	}
 
-    .form-submit {
-        margin-top: 2rem;
-    }
 
-    .submit {
-        padding: .5rem 1.5rem;
-        color: #fff;
-        background-color: var(--ark-color_main);
-        border: none;
-        transition: opacity .25s;
+	#comment,
+	#author,
+	#email,
+	#url {
+		width: 100%;
+	}
 
-        &:hover {
-            opacity: .75;
-        }
+	.form-submit {
+		margin-top: 2rem;
+	}
 
-    }
+	.submit {
+		padding: .5rem 1.5rem;
+		color: #fff;
+		background-color: var(--ark-color_main);
+		border: none;
+		transition: opacity .25s;
+
+		&:hover {
+			opacity: .75;
+		}
+
+	}
 }
 
 // 返信キャンセルリンク
 #cancel-comment-reply-link {
-    margin-left: 1em;
-    font-size: .9em;
-    font-style: italic;
+	margin-left: 1em;
+	font-size: .9em;
+	font-style: italic;
 }
 
 // 「次回のコメントで使用するためブラウザーに自分の名前、メールアドレス、サイトを保存する。」
 .comment-form-cookies-consent {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    label {
-        margin-bottom: 0;
-        margin-left: .5em;
-    }
+	label {
+		margin-bottom: 0;
+		margin-left: .5em;
+	}
 }
 
 #wp-comment-cookies-consent {
-    margin: 0;
+	margin: 0;
 }

@@ -1,51 +1,51 @@
 .wp-block-image {
-    text-align: center;
+	text-align: center;
 
-    img {
-        vertical-align: bottom; //下部の隙間なくす
-    }
+	img {
+		vertical-align: bottom; //下部の隙間なくす
+	}
 
-    &.is-resized {
-        display: block;
-    }
+	&.is-resized {
+		display: block;
+	}
 
-    // align ついたら .wp-block-image > figure になる
-    figure {
-        display: block !important;
-    }
+	// align ついたら .wp-block-image > figure になる
+	figure {
+		display: block !important;
+	}
 
-    // リンク付きの場合
-    a {
-        display: block;
-        transition: opacity .25s;
+	// リンク付きの場合
+	a {
+		display: block;
+		transition: opacity .25s;
 
-        &:hover {
-            opacity: .75;
-        }
-    }
+		&:hover {
+			opacity: .75;
+		}
+	}
 
-    figcaption a {
-        display: inline;
-    }
+	figcaption a {
+		display: inline;
+	}
 }
 
 
 //キャプション付き画像（TinyMCE）
 .wp-caption {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
+	width: 100%;
+	max-width: 100%;
+	text-align: center;
 }
 
 .wp-caption-text {
-    margin-top: .75rem;
-    font-size: .8rem;
-    opacity: $thin_text_opacity;
+	margin-top: .75rem;
+	font-size: .8rem;
+	opacity: $thin_text_opacity;
 }
 
 // TinyMCEでの中央寄せ画像
 img.aligncenter {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }

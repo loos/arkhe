@@ -1,28 +1,28 @@
 // 本文エリア
 .block-editor-writing-flow {
 
-    // ガイド線を表示する
-    [data-type="core/group"],
-    [data-type="core/columns"] {
+	// ガイド線を表示する
+	[data-type="core/group"],
+	[data-type="core/columns"] {
 
-        &:not(.has-background).has-child-selected {
+		&:not(.has-background).has-child-selected {
 
-            &::after {
-                border: dashed 1px $color_guide;
-            }
-        }
-    }
+			&::after {
+				border: dashed 1px $color_guide;
+			}
+		}
+	}
 
-    // .is-root-container > [data-type="core/group"],
-    :not([data-align="full"]) > [data-type="core/group"],
-    :not([data-align="full"]) > [data-type="core/columns"] {
+	// .is-root-container > [data-type="core/group"],
+	:not([data-align="full"]) > [data-type="core/group"],
+	:not([data-align="full"]) > [data-type="core/columns"] {
 
-        &::after {
-            top: -8px !important;
-            right: -8px !important;
-            bottom: -8px !important;
-            left: -8px !important;
-        }
-    }
+		&::after {
+			top: -8px !important;
+			right: -8px !important;
+			bottom: -8px !important;
+			left: -8px !important;
+		}
+	}
 }
 

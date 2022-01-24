@@ -1,12 +1,12 @@
 //left: 50%; transform: translateX(-50%);を使いたいけど、background-attachment: fixed;との併用ができない。
 
 .alignwide {
-    position: relative;
-    max-width: unset !important; // embedなどのmax100%のものを上書き
+	position: relative;
+	max-width: unset !important; // embedなどのmax100%のものを上書き
 }
 
 // サイドバーありの時、コンテンツエリアでは幅を制限
 [data-sidebar="on"] .l-main .alignwide {
-    left: 0;
-    width: 100%;
+	left: 0;
+	width: 100%;
 }

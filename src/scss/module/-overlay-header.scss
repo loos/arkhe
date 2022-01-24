@@ -5,177 +5,166 @@
 
 
 .c-infoBar {
-    display: none;
+	display: none;
 }
 
 .l-header {
-    // position: fixed !important;
-    top: 0;
-    left: 0;
-    transition: background-color .25s;
+	// position: fixed !important;
+	top: 0;
+	left: 0;
+	transition: background-color .25s;
 
-    @include pc {
+	@include pc {
 
-        &[data-pcfix="1"] {
-            position: fixed;
-        }
+		&[data-pcfix="1"] {
+			position: fixed;
+		}
 
-        &[data-pcfix="0"] {
-            position: absolute;
-            transition-duration: 0s;
-        }
-    }
+		&[data-pcfix="0"] {
+			position: absolute;
+			transition-duration: 0s;
+		}
+	}
 
-    @include sp {
+	@include sp {
 
-        &[data-spfix="1"] {
-            position: fixed;
-        }
+		&[data-spfix="1"] {
+			position: fixed;
+		}
 
-        &[data-spfix="0"] {
-            position: absolute;
-            transition-duration: 0s;
-        }
-    }
+		&[data-spfix="0"] {
+			position: absolute;
+			transition-duration: 0s;
+		}
+	}
 
-    .l-header__body {
-        // transition: color .25s; //ナビやアイコンには各自 transition がついている
-        color: #fff;
-    }
+	.l-header__body {
+		// transition: color .25s; //ナビやアイコンには各自 transition がついている
+		color: #fff;
+	}
 
-    .c-headLogo {
-        position: relative;
-    }
-    // 初期状態で、普通のロゴは非表示
-    .c-headLogo__img {
-        transition: opacity .25s;
-    }
+	.c-headLogo {
+		position: relative;
+	}
+	// 初期状態で、普通のロゴは非表示
+	.c-headLogo__img {
+		transition: opacity .25s;
+	}
 
-    .c-headLogo__img.-common {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        opacity: 0;
-    }
-
-    // これは設定によって変える ?
-    // .l-container {
-    //     max-width: 100%;
-    // }
+	.c-headLogo__img.-common {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		opacity: 0;
+	}
 
 }
 
 [data-scrolled="false"] {
 
-    .l-header {
-        background-color: transparent;
-    }
-
-    // gnavホバーエフェクト
-    // .c-gnav > .menu-item > a::after {
-    //     background: #fff;
-    // }
-
+	.l-header {
+		background-color: transparent;
+	}
 }
 
 @include pc {
 
-    // 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
-    [data-scrolled="true"] {
+	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
+	[data-scrolled="true"] {
 
-        [data-pcfix="1"] {
+		[data-pcfix="1"] {
 
-            .l-header__body {
-                color: inherit;
-            }
+			.l-header__body {
+				color: inherit;
+			}
 
-            .c-headLogo__img.-top {
-                opacity: 0;
-            }
+			.c-headLogo__img.-top {
+				opacity: 0;
+			}
 
-            .c-headLogo__img.-common {
-                opacity: 1;
-            }
+			.c-headLogo__img.-common {
+				opacity: 1;
+			}
 
-        }
-    }
+		}
+	}
 
-    // PCで固定設定なしの時
-    .l-header[data-pcfix="0"] {
-        top: 0 !important;
-        // data-scrolled=" true"でも透明を維持
-        background-color: transparent;
-    }
+	// PCで固定設定なしの時
+	.l-header[data-pcfix="0"] {
+		top: 0 !important;
+		// data-scrolled=" true"でも透明を維持
+		background-color: transparent;
+	}
 }
 
 @include sp {
 
-    // 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
-    [data-scrolled="true"] {
+	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
+	[data-scrolled="true"] {
 
-        [data-spfix="1"] {
+		[data-spfix="1"] {
 
-            .l-header__body {
-                color: inherit;
-            }
+			.l-header__body {
+				color: inherit;
+			}
 
-            .c-headLogo__img.-top {
-                opacity: 0;
-            }
+			.c-headLogo__img.-top {
+				opacity: 0;
+			}
 
-            .c-headLogo__img.-common {
-                opacity: 1;
-            }
+			.c-headLogo__img.-common {
+				opacity: 1;
+			}
 
-        }
-    }
+		}
+	}
 
-    // SPで固定設定なしの時
-    .l-header[data-spfix="0"] {
-        top: 0 !important;
-        // data-scrolled=" true"でも透明を維持
-        background-color: transparent;
-    }
+	// SPで固定設定なしの時
+	.l-header[data-spfix="0"] {
+		top: 0 !important;
+		// data-scrolled=" true"でも透明を維持
+		background-color: transparent;
+	}
 }
 
 
 .l-headerUnder {
-    transition: background-color .25s;
+	transition: background-color .25s;
 }
 
 // 透明に。
 .l-headerUnder:not([data-fix]),
 [data-scrolled="false"] .l-headerUnder[data-fix] {
-    color: #fff;
-    background-color: transparent;
+	color: #fff;
+	background-color: transparent;
 }
 
 
 // ナビが fix しない場合 & ナビだけが fix の場合
 .l-headerUnder:not([data-fix]),
 [data-pcfix="0"] + .l-headerUnder[data-fix] {
-    position: absolute;
-    top: var(--ark-header_height);
+	position: absolute;
+	top: var(--ark-header_height);
 }
 
 // ナビだけが fix の場合 (ちょっとチラつくが、このパターンは非推奨で。)
 [data-scrolled="true"] [data-pcfix="0"] + .l-headerUnder[data-fix] {
-    position: fixed;
-    top: 0;
+	position: fixed;
+	top: 0;
 }
 
 [data-scrolled="true"] .admin-bar [data-pcfix="0"] + .l-headerUnder[data-fix] {
-    top: 32px;
+	top: 32px;
 }
 
 
 // ヘッダーもナビだけも fix の場合
 [data-pcfix="1"] + .l-headerUnder[data-fix] {
-    position: fixed;
-    top: calc(var(--ark-header_height));
+	position: fixed;
+	top: calc(var(--ark-header_height));
 }
 
 .admin-bar [data-pcfix="1"] + .l-headerUnder[data-fix] {
-    top: calc(var(--ark-header_height) + 32px);
+	top: calc(var(--ark-header_height) + 32px);
 }

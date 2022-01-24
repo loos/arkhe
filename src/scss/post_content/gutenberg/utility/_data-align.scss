@@ -1,68 +1,68 @@
 [data-align="full"] {
 
-    > .wp-block-cover,
-    > .wp-block-group.has-background {
-        padding: 4em 48px;
-    }
+	> .wp-block-cover,
+	> .wp-block-group.has-background {
+		padding: 4em 48px;
+	}
 
-    > .wp-block-cover > .wp-block-cover__inner-container,
-    > .wp-block-group.has-background > .wp-block-group__inner-container {
+	> .wp-block-cover > .wp-block-cover__inner-container,
+	> .wp-block-group.has-background > .wp-block-group__inner-container {
 
-        > .wp-block {
-            max-width: var(--ark-block_width, 900px);
-        }
+		> .wp-block {
+			max-width: var(--ark-block_width, 900px);
+		}
 
-        > [data-align="wide"] {
-            max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
-        }
+		> [data-align="wide"] {
+			max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
+		}
 
-        > [data-align="full"] {
-            width: 100%;
-            max-width: 100%;
-        }
+		> [data-align="full"] {
+			width: 100%;
+			max-width: 100%;
+		}
 
-    }
+	}
 
 }
 
 // fullwideコンテンツを使うと少し左右にスクロールできてしまうのを防ぐ
 .interface-interface-skeleton__content {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 
 // 左右寄せ
 .wp-block[data-align="left"],
 .wp-block[data-align="right"] {
-    height: auto;
-    margin-top: var(--ark-mt);
+	height: auto;
+	margin-top: var(--ark-mt);
 }
 
 [data-align="left"],
 [data-align="right"] {
-    height: auto;
+	height: auto;
 
-    > .wp-block-pullquote {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-    }
+	> .wp-block-pullquote {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+		margin-left: 0;
+	}
 }
 
 
 [data-align="left"] {
 
-    > .wp-block-pullquote {
-        text-align: left;
-    }
+	> .wp-block-pullquote {
+		text-align: left;
+	}
 }
 
 
 [data-align="right"] {
 
-    > .wp-block-pullquote {
-        text-align: right;
-    }
+	> .wp-block-pullquote {
+		text-align: right;
+	}
 }
 

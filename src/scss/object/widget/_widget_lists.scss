@@ -1,11 +1,11 @@
 /*
-    リスト系のウィジェットに関するもの
+	リスト系のウィジェットに関するもの
 
-    ※ エディター側は .wp-block-categories__list
+	※ エディター側は .wp-block-categories__list
 */
 
 .wp-block-rss .wp-block-rss__item {
-    padding: .5rem 0;
+	padding: .5rem 0;
 }
 
 // 一番最初の ulタグ
@@ -18,7 +18,7 @@
 .widget_archive > ul,
 .widget_categories > ul,
 .widget_pages > ul {
-    border-top: solid 1px var(--ark-color_border);
+	border-top: solid 1px var(--ark-color_border);
 
 }
 
@@ -31,38 +31,38 @@
 .widget_categories,
 .widget_pages {
 
-    li {
-        position: relative;
-        margin: 0 !important;
+	li {
+		position: relative;
+		margin: 0 !important;
 
-        a {
-            border-bottom: solid 1px var(--ark-color_border);
-        }
-    }
+		a {
+			border-bottom: solid 1px var(--ark-color_border);
+		}
+	}
 
-    a {
-        position: relative;
-        display: block;
-        padding: var(--ark-nav-padding, .75rem .5rem);
-        color: inherit;
-        text-decoration: none;
-        transition: background-color .25s;
+	a {
+		position: relative;
+		display: block;
+		padding: var(--ark-nav-padding, .75rem .5rem);
+		color: inherit;
+		text-decoration: none;
+		transition: background-color .25s;
 
-        &:hover {
-            background-color: var(--ark-hover_gray);
-        }
-    }
+		&:hover {
+			background-color: var(--ark-hover_gray);
+		}
+	}
 
-    // アイコン用の before要素
-    // &::before {
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 2px;
-    //     display: inline-block;
-    //     color: inherit;
-    //     vertical-align: middle;
-    //     transform: translateY(-50%);
-    // }
+	// アイコン用の before要素
+	// &::before {
+	//     position: absolute;
+	//     top: 50%;
+	//     left: 2px;
+	//     display: inline-block;
+	//     color: inherit;
+	//     vertical-align: middle;
+	//     transform: translateY(-50%);
+	// }
 
 }
 
@@ -72,48 +72,44 @@
 .wp-block-categories > .cat-item > a,
 .widget_categories > ul > .cat-item > a {
 
-    padding-left: 1.75rem;
+	padding-left: 1.75rem;
 
-    &::before {
-        position: absolute;
-        top: 50%;
-        left: .5rem;
-        display: inline-block;
-        color: inherit;
-        vertical-align: middle;
-        transform: scale(.9) translateY(-50%);
-        transform-origin: 0 0;
-        opacity: $thin_text_opacity;
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: .5rem;
+		display: inline-block;
+		color: inherit;
+		vertical-align: middle;
+		transform: scale(.9) translateY(-50%);
+		transform-origin: 0 0;
+		opacity: $thin_text_opacity;
 
-        @extend %arkheIcon;
-        @extend .arkhe-icon-folder::before;
-    }
+		@extend %arkheIcon;
+		@extend .arkhe-icon-folder::before;
+	}
 }
 
 .widget_categories,
 .wp-block-categories {
 
-    .children a {
-        padding-left: 1.75rem; //カテゴリーアイコンがある分、少し他より大きく
-    }
+	.children a {
+		padding-left: 1.75rem; //カテゴリーアイコンがある分、少し他より大きく
+	}
 
-    label {
-        display: none;
-    }
+	label {
+		display: none;
+	}
 }
 
 //投稿カウント数
 .tag-link-count,
 .cat-post-count {
-    position: relative;
-    display: inline-block;
-    margin-left: .25em;
-    color: inherit;
-    letter-spacing: 1px;
-    transform: scale(.85);
-    opacity: $thin_text_opacity;
+	position: relative;
+	display: inline-block;
+	margin-left: .25em;
+	color: inherit;
+	letter-spacing: 1px;
+	transform: scale(.85);
+	opacity: $thin_text_opacity;
 }
-
-// .cat-post-count {
-//     margin-left: 2px;
-// }

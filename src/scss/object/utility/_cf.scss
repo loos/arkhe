@@ -1,11 +1,11 @@
 .u-cf {
-    clear: both !important;
+	clear: both !important;
 }
 
 .u-cf--after::after {
-    display: block;
-    clear: both;
-    height: 0;
-    visibility: hidden;
-    content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	content: "";
 }

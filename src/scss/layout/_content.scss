@@ -1,37 +1,37 @@
 //コンテンツエリア
 .l-content {
-    position: relative;
-    z-index: 0;
-    flex: 1 0 auto;
-    // overflow: hidden;
-    // [data-sidebar="off"] & {
-    //     overflow: hidden;
-    // }
+	position: relative;
+	z-index: 0;
+	flex: 1 0 auto;
+	// overflow: hidden;
+	// [data-sidebar="off"] & {
+	//     overflow: hidden;
+	// }
 
-    // (iPhoneだけ？)bodyのoverflow-x: hidden;が効かないのでこっちに。（追尾サイドバーのstickyがあるのでPCサイズではhiddenしない。）
-    @include sp {
-        overflow-x: hidden;
-    }
+	// (iPhoneだけ？)bodyのoverflow-x: hidden;が効かないのでこっちに。（追尾サイドバーのstickyがあるのでPCサイズではhiddenしない。）
+	@include sp {
+		overflow-x: hidden;
+	}
 
 }
 
 .l-content__body {
 
-    margin: 3rem auto;
+	margin: 3rem auto;
 
-    .home.page & {
-        // フロントページでは上下のマージン0に。
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+	.home.page & {
+		// フロントページでは上下のマージン0に。
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-    [data-sidebar="on"] & {
+	[data-sidebar="on"] & {
 
-        @include pc {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-    }
+		@include pc {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
 }
 

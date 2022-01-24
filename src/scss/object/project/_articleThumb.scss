@@ -1,19 +1,18 @@
-
 .p-entry__thumb {
-    width: 100%;
-    margin: 2rem 0 0;
-    text-align: center;
+	width: 100%;
+	margin: 2rem 0 0;
+	text-align: center;
 }
 
 .p-entry__thumb__img {
-    display: block;
-    width: 100%;
+	display: block;
+	width: 100%;
 }
 
 .p-entry__thumb__figcaption {
-    margin-top: .75rem;
-    font-size: .9rem;
-    text-align: center;
+	margin-top: .75rem;
+	font-size: .9rem;
+	text-align: center;
 
-    @extend %figcaption;
+	@extend %figcaption;
 }

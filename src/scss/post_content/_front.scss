@@ -3,25 +3,25 @@
 // マージン
 .c-postContent {
 
-    margin: 0;
-    padding: 0;
-    line-height: var(--ark-line_height, 1.8);
+	margin: 0;
+	padding: 0;
+	line-height: var(--ark-line_height, 1.8);
 
-    & > * {
-        margin-top: var(--ark-mt);
-        margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
-    }
+	> * {
+		margin-top: var(--ark-mt);
+		margin-bottom: 0; //コアのスタイルで margin-bottom の指定があったりするので打ち消しておく
+	}
 
-    .l-main__body > & {
-        margin-top: 4rem;
-    }
+	.l-main__body > & {
+		margin-top: 4rem;
+	}
 
 
-    .c-pageTitle + & {
-        margin-top: 0;
-    }
+	.c-pageTitle + & {
+		margin-top: 0;
+	}
 
-    @import "./post_content";
+	@import "./post_content";
 
 }
 
@@ -32,10 +32,10 @@
 .c-postContent .wp-block-cover__inner-container,
 .c-postContent .wp-block-group__inner-container {
 
-    & > * {
-        margin-top: var(--ark-mt--s);
-        margin-bottom: 0;
-    }
+	> * {
+		margin-top: var(--ark-mt--s);
+		margin-bottom: 0;
+	}
 }
 
 // マージン通常コンテンツと同じエリアに広げる : 幅広のカバー・グループ
@@ -44,15 +44,15 @@
 .alignwide > .wp-block-group__inner-container,
 .alignfull > .wp-block-group__inner-container {
 
-    & > * {
-        margin-top: var(--ark-mt);
-    }
+	> * {
+		margin-top: var(--ark-mt);
+	}
 }
 
 
 // 先頭要素は上側のマージンを打ち消す。
 .c-postContent > :first-child,
 .c-postContent div > :first-child {
-    margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 

@@ -1,46 +1,46 @@
 //プルクォート
 .wp-block-pullquote {
-    // float: none !important; //ブロックエディター側にも届くように
-    // width: 100%;
-    padding: 2rem 0;
-    text-align: center;
-    border-top: solid 2px currentColor;
-    border-bottom: solid 2px currentColor;
+	// float: none !important; //ブロックエディター側にも届くように
+	// width: 100%;
+	padding: 2rem 0;
+	text-align: center;
+	border-top: solid 2px currentColor;
+	border-bottom: solid 2px currentColor;
 
-    &.alignleft {
-        float: none;
-        max-width: 100%;
-        text-align: left;
-    }
+	&.alignleft {
+		float: none;
+		max-width: 100%;
+		text-align: left;
+	}
 
-    &.alignright {
-        float: none;
-        max-width: 100%;
-        text-align: right;
-    }
+	&.alignright {
+		float: none;
+		max-width: 100%;
+		text-align: right;
+	}
 
-    & > blockquote {
-        margin: 0;
-        padding: .5rem;
-        background: none;
-        border-left: none !important;
-    }
+	> blockquote {
+		margin: 0;
+		padding: .5rem;
+		background: none;
+		border-left: none !important;
+	}
 
-    p {
-        font-size: 1.2rem !important; //align付きやsolid styleで上書きされてしまう
-    }
+	p {
+		font-size: 1.2rem !important; //align付きやsolid styleで上書きされてしまう
+	}
 
-    a {
-        text-decoration: underline;
-    }
+	a {
+		text-decoration: underline;
+	}
 
-    &.is-style-solid-color {
-        padding: 2rem;
-        background-color: var(--ark-color_gray);
+	&.is-style-solid-color {
+		padding: 2rem;
+		background-color: var(--ark-color_gray);
 
-        blockquote {
-            max-width: 100%;
-            text-align: inherit;
-        }
-    }
+		blockquote {
+			max-width: 100%;
+			text-align: inherit;
+		}
+	}
 }

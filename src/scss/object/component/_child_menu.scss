@@ -2,45 +2,45 @@
 
 %w_Ul {
 
-    a {
-        position: relative;
-    }
+	a {
+		position: relative;
+	}
 
-    // a + ul がある時
-    a:not(:last-child) {
+	// a + ul がある時
+	a:not(:last-child) {
 
-        padding-right: 3rem;
+		padding-right: 3rem;
 
-        @include tab {
-            padding-right: 40px;
-        }
-    }
+		@include tab {
+			padding-right: 40px;
+		}
+	}
 }
 
 %w_childUl {
-    position: relative;
-    height: 0;
-    margin: 0;
-    overflow: hidden;
-    visibility: hidden;
-    opacity: 0;
-    transition: .25s;
+	position: relative;
+	height: 0;
+	margin: 0;
+	overflow: hidden;
+	visibility: hidden;
+	opacity: 0;
+	transition: .25s;
 
-    &.is-opened {
-        height: auto;
-        visibility: visible;
-        opacity: 1;
-    }
+	&.is-opened {
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+	}
 
-    a {
-        padding-left: 1.5rem;
-        font-size: .9em; //em
-    }
+	a {
+		padding-left: 1.5rem;
+		font-size: .9em; //em
+	}
 
-    // さらに子メニュー
-    ul a {
-        padding-left: 2.5rem;
-    }
+	// さらに子メニュー
+	ul a {
+		padding-left: 2.5rem;
+	}
 
 }
 
@@ -48,12 +48,12 @@
 .c-drawerNav,
 .c-gnav .sub-menu {
 
-    @extend %w_Ul;
+	@extend %w_Ul;
 
-    .sub-menu {
+	.sub-menu {
 
-        @extend %w_childUl;
-    }
+		@extend %w_childUl;
+	}
 }
 
 // ウィジェット系
@@ -61,24 +61,24 @@
 .widget_categories,
 .widget_pages {
 
-    @extend %w_Ul;
+	@extend %w_Ul;
 
-    .children {
+	.children {
 
-        @extend %w_childUl;
+		@extend %w_childUl;
 
-    }
+	}
 }
 
 // ナビメニュー
 .widget_nav_menu {
 
-    @extend %w_Ul;
+	@extend %w_Ul;
 
-    .sub-menu {
+	.sub-menu {
 
-        @extend %w_childUl;
-    }
+		@extend %w_childUl;
+	}
 
 }
 

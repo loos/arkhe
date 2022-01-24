@@ -2,34 +2,29 @@
 [data-type="core/quote"],
 [data-type="core/pullquote"] {
 
-    p {
-        margin-bottom: 0 !important;
-    }
+	p {
+		margin-bottom: 0 !important;
+	}
 
-    p:first-child {
-        margin-top: 0 !important;
-    }
+	p:first-child {
+		margin-top: 0 !important;
+	}
 
-    p + p {
-        margin-top: 1rem;
-    }
-
+	p + p {
+		margin-top: 1rem;
+	}
 }
 
 // cite
 .wp-block-quote__citation,
 .wp-block-pullquote__citation {
-    margin-top: 1rem;
+	margin-top: 1rem;
 }
 
 .wp-block-quote.is-style-large {
 
-    &::after {
-        left: initial;
-    }
+	&::after {
+		left: initial;
+	}
 }
 
-// [data-type="core/pullquote"] {
-
-//     .wp-block-pullquote{}
-// }

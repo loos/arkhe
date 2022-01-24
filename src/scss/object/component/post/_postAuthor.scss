@@ -1,25 +1,25 @@
 // 著者部分
 .c-postAuthor {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 a.c-postAuthor:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .c-postAuthor__figure {
-    width: 16px;
-    height: 16px;
-    margin-right: .25rem;
-    margin-left: 1px;
-    overflow: hidden;
-    border-radius: 50%;
+	width: 16px;
+	height: 16px;
+	margin-right: .25rem;
+	margin-left: 1px;
+	overflow: hidden;
+	border-radius: 50%;
 
-    .avatar {
+	.avatar {
 
-        @extend .u-obf-cover;
-    }
+		@extend .u-obf-cover;
+	}
 }
 
 // .c-postAuthor__name {}

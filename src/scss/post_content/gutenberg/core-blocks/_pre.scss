@@ -1,27 +1,27 @@
 .wp-block-code {
-    background-color: var(--ark-color_gray);
-    border: none;
+	background-color: var(--ark-color_gray);
+	border: none;
 
-    .block-editor-plain-text {
-        display: block;
-        margin: 0;
-        padding: 1rem;
-        overflow-x: auto !important;
-        font-size: .9rem;
-        white-space: pre;
-        background: none;
-    }
+	.block-editor-plain-text {
+		display: block;
+		margin: 0;
+		padding: 1rem;
+		overflow-x: auto !important;
+		font-size: .9rem;
+		white-space: pre;
+		background: none;
+	}
 
-    code.rich-text {
-        background: none;
-    }
+	code.rich-text {
+		background: none;
+	}
 
-    > code {
-        padding: 0;
-        border: none;
-    }
+	> code {
+		padding: 0;
+		border: none;
+	}
 }
 
 .wp-block-preformatted {
-    font-family: inherit;
+	font-family: inherit;
 }

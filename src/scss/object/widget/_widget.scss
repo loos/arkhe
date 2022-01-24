@@ -1,29 +1,29 @@
 // ウィジェット基本
 .c-widget {
 
-    & + .c-widget {
-        margin-top: 2.5rem;
-    }
+	+ .c-widget {
+		margin-top: 2.5rem;
+	}
 }
 
 .c-widget__title {
-    position: relative;
-    margin-bottom: 1.25rem;
-    overflow: hidden;
-    font-weight: bold;
-    font-size: 1.25em; // em: ウィジェットエリアのサイズ感に比例させる
+	position: relative;
+	margin-bottom: 1.25rem;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 1.25em; // em: ウィジェットエリアのサイズ感に比例させる
 }
 
 
 //ウィジェットで挿入したリンク
 .textwidget {
 
-    a {
-        transition: opacity .25s;
-    }
+	a {
+		transition: opacity .25s;
+	}
 
-    a:hover {
-        text-decoration: underline;
-        opacity: .75;
-    }
+	a:hover {
+		text-decoration: underline;
+		opacity: .75;
+	}
 }

@@ -1,23 +1,23 @@
 .p-drawerUnderlayer {
-    position: fixed;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 99; //header - 1
-    width: 100%;
-    height: 100%;
-    background: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity .5s, visibility .5s;
+	position: fixed;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99; //header - 1
+	width: 100%;
+	height: 100%;
+	background: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .5s, visibility .5s;
 
 
-    [data-loaded="false"] & {
-        display: none;
-    }
+	[data-loaded="false"] & {
+		display: none;
+	}
 
-    [data-drawer="opened"] & {
-        visibility: visible;
-        opacity: 1;
-    }
+	[data-drawer="opened"] & {
+		visibility: visible;
+		opacity: 1;
+	}
 }

@@ -1,21 +1,21 @@
 
 .p-entry__head {
 
-    .c-postMetas {
-        margin-top: 1rem;
-        font-size: .75rem;
-        letter-spacing: .1px;
-    }
+	.c-postMetas {
+		margin-top: 1rem;
+		font-size: .75rem;
+		letter-spacing: .1px;
+	}
 }
 
 
 .p-entry__content.c-postContent {
-    margin-bottom: 4rem;
+	margin-bottom: 4rem;
 }
 
 .p-entry__foot {
 
-    & > .c-postMetas {
-        font-size: .8rem;
-    }
+	> .c-postMetas {
+		font-size: .8rem;
+	}
 }

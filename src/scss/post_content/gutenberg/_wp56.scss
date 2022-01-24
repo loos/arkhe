@@ -1,20 +1,20 @@
 
 .branch-5-6 {
 
-    .block-editor-media-flow__url-input {
-        overflow: hidden;
-    }
+	.block-editor-media-flow__url-input {
+		overflow: hidden;
+	}
 
-    // 画像が飛び出るバグを回避
-    .interface-interface-skeleton__editor {
-        width: 100%;
-    }
+	// 画像が飛び出るバグを回避
+	.interface-interface-skeleton__editor {
+		width: 100%;
+	}
 
-    .block-library-block__reusable-block-container {
+	.block-library-block__reusable-block-container {
 
-        .wp-block-image > div {
-            max-width: 100%;
-        }
-    }
+		.wp-block-image > div {
+			max-width: 100%;
+		}
+	}
 
 }

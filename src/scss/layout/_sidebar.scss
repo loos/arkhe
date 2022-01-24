@@ -1,20 +1,20 @@
 
 .l-sidebar {
-    position: relative;
+	position: relative;
 
-    @include pc {
-        font-size: .9rem;
-    }
+	@include pc {
+		font-size: .9rem;
+	}
 
-    @include sp {
-        margin-top: 4rem;
-    }
+	@include sp {
+		margin-top: 4rem;
+	}
 
-    [data-sidebar="on"] & {
+	[data-sidebar="on"] & {
 
-        @include pc {
-            width: 320px;
-        }
-    }
+		@include pc {
+			width: 320px;
+		}
+	}
 
 }

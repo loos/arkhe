@@ -7,125 +7,125 @@
 // ul
 .p-postList {
 
-    &.-type-simple {
-        border-top: solid 1px var(--ark-color_border);
-    }
+	&.-type-simple {
+		border-top: solid 1px var(--ark-color_border);
+	}
 
-    &.-type-card {
-        display: flex;
-        flex-wrap: wrap;
-        margin-right: -.75rem;
-        margin-left: -.75rem;
-    }
+	&.-type-card {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -.75rem;
+		margin-left: -.75rem;
+	}
 
-    .c-postContent & {
-        padding: 0;
-        list-style: none;
-    }
+	.c-postContent & {
+		padding: 0;
+		list-style: none;
+	}
 
 }
 
 // li
 .p-postList__item {
 
-    .p-postList.-type-simple & {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+	.p-postList.-type-simple & {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
-    // リスト
-    .p-postList.-type-list & {
-        margin-top: 0;
-        margin-bottom: 2rem;
-    }
-
-
-    // カード ベースは2列
-    .p-postList.-type-card & {
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 2.5rem;
-        padding: 0 .75rem;
-
-        @include tab {
-            width: 50%;
-        }
-    }
-
-    [data-sidebar="off"] .p-postList.-type-card & {
-
-        @include pc {
-            width: 33.3%;
-        }
-    }
+	// リスト
+	.p-postList.-type-list & {
+		margin-top: 0;
+		margin-bottom: 2rem;
+	}
 
 
-    // 1列にするケース
-    .is-first-big > &:first-child {
-        width: 100%;
-    }
+	// カード ベースは2列
+	.p-postList.-type-card & {
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: 2.5rem;
+		padding: 0 .75rem;
 
-    .l-sidebar .p-postList.-type-card & {
+		@include tab {
+			width: 50%;
+		}
+	}
 
-        @include pc {
-            width: 100%;
-        }
-    }
+	[data-sidebar="off"] .p-postList.-type-card & {
+
+		@include pc {
+			width: 33.3%;
+		}
+	}
 
 
-    // ウィジェットエリアではマージン少し狭く
-    // .c-widget .-type-card & {
-    //     margin-bottom: 2rem;
-    // }
-    // .c-widget .-type-list & {
-    //     margin-bottom: 1.5rem;
-    // }
+	// 1列にするケース
+	.is-first-big > &:first-child {
+		width: 100%;
+	}
+
+	.l-sidebar .p-postList.-type-card & {
+
+		@include pc {
+			width: 100%;
+		}
+	}
+
+
+	// ウィジェットエリアではマージン少し狭く
+	// .c-widget .-type-card & {
+	//     margin-bottom: 2rem;
+	// }
+	// .c-widget .-type-list & {
+	//     margin-bottom: 1.5rem;
+	// }
 }
 
 
 //aタグ
 .p-postList__link {
-    position: relative;
-    z-index: 0;
-    display: block;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
+	position: relative;
+	z-index: 0;
+	display: block;
+	height: 100%;
+	color: inherit;
+	text-decoration: none;
 
-    .c-postContent & {
-        color: inherit;
-    }
+	.c-postContent & {
+		color: inherit;
+	}
 
-    &:hover {
+	&:hover {
 
-        .c-postThumb::before {
-            opacity: .1;
-        }
+		.c-postThumb::before {
+			opacity: .1;
+		}
 
-        .c-postThumb__img {
-            transform: scale(1.15);
-        }
-    }
-
-
-    .p-postList.-type-simple & {
-        display: block;
-        padding: .75rem .5rem;
-        border-bottom: solid 1px var(--ark-color_border);
-        transition: background-color .25s;
-
-        &:hover {
-            // background-color: rgba(150, 150, 150, .05);
-            background-color: var(--ark-color_gray);
-        }
-    }
+		.c-postThumb__img {
+			transform: scale(1.15);
+		}
+	}
 
 
-    .p-postList.-type-list & {
-        display: flex;
-        align-items: flex-start;
-        // justify-content: space-between;
-    }
+	.p-postList.-type-simple & {
+		display: block;
+		padding: .75rem .5rem;
+		border-bottom: solid 1px var(--ark-color_border);
+		transition: background-color .25s;
+
+		&:hover {
+			// background-color: rgba(150, 150, 150, .05);
+			background-color: var(--ark-color_gray);
+		}
+	}
+
+
+	.p-postList.-type-list & {
+		display: flex;
+		align-items: flex-start;
+		// justify-content: space-between;
+	}
 
 }
 
@@ -133,177 +133,175 @@
 // サムネイル画像
 .p-postList__thumb {
 
-    .p-postList.-type-card & {
-        width: 100%;
-    }
+	.p-postList.-type-card & {
+		width: 100%;
+	}
 
-    .p-postList.-type-list & {
-        flex-shrink: 0;
-        width: 36%;
-        max-width: 280px;
-    }
+	.p-postList.-type-list & {
+		flex-shrink: 0;
+		width: 36%;
+		max-width: 280px;
+	}
 
-    &::before {
+	&::before {
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        transform: perspective(0);
-        backface-visibility: hidden;
-        opacity: 0;
-        transition: opacity .25s;
-        content: "";
-    }
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		transform: perspective(0);
+		backface-visibility: hidden;
+		opacity: 0;
+		transition: opacity .25s;
+		content: "";
+	}
 }
 
 
 // テキスト
 .p-postList__body {
-    // backface-visibility: hidden;
-    position: relative;
-    transition: opacity .25s;
+	// backface-visibility: hidden;
+	position: relative;
+	transition: opacity .25s;
 
 
-    .p-postList.-type-card & {
-        padding-top: 1.25rem;
-    }
+	.p-postList.-type-card & {
+		padding-top: 1.25rem;
+	}
 
-    .p-postList.-type-list & {
-        flex: 1 1 auto;
-        padding-left: 1rem;
+	.p-postList.-type-list & {
+		flex: 1 1 auto;
+		padding-left: 1rem;
 
-        @include tab {
-            padding-left: 1.5rem;
-        }
-    }
+		@include tab {
+			padding-left: 1.5rem;
+		}
+	}
 
-    .-type-card > .p-postList__item:hover &,
-    .-type-list > .p-postList__item:hover & {
-        opacity: .75;
-    }
+	.-type-card > .p-postList__item:hover &,
+	.-type-list > .p-postList__item:hover & {
+		opacity: .75;
+	}
 }
 
 
 // タイトル
 .p-postList__title {
 
-    .p-postList & {
-        //ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
-        margin: 0;
-        font-weight: 700;
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
+	.p-postList & {
+		//ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
+		margin: 0;
+		font-weight: 700;
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
 
-    .p-postList.-type-simple & {
+	.p-postList.-type-simple & {
 
-        font-size: 1rem;
-    }
+		font-size: 1rem;
+	}
 
-    .p-postList.-type-list & {
+	.p-postList.-type-list & {
 
-        @include mobile {
-            font-size: 4vw;
-        }
-    }
+		@include mobile {
+			font-size: 4vw;
+		}
+	}
 
-    .-related & {
-        font-size: .9rem;
-    }
+	.-related & {
+		font-size: .9rem;
+	}
 }
 
 
 // 抜粋文
 .p-postList__excerpt {
-    margin-top: .5rem;
-    font-size: .8rem;
-    // font-size: 3vw;
-    line-height: 1.6;
+	margin-top: .5rem;
+	font-size: .8rem;
+	// font-size: 3vw;
+	line-height: 1.6;
 
-    @include tab {
-        font-size: .8rem;
-    }
+	@include tab {
+		font-size: .8rem;
+	}
 
-    // .p-postList.-type-list & {}
-
-    // .p-postList.-type-card & {}
-
+	// .p-postList.-type-list & {}
+	// .p-postList.-type-card & {}
 }
 
 
 // メタ情報
 .p-postList__meta {
-    position: relative;
-    margin-top: .5rem;
-    font-size: 10px;
-    letter-spacing: .1px;
+	position: relative;
+	margin-top: .5rem;
+	font-size: 10px;
+	letter-spacing: .1px;
 
-    .p-postList__title + & {
-        margin-top: .25rem;
-    }
+	.p-postList__title + & {
+		margin-top: .25rem;
+	}
 
-    @include tab {
-        font-size: 11px;
-    }
+	@include tab {
+		font-size: 11px;
+	}
 
-    .p-postList.-type-simple & {
-        margin: 0 0 .25rem;
-    }
+	.p-postList.-type-simple & {
+		margin: 0 0 .25rem;
+	}
 
 }
 
 .p-postList__category {
-    margin-right: .5rem;
+	margin-right: .5rem;
 }
 
 .p-postList.-type-simple .p-postList__author {
-    padding: 0;
+	padding: 0;
 }
 
 
 // 関連記事
 .p-postList.-related {
 
-    &.-type-card {
+	&.-type-card {
 
-        @include mobile {
-            margin-right: -.5rem;
-            margin-left: -.5rem;
-        }
+		@include mobile {
+			margin-right: -.5rem;
+			margin-left: -.5rem;
+		}
 
-        .p-postList__item {
-            width: 50%;
-            margin-bottom: 1.5rem;
+		.p-postList__item {
+			width: 50%;
+			margin-bottom: 1.5rem;
 
-            @include mobile {
-                padding: 0 .5rem;
-            }
+			@include mobile {
+				padding: 0 .5rem;
+			}
 
-            @include pc {
-                width: 33.33%;
-            }
-        }
+			@include pc {
+				width: 33.33%;
+			}
+		}
 
-    }
+	}
 
-    &.-type-list {
+	&.-type-list {
 
-        // サイズ小さくする？
-        .p-postList__thumb {
-            max-width: 240px;
-        }
-    }
+		// サイズ小さくする？
+		.p-postList__thumb {
+			max-width: 240px;
+		}
+	}
 }
 
 // インフィード
 @include mobile {
 
-    .p-postList.-type-card .c-infeedAd {
-        width: 100%;
-    }
+	.p-postList.-type-card .c-infeedAd {
+		width: 100%;
+	}
 }

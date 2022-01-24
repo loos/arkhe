@@ -1,14 +1,14 @@
 // ファイルブロック
 [data-type="core/file"] {
 
-    .wp-block-file__textlink {
-        color: var(--ark-color_link);
-        text-decoration: underline;
+	.wp-block-file__textlink {
+		color: var(--ark-color_link);
+		text-decoration: underline;
 
-        div::before {
-            font-family: arkhe-icon;
-            letter-spacing: -2px;
-            content: "\e908\0020";
-        }
-    }
+		div::before {
+			font-family: arkhe-icon;
+			letter-spacing: -2px;
+			content: "\e908\0020";
+		}
+	}
 }

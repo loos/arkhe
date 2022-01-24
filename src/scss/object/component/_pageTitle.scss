@@ -1,49 +1,49 @@
 // .c-pageTitle {}
 
 .c-pageTitle__main {
-    position: relative;
-    font-weight: 700;
-    font-size: 1.75rem;
-    line-height: 1.5;
+	position: relative;
+	font-weight: 700;
+	font-size: 1.75rem;
+	line-height: 1.5;
 
-    @include tab {
-        font-size: 2rem;
-    }
+	@include tab {
+		font-size: 2rem;
+	}
 }
 
 .c-pageTitle__sub {
-    position: relative;
-    font-weight: normal;
-    font-size: .9rem;
-    font-style: italic;
-    vertical-align: middle;
+	position: relative;
+	font-weight: normal;
+	font-size: .9rem;
+	font-style: italic;
+	vertical-align: middle;
 
-    &::before,
-    &::after {
-        margin: 0 1em;
-        vertical-align: baseline;
-        content: "–";
-    }
+	&::before,
+	&::after {
+		margin: 0 1em;
+		vertical-align: baseline;
+		content: "–";
+	}
 }
 
 //コンテンツ内 表示時
 .p-page__title,
 .p-archive__title {
-    margin-bottom: 2.5rem;
+	margin-bottom: 2.5rem;
 }
 
 .p-404__title {
-    padding-top: 2rem;
-    font-size: 1.5rem;
-    text-align: center;
+	padding-top: 2rem;
+	font-size: 1.5rem;
+	text-align: center;
 }
 
 .c-secTitle,
 .c-bottomSection__title {
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
 
-    @include sp {
-        font-size: 1.25rem; // ウィジェットタイトルの大きさと同じ
-    }
+	@include sp {
+		font-size: 1.25rem; // ウィジェットタイトルの大きさと同じ
+	}
 }

@@ -4,99 +4,99 @@
 */
 
 .wp-block-media-text {
-    --ark-mediatext--space: 1.5rem; // 余白量
-    --ark-mediatext--gap: var(--ark-mediatext--space); // gap
-    --ark-mediatext--offsetX: var(--ark-mediatext--space); // 左右の余白量
-    --ark-mediatext--offsetY: var(--ark-mediatext--space); // 上下の余白量
+	--ark-mediatext--space: 1.5rem; // 余白量
+	--ark-mediatext--gap: var(--ark-mediatext--space); // gap
+	--ark-mediatext--offsetX: var(--ark-mediatext--space); // 左右の余白量
+	--ark-mediatext--offsetY: var(--ark-mediatext--space); // 上下の余白量
 
-    @media (max-width: 600px) {
-        --ark-mediatext--space: 1rem;
-    }
+	@media (max-width: 600px) {
+		--ark-mediatext--space: 1rem;
+	}
 
-    gap: var(--ark-mediatext--gap);
+	gap: var(--ark-mediatext--gap);
 
-    .wp-block-media-text__content {
-        padding: 0; // core の 0 8% を打ち消す
-    }
+	.wp-block-media-text__content {
+		padding: 0; // core の 0 8% を打ち消す
+	}
 
-    // 全幅のとき、テキストの端に余白をとる。
-    &.alignfull {
+	// 全幅のとき、テキストの端に余白をとる。
+	&.alignfull {
 
-        // デバイス幅広めのときに余白感も広くする
-        @media (min-width: 1200px) {
-            --ark-mediatext--space: 2rem;
-        }
+		// デバイス幅広めのときに余白感も広くする
+		@media (min-width: 1200px) {
+			--ark-mediatext--space: 2rem;
+		}
 
-        // コンテンツ右のときは右に余白
-        &:not(.has-media-on-the-right) .wp-block-media-text__content {
-            margin-right: var(--ark-mediatext--offsetX);
-        }
+		// コンテンツ右のときは右に余白
+		&:not(.has-media-on-the-right) .wp-block-media-text__content {
+			margin-right: var(--ark-mediatext--offsetX);
+		}
 
-        // コンテンツ左のときは左に余白
-        &.has-media-on-the-right .wp-block-media-text__content {
-            margin-left: var(--ark-mediatext--offsetX);
-        }
-    }
+		// コンテンツ左のときは左に余白
+		&.has-media-on-the-right .wp-block-media-text__content {
+			margin-left: var(--ark-mediatext--offsetX);
+		}
+	}
 
-    &.has-background {
-        --ark-mediatext--gap: 0; // gapなし
-        --ark-mediatext--offsetX: 0; // 全幅時の左右マージンなし
-        --ark-mediatext--offsetY: 0; // 上下マージンなし
+	&.has-background {
+		--ark-mediatext--gap: 0; // gapなし
+		--ark-mediatext--offsetX: 0; // 全幅時の左右マージンなし
+		--ark-mediatext--offsetY: 0; // 上下マージンなし
 
-        .wp-block-media-text__content {
-            padding: var(--ark-mediatext--space); // 背景色付きのときは全方向にpadding
-        }
-    }
+		.wp-block-media-text__content {
+			padding: var(--ark-mediatext--space); // 背景色付きのときは全方向にpadding
+		}
+	}
 }
 
 
 .wp-block-media-text__media img {
-    display: block;
+	display: block;
 }
 
 // 画像切り抜き時
 .is-image-fill {
 
-    // .wp-block-media-text
-    > .wp-block-media-text__content {
-        margin-top: var(--ark-mediatext--offsetY);
-        margin-bottom: var(--ark-mediatext--offsetY);
-    }
+	// .wp-block-media-text
+	> .wp-block-media-text__content {
+		margin-top: var(--ark-mediatext--offsetY);
+		margin-bottom: var(--ark-mediatext--offsetY);
+	}
 
-    // スマホでの高さを調整
-    > .wp-block-media-text__media {
+	// スマホでの高さを調整
+	> .wp-block-media-text__media {
 
-        @media (max-width: 600px) {
-            min-height: 56vw;
-        }
-    }
+		@media (max-width: 600px) {
+			min-height: 56vw;
+		}
+	}
 }
 
 .is-vertically-aligned-top > .wp-block-media-text__content {
-    margin-top: var(--ark-mediatext--offsetY);
+	margin-top: var(--ark-mediatext--offsetY);
 }
 
 .is-vertically-aligned-bottom > .wp-block-media-text__content {
-    margin-bottom: var(--ark-mediatext--offsetY);
+	margin-bottom: var(--ark-mediatext--offsetY);
 }
 
 
 // 「モバイルで重ねる」の対応
 @media (max-width: 600px) {
 
-    .wp-block-media-text.is-stacked-on-mobile {
-        --ark-mediatext--gap: 0; // gapなし
-        --ark-mediatext--offsetX: 0; // 全幅時の左右マージンなし
-        --ark-mediatext--offsetY: 0; // 上下マージンなし
+	.wp-block-media-text.is-stacked-on-mobile {
+		--ark-mediatext--gap: 0; // gapなし
+		--ark-mediatext--offsetX: 0; // 全幅時の左右マージンなし
+		--ark-mediatext--offsetY: 0; // 上下マージンなし
 
-        .wp-block-media-text__media {
-            grid-row: 1 !important; //画像を上に。
-        }
+		.wp-block-media-text__media {
+			grid-row: 1 !important; //画像を上に。
+		}
 
-        .wp-block-media-text__content {
-            grid-row: 2 !important;
-            padding: var(--ark-mediatext--space); // 全方向にpadding
-        }
-    }
+		.wp-block-media-text__content {
+			grid-row: 2 !important;
+			padding: var(--ark-mediatext--space); // 全方向にpadding
+		}
+	}
 
 }

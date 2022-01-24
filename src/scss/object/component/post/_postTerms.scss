@@ -1,13 +1,13 @@
 // .c-postTerms {}
 
 .c-postTerms__item {
-    margin-right: .25rem;
+	margin-right: .25rem;
 }
 
 .c-postTerms__link {
-    display: block;
-    margin-right: .25rem;
-    color: inherit;
+	display: block;
+	margin-right: .25rem;
+	color: inherit;
 
 }
 
@@ -15,18 +15,18 @@
 .p-entry__head {
 
 
-    // .c-postTerms__item {}
+	// .c-postTerms__item {}
 
-    .c-postTerms__link:not(:hover) {
-        text-decoration: none;
-    }
+	.c-postTerms__link:not(:hover) {
+		text-decoration: none;
+	}
 
-    .c-postTerms__link:not(:last-child) {
+	.c-postTerms__link:not(:last-child) {
 
-        &::after {
-            content: ",";
-        }
-    }
+		&::after {
+			content: ",";
+		}
+	}
 
 }
 
@@ -34,41 +34,41 @@
 // 投稿ページ下部での見た目
 .p-entry__foot {
 
-    .c-postTerms__link {
-        position: relative;
-        display: block;
-        margin-right: .5rem;
-        margin-bottom: .5rem;
-        padding: 6px 8px;
-        color: #333;
-        line-height: 1;
-        text-decoration: none;
-        background: #f7f7f7;
-        border: none;
-        transition: opacity .25s;
+	.c-postTerms__link {
+		position: relative;
+		display: block;
+		margin-right: .5rem;
+		margin-bottom: .5rem;
+		padding: 6px 8px;
+		color: #333;
+		line-height: 1;
+		text-decoration: none;
+		background: #f7f7f7;
+		border: none;
+		transition: opacity .25s;
 
-        &:hover {
-            opacity: .75;
-        }
-    }
+		&:hover {
+			opacity: .75;
+		}
+	}
 
-    .-category > .c-postTerms__link {
+	.-category > .c-postTerms__link {
 
-        &::before {
+		&::before {
 
-            margin-right: .25rem;
+			margin-right: .25rem;
 
-            @extend %arkheIcon;
-            @extend .arkhe-icon-folder::before;
-        }
-    }
+			@extend %arkheIcon;
+			@extend .arkhe-icon-folder::before;
+		}
+	}
 
-    .-tag > .c-postTerms__link {
+	.-tag > .c-postTerms__link {
 
-        &::before {
-            letter-spacing: 2px;
-            content: "#";
-        }
-    }
+		&::before {
+			letter-spacing: 2px;
+			content: "#";
+		}
+	}
 
 }

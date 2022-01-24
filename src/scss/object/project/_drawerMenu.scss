@@ -3,158 +3,149 @@
 // メニュークローズ時
 [data-drawer="closed"] {
 
-    .p-drawer {
-        visibility: hidden;
-        opacity: 0;
-        pointer-events: none;
-    }
+	.p-drawer {
+		visibility: hidden;
+		opacity: 0;
+		pointer-events: none;
+	}
 }
 // メニューオープン時
 [data-drawer="opened"] {
 
-    body {
-        // ( iOSでスクロールできてしまうことはひとまず無視 )
-        // @include sp {
-        // height: 100%;
-        overflow-y: hidden;
-        touch-action: none;
-        // }
-    }
+	body {
+		// ( iOSでスクロールできてしまうことはひとまず無視 )
+		// @include sp {
+		// height: 100%;
+		overflow-y: hidden;
+		touch-action: none;
+		// }
+	}
 
-    .l-header__left,
-    .l-header__center,
-    .l-header__right,
-    .l-header__searchBtn {
-        pointer-events: none;
-    }
+	.l-header__left,
+	.l-header__center,
+	.l-header__right,
+	.l-header__searchBtn {
+		pointer-events: none;
+	}
 
 }
 
 
 //メニュー
 .p-drawer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1; //ロゴなどより上に
-    width: 100%;
-    height: 100%;
-    padding: var(--ark-header_height) 0 1rem;
-    color: #fff;
-    font-size: .9rem;
-    background: rgba(#000, .92);
-    transition: opacity .5s, visibility .5s;
-    pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1; //ロゴなどより上に
+	width: 100%;
+	height: 100%;
+	padding: var(--ark-header_height) 0 1rem;
+	color: #fff;
+	font-size: .9rem;
+	background: rgba(#000, .92);
+	transition: opacity .5s, visibility .5s;
+	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
-    --ark-nav-padding: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
-    --ark-color_border: rgba(255, 255, 255, .15);
+	--ark-nav-padding: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
+	--ark-color_border: rgba(255, 255, 255, .15);
 
-    @include pc {
-        padding-bottom: var(--ark-header_height);
-    }
+	@include pc {
+		padding-bottom: var(--ark-header_height);
+	}
 
-    [data-loaded="false"] & {
-        display: none;
-    }
+	[data-loaded="false"] & {
+		display: none;
+	}
 
-    a {
-        color: inherit;
-    }
+	a {
+		color: inherit;
+	}
 
-    .admin-bar & {
-        top: var(--ark-adminbar_height);
-        height: calc(100% - var(--ark-adminbar_height));
-    }
+	.admin-bar & {
+		top: var(--ark-adminbar_height);
+		height: calc(100% - var(--ark-adminbar_height));
+	}
 }
 
 .p-drawer__inner {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    pointer-events: auto; // 内部のリンクなどをクリックできるように。
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	pointer-events: auto; // 内部のリンクなどをクリックできるように。
 }
 
 .p-drawer__body {
-    position: relative;
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 4vw 6vw;
+	position: relative;
+	max-width: 560px;
+	margin: 0 auto;
+	padding: 4vw 6vw;
 
-    @include pc {
-        padding: 2rem;
-    }
+	@include pc {
+		padding: 2rem;
+	}
 
 }
 
 .c-drawerNav {
-    display: block;
-    text-align: left;
-    border-top: 1px solid var(--ark-color_border);
+	display: block;
+	text-align: left;
+	border-top: 1px solid var(--ark-color_border);
 
-    .menu-item {
-        position: relative;
-    }
+	.menu-item {
+		position: relative;
+	}
 
-    & > .menu-item:first-child > a {
-        border-top: none;
-    }
+	> .menu-item:first-child > a {
+		border-top: none;
+	}
 
-    a {
-        position: relative;
-        display: block;
-        padding: var(--ark-nav-padding, .75rem .5rem);
-        text-decoration: none;
-        border-bottom: 1px solid var(--ark-color_border);
-        outline-offset: -3px;
-        transition: background-color .25s;
+	a {
+		position: relative;
+		display: block;
+		padding: var(--ark-nav-padding, .75rem .5rem);
+		text-decoration: none;
+		border-bottom: 1px solid var(--ark-color_border);
+		outline-offset: -3px;
+		transition: background-color .25s;
 
-        @include pc {
+		@include pc {
 
-            &:hover {
-                // background-color: rgba(255, 255, 255, .1);
-                background-color: var(--ark-hover_gray);
-            }
-        }
-    }
+			&:hover {
+				// background-color: rgba(255, 255, 255, .1);
+				background-color: var(--ark-hover_gray);
+			}
+		}
+	}
 
-    .__subText {
-        margin-left: 1em;
-        font-size: .75em;
-        opacity: .6;
-    }
+	.__subText {
+		margin-left: 1em;
+		font-size: .75em;
+		opacity: .6;
+	}
 }
 
 // menuアイコンだけを見せたい
 [data-drawer-move="fade"] {
 
-    &[data-drawer="opened"] {
+	&[data-drawer="opened"] {
 
-        .l-header__drawerBtn {
-            color: #fff;
-        }
-    }
+		.l-header__drawerBtn {
+			color: #fff;
+		}
+	}
 }
 
-
 .p-drawer__close {
+	margin: 1rem auto .5em;
+	color: inherit;
+	background: none;
+	border: none;
 
-    // position: absolute;
-    // top: 100%;
-    // left: 50%;
-    // display: flex;
-    // align-items: center;
-    margin: 1rem auto .5em;
-    color: inherit;
-    background: none;
-    border: none;
-    // transform: translateX(-50%);
-
-    i {
-        margin-right: .5em;
-        line-height: 1;
-    }
-
+	i {
+		margin-right: .5em;
+		line-height: 1;
+	}
 }

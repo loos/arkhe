@@ -1,47 +1,46 @@
 //画像フィルター
 .c-filterLayer {
-    // position: relative;
-    z-index: 0;
+	z-index: 0;
 
-    &::before {
+	&::before {
 
-        @extend %absLayer;
-        z-index: 1;
-    }
+		@extend %absLayer;
+		z-index: 1;
+	}
 
-    &::after {
+	&::after {
 
-        @extend %absLayer;
-        z-index: 2;
-        display: block;
-    }
+		@extend %absLayer;
+		z-index: 2;
+		display: block;
+	}
 
-    &.-filter-none {
+	&.-filter-none {
 
-        &::before,
-        &::after {
-            content: none;
-        }
-    }
+		&::before,
+		&::after {
+			content: none;
+		}
+	}
 
-    &.-filter-dot::after {
-        background-color: rgba(0, 0, 0, .1);
-        background-image: url(../../assets/img/dot_texture.png);
-        background-size: 2px;
-        opacity: .5;
-    }
+	&.-filter-dot::after {
+		background-color: rgba(0, 0, 0, .1);
+		background-image: url(../../assets/img/dot_texture.png);
+		background-size: 2px;
+		opacity: .5;
+	}
 
 }
 
 .c-filterLayer__img {
 
-    @extend %absLayer;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    backface-visibility: hidden;
-    // transform: perspective(0);
-    & > img {
-        width: 100%;
-    }
+	@extend %absLayer;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	backface-visibility: hidden;
+	// transform: perspective(0);
+	& > img {
+		width: 100%;
+	}
 }

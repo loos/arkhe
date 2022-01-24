@@ -3,48 +3,38 @@
 .mce-content-body,
 .editor-styles-wrapper {
 
-    @import "./post_content";
+	@import "./post_content";
 
-    // li {
-    // 前後のブロックまでフォーカスがぶっとんでいくの防止
-    // line-height: 1.5;
+	// エディターではどちらも表示させる（編集できるように）
+	.u-only-pc,
+	.u-only-sp {
+		display: block !important;
 
-    //relativeだと スマホで日本語入力できなくなる。（スタイルは崩れるので、バグフィックスされたら外す。）
-    // @include mobile {
-    //     position: static;
-    // }
-    // }
+		&.wp-block-columns {
+			display: flex !important;
+		}
 
-    // エディターではどちらも表示させる（編集できるように）
-    .u-only-pc,
-    .u-only-sp {
-        display: block !important;
-
-        &.wp-block-columns {
-            display: flex !important;
-        }
-
-        &.wp-block-media-text {
-            display: grid !important;
-        }
-    }
+		&.wp-block-media-text {
+			display: grid !important;
+		}
+	}
 
 
-    @include pc {
+	@include pc {
 
-        .u-only-sp {
-            opacity: .5;
-        }
-    }
+		.u-only-sp {
+			opacity: .5;
+		}
+	}
 
-    @include sp {
+	@include sp {
 
-        .u-only-pc {
-            opacity: .5;
-        }
-    }
+		.u-only-pc {
+			opacity: .5;
+		}
+	}
 
-    // コアのCSSで auto にされるので詳細度高めに上書き
-    // img.u-obf-cover, img.u-obf-contain {height: 100%;}
+	// コアのCSSで auto にされるので詳細度高めに上書き
+	// img.u-obf-cover, img.u-obf-contain {height: 100%;}
 }
 
