@@ -6,6 +6,13 @@
 
 // ul
 .p-postList {
+	margin: 0;
+
+	// 詳細度高める
+	&.p-postList {
+		padding: 0;
+		list-style: none;
+	}
 
 	&.-type-simple {
 		border-top: solid 1px var(--ark-color_border);
@@ -18,10 +25,6 @@
 		margin-left: -.75rem;
 	}
 
-	.c-postContent & {
-		padding: 0;
-		list-style: none;
-	}
 
 }
 
@@ -42,33 +45,32 @@
 
 	// カード ベースは2列
 	.p-postList.-type-card & {
-		width: 100%;
+		flex-basis: 100%;
 		margin-top: 0;
 		margin-bottom: 2.5rem;
 		padding: 0 .75rem;
 
 		@include tab {
-			width: 50%;
+			flex-basis: 50%;
 		}
 	}
 
 	[data-sidebar="off"] .p-postList.-type-card & {
 
 		@include pc {
-			width: 33.3%;
+			flex-basis: 33.3%;
 		}
 	}
 
-
 	// 1列にするケース
-	.is-first-big > &:first-child {
-		width: 100%;
-	}
+	// .is-first-big > &:first-child {
+	// 	flex-basis: 100%;
+	// }
 
 	.l-sidebar .p-postList.-type-card & {
 
 		@include pc {
-			width: 100%;
+			flex-basis: 100%;
 		}
 	}
 
@@ -88,12 +90,11 @@
 	position: relative;
 	z-index: 0;
 	display: block;
-	height: 100%;
-	color: inherit;
-	text-decoration: none;
 
-	.c-postContent & {
+	// 詳細度高める
+	.p-postList & {
 		color: inherit;
+		text-decoration: none;
 	}
 
 	&:hover {
@@ -107,6 +108,9 @@
 		}
 	}
 
+	.p-postList.-type-card & {
+		height: 100%;
+	}
 
 	.p-postList.-type-simple & {
 		display: block;
@@ -193,7 +197,7 @@
 .p-postList__title {
 
 	.p-postList & {
-		//ショートコードでの呼び出し時（.c-postContent > h2）も考慮し、 .p-postList つけて詳細度アップ
+		// 詳細度高める（ショートコードでの呼び出し時（.c-postContent > h2）も考慮
 		margin: 0;
 		font-weight: 700;
 		font-size: 1.1rem;
@@ -299,9 +303,9 @@
 }
 
 // インフィード
-@include mobile {
+// @include mobile {
 
-	.p-postList.-type-card .c-infeedAd {
-		width: 100%;
-	}
-}
+// 	.p-postList.-type-card .c-infeedAd {
+// 		flex-basis: 100%;
+// 	}
+// }
