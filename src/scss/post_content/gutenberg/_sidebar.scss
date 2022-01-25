@@ -17,7 +17,6 @@
 
 		button {
 			width: 28px;
-			height: 28px;
 		}
 
 		.handlediv {
@@ -28,6 +27,7 @@
 		.order-lower-indicator {
 
 			&::before {
+				top: 0; // コアの .11remを 打ち消す
 				font-size: 16px;
 			}
 		}
