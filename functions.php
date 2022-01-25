@@ -80,7 +80,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 		require_once ARKHE_THEME_PATH . '/inc/widget.php';
 
 		// Gutenberg
-		// require_once ARKHE_THEME_PATH . '/inc/gutenberg.php';
+		require_once ARKHE_THEME_PATH . '/inc/gutenberg.php';
 
 		// クラシックエディター
 		require_once ARKHE_THEME_PATH . '/inc/tinymce.php';

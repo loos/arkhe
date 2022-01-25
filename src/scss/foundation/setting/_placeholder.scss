@@ -42,3 +42,12 @@
 	-moz-osx-font-smoothing: grayscale;
 	// vertical-align: bottom;
 }
+
+// ウィジェットタイトル
+%widgetTitle {
+	position: relative;
+	margin-bottom: 1.25rem;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 1.25em;
+}

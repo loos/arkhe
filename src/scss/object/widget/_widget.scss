@@ -6,12 +6,12 @@
 	}
 }
 
+// .c-widget h2.widget-title, // ウィジェットグループ用 → フックで書き換え
+h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
+.c-widget > .wp-block-group > .wp-block-group__inner-container > h2, // 初期配置ウィジェット, グループ > レガシーウィジェット用
 .c-widget__title {
-	position: relative;
-	margin-bottom: 1.25rem;
-	overflow: hidden;
-	font-weight: bold;
-	font-size: 1.25em; // em: ウィジェットエリアのサイズ感に比例させる
+
+	@extend %widgetTitle;
 }
 
 
