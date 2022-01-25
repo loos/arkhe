@@ -1,5 +1,7 @@
 [data-type="core/buttons"] {
 
+	gap: var(--wp--style--block-gap) !important; // コアの 0.5em にしてくる詳細度が強い
+
 	.block-editor-inner-blocks {
 		text-align: inherit !important; //.wp-block-media-textの中だと initialになってしまう。
 	}
@@ -20,9 +22,4 @@
 		flex-wrap: wrap;
 		align-items: center;
 	}
-}
-
-
-[data-align="center"] > .wp-block-buttons {
-	justify-content: center;
 }

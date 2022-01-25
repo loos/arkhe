@@ -1,35 +1,22 @@
 .wp-block-buttons {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	float: none !important;
+	--wp--style--block-gap: 1rem;
 
-	&.aligncenter {
-		justify-content: center;
-	}
-
-	&.alignright {
-		justify-content: flex-end;
+	// 詳細度高くする( .wp-container-{id}が遅めに読み込まれるので )
+	&.wp-block-buttons {
+		gap: var(--wp--style--block-gap); // 5.9からフロントでもgapが使われるのでそれに揃える
 	}
 
 	.wp-block-button {
 		display: block;
 		margin: 0;
-		padding: 4px;
-
-		&.wp-block-button__width-25 {
-			width: calc(25% - .375em);
-		}
-
-		&.wp-block-button__width-50 {
-			width: calc(50% - .25em);
-		}
-
-		&.wp-block-button__width-75 {
-			width: calc(75% - .125em);
-		}
+		padding: 0;
 	}
+
+	// 古いwpバージョンではまだalign使われていた
+	// &.aligncenter {justify-content: center;}
+	// &.alignright {justify-content: flex-end;}
 }
+
 //WPコアのボタンブロック
 .wp-block-button {
 
@@ -43,9 +30,9 @@
 
 .wp-block-button__link {
 	min-width: 8rem;
-	padding: .75em 1.5em;
-	font-size: 1rem;
-	line-height: 1.5;
+	padding: 1em 1.5em;
+	font-size: inherit; // コア側で 1.125em にされる
+	line-height: 1;
 	background-color: var(--ark-color_main);
 	transition: opacity .25s;
 
