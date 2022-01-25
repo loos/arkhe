@@ -60,7 +60,7 @@ body.editor-styles-wrapper {
 		font-size: 2rem;
 	}
 
-	// 5.7 ~ エディターの縦幅の最小値がなくなっている
+	// 5.7 ~ エディターの縦幅の最小値がなくなっている 5.9では不要
 	.branch-5-7 &,
 	.branch-5-8 & {
 		padding-bottom: 40px;
