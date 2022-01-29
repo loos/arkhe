@@ -23,9 +23,9 @@ import { smoothScroll, addSmoothScrollEvent } from '@js/modules/smoothScroll';
 /**
  * FB内ブラウザのバグに対処
  */
-const isFB = -1 !== ua.indexOf('fb');
-if (isFB) {
-	if (300 > window.innerHeight) {
+const isFB = -1 !== ua.indexOf( 'fb' );
+if ( isFB ) {
+	if ( 300 > window.innerHeight ) {
 		location.reload();
 	}
 	// console.log('a');
@@ -53,23 +53,23 @@ setState.scrollbarW();
 /**
  * DOMContentLoaded
  */
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener( 'DOMContentLoaded', function () {
 	/* DOMデータを取得 */
-	setDomData(DOM);
+	setDomData( DOM );
 
 	/* ヘッダーの高さ取得 */
-	setState.headH(DOM.header);
+	setState.headH( DOM.header );
 
 	/* アドミンバーの高さ取得 */
-	setState.adminbarH(DOM.wpadminbar);
+	setState.adminbarH( DOM.wpadminbar );
 
 	/* smoothOffsetをセット */
-	setState.smoothOffset(DOM.wpadminbar);
+	setState.smoothOffset( DOM.wpadminbar );
 
 	/**
 	 * objectFitImages
 	 */
-	if (window.objectFitImages) window.objectFitImages();
+	if ( window.objectFitImages ) window.objectFitImages();
 
 	/**
 	 * スマホ・タブレット縦 と PC・タブレット横による分岐処理
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	/**
 	 * クリックイベントをまとめて登録
 	 */
-	addClickEvents(document);
+	addClickEvents( document );
 
 	/**
 	 * スクロールイベント
@@ -100,73 +100,73 @@ document.addEventListener('DOMContentLoaded', function () {
 	 * Esc処理
 	 */
 	setEscEvent();
-});
+} );
 
-window.addEventListener('load', function () {
+window.addEventListener( 'load', function () {
 	const arkheVars = window.arkheVars;
 
 	// html のdata-loadedをセット
-	document.documentElement.setAttribute('data-loaded', 'true');
+	document.documentElement.setAttribute( 'data-loaded', 'true' );
 
 	/* ヘッダーの高さ取得 */
-	setState.headH(DOM.header);
+	setState.headH( DOM.header );
 
 	/* smoothOffsetをセット */
-	setState.smoothOffset(DOM.wpadminbar);
+	setState.smoothOffset( DOM.wpadminbar );
 
 	/**
 	 * スムースリンクの処理を登録
 	 *  !!! 目次リスト生成よりあとに !!!
 	 */
-	if ('on' === arkheVars.smoothScroll) {
+	if ( 'on' === arkheVars.smoothScroll ) {
 		addSmoothScrollEvent();
 	}
 
 	// #つきリンクでページ遷移してきたときに明示的にスクロールさせる
-	if (urlHash) {
-		const targetID = urlHash.replace('#', '');
-		const hashTarget = document.getElementById(targetID); // querySelectorは###などでエラーになる
-		if (null !== hashTarget) smoothScroll(hashTarget, smoothOffset);
+	if ( urlHash ) {
+		const targetID = urlHash.replace( '#', '' );
+		const hashTarget = document.getElementById( targetID ); // querySelectorは###などでエラーになる
+		if ( null !== hashTarget ) smoothScroll( hashTarget, smoothOffset );
 	}
-});
+} );
 
 /**
  * 画面回転時にも発火させる
  */
-window.addEventListener('orientationchange', function () {
+window.addEventListener( 'orientationchange', function () {
 	// 縦・横サイズを正確に取得するために少しタイミングを遅らせる
-	setTimeout(() => {
+	setTimeout( () => {
 		/* 状態変数のセット */
 		setState.mediaSize();
 
 		/* ヘッダーの高さ取得 */
-		setState.headH(DOM.header);
+		setState.headH( DOM.header );
 
 		/* smoothOffsetをセット */
-		setState.smoothOffset(DOM.wpadminbar);
+		setState.smoothOffset( DOM.wpadminbar );
 
 		/** スマホ・タブレット縦 と PC・タブレット横による分岐処理 */
 		changeDeviceSize();
-	}, 5);
-});
+	}, 5 );
+} );
 
 /**
  * 画面リサイズ時の処理
  */
-window.addEventListener('resize', function () {
-	setTimeout(() => {
+window.addEventListener( 'resize', function () {
+	setTimeout( () => {
 		setState.scrollbarW();
 
 		/* 状態変数のセット */
 		setState.mediaSize();
 
 		/* ヘッダーの高さ取得 */
-		setState.headH(DOM.header);
+		setState.headH( DOM.header );
 
 		/* smoothOffsetをセット */
-		setState.smoothOffset(DOM.wpadminbar);
+		setState.smoothOffset( DOM.wpadminbar );
 
 		/** スマホ・タブレット縦 と PC・タブレット横による分岐処理 */
 		changeDeviceSize();
-	}, 5);
-});
+	}, 5 );
+} );

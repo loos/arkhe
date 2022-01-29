@@ -1,9 +1,9 @@
 import DOM from './data/domData';
 
-const setCurrent = (nav) => {
+const setCurrent = ( nav ) => {
 	//-currentクラスをいったん削除
-	const currentItem = nav.querySelector('li.-current');
-	if (currentItem) currentItem.classList.remove('-current');
+	const currentItem = nav.querySelector( 'li.-current' );
+	if ( currentItem ) currentItem.classList.remove( '-current' );
 
 	// トップページのURL
 	const homeUrl = window.arkheVars.homeUrl || '';
@@ -12,19 +12,19 @@ const setCurrent = (nav) => {
 	const nowHref = window.location.origin + window.location.pathname;
 
 	// トップページは、カレントクラス付与しない
-	if (homeUrl === nowHref) return;
+	if ( homeUrl === nowHref ) return;
 
 	// 全liを取得
-	const navItem = nav.querySelectorAll('.c-gnav > li');
-	for (let i = 0; i < navItem.length; i++) {
-		const li = navItem[i];
+	const navItem = nav.querySelectorAll( '.c-gnav > li' );
+	for ( let i = 0; i < navItem.length; i++ ) {
+		const li = navItem[ i ];
 
-		const a = li.querySelector('a');
-		const href = a.getAttribute('href');
+		const a = li.querySelector( 'a' );
+		const href = a.getAttribute( 'href' );
 
 		//現在のURLと一致していれば、-currentクラスを付与
-		if (nowHref === href) {
-			li.classList.add('-current');
+		if ( nowHref === href ) {
+			li.classList.add( '-current' );
 		}
 	}
 };
@@ -35,20 +35,20 @@ const setCurrent = (nav) => {
  */
 export default function () {
 	const gnav = DOM.gnav;
-	if (null === gnav) return;
+	if ( null === gnav ) return;
 	// グロナビに -current つける
-	setCurrent(gnav);
+	setCurrent( gnav );
 
-	const gnavMenu = gnav.querySelector('.c-gnav');
+	const gnavMenu = gnav.querySelector( '.c-gnav' );
 
-	if (null === gnavMenu) return false;
+	if ( null === gnavMenu ) return false;
 
-	const links = gnavMenu.getElementsByTagName('a');
+	const links = gnavMenu.getElementsByTagName( 'a' );
 
-	for (let i = 0; i < links.length; i++) {
-		const link = links[i];
-		link.addEventListener('focus', toggleFocus, true);
-		link.addEventListener('blur', toggleFocus, true);
+	for ( let i = 0; i < links.length; i++ ) {
+		const link = links[ i ];
+		link.addEventListener( 'focus', toggleFocus, true );
+		link.addEventListener( 'blur', toggleFocus, true );
 	}
 
 	//Sets or removes the .focus class on an element.
@@ -57,10 +57,10 @@ export default function () {
 		// console.log(self);
 
 		// Move up through the ancestors of the current link until we hit .primary-menu.
-		while (!self.classList.contains('c-gnav')) {
+		while ( ! self.classList.contains( 'c-gnav' ) ) {
 			// On li elements toggle the class .focus.
-			if ('li' === self.tagName.toLowerCase()) {
-				self.classList.toggle('focus');
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				self.classList.toggle( 'focus' );
 			}
 			self = self.parentElement;
 		}

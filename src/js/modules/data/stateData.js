@@ -16,58 +16,58 @@ export const setState = {
 	mediaSize: () => {
 		isPC = 999 < window.innerWidth ? true : false;
 		isMobile = 600 > window.innerWidth ? true : false;
-		isSP = !isPC;
-		isTab = !isMobile;
+		isSP = ! isPC;
+		isTab = ! isMobile;
 	},
-	headH: (header) => {
-		if (null !== header) {
+	headH: ( header ) => {
+		if ( null !== header ) {
 			headH = header.offsetHeight;
 
-			document.documentElement.style.setProperty('--ark-header_height', headH + 'px');
+			document.documentElement.style.setProperty( '--ark-header_height', headH + 'px' );
 		}
 	},
-	adminbarH: (adminbar) => {
-		if (null !== adminbar) {
+	adminbarH: ( adminbar ) => {
+		if ( null !== adminbar ) {
 			adminbarH = adminbar.offsetHeight;
 		}
 	},
-	modalOpen: (val) => {
+	modalOpen: ( val ) => {
 		isModalOpen = val;
 	},
 	smoothOffset: () => {
 		smoothOffset = 0;
 
 		const arkheVars = window.arkheVars;
-		if (arkheVars === undefined) return;
+		if ( arkheVars === undefined ) return;
 
 		// PC表示でヘッダー固定時
-		if (isPC && arkheVars.isFixHeadPC) {
+		if ( isPC && arkheVars.isFixHeadPC ) {
 			smoothOffset += headH;
 		}
 
 		// PC表示でグロナビー固定時
-		if (isPC && arkheVars.fixGnav) {
-			const headerUnder = document.querySelector('.l-headerUnder');
-			if (null !== headerUnder) smoothOffset += headerUnder.offsetHeight;
+		if ( isPC && arkheVars.fixGnav ) {
+			const headerUnder = document.querySelector( '.l-headerUnder' );
+			if ( null !== headerUnder ) smoothOffset += headerUnder.offsetHeight;
 		}
 
 		// SP表示でヘッダー固定時
-		if (isSP && arkheVars.isFixHeadSP) {
+		if ( isSP && arkheVars.isFixHeadSP ) {
 			smoothOffset += headH;
 		}
 
 		// 管理バーがある時
-		if (0 < adminbarH) {
+		if ( 0 < adminbarH ) {
 			smoothOffset += adminbarH;
 		}
 
 		// CSS変数にもセット
-		document.documentElement.style.setProperty('--ark-offset_y', smoothOffset + 'px');
+		document.documentElement.style.setProperty( '--ark-offset_y', smoothOffset + 'px' );
 
 		smoothOffset += 8; //スクロール位置を少しだけ下へ。
 	},
 	scrollbarW: () => {
 		const scrollbarW = window.innerWidth - document.body.clientWidth;
-		document.documentElement.style.setProperty('--ark-scrollbar_width', scrollbarW + 'px');
+		document.documentElement.style.setProperty( '--ark-scrollbar_width', scrollbarW + 'px' );
 	},
 };
