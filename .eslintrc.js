@@ -1,4 +1,4 @@
-const defaultConfig = require('@wordpress/scripts/config/.eslintrc.js');
+const defaultConfig = require( '@wordpress/scripts/config/.eslintrc.js' );
 
 module.exports = {
 	...defaultConfig,
@@ -43,5 +43,8 @@ module.exports = {
 		'jsdoc/require-property-name': 0,
 		'jsdoc/require-property-type': 0,
 		'jsdoc/check-tag-names': 0,
+
+		// document.activeElementにエラー出さない
+		'@wordpress/no-global-active-element': 'off',
 	},
 };

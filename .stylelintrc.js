@@ -1,4 +1,10 @@
 module.exports = {
+    // overrides: [
+    //     {
+    //       files: ["**/*.scss"],
+    //       customSyntax: "postcss-scss"
+    //     }
+    // ],
     extends: [
         '@wordpress/stylelint-config/scss',
         'stylelint-config-rational-order',
@@ -15,6 +21,9 @@ module.exports = {
         'scss/at-rule-no-unknown': true, //scssでもサポートしていない @ルールにはエラーを出す
         'font-weight-notation': null, //font-weightの指定は自由
         'font-family-no-missing-generic-family-keyword': null, //[sans-]serif を必須にしない。(object-fitのエラー回避）
+        'no-invalid-double-slash-comments': null,
+
+        'scss/at-import-partial-extension': null,
 
         // indentation: 4, //スペースでサイズは4
         // 'length-zero-no-unit': [ true, {ignore: ["custom-properties"]} ],
