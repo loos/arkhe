@@ -3,14 +3,14 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 99; //header - 1
+	z-index: 99; // header - 1
 	width: 100%;
 	height: 100%;
+	overflow: hidden; // before要素が画面外にいっても大丈夫なように
 	background: none;
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity .5s, visibility .5s;
-
 
 	[data-loaded="false"] & {
 		display: none;

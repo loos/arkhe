@@ -74,7 +74,7 @@
 	height: 100%;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
-	pointer-events: auto; // 内部のリンクなどをクリックできるように。
+	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 }
 
 .p-drawer__body {
@@ -82,6 +82,7 @@
 	max-width: 560px;
 	margin: 0 auto;
 	padding: 4vw 6vw;
+	pointer-events: auto; // 内部のリンクなどをクリックできるように。
 
 	@include pc {
 		padding: 2rem;
