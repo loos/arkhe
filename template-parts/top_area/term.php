@@ -6,26 +6,13 @@ $term_obj         = get_queried_object();
 $term_id          = $term_obj->term_id;
 $term_description = apply_filters( 'arkhe_term_description', $term_obj->description, $term_id );
 $show_description = apply_filters( 'arkhe_show_term_description', ! empty( $term_description ), $term_id );
-
-// 背景の画像
-$bgimg_id     = apply_filters( 'arkhe_ttlbg_img_id', 0, $term_id );
-$bgimg_full   = '';
-$bgimg_medium = '';
-if ( $bgimg_id ) {
-	$bgimg_full   = wp_get_attachment_image_url( $bgimg_id, 'full' ) ?: '';
-	$bgimg_medium = wp_get_attachment_image_url( $bgimg_id, 'medium' ) ?: '';
-}
+$bgimg_id         = apply_filters( 'arkhe_ttlbg_img_id', 0, $term_id );
+$lazy_type        = apply_filters( 'arkhe_use_lazy_top_area', false ) ? Arkhe::get_lazy_type() : '';
 
 // 追加クラス（画像がなければフィルターもなし）
-$add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filter' ) : '-filter-none -noimg';
+$add_area_class = $bgimg_id ? '-filter-' . Arkhe::get_setting( 'title_bg_filter' ) : '-filter-none -noimg';
 ?>
 <div id="top_title_area" class="l-content__top p-topArea c-filterLayer <?php echo esc_attr( $add_area_class ); ?>">
-	<?php if ( $bgimg_full ) : ?>
-		<div class="p-topArea__img c-filterLayer__img lazyload" 
-			data-bg="<?php echo esc_attr( $bgimg_full ); ?>"
-			style="background-image:url(<?php echo esc_attr( $bgimg_medium ); ?>)"
-		></div>
-	<?php endif; ?>
 	<div class="p-topArea__body l-container">
 		<div class="p-topArea__title c-pageTitle">
 			<?php
@@ -38,4 +25,16 @@ $add_area_class = $bgimg_full ? '-filter-' . Arkhe::get_setting( 'title_bg_filte
 			</div>
 		<?php endif; ?>
 	</div>
+	<?php
+		if ( $bgimg_id ) :
+			Arkhe::get_image( $bgimg_id, array(
+				'class'       => 'p-topArea__img c-filterLayer__img u-obf-cover',
+				'alt'         => '',
+				'loading'     => $lazy_type,
+				'aria-hidden' => 'true',
+				'decoding'    => 'async',
+				'echo'        => true,
+			));
+		endif;
+	?>
 </div>

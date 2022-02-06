@@ -139,4 +139,96 @@ trait Get {
 		return $key ? $data[ $key ] : $data;
 	}
 
+
+	/**
+	 * wp_get_attachment_image から必要な部分だけ抜き取った関数
+	 */
+	public static function get_image( $img_id, $args = array() ) {
+
+		$echo = $args['echo'] ?? false;
+		$size = $args['size'] ?? 'full';
+
+		$html     = '';
+		$noscript = '';
+		$image    = wp_get_attachment_image_src( $img_id, $size, false );
+
+		if ( ! $image ) return '';
+
+		list( $src, $width, $height ) = $image;
+		$size_array                   = array( absint( $width ), absint( $height ) );
+
+		$width  = $args['width'] ?? $width;
+		$height = $args['height'] ?? $height;
+
+		// imgタグのattrs
+		$attrs = array(
+			'src'         => $src,
+			'alt'         => $args['alt'] ?? wp_strip_all_tags( get_post_meta( $img_id, '_wp_attachment_image_alt', true ) ),
+			'class'       => $args['class'] ?? '',
+			'srcset'      => $args['srcset'] ?? false,
+			'sizes'       => $args['sizes'] ?? false,
+			'style'       => $args['style'] ?? false,
+			'decoding'    => $args['decoding'] ?? false,
+			'aria-hidden' => $args['aria-hidden'] ?? false,
+		);
+
+		// 'srcset' と 'sizes' を生成
+		if ( '' === $attrs['srcset'] ) {
+			$attrs['srcset'] = false;
+		} else {
+			$image_meta = wp_get_attachment_metadata( $img_id );
+
+			if ( is_array( $image_meta ) ) {
+				// srcset の指定がなければ
+				if ( ! $attrs['srcset'] ) {
+					$attrs['srcset'] = wp_calculate_image_srcset( $size_array, $src, $image_meta, $img_id );
+				}
+
+				// sizes の指定がなければ (かつ、srcset があれば)
+				if ( $attrs['srcset'] && ! $attrs['sizes'] ) {
+					$attrs['sizes'] = wp_calculate_image_sizes( $size_array, $src, $image_meta, $img_id );
+				}
+			}
+		}
+
+		// lazyload種別
+		$loading = $args['loading'] ?? Arkhe::get_lazy_type();
+		if ( 'lazy' === $loading || 'eager' === $loading ) {
+			$attrs['loading'] = $loading;
+
+		} elseif ( self::is_rest() || self::is_iframe() ) {
+			$attrs['loading'] = 'lazy';
+
+		} elseif ( 'lazysizes' === $loading ) {
+			$attrs['data-src'] = $attrs['src'];
+			$attrs['src']      = $args['placeholder'] ?? ARKHE_PLACEHOLDER;
+			if ( isset( $attrs['srcset'] ) ) {
+				$attrs['data-srcset'] = $attrs['srcset'];
+				unset( $attrs['srcset'] );
+			}
+
+			// noscript画像
+			$noscript = '<noscript><img src="' . esc_attr( $src ) . '" class="' . esc_attr( $attrs['class'] ) . '" alt=""></noscript>';
+
+			// lazyloadクラス追加はnoscript画像生成後に。(noscriptに 'lazyload'クラス は不要)
+			$attrs['class'] .= ' lazyload';
+			if ( $width && $height ) {
+				$attrs['data-aspectratio'] = $width . '/' . $height;
+			}
+		}
+
+		$img_props = image_hwstring( $width, $height );
+
+		foreach ( $attrs as $name => $val ) {
+			if ( false === $val ) continue;
+			$img_props .= ' ' . $name . '="' . esc_attr( $val ) . '"';
+		}
+
+		$img = "<img $img_props >" . $noscript;
+
+		if ( $echo ) {
+			echo $img; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		return $img;
+	}
 }

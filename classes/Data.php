@@ -35,12 +35,19 @@ class Data {
 
 
 	/**
+	 * リストレイアウト
+	 */
+	protected static $lazy_type = 'lazysizes';
+
+
+	/**
 	 * ライセンスキー
 	 */
 	public static $licence_key       = '';
 	public static $licence_data      = array();
 	public static $has_pro_licence   = false;
 	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/licence/check';
+
 
 	/**
 	 * プラグイン更新用パス
@@ -52,6 +59,7 @@ class Data {
 	 * 日本語かどうか
 	 */
 	public static $is_ja = false;
+
 
 	/**
 	 * リストレイアウト
@@ -285,6 +293,22 @@ class Data {
 	public static function set_plugin_data( $key = '', $val = '' ) {
 		if ( ! $key ) return;
 		self::$plugin_data[ $key ] = $val;
+	}
+
+
+	/**
+	 * lazyload種別を取得
+	 */
+	public static function get_lazy_type() {
+		return self::$lazy_type;
+	}
+
+
+	/**
+	 * lazyload種別をセット
+	 */
+	public static function set_lazy_type( $val ) {
+		self::$lazy_type = $val;
 	}
 
 }
