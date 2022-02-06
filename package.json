@@ -30,6 +30,7 @@
         "cross-env": "^7.0.3",
         "css-mqpacker": "^7.0.0",
         "cssnano": "^5.0.16",
+        "lazysizes": "^5.3.2",
         "node-sass": "^7.0.1",
         "node-sass-globbing": "0.0.23",
         "nodemon": "^2.0.15",
