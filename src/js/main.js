@@ -28,7 +28,6 @@ if ( isFB ) {
 	if ( 300 > window.innerHeight ) {
 		location.reload();
 	}
-	// console.log('a');
 }
 
 /**
@@ -42,12 +41,8 @@ setState.mediaSize();
 const urlHash = location.hash;
 
 /**
- * Lazyloadへのフック
- * PCとSPで画像切り替える場合の処理
+ * スクロールバーの幅をセット
  */
-// method.LazyHook(isPC);
-
-// スクロールバーの幅
 setState.scrollbarW();
 
 /**

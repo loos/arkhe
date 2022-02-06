@@ -1,7 +1,7 @@
 /* global jQuery */
 /* exported CustomizerResponsiveDevicePreview */
 /* eslint consistent-this: [ "error", "section" ], no-magic-numbers: [ "error", { "ignore": [1] } ] */
-window.CustomizerResponsiveDevicePreview = (function ($) {
+window.CustomizerResponsiveDevicePreview = ( function ( $ ) {
 	'use strict';
 
 	const component = {
@@ -14,9 +14,9 @@ window.CustomizerResponsiveDevicePreview = (function ($) {
 	 * @param {Object} api Instance of wp.customize.
 	 * @returns {void}
 	 */
-	component.init = function init(api) {
+	component.init = function init( api ) {
 		component.api = api;
-		api.bind('ready', component.ready);
+		api.bind( 'ready', component.ready );
 	};
 
 	/**
@@ -27,19 +27,19 @@ window.CustomizerResponsiveDevicePreview = (function ($) {
 	component.ready = function ready() {
 		let originalPreviewUrlValidate;
 		originalPreviewUrlValidate = component.api.previewer.previewUrl.validate;
-		component.api.previewer.previewUrl.validate = function validatePreviewUrl(newUrl) {
+		component.api.previewer.previewUrl.validate = function validatePreviewUrl( newUrl ) {
 			let url = newUrl;
-			if (null !== url) {
-				url = component.amendUrlWithPreviewedDevice(url);
+			if ( null !== url ) {
+				url = component.amendUrlWithPreviewedDevice( url );
 			}
-			return originalPreviewUrlValidate.call(this, url);
+			return originalPreviewUrlValidate.call( this, url );
 		};
-		component.api.previewedDevice.bind(function () {
+		component.api.previewedDevice.bind( function () {
 			const url = component.amendUrlWithPreviewedDevice(
 				component.api.previewer.previewUrl.get()
 			);
-			component.api.previewer.previewUrl.set(url);
-		});
+			component.api.previewer.previewUrl.set( url );
+		} );
 	};
 
 	/**
@@ -48,43 +48,43 @@ window.CustomizerResponsiveDevicePreview = (function ($) {
 	 * @param {string} url URL.
 	 * @returns {string} URL with customize_previewed_device query param amended.
 	 */
-	component.amendUrlWithPreviewedDevice = function amendUrlWithPreviewedDevice(url) {
+	component.amendUrlWithPreviewedDevice = function amendUrlWithPreviewedDevice( url ) {
 		let urlParser, queryParams;
-		urlParser = document.createElement('a');
+		urlParser = document.createElement( 'a' );
 		urlParser.href = url;
-		queryParams = component.api.utils.parseQueryString(urlParser.search.substr(1));
+		queryParams = component.api.utils.parseQueryString( urlParser.search.substr( 1 ) );
 		queryParams.customize_previewed_device = component.api.previewedDevice.get();
-		urlParser.search = $.param(queryParams);
+		urlParser.search = $.param( queryParams );
 
 		//アドセンスでカスタマイザーのプレビュー画面が小さくなるバグを回避(力技)
 
-		setTimeout(function () {
-			const prevFrame = document.querySelector('#customize-preview iframe');
-			if (prevFrame) {
+		setTimeout( function () {
+			const prevFrame = document.querySelector( '#customize-preview iframe' );
+			if ( prevFrame ) {
 				prevFrame.style.height = '100%';
 			}
-		}, 100);
-		setTimeout(function () {
-			const prevFrame = document.querySelector('#customize-preview iframe');
-			if (prevFrame) {
+		}, 100 );
+		setTimeout( function () {
+			const prevFrame = document.querySelector( '#customize-preview iframe' );
+			if ( prevFrame ) {
 				prevFrame.style.height = '100%';
 			}
-		}, 500);
-		setTimeout(function () {
-			const prevFrame = document.querySelector('#customize-preview iframe');
-			if (prevFrame) {
+		}, 500 );
+		setTimeout( function () {
+			const prevFrame = document.querySelector( '#customize-preview iframe' );
+			if ( prevFrame ) {
 				prevFrame.style.height = '100%';
 			}
-		}, 1000);
-		setTimeout(function () {
-			const prevFrame = document.querySelector('#customize-preview iframe');
-			if (prevFrame) {
+		}, 1000 );
+		setTimeout( function () {
+			const prevFrame = document.querySelector( '#customize-preview iframe' );
+			if ( prevFrame ) {
 				prevFrame.style.height = '100%';
 			}
-		}, 2000);
+		}, 2000 );
 
 		return urlParser.href;
 	};
 
 	return component;
-})(jQuery);
+} )( jQuery );
