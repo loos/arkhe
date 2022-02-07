@@ -40,7 +40,7 @@ Customizer::add(
 	'post_list_layout',
 	array(
 		'type'    => 'select',
-		'choices' => \Arkhe::$list_layouts,
+		'choices' => \Arkhe::get_list_layouts(),
 	)
 );
 

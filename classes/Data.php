@@ -37,7 +37,7 @@ class Data {
 	/**
 	 * リストレイアウト
 	 */
-	protected static $lazy_type = 'lazysizes';
+	protected static $lazy_type = '';
 
 
 	/**
@@ -136,29 +136,8 @@ class Data {
 	 */
 	public static function init() {
 
-		// テーマバージョンを取得
-		self::set_theme_version();
-
-		// 日本語かどうか
-		self::$is_ja = 'ja' === get_locale();
-
-		// レイアウト
-		self::$list_layouts = array(
-			'card'   => __( 'Card type', 'arkhe' ),
-			'list'   => __( 'List type', 'arkhe' ),
-			'simple' => __( 'Text type', 'arkhe' ),
-		);
-
-		// ライセンス情報をセット
-		self::set_licence_data();
-
-		// テーマインフォメーション取得
-		if ( is_admin() ) {
-			self::set_theme_info();
-		}
-
-		// 設定データのデフォルト値をセット
-		self::set_default_data();
+		// セットアップ
+		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'setup__1' ), 1 );
 
 		// 設定データのセット $GLOBALS['content_width'] のために after_setup_theme で取得。
 		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'set_settings_data' ), 9 );
@@ -168,6 +147,48 @@ class Data {
 			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ) );
 		}
 
+		// フックで書き換えれる情報
+		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'setup__20' ), 20 );
+
+	}
+
+
+	/**
+	 * setup @1
+	 */
+	public static function setup__1() {
+
+		// テーマバージョンを取得
+		self::set_theme_version();
+
+		// ライセンス情報をセット
+		self::set_licence_data();
+
+		// 設定データのデフォルト値をセット
+		self::set_default_data();
+
+		// テーマインフォメーション取得
+		if ( is_admin() ) self::set_theme_info();
+	}
+
+
+	/**
+	 * setup　@20
+	 */
+	public static function setup__20() {
+
+		// 日本語かどうか
+		self::$is_ja = 'ja' === get_locale();
+
+		// lazyload
+		self::$lazy_type = apply_filters( 'arkhe_lazy_type', 'lazysizes' );
+
+		// レイアウト
+		self::$list_layouts = apply_filters( 'arkhe_list_layouts', array(
+			'card'   => __( 'Card type', 'arkhe' ),
+			'list'   => __( 'List type', 'arkhe' ),
+			'simple' => __( 'Text type', 'arkhe' ),
+		) );
 	}
 
 

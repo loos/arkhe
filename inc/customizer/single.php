@@ -176,10 +176,7 @@ Customizer::add(
 	array(
 		'label'   => __( 'List layout', 'arkhe' ),
 		'type'    => 'select',
-		'choices' => array(
-			'card' => __( 'Card type', 'arkhe' ),
-			'list' => __( 'List type', 'arkhe' ),
-		),
+		'choices' => \Arkhe::get_list_layouts( array( 'card', 'list' ) ),
 	)
 );
 

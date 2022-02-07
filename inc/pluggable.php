@@ -65,54 +65,45 @@ if ( ! function_exists( 'ark_the__tagline' ) ) {
  */
 if ( ! function_exists( 'ark_the__thumbnail' ) ) {
 	function ark_the__thumbnail( $args ) {
-		$the_id           = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
-		$size             = isset( $args['size'] ) ? $args['size'] : 'full';
-		$sizes            = isset( $args['sizes'] ) ? $args['sizes'] : '';
-		$class            = isset( $args['class'] ) ? $args['class'] : '';
-		$placeholder      = isset( $args['placeholder'] ) ? $args['placeholder'] : '';
-		$placeholder_size = isset( $args['placeholder_size'] ) ? $args['placeholder_size'] : '';
-		$use_lazyload     = isset( $args['use_lazyload'] ) ? $args['use_lazyload'] : true;
+		$the_id    = isset( $args['post_id'] ) ? $args['post_id'] : get_the_ID();
+		$class     = isset( $args['class'] ) ? $args['class'] : '';
+		$size      = isset( $args['size'] ) ? $args['size'] : 'full';
+		$sizes     = isset( $args['sizes'] ) ? $args['sizes'] : false;
+		$srcset    = isset( $args['srcset'] ) ? $args['srcset'] : false;
+		$lazy_type = isset( $args['lazy_type'] ) ? $args['lazy_type'] : Arkhe::get_lazy_type();
+		$decoding  = isset( $args['decoding'] ) ? $args['decoding'] : false;
+		// $echo      = isset( $args['echo'] ) ? $args['echo'] : false;
+		// $use_noimg = $args['use_noimg'] ?? true;
 
-		// memo : image_downsize( $img_id, 'medium' );
-		$attachment_args = array(
-			'class' => $class,
-		);
-
-		$thumb = '';
+		$thumb_id = 0;
+		$thumb    = '';
 
 		if ( has_post_thumbnail( $the_id ) ) {
-			// アイキャッチ画像の設定がある場合
 
-			$thumb = get_the_post_thumbnail( $the_id, $size, $attachment_args );
-			if ( $placeholder_size ) {
-				$placeholder = get_the_post_thumbnail_url( $the_id, $placeholder_size );
-			}
+			$thumb_id = get_post_thumbnail_id( $the_id );
+
 		} elseif ( ARKHE_NOIMG_ID ) {
-			// ARKHE_NOIMG_ID がある場合
 
-			$thumb = wp_get_attachment_image( ARKHE_NOIMG_ID, $size, false, $attachment_args );
-			if ( $placeholder_size ) {
-				$placeholder = wp_get_attachment_image_url( ARKHE_NOIMG_ID, $placeholder_size ) ?: '';
-			}
+			$thumb_id = ARKHE_NOIMG_ID;
+
+		}
+
+		if ( $thumb_id ) {
+			$thumb = Arkhe::get_image( $thumb_id, array(
+				'class'    => $class,
+				'size'     => $size,
+				'srcset'   => $srcset,
+				'sizes'    => $sizes,
+				'decoding' => $decoding,
+				'loading'  => $lazy_type,
+			));
 		} else {
-			$thumb = '<img src="' . esc_url( ARKHE_NOIMG_URL ) . '" class="' . esc_attr( $class ) . '">';
+			// デフォルトNOIMG
+			$thumb = '<img src="' . esc_url( ARKHE_NOIMG_URL ) . '" alt="" class="' . esc_attr( $class ) . '">';
+			$thumb = Arkhe::set_lazyload( $thumb, $lazy_type );
 		}
 
-		// 指定のサイズがあれば書き換える
-		if ( $sizes ) {
-			$thumb = preg_replace( '/ sizes="([^"]*)"/', ' sizes="' . $sizes . '"', $thumb );
-		}
-
-		// 通常のフロント表示の時（Gutenberg上やRESTの時以外）
-		if ( $use_lazyload && ! Arkhe::is_rest() && ! Arkhe::is_iframe() ) {
-			$placeholder = $placeholder ? esc_url( $placeholder ) : ARKHE_PLACEHOLDER;
-			$thumb       = str_replace( ' src="', ' src="' . $placeholder . '" data-src="', $thumb );
-			$thumb       = str_replace( ' srcset="', ' data-srcset="', $thumb );
-			$thumb       = str_replace( ' class="', ' class="lazyload ', $thumb );
-			// loading="lazy"
-		}
-
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		// phpcs:ignore WordPress.Security.EscapeOutput
 		echo apply_filters( 'ark_the__thumbnail', $thumb, $args );
 	}
 }
