@@ -2,7 +2,7 @@
 namespace Arkhe_Theme\Update;
 
 /**
- * ウィジェット登録
+ * アップデート処理
  */
 add_action( 'after_setup_theme', __NAMESPACE__ . '\update_check' );
 function update_check() {

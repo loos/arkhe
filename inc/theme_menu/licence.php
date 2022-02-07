@@ -80,18 +80,29 @@ if ( (int) $check_count > 5 ) {
 
 ?>
 <h3><?php esc_html_e( 'License key', 'arkhe' ); ?></h3>
-<p><?php esc_html_e( 'With the purchase of the "Arkhe License", you will be able to update all Arkhe-specific plugins to the latest version at any time.', 'arkhe' ); ?></p>
+<p>
+	<?php
+		// $license_link = \Arkhe::$is_ja ? 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/' : '';
+		$license_link = 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/';
+
+		echo sprintf(
+			// translators: %s is link;
+			esc_html__( 'With the purchase of the "%s", you will be able to update all Arkhe plugins to the latest version at any time.', 'arkhe' ),
+			'<a href="' . esc_url( $license_link ) . '">' . esc_html__( 'Arkhe License', 'arkhe' ) . '</a>'
+		);
+	?>
+</p>
 <form method="POST" action="">
 	<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
 	<?php
 		wp_nonce_field( 'arkhe_licence_nonce', 'arkhe_licence_nonce' );
 
 		if ( 'warning' !== $result_type ) {
-			echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
+		echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
 		}
 
 		if ( $result ) {
-			echo '<div class="arkhe-notice -' . esc_attr( $result_type ) . '">' . esc_html( $result ) . '</div>';
+		echo '<div class="arkhe-notice -' . esc_attr( $result_type ) . '">' . esc_html( $result ) . '</div>';
 		}
 	?>
 </form>
