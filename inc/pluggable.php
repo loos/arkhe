@@ -14,27 +14,32 @@ if ( ! function_exists( 'ark_get__head_logo_img' ) ) {
 		if ( ! Arkhe::is_header_overlay() ) {
 			// 通常時
 
-			$return = wp_get_attachment_image( $logo_id, 'full', false, array(
-				'class' => 'c-headLogo__img',
-				'sizes' => $logo_sizes,
-				'alt'   => get_option( 'blogname' ),
+			$return = Arkhe::get_image( $logo_id, array(
+				'class'    => 'c-headLogo__img',
+				'sizes'    => $logo_sizes,
+				'alt'      => get_option( 'blogname' ),
+				'loading'  => 'eager',
+				'decoding' => 'async',
 			) );
 
 		} else {
 			// ヘッダーオーバーレイ有効時
 
 			$ovrly_logo_id = Arkhe::get_setting( 'head_logo_overlay' ) ?: $logo_id;
-			$ovrly_logo    = wp_get_attachment_image( $ovrly_logo_id, 'full', false, array(
-				'class' => 'c-headLogo__img -top',
-				'sizes' => $logo_sizes,
-				'alt'   => get_option( 'blogname' ),
+
+			$ovrly_logo = Arkhe::get_image( $ovrly_logo_id, array(
+				'class'    => 'c-headLogo__img -top',
+				'sizes'    => $logo_sizes,
+				'alt'      => get_option( 'blogname' ),
+				'loading'  => 'eager',
+				'decoding' => 'async',
 			) );
 
-			$common_logo = wp_get_attachment_image( $logo_id, 'full', false, array(
-				'class'   => 'c-headLogo__img -common',
-				'sizes'   => $logo_sizes,
-				'alt'     => '',
-				'loading' => 'lazy',
+			$common_logo = Arkhe::get_image( $logo_id, array(
+				'class'    => 'c-headLogo__img -common',
+				'sizes'    => $logo_sizes,
+				'alt'      => get_option( 'blogname' ),
+				'loading'  => 'lazy',
 			) );
 			$common_logo = str_replace( '<img ', '<img aria-hidden="true" ', $common_logo );
 
