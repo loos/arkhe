@@ -148,13 +148,13 @@ class Data {
 		}
 
 		// フックで書き換えれる情報
-		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'setup__20' ), 20 );
+		add_action( 'init', array( '\Arkhe_Theme\Data', 'setup__init20' ), 20 );
 
 	}
 
 
 	/**
-	 * setup @1
+	 * setup @after_setup_theme.1
 	 */
 	public static function setup__1() {
 
@@ -173,9 +173,9 @@ class Data {
 
 
 	/**
-	 * setup　@20
+	 * setup　@init.20
 	 */
-	public static function setup__20() {
+	public static function setup__init20() {
 
 		// 日本語かどうか
 		self::$is_ja = 'ja' === get_locale();
@@ -322,14 +322,6 @@ class Data {
 	 */
 	public static function get_lazy_type() {
 		return self::$lazy_type;
-	}
-
-
-	/**
-	 * lazyload種別をセット
-	 */
-	public static function set_lazy_type( $val ) {
-		self::$lazy_type = $val;
 	}
 
 }
