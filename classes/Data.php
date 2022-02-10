@@ -35,9 +35,9 @@ class Data {
 
 
 	/**
-	 * リストレイアウト
+	 * lazyload種別
 	 */
-	protected static $lazy_type = '';
+	protected static $lazy_type = 'lazy';
 
 
 	/**
@@ -186,9 +186,6 @@ class Data {
 		// 日本語かどうか
 		self::$is_ja = 'ja' === get_locale();
 
-		// lazyload
-		self::$lazy_type = apply_filters( 'arkhe_lazy_type', 'lazy' );
-
 		// レイアウト
 		self::$list_layouts = apply_filters( 'arkhe_list_layouts', array(
 			'card'   => __( 'Card type', 'arkhe' ),
@@ -328,6 +325,13 @@ class Data {
 	 */
 	public static function get_lazy_type() {
 		return self::$lazy_type;
+	}
+
+	/**
+	 * lazyload種別を上書き
+	 */
+	public static function set_lazy_type( $new_type ) {
+		self::$lazy_type = $new_type;
 	}
 
 }
