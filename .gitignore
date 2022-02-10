@@ -3,3 +3,4 @@
 /vendor/*
 /.vscode/*
 .wp-env.override.json
+.DS_Store
