@@ -73,16 +73,15 @@
 	width: 100%;
 	height: 100%;
 	overflow-y: auto;
+	pointer-events: auto; // 内部のリンクなどをクリックできるように & スクロール可能にする
 	-webkit-overflow-scrolling: touch;
-	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 }
 
 .p-drawer__body {
 	position: relative;
-	max-width: 560px;
-	margin: 0 auto;
+	margin: 0;
 	padding: 4vw 6vw;
-	pointer-events: auto; // 内部のリンクなどをクリックできるように。
+	// pointer-events: auto; // 内部のリンクなどをクリックできるように。
 
 	@include pc {
 		padding: 2rem;
@@ -130,6 +129,11 @@
 
 // menuアイコンだけを見せたい
 [data-drawer-move="fade"] {
+
+	.p-drawer__inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
 
 	&[data-drawer="opened"] {
 
