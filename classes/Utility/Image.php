@@ -55,7 +55,7 @@ trait Image {
 		}
 
 		// lazyload種別
-		$loading = $args['loading'] ?? Arkhe::get_lazy_type();
+		$loading = $args['loading'] ?? self::get_lazy_type();
 		if ( 'lazy' === $loading || 'eager' === $loading ) {
 			$attrs['loading'] = $loading;
 
@@ -64,7 +64,7 @@ trait Image {
 
 		} elseif ( 'lazysizes' === $loading ) {
 			$attrs['data-src'] = $attrs['src'];
-			$attrs['src']      = $args['placeholder'] ?? ARKHE_PLACEHOLDER;
+			$attrs['src']      = $args['placeholder'] ?? self::$placeholder;
 			if ( isset( $attrs['srcset'] ) ) {
 				$attrs['data-srcset'] = $attrs['srcset'];
 				unset( $attrs['srcset'] );
@@ -111,7 +111,7 @@ trait Image {
 
 			$noscript = '<noscript>' . $image . '</noscript>';
 
-			$placeholder = $placeholder ?: ARKHE_PLACEHOLDER;
+			$placeholder = $placeholder ?: self::$placeholder;
 			$image       = str_replace( ' src=', ' src="' . esc_url( $placeholder, array( 'http', 'https', 'data' ) ) . '" data-src=', $image );
 			$image       = str_replace( ' srcset=', ' data-srcset=', $image );
 			$image       = str_replace( ' class="', ' class="lazyload ', $image );

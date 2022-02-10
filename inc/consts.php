@@ -20,7 +20,7 @@ function define_theme_const() {
 	define( 'ARKHE_EXCERPT_LENGTH', (int) $setting['excerpt_length'] );
 	\Arkhe::$excerpt_length = ARKHE_EXCERPT_LENGTH;
 
-	// プレースホルダー画像
+	// プレースホルダー画像 momo: Toolkit ~1.5のためにしばらく残す
 	define( 'ARKHE_PLACEHOLDER', 'data:image/gif;base64,R0lGODlhBgACAPAAAP///wAAACH5BAEAAAAALAAAAAAGAAIAAAIDhI9WADs=' );
 
 	// NO IMAGE画像

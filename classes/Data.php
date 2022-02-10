@@ -92,6 +92,12 @@ class Data {
 
 
 	/**
+	 * プレースホルダー画像
+	 */
+	public static $placeholder = 'data:image/gif;base64,R0lGODlhBgACAPAAAP///wAAACH5BAEAAAAALAAAAAAGAAIAAAIDhI9WADs=';
+
+
+	/**
 	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
 	 */
 	public static $allowed_img_html = array(
@@ -181,7 +187,7 @@ class Data {
 		self::$is_ja = 'ja' === get_locale();
 
 		// lazyload
-		self::$lazy_type = apply_filters( 'arkhe_lazy_type', 'lazysizes' );
+		self::$lazy_type = apply_filters( 'arkhe_lazy_type', 'lazy' );
 
 		// レイアウト
 		self::$list_layouts = apply_filters( 'arkhe_list_layouts', array(
