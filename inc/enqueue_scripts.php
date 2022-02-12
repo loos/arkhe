@@ -28,7 +28,9 @@ function enqueue_front_scripts() {
 	}
 
 	// Lazysizes
-	wp_enqueue_script( 'arkhe-lazysizes', ARKHE_THEME_URI . '/dist/js/plugin/lazysizes.js', array(), \Arkhe::$file_ver, true );
+	if ( 'lazysizes' === \Arkhe::get_lazy_type() ) {
+		wp_enqueue_script( 'arkhe-lazysizes', ARKHE_THEME_URI . '/dist/js/plugin/lazysizes.js', array(), \Arkhe::$file_ver, true );
+	}
 
 	// main.js
 	wp_enqueue_script( 'arkhe-main-script', ARKHE_THEME_URI . '/dist/js/main.js', array(), \Arkhe::$file_ver, true );
