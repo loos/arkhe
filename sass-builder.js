@@ -40,6 +40,7 @@ const files = [
 	'admin/customizer',
 	'admin/nav-menus',
 	'admin/edit-table',
+	'module/luminous',
 	'module/-overlay-header',
 ];
 

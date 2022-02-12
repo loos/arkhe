@@ -1,0 +1,19 @@
+@media (max-width: 460px) {
+
+	.lum-lightbox-inner img {
+		max-width: 150vw;  /* 好きなサイズ感で */
+		max-height: 88vh;  /* 90vhだと数pxだけ上下にスクロールできてしまうためこのサイズ */
+
+		/* display: block;  を追加すると max-height: 92vh くらいでも大丈夫 */
+	}
+
+	.lum-gallery-button::after {
+		width: 6vw;
+		height: 6vw;
+	}
+}
+
+// Luminous
+.luminous {
+	cursor: zoom-in !important;
+}

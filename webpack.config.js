@@ -24,7 +24,7 @@ if ( 'guten' === process.env.TYPE ) {
 	}
 
 	if ( 'front' === process.env.TYPE ) {
-		entryFiles = [ 'main', 'plugin/lazysizes' ];
+		entryFiles = [ 'main', 'plugin/lazysizes', 'plugin/luminous' ];
 	} else if ( 'admin' === process.env.TYPE ) {
 		srcDir = 'js/admin';
 		distDir = 'js/admin';

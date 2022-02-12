@@ -98,6 +98,12 @@ class Data {
 
 
 	/**
+	 * JSの読み込みを制御する変数
+	 */
+	public static $use = array();
+
+
+	/**
 	 * テキスト系HTMLを許可する時にwp_ksesに渡す配列
 	 */
 	public static $allowed_img_html = array(
@@ -322,6 +328,8 @@ class Data {
 
 	/**
 	 * lazyload種別を取得
+	 *
+	 * @since 1.9
 	 */
 	public static function get_lazy_type() {
 		return self::$lazy_type;
@@ -329,9 +337,34 @@ class Data {
 
 	/**
 	 * lazyload種別を上書き
+	 *
+	 * @since 1.9
 	 */
 	public static function set_lazy_type( $new_type ) {
 		self::$lazy_type = $new_type;
+	}
+
+
+	/**
+	 * $use の値を取得
+	 *
+	 * @since 1.9
+	 */
+	public static function is_use( $key ) {
+		if ( ! isset( self::$use[ $key ] ) ) {
+			return false;
+		}
+		return self::$use[ $key ];
+	}
+
+
+	/**
+	 * $use の値を取得
+	 *
+	 * @since 1.9
+	 */
+	public static function set_use( $key, $val ) {
+		self::$use[ $key ] = $val;
 	}
 
 }

@@ -5,6 +5,7 @@ namespace Arkhe_Theme;
  * ファイルの読み込み
  */
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_front_scripts', 8 );
+add_action( 'wp_footer', __NAMESPACE__ . '\wp_footer_1', 1 );
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin_scripts' );
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_block_scripts' );
 add_action( 'customize_controls_enqueue_scripts', __NAMESPACE__ . '\enqueue_customizer_scripts' );
@@ -35,12 +36,24 @@ function enqueue_front_scripts() {
 	// main.js
 	wp_enqueue_script( 'arkhe-main-script', ARKHE_THEME_URI . '/dist/js/main.js', array(), \Arkhe::$file_ver, true );
 	wp_localize_script( 'arkhe-main-script', 'arkheVars', \Arkhe::get_front_global_vars() );
+}
+
+/**
+ * フロントのフッターで読み込み判定するファイル
+ */
+function wp_footer_1() {
+	// luminous
+	if ( \Arkhe::is_use( 'luminous' ) ) {
+		wp_enqueue_style( 'arkhe-luminous', ARKHE_THEME_URI . '/dist/css/module/luminous.css', array(), \Arkhe::$file_ver );
+		wp_enqueue_script( 'arkhe-luminous', ARKHE_THEME_URI . '/dist/js/plugin/luminous.js', array(), \Arkhe::$file_ver, true );
+	}
 
 	// コメント用
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 
 /**
  * 管理画面で読み込むファイル
