@@ -29,6 +29,10 @@ function enqueue_front_scripts() {
 	}
 
 	// Lazysizes
+	if ( defined( 'ARKHE_TOOLKIT_URL' ) && ! method_exists( 'Arkhe_Toolkit', 'is_use_lazysizes' ) ) {
+		// Arkhe Toolkitだけバージョンが低い時
+		\Arkhe::set_lazy_type( 'lazysizes' );
+	}
 	if ( 'lazysizes' === \Arkhe::get_lazy_type() ) {
 		wp_enqueue_script( 'arkhe-lazysizes', ARKHE_THEME_URI . '/dist/js/plugin/lazysizes.js', array(), \Arkhe::$file_ver, true );
 	}
