@@ -2,10 +2,6 @@
  * サイドバー用のスタイル
  */
 .edit-post-sidebar {
-	// 5.3からinline-blockに急に切り替わったのでblockに上書き
-	.components-base-control__label {
-		display: block;
-	}
 
 	// カラーパレットの透明パターンの背景柄を非表示
 	.components-circular-option-picker__option-wrapper::before {
@@ -35,6 +31,12 @@
 	}
 }
 
-.components-base-control__label {
-	margin-bottom: 8px;
+.edit-post-sidebar,
+.edit-widgets-sidebar {
+
+	.components-base-control__label {
+		display: block; // 5.3からinline-blockに急に切り替わったのでblockに上書き
+		margin-bottom: 8px; // <BaseControl.VisualLabel>に必要
+	}
 }
+
