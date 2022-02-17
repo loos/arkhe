@@ -45,6 +45,7 @@
 		transition: background-color .25s;
 
 		@extend %absLayer;
+		content: "";
 
 	}
 

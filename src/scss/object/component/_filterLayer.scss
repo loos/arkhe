@@ -2,17 +2,23 @@
 .c-filterLayer {
 	z-index: 0;
 
-	&::before {
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: "";
+	}
 
-		@extend %absLayer;
+	&::before {
 		z-index: 1;
 	}
 
 	&::after {
-
-		@extend %absLayer;
 		z-index: 2;
-		display: block;
 	}
 
 	&.-filter-none {
@@ -36,12 +42,8 @@
 .c-filterLayer__img {
 
 	@extend %absLayer;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	backface-visibility: hidden;
-	// transform: perspective(0);
-	> img {
-		width: 100%;
-	}
+
+	// > img {
+	// 	width: 100%;
+	// }
 }
