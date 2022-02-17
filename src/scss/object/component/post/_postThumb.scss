@@ -15,18 +15,17 @@
 	overflow: hidden;
 	transform: perspective(0);
 	backface-visibility: hidden;
-
 }
 
-
 .c-postThumb__img {
-
-	@extend .u-obf-cover;
 	position: absolute;
 	top: 0;
 	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 	transform: scale(1) perspective(0);
 	backface-visibility: hidden;
 	transition: transform .25s;
 }
-

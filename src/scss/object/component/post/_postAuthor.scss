@@ -15,11 +15,6 @@ a.c-postAuthor:hover {
 	margin-left: 1px;
 	overflow: hidden;
 	border-radius: 50%;
-
-	.avatar {
-
-		@extend .u-obf-cover;
-	}
 }
 
 // .c-postAuthor__name {}

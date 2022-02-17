@@ -53,7 +53,7 @@ trait Get {
 		$data = array(
 			'name'   => $author_data->display_name,
 			'url'    => get_author_posts_url( $author_id ),
-			'avatar' => get_avatar( $author_id, 24, '', '' ),
+			'avatar' => get_avatar( $author_id, 24, '', '', array( 'class' => 'u-obf-cover' ) ),
 		);
 		$data = apply_filters( 'arkhe_get_author_icon_data', $data );
 
