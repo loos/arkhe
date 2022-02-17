@@ -11,6 +11,9 @@ sed -i '' -e "s/Version: .*/Version: ${version}/g" style.css;
 # readme.txt のバージョン書き換え
 sed -i '' -e "s/Stable tag: .*/Stable tag: ${version}/g" readme.txt;
 
+# DS_Store削除
+find . -name '.DS_Store' -type f -ls -delete
+
 #上の階層へ
 cd ../
 
