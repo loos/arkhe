@@ -40,7 +40,7 @@
 	}
 
 	&::after {
-		box-shadow: inset 0 0 0 1px currentColor;
+		box-shadow: inset 0 0 0 1px currentcolor;
 		opacity: .15;
 		transition: background-color .25s;
 
@@ -52,7 +52,7 @@
 	@include pc {
 
 		&:hover::after {
-			background-color: currentColor;
+			background-color: currentcolor;
 		}
 	}
 
