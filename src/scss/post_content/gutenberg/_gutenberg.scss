@@ -99,3 +99,11 @@ body.editor-styles-wrapper {
 		}
 	}
 }
+
+// ウィジェットブロックエディター
+.wp-block-widget-area__inner-blocks {
+
+	> .block-editor-block-list__layout > .block-list-appender {
+		position: relative;
+	}
+}
