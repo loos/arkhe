@@ -17,9 +17,7 @@ if ( ! $has_cat && ! $has_tag ) return;
 <div class="c-postTerms u-flex--aicw">
 	<?php if ( $has_cat ) : ?>
 		<div class="c-postTerms__item -category u-flex--aicw">
-			<?php if ( $is_head ) : ?>
-				<i class="c-postMetas__icon arkhe-icon-folder"></i>
-			<?php endif; ?>
+			<?php Arkhe::the_svg( 'folder', array( 'class' => 'c-postMetas__icon' ) ); ?>
 			<?php foreach ( $cat_data as $data ) : ?>
 				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
 					<?php echo esc_html( $data['name'] ); ?>
@@ -29,11 +27,9 @@ if ( ! $has_cat && ! $has_tag ) return;
 	<?php endif; ?>
 	<?php if ( $has_tag ) : ?>
 		<div class="c-postTerms__item -tag u-flex--aicw">
-			<?php if ( $is_head ) : ?>
-				<i class="c-postMetas__icon arkhe-icon-tag"></i>
-			<?php endif; ?>
+			<?php Arkhe::the_svg( 'tag', array( 'class' => 'c-postMetas__icon' ) ); ?>
 			<?php foreach ( $tag_data as $data ) : ?>
-				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>" data-cat-id="<?php echo esc_attr( $data['id'] ); ?>">
+				<a class="c-postTerms__link" href="<?php echo esc_url( $data['url'] ); ?>" data-tag-id="<?php echo esc_attr( $data['id'] ); ?>">
 					<?php echo esc_html( $data['name'] ); ?>
 				</a>
 			<?php endforeach; ?>

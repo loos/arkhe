@@ -51,6 +51,7 @@ class Arkhe extends \Arkhe_Theme\Data {
 
 	use \Arkhe_Theme\Utility\Attrs,
 		\Arkhe_Theme\Utility\Get,
+		\Arkhe_Theme\Utility\SVG,
 		\Arkhe_Theme\Utility\Image,
 		\Arkhe_Theme\Utility\Parts,
 		\Arkhe_Theme\Utility\Output,

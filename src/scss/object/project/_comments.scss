@@ -109,13 +109,6 @@
 .comment-reply-title {
 	font-weight: bold;
 	font-size: 1rem;
-
-	&::before {
-		margin-right: .5em;
-
-		@extend .arkhe-icon-comment;
-		@extend %arkheIcon;
-	}
 }
 
 

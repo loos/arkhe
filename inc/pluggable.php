@@ -124,11 +124,10 @@ if ( ! function_exists( 'ark_the__postdate' ) ) {
 		if ( null === $date ) return;
 
 		$date_format = get_option( 'date_format' );
-		$icon_class  = 'c-postMetas__icon arkhe-icon-' . $type;
-		$time_class  = 'c-postTimes__item u-flex--aic -' . $type;
+		$type_class  = "-{$type}";
 
-		$return = '<time class="' . esc_attr( $time_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
-			'<i class="' . esc_attr( $icon_class ) . '" role="img" aria-hidden="true"></i>' .
+		$return = '<time class="c-postTimes__item u-flex--aic ' . esc_attr( $type_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
+			Arkhe::get_svg( $type, array( 'class' => 'c-postMetas__icon' ) ) .
 			esc_html( $date->format( $date_format ) ) .
 		'</time>';
 
@@ -146,12 +145,26 @@ if ( ! function_exists( 'ark_the__pnlink' ) ) {
 		$id    = isset( $args['id'] ) ? $args['id'] : 0;
 		$type  = isset( $args['type'] ) ? $args['type'] : '';
 		$title = isset( $args['title'] ) ? $args['title'] : '';
+		$svg   = 'prev' === $type ? 'chevron-left' : 'chevron-right';
 
 		$return = '<a href="' . esc_url( get_permalink( $id ) ) . '" rel="' . esc_url( $type ) . '" class="c-pnNav__link u-flex--aic">' .
+			Arkhe::get_svg( $svg, array( 'class' => 'c-pnNav__svg' ) ) .
 			'<span class="c-pnNav__title">' . esc_html( $title ) . '</span>' .
 		'</a>';
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo apply_filters( 'ark_the__pnlink', $return, $args );
+	}
+}
+
+
+/**
+ * サブメニュー展開用ボタン
+ */
+if ( ! function_exists( 'ark_get__submenu_toggle_btn' ) ) {
+	function ark_get__submenu_toggle_btn() {
+		return '<button class="c-submenuToggleBtn u-flex--c" data-onclick="toggleSubmenu">' .
+			Arkhe::get_svg( 'chevron-down', array( 'class' => 'c-submenuToggleBtn__svg' ) ) .
+		'</button>';
 	}
 }

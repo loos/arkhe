@@ -321,7 +321,7 @@ foreach ( $list_data as $data ) {
 	<ol class="p-breadcrumb__list l-container">
 		<li class="p-breadcrumb__item">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="p-breadcrumb__text">
-				<i class="arkhe-icon-home" role="img" aria-hidden="true"></i>
+				<?php Arkhe::the_svg( 'home' ); ?>
 				<span><?php echo esc_html( Arkhe::get_setting( 'breadcrumbs_home_text' ) ); ?></span>
 			</a>
 		</li>

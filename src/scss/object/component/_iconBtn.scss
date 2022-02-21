@@ -28,14 +28,10 @@
 		height: 100% !important;
 	}
 
-	i {
-		display: block;
+	.__open,
+	.__close {
 		transform-origin: 50% 50%;
 		transition: .25s;
-
-		&::before {
-			display: block;
-		}
 	}
 
 	.__close {
@@ -43,7 +39,6 @@
 		top: 0;
 		left: 0;
 		z-index: 1;
-		height: 100%;
 		transform: rotate(180deg);
 		opacity: 0;
 	}

@@ -14,7 +14,6 @@
 // 投稿ページ上部での見た目
 .p-entry__head {
 
-
 	// .c-postTerms__item {}
 
 	.c-postTerms__link:not(:hover) {
@@ -34,11 +33,18 @@
 // 投稿ページ下部での見た目
 .p-entry__foot {
 
+	.c-postTerms {
+		margin-bottom: 0;
+	}
+
+	.c-postTerms__item {
+		margin-right: .5rem;
+		margin-bottom: .25rem;
+	}
+
 	.c-postTerms__link {
 		position: relative;
 		display: block;
-		margin-right: .5rem;
-		margin-bottom: .5rem;
 		padding: 6px 8px;
 		color: #333;
 		line-height: 1;
@@ -51,24 +57,4 @@
 			opacity: .75;
 		}
 	}
-
-	.-category > .c-postTerms__link {
-
-		&::before {
-
-			margin-right: .25rem;
-
-			@extend %arkheIcon;
-			@extend .arkhe-icon-folder::before;
-		}
-	}
-
-	.-tag > .c-postTerms__link {
-
-		&::before {
-			letter-spacing: 2px;
-			content: "#";
-		}
-	}
-
 }

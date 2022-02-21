@@ -37,8 +37,11 @@
 
 				do_action( 'arkhe_end_drawer_body' );
 			?>
-			<button type="button" class="p-drawer__close u-flex--aic" data-onclick="toggleMenu">
-				<i class="arkhe-icon-close" role="img" aria-hidden="true"></i><?php esc_html_e( 'CLOSE', 'arkhe' ); ?>
+			<button type="button" class="p-drawer__close c-modalClose u-flex--aic" data-onclick="toggleMenu">
+				<?php
+					Arkhe::the_svg( 'close' );
+					esc_html_e( 'CLOSE', 'arkhe' );
+				?>
 			</button>
 		</div>
 	</div>

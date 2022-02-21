@@ -7,20 +7,6 @@
 @import "../foundation/setting/variable";
 @import "../foundation/setting/placeholder";
 
-// icon
-@font-face {
-	font-weight: normal;
-	font-family: arkhe-icon;
-	font-style: normal;
-	src:
-		url(../../../assets/fonts/icomoon.woff2?s7d81) format("woff2"),
-		url(../../../assets/fonts/icomoon.ttf?s7d81) format("truetype"),
-		url(../../../assets/fonts/icomoon.woff?s7d81) format("woff"),
-		url(../../../assets/fonts/icomoon.svg?s7d81#icomoon) format("svg");
-}
-
-@import "../foundation/icon/icomoon";
-
 // utility
 // @import "object/utility/**";
 
@@ -76,7 +62,7 @@
 #customize-theme-controls .customize-pane-child.accordion-section-content {
 	padding: 12px 0;
 
-	& > li {
+	> li {
 		box-sizing: border-box;
 		padding-right: 12px;
 		padding-left: 12px;
@@ -215,11 +201,11 @@
 			margin: 0;
 			vertical-align: middle;
 
-			& + .customize-inside-control-row {
+			+ .customize-inside-control-row {
 				margin-left: -4px;
 			}
 
-			& > input {
+			> input {
 				width: 0;
 				min-width: 0;
 				margin: 0 !important;
@@ -227,7 +213,7 @@
 				visibility: hidden;
 			}
 
-			& > label {
+			> label {
 				min-width: 2em;
 				padding: 4px 8px;
 				color: #0075af;
@@ -237,7 +223,7 @@
 				transition: .25s;
 			}
 
-			& > input:checked + label {
+			> input:checked + label {
 				color: #fff;
 				background: #007cba;
 			}
@@ -250,25 +236,25 @@
 			margin-right: 4px;
 			color: inherit;
 
-			@extend %arkheIcon;
+			font-weight: 400;
+			font-family: arkhe-icon !important;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 
 		// カテゴリー
 		.customize-inside-control-row:nth-last-child(2) {
 
-			& > label::before {
-
-				@extend .arkhe-icon-folder::before;
-
+			> label::before {
+				content: "\e90d";
 			}
 		}
 
 		// タグ
 		.customize-inside-control-row:last-child {
 
-			& > label::before {
-
-				@extend .arkhe-icon-tag::before;
+			> label::before {
+				content: "\e90c";
 			}
 		}
 	}

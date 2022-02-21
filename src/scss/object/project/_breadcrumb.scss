@@ -48,7 +48,8 @@
 
 
 .p-breadcrumb__text {
-	display: block;
+	display: flex;
+	align-items: center;
 	color: inherit;
 	font-size: 10px;
 	white-space: nowrap;
@@ -58,8 +59,9 @@
 		font-size: 11px;
 	}
 
-	i {
-		margin-right: 3px;
+	.arkhe-svg-home {
+		margin-right: 4px;
+		margin-bottom: 1px;
 	}
 
 	&:hover {

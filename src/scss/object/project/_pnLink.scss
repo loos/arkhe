@@ -17,22 +17,21 @@
 		width: 50%;
 	}
 
+	.c-pnNav__svg {
+		position: absolute;
+		top: 50%;
+		display: block;
+		transform: translateY(-50%);
+	}
+
 	&.-prev {
 
 		.c-pnNav__link {
 			padding-left: 1.5em;
+		}
 
-			&::before {
-				position: absolute;
-				top: 50%;
-				left: 0;
-				display: inline-block;
-				font-size: 1.2em;
-				transform: translateY(-50%);
-
-				@extend %arkheIcon;
-				@extend .arkhe-icon-chevron-left::before;
-			}
+		.c-pnNav__svg {
+			left: 0;
 		}
 	}
 
@@ -41,18 +40,10 @@
 		.c-pnNav__link {
 			justify-content: flex-end;
 			padding-right: 1.5em;
+		}
 
-			&::before {
-				position: absolute;
-				top: 50%;
-				right: 0;
-				display: inline-block;
-				font-size: 1.2em;
-				transform: translateY(-50%);
-
-				@extend %arkheIcon;
-				@extend .arkhe-icon-chevron-right::before;
-			}
+		.c-pnNav__svg {
+			right: 0;
 		}
 
 	}

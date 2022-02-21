@@ -52,50 +52,10 @@
 			background-color: var(--ark-hover_gray);
 		}
 	}
-
-	// アイコン用の before要素
-	// &::before {
-	//     position: absolute;
-	//     top: 50%;
-	//     left: 2px;
-	//     display: inline-block;
-	//     color: inherit;
-	//     vertical-align: middle;
-	//     transform: translateY(-50%);
-	// }
-
-}
-
-
-// カテゴリーウィジェット
-//カテゴリー ブロック
-.wp-block-categories > .cat-item > a,
-.widget_categories > ul > .cat-item > a {
-
-	padding-left: 1.75rem;
-
-	&::before {
-		position: absolute;
-		top: 50%;
-		left: .5rem;
-		display: inline-block;
-		color: inherit;
-		vertical-align: middle;
-		transform: scale(.9) translateY(-50%);
-		transform-origin: 0 0;
-		opacity: $thin_text_opacity;
-
-		@extend %arkheIcon;
-		@extend .arkhe-icon-folder::before;
-	}
 }
 
 .widget_categories,
 .wp-block-categories {
-
-	.children a {
-		padding-left: 1.75rem; //カテゴリーアイコンがある分、少し他より大きく
-	}
 
 	label {
 		display: none;

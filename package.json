@@ -18,7 +18,8 @@
         "watch:js": "nodemon --watch src/js --ignore **/plugin/** --ignore **/admin/** -e js -x \"npm run build:js\"",
         "update": "bash ./bin/zip.sh",
         "packages-update": "wp-scripts packages-update",
-        "postpackages-update": "npm run build"
+        "postpackages-update": "npm run build",
+        "rm:ds_store": "find . -name '.DS_Store' -type f -ls -delete"
     },
     "author": "",
     "license": "ISC",

@@ -68,6 +68,7 @@ function enqueue_admin_scripts( $hook_suffix ) {
 
 	if ( is_customize_preview() ) {
 		// カスタマイザー
+		wp_enqueue_style( 'arkhe-icon', $css_path . '/icon.css', array(), \Arkhe::$file_ver );
 		wp_enqueue_style( 'arkhe-customizer', $css_path . '/admin/customizer.css', array(), \Arkhe::$file_ver );
 
 	} elseif ( 'nav-menus.php' === $hook_suffix ) {

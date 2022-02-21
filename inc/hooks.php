@@ -65,7 +65,7 @@ function hook_wp_list_categories( $output ) {
 	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<button class="c-submenuToggleBtn u-flex--c" data-onclick="toggleSubmenu"></button></a><ul',
+		ark_get__submenu_toggle_btn() . '</a><ul',
 		$output
 	);
 	return $output;
@@ -79,7 +79,7 @@ add_action( 'wp_list_pages', __NAMESPACE__ . '\hook_wp_list_pages' );
 function hook_wp_list_pages( $output ) {
 	$output = preg_replace(
 		'/<\/a>([^<]*)<ul/',
-		'<button class="c-submenuToggleBtn u-flex--c" data-onclick="toggleSubmenu"></button></a><ul',
+		ark_get__submenu_toggle_btn() . '</a><ul',
 		$output
 	);
 	return $output;

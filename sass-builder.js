@@ -34,6 +34,7 @@ const writeCSS = ( filePath, css ) => {
 const src = 'src/scss';
 const dist = 'dist/css';
 const files = [
+	'icon',
 	'main',
 	'editor',
 	'admin/menu',

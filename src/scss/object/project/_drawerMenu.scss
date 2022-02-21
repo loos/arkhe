@@ -143,14 +143,16 @@
 	}
 }
 
-.p-drawer__close {
-	margin: 1rem auto .5em;
-	color: inherit;
+.c-modalClose {
 	background: none;
 	border: none;
 
-	i {
+	.arkhe-svg-close {
 		margin-right: .5em;
-		line-height: 1;
 	}
+}
+
+.p-drawer__close {
+	margin: 1rem auto .5em;
+	color: inherit;
 }

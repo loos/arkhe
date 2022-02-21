@@ -32,9 +32,6 @@ $comments_num = get_comments_number();
 				?>
 			</nav>
 		<?php endif; ?>
-		<?php
-			// コメントフォーム呼び出し
-			comment_form();
-		?>
+		<?php comment_form(); // コメントフォーム呼び出し ?>
 	</div>
 </aside>

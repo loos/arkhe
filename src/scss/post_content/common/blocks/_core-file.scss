@@ -1,22 +1,3 @@
 //ファイルブロック
-.wp-block-file {
-
-	a:not(.wp-block-file__button) {
-
-		&::before {
-			font-family: arkhe-icon;
-			letter-spacing: -2px;
-			content: "\e908\0020";
-		}
-	}
-
-
-	// コアを上書きできるように ネスト
-	.wp-block-file__button {
-		padding: .75em 1.25em;
-		font-size: inherit;
-		font-size: .8rem;
-		border-radius: 2rem;
-	}
-}
+// .wp-block-file {}
 
