@@ -27,18 +27,12 @@ trait SVG {
 		$view_box = '0 0 40 40';
 
 		switch ( $icon_name ) {
-			case 'arkhe':
+			case 'arkhe-logo':
 				$path = '<polygon points="34.96,1.89 14.29,22.56 14.29,20.34 14.33,20.29 21.09,13.53 19.31,13.53 30.73,2.11 30.95,1.89 "/><polygon points="26.58,13.32 26.58,15.1 16.12,25.55 15.85,25.82 18.08,25.82 38,5.9 38,1.89 "/><polygon points="38,12.95 25.44,25.51 26.89,25.51 26.89,38.11 2,38.11 2,13.22 14.29,13.22 14.29,11.5 23.9,1.89  27.9,1.89 27.69,2.11 27.69,2.11 14.29,15.51 14.29,14.71 3.49,14.71 3.49,36.61 25.4,36.61 25.4,25.55 25.13,25.82 22.9,25.82 23.17,25.55 26.57,22.14 26.57,20.36 38,8.94"/><polygon points="27.69,2.11 14.29,15.51 27.69,2.11"/><polygon points="32.18,25.82 38,20 38,15.99 28.17,25.82"/><polygon points="38,25.82 38,23.04 35.22,25.82"/><polygon points="20.86,1.89 20.64,2.11 14.29,8.46 14.29,4.46 16.85,1.89"/>';
 				break;
 			case 'home':
 				$path = '<path d="M16.2,36.3v-7.8h7.8v7.8h9.8V20.7H37c0.9,0,1.3-1.1,0.5-1.7L21.3,4.2c-0.7-0.7-1.9-0.7-2.6,0L2.3,18.9 c-0.7,0.5-0.3,1.7,0.5,1.7h3.3v15.7C6.2,36.3,16.2,36.3,16.2,36.3z" />';
 				break;
-			// case 'folder-fill':
-			// 	$path = '<path d="M16.4 6.6h-14.4v26.8h36v-23.2h-18l-3.6-3.6z"></path>';
-			// 	break;
-			// case 'tag-fill':
-			// 	$path = '<path d="M37.4 21.4l-18-17.9h-16v16l17.9 17.9 16.1-16zM9.1 11.6c-1.4 0-2.4-1.1-2.4-2.4s1.1-2.4 2.4-2.4 2.4 1.1 2.4 2.4-1 2.4-2.4 2.4z"></path>';
-			// 	break;
 			case 'folder':
 				$path = '<path d="M15.2,8l3.6,3.6H35V32H5V8H15.2 M16.4,5H2v30h36V8.6H20L16.4,5L16.4,5z"/>';
 				break;
@@ -77,18 +71,20 @@ trait SVG {
 				$path = '<path d="M31.6 20.6l3.9-3.9c1.6-1.6 2.5-3.8 2.5-6.1s-0.9-4.5-2.5-6.1c-1.6-1.6-3.8-2.5-6.1-2.5s-4.4 0.9-6.1 2.5l-7.1 7.1c-3.3 3.3-3.3 8.8 0 12.1 0.6 0.6 1.6 0.6 2.2 0s0.6-1.6 0-2.2c-2.2-2.2-2.2-5.7 0-7.8l7.1-7.1c1-1 2.4-1.6 3.9-1.6s2.9 0.6 3.9 1.6c2.2 2.2 2.2 5.7 0 7.8l-3.9 3.9c-0.3 0.3-0.4 0.7-0.4 1.1s0.2 0.8 0.4 1.1c0.6 0.7 1.6 0.7 2.2 0.1z"></path>
 				<path d="M4.5 23.3c-3.3 3.3-3.3 8.8 0 12.1 1.6 1.6 3.8 2.5 6.1 2.5s4.5-0.9 6.1-2.5l7.1-7.1c3.4-3.3 3.4-8.8 0-12.1-0.6-0.6-1.6-0.6-2.2 0-0.3 0.3-0.4 0.7-0.4 1.1s0.2 0.8 0.4 1.1c2.2 2.2 2.2 5.7 0 7.8l-7.1 7.1c-1 1-2.4 1.6-3.9 1.6s-2.9-0.6-3.9-1.6c-2.2-2.2-2.2-5.7 0-7.8l3.9-3.9c0.6-0.6 0.6-1.6 0-2.2-0.3-0.3-0.7-0.4-1.1-0.4s-0.8 0.1-1.1 0.4l-3.9 3.9z"></path>';
 				break;
-			// case 'comment':
-			// 	$path = '<path d="M2.3 37.6l6.9-5.2h25.2c2 0 3.6-1.6 3.6-3.6v-20.8c0-2-1.6-3.6-3.6-3.6h-28.8c-2 0-3.6 1.6-3.6 3.6v29.4c0 0.2 0.2 0.3 0.3 0.2z"></path>';
-			// 	break;
 			default:
 				break;
 		}
 
-		$svg_class = 'arkhe-svg-' . $icon_name;
-		if ( $attrs['class'] ) {
-			$svg_class .= ' ' . $attrs['class'];
-		}
-		return '<svg class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $attrs['size'] ) . '" height="' . esc_attr( $attrs['size'] ) . '" viewBox="' . $view_box . '" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
+		$svg = '';
+		if ( $path ) {
+			$svg_class = 'arkhe-svg-' . $icon_name;
+			if ( $attrs['class'] ) {
+				$svg_class .= ' ' . $attrs['class'];
+			}
 
+			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $attrs['size'] ) . '" height="' . esc_attr( $attrs['size'] ) . '" viewBox="' . $view_box . '" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
+		}
+
+		return apply_filters( 'arkhe_get_svg', $svg, $icon_name, $attrs );
 	}
 }

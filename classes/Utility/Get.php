@@ -161,39 +161,12 @@ trait Get {
 
 
 	/**
-	 * svgアイコン
-	 */
-	public static function get_svg_icon( $icon_name, $add_class = '' ) {
-
-		$path     = '';
-		$view_box = '0 0 24 24';
-
-		switch ( $icon_name ) {
-			case 'arkhe-logo':
-				$view_box = '0 0 40 40';
-				$path     = '<polygon points="34.96,1.89 14.29,22.56 14.29,20.34 14.33,20.29 21.09,13.53 19.31,13.53 30.73,2.11 30.95,1.89 "/><polygon points="26.58,13.32 26.58,15.1 16.12,25.55 15.85,25.82 18.08,25.82 38,5.9 38,1.89 "/><polygon points="38,12.95 25.44,25.51 26.89,25.51 26.89,38.11 2,38.11 2,13.22 14.29,13.22 14.29,11.5 23.9,1.89  27.9,1.89 27.69,2.11 27.69,2.11 14.29,15.51 14.29,14.71 3.49,14.71 3.49,36.61 25.4,36.61 25.4,25.55 25.13,25.82 22.9,25.82 23.17,25.55 26.57,22.14 26.57,20.36 38,8.94"/><polygon points="27.69,2.11 14.29,15.51 27.69,2.11"/><polygon points="32.18,25.82 38,20 38,15.99 28.17,25.82"/><polygon points="38,25.82 38,23.04 35.22,25.82"/><polygon points="20.86,1.89 20.64,2.11 14.29,8.46 14.29,4.46 16.85,1.89"/>';
-				break;
-			default:
-				break;
-		}
-
-		$svg_class = 'ark-svg -' . $icon_name;
-
-		// 追加クラス
-		if ( $add_class ) $svg_class .= ' ' . $add_class;
-
-		return '<svg class="' . esc_attr( $svg_class ) . '" width="24" height="24" viewBox="' . $view_box . '" version="1.1" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
-
-	}
-
-
-	/**
 	 * ツールバー拡張用データ
 	 */
 	public static function get_toolbar_data( $key, $title = '' ) {
 		if ( 'licence' === $key ) {
 			$title = $title ?: __( 'Licence registration', 'arkhe' );
-			$title = '<span class="ab-icon -arkhe">' . self::get_svg_icon( 'arkhe-logo' ) . '</span><span class="ab-label">' . $title . '</span>';
+			$title = '<span class="ab-icon -arkhe">' . self::get_svg( 'arkhe-logo' ) . '</span><span class="ab-label">' . $title . '</span>';
 
 			// arkheアイコン用CSS
 			$style = '<style>' .
