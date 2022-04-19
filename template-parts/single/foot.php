@@ -5,8 +5,8 @@
 $the_id    = get_the_ID();
 $post_data = get_post( $the_id );
 
-$show_foot_terms     = apply_filters( 'arkhe_show_show_foot_terms', Arkhe::get_setting( 'show_foot_terms' ), $the_id );
-$show_prev_next_link = apply_filters( 'arkhe_show_show_prev_next_link', Arkhe::get_setting( 'show_prev_next_link' ), $the_id );
+$show_foot_terms     = apply_filters( 'arkhe_show_foot_terms', Arkhe::get_setting( 'show_foot_terms' ), $the_id );
+$show_prev_next_link = apply_filters( 'arkhe_show_prev_next_link', Arkhe::get_setting( 'show_prev_next_link' ), $the_id );
 $show_author_box     = apply_filters( 'arkhe_show_author_box', Arkhe::get_setting( 'show_author_box' ), $the_id );
 $show_related_posts  = apply_filters( 'arkhe_show_related_posts', Arkhe::get_setting( 'show_related_posts' ), $the_id );
 ?>
