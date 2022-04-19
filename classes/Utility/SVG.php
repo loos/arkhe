@@ -16,14 +16,11 @@ trait SVG {
 	 * svgアイコン 取得
 	 */
 	public static function get_svg( $icon_name, $attrs = array() ) {
-		if ( ! $icon_name) return '';
-
-		$attrs = array_merge(array(
-			'size'  => '16',
-			'class' => '',
-		), $attrs);
+		if ( ! $icon_name ) return '';
 
 		$path     = '';
+		$size     = $attrs['size'] ?? '16';
+		$class    = $attrs['class'] ?? '';
 		$view_box = '0 0 40 40';
 
 		switch ( $icon_name ) {
@@ -78,11 +75,11 @@ trait SVG {
 		$svg = '';
 		if ( $path ) {
 			$svg_class = 'arkhe-svg-' . $icon_name;
-			if ( $attrs['class'] ) {
-				$svg_class .= ' ' . $attrs['class'];
+			if ( $class ) {
+				$svg_class .= ' ' . $class;
 			}
 
-			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $attrs['size'] ) . '" height="' . esc_attr( $attrs['size'] ) . '" viewBox="' . $view_box . '" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
+			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $size ?: '16' ) . '" height="' . esc_attr( $size ?: '16' ) . '" viewBox="' . $view_box . '" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
 		}
 
 		return apply_filters( 'arkhe_get_svg', $svg, $icon_name, $attrs );
