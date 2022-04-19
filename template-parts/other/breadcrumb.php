@@ -65,7 +65,7 @@ if ( is_search() ) {
 			}
 		}
 
-		$post_type_link  = get_post_type_archive_link( $the_post_type );
+		$post_type_link  = get_post_type_archive_link( $the_post_type ) ?: '';
 		$post_type_label = get_post_type_object( $the_post_type )->label;
 
 		// カスタム投稿タイプ名の表示
@@ -233,15 +233,28 @@ if ( is_search() ) {
 } elseif ( is_category() || is_tag() || is_tax() ) {
 	/* タームアーカイブ */
 
-	// 「投稿ページ」をパンくずリストに入れる場合
-	if ( $home_data && ( is_category() || is_tag() ) ) {
-		$list_data[] = $home_data;
-	}
-
-	// ターム情報について
 	$term_id   = $wp_obj->term_id;
 	$term_name = $wp_obj->name;
 	$tax_name  = $wp_obj->taxonomy;
+
+	if ( $home_data && ( is_category() || is_tag() ) ) {
+		// 「投稿ページ」をパンくずリストに入れる場合
+
+		$list_data[] = $home_data;
+
+	} elseif ( is_tax() ) {
+		// カスタム投稿タイプが紐付いているかチェック
+
+		$tax_parent_types = get_taxonomy( $tax_name )->object_type;
+		if ( ! empty( $tax_parent_types ) ) {
+			$tax_parent_type_slug = $tax_parent_types[0];
+			$tax_parent_type      = get_post_type_object( $tax_parent_type_slug );
+			$list_data[]          = array(
+				'url'  => get_post_type_archive_link( $tax_parent_type_slug ) ?: '',
+				'name' => $tax_parent_type->label,
+			);
+		}
+}
 
 	// 親ページがあれば順番に表示
 	if ( 0 !== $wp_obj->parent ) {
