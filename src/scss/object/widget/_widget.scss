@@ -13,6 +13,12 @@ h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
 
 	@extend %widgetTitle;
 }
+// 検索ブロックのタイトル
+.widget_block .wp-block-search__label {
+
+	@extend %widgetTitle;
+	display: block;
+}
 
 
 //ウィジェットで挿入したリンク
