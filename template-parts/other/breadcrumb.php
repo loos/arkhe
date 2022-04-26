@@ -194,7 +194,6 @@ if ( is_search() ) {
 	$m_title = get_the_date( 'F' );
 	$d_title = get_the_date( _x( 'j', 'daily archives date format', 'arkhe' ) );
 
-	echo get_the_date();
 	if ( 0 !== $the_day ) {
 		// 日別アーカイブ
 		$list_data[] = array(
