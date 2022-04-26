@@ -18,7 +18,7 @@
 	// ...の部分
 	.dots {
 		margin: 0;
-		opacity: $thin_text_opacity;
+		opacity: var(--ark-opacity--thin);
 	}
 
 	.prev,

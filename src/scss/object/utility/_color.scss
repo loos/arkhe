@@ -1,7 +1,3 @@
 .u-color-thin {
-	opacity: $thin_text_opacity !important;
+	opacity: var(--ark-opacity--thin);
 }
-
-// .u-color-main {
-//     color: var(--ark-color_main) !important;
-// }

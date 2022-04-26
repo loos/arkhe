@@ -106,7 +106,7 @@ table {
 	caption {
 		margin-top: .75rem;
 		font-size: .9rem;
-		opacity: $thin_text_opacity;
+		opacity: var(--ark-opacity--thin);
 	}
 }
 
@@ -156,7 +156,7 @@ kbd {
 
 small {
 	font-size: .75em;
-	opacity: $thin_text_opacity;
+	opacity: var(--ark-opacity--thin);
 }
 
 sup,

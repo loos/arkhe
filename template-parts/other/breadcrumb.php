@@ -324,7 +324,7 @@ foreach ( $list_data as $data ) {
 	} else {
 
 		$list_html .= '<li class="p-breadcrumb__item">' .
-			'<span class="p-breadcrumb__text">' . esc_html( wp_strip_all_tags( $data['name'] ) ) . '</span>' .
+			'<span class="p-breadcrumb__text u-color-thin">' . esc_html( wp_strip_all_tags( $data['name'] ) ) . '</span>' .
 		'</li>';
 
 	}

@@ -71,5 +71,5 @@
 	color: inherit;
 	letter-spacing: 1px;
 	transform: scale(.85);
-	opacity: $thin_text_opacity;
+	opacity: var(--ark-opacity--thin);
 }

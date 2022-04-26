@@ -40,7 +40,7 @@
 .wp-caption-text {
 	margin-top: .75rem;
 	font-size: .8rem;
-	opacity: $thin_text_opacity;
+	opacity: var(--ark-opacity--thin);
 }
 
 // TinyMCEでの中央寄せ画像

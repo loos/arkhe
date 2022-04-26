@@ -64,12 +64,16 @@
 
 // 日付
 .comment-metadata {
+	margin-top: .25rem;
 
 	a {
 		color: inherit;
 		font-size: 11px;
+		opacity: var(--ark-opacity--thin);
+	}
+
+	a:where(:not(:hover)) {
 		text-decoration: none;
-		opacity: $thin_text_opacity;
 	}
 
 }

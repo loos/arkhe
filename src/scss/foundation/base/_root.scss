@@ -29,6 +29,9 @@
 	--ark-color_gray: rgba(200, 200, 200, .15);
 	--ark-color_table_border: #ededed;
 
+	// 薄いカラーで表示する部分の opacity
+	--ark-opacity--thin: .75;
+
 	//ヘッダー
 	--ark-header_height: 0px; //実際の数値は JSでセット
 	// --ark-header_body_height: 40px; //実際の数値は JSでセット
