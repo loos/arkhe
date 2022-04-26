@@ -189,37 +189,43 @@ if ( is_search() ) {
 	$the_month = get_query_var( 'monthnum' );
 	$the_day   = get_query_var( 'day' );
 
+	// phpcs:ignore WordPress.WP.I18n.MissingArgDomain
+	$y_title = get_the_date( _x( 'Y', 'yearly archives date format' ) );
+	$m_title = get_the_date( 'F' );
+	$d_title = get_the_date( _x( 'j', 'daily archives date format', 'arkhe' ) );
+
+	echo get_the_date();
 	if ( 0 !== $the_day ) {
 		// 日別アーカイブ
 		$list_data[] = array(
 			'url'  => get_year_link( $the_year ),
-			'name' => $the_year . '年',
+			'name' => $y_title,
 		);
 		$list_data[] = array(
 			'url'  => get_month_link( $the_year, $the_month ),
-			'name' => $the_month . '月',
+			'name' => $m_title,
 		);
 		$list_data[] = array(
 			'url'  => '',
-			'name' => $the_day . '日',
+			'name' => $d_title,
 		);
 
 	} elseif ( 0 !== $the_month ) {
 		// 月別アーカイブ
 		$list_data[] = array(
 			'url'  => get_year_link( $the_year ),
-			'name' => $the_year . '年',
+			'name' => $y_title,
 		);
 		$list_data[] = array(
 			'url'  => '',
-			'name' => $the_month . '月',
+			'name' => $m_title,
 		);
 
 	} else {
 		// 年別アーカイブ
 		$list_data[] = array(
 			'url'  => '',
-			'name' => $the_year . '年',
+			'name' => $y_title,
 		);
 	}
 } elseif ( is_author() ) {
@@ -227,7 +233,7 @@ if ( is_search() ) {
 	/* 投稿者アーカイブ */
 	$list_data[] = array(
 		'url'  => '',
-		'name' => $wp_obj->display_name . ' の執筆記事',
+		'name' => $wp_obj->display_name,
 	);
 
 } elseif ( is_category() || is_tag() || is_tax() ) {

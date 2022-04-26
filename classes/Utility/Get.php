@@ -79,24 +79,24 @@ trait Get {
 		);
 
 		if ( is_date() ) {
-			// 日付アーカイブなら
+			// 日付アーカイブ
 
-			$qv_day      = get_query_var( 'day' );
-			$qv_monthnum = get_query_var( 'monthnum' );
-			$qv_year     = get_query_var( 'year' );
-
-			if ( 0 !== $qv_day ) {
-				$ymd_name = $qv_year . '年' . $qv_monthnum . '月' . $qv_day . '日';
-			} elseif ( 0 !== $qv_monthnum ) {
-				$ymd_name = $qv_year . '年' . $qv_monthnum . '月';
-			} else {
-				$ymd_name = $qv_year . '年';
+			// phpcs:disable WordPress.WP.I18n.MissingArgDomain
+			if ( is_year() ) {
+				$title = get_the_date( _x( 'Y', 'yearly archives date format' ) );
+			} elseif ( is_month() ) {
+				$title = get_the_date( _x( 'F Y', 'monthly archives date format' ) );
+			} elseif ( is_day() ) {
+				$title = get_the_date( _x( 'F j, Y', 'daily archives date format' ) );
 			}
+			// phpcs:enable WordPress.WP.I18n.MissingArgDomain
+
+			// さらに、投稿タイプの日付アーカイブだった場合 memo: {domain}/date/2022/?post_type={pt}
 			if ( is_post_type_archive() ) {
-				// さらに、投稿タイプの日付アーカイブだった場合
-				$data['title'] = $ymd_name . '(' . post_type_archive_title( '', false ) . ')';
+				$title .= ' / ' . post_type_archive_title( '', false );
 			}
-			$data['title'] = $ymd_name;
+
+			$data['title'] = $title;
 			$data['type']  = 'date';
 
 		} elseif ( is_post_type_archive() ) {
