@@ -60,7 +60,7 @@ if ( ! function_exists( 'ark_the__tagline' ) ) {
 		'</div>';
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo apply_filters( 'ark_the__tagline', $return, $args );
+		echo apply_filters( 'ark_the__tagline', $return );
 	}
 }
 
