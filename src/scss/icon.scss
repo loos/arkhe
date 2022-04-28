@@ -1,15 +1,17 @@
-// iconファイルの読み込み。main / editor 用。
+// iconファイルの読み込み。
 // ( カスタマイザー用のCSSは階層が変わるので別で読み込んでいる。 )
 @font-face {
 	font-weight: normal;
 	font-family: arkhe-icon;
 	font-style: normal;
 	src:
-		url(../../assets/fonts/icomoon.woff2?s7d812) format("woff2"),
-		url(../../assets/fonts/icomoon.ttf?s7d812) format("truetype"),
-		url(../../assets/fonts/icomoon.woff?s7d812) format("woff"),
-		url(../../assets/fonts/icomoon.svg?s7d812#icomoon) format("svg");
+		url(../../assets/fonts/icomoon.woff2?8bnr65) format("woff2"),
+		url(../../assets/fonts/icomoon.ttf?8bnr65) format("truetype"),
+		url(../../assets/fonts/icomoon.woff?8bnr65) format("woff"),
+		url(../../assets/fonts/icomoon.svg?8bnr65#icomoon) format("svg");
+	font-display: block;
 }
+
 
 [class*="arkhe-icon-"] {
 	font-weight: normal;
@@ -27,6 +29,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+// 管理画面で使用
+.arkhe-icon-logo::before {
+	content: "\e900";
+}
 
 // カスタマイザーで使用
 .arkhe-icon-tag::before {
