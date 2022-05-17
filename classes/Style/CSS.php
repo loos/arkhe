@@ -7,10 +7,10 @@ trait CSS {
 	 * カラー変数のセット（フロント & エディターで共通のもの）
 	 */
 	protected static function css_common( $setting ) {
-		self::add_root_css( '--ark-color_main', $setting['color_main'] );
-		self::add_root_css( '--ark-color_text', $setting['color_text'] );
-		self::add_root_css( '--ark-color_link', $setting['color_link'] );
-		self::add_root_css( '--ark-color_bg', $setting['color_bg'] );
+		self::add_root_css( '--ark-color--main', $setting['color_main'] );
+		self::add_root_css( '--ark-color--text', $setting['color_text'] );
+		self::add_root_css( '--ark-color--link', $setting['color_link'] );
+		self::add_root_css( '--ark-color--bg', $setting['color_bg'] );
 	}
 
 
@@ -20,11 +20,9 @@ trait CSS {
 	protected static function css_content_width( $container_width, $slim_width ) {
 
 		// コンテナサイズ
-		self::add_root_css( '--ark-container_width', $container_width . 'px' );
-		self::add_root_css( '--ark-article_width', $container_width . 'px' );
-
-		// スリムサイズ
-		self::add_root_css( '--ark-slim_width', $slim_width . 'px' );
+		self::add_root_css( '--ark-width--container', $container_width . 'px' );
+		self::add_root_css( '--ark-width--article', $container_width . 'px' );
+		self::add_root_css( '--ark-width--article--slim', $slim_width . 'px' );
 
 		// alignwide
 		$plus_width = apply_filters( 'arkhe_alignwide_plus_width', 100 );
@@ -71,7 +69,7 @@ trait CSS {
 		}
 
 		// ブロック幅
-		self::add_root_css( '--ark-block_width', $block_width . 'px' );
+		self::add_root_css( '--ark-width--block', $block_width . 'px' );
 	}
 
 
@@ -100,8 +98,8 @@ trait CSS {
 	 * ヘッダー関連
 	 */
 	protected static function css_header( $logo_size_sp, $logo_size_pc ) {
-		self::add_root_css( '--ark-logo_size_sp', $logo_size_sp . 'px' );
-		self::add_root_css( '--ark-logo_size_pc', $logo_size_pc . 'px' );
+		self::add_root_css( '--ark-logo_size--sp', $logo_size_sp . 'px' );
+		self::add_root_css( '--ark-logo_size--pc', $logo_size_pc . 'px' );
 	}
 
 

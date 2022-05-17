@@ -4,24 +4,25 @@
 	font-size: .75rem !important;
 }
 
+// --wp--preset--font-size を使ったものはコアからもheadに吐き出してくるが、後方互換のためテーマ側でも書いておく。
 .has-small-font-size {
-	font-size: var(--wp--preset--font-size--small) !important;
+	font-size: var(--wp--preset--font-size--small, .9rem) !important;
 }
 
 .has-normal-font-size {
-	font-size: var(--wp--preset--font-size--normal) !important;
+	font-size: var(--wp--preset--font-size--normal, 1rem) !important;
 }
 
 .has-large-font-size {
-	font-size: var(--wp--preset--font-size--large) !important;
+	font-size: var(--wp--preset--font-size--large, 1.25em) !important;
 }
 
 .has-xlarge-font-size {
-	font-size: var(--wp--preset--font-size--x-large) !important;
+	font-size: var(--wp--preset--font-size--x-large, 1.5rem) !important;
 }
 
 .has-huge-font-size {
-	font-size: var(--wp--preset--font-size--huge) !important;
+	font-size: var(--wp--preset--font-size--huge, 2rem) !important;
 }
 
 

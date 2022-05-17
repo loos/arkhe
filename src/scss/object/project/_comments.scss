@@ -15,13 +15,13 @@
 	// > .comment:not(:last-child),
 	> .comment {
 		padding: 1rem;
-		background-color: var(--ark-color_gray);
+		background-color: var(--ark-color--gray);
 	}
 
 	.children {
 		margin-left: 1rem;
 		padding: 0 0 0 1rem;
-		border-left: solid 1px var(--ark-color_border);
+		border-left: solid 1px var(--ark-color--border);
 	}
 
 	.reply {
@@ -163,7 +163,7 @@
 	.submit {
 		padding: .5rem 1.5rem;
 		color: #fff;
-		background-color: var(--ark-color_main);
+		background-color: var(--ark-color--main);
 		border: none;
 		transition: opacity .25s;
 

@@ -5,19 +5,19 @@ body {
 	min-width: 100%;
 	max-width: 100%;
 	overflow-x: hidden;
-	color: var(--ark-color_text);
+	color: var(--ark-color--text);
 	font-weight: 400;
 	font-size: 1rem;
 	font-family: var(--ark-font_family);
 	line-height: 1.5;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	background-color: var(--ark-color_bg);
+	background-color: var(--ark-color--bg);
 	-webkit-text-size-adjust: 100%;
 }
 
 
 // リンクカラー
 a {
-	color: var(--ark-color_link);
+	color: var(--ark-color--link);
 }

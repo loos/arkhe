@@ -47,7 +47,7 @@
 	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
 	--ark-nav-padding: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
-	--ark-color_border: rgba(255, 255, 255, .15);
+	--ark-color--border: rgba(255, 255, 255, .15);
 
 	@include pc {
 		padding-bottom: var(--ark-header_height);
@@ -92,7 +92,7 @@
 .c-drawerNav {
 	display: block;
 	text-align: left;
-	border-top: 1px solid var(--ark-color_border);
+	border-top: 1px solid var(--ark-color--border);
 
 	.menu-item {
 		position: relative;
@@ -107,7 +107,7 @@
 		display: block;
 		padding: var(--ark-nav-padding, .75rem .5rem);
 		text-decoration: none;
-		border-bottom: 1px solid var(--ark-color_border);
+		border-bottom: 1px solid var(--ark-color--border);
 		outline-offset: -3px;
 		transition: background-color .25s;
 
@@ -115,7 +115,7 @@
 
 			&:hover {
 				// background-color: rgba(255, 255, 255, .1);
-				background-color: var(--ark-hover_gray);
+				background-color: var(--ark-color--gray--hover);
 			}
 		}
 	}

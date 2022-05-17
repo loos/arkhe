@@ -5,7 +5,7 @@
 	li {
 		position: relative;
 		margin: 0;
-		border-bottom: solid 1px var(--ark-color_border);
+		border-bottom: solid 1px var(--ark-color--border);
 	}
 
 	a {
@@ -17,7 +17,7 @@
 		transition: background-color .25s;
 
 		&:hover {
-			background-color: var(--ark-hover_gray);
+			background-color: var(--ark-color--gray--hover);
 		}
 
 	}
@@ -25,7 +25,7 @@
 
 .wp-block-latest-posts:not(.is-grid),
 .widget_recent_entries ul {
-	border-top: solid 1px var(--ark-color_border);
+	border-top: solid 1px var(--ark-color--border);
 }
 
 .wp-block-latest-posts {

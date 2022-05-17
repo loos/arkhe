@@ -40,7 +40,7 @@
 
 .wp-block-archives-list,
 .wp-block-categories__list {
-	border-top: solid 1px var(--ark-color_border);
+	border-top: solid 1px var(--ark-color--border);
 }
 
 
@@ -110,7 +110,7 @@ ul.wp-block-categories__list {
 		background-repeat: no-repeat !important;
 		background-position: right center !important;
 		background-size: 24px 24px !important;
-		border: solid 1px var(--ark-color_border);
+		border: solid 1px var(--ark-color--border);
 		border-radius: 2px;
 		-webkit-appearance: none;
 		-moz-appearance: none;

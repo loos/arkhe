@@ -18,8 +18,8 @@ if ( ! $logo_id ) {
 	$logo_content = esc_html( get_option( 'blogname' ) );
 } else {
 
-	if ( $logo_size_pc ) $style .= '--ark-logo_size_pc:' . $logo_size_pc . 'px;';
-	if ( $logo_size_sp ) $style .= '--ark-logo_size_sp:' . $logo_size_sp . 'px;';
+	if ( $logo_size_pc ) $style .= '--ark-logo_size--pc:' . $logo_size_pc . 'px;';
+	if ( $logo_size_sp ) $style .= '--ark-logo_size--sp:' . $logo_size_sp . 'px;';
 
 	$logo_type    = 'image';
 	$logo_content = ark_get__head_logo_img( $logo_id );

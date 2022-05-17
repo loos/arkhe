@@ -9,7 +9,6 @@
 
 	// フォントサイズ
 	--ark-font_size: 16px;
-	--ark-font_size--mobile: 3.8vw;
 
 	// コンテンツエリアのline-height
 	--ark-line_height: 1.8;
@@ -18,48 +17,54 @@
 	--ark-font_family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 
 	// l-containerのサイドのpadding量
-	--ark-pad--container: 48px;
+	--ark-padding--container: 48px;
 
 	@include sp {
-		--ark-pad--container: 4vw;
+		--ark-padding--container: 4vw;
 	}
 
+	@include mobile {
+		--ark-font_size: 3.8vw;
+	}
+
+	// ウィジェットなどのナビ・メニュー用変数
+	--ark-padding--nav: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
+
 	// カラー変数 (設定には紐づいていないもの)
-	--ark-color_border: rgba(200, 200, 200, .5);
-	--ark-color_gray: rgba(200, 200, 200, .15);
-	--ark-color_table_border: #ededed;
+	--ark-color--border: rgba(200, 200, 200, .5);
+	--ark-color--gray: rgba(200, 200, 200, .15);
+	--ark-color--border--table: #ededed;
+	--ark-color--gray--hover: rgba(150, 150, 150, .05);
 
 	// 薄いカラーで表示する部分の opacity
 	--ark-opacity--thin: .75;
 
-	//ヘッダー
-	--ark-header_height: 0px; //実際の数値は JSでセット
-	// --ark-header_body_height: 40px; //実際の数値は JSでセット
-
-	// ドロワーメニューのカラー変数
-	// --ark-color_drawer_bg:
-
-	// ウィジェットなどのナビ・メニュー用変数
-	--ark-nav-padding: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
-	--ark-hover_gray: rgba(150, 150, 150, .05);
-
-	// スクロールバーの横幅
-	--ark-scrollbar_width: 0px;
+	//ヘッダーの高さ
+	--ark-header_height: 0px; // 実際の数値は JSでセット
+	--ark-header_height--fixed: 0px; // 実際の数値は JSでセット
 
 	// 管理バーの高さ
 	--ark-adminbar_height: 0px;
 
-	// 固定コンテンツを考慮したオフセット値
-	--ark-offset_y: 0px;
+	// スクロールバーの横幅
+	--ark-scrollbar_width: 0px;
+
+	// 固定コンテンツを考慮したオフセット値 old: --ark-offset_y
+	--ark-offset--y: calc(var(--ark-adminbar_height, 0px) + var(--ark-header_height--fixed));
+
+	// 全高コンテンツ用
+	--ark-height--full: calc(100vh - var(--ark-offset--y, 0px));
+
+}
+
+// ヘッダーオーバーレイの時、全高を上書き
+.l-header[data-overlay="1"] + .l-content {
+	--ark-height--full: calc(100vh - var(--ark-adminbar_height, 0px));
 }
 
 html {
 	font-size: var(--ark-font_size);
 	letter-spacing: .025em;
-
-	@include mobile {
-		font-size: var(--ark-font_size--mobile);
-	}
 }
 
 body.admin-bar {
@@ -70,8 +75,26 @@ body.admin-bar {
 	}
 }
 
-/* stylelint-disable selector-id-pattern */
-body:not(#_) {
-	// wp5.9 から導入されたCSS変数を流用する
-	@include set-wp-preset--fz;
+// 途中で名前変更したものの後方互換
+body {
+	--ark-color_main: var(--ark-color--main);
+	--ark-color_text: var(--ark-color--text);
+	--ark-color_link: var(--ark-color--link);
+	--ark-color_bg: var(--ark-color--bg);
+	--ark-color_gray: var(--ark-color--gray);
+	--ark-hover_gray: var(--ark-color--gray--hover);
+	--ark-color_border: var(--ark-color--border);
+	--ark-color_table_border: var(--ark-color--border--table);
+
+	--ark-font_size--mobile: 3.8vw;
+	--ark-pad--container: var(--ark-padding--container);
+	--ark-nav-padding: var(--ark-padding--nav);
+	--ark-offset_y: var(--ark-offset--y);
+	--ark-container_width: var(--ark-width--container);
+	--ark-article_width: var(--ark-width--article);
+	--ark-slim_width: var(--ark-width--article--slim);
+
+	// テーマ本体内だけでしか使われていないもの
+	// --ark-logo_size_pc →　--ark-logo_size--pc
+	// --ark-logo_size_sp →　--ark-logo_size--sp
 }

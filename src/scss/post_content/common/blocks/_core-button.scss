@@ -33,14 +33,14 @@
 	padding: 1em 1.5em;
 	font-size: inherit; // コア側で 1.125em にされる
 	line-height: 1;
-	background-color: var(--ark-color_main);
+	background-color: var(--ark-color--main);
 	transition: opacity .25s;
 
 	.is-style-outline > & {
 		border-width: 1px;
 
 		&:not(.has-text-color) {
-			color: var(--ark-color_main);
+			color: var(--ark-color--main);
 		}
 	}
 

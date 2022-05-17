@@ -47,7 +47,7 @@
 		&.-current > a,
 		&:hover,
 		&.focus {
-			color: var(--ark-color_main);
+			color: var(--ark-color--main);
 		}
 
 		// サブメニュー表示
@@ -65,7 +65,7 @@
 	.sub-menu {
 		color: #fff;
 		text-align: left;
-		background: var(--ark-color_main);
+		background: var(--ark-color--main);
 		border-top: 1px solid rgba(255, 255, 255, .1);
 		visibility: hidden;
 
@@ -123,7 +123,7 @@
 			z-index: 1;
 			// padding: 0;
 			border: 8px solid transparent;
-			border-bottom-color: var(--ark-color_main);
+			border-bottom-color: var(--ark-color--main);
 			transform: translateX(-50%);
 			content: "";
 		}

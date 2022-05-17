@@ -35,36 +35,39 @@ export const setState = {
 		isModalOpen = val;
 	},
 	smoothOffset: () => {
-		smoothOffset = 0;
+		let fixedHeaderHeight = 0;
 
 		const arkheVars = window.arkheVars;
 		if ( arkheVars === undefined ) return;
 
-		// PC表示でヘッダー固定時
-		if ( isPC && arkheVars.isFixHeadPC ) {
-			smoothOffset += headH;
+		/* eslint no-lonely-if: off */
+		// PC
+		if ( isPC ) {
+			// ヘッダー固定時
+			if ( arkheVars.isFixHeadPC ) {
+				fixedHeaderHeight += headH;
+			}
+
+			// グロナビー固定時
+			if ( arkheVars.fixGnav ) {
+				const headerUnder = document.querySelector( '.l-headerUnder' );
+				if ( null !== headerUnder ) fixedHeaderHeight += headerUnder.offsetHeight;
+			}
+		} else {
+			// SP表示でヘッダー固定時
+			if ( arkheVars.isFixHeadSP ) {
+				fixedHeaderHeight += headH;
+			}
 		}
 
-		// PC表示でグロナビー固定時
-		if ( isPC && arkheVars.fixGnav ) {
-			const headerUnder = document.querySelector( '.l-headerUnder' );
-			if ( null !== headerUnder ) smoothOffset += headerUnder.offsetHeight;
-		}
+		// CSS変数にセット
+		document.documentElement.style.setProperty(
+			'--ark-header_height--fixed',
+			fixedHeaderHeight + 'px'
+		);
 
-		// SP表示でヘッダー固定時
-		if ( isSP && arkheVars.isFixHeadSP ) {
-			smoothOffset += headH;
-		}
-
-		// 管理バーがある時
-		if ( 0 < adminbarH ) {
-			smoothOffset += adminbarH;
-		}
-
-		// CSS変数にもセット
-		document.documentElement.style.setProperty( '--ark-offset_y', smoothOffset + 'px' );
-
-		smoothOffset += 8; //スクロール位置を少しだけ下へ。
+		// スムーススクロール用のオフセット値
+		smoothOffset = 8 + fixedHeaderHeight + adminbarH;
 	},
 	scrollbarW: () => {
 		const scrollbarW = window.innerWidth - document.body.clientWidth;

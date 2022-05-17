@@ -60,7 +60,7 @@ hr:not(.wp-block-separator) {
 pre {
 	padding: 1rem;
 	overflow-x: auto;
-	background-color: var(--ark-color_gray);
+	background-color: var(--ark-color--gray);
 
 	code {
 		font-size: .9rem;
@@ -72,7 +72,7 @@ pre {
 blockquote {
 	padding: .25rem 1rem;
 	background: none;
-	border-left: solid 2px var(--ark-color_border);
+	border-left: solid 2px var(--ark-color--border);
 
 	cite {
 		display: block;
@@ -98,8 +98,8 @@ table {
 	max-width: 100%;
 	text-align: left;
 	border: none;
-	border-top: solid 1px var(--ark-color_table_border);
-	border-right: solid 1px var(--ark-color_table_border);
+	border-top: solid 1px var(--ark-color--border--table);
+	border-right: solid 1px var(--ark-color--border--table);
 	// border-collapse: separate;
 	border-spacing: 0;
 
@@ -114,8 +114,8 @@ th,
 td {
 	padding: .5em .75em;
 	vertical-align: top;
-	border-bottom: solid 1px var(--ark-color_table_border);
-	border-left: solid 1px var(--ark-color_table_border);
+	border-bottom: solid 1px var(--ark-color--border--table);
+	border-left: solid 1px var(--ark-color--border--table);
 }
 
 thead {
@@ -123,13 +123,13 @@ thead {
 	td,
 	th {
 		color: #fff;
-		background-color: var(--ark-color_main);
+		background-color: var(--ark-color--main);
 	}
 }
 
 tbody th {
 	font-weight: bold;
-	background-color: var(--ark-color_gray);
+	background-color: var(--ark-color--gray);
 }
 
 

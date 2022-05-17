@@ -20,7 +20,7 @@
 	padding: 24px;
 	color: #333;
 	background: #fff;
-	border: 1px solid var(--ark-color_border);
+	border: 1px solid var(--ark-color--border);
 
 	@include tab {
 		font-size: 14px;
@@ -62,7 +62,7 @@
 			display: block;
 			color: #fff !important;
 			line-height: 36px;
-			background-color: var(--ark-color_main);
+			background-color: var(--ark-color--main);
 		}
 
 		td {
