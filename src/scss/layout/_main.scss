@@ -2,13 +2,6 @@
 	position: static !important; //色々と重要
 	width: 100%;
 
-	[data-sidebar="on"] & {
-
-		@include pc {
-			width: calc(100% - 368px);
-			max-width: 100%; //l-artcileが狭い時を考慮
-		}
-	}
 }
 
 .l-main__body {

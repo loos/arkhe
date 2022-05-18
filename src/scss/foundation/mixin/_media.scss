@@ -2,13 +2,11 @@
 // Media Query用
 //------------------------------------------
 
-$media_sp: 599px;
-$media_tablet_yoko: 960px;
-
 // mobileのみ
 @mixin mobile {
 
-	@media (max-width: 599px) {
+	// 600px未満
+	@media not all and (min-width: 600px) {
 		@content;
 	}
 }
@@ -21,6 +19,16 @@ $media_tablet_yoko: 960px;
 	}
 }
 
+@mixin sp {
+
+	// 1000px未満
+	@media not all and (min-width: 1000px) {
+
+		@content;
+	}
+}
+
+
 //pc以上
 @mixin pc {
 
@@ -29,30 +37,14 @@ $media_tablet_yoko: 960px;
 	}
 }
 
-@mixin sp {
 
-	@media (max-width: 999px) {
+@mixin wide {
+
+	@media (min-width: 1200px) {
 		@content;
 	}
 }
 
-// @mixin sp {
-// 	@media screen and (max-width: 599px) {
-// 		@content;
-// 	}
-// }
-
-// @mixin tab {
-// 	@media screen and (max-width: 959px) {
-// 		@content;
-// 	}
-// }
-
-// @mixin pc {
-// 	@media screen and (min-width: 600px) {
-// 		@content;
-// 	}
-// }
 
 //任意の数値
 @mixin max-width($break-point) {

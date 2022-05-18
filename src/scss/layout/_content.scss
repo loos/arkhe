@@ -25,13 +25,5 @@
 		margin-bottom: 0;
 	}
 
-	[data-sidebar="on"] & {
-
-		@include pc {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-	}
 }
 

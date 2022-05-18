@@ -10,11 +10,40 @@
 		margin-top: 4rem;
 	}
 
-	[data-sidebar="on"] & {
+}
 
-		@include pc {
-			width: 320px;
-		}
+
+[data-sidebar="on"] {
+
+	// サイドバーサイズ(アドセンスに最低限必要なのは 250px)
+	--ark-width--sidebar: 280px;
+	--ark-gap--container: 32px;
+
+	@media (min-width: 1100px) {
+		--ark-width--sidebar: 300px;
+		// --ark-gap--container: 32px;
 	}
 
+	@include wide {
+		--ark-width--sidebar: 312px;
+		--ark-gap--container: 48px;
+	}
+
+	@include pc {
+
+		.l-sidebar {
+			width: var(--ark-width--sidebar);
+		}
+
+		.l-main {
+			width: calc(100% - var(--ark-width--sidebar) - var(--ark-gap--container));
+			max-width: 100%; //l-artcileが狭い時を考慮
+		}
+
+		.l-content__body {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
 }
