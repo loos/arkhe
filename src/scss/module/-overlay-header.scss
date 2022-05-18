@@ -141,30 +141,22 @@
 }
 
 
-// ナビが fix しない場合 & ナビだけが fix の場合
+// ナビが fix しない場合 & ナビだけ fix の場合の初期状態
 .l-headerUnder:not([data-fix]),
 [data-pcfix="0"] + .l-headerUnder[data-fix] {
 	position: absolute;
 	top: var(--ark-header_height);
 }
 
-// ナビだけが fix の場合 (ちょっとチラつくが、このパターンは非推奨で。)
+// ナビだけ fix で、スクロールされた状態
 [data-scrolled="true"] [data-pcfix="0"] + .l-headerUnder[data-fix] {
 	position: fixed;
-	top: 0;
-}
-
-[data-scrolled="true"] .admin-bar [data-pcfix="0"] + .l-headerUnder[data-fix] {
-	top: 32px;
+	top: var(--ark-adminbar_height);
 }
 
 
-// ヘッダーもナビだけも fix の場合
+// ヘッダーもナビも fix の場合
 [data-pcfix="1"] + .l-headerUnder[data-fix] {
 	position: fixed;
-	top: calc(var(--ark-header_height));
-}
-
-.admin-bar [data-pcfix="1"] + .l-headerUnder[data-fix] {
-	top: calc(var(--ark-header_height) + 32px);
+	top: calc(var(--ark-header_height) + var(--ark-adminbar_height));
 }
