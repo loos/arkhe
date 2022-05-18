@@ -69,7 +69,7 @@ trait CSS {
 		}
 
 		// ブロック幅
-		self::add_root_css( '--ark-width--block', $block_width . 'px' );
+		self::add_root_css( '--ark-block_width', $block_width . 'px' );
 	}
 
 
