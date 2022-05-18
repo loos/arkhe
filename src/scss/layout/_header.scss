@@ -12,7 +12,7 @@
 // }
 
 .l-header {
-	top: 0; //fixされた時用
+	top: var(--ark-adminbar_height, 0); // sticky で fixされた時用
 	z-index: 100;
 	width: 100%;
 	color: #333;
@@ -32,10 +32,6 @@
 		}
 	}
 
-	// Stickeyの時
-	.admin-bar & {
-		top: var(--ark-adminbar_height);
-	}
 }
 
 // スマホでは非表示にする要素

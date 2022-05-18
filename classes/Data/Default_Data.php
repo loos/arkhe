@@ -27,6 +27,7 @@ trait Default_Data {
 			// 'head_logo'              => 0,
 			'head_logo_overlay'         => 0,
 			'header_overlay_on_page'    => false,
+			'color_text_overlay_header' => '#fff',
 			'logo_size_pc'              => '48',
 			'logo_size_sp'              => '40',
 			'header_overlay'            => 'off',

@@ -235,13 +235,23 @@ Customizer::add(
 	)
 );
 
+// オーバーレイ時のテキストカラー
+Customizer::add(
+	$arkhe_section,
+	'color_text_overlay_header',
+	array(
+		'label' => __( 'Text color for Overlay Header', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
 // オーバーレイ時のロゴ画像
 Customizer::add(
 	$arkhe_section,
 	'head_logo_overlay',
 	array(
 		'classname' => '-header-overlay',
-		'label'     => __( 'Logo image when overlaying', 'arkhe' ),
+		'label'     => __( 'Logo image for Overlay Header', 'arkhe' ),
 		'type'      => 'media',
 		'mime_type' => 'image',
 	)

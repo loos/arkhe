@@ -8,9 +8,8 @@
 	display: none;
 }
 
+// .l-header[data-overlay="1"]
 .l-header {
-	// position: fixed !important;
-	top: 0;
 	left: 0;
 	transition: background-color .25s;
 
@@ -22,6 +21,7 @@
 
 		&[data-pcfix="0"] {
 			position: absolute;
+			top: 0;
 			transition-duration: 0s;
 		}
 	}
@@ -34,13 +34,9 @@
 
 		&[data-spfix="0"] {
 			position: absolute;
+			top: 0;
 			transition-duration: 0s;
 		}
-	}
-
-	.l-header__body {
-		// transition: color .25s; //ナビやアイコンには各自 transition がついている
-		color: #fff;
 	}
 
 	.c-headLogo {
@@ -58,27 +54,21 @@
 		z-index: 1;
 		opacity: 0;
 	}
-
-}
-
-[data-scrolled="false"] {
-
-	.l-header {
-		background-color: transparent;
-	}
 }
 
 @include pc {
+
+	.l-header[data-pcfix="0"],
+	[data-scrolled="false"] .l-header[data-pcfix="1"] {
+		color: var(--ark-color--text--overlay_header, #fff);
+		background-color: transparent;
+	}
 
 	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
 	[data-scrolled="true"] {
 
 		[data-pcfix="1"] {
 
-			.l-header__body {
-				color: inherit;
-			}
-
 			.c-headLogo__img.-top {
 				opacity: 0;
 			}
@@ -86,29 +76,23 @@
 			.c-headLogo__img.-common {
 				opacity: 1;
 			}
-
 		}
-	}
-
-	// PCで固定設定なしの時
-	.l-header[data-pcfix="0"] {
-		top: 0 !important;
-		// data-scrolled=" true"でも透明を維持
-		background-color: transparent;
 	}
 }
 
 @include sp {
+
+	.l-header[data-spfix="0"],
+	[data-scrolled="false"] .l-header[data-spfix="1"] {
+		color: var(--ark-color--text--overlay_header, #fff);
+		background-color: transparent;
+	}
 
 	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
 	[data-scrolled="true"] {
 
 		[data-spfix="1"] {
 
-			.l-header__body {
-				color: inherit;
-			}
-
 			.c-headLogo__img.-top {
 				opacity: 0;
 			}
@@ -118,13 +102,6 @@
 			}
 
 		}
-	}
-
-	// SPで固定設定なしの時
-	.l-header[data-spfix="0"] {
-		top: 0 !important;
-		// data-scrolled=" true"でも透明を維持
-		background-color: transparent;
 	}
 }
 
@@ -133,13 +110,11 @@
 	transition: background-color .25s;
 }
 
-// 透明に。
 .l-headerUnder:not([data-fix]),
 [data-scrolled="false"] .l-headerUnder[data-fix] {
-	color: #fff;
+	color: var(--ark-color--text--overlay_header, #fff);
 	background-color: transparent;
 }
-
 
 // ナビが fix しない場合 & ナビだけ fix の場合の初期状態
 .l-headerUnder:not([data-fix]),
@@ -153,7 +128,6 @@
 	position: fixed;
 	top: var(--ark-adminbar_height);
 }
-
 
 // ヘッダーもナビも fix の場合
 [data-pcfix="1"] + .l-headerUnder[data-fix] {
