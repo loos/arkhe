@@ -31,12 +31,12 @@ Customizer::add(
 	'logo_size_pc',
 	array(
 		'label'       => __( 'Image size', 'arkhe' ) . ' (PC)',
-		'description' => '32~120px',
+		'description' => '24~160px',
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step'    => '1',
-			'min'     => '32',
-			'max'     => '120',
+			'min'     => '24',
+			'max'     => '160',
 		),
 		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
@@ -48,12 +48,12 @@ Customizer::add(
 	'logo_size_sp',
 	array(
 		'label'       => __( 'Image size', 'arkhe' ) . ' (SP)',
-		'description' => '32~80px',
+		'description' => '24~100px',
 		'type'        => 'number',
 		'input_attrs' => array(
 			'step'    => '1',
-			'min'     => '32',
-			'max'     => '80',
+			'min'     => '24',
+			'max'     => '100',
 		),
 		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
