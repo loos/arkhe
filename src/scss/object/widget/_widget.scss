@@ -4,6 +4,13 @@
 	+ .c-widget {
 		margin-top: 2.5rem;
 	}
+
+
+	figcaption {
+
+		@extend %figcaption;
+	}
+
 }
 
 // .c-widget h2.widget-title, // ウィジェットグループ用 → フックで書き換え
