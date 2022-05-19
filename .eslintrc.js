@@ -12,6 +12,7 @@ module.exports = {
 		IntersectionObserver: false,
 		IntersectionObserverEntry: false,
 		navigator: false,
+		requestAnimationFrame: false,
 	},
 
 	rules: {

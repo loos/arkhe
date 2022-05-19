@@ -4,39 +4,73 @@ import { smoothOffset } from './data/stateData';
 /**
  * スムーススクロール関数
  *
- * @param  target  スクロール位置となる対象要素
- * @param  offset  ヘッダーの高さなど、ターゲット座標の調整値
- * @param  divisor 近づく割合（数値が大きいほどゆっくり近く）
+ * @param  target スクロール位置となる対象要素 or 座標数値
+ * @param  offset ヘッダーの高さなど、ターゲット座標の調整値
  */
-export function smoothScroll( target, offset, divisor ) {
-	divisor = divisor || 12;
-	let toY;
-	let nowY = window.pageYOffset; //現在のスクロール値
-	const range = divisor / 2 + 1; //どこまで近づけば処理を終了するか(無限ループにならないように divisor から算出)
+export function smoothScroll( target, offset ) {
+	// アニメーションの開始時のスクロール位置を格納する変数
+	const startY = window.scrollY;
 
+	let targetY = 0;
 	//ターゲットの座標
-	const targetRect = target.getBoundingClientRect(); //ターゲットの座標取得
-	const targetY = targetRect.top + nowY - offset; //現在のスクロール値 & ヘッダーの高さを踏まえた座標
-	//スクロール終了まで繰り返す処理
-	const loopFunc = () => {
-		toY = nowY + Math.round( ( targetY - nowY ) / divisor ); //次に移動する場所（近く割合は除数による。）
-		window.scrollTo( 0, toY ); //スクロールさせる
-		nowY = toY; //nowY更新
+	if ( Number.isInteger( target ) ) {
+		// 直接指定された場合
+		targetY = target;
+	} else {
+		const targetRect = target.getBoundingClientRect(); //ターゲットの座標取得
+		targetY = targetRect.top + startY - offset; //現在のスクロール値 & ヘッダーの高さを踏まえた座標
+		if ( targetY < 0 ) targetY = 0;
+	}
 
-		if ( document.body.clientHeight - window.innerHeight < toY ) {
-			//最下部にスクロールしても対象まで届かない場合は下限までスクロールして強制終了
-			window.scrollTo( 0, document.body.clientHeight );
-			return;
-		}
-		if ( toY >= targetY + range || toY <= targetY - range ) {
-			//+-rangeの範囲内へ近くまで繰り返す
-			window.setTimeout( loopFunc, 10 );
-		} else {
-			//+-range の範囲内にくれば正確な値へ移動して終了。
-			window.scrollTo( 0, targetY );
+	// アニメーションの開始時間を格納する変数
+	let startTime = null;
+
+	// アニメーションの Duration の設定
+	let duration = 500;
+
+	// 距離に応じてスクロール時間を調整する
+	const distance = Math.abs( targetY - startY );
+	if ( 10000 < distance ) {
+		duration = 1500;
+	} else if ( 5000 < distance ) {
+		duration = 1000;
+	} else if ( 1000 < distance ) {
+		duration = 750;
+	}
+
+	/**
+	 * イージング関数 https://easings.net/ja
+	 */
+	const easeOutCubic = ( x ) => {
+		return 1 - Math.pow( 1 - x, 3 );
+	};
+
+	/**
+	 * アニメーションの各フレームでの処理
+	 *
+	 * @param  nowTime コールバックの呼び出しを開始した時点の時刻 ( performance.now() )
+	 */
+	const scrollAnimation = ( nowTime ) => {
+		// 経過時間
+		const elapsedTime = nowTime - startTime;
+
+		// 進捗率
+		const progress = Math.min( 1, elapsedTime / duration );
+
+		// 次のスクロール位置
+		const nextY = startY + ( targetY - startY ) * easeOutCubic( progress );
+
+		// 指定した位置へスクロール
+		window.scrollTo( 0, nextY );
+
+		// 進捗率が1未満の場合、自分自身を呼び出し、繰り返す
+		if ( progress < 1 ) {
+			requestAnimationFrame( scrollAnimation );
 		}
 	};
-	loopFunc(); //初回実行;
+
+	startTime = performance.now();
+	scrollAnimation( startTime );
 }
 
 /**

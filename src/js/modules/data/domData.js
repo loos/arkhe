@@ -8,9 +8,7 @@ export default {
 	mainContent: null,
 	sidebar: null,
 	drawerMenu: null,
-	pageTopBtn: null,
 	searchModal: null,
-
 	fixBottomMenu: null,
 	wpadminbar: null,
 	lastFocusedElem: null,

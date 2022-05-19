@@ -1,17 +1,13 @@
 import DOM from './data/domData';
-import { setState } from '@js/modules/data/stateData';
+import { setState } from './data/stateData';
+import { smoothScroll } from './smoothScroll';
 
 /**
  * クリックイベント処理をまとめたオブジェクト
  */
 export const clickEvents = {
 	pageTop() {
-		const thisFunc = clickEvents.pageTop;
-		const nowY = window.pageYOffset;
-		window.scrollTo( 0, Math.floor( nowY * 0.8 ) );
-		if ( 0 < nowY ) {
-			window.setTimeout( thisFunc, 10 );
-		}
+		smoothScroll( 0, 0 );
 	},
 	toggleMenu( e ) {
 		e.preventDefault();
