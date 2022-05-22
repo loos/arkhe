@@ -1,6 +1,7 @@
 <?php
 /**
  * 投稿リストに表示されるメタデータ
+ * memo: ここには表示させたい情報だけしか渡ってこないようにしている
  */
 $date      = isset( $args['date'] ) ? $args['date'] : null;
 $modified  = isset( $args['modified'] ) ? $args['modified'] : null;
