@@ -124,28 +124,7 @@ ul.wp-block-categories__list {
 
 
 // 検索
-.wp-block-search {
-
-	.wp-block-search__button {
-		font-size: 14px;
-		background: #f7f7f7;
-		border: none;
-		box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
-
-		&.wp-block-search__button.wp-block-search__button {
-			padding: .25em .5em;
-		}
-	}
-
-	.wp-block-search__button-inside {
-
-		.wp-block-search__button {
-			background: none;
-			border: none;
-			box-shadow: none;
-		}
-	}
-}
+// .wp-block-search {}
 
 
 // カレンダー

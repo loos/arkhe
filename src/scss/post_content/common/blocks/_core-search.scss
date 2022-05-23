@@ -4,16 +4,23 @@
 	font-weight: 700;
 }
 
-.wp-block-search__button {
-	font-size: 14px;
-	background: #f7f7f7;
-	border: none !important;
-	border-radius: 2px;
-	box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
-}
+.wp-block-search {
 
-.wp-block-search__input {
-	padding: .25em .5em;
+	.wp-block-search__button {
+		font-size: 14px;
+		background: #f7f7f7;
+		border: none !important;
+		border-radius: 2px;
+		box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
+
+		&:hover {
+			opacity: .75;
+		}
+	}
+
+	.wp-block-search__input {
+		padding: .25em .5em;
+	}
 }
 
 

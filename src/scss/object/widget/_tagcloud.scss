@@ -4,23 +4,33 @@
 .wp-block-tag-cloud {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 8px;
 	align-items: center;
+}
+
+.wp-block-tag-cloud.is-style-outline {
+
+	.tag-cloud-link {
+		background: none;
+	}
 }
 
 .tag-cloud-link {
 	position: relative;
 	display: block;
-	margin-right: 8px;
-	margin-bottom: 8px;
-	padding: 6px 8px;
-	// color: #333;
+	margin: 0;
+	padding: 6px 8px !important;
 	color: #333 !important; //footerで inherit になるので
-	font-size: .75rem !important; //タグクラウドは使用頻度でフォントサイズ変えてくるので !important 付ける
 	line-height: 1;
 	text-decoration: none;
 	background: #f7f7f7;
 	border: none;
 	transition: opacity .25s;
+
+	// wp60からの.is-style-outlineに負けないようにさらに詳細度上げる
+	&.tag-cloud-link.tag-cloud-link {
+		font-size: .75rem !important; //タグクラウドは使用頻度でフォントサイズ変えてくるので !important 付ける
+	}
 
 	&::before {
 		margin-right: .25em;

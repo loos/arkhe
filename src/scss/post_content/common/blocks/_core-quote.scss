@@ -13,10 +13,23 @@
 	&.is-style-large {
 
 		position: relative;
-		margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
-		padding: 2.5rem 3rem;
 		background: var(--ark-color--gray);
 		border: none;
+
+		// wp60からコアのスタイルが強くなってる
+		&.is-style-large {
+			margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
+			padding: 2.5rem 3rem;
+
+			p {
+				font-size: 1.25rem;
+			}
+
+			cite {
+				font-size: 1rem;
+			}
+		}
+
 
 		&::before,
 		&::after {
@@ -42,15 +55,6 @@
 			transform: rotate(180deg);
 		}
 
-		p {
-			font-size: 1.25rem;
-		}
-
-		cite {
-			font-size: 1rem;
-			text-align: inherit;
-		}
-
 	}
 
 	// スタイル：「プレーン」
@@ -58,4 +62,9 @@
 		padding: 0;
 		border: none;
 	}
+
+	&.has-background {
+		padding: 1.5rem 1.75rem;
+	}
+
 }

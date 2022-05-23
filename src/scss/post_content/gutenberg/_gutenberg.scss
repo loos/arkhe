@@ -31,6 +31,9 @@ a {
 	}
 }
 
+:where(.editor-styles-wrapper) * {
+	box-sizing: border-box;
+}
 
 // フォント系
 .wp-block-widget-area,

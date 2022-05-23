@@ -1,10 +1,11 @@
 
 .wp-block-columns {
-	--wp--style--block-gap: 2rem;
+	--wp-column-gap: 2rem;
+	gap: 0 !important;
 
 	@include mobile {
 		// 5.9~ モバイルでも横並びができるようになったので少し小さめにしておく
-		--wp--style--block-gap: 1.5rem;
+		--wp-column-gap: 1.5rem;
 	}
 
 	.wp-block-column {
@@ -16,7 +17,7 @@
 		// flex-wrap: nowrap; // memo: コア側で 782px~ に対して付いているので、1000px~ に対しての指定は不要
 
 		&:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
-			margin-left: var(--wp--style--block-gap);
+			margin-left: var(--wp-column-gap);
 		}
 	}
 
@@ -37,7 +38,7 @@
 			}
 
 			+ .wp-block-column {
-				margin-top: var(--wp--style--block-gap);
+				margin-top: var(--wp-column-gap);
 			}
 		}
 	}
