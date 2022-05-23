@@ -6,9 +6,9 @@
 $date     = isset( $args['date'] ) ? $args['date'] : null;
 $modified = isset( $args['modified'] ) ? $args['modified'] : null;
 
-// まだ文字列の場合はDateTime化 ( is_stringチェックは後方互換用 )
-if ( is_string( $date ) ) $date         = new DateTime( $date );
-if ( is_string( $modified ) ) $modified = new DateTime( $modified );
+// まだ文字列の場合はタイムスタンプ化 ( is_stringチェックは後方互換用 )
+if ( is_string( $date ) ) $date         = strtotime( $date );
+if ( is_string( $modified ) ) $modified = strtotime( $modified );
 
 // 両方表示する設定の場合、更新日は公開日より遅い場合だけ表示
 if ( $date && $modified ) {

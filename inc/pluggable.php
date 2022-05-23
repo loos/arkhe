@@ -116,7 +116,7 @@ if ( ! function_exists( 'ark_the__thumbnail' ) ) {
 
 /**
  * 投稿の日付データを出力 (アーカイブと投稿ページで使用)
- * date: DateTime object
+ * date: タイムスタンプ
  */
 if ( ! function_exists( 'ark_the__postdate' ) ) {
 	function ark_the__postdate( $date = null, $type = 'posted' ) {
@@ -126,9 +126,9 @@ if ( ! function_exists( 'ark_the__postdate' ) ) {
 		$date_format = get_option( 'date_format' );
 		$type_class  = "-{$type}";
 
-		$return = '<time class="c-postTimes__item u-flex--aic ' . esc_attr( $type_class ) . '" datetime="' . esc_attr( $date->format( 'Y-m-d' ) ) . '">' .
+		$return = '<time class="c-postTimes__item u-flex--aic ' . esc_attr( $type_class ) . '" datetime="' . wp_date( 'Y-m-d', $date ) . '">' .
 			Arkhe::get_svg( $type, array( 'class' => 'c-postMetas__icon' ) ) .
-			esc_html( $date->format( $date_format ) ) .
+			esc_html( wp_date( $date_format, $date ) ) .
 		'</time>';
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

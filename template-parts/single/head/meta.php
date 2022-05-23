@@ -3,8 +3,8 @@
  * 投稿メタ（head）
  */
 $post_data = get_post();
-$date      = new DateTime( $post_data->post_date );
-$modified  = new DateTime( $post_data->post_modified );
+$date      = strtotime( $post_data->post_date );
+$modified  = strtotime( $post_data->post_modified );
 $author_id = $post_data->post_author;
 
 $show_posted   = Arkhe::get_setting( 'show_entry_posted' );
