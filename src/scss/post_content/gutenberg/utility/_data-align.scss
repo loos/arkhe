@@ -1,3 +1,11 @@
+[data-align="wide"],
+[data-align="full"] {
+
+	.wp-block {
+		max-width: 100%;
+	}
+}
+
 [data-align="full"] {
 
 	> .wp-block-cover,
