@@ -7,6 +7,7 @@
 	.components-resizable-box__container {
 		max-width: 100% !important;
 		height: auto !important;
+		vertical-align: top; // 6.0 で画像ブロック下側の余白が少し大きくなるのを防ぐ
 	}
 
 	&.is-resized > div:not(.components-resizable-box__container) {
