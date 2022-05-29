@@ -3,7 +3,7 @@
  * 関連記事リストの出力テンプレート（サブループ内）
  *   $args['count'] : 現在のループカウント数 (フック用に用意)
  */
-$post_data = get_post();
+
 ?>
 <li class="p-postList__item">
 	<a href="<?php the_permalink(); ?>" class="p-postList__link">
@@ -17,7 +17,8 @@ $post_data = get_post();
 			<div class="p-postList__title"><?php the_title(); ?></div>
 				<?php
 					Arkhe::get_part( 'post_list/item/meta', array(
-						'date' => $post_data->post_date,
+						'show_date'     => Arkhe::get_setting( 'show_related_posted' ),
+						'show_modified' => Arkhe::get_setting( 'show_related_modified' ),
 					) );
 				?>
 		</div>

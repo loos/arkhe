@@ -83,6 +83,8 @@ trait Default_Data {
 			'show_comments'             => true,
 			'show_img_shadow'           => true,
 			'show_related_posts'        => true,
+			'show_related_posted'       => true,
+			'show_related_modified'     => false,
 			'related_posts_layout'      => 'card',
 			'post_relation_type'        => 'category',
 			'pn_link_is_same_term'      => false,

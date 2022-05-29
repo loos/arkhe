@@ -169,6 +169,26 @@ Customizer::add(
 	)
 );
 
+// 公開日を表示する
+Customizer::add(
+	$arkhe_section,
+	'show_related_posted',
+	array(
+		'label' => __( 'Show posted date', 'arkhe' ),
+		'type'  => 'checkbox',
+	)
+);
+
+// 更新日を表示する
+Customizer::add(
+	$arkhe_section,
+	'show_related_modified',
+	array(
+		'label' => __( 'Show modified date', 'arkhe' ),
+		'type'  => 'checkbox',
+	)
+);
+
 // 関連記事のレイアウト
 Customizer::add(
 	$arkhe_section,

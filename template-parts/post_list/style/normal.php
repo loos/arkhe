@@ -36,10 +36,10 @@ $post_data = get_post();
 			<?php endif; ?>
 			<?php
 				Arkhe::get_part( 'post_list/item/meta', array(
-					'date'      => $show_date ? $post_data->post_date : null,
-					'modified'  => $show_modified ? $post_data->post_modified : null,
-					'author_id' => $show_author ? $post_data->post_author : 0,
-					'show_cat'  => $show_cat,
+					'show_date'     => $show_date,
+					'show_modified' => $show_modified,
+					'show_cat'      => $show_cat,
+					'author_id'     => $show_author ? $post_data->post_author : 0,
 				) );
 			?>
 		</div>
