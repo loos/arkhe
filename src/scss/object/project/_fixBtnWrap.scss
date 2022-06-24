@@ -1,8 +1,8 @@
 // FIxボタン系
 .p-fixBtnWrap {
 	position: fixed;
-	right: 2.5vw;
-	bottom: 5vw;
+	right: 3%;
+	bottom: 6%;
 	z-index: 10;
 	display: flex;
 	flex-direction: column;
@@ -11,11 +11,6 @@
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity .5s, visibility .5s;
-
-	@include tab {
-		right: 40px;
-		bottom: 40px;
-	}
 
 	[data-scrolled="true"] & {
 		visibility: visible;

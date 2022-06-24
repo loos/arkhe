@@ -1,5 +1,5 @@
 
-[class*="arkhe-svg-"] {
+[class*="arkhe-svg-"]:not([width]) {
 	width: 1em;
 	height: 1em;
 }
