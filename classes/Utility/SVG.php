@@ -19,7 +19,7 @@ trait SVG {
 		if ( ! $icon_name ) return '';
 
 		$path     = '';
-		$size     = $attrs['size'] ?? '16';
+		$size     = $attrs['size'] ?? '1em' ?: '1em';
 		$class    = $attrs['class'] ?? '';
 		$view_box = '0 0 40 40';
 
@@ -79,7 +79,7 @@ trait SVG {
 				$svg_class .= ' ' . $class;
 			}
 
-			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $size ?: '16' ) . '" height="' . esc_attr( $size ?: '16' ) . '" viewBox="' . $view_box . '" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
+			$svg = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="' . esc_attr( $svg_class ) . '" width="' . esc_attr( $size ) . '" height="' . esc_attr( $size ) . '" viewBox="' . $view_box . '" role="img" aria-hidden="true" focusable="false">' . $path . '</svg>';
 		}
 
 		return apply_filters( 'arkhe_get_svg', $svg, $icon_name, $attrs );
