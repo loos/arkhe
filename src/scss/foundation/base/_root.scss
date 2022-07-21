@@ -49,22 +49,24 @@
 	// スクロールバーの横幅
 	--ark-scrollbar_width: 0px;
 
-	// 固定コンテンツを考慮したオフセット値 old: --ark-offset_y
-	--ark-offset--y: calc(var(--ark-adminbar_height, 0px) + var(--ark-header_height--fixed));
+	--ark-100vh: 100vh;
 
-	// 全高コンテンツ用
-	--ark-height--full: calc(100vh - var(--ark-offset--y, 0px));
-
-}
-
-// ヘッダーオーバーレイの時、全高を上書き
-.l-header[data-overlay="1"] + .l-content {
-	--ark-height--full: calc(100vh - var(--ark-adminbar_height, 0px));
+	@supports (height: 100svh) {
+		--ark-100vh: 100svh;
+	}
 }
 
 html {
 	font-size: var(--ark-font_size);
 	letter-spacing: .025em;
+}
+// --ark-adminbar_heightで変わるものはbodyで指定ｐ
+body {
+	// 固定コンテンツを考慮したオフセット値 old: --ark-offset_y
+	--ark-offset--y: calc(var(--ark-adminbar_height) + var(--ark-header_height--fixed));
+
+	// 全高コンテンツ用
+	--ark-height--full: calc(var(--ark-100vh, 100vh) - var(--ark-offset--y));
 }
 
 body.admin-bar {
@@ -74,6 +76,18 @@ body.admin-bar {
 		--ark-adminbar_height: var(--wp-admin--admin-bar--height, 46px);
 	}
 }
+
+
+// ヘッダーオーバーレイの時、最初のコンテンツは値を固定
+.l-header[data-overlay="1"] + .l-content .l-main__body > .c-postContent > :first-child {
+	--ark-height--full: calc(var(--ark-100vh, 100vh) - var(--ark-adminbar_height));
+}
+
+// ヘッダーオーバーレイじゃない時、最初のコンテンツは値を固定
+.l-header:not([data-overlay]) + .l-content .l-main__body > .c-postContent > :first-child {
+	--ark-height--full: calc(var(--ark-100vh, 100vh) - var(--ark-adminbar_height) - var(--ark-header_height));
+}
+
 
 // 途中で名前変更したものの後方互換
 body {
