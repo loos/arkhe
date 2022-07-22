@@ -49,20 +49,22 @@
 	// スクロールバーの横幅
 	--ark-scrollbar_width: 0px;
 
+	// 画面高さ
 	--ark-100vh: 100vh;
 
 	@supports (height: 100svh) {
-		--ark-100vh: 100svh;
+		--ark-100vh: 100svh; /* stylelint-disable-line */
 	}
 }
 
 html {
 	font-size: var(--ark-font_size);
-	letter-spacing: .025em;
+	letter-spacing: var(--ark-letter_spacing);
 }
-// --ark-adminbar_heightで変わるものはbodyで指定ｐ
+
+// --ark-adminbar_heightで変わるものはbodyで指定
 body {
-	// 固定コンテンツを考慮したオフセット値 old: --ark-offset_y
+	// 固定コンテンツを考慮したオフセット値
 	--ark-offset--y: calc(var(--ark-adminbar_height) + var(--ark-header_height--fixed));
 
 	// 全高コンテンツ用
@@ -89,8 +91,8 @@ body.admin-bar {
 }
 
 
-// 途中で名前変更したものの後方互換
-body {
+// 途中で名前変更したものの後方互換 (カスタマイズで利用されやすいものや、ブロックプラグイン等で利用していた変数)
+body { /* stylelint-disable-line */
 	--ark-color_main: var(--ark-color--main);
 	--ark-color_text: var(--ark-color--text);
 	--ark-color_link: var(--ark-color--link);
@@ -98,17 +100,8 @@ body {
 	--ark-color_gray: var(--ark-color--gray);
 	--ark-hover_gray: var(--ark-color--gray--hover);
 	--ark-color_border: var(--ark-color--border);
-	--ark-color_table_border: var(--ark-color--border--table);
-
-	--ark-font_size--mobile: 3.8vw;
 	--ark-pad--container: var(--ark-padding--container);
-	--ark-nav-padding: var(--ark-padding--nav);
-	--ark-offset_y: var(--ark-offset--y);
 	--ark-container_width: var(--ark-width--container);
 	--ark-article_width: var(--ark-width--article);
 	--ark-slim_width: var(--ark-width--article--slim);
-
-	// テーマ本体内だけでしか使われていないもの
-	// --ark-logo_size_pc →　--ark-logo_size--pc
-	// --ark-logo_size_sp →　--ark-logo_size--sp
 }

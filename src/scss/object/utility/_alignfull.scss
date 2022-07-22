@@ -17,7 +17,7 @@
 	// グループ（背景色あり）・カバーブロックの余白量を大きく。
 	&.wp-block-cover,
 	&.wp-block-group.has-background {
-		padding: 4em var(--ark-pad--container, 48px);
+		padding: 4em var(--ark-padding--container, 48px);
 	}
 
 	// カバー & 背景色付きグループでは、インナーコンテンツの最大幅を他のコンテンツと揃える。
@@ -28,8 +28,8 @@
 
 		// さらにその中の全幅は、左右のpaddingまでに収まるように。
 		> .alignfull {
-			left: calc(50% - ( 50vw - var(--ark-pad--container) ));
-			width: calc(100vw - var(--ark-pad--container) * 2);
+			left: calc(50% - ( 50vw - var(--ark-padding--container) ));
+			width: calc(100vw - var(--ark-padding--container) * 2);
 		}
 	}
 

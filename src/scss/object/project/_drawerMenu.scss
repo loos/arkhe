@@ -46,7 +46,7 @@
 	transition: opacity .5s, visibility .5s;
 	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
-	--ark-nav-padding: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
+	--ark-padding--nav: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
 	--ark-color--border: rgba(255, 255, 255, .15);
 
 	@include pc {
@@ -105,7 +105,7 @@
 	a {
 		position: relative;
 		display: block;
-		padding: var(--ark-nav-padding, .75rem .5rem);
+		padding: var(--ark-padding--nav, .75rem .5rem);
 		text-decoration: none;
 		border-bottom: 1px solid var(--ark-color--border);
 		outline-offset: -3px;

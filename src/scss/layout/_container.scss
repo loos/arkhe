@@ -1,9 +1,8 @@
 .l-container {
 	width: 100%;
-	max-width: calc(var(--ark-container_width) + (var(--ark-padding--container) * 2));
+	max-width: calc(var(--ark-width--container) + (var(--ark-padding--container) * 2));
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: var(--ark-padding--container);
 	padding-left: var(--ark-padding--container);
-
 }

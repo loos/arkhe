@@ -43,7 +43,7 @@
 	a {
 		position: relative;
 		display: block;
-		padding: var(--ark-nav-padding, .75rem .5rem);
+		padding: var(--ark-padding--nav, .75rem .5rem);
 		color: inherit;
 		text-decoration: none;
 		transition: background-color .25s;
