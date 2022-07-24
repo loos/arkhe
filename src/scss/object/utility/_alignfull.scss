@@ -8,12 +8,6 @@
 		margin-top: 0;
 	}
 
-	// 入れ子の時は親の幅に収まるように
-	.c-postContent > div & {
-		left: 0 !important;
-		width: 100% !important;
-	}
-
 	// グループ（背景色あり）・カバーブロックの余白量を大きく。
 	&.wp-block-cover,
 	&.wp-block-group.has-background {
