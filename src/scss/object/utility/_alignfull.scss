@@ -8,29 +8,10 @@
 		margin-top: 0;
 	}
 
-	// 入れ子の時は親の幅に収まるように
-	.c-postContent > div & {
-		left: 0 !important;
-		width: 100% !important;
-	}
-
-	// グループ（背景色あり）・カバーブロックの余白量を大きく。
-	&.wp-block-cover,
-	&.wp-block-group.has-background {
-		padding: 4em var(--ark-padding--container, 48px);
-	}
-
-	// カバー & 背景色付きグループでは、インナーコンテンツの最大幅を他のコンテンツと揃える。
-	> .wp-block-cover__inner-container,
-	&.has-background > .wp-block-group__inner-container {
-		max-width: var(--ark-width--article);
-		margin: 0 auto;
-
-		// さらにその中の全幅は、左右のpaddingまでに収まるように。
-		> .alignfull {
-			left: calc(50% - ( 50vw - var(--ark-padding--container) ));
-			width: calc(100vw - var(--ark-padding--container) * 2);
-		}
+	// div中の全幅は、内部に収まるように。（ネスト内でも広げたいケースはそれぞれ明示的に指定する）
+	:where(.c-postContent > div) & {
+		left: 0;
+		width: 100%;
 	}
 
 	// サイドバーありの時、コンテンツエリアでは幅を制限
@@ -41,4 +22,35 @@
 			width: 100% !important;
 		}
 	}
+
+	// 背景色ありグループ・カバーブロックの余白量を大きく。
+	&.wp-block-cover,
+	&.wp-block-group.has-background {
+		padding: 4em var(--ark-padding--container, 48px);
+	}
+
+	// インナーコンテンツの最大幅を記事幅に維持する
+	> .wp-block-cover__inner-container,
+	&.has-background > .wp-block-group__inner-container {
+		max-width: var(--ark-width--article);
+		margin: 0 auto;
+	}
+
+	// 全幅の中の記事幅コンテンツの中の、さらに幅広なコンテンツの挙動
+	> .ark-block-container__inner,
+	> .wp-block-cover__inner-container,
+	&.has-background > .wp-block-group__inner-container,
+	&:not([data-inner="full"]) > .ark-block-section__body {
+
+		// さらにその中の全幅は、左右のpaddingまでに収まるように。
+		> .alignfull {
+			left: calc(50% - ( 50vw - var(--ark-padding--container) ));
+			width: calc(100vw - var(--ark-padding--container) * 2);
+		}
+
+		> .alignwide {
+			--ark-alignwide_ex_width: revert;
+		}
+	}
 }
+

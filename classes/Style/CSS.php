@@ -15,7 +15,7 @@ trait CSS {
 
 
 	/**
-	 * コンテンツ幅
+	 * コンテンツ幅 （フロント & エディターで共通）
 	 */
 	protected static function css_content_width( $container_width, $slim_width ) {
 
@@ -26,7 +26,35 @@ trait CSS {
 
 		// alignwide
 		$plus_width = apply_filters( 'arkhe_alignwide_plus_width', 100 );
-		self::add_root_css( '--ark-alignwide_plus_width', $plus_width * 2 . 'px' );
+		self::add_root_css( '--ark-alignwide_ex_width', $plus_width . 'px' );
+
+		// 基本 ( +4 で少しだけ余裕持たせてる ）
+		self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
+			':root{--ark-alignwide_ex_width:0px}' .
+		'}';
+
+		// 1カラムページ（スリム）用
+		self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
+			':root{--ark-alignwide_ex_width:0px}' .
+		'}';
+
+		if ( is_admin() ) {
+
+			self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 280 ) . 'px ) {' .
+				'body:not(.is-fullscreen-mode), .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			'}';
+			self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 440 ) . 'px ) {' .
+				'body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			'}';
+
+			// 1カラムページ（スリム）用
+			self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 280 ) . 'px ) {' .
+				'body:not(.is-fullscreen-mode), .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			'}';
+			self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 440 ) . 'px ) {' .
+				'body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			'}';
+		}
 	}
 
 
@@ -70,27 +98,6 @@ trait CSS {
 
 		// ブロック幅
 		self::add_root_css( '--ark-block_width', $block_width . 'px' );
-	}
-
-
-	/**
-	 * .alignwide の幅
-	 */
-	protected static function css_alignwide( $container_width, $slim_width ) {
-
-		$plus_width    = apply_filters( 'arkhe_alignwide_plus_width', 100 );
-		$plus_width_x2 = $plus_width * 2;
-		$alignwide_css = 'left:-' . $plus_width . 'px;width:calc(100% + ' . $plus_width_x2 . 'px)';
-
-		// 基本 ( +4 で少しだけ余裕持たせてる ）
-		self::$styles['all'] .= '@media (min-width: ' . ( $container_width + $plus_width_x2 + 4 ) . 'px ) {' .
-			'.alignwide{' . $alignwide_css . '}' .
-		'}';
-
-		// 1カラムページ（スリム）用
-		self::$styles['all'] .= '@media (min-width: ' . ( $slim_width + $plus_width_x2 + 4 ) . 'px ) {' .
-			'.page-template-one-column-slim .alignwide,.post-template-one-column-slim .alignwide{' . $alignwide_css . '}' .
-		'}';
 	}
 
 

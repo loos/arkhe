@@ -83,8 +83,6 @@ class Style {
 	public static function set_front_style( $setting ) {
 		$setting = \Arkhe::get_setting();
 
-		self::css_alignwide( $setting['container_width'], $setting['slim_width'] );
-
 		// 投稿・固定ページ
 		self::css_title_bg( $setting['ttlbg_overlay_color'], $setting['ttlbg_overlay_opacity'] );
 

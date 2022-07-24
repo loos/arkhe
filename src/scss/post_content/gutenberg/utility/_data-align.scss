@@ -1,3 +1,27 @@
+
+:root {
+	--ark-editor-100vw: 100vw;
+}
+
+// フルスクリーンモード・サイドバーの展開状況に合わせる。
+// インサーターなども考慮するなら .interface-interface-skeleton__secondary-sidebar ~ .interface-interface-skeleton__content で上書き
+@media (min-width: 782px) {
+
+	.edit-post-layout.is-sidebar-opened {
+		--ark-editor-100vw: calc(100vw - 280px);
+	}
+
+	body:not(.is-fullscreen-mode) {
+		--ark-editor-100vw: calc(100vw - 160px);
+	}
+
+	body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened {
+		--ark-editor-100vw: calc(100vw - 160px - 280px);
+	}
+}
+
+
+// フロントの .alignfull, .alignwide と合わせる
 [data-align="wide"],
 [data-align="full"] {
 
@@ -6,27 +30,44 @@
 	}
 }
 
+
 [data-align="full"] {
 
+	// 背景色ありグループ・カバーブロックの余白量を大きく。
 	> .wp-block-cover,
 	> .wp-block-group.has-background {
-		padding: 4em 48px;
+		padding: 4em var(--ark-padding--container);
 	}
 
+	// インナーコンテンツの最大幅を記事幅に維持する
 	> .wp-block-cover > .wp-block-cover__inner-container,
 	> .wp-block-group.has-background > .wp-block-group__inner-container {
+		max-width: var(--ark-width--article);
+		margin: 0 auto;
+	}
+
+	// 全幅の中の記事幅コンテンツの中の、さらに幅広なコンテンツの挙動
+	> .wp-block-cover > .wp-block-cover__inner-container,
+	> .wp-block-group.has-background > .wp-block-group__inner-container,
+	> .ark-block-container > .ark-block-container__inner,
+	> :not([data-inner="full"]) > .ark-block-section__body > .ark-block-section__bodyInner {
 
 		> .wp-block {
-			max-width: var(--ark-block_width, 900px);
+			width: 100%;
 		}
 
 		> [data-align="wide"] {
-			max-width: calc(var(--ark-block_width, 900px) + var(--ark-alignwide_plus_width, 200px));
+			position: relative;
+			left: calc(var(--ark-alignwide_ex_width, 0px) * -1);
+			width: calc(100% + var(--ark-alignwide_ex_width, 0px) * 2);
+			max-width: unset !important;
 		}
 
 		> [data-align="full"] {
-			width: 100%;
-			max-width: 100%;
+			position: relative;
+			left: calc(50% - ( (var(--ark-editor-100vw) / 2) - var(--ark-padding--container, 0px) ));
+			width: calc(var(--ark-editor-100vw) - var(--ark-padding--container, 0px) * 2);
+			max-width: var(--ark-editor-100vw) !important;
 		}
 
 	}
@@ -37,7 +78,6 @@
 .interface-interface-skeleton__content {
 	overflow-x: hidden;
 }
-
 
 // 左右寄せ
 .wp-block[data-align="left"],
