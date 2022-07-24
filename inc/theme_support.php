@@ -79,9 +79,15 @@ function setup_theme() {
 				'slug'      => 'xlarge',
 			),
 			array(
-				'name'      => __( 'Huge', 'arkhe' ),
+				'name'      => __( 'Double extra large', 'arkhe' ),
 				'shortName' => 'XXL',
 				'size'      => '2rem',
+				'slug'      => 'xxlarge',
+			),
+			array(
+				'name'      => __( 'Huge', 'arkhe' ),
+				'shortName' => 'XXXL',
+				'size'      => '2.75rem',
 				'slug'      => 'huge',
 			),
 		)

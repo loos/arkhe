@@ -3,12 +3,8 @@
 .c-pageTitle__main {
 	position: relative;
 	font-weight: 700;
-	font-size: 1.75rem;
+	font-size: 2rem;
 	line-height: 1.5;
-
-	@include tab {
-		font-size: 2rem;
-	}
 }
 
 .c-pageTitle__sub {

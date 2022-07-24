@@ -1,52 +1,39 @@
 
-// 単位：rem (memo: ブロック単位で変化するサイズなので、remにしている
+.u-fz-xs,
 .has-xsmall-font-size {
-	font-size: .75rem !important;
+	font-size: var(--ark-fz--xs, .75em) !important;
+
 }
 
-// --wp--preset--font-size を使ったものはコアからもheadに吐き出してくるが、後方互換のためテーマ側でも書いておく。
+.u-fz-s,
 .has-small-font-size {
-	font-size: var(--wp--preset--font-size--small, .9rem) !important;
+	font-size: var(--ark-fz--s, .9em) !important;
 }
 
+.u-fz-n,
 .has-normal-font-size {
-	font-size: var(--wp--preset--font-size--normal, 1rem) !important;
+	font-size: var(--ark-fz--n, 1rem) !important;
 }
 
+.u-fz-m {
+	font-size: var(--ark-fz--m, 1.1em) !important;
+}
+
+.u-fz-l,
 .has-large-font-size {
-	font-size: var(--wp--preset--font-size--large, 1.25em) !important;
+	font-size: var(--ark-fz--l, 1.25em) !important;
 }
 
+.u-fz-xl,
 .has-xlarge-font-size {
-	font-size: var(--wp--preset--font-size--x-large, 1.5rem) !important;
+	font-size: var(--ark-fz--xl, 1.5em) !important;
+}
+
+.u-fz-xxl,
+.has-xxlarge-font-size {
+	font-size: var(--ark-fz--xxl, 2em) !important;
 }
 
 .has-huge-font-size {
-	font-size: var(--wp--preset--font-size--huge, 2rem) !important;
-}
-
-
-// 単位: em （memo: インラインテキストでも使われる想定）
-.u-fz-xs {
-	font-size: .75em !important;
-}
-
-.u-fz-s {
-	font-size: .9em !important;
-}
-
-.u-fz-n {
-	font-size: 1em !important;
-}
-
-.u-fz-l {
-	font-size: 1.25em !important;
-}
-
-.u-fz-xl {
-	font-size: 1.5em !important;
-}
-
-.u-fz-xxl {
-	font-size: 2em !important;
+	font-size: var(--ark-fz--huge, 2.75em) !important;
 }

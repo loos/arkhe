@@ -7,25 +7,14 @@
 	--ark-mt--s: 1rem;
 	--ark-mt--h: 2.5em; // 見出しタグ用
 
-	// フォントサイズ
-	--ark-font_size: 16px;
-
-	// コンテンツエリアのline-height
-	--ark-line_height: 1.8;
-
-	// フォントファミリー
+	// フォント関連
 	--ark-font_family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+	--ark-font_size: min(16px, 4vw);
+	--ark-line_height: 1.8; // コンテンツエリアで使用
+	--ark-letter_spacing: .025em;
 
 	// l-containerのサイドのpadding量
-	--ark-padding--container: 48px;
-
-	@include sp {
-		--ark-padding--container: 4vw;
-	}
-
-	@include mobile {
-		--ark-font_size: 3.8vw;
-	}
+	--ark-padding--container: min(48px, 4vw);
 
 	// ウィジェットなどのナビ・メニュー用変数
 	--ark-padding--nav: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
@@ -55,6 +44,16 @@
 	@supports (height: 100svh) {
 		--ark-100vh: 100svh; /* stylelint-disable-line */
 	}
+
+	// フォントサイズリスト
+	--ark-fz--xs: .75em;
+	--ark-fz--s: .9em;
+	--ark-fz--n: 1rem; // ルートサイズに戻す用
+	--ark-fz--m: 1.1em;
+	--ark-fz--l: 1.25em;
+	--ark-fz--xl: 1.5em;
+	--ark-fz--xxl: 2em;
+	--ark-fz--huge: 3em;
 }
 
 html {
