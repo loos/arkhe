@@ -9,9 +9,12 @@
 
 // ストライプ
 table.is-style-stripes,
-.is-style-stripes table {
+.is-style-stripes table,
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes td {
 	border: none;
 }
+
 
 .is-style-stripes {
 
