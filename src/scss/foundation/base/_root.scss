@@ -41,10 +41,6 @@
 	// 画面高さ
 	--ark-100vh: 100vh;
 
-	@supports (height: 100svh) {
-		--ark-100vh: 100svh; /* stylelint-disable-line */
-	}
-
 	// フォントサイズリスト
 	--ark-fz--xs: .75em;
 	--ark-fz--s: .9em;
@@ -78,6 +74,11 @@ body.admin-bar {
 	}
 }
 
+.l-main__body > .c-postContent > :first-child {
+	@supports (height: 100svh) {
+		--ark-100vh: 100svh; /* stylelint-disable-line */
+	}
+}
 
 // ヘッダーオーバーレイの時、最初のコンテンツは値を固定
 .l-header[data-overlay="1"] + .l-content .l-main__body > .c-postContent > :first-child {
