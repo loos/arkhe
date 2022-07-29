@@ -263,7 +263,7 @@ class Data {
 		$json = get_transient( 'arkhe_informations' );
 		if ( ! $json ) {
 			$info_json = self::$is_ja ? 'information.json' : 'information_en.json';
-			$response  = wp_remote_get( self::CDN_URL . $info_json );
+			$response  = wp_remote_get( self::CDN_URL . '/' . $info_json );
 			$json      = wp_remote_retrieve_body( $response );
 			set_transient( 'arkhe_informations', $json, 7 * DAY_IN_SECONDS );
 		}
