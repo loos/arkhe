@@ -15,6 +15,12 @@ class Data {
 
 
 	/**
+	 * データ通信先
+	 */
+	const CDN_URL = 'https://loos-cdn.com/arkhe';
+
+
+	/**
 	 * テーマバージョン
 	 */
 	public static $theme_ver = '';
@@ -46,7 +52,7 @@ class Data {
 	public static $licence_key       = '';
 	public static $licence_data      = array();
 	public static $has_pro_licence   = false;
-	public static $licence_check_url = 'https://looscdn.com/cdn/arkhe/licence/check';
+	public static $licence_check_url = self::CDN_URL . '/licence/check';
 
 
 	/**
@@ -134,12 +140,24 @@ class Data {
 		'br'     => array( 'class' => true ),
 		'i'      => array( 'class' => true ),
 		'em'     => array( 'class' => true ),
+		'code'   => array( 'class' => true ),
 		'span'   => array( 'class' => true ),
 		'strong' => array( 'class' => true ),
 		'ul'     => array( 'class' => true ),
 		'ol'     => array( 'class' => true ),
 		'li'     => array( 'class' => true ),
 		'p'      => array( 'class' => true ),
+		'div'    => array( 'class' => true ),
+		'img'    => array(
+			'alt'     => true,
+			'src'     => true,
+			'secset'  => true,
+			'class'   => true,
+			'seizes'  => true,
+			'width'   => true,
+			'height'  => true,
+			'loading' => true,
+		),
 	);
 
 
@@ -178,9 +196,6 @@ class Data {
 
 		// 設定データのデフォルト値をセット
 		self::set_default_data();
-
-		// テーマインフォメーション取得
-		if ( is_admin() ) self::set_theme_info();
 	}
 
 
@@ -198,6 +213,9 @@ class Data {
 			'list'   => __( 'List type', 'arkhe' ),
 			'simple' => __( 'Text type', 'arkhe' ),
 		) );
+
+		// テーマインフォメーション取得
+		if ( is_admin() ) self::set_theme_info();
 	}
 
 
@@ -245,9 +263,9 @@ class Data {
 		$json = get_transient( 'arkhe_informations' );
 		if ( ! $json ) {
 			$info_json = self::$is_ja ? 'information.json' : 'information_en.json';
-			$response  = wp_remote_get( 'https://looscdn.com/cdn/arkhe/' . $info_json );
+			$response  = wp_remote_get( self::CDN_URL . $info_json );
 			$json      = wp_remote_retrieve_body( $response );
-			set_transient( 'arkhe_informations', $json, 1 * DAY_IN_SECONDS );
+			set_transient( 'arkhe_informations', $json, 7 * DAY_IN_SECONDS );
 		}
 
 		self::$arkhe_info = json_decode( $json, true );
