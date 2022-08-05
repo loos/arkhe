@@ -37,10 +37,10 @@
 	}
 
 	// 全幅の中の記事幅コンテンツの中の、さらに幅広なコンテンツの挙動
-	> .ark-block-container__inner,
 	> .wp-block-cover__inner-container,
 	&.has-background > .wp-block-group__inner-container,
-	&:not([data-inner="full"]) > .ark-block-section__body {
+	> .ark-block-container__inner,
+	&:not([data-inner="full"]) > .ark-block-section__body > .ark-block-section__bodyInner {
 
 		// さらにその中の全幅は、左右のpaddingまでに収まるように。
 		> .alignfull {
