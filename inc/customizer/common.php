@@ -62,6 +62,16 @@ Customizer::add(
 	)
 );
 
+// 薄いグレー
+Customizer::add(
+	$arkhe_section,
+	'color_gray',
+	array(
+		'label' => __( 'Light gray color', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
 
 // コンテンツ幅
 Customizer::big_title(

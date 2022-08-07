@@ -11,6 +11,7 @@ trait CSS {
 		self::add_root_css( '--ark-color--text', $setting['color_text'] );
 		self::add_root_css( '--ark-color--link', $setting['color_link'] );
 		self::add_root_css( '--ark-color--bg', $setting['color_bg'] );
+		self::add_root_css( '--ark-color--gray', $setting['color_gray'] );
 	}
 
 

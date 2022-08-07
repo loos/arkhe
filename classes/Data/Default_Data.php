@@ -10,6 +10,7 @@ trait Default_Data {
 			'color_text'                => '#333',
 			'color_link'                => '#3fa3ff',
 			'color_bg'                  => '#fff',
+			'color_gray'                => '#f7f7f7',
 
 			// Content width
 			'container_width'           => 1200,
