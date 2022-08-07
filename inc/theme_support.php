@@ -123,3 +123,15 @@ function setup_theme() {
 	) );
 
 }
+
+
+/**
+ * デフォルトカラーパレットを使用可能にする。
+ */
+function enable_default_color_palette( $editor_settings, $editor_context ) {
+	if ( isset( $editor_settings['__experimentalFeatures']['color'] ) ) {
+		$editor_settings['__experimentalFeatures']['color']['defaultPalette'] = true;
+	}
+	return $editor_settings;
+}
+add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\enable_default_color_palette', 20, 2 );
