@@ -1,0 +1,37 @@
+
+// 6.0からカラーバリューが大文字にされるのを打ち消す
+.components-color-palette__custom-color .components-color-palette__custom-color-value {
+	text-transform: lowercase;
+}
+
+// css変数を使ったパレット
+.components-color-palette__custom-color[style*="--ark"] {
+
+	// 6.0 からの「メインカラー」などのラベルを非表示 ( 全部同じになってしまう )
+	.components-color-palette__custom-color-name {
+		display: none;
+	}
+
+	// 白い背景でも白文字が見えるようにする
+	.components-color-palette__custom-color-value {
+		margin-left: auto;
+		padding: 2px 4px;
+		background-color: rgba(50, 50, 50, .5);
+		border-radius: 2px;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+		// text-shadow: 1px 1px rgba(0, 0, 0, .5);
+		// filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, .5));
+	}
+}
+
+// 色設定で薄い色をチェックした時にチェックマークが見えない問題に対応
+.components-circular-option-picker__option[style*="--ark"].is-pressed + svg > path {
+	stroke: rgba(0, 0, 0, .8);
+	paint-order: stroke;
+}
+
+
+// カラーパレットの透明パターン非表示
+// .components-circular-option-picker__option-wrapper::before {
+// 	background: none;
+// }

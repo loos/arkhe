@@ -92,4 +92,34 @@ function setup_theme() {
 			),
 		)
 	);
+
+	// カラーパレット memo : 'slug'はクラス名で使用されるので変更NGなことに注意。
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'Main color', 'arkhe' ),
+			'slug'  => 'ark-main',
+			'color' => 'var(--ark-color--main)',
+		),
+		array(
+			'name'  => __( 'Text color', 'arkhe' ),
+			'slug'  => 'ark-text',
+			'color' => 'var(--ark-color--text)',
+		),
+		array(
+			'name'  => __( 'Link color', 'arkhe' ),
+			'slug'  => 'ark-link',
+			'color' => 'var(--ark-color--link)',
+		),
+		array(
+			'name'  => __( 'Background color', 'arkhe' ),
+			'slug'  => 'ark-bg',
+			'color' => 'var(--ark-color--bg)',
+		),
+		array(
+			'name'  => __( 'Light gray color', 'arkhe' ),
+			'slug'  => 'ark-gray',
+			'color' => 'var(--ark-color--gray)',
+		),
+	) );
+
 }
