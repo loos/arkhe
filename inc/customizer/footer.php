@@ -5,8 +5,7 @@ use \Arkhe_Theme\Customizer;
  * セクション : フッター
  */
 $arkhe_section = 'arkhe_section_footer';
-$wp_customize->add_section(
-	$arkhe_section,
+$wp_customize->add_section( $arkhe_section,
 	array(
 		'title'    => __( 'Footer', 'arkhe' ),
 		'priority' => 21,
@@ -15,18 +14,14 @@ $wp_customize->add_section(
 
 
 // 「ページトップへ」ボタン
-Customizer::sub_title(
-	$arkhe_section,
-	'pagetop',
+Customizer::sub_title( $arkhe_section, 'pagetop',
 	array(
 		'label' => __( '"To the top" button', 'arkhe' ),
 	)
 );
 
 // ボタンを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_pagetop',
+Customizer::add( $arkhe_section, 'show_pagetop',
 	array(
 		'label' => __( 'Show button', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -34,9 +29,7 @@ Customizer::add(
 );
 
 // コピーライトのテキスト
-Customizer::add(
-	$arkhe_section,
-	'copyright',
+Customizer::add( $arkhe_section, 'copyright',
 	array(
 		'label' => __( 'Copyright text', 'arkhe' ),
 		'type'  => 'text',

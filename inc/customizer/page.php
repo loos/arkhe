@@ -6,8 +6,7 @@ $arkhe_section = 'arkhe_section_page';
 /**
  * セクション : 固定ページ
  */
-$wp_customize->add_section(
-	$arkhe_section,
+$wp_customize->add_section( $arkhe_section,
 	array(
 		'title'    => __( 'Pages', 'arkhe' ),
 		'priority' => 22,
@@ -15,17 +14,13 @@ $wp_customize->add_section(
 );
 
 // タイトル設定
-Customizer::big_title(
-	$arkhe_section,
-	'page_title',
+Customizer::big_title( $arkhe_section, 'page_title',
 	array(
 		'label' => __( 'Title settings', 'arkhe' ),
 	)
 );
 
-Customizer::add(
-	$arkhe_section,
-	'page_title_pos',
+Customizer::add( $arkhe_section, 'page_title_pos',
 	array(
 		'label'   => __( 'Position of title', 'arkhe' ),
 		'type'    => 'radio',
@@ -37,17 +32,13 @@ Customizer::add(
 );
 
 // タイトル設定
-Customizer::big_title(
-	$arkhe_section,
-	'page_title_bg',
+Customizer::big_title( $arkhe_section, 'page_title_bg',
 	array(
 		'label' => __( 'Title background settings', 'arkhe' ),
 	)
 );
 
-Customizer::add(
-	$arkhe_section,
-	'title_bg_filter',
+Customizer::add( $arkhe_section, 'title_bg_filter',
 	array(
 		'label'   => __( 'Image filtering', 'arkhe' ),
 		'type'    => 'select',
@@ -58,9 +49,7 @@ Customizer::add(
 	)
 );
 
-Customizer::add(
-	$arkhe_section,
-	'ttlbg_overlay_color',
+Customizer::add( $arkhe_section, 'ttlbg_overlay_color',
 	array(
 		'label'       => __( 'Color overlay', 'arkhe' ),
 		'description' => __( 'Color', 'arkhe' ),
@@ -68,9 +57,7 @@ Customizer::add(
 	)
 );
 
-Customizer::add(
-	$arkhe_section,
-	'ttlbg_overlay_opacity',
+Customizer::add( $arkhe_section, 'ttlbg_overlay_opacity',
 	array(
 		'description' => __( 'Opacity', 'arkhe' ),
 		'type'        => 'number',

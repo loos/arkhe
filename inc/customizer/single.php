@@ -5,8 +5,7 @@ use \Arkhe_Theme\Customizer;
  * セクション : 投稿ページ
  */
 $arkhe_section = 'arkhe_section_single';
-$wp_customize->add_section(
-	$arkhe_section,
+$wp_customize->add_section( $arkhe_section,
 	array(
 		'title'    => __( 'Posts', 'arkhe' ),
 		'priority' => 22,
@@ -15,18 +14,14 @@ $wp_customize->add_section(
 
 
 // タイトル下の情報
-Customizer::big_title(
-	$arkhe_section,
-	'post_around_title',
+Customizer::big_title( $arkhe_section, 'post_around_title',
 	array(
 		'label' => __( 'Information under the title', 'arkhe' ),
 	)
 );
 
 // 公開日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_posted',
+Customizer::add( $arkhe_section, 'show_entry_posted',
 	array(
 		'label' => __( 'Show posted date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -34,9 +29,7 @@ Customizer::add(
 );
 
 // 更新日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_modified',
+Customizer::add( $arkhe_section, 'show_entry_modified',
 	array(
 		'label' => __( 'Show modified date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -44,9 +37,7 @@ Customizer::add(
 );
 
 // カテゴリーを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_cat',
+Customizer::add( $arkhe_section, 'show_entry_cat',
 	array(
 		'label' => __( 'Show categories', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -54,9 +45,7 @@ Customizer::add(
 );
 
 // タグを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_tag',
+Customizer::add( $arkhe_section, 'show_entry_tag',
 	array(
 		'label' => __( 'Show tags', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -64,9 +53,7 @@ Customizer::add(
 );
 
 // 著者を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_author',
+Customizer::add( $arkhe_section, 'show_entry_author',
 	array(
 		'label' => __( 'Show author', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -74,9 +61,7 @@ Customizer::add(
 );
 
 // アイキャッチ画像を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_entry_thumb',
+Customizer::add( $arkhe_section, 'show_entry_thumb',
 	array(
 		'label' => __( 'Show featured image', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -84,18 +69,14 @@ Customizer::add(
 );
 
 // 本文下のターム情報
-Customizer::big_title(
-	$arkhe_section,
-	'foot_terms',
+Customizer::big_title( $arkhe_section, 'foot_terms',
 	array(
 		'label' => __( 'Term information below the content', 'arkhe' ),
 	)
 );
 
 // ターム情報を表示
-Customizer::add(
-	$arkhe_section,
-	'show_foot_terms',
+Customizer::add( $arkhe_section, 'show_foot_terms',
 	array(
 		'label' => __( 'Show terms', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -103,18 +84,14 @@ Customizer::add(
 );
 
 // 前の記事・次の記事へのリンク
-Customizer::big_title(
-	$arkhe_section,
-	'pn_links',
+Customizer::big_title( $arkhe_section, 'pn_links',
 	array(
 		'label' => __( 'Link to previous/next article', 'arkhe' ),
 	)
 );
 
 // リンクを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_prev_next_link',
+Customizer::add( $arkhe_section, 'show_prev_next_link',
 	array(
 		'label' => __( 'Show link', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -122,9 +99,7 @@ Customizer::add(
 );
 
 // 同じカテゴリーの記事だけを取得する
-Customizer::add(
-	$arkhe_section,
-	'pn_link_is_same_term',
+Customizer::add( $arkhe_section, 'pn_link_is_same_term',
 	array(
 		'label' => __( 'Get only articles in the same category', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -132,18 +107,14 @@ Customizer::add(
 );
 
 // 著者情報エリア
-Customizer::big_title(
-	$arkhe_section,
-	'post_author',
+Customizer::big_title( $arkhe_section, 'post_author',
 	array(
 		'label' => __( 'Author information area', 'arkhe' ),
 	)
 );
 
 // 著者の情報を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_author_box',
+Customizer::add( $arkhe_section, 'show_author_box',
 	array(
 		'label' => __( 'Show author information', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -151,18 +122,14 @@ Customizer::add(
 );
 
 // 関連記事エリア
-Customizer::big_title(
-	$arkhe_section,
-	'related_posts',
+Customizer::big_title( $arkhe_section, 'related_posts',
 	array(
 		'label' => __( 'Related posts area', 'arkhe' ),
 	)
 );
 
 // 関連記事を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_related_posts',
+Customizer::add( $arkhe_section, 'show_related_posts',
 	array(
 		'label' => __( 'Show related posts', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -170,9 +137,7 @@ Customizer::add(
 );
 
 // 公開日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_related_posted',
+Customizer::add( $arkhe_section, 'show_related_posted',
 	array(
 		'label' => __( 'Show posted date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -180,9 +145,7 @@ Customizer::add(
 );
 
 // 更新日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_related_modified',
+Customizer::add( $arkhe_section, 'show_related_modified',
 	array(
 		'label' => __( 'Show modified date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -190,9 +153,7 @@ Customizer::add(
 );
 
 // 関連記事のレイアウト
-Customizer::add(
-	$arkhe_section,
-	'related_posts_layout',
+Customizer::add( $arkhe_section, 'related_posts_layout',
 	array(
 		'label'   => __( 'List layout', 'arkhe' ),
 		'type'    => 'select',
@@ -201,9 +162,7 @@ Customizer::add(
 );
 
 // 関連記事の取得方法
-Customizer::add(
-	$arkhe_section,
-	'post_relation_type',
+Customizer::add( $arkhe_section, 'post_relation_type',
 	array(
 		'classname' => '-radio-button -related-post',
 		'label'     => __( 'How to get related posts', 'arkhe' ),
@@ -217,18 +176,14 @@ Customizer::add(
 
 
 // コメントエリア
-Customizer::big_title(
-	$arkhe_section,
-	'comment_area',
+Customizer::big_title( $arkhe_section, 'comment_area',
 	array(
 		'label' => __( 'Comment area', 'arkhe' ),
 	)
 );
 
 // コメントエリアを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_comments',
+Customizer::add( $arkhe_section, 'show_comments',
 	array(
 		'label' => __( 'Show comment area', 'arkhe' ),
 		'type'  => 'checkbox',

@@ -4,8 +4,8 @@ namespace Arkhe_Theme;
 /**
  * カスタムメニューの設定
  */
-add_action( 'after_setup_theme', '\Arkhe_Theme\register_nav_locations', 9 );
-add_filter( 'walker_nav_menu_start_el', '\Arkhe_Theme\hook_walker_nav_menu', 10, 4 );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\register_nav_locations', 9 );
+add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\hook_walker_nav_menu', 10, 4 );
 
 
 /**

@@ -7,8 +7,7 @@ define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
 /**
  * 定数定義 （'wp_loaded' は プレビュー画面の即時反映データも受け取れる & AJAXでもギリギリ呼び出されるタイミング。）
  */
-add_action( 'wp_loaded', '\Arkhe_Theme\define_theme_const', 11 );
-
+add_action( 'wp_loaded', __NAMESPACE__ . '\define_theme_const', 11 );
 function define_theme_const() {
 
 	$setting = \Arkhe::get_setting();

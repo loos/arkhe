@@ -16,8 +16,7 @@ $arkhe_thumb_ratios = array(
 /**
  * セクション : アーカイブ
  */
-$wp_customize->add_section(
-	$arkhe_section,
+$wp_customize->add_section( $arkhe_section,
 	array(
 		'title'    => __( 'Archive', 'arkhe' ),
 		'priority' => 23,
@@ -26,18 +25,14 @@ $wp_customize->add_section(
 
 
 // リストのレイアウト設定
-Customizer::big_title(
-	$arkhe_section,
-	'post_list_layout',
+Customizer::big_title( $arkhe_section, 'post_list_layout',
 	array(
 		'label' => __( 'List layout', 'arkhe' ),
 	)
 );
 
 // リストレイアウト
-Customizer::add(
-	$arkhe_section,
-	'post_list_layout',
+Customizer::add( $arkhe_section, 'post_list_layout',
 	array(
 		'type'    => 'select',
 		'choices' => \Arkhe::get_list_layouts(),
@@ -46,18 +41,14 @@ Customizer::add(
 
 
 // 投稿情報
-Customizer::big_title(
-	$arkhe_section,
-	'post_list_design',
+Customizer::big_title( $arkhe_section, 'post_list_design',
 	array(
 		'label' => __( 'Post information', 'arkhe' ),
 	)
 );
 
 // 公開日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_list_date',
+Customizer::add( $arkhe_section, 'show_list_date',
 	array(
 		'label' => __( 'Show publication date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -65,9 +56,7 @@ Customizer::add(
 );
 
 // 更新日を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_list_mod',
+Customizer::add( $arkhe_section, 'show_list_mod',
 	array(
 		'label' => __( 'Show update date', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -75,9 +64,7 @@ Customizer::add(
 );
 
 // カテゴリーを表示する
-Customizer::add(
-	$arkhe_section,
-	'show_list_cat',
+Customizer::add( $arkhe_section, 'show_list_cat',
 	array(
 		'label' => __( 'Show categories', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -85,9 +72,7 @@ Customizer::add(
 );
 
 // 著者を表示する
-Customizer::add(
-	$arkhe_section,
-	'show_list_author',
+Customizer::add( $arkhe_section, 'show_list_author',
 	array(
 		'label' => __( 'Show author', 'arkhe' ),
 		'type'  => 'checkbox',
@@ -95,9 +80,7 @@ Customizer::add(
 );
 
 // 抜粋文の文字数
-Customizer::add(
-	$arkhe_section,
-	'excerpt_length',
+Customizer::add( $arkhe_section, 'excerpt_length',
 	array(
 		'label'       => __( 'Number of characters in excerpt', 'arkhe' ),
 		'type'        => 'number',
@@ -112,18 +95,14 @@ Customizer::add(
 
 
 // サムネイル画像の比率
-Customizer::big_title(
-	$arkhe_section,
-	'thumb_ratio',
+Customizer::big_title( $arkhe_section, 'thumb_ratio',
 	array(
 		'label' => __( 'Thumbnail image ratio', 'arkhe' ),
 	)
 );
 
 // カード型リストでの比率
-Customizer::add(
-	$arkhe_section,
-	'thumb_ratio',
+Customizer::add( $arkhe_section, 'thumb_ratio',
 	array(
 		'type'    => 'select',
 		'choices' => $arkhe_thumb_ratios,
