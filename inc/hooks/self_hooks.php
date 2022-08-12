@@ -14,7 +14,7 @@ add_filter( 'arkhe_start_content', function() {
 	}
 } );
 
-add_filter( 'arkhe_end_content', function() {
+add_filter( 'arkhe_before_footer', function() {
 	// パンくずリスト（下部表示の場合）
 	if ( 'bottom' === \Arkhe::get_breadcrumbs_position() ) {
 		\Arkhe::get_part( 'other/breadcrumb' );
