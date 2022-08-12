@@ -9,7 +9,7 @@ if ( Arkhe::is_show_sidebar() ) get_sidebar(); // サイドバー
 </div><!-- End: l-content -->
 <?php
 	// フッター
-	do_action( 'arkhe_before_footer' ); // テーマ側でも使用
+	do_action( 'arkhe_before_footer' );
 	Arkhe::get_part( 'footer' );
 	do_action( 'arkhe_after_footer' );
 
