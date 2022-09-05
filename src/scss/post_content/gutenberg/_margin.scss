@@ -1,3 +1,9 @@
+
+html :where(.editor-styles-wrapper) p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 // 本文エリア
 // .block-editor-writing-flow,
 .editor-styles-wrapper {
