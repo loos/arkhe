@@ -8,6 +8,7 @@
 		Arkhe::get_part( 'single/item/term_list', array(
 			'show_cat' => true,
 			'show_tag' => true,
+			'show_tax' => true,
 			'is_head'  => false,
 		) );
 	?>

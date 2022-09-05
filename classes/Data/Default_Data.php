@@ -74,6 +74,7 @@ trait Default_Data {
 			'show_entry_modified'       => true,
 			'show_entry_cat'            => true,
 			'show_entry_tag'            => false,
+			'show_entry_custom_tax'     => true,
 			'show_entry_author'         => false,
 			'show_entry_thumb'          => true,
 

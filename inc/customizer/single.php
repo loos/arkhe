@@ -52,6 +52,14 @@ Customizer::add( $arkhe_section, 'show_entry_tag',
 	)
 );
 
+// カスタム投稿タイプの時、タクソノミーを表示する
+Customizer::add( $arkhe_section, 'show_entry_custom_tax',
+	array(
+		'label' => __( 'Show taxonomy when Custom Post Types', 'arkhe' ),
+		'type'  => 'checkbox',
+	)
+);
+
 // 著者を表示する
 Customizer::add( $arkhe_section, 'show_entry_author',
 	array(

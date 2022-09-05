@@ -6,6 +6,7 @@ $show_posted   = Arkhe::get_setting( 'show_entry_posted' );
 $show_modified = Arkhe::get_setting( 'show_entry_modified' );
 $show_cat      = Arkhe::get_setting( 'show_entry_cat' );
 $show_tag      = Arkhe::get_setting( 'show_entry_tag' );
+$show_tax      = Arkhe::get_setting( 'show_entry_custom_tax' );
 $show_author   = Arkhe::get_setting( 'show_entry_author' );
 
 $post_data          = get_post();
@@ -32,6 +33,7 @@ if ( $show_modified && $show_posted ) {
 		Arkhe::get_part( 'single/item/term_list', array(
 			'show_cat' => $show_cat,
 			'show_tag' => $show_tag,
+			'show_tax' => $show_tax,
 			'is_head'  => true,
 		) );
 

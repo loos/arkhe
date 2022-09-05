@@ -182,4 +182,36 @@ trait Get {
 			);
 		}
 	}
+
+
+	/**
+	 * カスタム投稿タイプに紐付いたタクソノミーを一つだけ取得する
+	 */
+	public static function get_tax_of_post_type( $the_post_type = '' ) {
+		$the_post_type = $the_post_type ?: get_post_type();
+		$the_tax       = 'category';
+
+		// カスタム投稿タイプの場合
+		if ( 'post' !== $the_post_type ) {
+
+			// キャッシュ取得
+			$cache_key = 'tax_of_' . $the_post_type;
+			$the_tax   = wp_cache_get( $cache_key, 'arkhe' ) ?: '';
+
+			if ( ! $the_tax ) {
+				// 投稿タイプに紐づいたタクソノミーを取得
+				$tax_array = get_object_taxonomies( $the_post_type, 'names' );
+				foreach ( $tax_array as $tax_name ) {
+					// 投稿フォーマットは除いて1つ目を取得
+					if ( 'post_format' !== $tax_name ) {
+						$the_tax = $tax_name;
+						break;
+					}
+				}
+				wp_cache_set( $cache_key, $the_tax, 'arkhe' );
+			}
+		}
+
+		return apply_filters( 'arkhe_get_tax_of_post_type', $the_tax, $the_post_type );
+	}
 }

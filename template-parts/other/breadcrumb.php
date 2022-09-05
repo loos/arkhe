@@ -51,19 +51,14 @@ if ( is_search() ) {
 	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
 	$post_title = apply_filters( 'the_title', $wp_obj->post_title, $the_id );
 
+	// 「投稿ページ」をパンくずリストに入れる場合
+	if ( 'post' === $the_post_type && $home_data ) {
+		$list_data[] = $home_data;
+	}
+
+
 	// カスタム投稿タイプかどうか
 	if ( 'post' !== $the_post_type ) {
-
-		$the_tax = '';
-
-		// 投稿タイプに紐づいたタクソノミーを取得 (投稿フォーマットは除く)
-		$tax_array = get_object_taxonomies( $the_post_type, 'names' );
-		foreach ( $tax_array as $tax_name ) {
-			if ( 'post_format' !== $tax_name ) {
-				$the_tax = $tax_name;
-				break;
-			}
-		}
 
 		$post_type_link  = get_post_type_archive_link( $the_post_type ) ?: '';
 		$post_type_label = get_post_type_object( $the_post_type )->label;
@@ -73,18 +68,10 @@ if ( is_search() ) {
 			'url'  => $post_type_link,
 			'name' => $post_type_label,
 		);
-
-	} else {
-
-		// 通常の投稿はカテゴリーを表示する
-		$the_tax = 'category';
-
-		// 「投稿ページ」をパンくずリストに入れる場合
-		if ( $home_data ) $list_data[] = $home_data;
-
 	}
 
-	// 投稿に紐づくタームを全て取得
+	// 投稿タイプに紐づくタクソノミー名を取得
+	$the_tax   = \Arkhe::get_tax_of_post_type( $the_post_type );
 	$the_terms = get_the_terms( $the_id, $the_tax );
 
 	// タームーが紐づいていれば表示
