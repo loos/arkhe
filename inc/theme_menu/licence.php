@@ -54,16 +54,19 @@ if ( (int) $check_count > 5 ) {
 		// エラーではないがライセンスが停止中だった時
 
 		$result_type = 'error';
-		$result      = __( 'This license is currently suspended.', 'arkhe' );
+		$result      = __( 'This license key is currently disabled.', 'arkhe' );
 
 	} elseif ( 1 === $the_status ) {
 		// 個人ライセンスが確認できた時
 
 		$result_type = 'ok';
 		$result      = __( 'Your license key is valid.', 'arkhe' );
-
-		// translators: %s is email;
-		$result .= __( 'This is a "personal license",', 'arkhe' ) . sprintf( __( 'and the owner is %s .', 'arkhe' ), $the_email );
+		$result     .= sprintf(
+			// translators: %s is email;
+			__( 'This is "%1$s" and is owned by %2$s.', 'arkhe' ),
+			__( 'Personal License', 'arkhe' ),
+			$the_email
+		);
 
 
 	} elseif ( 2 === $the_status ) {
@@ -71,9 +74,12 @@ if ( (int) $check_count > 5 ) {
 
 		$result_type = 'ok';
 		$result      = __( 'Your license key is valid.', 'arkhe' );
-
-		// translators: %s is owner;
-		$result .= __( 'This is a "creator license",', 'arkhe' ) . sprintf( __( 'and the owner is %s .', 'arkhe' ), $the_owner ?: $the_email );
+		$result     .= sprintf(
+			// translators: %s is owner;
+			__( 'This is "%1$s" and is owned by %2$s.', 'arkhe' ),
+			__( 'Creator License', 'arkhe' ),
+			$the_owner ?: $the_email
+		);
 
 	}
 }
@@ -82,13 +88,13 @@ if ( (int) $check_count > 5 ) {
 <h3><?php esc_html_e( 'License key', 'arkhe' ); ?></h3>
 <p>
 	<?php
-		// $license_link = \Arkhe::$is_ja ? 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/' : '';
-		$license_link = 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/';
+		// $licence_link = \Arkhe::$is_ja ? 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/' : '';
+		$licence_link = 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/';
 
 		echo sprintf(
 			// translators: %s is link;
-			esc_html__( 'With the purchase of the "%s", you will be able to update all Arkhe plugins to the latest version at any time.', 'arkhe' ),
-			'<a href="' . esc_url( $license_link ) . '">' . esc_html__( 'Arkhe License', 'arkhe' ) . '</a>'
+			esc_html__( 'Purchasing "%s" will allow you to update all Arkhe plugins to the latest version.', 'arkhe' ),
+			'<a href="' . esc_url( $licence_link ) . '">' . esc_html__( 'Arkhe License', 'arkhe' ) . '</a>'
 		);
 	?>
 </p>

@@ -5,8 +5,6 @@ trait Licence {
 
 	/**
 	 * ライセンスステータスを取得( キャッシュがあれば優先 )
-	 *
-	 * @return json
 	 */
 	public static function get_licence_data( $licence_key = '' ) {
 
@@ -38,7 +36,7 @@ trait Licence {
 
 		// ライセンス用DBに接続
 		$response = wp_remote_post(
-			\Arkhe::$licence_check_url,
+			self::CDN_URL . '/licence/check',
 			array(
 				'method'      => 'POST',
 				'timeout'     => 15,

@@ -47,18 +47,12 @@ class Data {
 
 
 	/**
-	 * ライセンスキー
+	 * ライセンス系
 	 */
-	public static $licence_key       = '';
-	public static $licence_data      = array();
-	public static $has_pro_licence   = false;
-	public static $licence_check_url = self::CDN_URL . '/licence/check';
-
-
-	/**
-	 * プラグイン更新用パス
-	 */
-	public static $ex_update_path = false;
+	public static $licence_key     = '';
+	public static $licence_data    = array();
+	public static $has_pro_licence = false;
+	public static $ex_update_path  = false;
 
 
 	/**
