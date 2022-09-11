@@ -2,16 +2,34 @@
 .block-editor-writing-flow {
 
 	// ガイド線を表示する
-	[data-type="core/group"],
-	[data-type="core/columns"] {
+	[data-type="core/group"]:not(.has-background),
+	[data-type="core/columns"]:not(.has-background),
+	[data-type="core/column"],
+	[data-type="core/buttons"] {
 
-		&:not(.has-background).has-child-selected {
+		&:hover::after,
+		&.has-child-selected::after {
+			border: dashed 1px $color_guide;
+		}
+	}
+
+	[data-type="core/media-text"] {
+
+		&:hover,
+		&.has-child-selected {
 
 			&::after {
 				border: dashed 1px $color_guide;
 			}
+
+			// コンテンツ側にもガイドをつける
+			.wp-block-media-text__content {
+				border-top: dashed 1px $color_guide;
+				border-bottom: dashed 1px $color_guide;
+			}
 		}
 	}
+
 
 	// .is-root-container > [data-type="core/group"],
 	:not([data-align="full"]) > [data-type="core/group"],
