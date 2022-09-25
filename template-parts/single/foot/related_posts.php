@@ -10,7 +10,7 @@ $posts_per_page = 'card' === $list_type ? 6 : 4;
 
 $related_args = array(
 	'post__not_in'        => array( $the_id ),
-	'post_type'           => 'post',
+	'post_type'           => get_post_type(),
 	'post_status'         => 'publish',
 	'no_found_rows'       => true,
 	'ignore_sticky_posts' => true,
