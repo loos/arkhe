@@ -1,47 +1,20 @@
 
+/*
+ * memo: --wp-column-gap は Arkhe側で用意している変数
+ */
+
 .wp-block-columns {
 	--wp-column-gap: 2rem;
-	gap: 0 !important;
 
-	@include mobile {
-		// 5.9~ モバイルでも横並びができるようになったので少し小さめにしておく
-		--wp-column-gap: 1.5rem;
-	}
+	gap: var(--wp-column-gap) !important;
 
 	.wp-block-column {
-		margin-top: 0;
-		margin-bottom: 0;
+		margin: 0 !important;
 	}
 
-	@include pc {
-		// flex-wrap: nowrap; // memo: コア側で 782px~ に対して付いているので、1000px~ に対しての指定は不要
+	// pc
+	// @media (min-width: 782px) {}
 
-		&:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:first-child) {
-			margin-left: var(--wp-column-gap);
-		}
-	}
-
-	@include sp {
-
-		flex-wrap: wrap; //(min-width: 782px) で nowrap にされるので明示的に指定
-
-		// 5.9~ のデフォルト(「モバイルでは縦に並べる」がオン)のスタイル。（~5.8までのカラムもこれが当たる）
-		&:not(.is-not-stacked-on-mobile) > .wp-block-column {
-
-			&:not(:only-child) {
-				flex-basis: 100% !important;
-			}
-
-			// 600px以上で :nth-child(2n)に、782px以上で:not(:first-child)に margin ついてしまう
-			&:not(:first-child) {
-				margin-left: 0;
-			}
-
-			+ .wp-block-column {
-				margin-top: var(--wp-column-gap);
-			}
-		}
-	}
-
-	// memo: 5.9時点では、「モバイルでは縦に並べる」がオフの時（=スマホでも横並びを維持）のスタイルはコアのスタイルにまかせて問題なかった。
+	// tablet区間
+	// @media (min-width: 600px) and (max-width: 781px) {}
 }
