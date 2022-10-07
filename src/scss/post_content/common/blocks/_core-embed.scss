@@ -12,30 +12,6 @@
 	}
 }
 
-
-// チラつき防止。
-@include mobile {
-
-	.twitter-tweet,
-	.instagram-media {
-		display: none !important;
-		box-sizing: border-box !important;
-		width: 100% !important;
-		min-width: 0 !important;
-		max-width: 88vw !important;
-	}
-
-	.twitter-tweet-rendered,
-	.instagram-media-rendered {
-		display: block !important;
-	}
-
-	// 2020.6月末頃に構造が変わった
-	.twitter-tweet > iframe {
-		width: 100% !important;
-	}
-}
-
 .wp-block-embed {
 	max-width: 100%;
 }
