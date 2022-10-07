@@ -7,7 +7,7 @@ $author_id   = get_queried_object_id();
 $author_data = get_userdata( $author_id );
 ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div <?php post_class( Arkhe::get_main_body_class() ); ?>>
+	<div class="<?php Arkhe::main_body_class(); ?>">
 		<?php do_action( 'arkhe_start_author_main', $author_id ); ?>
 		<div class="p-archive__title c-pageTitle">
 			<h1 class="c-pageTitle__main"><?php echo esc_html( $author_data->display_name ); ?></h1>

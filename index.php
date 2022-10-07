@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 <main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div <?php post_class( Arkhe::get_main_body_class() ); ?>>
+	<div class="<?php Arkhe::main_body_class(); ?>">
 	<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :
