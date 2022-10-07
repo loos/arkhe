@@ -4,7 +4,13 @@
  */
 if ( is_front_page() ) return false;
 
-$wp_obj    = get_queried_object();  // そのページのWPオブジェクトを取得
+$wp_obj      = get_queried_object();  // そのページのWPオブジェクトを取得
+$wp_obj_type = '';
+if ( null !== $wp_obj && is_object( $wp_obj ) ) {
+	$wp_obj_type = get_class( $wp_obj );
+};
+
+
 $list_data = array();
 
 // 「投稿ページ」をリストに入れる場合
@@ -21,9 +27,10 @@ if ( Arkhe::get_setting( 'breadcrumbs_set_home_page' ) ) {
 
 /**
  * リスト生成処理
+ * アーカイブ系の分岐順は Arkhe::get_archive_data() に合わせる
  */
 if ( is_search() ) {
-	/* 検索結果ページ  memo: is_archive() 等もtrueになる場合があるので先に分岐 */
+	// 検索結果ページ  memo: is_archive() 等もtrueになる場合があるので先に分岐
 
 	$list_data[] = array(
 		'url'  => '',
@@ -31,25 +38,21 @@ if ( is_search() ) {
 	);
 
 } elseif ( is_attachment() ) {
-	/* 添付ファイルページ  memo: is_single() もtrueになるので先に分岐 */
-
-	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
-	$post_title = apply_filters( 'the_title', $wp_obj->post_title, $wp_obj->ID );
+	// 添付ファイルページ  memo: is_single() もtrueになるので先に分岐
 
 	$list_data[] = array(
 		'url'  => '',
-		'name' => $post_title,
+		'name' => single_post_title( '', false ),
 	);
 
 
-} elseif ( is_single() ) {
-	/* 投稿ページ */
+} elseif ( is_single() && 'WP_Post' === $wp_obj_type ) {
+	// 投稿ページ
 
 	$the_id        = $wp_obj->ID;
-	$the_post_type = $wp_obj->post_type;
+	$the_title     = get_the_title( $the_id );
+	$the_post_type = isset( $wp_obj->post_type ) ? $wp_obj->post_type : 'post';
 
-	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
-	$post_title = apply_filters( 'the_title', $wp_obj->post_title, $the_id );
 
 	// 「投稿ページ」をパンくずリストに入れる場合
 	if ( 'post' === $the_post_type && $home_data ) {
@@ -57,16 +60,11 @@ if ( is_search() ) {
 	}
 
 
-	// カスタム投稿タイプかどうか
+	// カスタム投稿タイプの場合
 	if ( 'post' !== $the_post_type ) {
-
-		$post_type_link  = get_post_type_archive_link( $the_post_type ) ?: '';
-		$post_type_label = get_post_type_object( $the_post_type )->label;
-
-		// カスタム投稿タイプ名の表示
 		$list_data[] = array(
-			'url'  => $post_type_link,
-			'name' => $post_type_label,
+			'url'  => get_post_type_archive_link( $the_post_type ) ?: '',
+			'name' => get_post_type_object( $the_post_type )->label,
 		);
 	}
 
@@ -130,17 +128,15 @@ if ( is_search() ) {
 	// 投稿自身の表示
 	$list_data[] = array(
 		'url'  => '',
-		'name' => $post_title,
+		'name' => $the_title,
 	);
 
 
-} elseif ( is_page() || is_home() ) {
-	/* 固定ページ  memo: $wp_obj = WP_Post */
+} elseif ( is_page() || is_home() && 'WP_Post' === $wp_obj_type ) {
+	// 固定ページ
 
-	$page_id = $wp_obj->ID;
-
-	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
-	$page_title = apply_filters( 'the_title', $wp_obj->post_title, $page_id );
+	$page_id    = $wp_obj->ID;
+	$page_title = get_the_title( $page_id );
 
 	// 親ページがあれば順番に表示
 	if ( 0 !== $wp_obj->post_parent ) {
@@ -162,15 +158,73 @@ if ( is_search() ) {
 	);
 
 } elseif ( is_post_type_archive() ) {
-	/* 投稿タイプアーカイブページ  memo: $wp_obj = WP_Post_Type */
+	// 投稿タイプアーカイブページ
+	// 'WP_Post_Type' === $wp_obj_type でもチェックしたいが、コアの吐き出す<title>と齟齬が生じるのでチェックしない。
+	// $wp_obj が WP_Term のケースがあるため、$wp_obj->label は使用しない。
 
 	$list_data[] = array(
 		'url'  => '',
-		'name' => $wp_obj->label,
+		'name' => post_type_archive_title( '', false ),
+	);
+
+} elseif ( is_category() || is_tag() || is_tax() && 'WP_Term' === $wp_obj_type ) {
+	// ターム系アーカイブ
+
+	$term_id   = $wp_obj->term_id;
+	$term_name = $wp_obj->name;
+	$tax_name  = $wp_obj->taxonomy;
+
+	// 「投稿ページ」をパンくずリストに入れる場合
+	if ( $home_data && ( is_category() || is_tag() ) ) {
+		$list_data[] = $home_data;
+	}
+
+	// カスタムタクソノミーに投稿タイプが紐付いているかチェック
+	if ( is_tax() ) {
+
+		$tax_parent_types = get_taxonomy( $tax_name )->object_type;
+		if ( ! empty( $tax_parent_types ) ) {
+			$tax_parent_type_slug = $tax_parent_types[0];
+			$tax_parent_type      = get_post_type_object( $tax_parent_type_slug );
+			$list_data[]          = array(
+				'url'  => get_post_type_archive_link( $tax_parent_type_slug ) ?: '',
+				'name' => $tax_parent_type->label,
+			);
+		}
+	}
+
+	// 親タームがあれば順番に表示
+	if ( 0 !== $wp_obj->parent ) {
+
+		$parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
+		foreach ( $parent_array as $parent_id ) {
+			$parent_term = get_term( $parent_id, $tax_name );
+			$parent_link = get_term_link( $parent_id, $tax_name );
+			$parent_name = $parent_term->name;
+
+			$list_data[] = array(
+				'url'  => $parent_link,
+				'name' => $parent_name,
+			);
+		}
+	}
+
+	// ターム自身の表示
+	$list_data[] = array(
+		'url'  => '',
+		'name' => $term_name,
+	);
+
+} elseif ( is_author() && 'WP_User' === $wp_obj_type ) {
+	// 投稿者アーカイブ
+
+	$list_data[] = array(
+		'url'  => '',
+		'name' => $wp_obj->display_name,
 	);
 
 } elseif ( is_date() ) {
-	/* 日付アーカイブ  memo: $wp_obj = null */
+	// 日付アーカイブ  memo: $wp_obj = null になる
 
 	$the_year  = get_query_var( 'year' );
 	$the_month = get_query_var( 'monthnum' );
@@ -214,64 +268,8 @@ if ( is_search() ) {
 			'name' => $y_title,
 		);
 	}
-} elseif ( is_author() ) {
-
-	/* 投稿者アーカイブ */
-	$list_data[] = array(
-		'url'  => '',
-		'name' => $wp_obj->display_name,
-	);
-
-} elseif ( is_category() || is_tag() || is_tax() ) {
-	/* タームアーカイブ */
-
-	$term_id   = $wp_obj->term_id;
-	$term_name = $wp_obj->name;
-	$tax_name  = $wp_obj->taxonomy;
-
-	if ( $home_data && ( is_category() || is_tag() ) ) {
-		// 「投稿ページ」をパンくずリストに入れる場合
-
-		$list_data[] = $home_data;
-
-	} elseif ( is_tax() ) {
-		// カスタム投稿タイプが紐付いているかチェック
-
-		$tax_parent_types = get_taxonomy( $tax_name )->object_type;
-		if ( ! empty( $tax_parent_types ) ) {
-			$tax_parent_type_slug = $tax_parent_types[0];
-			$tax_parent_type      = get_post_type_object( $tax_parent_type_slug );
-			$list_data[]          = array(
-				'url'  => get_post_type_archive_link( $tax_parent_type_slug ) ?: '',
-				'name' => $tax_parent_type->label,
-			);
-		}
-}
-
-	// 親ページがあれば順番に表示
-	if ( 0 !== $wp_obj->parent ) {
-
-		$parent_array = array_reverse( get_ancestors( $term_id, $tax_name ) );
-		foreach ( $parent_array as $parent_id ) {
-			$parent_term = get_term( $parent_id, $tax_name );
-			$parent_link = get_term_link( $parent_id, $tax_name );
-			$parent_name = $parent_term->name;
-
-			$list_data[] = array(
-				'url'  => $parent_link,
-				'name' => $parent_name,
-			);
-		}
-	}
-
-	// ターム自身の表示
-	$list_data[] = array(
-		'url'  => '',
-		'name' => $term_name,
-	);
-
 } elseif ( is_404() ) {
-	/* 404ページ */
+	// 404ページ
 
 	$list_data[] = array(
 		'url'  => '',
@@ -279,11 +277,9 @@ if ( is_search() ) {
 	);
 
 } else {
-	/* その他のページ（一応） */
-
 	$list_data[] = array(
 		'url'  => '',
-		'name' => get_the_title(),
+		'name' => '',
 	);
 }
 

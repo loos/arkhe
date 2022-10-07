@@ -78,38 +78,11 @@ trait Get {
 			'title' => '',
 		);
 
-		if ( is_date() ) {
-			// 日付アーカイブ
-
-			// phpcs:disable WordPress.WP.I18n.MissingArgDomain
-			if ( is_year() ) {
-				$title = get_the_date( _x( 'Y', 'yearly archives date format' ) );
-			} elseif ( is_month() ) {
-				$title = get_the_date( _x( 'F Y', 'monthly archives date format' ) );
-			} elseif ( is_day() ) {
-				$title = get_the_date( _x( 'F j, Y', 'daily archives date format' ) );
-			}
-			// phpcs:enable WordPress.WP.I18n.MissingArgDomain
-
-			// さらに、投稿タイプの日付アーカイブだった場合 memo: {domain}/date/2022/?post_type={pt}
-			if ( is_post_type_archive() ) {
-				$title .= ' / ' . post_type_archive_title( '', false );
-			}
-
-			$data['title'] = $title;
-			$data['type']  = 'date';
-
-		} elseif ( is_post_type_archive() ) {
-			// 投稿タイプのアーカイブページなら
-
+		// wp_get_document_title() の条件分岐に合わせて post_type > term > author の順
+		// ※ クエリオブジェクトの取得優先度は WP_Term > WP_Post_Type > WP_User
+		if ( is_post_type_archive() ) {
 			$data['title'] = post_type_archive_title( '', false );
 			$data['type']  = 'pt_archive';
-
-		} elseif ( is_author() ) {
-			// 投稿者アーカイブ
-
-			$data['title'] = get_queried_object()->display_name;
-			$data['type']  = 'author';
 
 		} elseif ( is_category() ) {
 
@@ -126,9 +99,32 @@ trait Get {
 			$data['title'] = single_term_title( '', false );
 			$data['type']  = 'tax';
 
+		} elseif ( is_author() ) {
+
+			$obj = get_queried_object();
+			if ( isset( $wp_obj->display_name ) ) {
+				$data['title'] = $wp_obj->display_name;
+				$data['type']  = 'author';
+			}
+		} elseif ( is_date() ) {
+			// 日付アーカイブ
+
+			// phpcs:disable WordPress.WP.I18n.MissingArgDomain
+			if ( is_year() ) {
+				$title = get_the_date( _x( 'Y', 'yearly archives date format' ) );
+			} elseif ( is_month() ) {
+				$title = get_the_date( _x( 'F Y', 'monthly archives date format' ) );
+			} elseif ( is_day() ) {
+				$title = get_the_date( _x( 'F j, Y', 'daily archives date format' ) );
+			}
+			// phpcs:enable WordPress.WP.I18n.MissingArgDomain
+
+			$data['title'] = $title;
+			$data['type']  = 'date';
+
 		} elseif ( is_archive() ) {
 
-			$data['title'] = single_term_title( '', false );
+			$data['title'] = 'Archives';
 			$data['type']  = '';
 
 		}
