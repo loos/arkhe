@@ -80,7 +80,7 @@ export function smoothScroll( target, offset ) {
  */
 export function addSmoothScrollEvent( dom ) {
 	const root = dom || document;
-	const linkElems = root.querySelectorAll( 'a[href*="#"]' );
+	const linkElems = root.querySelectorAll( 'a[href^="#"]' );
 	for ( let i = 0; i < linkElems.length; i++ ) {
 		linkElems[ i ].addEventListener( 'click', function ( e ) {
 			const href = e.currentTarget.getAttribute( 'href' ); // href取得
