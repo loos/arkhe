@@ -8,7 +8,7 @@ trait Default_Data {
 			// Colors
 			'color_main'                => '#111',
 			'color_text'                => '#333',
-			'color_link'                => '#3fa3ff',
+			'color_link'                => '#0d77d9',
 			'color_bg'                  => '#fff',
 			'color_gray'                => '#f7f7f7',
 
