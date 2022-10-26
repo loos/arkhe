@@ -229,7 +229,14 @@ if ( is_search() ) {
 	$the_year  = get_query_var( 'year' );
 	$the_month = get_query_var( 'monthnum' );
 	$the_day   = get_query_var( 'day' );
+	$the_m     = get_query_var( 'm' );
 
+	if ( $the_m ) {
+		// パーマリンクが「基本」時、/?m=yyyymmdd のURLになる。
+		$the_year  = substr( $the_m, 0, 4 ) ?: 0;
+		$the_month = substr( $the_m, 4, 2 ) ?: 0;
+		$the_day   = substr( $the_m, 6, 2 ) ?: 0;
+	}
 	// phpcs:ignore WordPress.WP.I18n.MissingArgDomain
 	$y_title = get_the_date( _x( 'Y', 'yearly archives date format' ) );
 	$m_title = get_the_date( 'F' );
