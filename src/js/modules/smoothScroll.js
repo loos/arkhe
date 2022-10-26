@@ -80,16 +80,30 @@ export function smoothScroll( target, offset ) {
  */
 export function addSmoothScrollEvent( dom ) {
 	const root = dom || document;
-	const linkElems = root.querySelectorAll( 'a[href^="#"]' );
-	for ( let i = 0; i < linkElems.length; i++ ) {
-		linkElems[ i ].addEventListener( 'click', function ( e ) {
-			const href = e.currentTarget.getAttribute( 'href' ); // href取得
-			const splitHref = href.split( '#' );
-			const targetID = splitHref[ 1 ];
-			const target = document.getElementById( targetID ); // リンク先の要素（ターゲット）取得
+	const linkElems = root.querySelectorAll( 'a[href*="#"]' );
 
-			if ( target ) {
-				// e.preventDefault();
+	linkElems.forEach( ( link ) => {
+		const href = link.getAttribute( 'href' ); // href取得
+		const splitHref = href.split( '#' );
+
+		// hrefが###などの場合は処理をスキップ
+		if ( splitHref.length > 2 ) {
+			return;
+		}
+
+		const hrefDomain = splitHref[ 0 ]; // #より前
+		const targetAnchor = splitHref[ 1 ]; // #より後
+		const isNormalAnchorLink = hrefDomain === '';
+		const nowURL = window.location.origin + window.location.pathname; //現在のURLを取得 （? や # をのぞいたもの）
+
+		// hrefが "#"はじまりの普通のページ内リンクか、現在と同じページURL付きのアンカーリンクの場合はページスクロール処理を追加
+		if ( isNormalAnchorLink || hrefDomain === nowURL ) {
+			link.addEventListener( 'click', function ( e ) {
+				// リンク先の要素（ターゲット）取得
+				const target = document.getElementById( targetAnchor );
+				if ( ! target ) return true;
+
+				e.preventDefault();
 				smoothScroll( target, smoothOffset );
 
 				// スマホメニューが開いていれば閉じる
@@ -100,10 +114,7 @@ export function addSmoothScrollEvent( dom ) {
 				// if (null !== indexModal && indexModal.classList.contains('is-open')) {
 				// 	indexModal.classList.remove('is-open');
 				// }
-			} else {
-				return true;
-			}
-			return false;
-		} );
-	}
+			} );
+		}
+	} );
 }
