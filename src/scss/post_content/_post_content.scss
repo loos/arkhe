@@ -7,8 +7,7 @@ h3,
 h4,
 h5,
 h6 {
-	// position: relative;
-	margin-top: var(--ark-mt--h);
+	--ark-mt: var(--ark-mt--h);
 	font-weight: 700;
 	line-height: 1.5;
 }
@@ -187,7 +186,16 @@ ol {
 	}
 
 	li {
+		// memo: 6.1からブロック側にも指定してる
 		margin: .25em 0;
+	}
+
+}
+
+li {
+
+	li {
+		line-height: 1.6;
 	}
 
 	ul {
@@ -198,11 +206,5 @@ ol {
 	ol {
 		padding-left: 1.25em;
 	}
-
-}
-
-
-li li {
-	line-height: 1.6;
 }
 
