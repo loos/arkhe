@@ -25,7 +25,7 @@ html :where(.editor-styles-wrapper) p {
 	}
 
 	// memo: 6.1 からリストの各項目がブロック化された。
-	[data-type="core/list"] {
+	[data-type="core/list"] .wp-block {
 		--ark-mt: 0;
 	}
 
