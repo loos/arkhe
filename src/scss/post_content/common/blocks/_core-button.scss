@@ -12,31 +12,33 @@
 		padding: 0;
 	}
 
-	// 古いwpバージョンではまだalign使われていた
-	// &.aligncenter {justify-content: center;}
-	// &.alignright {justify-content: flex-end;}
-}
+	// 6.1 からセレクタ強めないと打ち消されるようになった
+	.wp-block-button .wp-block-button__link {
+		padding: 1em 1.5em;
+		font-size: inherit; // コア側で 1.125em にされる
+		line-height: 1;
+		transition: opacity .25s;
 
-//WPコアのボタンブロック
-.wp-block-button {
+		&:hover {
+			opacity: .75;
+		}
+	}
 
-	&:not(.is-style-outline) {
+
+	// デフォルトスタイル
+	.wp-block-button:not(.is-style-outline) {
+
+		.wp-block-button__link {
+			background-color: var(--ark-color--main);
+		}
 
 		.wp-block-button__link:not(.has-text-color) {
 			color: #fff;
 		}
 	}
-}
 
-.wp-block-button__link {
-	min-width: 8rem;
-	padding: 1em 1.5em;
-	font-size: inherit; // コア側で 1.125em にされる
-	line-height: 1;
-	background-color: var(--ark-color--main);
-	transition: opacity .25s;
-
-	.is-style-outline > & {
+	// アウトラインスタイル
+	.wp-block-button.is-style-outline > .wp-block-button__link {
 		border-width: 1px;
 
 		&:not(.has-text-color) {
@@ -44,7 +46,5 @@
 		}
 	}
 
-	&:hover {
-		opacity: .75;
-	}
 }
+
