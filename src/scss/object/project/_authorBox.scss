@@ -19,6 +19,7 @@
 
 .p-authorBox__avatar {
 	flex: 1 0 auto;
+	margin: 0;
 
 	@include mobile {
 		margin-bottom: .75em;
