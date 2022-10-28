@@ -68,7 +68,7 @@
 	}
 }
 
-// 投稿数を右端に（本当は a の中）
+// 投稿数を右端に（本当は a の中） for ~6.0
 ul.wp-block-categories__list {
 
 	li {
@@ -85,6 +85,26 @@ ul.wp-block-categories__list {
 	}
 }
 
+// 投稿数を右端に（本当は a の中） for 6.1
+.wp-block.wp-block-categories-list {
+
+	li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		a {
+			flex: 1;
+		}
+	}
+
+	.children {
+		flex-basis: 100%;
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+}
 
 // 最近の投稿ブロック
 [data-type="core/latest-posts"] {

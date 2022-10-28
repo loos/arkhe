@@ -24,7 +24,7 @@
 	overflow: hidden;
 	visibility: hidden;
 	opacity: 0;
-	transition: .25s;
+	transition: height .25s, opacity .25s, visibility .25s;
 
 	&.is-opened {
 		height: auto;
