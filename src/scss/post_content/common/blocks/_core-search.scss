@@ -1,17 +1,21 @@
 // .wp-block-search{}
 
-.wp-block-search__label {
-	font-weight: 700;
-}
 
 .wp-block-search {
+	font-size: .9em;
+
+	// リッチテキスト化されて太字には自分でできる
+	.wp-block-search__label {
+		font-weight: 400;
+	}
 
 	.wp-block-search__button {
-		font-size: 14px;
-		background: #f7f7f7;
+		// font-size: 14px;
+		line-height: 1.5;
+		background: var(--ark-color--gray);
 		border: none !important;
 		border-radius: 2px;
-		box-shadow: 0 0 1px #aaa, inset 0 -1px 0 #ccc;
+		box-shadow: 0 0 1px var(--ark-color--border), inset 0 -2px 0 var(--ark-color--border);
 
 		&:hover {
 			opacity: .75;
@@ -27,14 +31,35 @@
 .wp-block-search .wp-block-search__input,
 .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
 	border: 1px solid var(--ark-color--border);
+	border-radius: 2px;
 }
 
 .wp-block-search__button.has-icon {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 2.5em;
+	height: 2.5em;
+	padding: .25em .25em;
+
+	.search-icon {
+		width: 1.75em;
+		height: 1.75em;
+	}
+}
+
+
+.wp-block-search__button:not(.has-icon) {
+	font-size: .9em;
 }
 
 .wp-block-search__button-inside {
+
+	// 6.1からコア側に指定がなくなってボーダーが2重に表示されるので、自分で指定する。
+	.wp-block-search__input {
+		border: none;
+		border-radius: 0;
+	}
 
 	.wp-block-search__button {
 		background: none;
@@ -42,11 +67,12 @@
 	}
 }
 
+
 // .wp-block-search__button-outside {}
 
-.wp-block-search__button-only {
+// .wp-block-search__button-only {
 
-	.wp-block-search__button {
-		padding: .5em;
-	}
-}
+// 	.wp-block-search__button {
+// 		padding: .5em;
+// 	}
+// }
