@@ -32,11 +32,9 @@
 	[data-type="core/column"] {
 
 		// 6.1から after の存在が限定的になったので自分で指定する。
-		--ark-guide-offset: 0;
-
 		&::after {
 			position: absolute;
-			inset: var(--ark-guide-offset, 0);
+			inset: var(--ark-guide-offset, -4px);
 			border-radius: 2px;
 			content: "";
 			pointer-events: none;
@@ -45,13 +43,7 @@
 
 }
 
-
-.is-root-container {
-
-	> [data-align="wide"],
-	> [data-type="core/buttons"],
-	> [data-type="core/group"],
-	> [data-type="core/columns"] {
-		--ark-guide-offset: -4px;
-	}
+.wp-block .wp-block,
+[data-align="full"] {
+	--ark-guide-offset: 0;
 }
