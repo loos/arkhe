@@ -1,54 +1,49 @@
 
 // サブメニューの展開
 .c-submenuToggleBtn {
-	--btn-size: 2rem;
 	position: absolute;
 	top: 50%;
 	right: 8px;
 	z-index: 1;
-	width: var(--btn-size);
-	height: var(--btn-size);
+	width: var(--ark-submenu_btn_size);
+	height: var(--ark-submenu_btn_size);
 	padding: 0;
 	color: inherit;
 	text-align: center;
 	background: none !important;
 	border: none !important;
+	outline-offset: -1px; // borderに重ねる
 	box-shadow: none !important;
 	transform: translateY(-50%);
 	cursor: pointer;
 
 	&:focus {
+		// タブキー操作のときは標準の青色になるように、プロパティは分けて指定している
 		outline-width: 2px;
 		outline-style: solid;
 	}
 
-	@include tab {
-		--btn-size: 24px;
-		transition: background-color .25s;
-	}
-
 	.c-submenuToggleBtn__svg {
 		display: block;
-		width: calc(var(--btn-size) / 2);
-		height: calc(var(--btn-size) / 2);
+		width: 100%;
+		height: 100%;
+		padding: 25%;
 		transform: rotate(0deg);
 		transition: transform .25s;
 	}
 
 	&::after {
 		box-shadow: inset 0 0 0 1px currentcolor;
-		opacity: .15;
-		transition: background-color .25s;
+		opacity: .2;
 		content: "";
 
 		@extend %absLayer;
-
 	}
 
-	@include pc {
+	@media (hover: hover) {
 
-		&:hover::after {
-			background-color: currentcolor;
+		&:hover {
+			outline: solid 2px;
 		}
 	}
 

@@ -1,13 +1,9 @@
 
 .wp-block-social-links {
+
+	@extend %reset_list;
 	gap: .5em; // wp5.9 からはgapが使われるようになったのでそれに合わせる。
 	align-items: center;
-
-	// 詳細度高める
-	&.wp-block-social-links {
-		padding: 0;
-		list-style: none;
-	}
 
 	.wp-block-social-link {
 		// 「.c-postContent ul li」と 5.8までの 「.wp-block-social-links .wp-social-link.wp-social-link.wp-social-link」 に対する margin を打ち消す

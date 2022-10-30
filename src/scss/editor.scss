@@ -13,6 +13,13 @@
 // root 変数
 @import "foundation/base/root";
 
+// html要素
+.mce-content-body,
+.editor-styles-wrapper {
+
+	@import "foundation/base/elements";
+}
+
 // レイアウト系 (EXテンプレート用) -> ファイル分ける？
 @import "layout/article";
 @import "layout/container";

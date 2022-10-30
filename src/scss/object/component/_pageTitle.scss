@@ -39,12 +39,9 @@
 	text-align: center;
 }
 
+// ウィジェットタイトルと同じ
 .c-secTitle,
 .c-bottomSection__title {
-	margin-bottom: 2rem;
-	font-size: 1.5rem;
 
-	@include sp {
-		font-size: 1.25rem; // ウィジェットタイトルの大きさと同じ
-	}
+	@extend %widgetTitle;
 }

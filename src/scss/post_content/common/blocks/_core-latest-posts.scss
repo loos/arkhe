@@ -1,35 +1,7 @@
-// 「最新の投稿」
-.widget_recent_entries,
-.wp-block-latest-posts:not(.is-grid) {
-
-	li {
-		position: relative;
-		margin: 0;
-		border-bottom: solid 1px var(--ark-color--border);
-	}
-
-	a {
-		position: relative;
-		display: block;
-		padding: var(--ark-padding--nav, .75rem .5rem);
-		color: inherit;
-		text-decoration: none;
-		transition: background-color .25s;
-
-		&:hover {
-			background-color: var(--ark-color--gray--hover);
-		}
-
-	}
-}
-
-.wp-block-latest-posts:not(.is-grid),
-.widget_recent_entries ul {
-	border-top: solid 1px var(--ark-color--border);
-}
-
+//「最新の投稿」
 .wp-block-latest-posts {
 
+	// サムネイル画像を左寄せ・右寄せなどにしたときにfloatが使われる
 	> li::after {
 		display: block;
 		clear: both;
@@ -42,9 +14,6 @@
 
 	// グリッド型
 	// &.is-grid{}
-
-	// タイトル
-	// a{}
 }
 
 // サムネイル

@@ -16,9 +16,6 @@
 	// l-containerのサイドのpadding量
 	--ark-padding--container: min(48px, 4vw);
 
-	// ウィジェットなどのナビ・メニュー内のpadding量
-	--ark-padding--nav: .75rem .5rem; //rem: 子メニューになっても余白感変わらないように
-
 	// カラー変数 (設定には紐づいていないもの)
 	--ark-color--border: rgba(200, 200, 200, .5);
 	--ark-color--border--table: #ededed;
@@ -49,6 +46,9 @@
 	--ark-fz--xl: 1.5em;
 	--ark-fz--xxl: 2em;
 	--ark-fz--huge: 3em;
+
+	// サブメニュー展開ボタンのサイズ
+	--ark-submenu_btn_size: 1.75rem;
 }
 
 html {

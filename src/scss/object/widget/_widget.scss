@@ -1,16 +1,6 @@
 // ウィジェット基本
-.c-widget {
-
-	+ .c-widget {
-		margin-top: 2.5rem;
-	}
-
-
-	figcaption {
-
-		@extend %figcaption;
-	}
-
+.c-widget + .c-widget {
+	margin-top: 2.5rem;
 }
 
 // .c-widget h2.widget-title, // ウィジェットグループ用 → フックで書き換え
@@ -19,12 +9,6 @@ h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
 .c-widget__title {
 
 	@extend %widgetTitle;
-}
-// 検索ブロックのタイトル
-.widget_block .wp-block-search__label {
-
-	@extend %widgetTitle;
-	display: block;
 }
 
 
@@ -39,4 +23,32 @@ h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
 		text-decoration: underline;
 		opacity: .75;
 	}
+}
+
+// -------- category, tag --------
+.widget_categories,
+.wp-block-categories {
+
+	label {
+		display: none;
+	}
+}
+
+//投稿カウント数
+.tag-link-count,
+.cat-post-count {
+	position: relative;
+	display: inline-block;
+	margin-left: .25em;
+	color: inherit;
+	letter-spacing: 1px;
+	transform: scale(.85);
+	opacity: var(--ark-opacity--thin);
+}
+
+
+// -------- rss --------
+.wp-block-rss .wp-block-rss__item {
+	margin: 0;
+	padding: .25em 0;
 }

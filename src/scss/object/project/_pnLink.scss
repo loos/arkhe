@@ -1,5 +1,7 @@
 
 .c-pnNav {
+
+	@extend %reset_list;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;

@@ -27,33 +27,8 @@ main {
 	display: block;
 }
 
-ul {
-	list-style: none;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-
 ruby > rt {
 	font-size: 50%;
-}
-
-// blockquote::before, blockquote::after,
-// q::before, q::after {
-//     content: none;
-// }
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-td,
-th {
-	// background-clip: padding-box;
-	word-break: break-all;
 }
 
 img {
@@ -64,12 +39,6 @@ img {
 
 video {
 	outline: none;
-}
-
-pre,
-code {
-	-moz-tab-size: 4;
-	tab-size: 4;
 }
 
 svg:not([fill]) {

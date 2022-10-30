@@ -1,75 +1,91 @@
 /*
-	リスト系のウィジェットに関するもの
+ * メニューリスト系
+ * ( ウィジェット系、グローバルナビ・ドロワーメニュー）
+ */
+/* stylelint-disable at-rule-empty-line-before */
 
-	※ エディター側は .wp-block-categories__list
-*/
+// -------- グローバルナビ --------
+.c-gnav .sub-menu {
+	// memo: ここに %menu_list は使わない。
+	@extend %has_acc_sub_menu;
 
-.wp-block-rss .wp-block-rss__item {
-	padding: .5rem 0;
+	.sub-menu {
+		@extend %acc_sub_menu;
+	}
 }
 
-// 一番最初の ulタグ
+
+// -------- ドロワーメニュー --------
+.c-drawerNav {
+	@extend %menu_list;
+	@extend %has_acc_sub_menu;
+
+	.sub-menu {
+		@extend %acc_sub_menu;
+	}
+}
+
+
+// -------- ul, ol 系のウィジェット --------
+
+
+// カテゴリー（従来・ブロック）
 .wp-block-categories-list,
+.widget_categories > ul {
+	@extend %menu_list;
+	@extend %has_acc_sub_menu;
+
+	.children {
+		@extend %acc_sub_menu;
+	}
+}
+
+// アーカイブ（従来・ブロック）
 .wp-block-archives-list,
-.wp-block-latest-comments,
-.widget_nav_menu .menu,
-.widget_recent_entries ul,
-.widget_recent_comments ul,
-.widget_archive > ul,
-.widget_categories > ul,
+.widget_archive > ul {
+	@extend %menu_list;
+}
+
+// ナビゲーション（従来のみ）
+// memo: 構造は .widget_nav_menu > div > ul.menu になってる
+.widget_nav_menu .menu {
+	@extend %menu_list;
+	@extend %has_acc_sub_menu;
+
+	.sub-menu {
+		@extend %acc_sub_menu;
+	}
+}
+
+// 固定ページリスト（従来・ブロック）
+.wp-block-page-list,
 .widget_pages > ul {
-	border-top: solid 1px var(--ark-color--border);
-
+	@extend %menu_list;
 }
 
-
-// 基本スタイル
-.wp-block-categories,
-.wp-block-archives,
-.widget_nav_menu,
-.widget_archive,
-.widget_categories,
-.widget_pages {
-
-	li {
-		position: relative;
-		margin: 0 !important;
-
-		a {
-			border-bottom: solid 1px var(--ark-color--border);
-		}
-	}
-
-	a {
-		position: relative;
-		display: block;
-		padding: var(--ark-padding--nav, .75rem .5rem);
-		color: inherit;
-		text-decoration: none;
-		transition: background-color .25s;
-
-		&:hover {
-			background-color: var(--ark-color--gray--hover);
-		}
-	}
+.wp-block-page-list .submenu-container,
+.widget_pages .children {
+	@extend %sub_menu;
 }
 
-.widget_categories,
-.wp-block-categories {
-
-	label {
-		display: none;
-	}
+//　最近の投稿（従来・ブロック）
+.widget_recent_entries > ul {
+	@extend %menu_list;
 }
 
-//投稿カウント数
-.tag-link-count,
-.cat-post-count {
-	position: relative;
-	display: inline-block;
-	margin-left: .25em;
-	color: inherit;
-	letter-spacing: 1px;
-	transform: scale(.85);
-	opacity: var(--ark-opacity--thin);
+.wp-block-latest-posts:not(.is-grid) {
+	@extend %menu_list--hasA;
 }
+
+// 最新のコメント（従来・ブロック）
+.wp-block-latest-comments,
+.widget_recent_comments > ul {
+	@extend %menu_list--hasA;
+}
+
+// RSS → 何もしない
+// .wp-block-rss,
+// .widget_rss > ul {}
+
+// メタ情報 → 何もしない
+// .widget_meta{}

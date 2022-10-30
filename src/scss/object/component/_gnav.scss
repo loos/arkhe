@@ -12,15 +12,17 @@
 }
 
 .c-gnav {
+
+	@extend %reset_list;
 	height: 100%;
 	font-size: .9rem;
 	text-align: center;
-	list-style: none;
 
 	a {
 		font-size: 1em; //em: .c-gnav のサイズを引き継ぐ
 		text-decoration: none;
 	}
+
 
 	// 深さ: 1
 	> .menu-item {
@@ -61,29 +63,42 @@
 		}
 	}
 
+
 	// 子リスト
 	.sub-menu {
+
+		@extend %reset_list;
+
+		--ark-color--border: rgba(255, 255, 255, .2);
+		--ark-nav-padding--Y: 1em;
+		--ark-nav-padding--R: .75em;
+		--ark-nav-padding--L: .75em;
+		--ark-nav_fz: .9em;
+
 		color: #fff;
 		text-align: left;
 		background: var(--ark-color--main);
-		border-top: 1px solid rgba(255, 255, 255, .1);
 		visibility: hidden;
 
+
+		// .menu-item:not(:last-child) {
+		// 	border-bottom: solid 1px var(--ark-color--border); // memo: 前は li a にしてた
+		// }
+
+		> .menu-item:not(:last-child) {
+			border-bottom: 1px solid var(--ark-color--border);
+		}
+
+		@extend %menu_link;
+
 		a {
-			position: relative;
-			display: block;
-			padding: 1em .75em;
-			color: inherit;
-			font-size: .9em; //em: .c-gnav に対する相対的な値
-			outline-offset: -3px;
-			transition: opacity .25s, background-color .25s;
 
 			&::before {
-				background-color: transparent;
-				transition: background-color .25s;
-				content: "";
 
 				@extend %absLayer;
+				background-color: transparent;
+				// transition: background-color .2s;
+				content: "";
 			}
 
 			&:hover::before {
@@ -91,16 +106,8 @@
 			}
 		}
 
-		> .menu-item:not(:last-child) {
-			border-bottom: 1px solid rgba(255, 255, 255, .1);
-		}
-
 	}
 
-	// 優先度高めるために .sub-menu 関係より下で書いている。
-	// .menu-item-has-children:not(.-current):hover > a::after {
-	//     content: none;
-	// }
 
 	// 二層目のみ
 	> .menu-item > .sub-menu {
@@ -110,6 +117,7 @@
 		z-index: 1;
 		width: 100%;
 		min-width: 240px;
+		box-shadow: 0 4px 12px -2px rgba(0, 0, 0, .15);
 		transform: translateX(-50%);
 		visibility: hidden;
 		opacity: 0;
@@ -118,14 +126,14 @@
 		// ▲ の部分
 		&::before {
 			position: absolute;
-			top: -16px;
-			left: 50%;
+			bottom: 100%;
+			left: calc(50% - .5em);
 			z-index: 1;
-			// padding: 0;
-			border: 8px solid transparent;
-			border-bottom-color: var(--ark-color--main);
-			transform: translateX(-50%);
+			width: 1em;
+			height: 1em;
+			background-color: var(--ark-color--main);
 			content: "";
+			clip-path: polygon(0% 100%, 100% 100%, 50% 60%);
 		}
 	}
 

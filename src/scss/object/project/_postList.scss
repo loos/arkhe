@@ -6,13 +6,8 @@
 
 // ul
 .p-postList {
-	margin: 0;
 
-	// 詳細度高める
-	&.p-postList {
-		padding: 0;
-		list-style: none;
-	}
+	@extend %reset_list;
 
 	&.-type-simple {
 		border-top: solid 1px var(--ark-color--border);
@@ -24,7 +19,6 @@
 		margin-right: -.75rem;
 		margin-left: -.75rem;
 	}
-
 
 }
 
@@ -173,7 +167,7 @@
 
 
 	.p-postList.-type-card & {
-		padding-top: 1.25rem;
+		padding-top: 1rem;
 	}
 
 	.p-postList.-type-list & {

@@ -4,6 +4,8 @@
 
 // コメントリスト
 .c-commentList {
+
+	@extend %reset_list;
 	margin: 2rem 0 0;
 	font-size: .9rem;
 
@@ -21,6 +23,7 @@
 	.children {
 		margin-left: 1rem;
 		padding: 0 0 0 1rem;
+		list-style: none;
 		border-left: solid 1px var(--ark-color--border);
 	}
 

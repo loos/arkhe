@@ -106,14 +106,6 @@ ul.wp-block-categories__list {
 	}
 }
 
-// 最近の投稿ブロック
-[data-type="core/latest-posts"] {
-
-	.wp-block-latest-posts {
-		margin: 0 !important;
-	}
-}
-
 [data-type="core/archives"],
 [data-type="core/categories"] {
 	/* stylelint-disable function-url-quotes */

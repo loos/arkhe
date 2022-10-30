@@ -33,6 +33,9 @@
 
 //メニュー
 .p-drawer {
+	--ark-color--border: rgba(255, 255, 255, .15);
+	--ark-nav-padding--Y: 1rem;
+
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -46,8 +49,6 @@
 	transition: opacity .5s, visibility .5s;
 	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
-	--ark-padding--nav: 1rem .5rem; //rem: 子メニューになっても余白感変わらないように
-	--ark-color--border: rgba(255, 255, 255, .15);
 
 	@include pc {
 		padding-bottom: var(--ark-header_height);
@@ -90,35 +91,6 @@
 }
 
 .c-drawerNav {
-	display: block;
-	text-align: left;
-	border-top: 1px solid var(--ark-color--border);
-
-	.menu-item {
-		position: relative;
-	}
-
-	> .menu-item:first-child > a {
-		border-top: none;
-	}
-
-	a {
-		position: relative;
-		display: block;
-		padding: var(--ark-padding--nav, .75rem .5rem);
-		text-decoration: none;
-		border-bottom: 1px solid var(--ark-color--border);
-		outline-offset: -3px;
-		transition: background-color .25s;
-
-		@include pc {
-
-			&:hover {
-				// background-color: rgba(255, 255, 255, .1);
-				background-color: var(--ark-color--gray--hover);
-			}
-		}
-	}
 
 	.__subText {
 		margin-left: 1em;

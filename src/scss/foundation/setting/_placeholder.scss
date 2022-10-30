@@ -36,8 +36,128 @@
 // ウィジェットタイトル
 %widgetTitle {
 	position: relative;
-	margin-bottom: 1.25rem;
-	overflow: hidden;
+	margin-bottom: 1em;
 	font-weight: bold;
-	font-size: 1.25em;
+	font-size: 1.4em;
+	// overflow: hidden;
+}
+
+
+%reset_list {
+	// padding: 0;
+	--ark-list-padding: 0; // css変数側で打ち消したほうがセレクタの詳細度に影響されない
+	list-style: none;
+}
+
+
+// -------- メニューリスト系の共通スタイル --------
+// メニューリストの<a>タグ
+%menu_link {
+
+	a {
+		position: relative;
+		display: block;
+		padding: var(--ark-nav-padding--Y, .75rem) var(--ark-nav-padding--R, .5rem) var(--ark-nav-padding--Y, .75rem) var(--ark-nav-padding--L, .5rem);
+		color: inherit;
+		font-size: var(--ark-nav_fz, 1em);
+		text-decoration: none;
+		// transition: background-color .25s;
+	}
+}
+
+// 子メニューは余白広く
+%menu_link--nested {
+	--ark-nav-padding--L: 1.5rem;
+	--ark-nav_fz: .925em;
+
+	// 孫メニューはさらに広く
+	ul {
+		--ark-nav-padding--L: 2.25rem;
+	}
+}
+
+%menu_list {
+
+	@extend %reset_list;
+	border-top: solid 1px var(--ark-color--border);
+	border-bottom: solid 1px var(--ark-color--border);
+
+	li {
+		position: relative;
+		margin: 0 !important; // post_content 内のliマージンを打ち消す
+		line-height: 1.5;
+	}
+
+
+	li:not(:last-child) {
+		border-bottom: solid 1px var(--ark-color--border); // memo: 前は li a にしてた
+	}
+
+	@extend %menu_link;
+
+	// グローバルナビでは違う処理にしたいので %menu_link の外に出してる
+	a:hover {
+		background-color: var(--ark-color--gray--hover);
+	}
+}
+
+// 中にaタグがあって、liに対する装飾だけにするもの
+%menu_list--hasA {
+
+	@extend %reset_list;
+	border-top: solid 1px var(--ark-color--border);
+	border-bottom: solid 1px var(--ark-color--border);
+
+	li {
+		position: relative;
+		margin: 0 !important; // post_content 内のliマージンを打ち消す
+		padding: var(--ark-padding--nav, .75rem .5rem);
+		line-height: 1.5;
+	}
+
+	li:not(:last-child) {
+		border-bottom: solid 1px var(--ark-color--border); // memo: 前は li a にしてた
+	}
+}
+
+// サブメニューを普通に持つナビゲーション
+%sub_menu {
+	border-top: dashed 1px var(--ark-color--border);
+
+	@extend %reset_list;
+	@extend %menu_link--nested;
+}
+
+// 展開式のサブメニューを持つナビゲーション
+%has_acc_sub_menu {
+
+	// a + ul がある時. つまりサブメニューがある時、.c-submenuToggleBtn 分 の余白を取る。（ボタンサイズ + 左右 8px）
+	a:not(:last-child) {
+		--ark-nav-padding--R: calc(var(--ark-submenu_btn_size) + 16px);
+	}
+
+	// ここで統一はできるが、children や sub-menu などのクラス名が異なるので、個別に指定する（クラス指定したほうが負荷が軽い）
+	// ul {@extend %acc_sub_menu;}
+}
+
+// 展開されるサブメニュー側
+%acc_sub_menu {
+	position: relative;
+	height: 0;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	list-style: none;
+	border-top: dashed 1px var(--ark-color--border);
+	visibility: hidden;
+	opacity: 0;
+	// transition: height .25s, opacity .25s, visibility .25s;
+
+	&.is-opened {
+		height: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	@extend %menu_link--nested;
 }

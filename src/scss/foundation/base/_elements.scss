@@ -1,0 +1,198 @@
+/**
+ * フロントはそのまま、エディターでは .editor-styles-wrapper でラップされる
+ */
+
+/* ---------- 見出し ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	--ark-mt: var(--ark-mt--h);
+	font-weight: 700;
+	line-height: 1.5;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.75em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5 {
+	font-size: 1.1em;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+
+/* ---------- 引用 ---------- */
+blockquote {
+	padding: .25em 1em;
+	background: none;
+	border-left: solid 2px var(--ark-color--border);
+	quotes: none;
+
+	cite {
+		display: block;
+		margin-top: 1em;
+		font-size: .8em;
+		opacity: .75;
+	}
+
+	p + p {
+		margin-top: .75em;
+	}
+}
+
+/* ---------- テーブル ---------- */
+// borderを分けて指定しているのはSPでの縦並びも考慮しているため。
+table {
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+	border: none;
+	border-top: solid 1px var(--ark-color--border--table);
+	border-right: solid 1px var(--ark-color--border--table);
+	border-collapse: collapse; // memo: oveflow の指定によっては separate にしないとborderが表示されない場合があるので横スクロール時には注意。
+	border-spacing: 0;
+
+	caption {
+		margin-top: .75rem;
+		font-size: .9rem;
+		opacity: var(--ark-opacity--thin);
+	}
+}
+
+th,
+td {
+	padding: .5em .75em;
+	vertical-align: top;
+	word-break: break-all;
+	border-bottom: solid 1px var(--ark-color--border--table);
+	border-left: solid 1px var(--ark-color--border--table);
+	// background-clip: padding-box;
+}
+
+thead {
+
+	td,
+	th {
+		color: #fff;
+		background-color: var(--ark-color--main);
+	}
+}
+
+tbody th {
+	font-weight: bold;
+	background-color: var(--ark-color--gray);
+}
+
+
+/* ---------- pre ---------- */
+pre,
+code {
+	-moz-tab-size: 4;
+	tab-size: 4;
+}
+
+pre {
+	padding: 1rem;
+	overflow-x: auto;
+	background-color: var(--ark-color--gray);
+
+	code {
+		font-size: .9rem;
+		font-family: Menlo, Consolas, monaco, monospace;
+	}
+}
+
+/* ---------- 横線 ---------- */
+hr:not(.wp-block-separator) {
+	border: none;
+	border-bottom: solid 1px rgba(0, 0, 0, .1);
+}
+
+
+/* ---------- インライン装飾 ---------- */
+kbd,
+:not(pre) > code {
+	display: inline-block;
+	margin: 0 .25em;
+	padding: .2em .5em;
+	color: #3f3f3f;
+	font-size: .9em;
+	font-family: Menlo, Consolas, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", sans-serif;
+	line-height: 1.5;
+	letter-spacing: 0;
+	text-decoration: inherit;
+	background: #edf0f3;
+	border-radius: 3px;
+}
+
+kbd {
+	background-color: #fbfbfb;
+	box-shadow: 0 1px 0 1px rgba(0, 0, 0, .15), 0 0 1px rgba(0, 0, 0, .1);
+}
+
+small {
+	font-size: .75em;
+	opacity: var(--ark-opacity--thin);
+}
+
+sup,
+sub {
+	font-size: .75em;
+}
+
+
+/* ---------- リスト ---------- */
+// ul,ol の list-styleはブラウザに任せる
+// ul {
+// 	list-style: disc;
+// }
+
+// ol {
+// 	list-style: decimal;
+// }
+
+ul,
+ol {
+	margin: 0;
+	padding: var(--ark-list-padding, 0 0 0 1.5em);
+
+	&.has-background {
+		padding: var(--ark-list-padding--has_bg, 1em 1em 1em 2.25em);
+	}
+}
+
+/* ---------- その他 ---------- */
+
+iframe {
+	display: block;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+figcaption {
+
+	@extend %figcaption;
+}
+
+// dt {
+// 	font-weight: bold;
+// }
