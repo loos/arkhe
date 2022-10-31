@@ -37,7 +37,7 @@ class Recent_Posts extends \wp_widget_recent_posts {
 			if ( $title ) {
 				$return .= $args['before_title'] . $title . $args['after_title'];
 			}
-			$return .= '<ul>';
+			$return .= '<ul class="w-menuList">';
 			ob_start();
 			while ( $q->have_posts() ) :
 				$q->the_post(); ?>

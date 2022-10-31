@@ -69,7 +69,8 @@
 }
 
 //　最近の投稿（従来・ブロック）
-.widget_recent_entries > ul {
+// .widget_recent_entries > ul
+.w-menuList {
 	@extend %menu_list;
 }
 
@@ -82,6 +83,7 @@
 .widget_recent_comments > ul {
 	@extend %menu_list--hasA;
 }
+
 
 // RSS → 何もしない
 // .wp-block-rss,
