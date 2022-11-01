@@ -83,6 +83,10 @@ export function addSmoothScrollEvent( dom ) {
 	const linkElems = root.querySelectorAll( 'a[href*="#"]' );
 
 	linkElems.forEach( ( link ) => {
+		// target="_blank"の場合は処理しない
+		const targetVal = link.getAttribute( 'target' );
+		if ( '_blank' === targetVal ) return;
+
 		const href = link.getAttribute( 'href' ); // href取得
 		const splitHref = href.split( '#' );
 
@@ -104,6 +108,10 @@ export function addSmoothScrollEvent( dom ) {
 				if ( ! target ) return true;
 
 				e.preventDefault();
+
+				// url書き換え
+				window.history.pushState( {}, '', href );
+
 				smoothScroll( target, smoothOffset );
 
 				// スマホメニューが開いていれば閉じる
