@@ -73,6 +73,8 @@
 .l-footer__nav {
 	margin-bottom: 1rem;
 
+	@extend %reset_list;
+
 	a {
 		display: block;
 		padding: 0 .5rem;
