@@ -2,15 +2,9 @@
 namespace Arkhe_Theme;
 
 /**
- * カスタムメニューの設定
- */
-add_action( 'after_setup_theme', __NAMESPACE__ . '\register_nav_locations', 9 );
-add_filter( 'walker_nav_menu_start_el', __NAMESPACE__ . '\hook_walker_nav_menu', 10, 4 );
-
-
-/**
  * カスタムメニューのロケーション登録
  */
+add_action( 'after_setup_theme', __NAMESPACE__ . '\register_nav_locations', 9 );
 function register_nav_locations() {
 	register_nav_menus(
 		array(
@@ -23,52 +17,22 @@ function register_nav_locations() {
 
 
 /**
- * リストのHTMLを組み替える
- * 例：「説明」を追加（ナビゲーションの英語テキストに使用）
+ * 従来ウィジェットで呼び出されるナビゲーションに開閉サブメニュー用のクラスを付与
  */
-function hook_walker_nav_menu( $item_output, $item, $depth, $args ) {
+add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\hook_wp_nav_menu_items', 10, 2 );
+function hook_wp_nav_menu_items( $items, $args ) {
 
-	// 特定のメニューに対して処理
-	$menu_location = $args->theme_location;
+	$location = isset( $args->theme_location ) ? $args->theme_location : '';
 
-	// サブメニューを持つかどうか
-	$has_child = in_array( 'menu-item-has-children', $item->classes, true );
-
-	if ( 'header_menu' === $menu_location || 'drawer_menu' === $menu_location ) {
-		if ( 0 === $depth ) {
-			$item_output = preg_replace(
-				'/<a([^>]*)>([^<]*)<\/a>/',
-				'<a$1><span class="__mainText">$2</span></a>',
-				$item_output
-			);
-
-			if ( ! empty( $item->description ) ) {
-				$item_output = str_replace(
-					'</a>',
-					'<small class="__subText">' . esc_html( $item->description ) . '</small></a>',
-					$item_output
-				);
-			}
-		}
-
-		if ( $has_child ) {
-			$item_output = str_replace(
-				'</a>',
-				ark_get__submenu_toggle_btn() . '</a>',
-				$item_output
-			);
-		}
-	} elseif ( '' === $menu_location ) {
-		if ( $has_child ) {
-			$item_output = str_replace(
-				'</a>',
-				ark_get__submenu_toggle_btn() . '</a>',
-				$item_output
-			);
-		}
+	if ( '' === $location ) {
+		$regex = '/<li ([^>]*)>\s*(<a(?:(?!<\/a>).)*)<\/a>\s*<ul/s';
+		$items = preg_replace_callback( $regex, function( $matches ) {
+			$li_props = $matches[1];
+			$a_tag    = $matches[2] . ark_get__submenu_toggle_btn() . '</a>';
+			$li_props = str_replace( 'menu-item-has-children', 'menu-item-has-children has-child--acc', $li_props );
+			return '<li ' . $li_props . '>' . $a_tag . '<ul';
+		}, $items );
 	}
 
-	$item_output = do_shortcode( $item_output );
-
-	return $item_output;
+	return $items;
 }

@@ -3,6 +3,7 @@ namespace Arkhe_Theme\Widget;
 
 /**
  * 既存の「最新の投稿」ウィジェットのフォーマットを編集（投稿日をaタグの中へ）
+ *   ※ エディター上のプレビューでは反映されない
  */
 class Recent_Posts extends \wp_widget_recent_posts {
 
@@ -37,11 +38,11 @@ class Recent_Posts extends \wp_widget_recent_posts {
 			if ( $title ) {
 				$return .= $args['before_title'] . $title . $args['after_title'];
 			}
-			$return .= '<ul>';
+			$return .= '<ul class="widget_recent_entries__list">';
 			ob_start();
 			while ( $q->have_posts() ) :
 				$q->the_post(); ?>
-				<li><a href="<?php the_permalink(); ?>">
+				<li class="widget_recent_entries__li"><a class="widget_recent_entries__a" href="<?php the_permalink(); ?>">
 					<?php the_title(); ?>
 					<?php if ( ! empty( $instance['show_date'] ) ) : ?>
 						<span class="recent_entries_date u-color-thin u-fz-s"><?php the_time( 'Y.m.d' ); ?></span>

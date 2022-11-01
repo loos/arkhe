@@ -54,20 +54,35 @@ function add_rss_thumb( $content ) {
 
 
 /**
- * カテゴリーリストの件数を</a>の中に移動 & spanで囲む
+ * カテゴリーリストのカスタマイズ
  */
-add_action( 'wp_list_categories', __NAMESPACE__ . '\hook_wp_list_categories' );
-function hook_wp_list_categories( $output ) {
-	$output = str_replace( '</a> (', '<span class="cat-post-count">(', $output );
-	$output = str_replace( ')', ')</span></a>', $output );
-	// $output = preg_replace( '/<\/a>\s*\((\d+)\)/', ' <span class="cat-post-count">($1)</span></a>', $output );
+add_action( 'wp_list_categories', __NAMESPACE__ . '\hook_wp_list_categories', 10, 2 );
+function hook_wp_list_categories( $output, $args ) {
 
-	// サブメニューがある場合（ </a><ul> ）、トグルボタンを追加
-	$output = preg_replace(
-		'/<\/a>([^<]*)<ul/',
-		ark_get__submenu_toggle_btn() . '</a><ul',
-		$output
-	);
+	// walker指定された特殊なリストには何もしない
+	// if ( isset( $args['walker'] ) ) return $output;
+
+	if ( apply_filters( 'arkhe_move_post_count_into_a', true, 'wp_list_categories' ) ) {
+		// 投稿数を<a>の中に移動
+		$output = preg_replace( '/<\/a>\s*\((\d+)\)/', ' <span class="c-postCount">($1)</span></a>', $output );
+	}
+
+	if ( ! $args['hierarchical'] ) return $output;
+
+	// memo: ul を含む li
+	// $regex = '/<li[^>]*>(?:(?!<\/li>).)*<ul/s';
+
+	// サブメニューがある場合（ </a><ul> ）、liにクラスを追加してトグルボタンを追加
+	//   (?:  )→グループ化するが、キャプチャしない。
+	//   (?!<\/a>). → </a> が続かない任意の文字列
+	//   (?:(?!<\/a>).)* → </a> が続かない任意の文字列を0回以上繰り返す
+	$regex  = '/<li class="([^"]*)">\s*(<a(?:(?!<\/a>).)*)<\/a>\s*<ul/s';
+	$output = preg_replace_callback( $regex, function( $matches ) {
+		$li_class = $matches[1];
+		$a_tag    = $matches[2] . ark_get__submenu_toggle_btn() . '</a>';
+		return '<li class="' . $li_class . ' has-child--acc">' . $a_tag . '<ul';
+	}, $output );
+
 	return $output;
 }
 
@@ -92,8 +107,10 @@ function hook_wp_list_categories( $output ) {
  */
 add_action( 'get_archives_link', __NAMESPACE__ . '\hook_get_archives_link', 10, 6 );
 function hook_get_archives_link( $link_html, $url, $text, $format, $before, $after ) {
+	if ( ! apply_filters( 'arkhe_move_post_count_into_a', true, 'get_archives_link' ) ) return $link_html;
 	if ( 'html' === $format ) {
-		$link_html = '<li>' . $before . '<a href="' . $url . '">' . $text . '<span class="post_count">' . $after . '</span></a></li>';
+		$after     = str_replace( '&nbsp;', '', $after );
+		$link_html = '<li>' . $before . '<a href="' . $url . '">' . $text . '<span class="c-postCount">' . $after . '</span></a></li>';
 	}
 	return $link_html;
 }

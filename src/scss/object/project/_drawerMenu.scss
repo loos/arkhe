@@ -58,9 +58,10 @@
 		display: none;
 	}
 
-	a {
-		color: inherit;
-	}
+	// .p-drawer 内の a 全て
+	// a {
+	// 	color: inherit;
+	// }
 
 	.admin-bar & {
 		top: var(--ark-adminbar_height);

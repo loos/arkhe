@@ -35,17 +35,17 @@ h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
 }
 
 //投稿カウント数
-.tag-link-count,
-.cat-post-count {
+// .cat-post-count,
+.tag-link-count.tag-link-count,
+.c-postCount {
 	position: relative;
 	display: inline-block;
 	margin-left: .25em;
 	color: inherit;
-	letter-spacing: 1px;
-	transform: scale(.85);
+	font-size: .9em;
+	font-family: arial;
 	opacity: var(--ark-opacity--thin);
 }
-
 
 // -------- rss --------
 .wp-block-rss .wp-block-rss__item {

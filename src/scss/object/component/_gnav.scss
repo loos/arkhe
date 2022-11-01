@@ -11,131 +11,17 @@
 	}
 }
 
-.c-gnav {
+.c-gnav,
+.c-gnav .sub-menu {
 
 	@extend %reset_list;
+}
+
+
+.c-gnav {
 	height: 100%;
 	font-size: .9rem;
 	text-align: center;
-
-	a {
-		font-size: 1em; //em: .c-gnav のサイズを引き継ぐ
-		text-decoration: none;
-	}
-
-
-	// 深さ: 1
-	> .menu-item {
-		position: relative;
-		height: 100%;
-
-		> a {
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			height: 100%;
-			padding: 16px 12px;
-			color: inherit;
-			white-space: nowrap;
-			transition: color .25s;
-
-			.c-submenuToggleBtn {
-				display: none;
-			}
-		}
-
-		// メニューのホバーエフェクト
-		&.-current > a,
-		&:hover,
-		&.focus {
-			color: var(--ark-color--main);
-		}
-
-		// サブメニュー表示
-		&:hover,
-		&.focus {
-
-			> .sub-menu {
-				visibility: visible;
-				opacity: 1;
-			}
-		}
-	}
-
-
-	// 子リスト
-	.sub-menu {
-
-		@extend %reset_list;
-
-		--ark-color--border: rgba(255, 255, 255, .2);
-		--ark-nav-padding--Y: 1em;
-		--ark-nav-padding--R: .75em;
-		--ark-nav-padding--L: .75em;
-		--ark-nav_fz: .9em;
-
-		color: #fff;
-		text-align: left;
-		background: var(--ark-color--main);
-		visibility: hidden;
-
-
-		// .menu-item:not(:last-child) {
-		// 	border-bottom: solid 1px var(--ark-color--border); // memo: 前は li a にしてた
-		// }
-
-		> .menu-item:not(:last-child) {
-			border-bottom: 1px solid var(--ark-color--border);
-		}
-
-		@extend %menu_link;
-
-		a {
-
-			&::before {
-
-				@extend %absLayer;
-				background-color: transparent;
-				// transition: background-color .2s;
-				content: "";
-			}
-
-			&:hover::before {
-				background-color: rgba(255, 255, 255, .1);
-			}
-		}
-
-	}
-
-
-	// 二層目のみ
-	> .menu-item > .sub-menu {
-		position: absolute;
-		top: 100%;
-		left: 50%;
-		z-index: 1;
-		width: 100%;
-		min-width: 240px;
-		box-shadow: 0 4px 12px -2px rgba(0, 0, 0, .15);
-		transform: translateX(-50%);
-		visibility: hidden;
-		opacity: 0;
-		transition: opacity .5s, visibility .35s;
-
-		// ▲ の部分
-		&::before {
-			position: absolute;
-			bottom: 100%;
-			left: calc(50% - .5em);
-			z-index: 1;
-			width: 1em;
-			height: 1em;
-			background-color: var(--ark-color--main);
-			content: "";
-			clip-path: polygon(0% 100%, 100% 100%, 50% 60%);
-		}
-	}
 
 	.__mainText {
 		display: block;
@@ -153,5 +39,108 @@
 		line-height: 1;
 		opacity: .6;
 	}
-
 }
+
+.c-gnav__a {
+	font-size: 1em; //em: .c-gnav のサイズを引き継ぐ
+	text-decoration: none;
+	// outline-offset: -2px; // 開閉リストが overflow: hidden; でアウトラインが見えなくなるを防ぐ
+}
+
+// .c-gnav 直下の li
+.c-gnav__li {
+	position: relative;
+	height: 100%;
+
+	// さらにその直下の a
+	> .c-gnav__a {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		padding: 16px 12px;
+		color: inherit;
+		white-space: nowrap;
+		transition: color .25s;
+	}
+
+	// メニューのホバーエフェクト
+	&.-current,
+	&.focus, // ← :focusじゃなくて クラス なのはミスじゃない
+	&:hover {
+		color: var(--ark-color--main);
+	}
+}
+
+// 子リスト共通
+.c-gnav .sub-menu {
+	color: #fff;
+	text-align: left;
+	background: var(--ark-color--main);
+	visibility: hidden;
+
+	> .menu-item:not(:last-child) {
+		border-bottom: 1px solid var(--ark-color--border);
+	}
+
+	.c-gnav__a {
+
+		@extend %menu_list__a;
+
+		&::before {
+
+			@extend %absLayer;
+			background-color: transparent;
+			content: "";
+			// transition: background-color .2s;
+		}
+
+		&:hover::before {
+			background-color: rgba(255, 255, 255, .1);
+		}
+	}
+}
+
+// 直下の子ul
+.c-gnav__depth1 {
+	--ark-color--border: rgba(255, 255, 255, .2);
+	--ark-nav-padding--Y: 1em;
+	--ark-nav-padding--R: .75em;
+	--ark-nav-padding--L: .75em;
+	--ark-nav_fz: .9em;
+
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	z-index: 1;
+	width: 100%;
+	min-width: 240px;
+	box-shadow: 0 4px 12px -2px rgba(0, 0, 0, .15);
+	transform: translateX(-50%);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity .5s, visibility .35s;
+
+	// サブメニュー表示
+	.c-gnav__li:hover > &,
+	.c-gnav__li.focus > & {
+		visibility: visible;
+		opacity: 1;
+	}
+
+
+	// ▲ の部分
+	&::before {
+		position: absolute;
+		bottom: 100%;
+		left: calc(50% - .5em);
+		z-index: 1;
+		width: 1em;
+		height: 1em;
+		background-color: var(--ark-color--main);
+		content: "";
+		clip-path: polygon(0% 100%, 100% 100%, 50% 60%);
+	}
+}
+
