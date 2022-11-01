@@ -40,9 +40,9 @@ export default function () {
 	setCurrent( gnav );
 
 	const gnavMenu = gnav.querySelector( '.c-gnav' );
-
 	if ( null === gnavMenu ) return false;
 
+	// .c-gnav内のaをすべて取得
 	const links = gnavMenu.getElementsByTagName( 'a' );
 
 	for ( let i = 0; i < links.length; i++ ) {
@@ -51,14 +51,13 @@ export default function () {
 		link.addEventListener( 'blur', toggleFocus, true );
 	}
 
-	//Sets or removes the .focus class on an element.
+	// タブキーでの操作中も、サブメニューが表示されるように .focus クラスを管理する
 	function toggleFocus() {
 		let self = this;
 		// console.log(self);
 
-		// Move up through the ancestors of the current link until we hit .primary-menu.
+		// c-gnav範囲内で、 li の .focus クラスを管理
 		while ( ! self.classList.contains( 'c-gnav' ) ) {
-			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
 				self.classList.toggle( 'focus' );
 			}
