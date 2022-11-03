@@ -5,46 +5,45 @@
 	&.wp-block-buttons {
 		gap: var(--wp--style--block-gap); // 5.9からフロントでもgapが使われるのでそれに揃える
 	}
-
-	.wp-block-button {
-		display: block;
-		margin: 0;
-		padding: 0;
-	}
-
-	// 6.1 からセレクタ強めないと打ち消されるようになった
-	.wp-block-button .wp-block-button__link {
-		padding: 1em 1.5em;
-		font-size: inherit; // コア側で 1.125em にされる
-		line-height: 1;
-		transition: opacity .25s;
-
-		&:hover {
-			opacity: .75;
-		}
-	}
-
-
-	// デフォルトスタイル
-	.wp-block-button:not(.is-style-outline) {
-
-		.wp-block-button__link {
-			background-color: var(--ark-color--main);
-		}
-
-		.wp-block-button__link:not(.has-text-color) {
-			color: #fff;
-		}
-	}
-
-	// アウトラインスタイル
-	.wp-block-button.is-style-outline > .wp-block-button__link {
-		border-width: 1px;
-
-		&:not(.has-text-color) {
-			color: var(--ark-color--main);
-		}
-	}
-
 }
 
+// woocommerceなど、.wp-block-buttons で囲まれていないケースにも対応するために button セレクタだけを使う
+.wp-block-button.wp-block-button {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+// 6.1 からセレクタ強めないと打ち消されるようになった
+.wp-block-button.wp-block-button .wp-block-button__link {
+	padding: .75em 1.5em;
+	font-size: inherit; // コア側で 1.125em にされる
+	line-height: 1.5;
+	transition: opacity .25s;
+
+	&:hover {
+		opacity: .75;
+	}
+}
+
+
+// デフォルトスタイル
+.wp-block-button:not(.is-style-outline) {
+
+	.wp-block-button__link {
+		background-color: var(--ark-color--main);
+	}
+
+	.wp-block-button__link:not(.has-text-color) {
+		color: #fff;
+	}
+}
+
+// アウトラインスタイル
+.wp-block-button.is-style-outline > .wp-block-button__link {
+	border-width: 1px;
+
+	&:not(.has-text-color) {
+		color: var(--ark-color--main);
+	}
+}
