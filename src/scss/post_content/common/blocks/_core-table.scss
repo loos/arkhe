@@ -1,16 +1,24 @@
 // テーブル
 .wp-block-table {
-
 	margin-bottom: 0;
 
 	> table {
 		margin-bottom: 0;
 	}
+
+	// 6.1.1 からコア側でCSSが追加されたので上書き
+	th,
+	td {
+		border-top: none;
+		border-right: none;
+		border-bottom: solid 1px var(--ark-color--border--table);
+		border-left: solid 1px var(--ark-color--border--table);
+	}
+
 }
 
 
 // ストライプ
-table.is-style-stripes,
 .is-style-stripes table,
 .wp-block-table.is-style-stripes th,
 .wp-block-table.is-style-stripes td {

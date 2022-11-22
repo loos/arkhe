@@ -59,7 +59,7 @@ blockquote {
 }
 
 /* ---------- テーブル ---------- */
-// borderを分けて指定しているのはSPでの縦並びも考慮しているため。
+// borderを分けて指定しているのはSPでの縦並びも考慮しているため。また、border-collapse:separate にしても崩れないようにするため。
 table {
 	width: 100%;
 	max-width: 100%;
@@ -79,7 +79,7 @@ table {
 
 th,
 td {
-	padding: .5em .75em;
+	padding: var(--ark-padding--cell, .5em .75em) !important;
 	vertical-align: top;
 	word-break: break-all;
 	border-bottom: solid 1px var(--ark-color--border--table);
