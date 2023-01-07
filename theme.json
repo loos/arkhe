@@ -10,7 +10,24 @@
 			"lineHeight": true
 		},
 		"spacing": {
-			"padding": true
+			"padding": true,
+			"spacingSizes": [
+				{
+					"name": "Small",
+					"slug": "s",
+					"size": "var(--ark-mt--s)"
+				},
+				{
+					"name": "Normal",
+					"slug": "normal",
+					"size": "var(--ark-mt)"
+				},
+				{
+					"name": "Normal",
+					"slug": "h",
+					"size": "var(--ark-h-mt--h)"
+				}
+			]
 		}
 	}
 }
