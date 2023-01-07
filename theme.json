@@ -2,6 +2,10 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
 	"settings": {
+		"layout": {
+			"contentSize": "var(--ark-block_width)",
+			"wideSize": "calc(100% + var(--ark-alignwide_ex_width)*2)"
+		},
 		"typography": {
 			"lineHeight": true
 		},
