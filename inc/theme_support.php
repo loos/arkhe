@@ -33,9 +33,6 @@ function setup_theme() {
 	add_theme_support( 'automatic-feed-links' );
 	// Gutenberg用
 	add_theme_support( 'align-wide' ); // 画像の全幅表示などを可能に
-	add_theme_support( 'custom-line-height' );
-	add_theme_support( 'custom-units', 'px', 'rem', 'em', '%', 'vw', 'vh' );
-	add_theme_support( 'custom-spacing' );
 	remove_theme_support( 'core-block-patterns' );
 
 	// html5サポート
