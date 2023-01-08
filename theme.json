@@ -11,6 +11,7 @@
 		},
 		"spacing": {
 			"padding": true,
+			"margin": true,
 			"spacingSizes": [
 				{
 					"name": "Small",
@@ -28,6 +29,12 @@
 					"size": "var(--ark-h-mt--h)"
 				}
 			]
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
 		}
 	}
 }
