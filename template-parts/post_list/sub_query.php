@@ -29,8 +29,14 @@ if ( isset( $list_args['excerpt_length'] ) ) {
 
 $list_class = '';
 if ( isset( $list_args['list_count_pc'] ) && isset( $list_args['list_count_sp'] ) ) {
-	$min        = min( $list_args['list_count_pc'], $list_args['list_count_sp'] );
-	$list_class = $min === $list_args['list_count_pc'] ? 'u-only-sp' : 'u-only-pc';
+	$list_count_pc = $list_args['list_count_pc'];
+	$list_count_sp = $list_args['list_count_sp'];
+
+	if ( -1 === $list_count_pc ) $list_count_pc = 99999;
+	if ( -1 === $list_count_sp ) $list_count_sp = 99999;
+
+	$min        = min( $list_count_pc, $list_count_sp );
+	$list_class = $min === $list_count_pc ? 'u-only-sp' : 'u-only-pc';
 }
 
 if ( $the_query->have_posts() ) : ?>
