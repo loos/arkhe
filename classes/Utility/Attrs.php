@@ -183,10 +183,15 @@ trait Attrs {
 			'class' => self::get_main_body_class(),
 		);
 
-		// ページによる追加属性
+		// 投稿・固定ページへの追加属性 (front・home 以外)
 		if ( is_single() || ( ! is_front_page() && is_page() ) ) {
 			$attrs['class']      .= ' ' . implode( ' ', get_post_class() );
 			$attrs['data-postid'] = get_the_ID();
+		}
+
+		// front も対象
+		if ( is_single() || is_page() ) {
+			$attrs['data-clarity-region'] = 'article'; // for Clarity
 		}
 
 		return apply_filters( 'arkhe_main_body_attrs', $attrs );
