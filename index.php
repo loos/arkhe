@@ -3,8 +3,8 @@
  * index.php
  */
 get_header(); ?>
-<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div class="<?php Arkhe::main_body_class(); ?>">
+<main <?php Arkhe::main_attrs(); ?>>
+	<div <?php Arkhe::main_body_attrs(); ?>>
 	<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) :

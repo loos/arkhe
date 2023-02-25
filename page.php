@@ -7,8 +7,8 @@ while ( have_posts() ) :
 	the_post();
 	$the_id = get_the_ID();
 ?>
-	<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-		<article <?php post_class( Arkhe::get_main_body_class() ); ?> data-postid="<?php echo esc_attr( $the_id ); ?>">
+	<main <?php Arkhe::main_attrs(); ?>>
+		<article <?php Arkhe::main_body_attrs(); ?>>
 			<?php
 				do_action( 'arkhe_start_page_main', $the_id );
 				Arkhe::get_part( 'page' );

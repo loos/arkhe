@@ -41,8 +41,8 @@ if ( $searched_text && $searched_term ) {
 // translators: %s is the value of $searched_text.
 $searched_title = sprintf( __( 'Search results for %s', 'arkhe' ), $searched_text );
 ?>
-<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div class="<?php Arkhe::main_body_class(); ?>">
+<main <?php Arkhe::main_attrs(); ?>>
+	<div <?php Arkhe::main_body_attrs(); ?>>
 		<?php do_action( 'arkhe_start_search_main' ); ?>
 		<div class="p-archive__title c-pageTitle">
 			<h1 class="c-pageTitle__main">

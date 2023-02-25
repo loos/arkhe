@@ -3,8 +3,8 @@
  * 404ページ用テンプレート
  */
 get_header(); ?>
-<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div class="<?php Arkhe::main_body_class(); ?>">
+<main <?php Arkhe::main_attrs(); ?>>
+	<div <?php Arkhe::main_body_attrs(); ?>>
 		<?php do_action( 'arkhe_start_404_main' ); ?>
 		<h1 class="p-404__title">
 			<?php

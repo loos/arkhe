@@ -3,8 +3,8 @@
  * メディアページ用テンプレート
  */
 get_header(); ?>
-<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div <?php post_class( Arkhe::get_main_body_class() ); ?>>
+<main <?php Arkhe::main_attrs(); ?>>
+	<div <?php Arkhe::main_body_attrs(); ?>>
 		<?php while ( have_posts() ) : ?>
 			<?php
 				the_post();

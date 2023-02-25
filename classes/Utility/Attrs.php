@@ -4,6 +4,19 @@ namespace Arkhe_Theme\Utility;
 trait Attrs {
 
 	/**
+	 * html用の属性値用の配列→文字列に変換
+	 */
+	public static function convert_attrs_array_to_str( $attrs ) {
+		$str = '';
+		foreach ( $attrs as $name => $value ) {
+			if ( false === $value ) continue;
+			$str .= esc_attr( $name ) . '="' . esc_attr( $value ) . '" ';
+		}
+
+		return trim( $str );
+	}
+
+	/**
 	 * htmlタグに付与する属性値
 	 */
 	public static function get_root_attrs() {
@@ -16,15 +29,7 @@ trait Attrs {
 		);
 
 		// フック通す
-		$attrs = apply_filters( 'arkhe_root_attrs', $attrs );
-
-		// 最終的に出力する文字列
-		$attr_string = '';
-		foreach ( $attrs as $key => $val ) {
-			$attr_string .= " $key=\"$val\"";
-		}
-
-		return trim( $attr_string );
+		return apply_filters( 'arkhe_root_attrs', $attrs );
 	}
 
 
@@ -33,7 +38,7 @@ trait Attrs {
 	 */
 	public static function root_attrs() {
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo self::get_root_attrs();
+		echo self::convert_attrs_array_to_str( self::get_root_attrs() );
 	}
 
 
@@ -134,15 +139,19 @@ trait Attrs {
 
 
 	/**
-	 * get_main_class() の出力
+	 * l-main の属性値
 	 */
-	public static function main_class() {
-		echo esc_attr( self::get_main_class() );
+	public static function main_attrs() {
+		$attrs = array(
+			'id'    => 'main_content',
+			'class' => self::get_main_class(),
+		);
+		echo self::convert_attrs_array_to_str( $attrs ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 
 	/**
-	 * l-main__body クラス
+	 * l-main__body クラス author やカテゴリー名などの詳細値はbody
 	 */
 	public static function get_main_body_class() {
 
@@ -167,10 +176,29 @@ trait Attrs {
 
 
 	/**
-	 * get_main_body_class() の出力
+	 * l-main__body の属性値
 	 */
-	public static function main_body_class() {
-		echo esc_attr( self::get_main_body_class() );
+	public static function get_main_body_attrs() {
+		$attrs = array(
+			'class' => self::get_main_body_class(),
+		);
+
+		// ページによる追加属性
+		if ( is_single() || ( ! is_front_page() && is_page() ) ) {
+			$attrs['class']      .= ' ' . implode( ' ', get_post_class() );
+			$attrs['data-postid'] = get_the_ID();
+		}
+
+		return apply_filters( 'arkhe_main_body_attrs', $attrs );
+	}
+
+
+	/**
+	 * get_main_body_attrs() の出力
+	 */
+	public static function main_body_attrs() {
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo self::convert_attrs_array_to_str( self::get_main_body_attrs() );
 	}
 
 

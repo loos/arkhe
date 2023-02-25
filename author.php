@@ -6,8 +6,8 @@ get_header();
 $author_id   = get_queried_object_id();
 $author_data = get_userdata( $author_id );
 ?>
-<main id="main_content" class="<?php Arkhe::main_class(); ?>">
-	<div class="<?php Arkhe::main_body_class(); ?>">
+<main <?php Arkhe::main_attrs(); ?>>
+	<div <?php Arkhe::main_body_attrs(); ?>>
 		<?php do_action( 'arkhe_start_author_main', $author_id ); ?>
 		<div class="p-archive__title c-pageTitle">
 			<h1 class="c-pageTitle__main"><?php echo esc_html( $author_data->display_name ); ?></h1>
