@@ -9,23 +9,22 @@ $show_tag      = Arkhe::get_setting( 'show_entry_tag' );
 $show_tax      = Arkhe::get_setting( 'show_entry_custom_tax' );
 $show_author   = Arkhe::get_setting( 'show_entry_author' );
 
-$post_data          = get_post();
-$the_id             = $post_data->ID;
-$author_id          = $post_data->post_author;
-$date_timestamp     = get_post_timestamp( $the_id, 'date' );
-$modified_timestamp = get_post_timestamp( $the_id, 'modified' );
+$post_data     = get_post();
+$the_id        = $post_data->ID;
+$author_id     = $post_data->post_author;
+$date_time     = get_post_datetime( $the_id, 'date' );
+$modified_time = get_post_datetime( $the_id, 'modified' );
 
 // 更新日が公開日より遅い場合だけ表示（ただし、更新日だけ表示の時は更新日をそのまま表示する）
-if ( $show_modified && $show_posted ) {
-	$show_modified = ( $date_timestamp < $modified_timestamp ) ? $show_modified : false;
+if ( $show_modified && $show_posted && false !== $date_time && false !== $modified_time ) {
+	$show_modified = ( $date_time->format( 'Ymd' ) < $modified_time->format( 'Ymd' ) ) ? $show_modified : false;
 }
-
 ?>
 <div class="c-postMetas u-flex--aicw">
 	<div class="c-postTimes u-flex--aicw">
 		<?php
-			if ( $show_posted ) ark_the__postdate( $date_timestamp, 'posted' );
-			if ( $show_modified ) ark_the__postdate( $modified_timestamp, 'modified' );
+			if ( $show_posted ) ark_the__postdate( $date_time, 'posted' );
+			if ( $show_modified ) ark_the__postdate( $modified_time, 'modified' );
 		?>
 	</div>
 	<?php

@@ -118,21 +118,29 @@ if ( ! function_exists( 'ark_the__thumbnail' ) ) {
  * 投稿の日付データを出力 (アーカイブと投稿ページで使用)
  */
 if ( ! function_exists( 'ark_the__postdate' ) ) {
-	function ark_the__postdate( $timestamp = null, $type = 'posted' ) {
+	function ark_the__postdate( $time = null, $type = 'posted' ) {
 
-		if ( ! is_numeric( $timestamp ) ) return;
-		if ( null === $timestamp ) return;
+		if ( empty( $time ) ) return;
 
-		$date_format = get_option( 'date_format' );
 		$type_class  = "-{$type}";
+		$date_format = get_option( 'date_format' );
 
-		$return = '<time class="c-postTimes__item u-flex--aic ' . esc_attr( $type_class ) . '" datetime="' . esc_attr( wp_date( 'Y-m-d', $timestamp ) ) . '">' .
+		if ( is_numeric( $time ) ) {
+			// 3.5 未満の後方互換 (タイムスタンプで受け取ってた)
+			$date_data = wp_date( 'Y-m-d', $time );
+			$date_text = wp_date( $date_format, $time );
+		} else {
+			$date_data = $time->format( 'Y-m-d' );
+			$date_text = $time->format( $date_format );
+		}
+
+		$return = '<time class="c-postTimes__item u-flex--aic ' . esc_attr( $type_class ) . '" datetime="' . esc_attr( $date_data ) . '">' .
 			Arkhe::get_svg( $type, array( 'class' => 'c-postMetas__icon' ) ) .
-			esc_html( wp_date( $date_format, $timestamp ) ) .
+			esc_html( $date_text ) .
 		'</time>';
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo apply_filters( 'ark_the__postdate', $return, $timestamp, $type );
+		echo apply_filters( 'ark_the__postdate', $return, $time, $type );
 	}
 }
 
