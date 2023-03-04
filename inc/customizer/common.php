@@ -138,10 +138,10 @@ Customizer::add( $arkhe_section, 'breadcrumbs_home_text',
 	)
 );
 
-// その他の設定
+// その他
 Customizer::sub_title( $arkhe_section, 'breadcrumbs_others',
 	array(
-		'label' => __( 'Other settings', 'arkhe' ),
+		'label' => __( 'Others', 'arkhe' ),
 	)
 );
 
@@ -151,5 +151,25 @@ Customizer::add( $arkhe_section, 'breadcrumbs_set_home_page',
 		'label'       => __( 'Display "Post page"', 'arkhe' ),
 		'description' => ARKHE_NOTE . __( 'It is valid only when "Post page" is set.', 'arkhe' ),
 		'type'        => 'checkbox',
+	)
+);
+
+
+// その他の設定
+Customizer::big_title( $arkhe_section, 'common_others',
+	array(
+		'label' => __( 'Other settings', 'arkhe' ),
+	)
+);
+
+// スムーススクロール
+Customizer::add( $arkhe_section, 'smooth_scroll',
+	array(
+		'label'       => __( 'Smooth scroll', 'arkhe' ),
+		'type'        => 'select',
+		'choices'     => array(
+			'on'  => 'ON',
+			'off' => 'OFF',
+		),
 	)
 );

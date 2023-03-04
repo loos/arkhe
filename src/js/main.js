@@ -98,24 +98,17 @@ document.addEventListener( 'DOMContentLoaded', function () {
 } );
 
 window.addEventListener( 'load', function () {
-	const arkheVars = window.arkheVars;
-
 	// html のdata-loadedをセット
 	document.documentElement.setAttribute( 'data-loaded', 'true' );
 
-	/* ヘッダーの高さ取得 */
+	// ヘッダーの高さ取得
 	setState.headH( DOM.header );
 
-	/* smoothOffsetをセット */
+	// smoothOffsetをセット
 	setState.smoothOffset( DOM.wpadminbar );
 
-	/**
-	 * スムースリンクの処理を登録
-	 *  !!! 目次リスト生成よりあとに !!!
-	 */
-	if ( 'on' === arkheVars.smoothScroll ) {
-		addSmoothScrollEvent();
-	}
+	// スムースリンクの処理を登録
+	addSmoothScrollEvent();
 
 	// #つきリンクでページ遷移してきたときに明示的にスクロールさせる
 	if ( urlHash ) {

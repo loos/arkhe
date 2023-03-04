@@ -22,6 +22,11 @@ export function smoothScroll( target, offset ) {
 		if ( targetY < 0 ) targetY = 0;
 	}
 
+	if ( 'off' === window.arkheVars?.smoothScroll ) {
+		window.scrollTo( 0, targetY );
+		return;
+	}
+
 	// アニメーションの開始時間を格納する変数
 	let startTime = null;
 

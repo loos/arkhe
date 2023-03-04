@@ -16,7 +16,7 @@ trait Output {
 			'isFixHeadPC'    => $setting['fix_header_pc'],
 			'isFixHeadSP'    => $setting['fix_header_sp'],
 			'fixGnav'        => $setting['fix_gnav'],
-			'smoothScroll'   => 'on',
+			'smoothScroll'   => $setting['smooth_scroll'],
 		);
 	}
 

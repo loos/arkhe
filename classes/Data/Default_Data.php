@@ -24,6 +24,9 @@ trait Default_Data {
 			'breadcrumbs_home_text'     => __( 'Home', 'arkhe' ),
 			'breadcrumbs_set_home_page' => false,
 
+			// Smooth scroll
+			'smooth_scroll'             => 'on',
+
 			// Header
 			// 'head_logo'              => 0,
 			'head_logo_overlay'         => 0,
