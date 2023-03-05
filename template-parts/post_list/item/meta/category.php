@@ -2,10 +2,8 @@
 /**
  * 投稿リストのカテゴリー
  */
-$categories = get_the_category();
-if ( empty( $categories ) ) return;
-
-$the_cat = $categories[0];
+$the_cat = \Arkhe::get_a_catgory_for_list();
+if ( empty( $the_cat ) ) return;
 ?>
 <div class="p-postList__category u-color-thin u-flex--aic">
 	<?php Arkhe::the_svg( 'folder', array( 'class' => 'c-postMetas__icon' ) ); ?>

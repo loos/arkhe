@@ -65,6 +65,10 @@ trait Default_Data {
 			'show_list_author'          => false,
 			'thumb_ratio'               => 'wide',
 
+			'cat_priority_on_list'      => '',
+			'force_get_top_cat'         => false,
+			'cat_priority_on_cat_page'  => '',
+
 			// 固定ページ設定
 			'page_title_pos'            => 'top',
 			// 'show_page_thumb'           => false,

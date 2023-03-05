@@ -210,4 +210,112 @@ trait Get {
 
 		return apply_filters( 'arkhe_get_tax_of_post_type', $the_tax, $the_post_type );
 	}
+
+
+	/**
+	 * 投稿リストに表示するカテゴリーを１つ取得
+	 */
+	public static function get_a_catgory_for_list( $categories = null ) {
+
+		if ( null === $categories ) {
+			$categories = get_the_category();
+		}
+
+		if ( empty( $categories ) ) {
+			return null;
+		}
+
+		// １つしかなければそれを返す
+		// if ( 1 === count( $categories ) ) {return $categories[0];}
+
+		// 一番親を返すか、子を返すか
+		$p_or_c             = \Arkhe::get_setting( 'cat_priority_on_list' );
+		$lineage_catergoies = array(); // カテゴリーアーカイブのときに、同じ系列のカテゴリーを取得するためのもの
+
+		// 現在のページがカテゴリーアーカイブの時にそのカテゴリー名で表示するかどうか。
+		if ( is_category() ) {
+			$cat_priority_on_cat_page = \Arkhe::get_setting( 'cat_priority_on_cat_page' );
+
+			// 強制的に表示名を現在のアーカイブに合わせる時 (子カテゴリーしか持ってなくても表示を揃えれる)
+			if ( 'self' === $cat_priority_on_cat_page ) {
+				return get_queried_object();
+			}
+
+			// 子孫カテゴリーを優先表示する場合
+			if ( 'child' === $cat_priority_on_cat_page ) {
+				$p_or_c = 'child';
+			}
+
+			// 現在のカテゴリーの同じ系統のものを取得
+			$ancestors          = get_ancestors( get_queried_object_id(), 'category' );
+			$descendants        = get_term_children( get_queried_object_id(), 'category' );
+			$lineage_catergoies = array_merge( $ancestors, array( get_queried_object_id() ), $descendants );
+
+			// 無関係な親カテゴリーは表示しないように除外しておく.
+			// 例: A, B-child のカテゴリーを持つ投稿があった時、Bのカテゴリーページでは Aを表示しないようにする
+			$categories_ct = count( $categories );
+			for ( $i = 0; $i < $categories_ct; $i++ ) {
+				$the_cat = $categories[ $i ];
+				if ( ! in_array( $the_cat->term_id, $lineage_catergoies, true ) ) {
+					unset( $categories[ $i ] );
+				}
+			}
+		}
+
+		if ( 'parent' === $p_or_c ) {
+			$_cat     = null;
+			$_acts_ct = 0;
+			foreach ( $categories as $the_cat ) {
+				// 一番親のカテゴリーであればすぐにそれを返す
+				if ( 0 === $the_cat->parent ) {
+					return $the_cat;
+				}
+
+				$ancestors = get_ancestors( $the_cat->term_id, 'category' );
+
+				// 投稿と親カテゴリーを直接紐付いてなくても、一番親のカテゴリー名で表示する
+				$force_get_top_cat = \Arkhe::get_setting( 'force_get_top_cat' );
+				if ( $force_get_top_cat ) {
+					return get_category( $ancestors[ count( $ancestors ) - 1 ] );
+				}
+
+				// まだ1度もセットされていない時はまず記憶させる
+				if ( 0 === $_acts_ct ) {
+					$_cat     = $the_cat;
+					$_acts_ct = count( $ancestors );
+					continue;
+				}
+
+				// 親の数がより少なければ上書き
+				if ( $_acts_ct > count( $ancestors ) ) {
+					$_cat = $the_cat;
+				}
+			}
+			return $_cat;
+
+		} elseif ( 'child' === $p_or_c ) {
+			$_cat     = null;
+			$_acts_ct = 0;
+			foreach ( $categories as $the_cat ) {
+				$ancestors = get_ancestors( $the_cat->term_id, 'category' );
+
+				// まだ1度もセットされていない時はまず記憶させる
+				if ( 0 === $_acts_ct ) {
+					$_cat     = $the_cat;
+					$_acts_ct = count( $ancestors );
+					continue;
+				}
+
+				// 親の数がより「多ければ」上書き
+				if ( $_acts_ct < count( $ancestors ) ) {
+					$_cat = $the_cat;
+				}
+			}
+			return $_cat;
+		}
+
+		// 特に条件のヒットがなければ最初のカテゴリーを返す
+		return $categories[0];
+
+	}
 }

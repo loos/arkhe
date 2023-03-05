@@ -40,6 +40,22 @@ Customizer::add( $arkhe_section, 'post_list_layout',
 );
 
 
+// サムネイル画像の比率
+Customizer::big_title( $arkhe_section, 'thumb_ratio',
+	array(
+		'label' => __( 'Thumbnail image ratio', 'arkhe' ),
+	)
+);
+
+// カード型リストでの比率
+Customizer::add( $arkhe_section, 'thumb_ratio',
+	array(
+		'type'    => 'select',
+		'choices' => $arkhe_thumb_ratios,
+	)
+);
+
+
 // 投稿情報
 Customizer::big_title( $arkhe_section, 'post_list_design',
 	array(
@@ -93,18 +109,36 @@ Customizer::add( $arkhe_section, 'excerpt_length',
 	)
 );
 
-
-// サムネイル画像の比率
-Customizer::big_title( $arkhe_section, 'thumb_ratio',
+// カテゴリーの取得優先度
+Customizer::add( $arkhe_section, 'cat_priority_on_list',
 	array(
-		'label' => __( 'Thumbnail image ratio', 'arkhe' ),
+		'label'   => __( 'Priority for retrieving category', 'arkhe' ),
+		'type'    => 'select',
+		'choices' => array(
+			''       => __( 'Not set', 'arkhe' ), // 設定しない
+			'parent' => __( 'Prefer parent category', 'arkhe' ), // 親カテゴリーを優先する
+			'child'  => __( 'Prefer child category', 'arkhe' ), // 子カテゴリーを優先する
+		),
 	)
 );
 
-// カード型リストでの比率
-Customizer::add( $arkhe_section, 'thumb_ratio',
+// 投稿と直接紐付いてなくても、一番上層のカテゴリーを表示する
+Customizer::add( $arkhe_section, 'force_get_top_cat',
 	array(
+		'label'       => __( 'Display the top-level category even if it is not directly associated with the post', 'arkhe' ),
+		'type'        => 'checkbox',
+	)
+);
+
+// カテゴリーページでの優先度の上書き
+Customizer::add( $arkhe_section, 'cat_priority_on_cat_page',
+	array(
+		'label'   => __( 'Overriding priority on Category Pages', 'arkhe' ),
 		'type'    => 'select',
-		'choices' => $arkhe_thumb_ratios,
+		'choices' => array(
+			''       => __( 'Not set', 'arkhe' ), // 設定しない
+			'self'   => __( 'Force display of current category', 'arkhe' ), // 現在のカテゴリーを強制的に表示する
+			'child'  => __( 'Prefer child category', 'arkhe' ),
+		),
 	)
 );
