@@ -9,14 +9,12 @@ trait Output {
 	 * フロント側に渡すグローバル変数を返す
 	 */
 	public static function get_front_global_vars() {
-		$setting = \Arkhe::get_setting();
-
 		return array(
 			'homeUrl'        => home_url( '/' ),
-			'isFixHeadPC'    => $setting['fix_header_pc'],
-			'isFixHeadSP'    => $setting['fix_header_sp'],
-			'fixGnav'        => $setting['fix_gnav'],
-			'smoothScroll'   => $setting['smooth_scroll'],
+			'isFixHeadPC'    => \Arkhe::get_setting( 'fix_header_pc' ),
+			'isFixHeadSP'    => \Arkhe::get_setting( 'fix_header_sp' ),
+			'fixGnav'        => \Arkhe::get_setting( 'fix_gnav' ),
+			'smoothScroll'   => \Arkhe::get_setting( 'smooth_scroll' ),
 		);
 	}
 
