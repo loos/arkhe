@@ -14,12 +14,56 @@ trait Get {
 		$cache_data = wp_cache_get( $cache_key, 'arkhe' );
 		if ( $cache_data ) return $cache_data;
 
-		$data  = array();
-		$terms = get_the_terms( $post_id, $tax );
+		$return_data = array();
+		$terms       = get_the_terms( $post_id, $tax );
 
-		if ( ! empty( $terms ) ) {
+		// 階層を保つ場合は親から順に並べる
+		if ( is_taxonomy_hierarchical( $tax ) ) {
+			$term_tree = array();
 			foreach ( $terms as $term ) {
-				$data[] = array(
+				$self_id   = $term->term_id;
+				$parent_id = $term->parent;
+
+				$term_data = array(
+					'id'   => $term->term_id,
+					'slug' => $term->slug,
+					'name' => $term->name,
+					'url'  => get_term_link( $term ),
+				);
+
+				$acts_ct    = 0;
+				$top_act_id = $self_id;
+				if ( $parent_id ) {
+					// 先祖リストを取得
+					$ancestors  = array_reverse( get_ancestors( $term->term_id, 'category' ) );
+					$acts_ct    = count( $ancestors );
+					$top_act_id = $ancestors[0];
+				}
+
+				// 必要な配列を用意
+				if ( ! isset( $term_tree[ $top_act_id ] ) ) {
+					$term_tree[ $top_act_id ] = array();
+				}
+				if ( ! isset( $term_tree[ $top_act_id ] ) ) {
+					$term_tree[ $top_act_id ][ $acts_ct ] = array();
+				}
+
+				// treeに格納
+				$term_tree[ $top_act_id ][ $acts_ct ][] = $term_data;
+			}
+
+			if ( ! empty( $term_tree ) ) {
+				foreach ( $term_tree as $tree ) {
+					ksort( $tree );
+					foreach ( $tree as $terms_data ) {
+						$return_data = array_merge( $return_data, $terms_data );
+					}
+				}
+			}
+		} elseif ( ! empty( $terms ) ) {
+			// 階層のないタグなどのタクソノミー
+			foreach ( $terms as $term ) {
+				$return_data[] = array(
 					'id'   => $term->term_id,
 					'slug' => $term->slug,
 					'name' => $term->name,
@@ -28,10 +72,10 @@ trait Get {
 			}
 		}
 
-		$data = apply_filters( 'arkhe_get_the_terms_data', $data );
+		$return_data = apply_filters( 'arkhe_get_the_terms_data', $return_data );
 
-		wp_cache_set( $cache_key, $data, 'arkhe' );
-		return $data;
+		wp_cache_set( $cache_key, $return_data, 'arkhe' );
+		return $return_data;
 	}
 
 
