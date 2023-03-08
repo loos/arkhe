@@ -3,8 +3,8 @@
 .l-footer {
 	position: relative;
 	z-index: 0;
-	color: #333;
-	background-color: #fff;
+	color: var(--ark-color--footer_txt, #333);
+	background: var(--ark-color--footer_bg, #fff);
 
 	a,
 	span {

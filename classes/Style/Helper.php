@@ -1,24 +1,80 @@
 <?php
 namespace Arkhe_Theme\Style;
 
-trait CSS {
+trait Helper {
 
 	/**
-	 * カラー変数のセット（フロント & エディターで共通のもの）
+	 * :root スタイル生成
 	 */
-	protected static function css_common( $setting ) {
-		self::add_root_css( '--ark-color--main', $setting['color_main'] );
-		self::add_root_css( '--ark-color--text', $setting['color_text'] );
-		self::add_root_css( '--ark-color--link', $setting['color_link'] );
-		self::add_root_css( '--ark-color--bg', $setting['color_bg'] );
-		self::add_root_css( '--ark-color--gray', $setting['color_gray'] );
+	public static function add_root_css( $name, $val, $media_query = 'all' ) {
+		self::$root_styles[ $media_query ] .= $name . ':' . $val . ';';
+	}
+
+
+	/**
+	 * インライン出力するスタイルを登録する
+	 */
+	public static function add_css( $selectors, $properties, $media_query = 'all', $branch = '' ) {
+
+		if ( empty( $properties ) ) return;
+
+		// セレクタの配列を分解して文字列へ
+		if ( is_array( $selectors ) ) $selectors = implode( ',', $selectors );
+
+		// プロパティの配列を分解して文字列へ
+		if ( is_array( $properties ) ) $properties = implode( ';', $properties );
+
+		// 出し分け
+		if ( 'editor' === $branch ) {
+
+			// 管理画面側でだけ出力
+			if ( ! is_admin() ) return;
+
+		} elseif ( 'front' === $branch ) {
+
+			// フロント側でだけ出力
+			if ( is_admin() ) return;
+
+		}
+
+		// メディアクエリごとに登録
+		self::$styles[ $media_query ] .= $selectors . '{' . $properties . '}';
+	}
+
+
+	/**
+	 * インライン出力するスタイルを登録する（フロントとエディターでそれぞれ親クラスを付与して出し分けるもの）
+	 */
+	public static function add_branch_css( $selectors, $properties, $media_query = 'all', $branch = 'both' ) {
+
+		if ( empty( $properties ) ) return;
+		if ( 'editor' === $branch && ! is_admin() ) return;
+		if ( 'front' === $branch && is_admin() ) return;
+
+		$new_selector = '';
+
+		foreach ( $selectors as $s ) {
+			if ( is_admin() ) {
+				$new_selector .= '.mce-content-body ' . $s . ', .editor-styles-wrapper ' . $s;
+			} else {
+				$new_selector .= '.c-postContent ' . $s;
+			}
+			if ( end( $selectors ) !== $s ) {
+				$new_selector .= ',';
+			}
+		}
+
+		self::add_css( $new_selector, $properties, $media_query );
 	}
 
 
 	/**
 	 * コンテンツ幅 （フロント & エディターで共通）
 	 */
-	protected static function css_content_width( $container_width, $slim_width ) {
+	protected static function set_content_width() {
+
+		$container_width = \Arkhe::get_setting( 'container_width' );
+		$slim_width      = \Arkhe::get_setting( 'slim_width' );
 
 		// コンテナサイズ
 		self::add_root_css( '--ark-width--container', $container_width . 'px' );
@@ -103,15 +159,6 @@ trait CSS {
 
 
 	/**
-	 * ヘッダー関連
-	 */
-	protected static function css_header( $logo_size_sp, $logo_size_pc ) {
-		self::add_root_css( '--ark-logo_size--sp', $logo_size_sp . 'px' );
-		self::add_root_css( '--ark-logo_size--pc', $logo_size_pc . 'px' );
-	}
-
-
-	/**
 	 * タイトル背景
 	 */
 	protected static function css_title_bg( $ttlbg_overlay_color, $ttlbg_overlay_opacity ) {
@@ -147,15 +194,4 @@ trait CSS {
 		}
 	}
 
-
-	/**
-	 * サムネイル比率
-	 */
-	protected static function css_thumb_ratio( $thumb_ratio ) {
-
-		self::add_root_css(
-			'--ark-thumb_ratio',
-			self::get_thumb_ratio( $thumb_ratio )
-		);
-	}
 }

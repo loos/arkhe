@@ -15,8 +15,8 @@
 	top: var(--ark-adminbar_height, 0); // sticky で fixされた時用
 	z-index: 100;
 	width: 100%;
-	color: #333;
-	background: #fff;
+	color: var(--ark-color--header_txt, #333);
+	background: var(--ark-color--header_bg, #fff);
 
 	&[data-pcfix="1"] {
 

@@ -12,6 +12,37 @@ $wp_customize->add_section( $arkhe_section,
 	)
 );
 
+// カラー設定
+Customizer::big_title( $arkhe_section, 'footer_logo',
+	array(
+		'label' => __( 'Color settings', 'arkhe' ),
+	)
+);
+
+// ヘッダーの背景色
+Customizer::add( $arkhe_section, 'footer_color_bg',
+	array(
+		'label' => __( 'Footer background color', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
+// ヘッダーの文字色
+Customizer::add( $arkhe_section, 'footer_color_txt',
+	array(
+		'label' => __( 'Footer text color', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
+
+// カラー設定
+Customizer::big_title( $arkhe_section, 'footer_others',
+	array(
+		'label' => __( 'Other settings', 'arkhe' ),
+	)
+);
+
 
 // 「ページトップへ」ボタン
 Customizer::sub_title( $arkhe_section, 'pagetop',

@@ -6,8 +6,7 @@ class Style {
 	/**
 	 * trait読み込み
 	 */
-	use Style\Add_Method,
-		Style\CSS;
+	use Style\Helper;
 
 
 	/**
@@ -50,7 +49,8 @@ class Style {
 		// ページテンプレート取得
 		$page_template = basename( get_page_template_slug() ) ?: '';
 
-		self::set_common_style( $setting );
+		self::set_common_style();
+
 		if ( 'front' === $type ) self::set_front_style( $setting );
 		if ( 'editor' === $type ) self::set_editor_style( $setting, $page_template );
 
@@ -60,19 +60,30 @@ class Style {
 	/**
 	 * 動的スタイルの生成 （共通）
 	 */
-	public static function set_common_style( $setting ) {
+	public static function set_common_style() {
 
 		// コンテンツ幅
-		self::css_content_width( $setting['container_width'], $setting['slim_width'] );
+		self::set_content_width();
 
 		// カラー用CSS変数
-		self::css_common( $setting );
+		self::add_root_css( '--ark-color--main', \Arkhe::get_setting( 'color_main' ) );
+		self::add_root_css( '--ark-color--text', \Arkhe::get_setting( 'color_text' ) );
+		self::add_root_css( '--ark-color--link', \Arkhe::get_setting( 'color_link' ) );
+		self::add_root_css( '--ark-color--bg', \Arkhe::get_setting( 'color_bg' ) );
+		self::add_root_css( '--ark-color--gray', \Arkhe::get_setting( 'color_gray' ) );
 
-		// 投稿リスト
-		self::css_thumb_ratio( $setting['thumb_ratio'] );
+		// 投稿リストのサムネイル比率
+		self::add_root_css( '--ark-thumb_ratio', self::get_thumb_ratio( \Arkhe::get_setting( 'thumb_ratio' ) ) );
 
 		// ヘッダー
-		self::css_header( $setting['logo_size_sp'], $setting['logo_size_pc'] );
+		self::add_root_css( '--ark-color--header_bg', \Arkhe::get_setting( 'header_color_bg' ) );
+		self::add_root_css( '--ark-color--header_txt', \Arkhe::get_setting( 'header_color_txt' ) );
+		self::add_root_css( '--ark-logo_size--sp', \Arkhe::get_setting( 'logo_size_sp' ) . 'px' );
+		self::add_root_css( '--ark-logo_size--pc', \Arkhe::get_setting( 'logo_size_pc' ) . 'px' );
+
+		// フッター
+		self::add_root_css( '--ark-color--footer_bg', \Arkhe::get_setting( 'footer_color_bg' ) );
+		self::add_root_css( '--ark-color--footer_txt', \Arkhe::get_setting( 'footer_color_txt' ) );
 
 	}
 

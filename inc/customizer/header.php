@@ -14,6 +14,30 @@ $wp_customize->add_section( $arkhe_section,
 );
 
 
+// カラー設定
+Customizer::big_title( $arkhe_section, 'header_logo',
+	array(
+		'label' => __( 'Color settings', 'arkhe' ),
+	)
+);
+
+// ヘッダーの背景色
+Customizer::add( $arkhe_section, 'header_color_bg',
+	array(
+		'label' => __( 'Header background color', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
+// ヘッダーの文字色
+Customizer::add( $arkhe_section, 'header_color_txt',
+	array(
+		'label' => __( 'Header text color', 'arkhe' ),
+		'type'  => 'color',
+	)
+);
+
+
 // ヘッダーロゴの設定
 Customizer::big_title( $arkhe_section, 'header_logo',
 	array(

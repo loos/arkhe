@@ -32,6 +32,8 @@ trait Default_Data {
 			'head_logo_overlay'         => 0,
 			'header_overlay_on_page'    => false,
 			'color_text_overlay_header' => '#fff',
+			'header_color_bg'           => '#fff',
+			'header_color_txt'          => '#333',
 			'logo_size_pc'              => '48',
 			'logo_size_sp'              => '40',
 			'header_overlay'            => 'off',
@@ -46,6 +48,8 @@ trait Default_Data {
 			'move_gnav_under'           => false,
 
 			// Footer
+			'footer_color_bg'           => '#fff',
+			'footer_color_txt'          => '#333',
 			'show_pagetop'              => true,
 			'copyright'                 => '&copy; 2023 ' . esc_html( get_option( 'blogname' ) ) . '.',
 
