@@ -60,8 +60,8 @@
 
 	.l-header[data-pcfix="0"],
 	[data-scrolled="false"] .l-header[data-pcfix="1"] {
-		color: var(--ark-color--text--overlay_header, #fff);
-		background-color: transparent;
+		--ark-color--header_txt: var(--ark-color--header_txt--overlay, #fff);
+		--ark-color--header_bg: transparent;
 	}
 
 	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
@@ -84,8 +84,8 @@
 
 	.l-header[data-spfix="0"],
 	[data-scrolled="false"] .l-header[data-spfix="1"] {
-		color: var(--ark-color--text--overlay_header, #fff);
-		background-color: transparent;
+		--ark-color--header_txt: var(--ark-color--header_txt--overlay, #fff);
+		--ark-color--header_bg: transparent;
 	}
 
 	// 固定設定ありの時だけ、スクロールされたときに通常時の見た目に戻す
@@ -112,8 +112,8 @@
 
 .l-headerUnder:not([data-fix]),
 [data-scrolled="false"] .l-headerUnder[data-fix] {
-	color: var(--ark-color--text--overlay_header, #fff);
-	background-color: transparent;
+	--the-color--txt: var(--ark-color--header_txt--overlay, #fff);
+	--the-color--bg: transparent;
 }
 
 // ナビが fix しない場合 & ナビだけ fix の場合の初期状態

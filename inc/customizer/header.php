@@ -145,21 +145,6 @@ Customizer::add( $arkhe_section, 'header_btn_layout',
 	)
 );
 
-// グローバルナビ
-Customizer::sub_title( $arkhe_section, 'head_nav',
-	array(
-		'label' => __( 'Global navigation', 'arkhe' ),
-	)
-);
-
-// グローバルナビを下側に移動する
-Customizer::add( $arkhe_section, 'move_gnav_under',
-	array(
-		'label' => __( 'Move global navigation down', 'arkhe' ) . '(PC)',
-		'type'  => 'checkbox',
-	)
-);
-
 
 // ヘッダーの固定設定
 Customizer::big_title( $arkhe_section, 'fix_head',
@@ -184,14 +169,49 @@ Customizer::add( $arkhe_section, 'fix_header_sp',
 	)
 );
 
+
+// グローバルナビゲーション
+Customizer::big_title( $arkhe_section, 'gnav',
+	array(
+		'label' => __( 'Global navigation', 'arkhe' ),
+	)
+);
+
+// グローバルナビを下側に移動する
+Customizer::add( $arkhe_section, 'move_gnav_under',
+	array(
+		'label' => __( 'Move global navigation down', 'arkhe' ) . '(PC)',
+		'type'  => 'checkbox',
+	)
+);
+
 // グローバルナビを画面上部に固定する
 Customizer::add( $arkhe_section, 'fix_gnav',
 	array(
+		'classname'   => '-underGnav',
 		'label'       => __( 'Fixed global navigation at top of screen', 'arkhe' ),
-		'description' => ARKHE_NOTE . __( 'Only valid when below the header.', 'arkhe' ),
 		'type'        => 'checkbox',
 	)
 );
+
+// ヘッダーの背景色
+Customizer::add( $arkhe_section, 'under_gnav_color_bg',
+	array(
+		'classname' => '-underGnav',
+		'label'     => __( 'Background color', 'arkhe' ),
+		'type'      => 'color',
+	)
+);
+
+// ヘッダーの文字色
+Customizer::add( $arkhe_section, 'under_gnav_color_txt',
+	array(
+		'classname' => '-underGnav',
+		'label'     => __( 'Text color', 'arkhe' ),
+		'type'      => 'color',
+	)
+);
+
 
 // オーバーレイ設定
 Customizer::big_title( $arkhe_section, 'top_header',
@@ -212,7 +232,7 @@ Customizer::add( $arkhe_section, 'header_overlay',
 // 固定ページでも有効化する
 Customizer::add( $arkhe_section, 'header_overlay_on_page',
 	array(
-		'classname' => '-header-overlay',
+		'classname' => '-headerOverlay',
 		'label'     => __( 'Enable on Pages', 'arkhe' ),
 		'type'      => 'checkbox',
 	)
@@ -229,7 +249,7 @@ Customizer::add( $arkhe_section, 'color_text_overlay_header',
 // オーバーレイ時のロゴ画像
 Customizer::add( $arkhe_section, 'head_logo_overlay',
 	array(
-		'classname' => '-header-overlay',
+		'classname' => '-headerOverlay',
 		'label'     => __( 'Logo image for Overlay Header', 'arkhe' ),
 		'type'      => 'media',
 		'mime_type' => 'image',

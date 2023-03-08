@@ -1,9 +1,13 @@
 
 // ナビがヘッダーの下側にある時
 .l-headerUnder {
+	--the-color--txt: var(--ark-color--header_txt, #333);
+	--the-color--bg: var(--ark-color--header_bg, #fff);
+
 	z-index: 1; // オーバーレイヘッダーの時も考慮して、fix時じゃなくても指定しておく
 	width: 100%;
-	background: #fff;
+	color: var(--the-color--txt);
+	background: var(--the-color--bg);
 
 	.c-gnav {
 		justify-content: center;

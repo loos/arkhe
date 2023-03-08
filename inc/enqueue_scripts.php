@@ -28,7 +28,7 @@ function enqueue_front_scripts() {
 	// ヘッダーオーバーレイ時
 	if ( \Arkhe::is_header_overlay() ) {
 		wp_enqueue_style( 'arkhe-overlay-header', ARKHE_THEME_URI . '/dist/css/module/-overlay-header.css', array(), \Arkhe::$file_ver );
-		wp_add_inline_style( 'arkhe-overlay-header', ':root{--ark-color--text--overlay_header: ' . \Arkhe::get_setting( 'color_text_overlay_header' ) . '}' );
+		wp_add_inline_style( 'arkhe-overlay-header', ':root{--ark-color--header_txt--overlay: ' . \Arkhe::get_setting( 'color_text_overlay_header' ) . '}' );
 	}
 
 	// Lazysizes

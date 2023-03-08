@@ -81,6 +81,13 @@ class Style {
 		self::add_root_css( '--ark-logo_size--sp', \Arkhe::get_setting( 'logo_size_sp' ) . 'px' );
 		self::add_root_css( '--ark-logo_size--pc', \Arkhe::get_setting( 'logo_size_pc' ) . 'px' );
 
+		if ( \Arkhe::get_setting( 'under_gnav_color_bg' ) ) {
+			self::add_css( '.l-headerUnder', '--the-color--bg:' . \Arkhe::get_setting( 'under_gnav_color_bg' ) );
+		}
+		if ( \Arkhe::get_setting( 'under_gnav_color_txt' ) ) {
+			self::add_css( '.l-headerUnder', '--the-color--txt:' . \Arkhe::get_setting( 'under_gnav_color_txt' ) );
+		}
+
 		// フッター
 		self::add_root_css( '--ark-color--footer_bg', \Arkhe::get_setting( 'footer_color_bg' ) );
 		self::add_root_css( '--ark-color--footer_txt', \Arkhe::get_setting( 'footer_color_txt' ) );
