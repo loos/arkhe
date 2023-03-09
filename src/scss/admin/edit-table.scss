@@ -22,3 +22,15 @@ table.wp-list-table .post-state {
 // input[type="checkbox"] {
 //     -webkit-appearance: none !important;
 // }
+
+
+@media (min-width: 783px) and (max-width: 1500px) {
+	// タイトルがぎゅっと縮まるのを防ぐ
+	.wp-list-table th.column-author,
+	.wp-list-table th.column-categories,
+	.wp-list-table th.column-comments,
+	.wp-list-table th.column-date,
+	.wp-list-table th.column-tags {
+		width: auto;
+	}
+}
