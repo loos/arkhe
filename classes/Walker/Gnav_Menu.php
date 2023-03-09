@@ -123,6 +123,9 @@ class Gnav_Menu extends \Walker {
 		// タイトルにthe_title フックを通す
 		$title = apply_filters( 'the_title', $menu_item->title, $menu_item->ID );
 
+		// ショートコード展開
+		$title = do_shortcode( $title );
+
 		// さらに nav_menu_item_title フックも
 		$title = apply_filters( 'nav_menu_item_title', $title, $menu_item, $args, $depth );
 
