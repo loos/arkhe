@@ -189,11 +189,6 @@ trait Attrs {
 			$attrs['data-postid'] = get_the_ID();
 		}
 
-		// front も対象
-		if ( is_single() || is_page() ) {
-			$attrs['data-clarity-region'] = 'article'; // for Clarity
-		}
-
 		return apply_filters( 'arkhe_main_body_attrs', $attrs );
 	}
 
