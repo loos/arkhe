@@ -8,20 +8,32 @@ $check_count = get_transient( 'arkhe_licence_check_count' ) ?: 0;
 
 // nonceキーチェック
 $nonce_verified = false;
-if ( isset( $_POST['arkhe_licence_nonce'] ) && isset( $_POST['arkhe_licence_key'] ) ) {
 
-	$nonce       = sanitize_text_field( wp_unslash( $_POST['arkhe_licence_nonce'] ) );
-	$licence_key = sanitize_text_field( wp_unslash( $_POST['arkhe_licence_key'] ) );
+if ( isset( $_POST['_ark_nonce'] ) ) {
+	$nonce = \Arkhe::get_cleaned_data( $_POST['_ark_nonce'] ); // phpcs:ignore WordPress.Security
+	if ( ! wp_verify_nonce( $nonce, 'arkhe_licence_check' ) ) exit( 'Nonce error.' );
 
-	if ( ! wp_verify_nonce( $nonce, 'arkhe_licence_nonce' ) ) exit( 'Nonce could not be verified.' );
+	$submit_type = \Arkhe::get_cleaned_data( filter_input( INPUT_POST, 'submit_type' ) );
+	$licence_key = \Arkhe::get_cleaned_data( filter_input( INPUT_POST, 'arkhe_licence_key' ) );
 
-	set_transient( 'arkhe_licence_check_count', ++$check_count, 60 );
+	if ( 'deauthorize' === $submit_type ) {
 
-	update_option( \Arkhe::DB_NAMES['licence_key'], $licence_key );
+		update_option( \Arkhe::DB_NAMES['licence_key'], '' );
+		delete_transient( 'arkhe_licence_data' ); // キャッシュも削除
+		$licence_data = array();
+		$licence_key  = '';
 
-	// ライセンスチェック
-	delete_transient( 'arkhe_licence_data' ); // キャッシュは削除してデータ取り直す
-	$licence_data = \Arkhe::get_licence_data( $licence_key );
+	} elseif ( 'license_check' === $submit_type && $licence_key ) {
+
+		set_transient( 'arkhe_licence_check_count', ++$check_count, 60 );
+
+		// ライセンスキーを保存
+		update_option( \Arkhe::DB_NAMES['licence_key'], $licence_key );
+
+		// キャッシュは削除してからライセンスチェック
+		delete_transient( 'arkhe_licence_data' );
+		$licence_data = \Arkhe::get_licence_data( $licence_key );
+	}
 }
 
 // ライセンスデータ
@@ -84,6 +96,8 @@ if ( (int) $check_count > 5 ) {
 	}
 }
 
+$has_licence = 1 === $the_status || 2 === $the_status;
+
 ?>
 <h3><?php esc_html_e( 'License key', 'arkhe' ); ?></h3>
 <p>
@@ -99,12 +113,17 @@ if ( (int) $check_count > 5 ) {
 	?>
 </p>
 <form method="POST" action="">
-	<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
+	<?php if ( ! $has_licence ) : ?>
+		<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
+	<?php endif; ?>
 	<?php
-		wp_nonce_field( 'arkhe_licence_nonce', 'arkhe_licence_nonce' );
+		wp_nonce_field( 'arkhe_licence_check', '_ark_nonce' );
 
-		if ( 'warning' !== $result_type ) {
-		echo '<button type="submit" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
+		if ( $has_licence ) {
+		echo '<span style="line-height: 32px;padding: 0 8px;">' . esc_attr( substr( $licence_key, 0, 4 ) ) . '************</span>';
+		echo '<button type="submit" name="submit_type" value="deauthorize" class="button button-secondary">' . esc_html__( '認証を解除', 'arkhe' ) . '</button>';
+		} elseif ( 'warning' !== $result_type ) {
+		echo '<button type="submit" name="submit_type" value="license_check" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
 		}
 
 		if ( $result ) {

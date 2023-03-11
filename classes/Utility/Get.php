@@ -4,6 +4,18 @@ namespace Arkhe_Theme\Utility;
 trait Get {
 
 	/**
+	 * データをサニタイズ
+	 */
+	public static function get_cleaned_data( $var ) {
+		if ( is_array( $var ) ) {
+			return array_map( array( __CLASS__, 'get_cleaned_data' ), $var );
+		} else {
+			return is_scalar( $var ) ? sanitize_text_field( wp_unslash( $var ) ) : $var;
+		}
+	}
+
+
+	/**
 	 * 投稿のタームデータから必要なものを取得
 	 */
 	public static function get_the_terms_data( $post_id, $tax ) {
