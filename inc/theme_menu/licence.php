@@ -113,21 +113,21 @@ $has_licence = 1 === $the_status || 2 === $the_status;
 	?>
 </p>
 <form method="POST" action="">
+	<?php wp_nonce_field( 'arkhe_licence_check', '_ark_nonce' ); ?>
 	<?php if ( ! $has_licence ) : ?>
 		<input type="text" name="arkhe_licence_key" value="<?php echo esc_attr( $licence_key ); ?>" size="40">
+		<?php if ( 'warning' !== $result_type ) : ?>
+			<button type="submit" name="submit_type" value="license_check" class="button button-primary">
+				<?php esc_html_e( 'Check licence', 'arkhe' ); ?>
+			</button>
+		<?php endif; ?>
+	<?php else : ?>
+		<span style="line-height: 32px;padding: 0 8px;"><?php echo esc_attr( substr( $licence_key, 0, 4 ) ); ?>************</span>
+		<button type="submit" name="submit_type" value="deauthorize" class="button button-secondary">
+			<?php esc_html_e( 'Deauthorize', 'arkhe' ); ?>
+		</button>
 	<?php endif; ?>
-	<?php
-		wp_nonce_field( 'arkhe_licence_check', '_ark_nonce' );
-
-		if ( $has_licence ) {
-		echo '<span style="line-height: 32px;padding: 0 8px;">' . esc_attr( substr( $licence_key, 0, 4 ) ) . '************</span>';
-		echo '<button type="submit" name="submit_type" value="deauthorize" class="button button-secondary">' . esc_html__( '認証を解除', 'arkhe' ) . '</button>';
-		} elseif ( 'warning' !== $result_type ) {
-		echo '<button type="submit" name="submit_type" value="license_check" class="button button-primary">' . esc_html__( 'Check licence', 'arkhe' ) . '</button>';
-		}
-
-		if ( $result ) {
-		echo '<div class="arkhe-notice -' . esc_attr( $result_type ) . '">' . esc_html( $result ) . '</div>';
-		}
-	?>
+	<?php if ( $result ) : ?>
+		<div class="arkhe-notice -<?php echo esc_attr( $result_type ); ?>"><?php echo esc_html( $result ); ?></div>
+	<?php endif; ?>
 </form>
