@@ -1,20 +1,15 @@
 // 埋め込みブロック系
 [data-align="full"] {
 
-	.wp-embed-aspect-16-9,
-	.wp-block-embed-youtube {
+	.wp-embed-aspect-16-9 {
 		max-width: 100%;
 	}
 }
 
-.wp-block-embed-twitter,
-.wp-block-embed-instagram {
-	margin-right: auto !important;
-	margin-left: auto !important;
-
-	.wp-block-embed__wrapper > iframe {
-		display: block;
-		max-width: 500px;
-		margin: 0 auto;
-	}
+// 5.6から、.wp-block-embed-{hoge}クラスがエディターから消えた。
+.wp-block-embed .components-sandbox[title*="twitter"] {
+	display: block;
+	max-width: 500px;
+	margin-right: auto;
+	margin-left: auto;
 }
