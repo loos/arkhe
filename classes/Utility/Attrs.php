@@ -233,4 +233,15 @@ trait Attrs {
 	public static function post_content_class() {
 		echo esc_attr( self::get_post_content_class() );
 	}
+
+
+	/**
+	 * 後方互換ように残しておく
+	 */
+	public static function main_class() {
+		echo esc_attr( self::get_main_class() );
+	}
+	public static function main_body_class() {
+		echo esc_attr( self::get_main_body_class() );
+	}
 }
