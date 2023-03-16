@@ -29,6 +29,8 @@ trait Get {
 		$return_data = array();
 		$terms       = get_the_terms( $post_id, $tax );
 
+		if ( ! $terms ) return null;
+
 		// 階層を保つ場合は親から順に並べる
 		if ( is_taxonomy_hierarchical( $tax ) ) {
 			$term_tree = array();
