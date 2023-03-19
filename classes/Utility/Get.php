@@ -255,9 +255,10 @@ trait Get {
 			if ( ! $the_tax ) {
 				// 投稿タイプに紐づいたタクソノミーを取得
 				$tax_array = get_object_taxonomies( $the_post_type, 'names' );
+				$core_tax  = array( 'category', 'post_tag', 'post_format' );
 				foreach ( $tax_array as $tax_name ) {
-					// 投稿フォーマットは除いて1つ目を取得
-					if ( 'post_format' !== $tax_name ) {
+					// コアの標準タクソノミーを除いて1つ目を取得
+					if ( ! in_array( $tax_name, $core_tax, true ) ) {
 						$the_tax = $tax_name;
 						break;
 					}
