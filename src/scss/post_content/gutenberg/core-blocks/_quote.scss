@@ -1,6 +1,6 @@
 // 6.1までアッパーケースにされていたのを防ぐ。( __citation はエディター側だけで使われてるクラス)
 .wp-block-pullquote .wp-block-pullquote__citation {
-	text-transform: none;
+	text-transform: revert;
 }
 
 .wp-block-quote.is-style-large {
@@ -9,4 +9,3 @@
 		left: initial;
 	}
 }
-
