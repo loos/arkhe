@@ -1,26 +1,23 @@
-@charset "UTF-8";
-
 /**
- * .post_content, .editor-styles-wrapper でラップされる
+ * （:where付きの）.post_content, .editor-styles-wrapper でラップされる
  */
 
 li {
 	--ark-list-padding--has_bg: .5em .5em .5em 2em;
 
-	// memo: 6.1からブロック側にも指定してる
-	margin: .25em 0;
+	// memo: (6.1から) [data-type="core/list"]にも指定してるので変えるときは注意
+	margin: .2em 0;
 
-	li {
+	// ネストされたリストの行間を少し縮める（ liにセットすると、エディターの行間設定が効かなくなるので ul,ol に指定している ）
+	ul,
+	ol {
 		line-height: 1.6;
 	}
 
+	// ネストされたul
 	ul {
-		// padding-left: 1.25em;
 		list-style: circle;
 	}
 
-	// ol {
-	// 	padding-left: 1.25em;
-	// }
 }
 

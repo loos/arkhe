@@ -19,8 +19,11 @@
 		margin-top: 0;
 	}
 
-	@import "./post_content";
+}
 
+:where(.c-postContent) {
+
+	@import "./post_content";
 }
 
 // 先頭要素は上側のマージンを打ち消す。@import "./post_content"; の後で指定。

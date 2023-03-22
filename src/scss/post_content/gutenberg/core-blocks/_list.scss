@@ -1,18 +1,10 @@
 // リスト
 
-ul[data-type="core/list"] {
-	list-style: disc;
-}
-
-ol[data-type="core/list"] {
-	list-style: decimal;
-}
-
 [data-type="core/list"] {
 
 	// memo: 6.1からそれぞれブロック化されたのでフロントと同じものを指定。（.wp-blockに対するマージンに負けないように）
 	li.wp-block {
-		margin: .25em 0;
+		margin: .2em 0;
 	}
 
 	[data-type="core/list"] {
