@@ -12,6 +12,11 @@
 	}
 }
 
+// エディターでのみ .editor-styles-wrapper p に対して line-height が当てられているのを打ち消す
+.wp-block.wp-block p {
+	line-height: inherit;
+}
+
 :where(.wp-block) a,
 :where(.mce-content-body) a {
 	color: var(--ark-color--link);
