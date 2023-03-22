@@ -52,10 +52,6 @@ blockquote {
 		font-size: .8em;
 		opacity: .75;
 	}
-
-	p + p {
-		margin-top: .75em;
-	}
 }
 
 /* ---------- テーブル ---------- */
@@ -87,7 +83,7 @@ td {
 	// background-clip: padding-box;
 }
 
-thead {
+:where(thead) {
 
 	td,
 	th {

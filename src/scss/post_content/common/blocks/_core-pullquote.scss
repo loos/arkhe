@@ -1,8 +1,7 @@
 //プルクォート
 .wp-block-pullquote {
-	// float: none !important; //ブロックエディター側にも届くように
-	// width: 100%;
 	padding: 2rem 0;
+	font-size: 1.2em; // コア: 1.5em
 	text-align: center;
 	border-top: solid 2px currentcolor;
 	border-bottom: solid 2px currentcolor;
@@ -19,10 +18,6 @@
 		text-align: right;
 	}
 
-	.wp-block-pullquote__citation {
-		text-transform: none;
-	}
-
 	> blockquote {
 		margin: 0;
 		padding: .5rem;
@@ -30,21 +25,15 @@
 		border-left: none !important;
 	}
 
-	p {
-		font-size: 1.2rem !important; //align付きやsolid styleで上書きされてしまう
-	}
 
-	a {
-		text-decoration: underline;
-	}
+	// コアから消えたスタイル
+	// &.is-style-solid-color {
+	// 	padding: 2rem;
+	// 	background-color: var(--ark-color--gray);
 
-	&.is-style-solid-color {
-		padding: 2rem;
-		background-color: var(--ark-color--gray);
-
-		blockquote {
-			max-width: 100%;
-			text-align: inherit;
-		}
-	}
+	// 	blockquote {
+	// 		max-width: 100%;
+	// 		text-align: inherit;
+	// 	}
+	// }
 }

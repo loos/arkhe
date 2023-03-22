@@ -42,6 +42,7 @@ html :where(.editor-styles-wrapper) p {
 
 	// 余白を小さくするエリア。
 	// カラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
+	.wp-block-quote,
 	.wp-block-column,
 	.wp-block-media-text__content,
 	.wp-block-cover__inner-container,

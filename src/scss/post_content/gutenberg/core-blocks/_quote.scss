@@ -1,24 +1,6 @@
-// 引用
-[data-type="core/quote"],
-[data-type="core/pullquote"] {
-
-	p {
-		margin-bottom: 0 !important;
-	}
-
-	p:first-child {
-		margin-top: 0 !important;
-	}
-
-	p + p {
-		margin-top: 1rem;
-	}
-}
-
-// cite
-.wp-block-quote__citation,
-.wp-block-pullquote__citation {
-	margin-top: 1rem;
+// 6.1までアッパーケースにされていたのを防ぐ。( __citation はエディター側だけで使われてるクラス)
+.wp-block-pullquote .wp-block-pullquote__citation {
+	text-transform: none;
 }
 
 .wp-block-quote.is-style-large {
