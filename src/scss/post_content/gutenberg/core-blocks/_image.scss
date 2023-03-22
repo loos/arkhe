@@ -5,6 +5,7 @@
 	// .is-resized は 50& とかにすると付くクラス。
 	// &.is-resized {}
 	.components-resizable-box__container {
+		display: inline-block; // 6.2からtableになって左寄せになったのでそれを防ぐ
 		max-width: 100% !important;
 		height: auto !important;
 		vertical-align: top; // 6.0 で画像ブロック下側の余白が少し大きくなるのを防ぐ
