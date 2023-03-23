@@ -2,6 +2,16 @@
 	white-space: pre-wrap;
 }
 
-// .wp-block-code {
-//     code{}
-// }
+.wp-block-code {
+	padding: 1rem;
+	overflow-x: auto;
+	font-size: unquote("min(3.5vw, 14px)"); /* stylelint-disable-line scss/no-global-function-names */
+	font-family: Menlo, Consolas, monaco, monospace;
+	background-color: var(--ark-color--gray);
+	border: none;
+
+	code {
+		font-size: inherit;
+		font-family: inherit;
+	}
+}
