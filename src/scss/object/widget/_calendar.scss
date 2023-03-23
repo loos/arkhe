@@ -17,62 +17,70 @@
 	width: 100%;
 	max-width: 400px;
 	margin: auto;
-	padding: 1em;
-	color: #333;
-	background: #fff;
-	border: 1px solid var(--ark-color--border);
-
-	@include tab {
-		font-size: 14px;
-	}
+	font-size: unquote("min(3.6vw,14px)"); /* stylelint-disable-line scss/no-global-function-names */
 }
 
 
-.wp-block-calendar,
-.widget_calendar {
+// .wp-block-calendar,
+// .widget_calendar {
+.wp-calendar-table {
 
-	.wp-calendar-table {
+	&.wp-calendar-table {
 		width: 100%;
-		border: none;
+		color: #333;
+		background: #fff;
+		border: 1px solid var(--ark-color--border);
 	}
 
 	caption {
-		padding: 0 0 .75em;
-		color: #40464d; //.wp-block-calendarに合わせる
-		line-height: 1;
+		padding: .25em;
+		line-height: 1.5;
+		background: none;
+		opacity: 1;
+	}
 
-		@include tab {
-			font-size: 13px;
-		}
+	th,
+	td {
+		padding: 0;
+		color: inherit;
+		line-height: 2.5;
+		text-align: center;
 	}
 
 	// thead th より 詳細度強めに。
-	.wp-calendar-table th {
-		padding: 0 0 10px;
-		color: inherit;
+	th {
 		font-weight: 700;
-		text-align: center;
-		background: none;
+		background-color: var(--ark-color--gray);
 		border: none;
 	}
 
-	tbody {
+	td {
+		font-family: arial, sans-serif;
+		border: 1px solid var(--ark-color--border);
 
 		a {
 			display: block;
-			color: #fff !important;
-			line-height: 36px;
-			background-color: var(--ark-color--main);
+			height: 100%;
+			// color: #fff !important;
+			// line-height: 36px;
+			// background-color: var(--ark-color--main);
 		}
+	}
 
-		td {
-			padding: 0;
-			font-family: arial, sans-serif;
-			line-height: 36px;
-			text-align: center;
-			background: #f7f7f7;
-			border: 1px solid #fff;
-		}
+	// tbody {
+
+	// 	a {
+	// 		display: block;
+	// 		height: 100%;
+	// 		// color: #fff !important;
+	// 		// line-height: 36px;
+	// 		// background-color: var(--ark-color--main);
+	// 	}
+	// }
+
+	#today {
+		color: #fff;
+		background-color: var(--ark-color--main);
 	}
 
 	.pad {

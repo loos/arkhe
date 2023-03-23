@@ -92,7 +92,7 @@ td {
 	}
 }
 
-tbody th {
+:where(tbody) th {
 	font-weight: bold;
 	background-color: var(--ark-color--gray);
 }
