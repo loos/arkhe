@@ -39,13 +39,15 @@
 .wp-block-cover__inner-container,
 .wp-block-group__inner-container {
 
-	> * {
+	> *:not(:first-child) {
 		margin-top: var(--ark-mt--inner, var(--ark-mt--s));
 		margin-bottom: 0;
 	}
 
+	// :first-childの mt0 化は全体的には行わず、ここで具体的にブロックを指定してる
 	> :first-child {
-		--ark-mt--inner: 0;
+		// --ark-mt--inner: 0; → これだと:first-childなブロックの中身なども全てマージン0になる
+		margin-top: 0;
 	}
 }
 

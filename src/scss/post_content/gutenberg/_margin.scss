@@ -5,7 +5,6 @@ html :where(.editor-styles-wrapper) p {
 }
 
 // 本文エリア
-// .block-editor-writing-flow,
 .editor-styles-wrapper {
 
 	//最初のブロックの上にはマージン付けない
@@ -46,13 +45,14 @@ html :where(.editor-styles-wrapper) p {
 	.wp-block-column,
 	.wp-block-media-text__content,
 	.wp-block-cover__inner-container,
-	.wp-block-group, // ウィジェットエリアのグループブロック
+	.wp-block-group:not(.is-layout-flex),
 	.wp-block-group__inner-container {
 
-		> .wp-block {
+		> .wp-block:not(:first-child) {
 			margin-top: var(--ark-mt--inner, var(--ark-mt--s));
 		}
 
+		// :first-childの mt0 化は全体的には行わず、ここで具体的にブロックを指定してる
 		> .wp-block:first-child {
 			margin-top: 0;
 			// --ark-mt--inner: 0;
