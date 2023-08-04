@@ -10,7 +10,7 @@ body {
 	font-size: 1rem;
 	font-family: var(--ark-font_family);
 	line-height: 1.5;
-	word-wrap: break-word;
+	word-wrap: break-word; // overflow-wrap の旧称
 	overflow-wrap: break-word;
 	background-color: var(--ark-color--bg);
 	-webkit-text-size-adjust: 100%;
