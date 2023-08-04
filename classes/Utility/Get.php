@@ -374,7 +374,6 @@ trait Get {
 		}
 
 		// 特に条件のヒットがなければ最初のカテゴリーを返す
-		return $categories[0];
-
+		return $categories[0] ?? null;
 	}
 }
