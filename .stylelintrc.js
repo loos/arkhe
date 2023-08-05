@@ -22,6 +22,20 @@ module.exports = {
 
 		'no-invalid-position-at-import-rule': null,
 
+		// 新しくて認識されないプロパティ
+		"property-no-unknown": [
+			true,
+			{
+				"ignoreProperties": ["container-name", "container-type"]
+			}
+		],
+		"unit-no-unknown" : [
+			true,
+			{
+				"ignoreUnits": ["cqw"]
+			}
+		],
+
         // indentation: 4, //スペースでサイズは4
         // 'length-zero-no-unit': [ true, {ignore: ["custom-properties"]} ],
         // 'string-quotes': 'double', //ダブルクォーテーションに (wordpress でそうなってる)

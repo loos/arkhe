@@ -85,31 +85,20 @@ trait Helper {
 		$plus_width = apply_filters( 'arkhe_alignwide_plus_width', 100 );
 		self::add_root_css( '--ark-alignwide_ex_width', $plus_width . 'px' );
 
-		// 基本 ( +4 で少しだけ余裕持たせてる ）
-		self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
-			':root{--ark-alignwide_ex_width:0px}' .
-		'}';
-
-		// 1カラムページ（スリム）用
-		self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
-			':root{--ark-alignwide_ex_width:0px}' .
-		'}';
-
 		if ( is_admin() ) {
-
-			self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 280 ) . 'px ) {' .
-				'body:not(.is-fullscreen-mode), .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			// 80: offset
+			self::$styles['all'] .= '@container (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 80 ) . 'px ) {' .
+				'[data-align="wide"]{--ark-alignwide_ex_width:0px}' .
 			'}';
-			self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 440 ) . 'px ) {' .
-				'body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+		} else {
+			// 基本 ( +4 で少しだけ余裕持たせてる ）
+			self::$styles['all'] .= '@media (max-width: ' . ( $container_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
+				':root{--ark-alignwide_ex_width:0px}' .
 			'}';
 
 			// 1カラムページ（スリム）用
-			self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 280 ) . 'px ) {' .
-				'body:not(.is-fullscreen-mode), .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
-			'}';
-			self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 440 ) . 'px ) {' .
-				'body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened{--ark-alignwide_ex_width:0px}' .
+			self::$styles['all'] .= '@media (max-width: ' . ( $slim_width + ( $plus_width * 2 ) + 4 ) . 'px ) {' .
+				':root{--ark-alignwide_ex_width:0px}' .
 			'}';
 		}
 	}

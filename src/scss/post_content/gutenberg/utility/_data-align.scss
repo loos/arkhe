@@ -3,20 +3,18 @@
 	--ark-editor-100vw: 100vw;
 }
 
+.is-root-container,
+[data-align="wide"],
+[data-align="full"] {
+	container-type: inline-size;
+}
+
 // フルスクリーンモード・サイドバーの展開状況に合わせる。
 // インサーターなども考慮するなら .interface-interface-skeleton__secondary-sidebar ~ .interface-interface-skeleton__content で上書き
 @media (min-width: 782px) {
 
-	.edit-post-layout.is-sidebar-opened {
-		--ark-editor-100vw: calc(100vw - 280px);
-	}
-
-	body:not(.is-fullscreen-mode) {
-		--ark-editor-100vw: calc(100vw - 160px);
-	}
-
-	body:not(.is-fullscreen-mode) .edit-post-layout.is-sidebar-opened {
-		--ark-editor-100vw: calc(100vw - 160px - 280px);
+	[data-align="full"] {
+		--ark-editor-100vw: max(100%, 100cqw);
 	}
 }
 
