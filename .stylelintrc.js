@@ -1,10 +1,5 @@
 module.exports = {
-    // overrides: [
-    //     {
-    //       files: ["**/*.scss"],
-    //       customSyntax: "postcss-scss"
-    //     }
-    // ],
+	// "configBasedir": __dirname, // プロジェクトのルートディレクトリを指す
     extends: [
         '@wordpress/stylelint-config/scss',
         'stylelint-config-rational-order',
@@ -24,6 +19,8 @@ module.exports = {
         'no-invalid-double-slash-comments': null,
 
         'scss/at-import-partial-extension': null,
+
+		'no-invalid-position-at-import-rule': null,
 
         // indentation: 4, //スペースでサイズは4
         // 'length-zero-no-unit': [ true, {ignore: ["custom-properties"]} ],

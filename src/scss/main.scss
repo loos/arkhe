@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // mixin
-@import "foundation/mixin/**";
+@import "foundation/mixin/media";
 
 // setting
 @import "foundation/setting/variable";
@@ -18,14 +18,15 @@
 // html要素
 @import "foundation/base/elements";
 
+
 //各パーツ
 @import "layout/*.scss";
 @import "layout/header/*.scss";
 @import "layout/footer/*.scss";
-@import "object/**";
+@import "object/**/*.scss";
 
 // post_content
 @import "post_content/front";
-@import "post_content/common/utility/**";
-@import "post_content/common/blocks/**";
+@import "post_content/common/utility/**/*.scss";
+@import "post_content/common/blocks/**/*.scss";
 

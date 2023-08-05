@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // mixin
-@import "foundation/mixin/**";
+@import "foundation/mixin/media";
 
 // setting
 @import "foundation/setting/variable";
@@ -29,11 +29,12 @@
 // @import "layout/footer/*.scss";
 @import "object/component/gnav";
 
+
 // object
-@import "object/**";
+@import "object/**/*.scss";
 
 // post_content
 @import "post_content/editor";
-@import "post_content/common/utility/**";
-@import "post_content/common/blocks/**";
-@import "post_content/gutenberg/**";
+@import "post_content/common/utility/**/*.scss";
+@import "post_content/common/blocks/**/*.scss";
+@import "post_content/gutenberg/**/*.scss";

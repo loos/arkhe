@@ -6,7 +6,7 @@ const fs = require( 'fs' );
 
 // node-sass
 const sass = require( 'node-sass' );
-const nodeSassGlobbing = require( 'node-sass-globbing' );
+const globImporter = require( 'node-sass-glob-importer' );
 
 // postcss
 const postcss = require( 'postcss' );
@@ -51,7 +51,7 @@ files.forEach( ( fileName ) => {
 		{
 			file: path.resolve( __dirname, src, `${ fileName }.scss` ),
 			outputStyle: 'compressed',
-			importer: nodeSassGlobbing,
+			importer: globImporter(),
 		},
 		function ( err, sassResult ) {
 			if ( err ) {
