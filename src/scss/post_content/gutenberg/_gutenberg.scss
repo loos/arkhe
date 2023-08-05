@@ -112,3 +112,10 @@ body.editor-styles-wrapper {
 		position: relative;
 	}
 }
+
+
+//6.3でurl無い時にリンクコントロールがバグるのを防ぐ
+.block-editor-link-control__search-item-details {
+	word-break: break-all;
+	// overflow-wrap: anywhere;
+}
