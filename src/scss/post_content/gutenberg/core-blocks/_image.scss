@@ -1,23 +1,29 @@
 //画像
 .wp-block-image {
-	text-align: center;
+	// text-align: center;
 
 	// .is-resized は 50& とかにすると付くクラス。
 	// &.is-resized {}
 	.components-resizable-box__container {
-		display: inline-block; // 6.2からtableになって左寄せになったのでそれを防ぐ
+		// display: inline-block; // 6.2からtableになって左寄せになったのでそれを防ぐ
 		max-width: 100% !important;
-		height: auto !important;
+		// height: auto !important;
 		vertical-align: top; // 6.0 で画像ブロック下側の余白が少し大きくなるのを防ぐ
 	}
 
-	&.is-resized > div:not(.components-resizable-box__container) {
-		max-width: 100% !important;
-		height: auto !important;
-	}
+	// &.is-resized > div:not(.components-resizable-box__container) {
+	// 	max-width: 100% !important;
+	// 	height: auto !important;
+	// }
 }
 
-// 5.9でグリッドレイアウトになったため、上書きする
-*:not([data-align]) > .wp-block-image {
-	display: block;
+// defaultでセンター寄せ
+[data-type="core/image"] {
+
+	> .components-resizable-box__container,
+	> .components-resizable-box__container > img {
+		margin-inline: auto;
+	}
+
 }
+
