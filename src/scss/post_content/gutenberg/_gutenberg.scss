@@ -119,3 +119,20 @@ body.editor-styles-wrapper {
 	word-break: break-all;
 	// overflow-wrap: anywhere;
 }
+
+//6.3でトップツールバーが長いと他のエリアに被ってしまうのを防ぐ
+.branch-6-3 {
+
+	.block-editor-block-contextual-toolbar.is-fixed {
+		overflow-x: auto;
+	}
+
+	// 783px ~ 960px の間ではバグる。変えるるべき。
+	@media (min-width: 783px) {
+
+		:where(.block-editor-block-contextual-toolbar.is-fixed) {
+			max-width: calc(100% - (240px + 280px)); // margin-left+サイドバー幅;
+		}
+	}
+
+}
