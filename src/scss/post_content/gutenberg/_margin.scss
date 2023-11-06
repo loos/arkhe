@@ -41,12 +41,14 @@ html :where(.editor-styles-wrapper) p {
 
 	// 余白を小さくするエリア。
 	// カラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
+	:is(
+	.wp-block-details,
 	.wp-block-quote,
 	.wp-block-column,
 	.wp-block-media-text__content,
 	.wp-block-cover__inner-container,
 	.wp-block-group:not(.is-layout-flex),
-	.wp-block-group__inner-container {
+	.wp-block-group__inner-container) {
 
 		> .wp-block:not(:first-child) {
 			margin-top: var(--ark-mt--inner, var(--ark-mt--s));

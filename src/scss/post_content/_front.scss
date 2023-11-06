@@ -33,11 +33,12 @@
 
 
 // マージン小さく維持
+:is(.wp-block-details,
 .wp-block-quote,
 .wp-block-column,
 .wp-block-media-text__content,
 .wp-block-cover__inner-container,
-.wp-block-group__inner-container {
+.wp-block-group__inner-container) {
 
 	> *:not(:first-child) {
 		margin-top: var(--ark-mt--inner, var(--ark-mt--s));
