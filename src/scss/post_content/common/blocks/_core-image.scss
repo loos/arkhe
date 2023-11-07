@@ -4,19 +4,9 @@
 	img {
 		vertical-align: bottom; //下部の隙間なくす
 	}
-
-	&.is-resized {
-		display: block;
-	}
-
-	// align ついたら .wp-block-image > figure になる
-	figure {
-		display: block !important;
-	}
-
 	// リンク付きの場合
 	a {
-		display: block;
+		// display: block;
 		transition: opacity .25s;
 
 		&:hover {
@@ -24,9 +14,6 @@
 		}
 	}
 
-	figcaption a {
-		display: inline;
-	}
 }
 
 
@@ -48,4 +35,19 @@ img.aligncenter {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+
+// 6.4からのlightbox用の調整. alignxxxが付いていない時のデフォルト配置をセンターにしつつ、拡大ボタンの位置が変にならないように。（画像サイズがブロックサイズになることが重要）
+// .wp-block-image.wp-lightbox-container:not([class*="align"]),
+figure.wp-block-image.wp-lightbox-container {
+	display: table;
+	max-width: fit-content;
+	margin-inline: auto;
+	// align-items: center;
+
+	.wp-element-caption {
+		display: table-caption;
+		caption-side: bottom;
+	}
 }
