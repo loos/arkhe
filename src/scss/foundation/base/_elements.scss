@@ -109,11 +109,11 @@ pre {
 	padding: 1rem;
 	overflow-x: auto;
 	background-color: var(--ark-color--gray);
+}
 
-	code {
-		font-size: .9rem;
-		font-family: Menlo, Consolas, monaco, monospace;
-	}
+:where(pre code) {
+	font-size: .9rem;
+	font-family: Menlo, Consolas, monaco, monospace;
 }
 
 /* ---------- 横線 ---------- */
