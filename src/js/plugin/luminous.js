@@ -1,16 +1,25 @@
-import { Luminous, LuminousGallery } from 'luminous-lightbox';
+import { Luminous, LuminousGallery } from "luminous-lightbox";
 
 /**
  * 除外対象の画像にデータ属性を付与
  */
 function setLbOff() {
-	const lbOffImgs = document.querySelectorAll('.u-lb-off img, img.u-lb-off');
+	const lbOffs = document.querySelectorAll(".u-lb-off");
+	if (!lbOffs.length) return;
 
-	// 画像が一枚もなければreturn
-	if (1 > lbOffImgs.length) return;
+	lbOffs.forEach((lbOff) => {
+		// lbOffが img タグなら data-luminous 属性を off に。
+		if ("IMG" === lbOff.tagName) {
+			lbOff.setAttribute("data-luminous", "off");
+			return;
+		}
 
-	lbOffImgs.forEach((img) => {
-		img.setAttribute('data-luminous', 'off');
+		// そうでなければ子要素の img を探す して data-luminous 属性を off に。
+		const imgs = lbOff.querySelectorAll("img");
+
+		imgs.forEach((img) => {
+			img.setAttribute("data-luminous", "off");
+		});
 	});
 }
 
@@ -21,36 +30,42 @@ function setLbOff() {
  */
 const setDataLuminous = (img) => {
 	// 除外対象として判定済みの画像はスキップ
-	const dataLuminous = img.getAttribute('data-luminous');
-	if ('off' === dataLuminous) return false;
+	const dataLuminous = img.getAttribute("data-luminous");
+	if ("off" === dataLuminous) return false;
 
 	// 親がaタグの場合はスキップ
 	const imgParent = img.parentNode;
-	if ('A' === imgParent.tagName) {
-		img.setAttribute('data-luminous', 'off');
+	if ("A" === imgParent.tagName) {
+		img.setAttribute("data-luminous", "off");
+		return false;
+	}
+
+	// 親が .wp-lightbox-container の場合(コアのlightbox機能がONの画像)はスキップ
+	if (imgParent.classList.contains("wp-lightbox-container")) {
+		img.setAttribute("data-luminous", "off");
 		return false;
 	}
 
 	// すでに luminous クラスがついていればスキップ
 	const imgClassName = img.className;
-	if (-1 !== imgClassName.indexOf('luminous')) return false;
+	if (-1 !== imgClassName.indexOf("luminous")) return false;
 
 	// data-srcがあれば読み取る
-	let src = img.getAttribute('data-src');
+	let src = img.getAttribute("data-src");
 	if (!src) {
 		// data-srcがなければ普通に src を取得
-		src = img.getAttribute('src');
+		src = img.getAttribute("src");
 	}
 
 	// 画像ソースなければ continue
 	if (!src) return false;
 
 	// フルサイズの画像パスを取得 luminousをセットする処理を開始
-	const fullSizeSrc = src.replace(/-[0-9]*x[0-9]*\./, '.');
+	const fullSizeSrc = src.replace(/-[0-9]*x[0-9]*\./, ".");
 
-	img.setAttribute('data-luminous', fullSizeSrc);
+	img.setAttribute("data-luminous", fullSizeSrc);
 
-	img.classList.add('luminous');
+	img.classList.add("luminous");
 
 	return true;
 };
@@ -60,26 +75,24 @@ const setDataLuminous = (img) => {
  */
 const setLuminousGallery = () => {
 	// ギャラリーブロックの画像は先にグループ化して処理
-	const galleys = document.querySelectorAll('.c-postContent .wp-block-gallery');
+	const galleys = document.querySelectorAll(".c-postContent .wp-block-gallery");
 
 	// なければreturn
 	if (1 > galleys.length) return;
 
 	galleys.forEach((galley) => {
-		const galleyImgs = [...galley.querySelectorAll('img')]; // NodeListを配列として取得
+		const galleyImgs = [...galley.querySelectorAll("img")]; // NodeListを配列として取得
 
-		galleyImgs.forEach((img, i) => {
-			// Luminousのデータをセット
-			if (!setDataLuminous(img)) {
-				galleyImgs.splice(i, 1); // 除外対象だった画像を配列から削除
-			}
+		// Luminousのデータをセットできる画像だけを抽出
+		const luminousImgs = galleyImgs.filter((img) => {
+			return setDataLuminous(img);
 		});
 
-		if (0 < galleyImgs.length) {
+		if (0 < luminousImgs.length) {
 			new LuminousGallery(
-				galleyImgs,
+				luminousImgs,
 				{ arrowNavigation: true },
-				{ sourceAttribute: 'data-luminous' }
+				{ sourceAttribute: "data-luminous" }
 			);
 		}
 	});
@@ -90,8 +103,10 @@ const setLuminousGallery = () => {
  */
 const setLuminousImage = () => {
 	const lbOnImgs = document.querySelectorAll(
-		'.c-postContent .wp-block-image:not(.u-lb-off) img' // , .c-postContent img.u-lb-on
+		".c-postContent .wp-block-image:not(.u-lb-off) img" // , .c-postContent img.u-lb-on
 	);
+
+	// 親チェックはここでしてもいいかもしれない。 親が a or .wp-lightbox-container なら削除？
 
 	// 画像が一枚もなければreturn
 	if (1 > lbOnImgs.length) {
@@ -102,13 +117,13 @@ const setLuminousImage = () => {
 		if (setDataLuminous(img)) {
 			// 無事にデータがセットできれば Luminou 発火
 			new Luminous(img, {
-				sourceAttribute: 'data-luminous',
+				sourceAttribute: "data-luminous",
 			});
 		}
 	});
 };
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
 	setLbOff();
 	setLuminousGallery();
 	setLuminousImage();
