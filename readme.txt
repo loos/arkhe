@@ -1,8 +1,8 @@
 === Arkhe ===
 Contributors: looswebstudio
-Stable tag: 3.7.1
-Tested up to: 6.3
-Requires at least: 5.9
+Stable tag: 3.8.0
+Tested up to: 6.4
+Requires at least: 6.0
 Requires PHP: 7.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
