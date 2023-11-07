@@ -1,6 +1,7 @@
 // 5.3~ は figure.wp-block-gallery > ul.blocks-gallery-grid
 // 5.9~ は .wp-block-gallery > .wp-block-image
 .wp-block-gallery {
+	--wp--style--gallery-gap-default: 1em;
 
 	.blocks-gallery-grid {
 		width: 100%;
