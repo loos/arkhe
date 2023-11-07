@@ -10,6 +10,7 @@
 
 .p-breadcrumb__list {
 	display: flex;
+	flex-wrap: wrap;
 	width: 100%;
 	overflow: hidden;
 	list-style: none;
@@ -17,6 +18,7 @@
 
 .p-breadcrumb__item {
 	position: relative;
+	max-width: 100%;
 	margin-right: 10px;
 	padding-right: 12px;
 
@@ -43,13 +45,13 @@
 	}
 }
 
-
 .p-breadcrumb__text {
-	display: flex;
-	align-items: center;
+	display: block;
+	overflow: hidden;
 	color: inherit;
 	font-size: 10px;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 
 	&:where(:not(:hover)) {
 		text-decoration: none;
@@ -59,12 +61,22 @@
 		font-size: 11px;
 	}
 
+}
+
+
+.p-breadcrumb__item:first-child {
+
+	> .p-breadcrumb__text {
+		display: flex;
+		align-items: center;
+	}
+
 	.arkhe-svg-home {
 		margin-right: 4px;
 		margin-bottom: 1px;
 	}
-
 }
+
 
 // 投稿名は非表示
 // .single span.p-breadcrumb__text {
