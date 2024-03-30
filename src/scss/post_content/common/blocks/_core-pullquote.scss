@@ -1,7 +1,10 @@
 //プルクォート
+.wp-block-pullquote.wp-block-pullquote {
+	font-size: 1.25em; // コア: 1.5em
+}
+
 .wp-block-pullquote {
 	padding: 2rem 0;
-	font-size: 1.2em; // コア: 1.5em
 	text-align: center;
 	border-top: solid 2px currentColor;
 	border-bottom: solid 2px currentColor;
