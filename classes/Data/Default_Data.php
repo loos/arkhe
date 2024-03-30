@@ -53,7 +53,7 @@ trait Default_Data {
 			'footer_color_bg'           => '#fff',
 			'footer_color_txt'          => '#333',
 			'show_pagetop'              => true,
-			'copyright'                 => '&copy; 2023 ' . esc_html( get_option( 'blogname' ) ) . '.',
+			'copyright'                 => '&copy; ' . esc_html( get_option( 'blogname' ) ) . '.',
 
 			// Sidebar
 			'show_sidebar_top'          => false,
