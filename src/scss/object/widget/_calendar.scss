@@ -12,13 +12,18 @@
  */
 
 // tableのラッパー
-.wp-block-calendar,
+.wp-block-calendar:where(:not(.alignfull, .alignwide)),
 .calendar_wrap {
 	width: 100%;
 	max-width: 400px;
-	margin: auto;
+	margin-inline: auto;
 	font-size: unquote("min(3.6vw,14px)"); /* stylelint-disable-line scss/no-global-function-names */
 }
+
+// .wp-block-calendar:where(.alignfull, .alignwide) {
+// 	width: unset;
+// 	max-width: unset;
+// }
 
 
 // .wp-block-calendar,

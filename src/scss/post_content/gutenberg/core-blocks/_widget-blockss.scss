@@ -166,3 +166,12 @@ ul.wp-block-categories__list {
 
 }
 
+:where([data-align="full"],[data-align="wide"]) > .wp-block-calendar {
+	max-width: unset;
+}
+
+:where([data-align="wide"]) > .wp-block-calendar .wp-block-calendar.alignwide {
+	left: 0;
+	// 内部でレンダリングされた　.wp-block-calendar　があるのでそっちは広がらないようにする
+	width: 100%;
+}
