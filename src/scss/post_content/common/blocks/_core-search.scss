@@ -8,6 +8,7 @@
 		font-weight: 400;
 	}
 
+
 	.wp-block-search__button {
 		// font-size: 14px;
 		line-height: 1.5;
@@ -25,6 +26,10 @@
 		padding: .325em .5em;
 		line-height: 1.5;
 	}
+}
+
+.wp-block-search__inside-wrapper {
+	padding: 0;
 }
 
 .wp-block-search .wp-block-search__input,
