@@ -1,37 +1,34 @@
 /**
  * サイドバー用のスタイル
  */
-.edit-post-sidebar {
+:where(.edit-post-sidebar,.editor-sidebar) {
 
 	// カラーパレットの透明パターンの背景柄を非表示
 	.components-circular-option-picker__option-wrapper::before {
 		background: none;
 	}
 
-	// 5.5から出現したサイドバーのメタボックスのボタンサイズを小さく。
-	.postbox .handle-actions {
+	// // 5.5から出現したサイドバーのメタボックスのボタンサイズを小さく。
+	// .postbox .handle-actions {
 
-		button {
-			width: 28px;
-		}
+	// 	button {
+	// 		width: 28px;
+	// 	}
+	// 	.handlediv {
+	// 		margin-right: 4px;
+	// 	}
+	// 	.order-higher-indicator,
+	// 	.order-lower-indicator {
+	// 		&::before {
+	// 			top: 0; // コアの .11remを 打ち消す
+	// 			font-size: 16px;
+	// 		}
+	// 	}
 
-		.handlediv {
-			margin-right: 4px;
-		}
-
-		.order-higher-indicator,
-		.order-lower-indicator {
-
-			&::before {
-				top: 0; // コアの .11remを 打ち消す
-				font-size: 16px;
-			}
-		}
-
-	}
+	// }
 }
 
-.edit-post-sidebar,
+:where(.edit-post-sidebar,.editor-sidebar),
 .edit-widgets-sidebar {
 
 	.components-base-control__label {
