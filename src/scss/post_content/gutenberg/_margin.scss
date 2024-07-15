@@ -47,7 +47,7 @@ html :where(.editor-styles-wrapper) p {
 	.wp-block-column,
 	.wp-block-media-text__content,
 	.wp-block-cover__inner-container,
-	.wp-block-group:not(.is-layout-flex),
+	.wp-block-group:where(:not(.is-layout-flex):not(.is-layout-grid)),
 	.wp-block-group__inner-container) {
 
 		> .wp-block:not(:first-child) {
