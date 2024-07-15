@@ -41,5 +41,8 @@
 	&:hover {
 		opacity: .75;
 	}
+}
 
+:where(.wp-block-tag-cloud.is-style-outline) .tag-cloud-link {
+	border: 1px solid;
 }
