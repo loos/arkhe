@@ -20,3 +20,7 @@
 .wp-block-separator.is-style-wide {
 	height: 1px; // ブロックエディター側で -wide が 2px にされる。
 }
+
+.wp-block-separator.is-style-dots {
+	height: auto;
+}
