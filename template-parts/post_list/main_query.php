@@ -25,7 +25,7 @@ if ( have_posts() ) : ?>
 	</ul>
 <?php else : ?>
 	<div class="p-postList--notfound">
-		<?php esc_html_e( 'No posts were found.', 'arkhe' ); ?>
+		<?php echo esc_html( apply_filters( 'arkhe_no_posts_text', __( 'No posts were found.', 'arkhe' ) ) );?>
 	</div>
 <?php
 endif;

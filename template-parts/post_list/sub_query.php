@@ -44,7 +44,7 @@ if ( $the_query->have_posts() ) : ?>
 		<?php
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-			$loop_count++;
+			++$loop_count;
 			$list_args['count'] = $loop_count;
 			if ( $min < $loop_count ) {
 				$list_args['list_class'] = $list_class;
@@ -55,7 +55,7 @@ if ( $the_query->have_posts() ) : ?>
 	</ul>
 <?php else : ?>
 	<div class="p-postList--notfound">
-		<?php esc_html_e( 'No posts were found.', 'arkhe' ); ?>
+		<?php echo esc_html( apply_filters( 'arkhe_no_posts_text', __( 'No posts were found.', 'arkhe' ) ) );?>
 	</div>
 <?php
 endif;
