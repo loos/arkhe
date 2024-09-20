@@ -8,6 +8,7 @@ namespace Arkhe_Theme\Gutenberg;
 // 	return $block_content;
 // }
 
+
 /**
  * 6.3で画像ブロックにstyleでw,hが指定されるようになったので、それをaspect-ratioに変換する
  */

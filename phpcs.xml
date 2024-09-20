@@ -1,16 +1,18 @@
 <?xml version="1.0"?>
+<!-- https://github.com/WordPress/WordPress-Coding-Standards -->
+<!-- https://github.com/WPTRT/WPThemeReview -->
+
+<!-- wpcs3.0での変更点: https://github.com/WordPress/WordPress-Coding-Standards/wiki/Upgrade-Guide-to-WordPressCS-3.0.0-for-ruleset-maintainers -->
+
+<!-- PHPCSStandards, PHPCompatibility 解説 -->
+<!-- https://github.com/PHPCSStandards/PHPCSExtra -->
+<!-- https://github.com/PHPCSStandards/PHPCSUtils -->
+<!-- https://github.com/PHPCompatibility/PHPCompatibilityWP -->
+
 <ruleset name="WordPress Theme Coding Standards">
-	<!-- ルールの参考：https://gist.github.com/kkkw/d926a930a99485214925f22621d56230 -->
-
-
-	<!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-	<!-- See https://github.com/WordPress/WordPress-Coding-Standards -->
-	<!-- See https://github.com/WPTRT/WPThemeReview -->
-	<!-- See https://github.com/PHPCompatibility/PHPCompatibilityWP -->
 
 	<!-- Set a description for this ruleset. -->
-	<description>A custom set of code standard rules to check for WordPress themes.</description>
-
+	<description>A custom set of code standard rules to check for WordPress.</description>
 
 	<!--
 	#############################################################################
@@ -18,6 +20,9 @@
 	https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml
 	#############################################################################
 	-->
+
+	<!-- composer install で installed_paths をセットしてくれるっぽいが、念の為 -->
+	<config name="installed_paths" value="vendor/phpcsstandards/phpcsutils,vendor/phpcompatibility/php-compatibility,vendor/phpcompatibility/phpcompatibility-paragonie,vendor/phpcompatibility/phpcompatibility-wp,vendor/phpcsstandards/phpcsextra,vendor/wp-coding-standards/wpcs"/>
 
 	<!-- Pass some flags to PHPCS:
 		 p flag: Show progress of the run.
@@ -41,6 +46,7 @@
 	<exclude-pattern>/vendor/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
 	<!-- <exclude-pattern>/_test.php</exclude-pattern> -->
+	
 
 
 	<!--
@@ -49,45 +55,127 @@
 	#############################################################################
 	-->
 
+	<!-- array()禁止して []を使う こと -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
+
 	<rule ref="WordPress">
 		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.ShortPrefixPassed"/>
-		
-		<!-- コメント系の制約を除外 -->
+
+		<!-- ファイルコメントに関するルールを除外 -->
 		<exclude name="Squiz.Commenting" />
 		<exclude name="Generic.Commenting" />
 
 		<!-- コードをコメントアウトした時の警告を除去 -->
 		<exclude name="Squiz.PHP.CommentedOutCode.Found" />
 
-		<!-- ifなどを1行で書いた時の警告を除外 -->
+		<!-- ifなどは1行で書いてはいけないルールを除外 -->
 		<exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
 
-		<!-- クラスのファイル名を "class-" で始めないといけないルールを除外 -->
+		<!-- クラスのファイル名を "class-" 出始めないといけないルールを除外 -->
 		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+
+		<!-- オブジェクトプロパティの snake_case ルールを除外 ( ->$Version などに影響) -->
+		<exclude name="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
+
+		<!-- 変数の snake_case ルールを除外 ( $SETTING などに影響) -->
+		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+		<exclude name="WordPress.NamingConventions.ValidVariableName.InterpolatedVariableNotSnakeCase" />
+
+		<!-- 関数の snake_case ルールを除外 -->
+		<exclude name="WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid" />
 
 		<!-- ファイル名を_から始めた時に出るエラーを除外 -->
 		<exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
 
-		<!-- 変数の snake_case ルールを除外 ( $setting などに影響) -->
-		<exclude name="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
-
-		<!-- インデント系 -->
-		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<!-- インデント -->
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
 
-		<!-- 参考演算子を許可 -->
-		<exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+		<!-- 三項演算子 ?: を許可 -->
+		<exclude name="Universal.Operators.DisallowShortTernary" />
 
-		<!-- 無名関数 のフックが改行されないようにする -->
+		<!-- "translation:" コメントがなくても許す -->
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+
+
+		<!-- $_REQUEST などにエラー出さない -->
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.InputNotSanitized" />
+		<exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
+
+		<!-- PHP省略タグを許可 -->
+		<exclude name="Generic.PHP.DisallowShortOpenTag.EchoFound" />
+
+		<!-- array() の強制を解除 -->
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax" />
+
+		<!-- 配列 [] の端スペースが必須であるルールを解除 -->
+		<!-- <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" /> -->
+		
+		
+
+		<!-- 無名関数 のフックが改行されないように -->
 		<exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
 
-		<!-- Prefix関連の警告を除外 -->
+		<!-- urlencodeに警告出さない -->
+		<exclude name="WordPress.PHP.DiscouragedPHPFunctions.urlencode_urlencode" />
+
+		<!-- file_get_contents に警告出さない -->
+		<exclude name="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents" />
+
+		<!-- json_encode に警告出さない -->
+		<exclude name="WordPress.WP.AlternativeFunctions.json_encode_json_encode" />
+
+		<!-- NONCEチェック -->
+		<exclude name="WordPress.Security.NonceVerification.Missing" />
+
+		<!-- meta queryへの警告を停止 -->
+		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_key" />
+
+		<!-- $wpdbの警告を停止 -->
+		<exclude name="WordPress.DB.DirectDatabaseQuery.NoCaching" />
+		<exclude name="WordPress.DB.DirectDatabaseQuery.DirectQuery" />
+		<exclude name="WordPress.DB.PreparedSQL.InterpolatedNotPrepared" />
+		<exclude name="WordPress.DB.PreparedSQL.NotPrepared" />
+
+		<!-- Yoda記法以外への警告を停止 -->
+		<exclude name="WordPress.PHP.YodaConditions.NotYoda" />
+
+		<!-- Taxクエリ許可 -->
+		<exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query" />
+
+		<!-- $_POSTなどの取得にnonce必須の警告を停止 -->
+		<exclude name="WordPress.Security.NonceVerification.Recommended" />
+
+		<!-- theme/plugin prefix 必須の警告を停止 -->
 		<exclude name="WordPress.NamingConventions.PrefixAllGlobals" />
 
+		<!-- file_put_contentsを許可 -->
+		<exclude name="WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents" />
+
+		<!-- function と () の間のスペース強要を解除  -->
+		<exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction" />
+
+		<!-- 名前空間の先頭の \を許可 -->
+		<exclude name="Universal.UseStatements.NoLeadingBackslash.LeadingBackslashFound" />
+
+		<!-- <?=?>での簡易組み込みする時、スペースの強要を解除 -->
+		<exclude name="Squiz.PHP.EmbeddedPhp" />
+
+		<!-- ?? 演算子を許可-->
+		<exclude name="PHPCompatibility.Operators.NewOperators.t_coalesceFound" />
+
+		<!-- 無名関数を許可 -->
+		<!-- <exclude name="PHPCompatibility.FunctionDeclarations.NewClosure.Found" /> -->
+
+		<!-- namespace を許可 -->
+		<!-- <exclude name="PHPCompatibility.Keywords.NewKeywords.t_namespaceFound" /> -->
 	</rule>
+
+	<!-- Theme -->
 	<!-- <rule ref="WPThemeReview"/> -->
 
 	<!--
@@ -97,42 +185,10 @@
 	-->
 
 	<!-- Verify that the text_domain is set to the desired text-domain.
-		 Multiple valid text domains can be provided as a comma-delimited list. -->
+		 (Multiple valid text domains can be provided as a comma-delimited list.) -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
 			<property name="text_domain" type="array" value="arkhe"/>
-		</properties>
-	</rule>
-
-	<!-- Allow for theme specific exceptions to the file name rules based
-		 on the theme hierarchy. -->
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="is_theme" value="true"/>
-		</properties>
-	</rule>
-
-	<!-- Set the minimum supported WP version. This is used by several sniffs.
-		 The minimum version set here should be in line with the minimum WP version
-		 as set in the "Requires at least" tag in the readme.txt file. -->
-	<config name="minimum_supported_wp_version" value="5.0"/>
-
-	<rule ref="WordPress.Arrays.MultipleStatementAlignment">
-		<properties>
-			<!-- No need to adjust alignment of large arrays when the item with the largest key is removed. -->
-			<property name="exact" value="false"/>
-			<!-- Don't align multi-line items if ALL items in the array are multi-line. -->
-			<property name="alignMultilineItems" value="!=100"/>
-			<!-- Array assignment operator should always be on the same line as the array key. -->
-			<property name="ignoreNewlines" value="false"/>
-		</properties>
-	</rule>
-
-	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
-		 Multiple valid prefixes can be provided as a comma-delimited list. -->
-	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
-		<properties>
-			<property name="prefixes" type="array" value="arkhe" />
 		</properties>
 	</rule>
 

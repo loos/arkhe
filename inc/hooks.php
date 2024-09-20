@@ -79,9 +79,9 @@ function hook_wp_list_categories( $output, $args ) {
 	$regex  = '/<li class="([^"]*)">\s*(<a(?:(?!<\/a>).)*)<\/a>\s*<ul/s';
 	$output = preg_replace_callback( $regex, function( $matches ) {
 		$li_class = $matches[1];
-		$a_tag    = $matches[2] . ark_get__submenu_toggle_btn() . '</a>';
-		return '<li class="' . $li_class . ' has-child--acc">' . $a_tag . '<ul';
-	}, $output );
+		$a_tag   = $matches[2] . ark_get__submenu_toggle_btn() . '</a>';
+		return  '<li class="' . $li_class . ' has-child--acc">' . $a_tag . '<ul';
+	}, $output   );
 
 	return $output;
 }

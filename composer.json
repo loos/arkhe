@@ -1,26 +1,26 @@
 {
-    "name": "arkhe/theme",
+    "name": "loos/wp",
     "description": "",
-    "type": "wordpress-theme",
+    "type": "loos-wordpress",
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "Ryo Yamasaki",
-            "homepage": "https://arkhe-theme.com/"
+            "name": "LOOS,Inc.",
+            "homepage": "https://loos.co.jp/"
         }
     ],
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5",
-        "wp-coding-standards/wpcs": "^2.3",
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-        "phpcompatibility/phpcompatibility-wp": "*"
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "wp-coding-standards/wpcs": "^3.1",
+        "squizlabs/php_codesniffer": "^3.10"
     },
     "scripts": {
-        "phpcs": [
-            "./vendor/bin/phpcs"
-        ],
-        "set-wpcs": [
-            "phpcs --config-set installed_paths vendor/phpcompatibility/php-compatibility,vendor/phpcompatibility/phpcompatibility-paragonie,vendor/phpcompatibility/phpcompatibility-wp,vendor/wp-coding-standards/wpcs"
-        ]
+        "phpcs": "vendor/bin/phpcs"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
