@@ -56,7 +56,7 @@
 	-->
 
 	<!-- array()禁止して []を使う こと -->
-	<rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/>
+	<!-- <rule ref="Generic.Arrays.DisallowLongArraySyntax.Found"/> -->
 
 	<rule ref="WordPress">
 		<!-- This rule does not apply here since the _s prefix should be changed by the theme author. -->
