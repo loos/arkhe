@@ -30,8 +30,8 @@ class Data {
 	/**
 	 * カスタマイザーの設定データ
 	 */
-	protected static $settings         = '';
-	protected static $default_settings = '';
+	protected static $settings         = null;
+	protected static $default_settings = null;
 
 
 	/**
@@ -163,17 +163,16 @@ class Data {
 		// セットアップ
 		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'setup__1' ), 1 );
 
-		// 設定データのセット $GLOBALS['content_width'] のために after_setup_theme で取得。
+		// 設定データのセット. ($GLOBALS['content_width'] のために after_setup_theme で実行)。
 		add_action( 'after_setup_theme', array( '\Arkhe_Theme\Data', 'set_settings_data' ), 9 );
 
-		// カスタマイザーでは、データが即時反映されるタイミング（ wp_loaded ）で再セット
+		// フックで書き換えれる情報
+		add_action( 'init', array( '\Arkhe_Theme\Data', 'init__20' ), 20 );
+
+		// カスタマイザーでは、データが即時反映されるタイミング（ wp_loaded ）でカスタマイザーの保存値を再セット
 		if ( is_customize_preview() ) {
 			add_action( 'wp_loaded', array( '\Arkhe_Theme\Data', 'set_settings_data' ) );
 		}
-
-		// フックで書き換えれる情報
-		add_action( 'init', array( '\Arkhe_Theme\Data', 'setup__init20' ), 20 );
-
 	}
 
 
@@ -182,21 +181,23 @@ class Data {
 	 */
 	public static function setup__1() {
 
+		load_theme_textdomain( 'arkhe', get_template_directory() . '/languages' );
+
 		// テーマバージョンを取得
 		self::set_theme_version();
 
 		// ライセンス情報をセット
 		self::set_licence_data();
 
-		// 設定データのデフォルト値をセット
-		self::set_default_data();
+		// 「※」を定数化しておく
+		define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
 	}
 
 
 	/**
 	 * setup　@init.20
 	 */
-	public static function setup__init20() {
+	public static function init__20() {
 
 		// 日本語かどうか
 		self::$is_ja = 'ja' === get_locale();
@@ -266,19 +267,15 @@ class Data {
 	}
 
 
-
-	/**
-	 * デフォルト値を変数にセット
-	 */
-	private static function set_default_data() {
-		self::$default_settings = self::get_default_settings();
-	}
-
-
 	/**
 	 * カスタマイザーのデータを変数にセット
 	 */
 	public static function set_settings_data() {
+		if ( self::$default_settings === null ) {
+			// デフォルト値をメンバ変数にセット
+			self::$default_settings = self::get_default_settings();
+		}
+
 		$db_data        = get_option( self::DB_NAMES['customizer'] ) ?: array();
 		self::$settings = array_merge( self::$default_settings, $db_data );
 	}
@@ -288,6 +285,9 @@ class Data {
 	 * カスタマイザーのデータを取得
 	 */
 	public static function get_setting( $key = '' ) {
+		if ( self::$settings === null ) {
+			self::set_settings_data();
+		}
 		if ( $key ) {
 			if ( ! isset( self::$settings[ $key ] ) ) return '';
 			return self::$settings[ $key ] ?: '';
@@ -378,5 +378,4 @@ class Data {
 	public static function set_use( $key, $val ) {
 		self::$use[ $key ] = $val;
 	}
-
 }

@@ -1,9 +1,6 @@
 <?php
 namespace Arkhe_Theme;
 
-// 「※」を定数化しておく
-define( 'ARKHE_NOTE', __( 'Note : ', 'arkhe' ) );
-
 /**
  * 定数定義 （'wp_loaded' は プレビュー画面の即時反映データも受け取れる & AJAXでもギリギリ呼び出されるタイミング。）
  */
@@ -27,5 +24,4 @@ function define_theme_const() {
 	$noimg_url = $noimg_id ? wp_get_attachment_url( $noimg_id ) : ARKHE_THEME_URI . '/assets/img/noimg.png';
 	define( 'ARKHE_NOIMG_ID', $noimg_id );
 	define( 'ARKHE_NOIMG_URL', $noimg_url );
-
 }

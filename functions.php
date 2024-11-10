@@ -21,12 +21,6 @@ if ( ! defined( 'ARKHE_CHILD_URI' ) ) {
 
 
 /**
- * 翻訳の読み込み
- */
-load_theme_textdomain( 'arkhe', ARKHE_THEME_PATH . '/languages' );
-
-
-/**
  * CLASSのオートロード
  */
 spl_autoload_register(
@@ -49,18 +43,18 @@ spl_autoload_register(
  */
 class Arkhe extends \Arkhe_Theme\Data {
 
-	use \Arkhe_Theme\Utility\Attrs,
-		\Arkhe_Theme\Utility\Get,
-		\Arkhe_Theme\Utility\SVG,
-		\Arkhe_Theme\Utility\Image,
-		\Arkhe_Theme\Utility\Parts,
-		\Arkhe_Theme\Utility\Output,
-		\Arkhe_Theme\Utility\Licence,
-		\Arkhe_Theme\Utility\Condition;
+	use \Arkhe_Theme\Utility\Attrs;
+    use \Arkhe_Theme\Utility\Get;
+    use \Arkhe_Theme\Utility\SVG;
+    use \Arkhe_Theme\Utility\Image;
+    use \Arkhe_Theme\Utility\Parts;
+    use \Arkhe_Theme\Utility\Output;
+    use \Arkhe_Theme\Utility\Licence;
+    use \Arkhe_Theme\Utility\Condition;
 
 	public function __construct() {
 
-		// データをセット
+		// Data::init データをセット
 		self::init();
 
 		// 定数定義
