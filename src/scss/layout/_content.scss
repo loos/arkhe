@@ -10,7 +10,8 @@
 
 	// (iPhoneだけ？)bodyのoverflow-x: hidden;が効かないのでこっちに。（追尾サイドバーのstickyがあるのでPCサイズではhiddenしない。）
 	@include sp {
-		overflow-x: hidden;
+		// hidden だと y が autoになって挙動が変になるケースがある
+		overflow-x: clip;
 	}
 
 }
