@@ -19,10 +19,12 @@
 // defaultでセンター寄せ
 [data-type="core/image"] {
 
-	> .components-resizable-box__container,
-	> .components-resizable-box__container > img {
+	// zoom outモードではクラスがつかないのでdivでも効くように。
+	> :is(div, .components-resizable-box__container),
+	> :is(div, .components-resizable-box__container) > img {
 		margin-inline: auto;
 	}
+
 
 }
 
