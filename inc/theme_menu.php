@@ -68,9 +68,16 @@ function cb_theme_menu() {
 			echo '</div>';
 
 			// コンテンツ
-			echo '<div class="arkhe-page__body">';
-			include __DIR__ . '/theme_menu/' . $now_tab . '.php';
-			echo '</div>';
+			$file_to_include   = __DIR__ . '/theme_menu/' . $now_tab . '.php';
+			$real_include_path = realpath( $file_to_include );
+			$theme_menu_dir    = realpath( __DIR__ . '/theme_menu' );
+
+			// ファイルが存在し、theme_menuディレクトリ内にあることを確認
+			if ( $real_include_path && file_exists( $real_include_path ) && strpos( $real_include_path, $theme_menu_dir ) === 0 ) {
+				echo '<div class="arkhe-page__body">';
+				include $real_include_path;
+				echo '</div>';
+			}
 		?>
 	</div>
 	<?php
