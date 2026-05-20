@@ -13,6 +13,7 @@ WordPress テーマ「Arkhe」（開発元: LOOS,Inc.）の開発リポジトリ
 - 開発・リリースとも **`master`** で行う。`master` がそのまま WordPress.org に公開される。`develop` ブランチは master より大きく遅れた放置ブランチなので使わない。
 - Issue 修正は専用ブランチを切り、`master` 向けの PR にする（コミットメッセージに `#番号` で Issue を参照する慣習）。
 - WordPress の仕様を調べるとき・コードを実装するときは、推測で進めず **WordPress MCP（`wp-handbook`）で公式ドキュメントを参照する**。テーマ実装は Theme Handbook / Block Editor Handbook、関数・フックは APIs Handbook、コーディング規約は WPCS Handbook を確認する。公式ディレクトリ掲載テーマのため、エスケープ・サニタイズ・i18n の規約遵守が必須。
+- 「SWELL を参考にして」と指示されたら、WordPress テーマ「SWELL」のリポジトリ **`/Users/ryo/DEV/Themes/SWELL/swell`** を参照する（実装パターンや構成の参考用。Arkhe へコードをそのまま流用しない）。
 
 ## 開発コマンド
 
