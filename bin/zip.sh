@@ -21,6 +21,6 @@ cd ../
 zip -r arkhe.zip arkhe -x "*/.*" "*/__*" "*bin*" "*node_modules*" "*vendor*" "*package.json" "*package-lock.json" "*composer.json" "*composer.lock" "*postcss.config.js" "*webpack.config*"
 
 # zipから不要なファイルを削除
-zip --delete arkhe.zip  "arkhe/.*" "arkhe/README.md" "arkhe/phpcs.xml"
+zip --delete arkhe.zip  "arkhe/.*" "arkhe/README.md" "arkhe/phpcs.xml" "arkhe/CLAUDE.md" "arkhe/AGENTS.md"
 
 mv arkhe.zip arkhe-${1}.zip
