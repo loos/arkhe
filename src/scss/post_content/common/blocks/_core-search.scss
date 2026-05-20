@@ -9,8 +9,12 @@
 	}
 
 
+	// WP7.0以降、デフォルトtheme.jsonの elements.button スタイルが検索ボタンにも
+	// 適用されるため、padding / color を明示指定して上書きする（コアの :where() 指定は詳細度0）。
 	.wp-block-search__button {
 		// font-size: 14px;
+		padding: 6px 10px;
+		color: var(--ark-color--text);
 		line-height: 1.5;
 		background: var(--ark-color--gray);
 		border-radius: 2px;
@@ -65,6 +69,8 @@
 	}
 
 	.wp-block-search__button {
+		// WP7.0のtheme.json適用対策（padding を明示）
+		padding: 4px 8px;
 		background: none;
 		box-shadow: none;
 	}
