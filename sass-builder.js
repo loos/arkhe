@@ -4,8 +4,8 @@
 const path = require( 'path' );
 const fs = require( 'fs' );
 
-// node-sass
-const sass = require( 'node-sass' );
+// dart-sass（sass）。node-sass と違いネイティブバイナリを持たないため、Node のバージョンに依存しない。
+const sass = require( 'sass' );
 const globImporter = require( 'node-sass-glob-importer' );
 
 // postcss
@@ -46,30 +46,34 @@ const files = [
 ];
 
 files.forEach( ( fileName ) => {
-	// renderSyncだとimporter使えない
-	sass.render(
-		{
+	const filePath = path.resolve( __dirname, dist, `${ fileName }.css` );
+
+	try {
+		// dart-sass の legacy renderSync API でコンパイルする。
+		// node-sass と異なり、dart-sass は renderSync でも importer（glob import の解決）を利用できる。
+		const sassResult = sass.renderSync( {
 			file: path.resolve( __dirname, src, `${ fileName }.scss` ),
 			outputStyle: 'compressed',
 			importer: globImporter(),
-		},
-		function ( err, sassResult ) {
-			if ( err ) {
-				console.error( red + err );
-			} else {
-				const css = sassResult.css.toString();
-				const filePath = path.resolve( __dirname, dist, `${ fileName }.css` );
+			// 既知の deprecation 警告を抑制する（Dart Sass 3.0 までは動作するため、移行は別途行う）。
+			// - import        : @import の @use/@forward 移行（SCSS 全体の改修が必要）
+			// - legacy-js-api : renderSync を modern compile API へ移行すれば解消できる
+			// - color-functions / global-builtin : darken() 等を color.* / math.* 関数へ移行
+			silenceDeprecations: [ 'import', 'legacy-js-api', 'color-functions', 'global-builtin' ],
+		} );
 
-				// postcss実行
-				postcss( [ autoprefixer, mqpacker, cssnano ] )
-					.process( css, { from: undefined } )
-					.then( ( postcssResult ) => {
-						console.log( green + 'Wrote CSS to ' + filePath );
-						writeCSS( filePath, postcssResult.css );
+		const css = sassResult.css.toString();
 
-						// if (postcssResult.map) {fs.writeFile('dest/app.css.map', postcssResult.map.toString(), () => true);}
-					} );
-			}
-		}
-	);
+		// postcss実行
+		postcss( [ autoprefixer, mqpacker, cssnano ] )
+			.process( css, { from: undefined } )
+			.then( ( postcssResult ) => {
+				console.log( green + 'Wrote CSS to ' + filePath );
+				writeCSS( filePath, postcssResult.css );
+
+				// if (postcssResult.map) {fs.writeFile('dest/app.css.map', postcssResult.map.toString(), () => true);}
+			} );
+	} catch ( err ) {
+		console.error( red + err );
+	}
 } );
