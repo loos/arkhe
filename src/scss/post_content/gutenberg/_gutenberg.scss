@@ -48,11 +48,11 @@
 .block-editor .editor-styles-wrapper,
 .blocks-widgets-container .editor-styles-wrapper,
 body.editor-styles-wrapper {
+	font-family: var(--ark-font_family);
+	font-size: var(--ark-font_size, 16px);
+	line-height: var(--ark-line_height, 1.8);
 
 	color: var(--ark-color--text);
-	font-size: var(--ark-font_size, 16px);
-	font-family: var(--ark-font_family);
-	line-height: var(--ark-line_height, 1.8);
 	background-color: var(--ark-color--bg);
 }
 
@@ -94,13 +94,13 @@ body.editor-styles-wrapper {
 			left: 0;
 			z-index: 0;
 			display: inline;
-			margin: 0;
 			padding: 0;
+			margin: 0;
+			content: "";
 			border: none;
 			border-top: 4px solid var(--wp-admin-theme-color);
 			border-radius: 2px;
 			transform: none;
-			content: "";
 		}
 	}
 }

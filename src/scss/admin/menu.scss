@@ -26,8 +26,8 @@
 // }
 
 .arkhe-notice {
-	margin: 20px 0;
 	padding: 12px;
+	margin: 20px 0;
 	background: #fff;
 	// border: 1px solid #ccd0d4;
 	border-left: 4px solid #ccd0d4;
@@ -71,11 +71,11 @@
 
 
 	.__plugin {
+		box-sizing: border-box;
 		display: block;
 		flex-basis: 320px;
-		box-sizing: border-box;
-		margin: 8px;
 		padding: 1em;
+		margin: 8px;
 		color: #333;
 		text-decoration: none;
 		background: #fdfdfd;
@@ -100,8 +100,8 @@
 
 	.__title {
 		margin: 16px 0 0;
-		font-weight: bold;
 		font-size: 16px;
+		font-weight: bold;
 	}
 
 	.__desc {
@@ -118,19 +118,19 @@
 	li {
 		display: flex;
 		align-items: center;
-		margin: 0;
 		padding: 8px 4px;
+		margin: 0;
 	}
 
 	.__date {
 		display: block;
 		min-width: 5em;
-		margin-right: 8px;
 		padding: 2px 8px;
-		color: #3f3f3f;
-		font-size: 13px;
+		margin-right: 8px;
 		font-family: Arial, sans-serif;
+		font-size: 13px;
 		line-height: 1.5;
+		color: #3f3f3f;
 		background: #193b6514;
 		border-radius: 3px;
 	}

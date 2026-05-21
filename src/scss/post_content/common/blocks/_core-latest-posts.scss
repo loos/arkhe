@@ -3,8 +3,8 @@
 
 	// サムネイル画像を左寄せ・右寄せなどにしたときにfloatが使われる
 	> li::after {
-		display: block;
 		clear: both;
+		display: block;
 		height: 0;
 		content: "";
 	}

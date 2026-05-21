@@ -18,10 +18,10 @@
 .tag-cloud-link {
 	position: relative;
 	display: block;
-	margin: 0;
 	padding: 6px 8px !important;
-	color: #333 !important; //footerで inherit になるので
+	margin: 0;
 	line-height: 1;
+	color: #333 !important; //footerで inherit になるので
 	text-decoration: none;
 	background: #f7f7f7;
 	border: none;
@@ -34,8 +34,8 @@
 
 	&::before {
 		margin-right: .25em;
-		opacity: .75;
 		content: "#";
+		opacity: .75;
 	}
 
 	&:hover {

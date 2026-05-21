@@ -3,9 +3,9 @@
 }
 
 .u-cf--after::after {
-	display: block;
 	clear: both;
-	height: 0;
+	display: block;
 	visibility: hidden;
+	height: 0;
 	content: "";
 }

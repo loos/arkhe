@@ -19,8 +19,8 @@
 
 		// wp60からコアのスタイルが強くなってる
 		&.is-style-large {
-			margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
 			padding: 2.5rem 3rem;
+			margin: var(--ark-mt) auto 0;// コアのスタイルでマージンが指定されているのを上書き
 
 			p {
 				font-size: 1.25rem;
@@ -37,12 +37,12 @@
 			position: absolute;
 			z-index: 0;
 			display: inline-block;
-			color: #000;
-			font-size: 5rem;
 			font-family: Arial, sans-serif;
+			font-size: 5rem;
 			line-height: 1;
-			opacity: .1;
+			color: #000;
 			content: "\00201c";
+			opacity: .1;
 		}
 
 		&::before {

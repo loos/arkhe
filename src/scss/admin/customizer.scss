@@ -79,8 +79,8 @@
 		width: 16px;
 		height: 16px;
 		margin-right: 8px;
-		background: url(../../../assets/img/arkhe-logo.svg) no-repeat center / contain;
 		content: "";
+		background: url(../../../assets/img/arkhe-logo.svg) no-repeat center / contain;
 	}
 }
 
@@ -91,14 +91,14 @@
 	.customize-control-title {
 		display: block;
 		margin: 16px 0 8px;
-		font-weight: bold;
 		font-size: 14px;
+		font-weight: bold;
 
 		// Big title
 		&.-big {
 			position: relative;
-			margin: 24px -12px 12px;
 			padding: 12px 12px;
+			margin: 24px -12px 12px;
 			color: #2a2a2a;
 			background: #fffffe;
 
@@ -133,13 +133,13 @@
 		transition: .25s;
 
 		&.-hide {
-			height: 0;
-			margin-top: 0 !important;
-			margin-bottom: 0 !important;
-			padding-top: 0;
-			padding-bottom: 0;
 			// transform: translateY(-8px);
 			visibility: hidden;
+			height: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
 			opacity: 0;
 		}
 
@@ -151,9 +151,9 @@
 		display: block;
 		margin-top: 0;
 		margin-bottom: 8px;
-		color: #656e77;
 		font-style: italic;
 		line-height: 1.25;
+		color: #656e77;
 	}
 
 	.customize-section-description {
@@ -206,11 +206,11 @@
 			}
 
 			> input {
+				visibility: hidden;
 				width: 0;
 				min-width: 0;
 				margin: 0 !important;
 				border: none;
-				visibility: hidden;
 			}
 
 			> label {
@@ -234,10 +234,10 @@
 
 		.customize-inside-control-row > label::before {
 			margin-right: 4px;
-			color: inherit;
+			font-family: arkhe-icon !important;
 
 			font-weight: 400;
-			font-family: arkhe-icon !important;
+			color: inherit;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 		}

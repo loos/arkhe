@@ -42,9 +42,9 @@ h6 {
 /* ---------- 引用 ---------- */
 blockquote {
 	padding: .25em 1em;
+	quotes: none;
 	background: none;
 	border-left: solid 2px var(--ark-color--border);
-	quotes: none;
 
 	cite {
 		display: block;
@@ -60,11 +60,11 @@ table {
 	width: 100%;
 	max-width: 100%;
 	text-align: left;
+	border-spacing: 0;
+	border-collapse: collapse; // memo: oveflow の指定によっては separate にしないとborderが表示されない場合があるので横スクロール時には注意。
 	border: none;
 	border-top: solid 1px var(--ark-color--border--table);
 	border-right: solid 1px var(--ark-color--border--table);
-	border-collapse: collapse; // memo: oveflow の指定によっては separate にしないとborderが表示されない場合があるので横スクロール時には注意。
-	border-spacing: 0;
 
 	caption {
 		margin-top: .75rem;
@@ -112,8 +112,8 @@ pre {
 }
 
 :where(pre code) {
-	font-size: .9rem;
 	font-family: Menlo, Consolas, monaco, monospace;
+	font-size: .9rem;
 }
 
 /* ---------- 横線 ---------- */
@@ -127,12 +127,12 @@ hr:not(.wp-block-separator) {
 kbd,
 :not(pre) > code {
 	display: inline-block;
-	margin: 0 .25em;
 	padding: .2em .5em;
-	color: #3f3f3f;
-	font-size: .9em;
+	margin: 0 .25em;
 	font-family: Menlo, Consolas, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "メイリオ", sans-serif;
+	font-size: .9em;
 	line-height: 1.5;
+	color: #3f3f3f;
 	letter-spacing: 0;
 	text-decoration: inherit;
 	background: #edf0f3;
@@ -167,8 +167,8 @@ sub {
 
 ul,
 ol {
-	margin: 0;
 	padding: var(--ark-list-padding, 0 0 0 1.5em);
+	margin: 0;
 
 	&.has-background {
 		padding: var(--ark-list-padding--has_bg, 1em 1em 1em 2.25em);

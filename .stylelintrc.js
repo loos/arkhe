@@ -16,6 +16,7 @@ module.exports = {
         'font-weight-notation': null, //font-weightの指定は自由
         'font-family-no-missing-generic-family-keyword': null, //[sans-]serif を必須にしない。(object-fitのエラー回避）
         'no-invalid-double-slash-comments': null,
+        'no-empty-source': null, //空の partial ファイル（プレースホルダー）を許可
 
         'scss/load-partial-extension': null, //@import のファイル拡張子(.scss)を許可（旧 at-import-partial-extension）
 

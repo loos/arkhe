@@ -5,13 +5,13 @@
 .wp-block-code {
 	padding: 1rem;
 	overflow-x: auto;
-	font-size: unquote("min(3.5vw, 14px)"); /* stylelint-disable-line scss/no-global-function-names */
 	font-family: Menlo, Consolas, monaco, monospace;
+	font-size: unquote("min(3.5vw, 14px)"); /* stylelint-disable-line scss/no-global-function-names */
 	background-color: var(--ark-color--gray);
 	border: none;
 
 	code {
-		font-size: inherit;
 		font-family: inherit;
+		font-size: inherit;
 	}
 }

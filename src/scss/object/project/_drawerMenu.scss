@@ -5,8 +5,8 @@
 
 	.p-drawer {
 		visibility: hidden;
-		opacity: 0;
 		pointer-events: none;
+		opacity: 0;
 	}
 }
 // メニューオープン時
@@ -43,11 +43,11 @@
 	width: 100%;
 	height: 100%;
 	padding: var(--ark-header_height) 0 1rem;
-	color: #fff;
 	font-size: .9rem;
+	color: #fff;
+	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 	background: rgba(#000, .92);
 	transition: opacity .5s, visibility .5s;
-	pointer-events: none; // .p-drawerUnderlayer をクリックできるように。
 
 
 	@include pc {
@@ -81,8 +81,8 @@
 
 .p-drawer__body {
 	position: relative;
-	margin: 0;
 	padding: 4vw 6vw;
+	margin: 0;
 	// pointer-events: auto; // 内部のリンクなどをクリックできるように。
 
 	@include pc {

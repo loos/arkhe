@@ -16,6 +16,8 @@
 		"build:js:guten": "cross-env TYPE=guten npx webpack",
 		"watch:css": "nodemon --watch src -e scss -x \"npm run build:css\"",
 		"watch:js": "nodemon --watch src/js --ignore **/plugin/** --ignore **/admin/** -e js -x \"npm run build:js\"",
+		"lint:css": "stylelint \"src/scss/**/*.scss\"",
+		"lint:css:fix": "stylelint \"src/scss/**/*.scss\" --fix",
 		"update": "bash ./bin/zip.sh",
 		"packages-update": "wp-scripts packages-update",
 		"postpackages-update": "npm run build",

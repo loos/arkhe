@@ -5,10 +5,10 @@
 	bottom: 6%;
 	z-index: 10;
 	display: flex;
+	visibility: hidden;
 	flex-direction: column;
 	align-items: flex-end;
 	text-align: center;
-	visibility: hidden;
 	opacity: 0;
 	transition: opacity .5s, visibility .5s;
 

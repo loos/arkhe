@@ -27,18 +27,18 @@
 
 	.__mainText {
 		display: block;
-		color: inherit;
 		font-size: inherit;
 		line-height: 1;
+		color: inherit;
 	}
 
 	.__subText {
 		position: relative;
 		top: 4px;
 		display: block;
-		color: inherit;
 		font-size: 10px;
 		line-height: 1;
+		color: inherit;
 		opacity: .6;
 	}
 }
@@ -77,10 +77,10 @@
 
 // 子リスト共通
 .c-gnav .sub-menu {
+	visibility: hidden;
 	color: #fff;
 	text-align: left;
 	background: var(--ark-color--main);
-	visibility: hidden;
 
 	> .menu-item:not(:last-child) {
 		border-bottom: 1px solid var(--ark-color--border);
@@ -93,8 +93,8 @@
 		&::before {
 
 			@extend %absLayer;
-			background-color: transparent;
 			content: "";
+			background-color: transparent;
 			// transition: background-color .2s;
 		}
 
@@ -116,12 +116,12 @@
 	top: 100%;
 	left: 50%;
 	z-index: 1;
+	visibility: hidden;
 	width: 100%;
 	min-width: 240px;
 	box-shadow: 0 4px 12px -2px rgba(0, 0, 0, .15);
-	transform: translateX(-50%);
-	visibility: hidden;
 	opacity: 0;
+	transform: translateX(-50%);
 	transition: opacity .5s, visibility .35s;
 
 	// サブメニュー表示
@@ -140,8 +140,8 @@
 		z-index: 1;
 		width: 1em;
 		height: 1em;
-		background-color: var(--ark-color--main);
 		content: "";
+		background-color: var(--ark-color--main);
 		clip-path: polygon(0% 100%, 100% 100%, 50% 60%);
 	}
 }

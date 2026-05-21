@@ -41,14 +41,14 @@ h2.widgettitle, // レガシーウィジェットのプレビュー用iframe用
 	position: relative;
 	display: inline-block;
 	margin-left: .25em;
-	color: inherit;
-	font-size: .9em;
 	font-family: arial;
+	font-size: .9em;
+	color: inherit;
 	opacity: var(--ark-opacity--thin);
 }
 
 // -------- rss --------
 .wp-block-rss .wp-block-rss__item {
-	margin: 0;
 	padding: .25em 0;
+	margin: 0;
 }

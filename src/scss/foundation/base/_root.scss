@@ -74,6 +74,7 @@ body.admin-bar {
 }
 
 .l-main__body > .c-postContent > :first-child {
+
 	@supports (height: 100svh) {
 		--ark-100vh: 100svh; /* stylelint-disable-line */
 	}

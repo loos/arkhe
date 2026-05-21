@@ -10,12 +10,12 @@
 	padding: 0;
 	color: inherit;
 	text-align: center;
+	cursor: pointer;
+	outline-offset: -1px; // borderに重ねる
 	background: none !important;
 	border: none !important;
-	outline-offset: -1px; // borderに重ねる
 	box-shadow: none !important;
 	transform: translateY(-50%);
-	cursor: pointer;
 
 	&:focus {
 		// タブキー操作のときは標準の青色になるように、プロパティは分けて指定している
@@ -33,9 +33,9 @@
 	}
 
 	&::after {
-		box-shadow: inset 0 0 0 1px currentColor;
-		opacity: .2;
 		content: "";
+		box-shadow: inset 0 0 0 1px currentcolor;
+		opacity: .2;
 
 		@extend %absLayer;
 	}

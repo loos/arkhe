@@ -40,8 +40,8 @@
 
 .p-authorBox__name {
 	display: block;
-	color: inherit;
 	font-weight: 700;
+	color: inherit;
 	text-decoration: none;
 
 	@include mobile {
@@ -133,10 +133,10 @@
 		display: block;
 		margin: 0 auto;
 		color: inherit;
-		letter-spacing: 1px;
 		text-align: center;
+		letter-spacing: 1px;
 		text-decoration: none;
-		box-shadow: 0 0 0 1px currentColor;
+		box-shadow: 0 0 0 1px currentcolor;
 		opacity: var(--ark-opacity--thin);
 		transition: opacity .25s;
 

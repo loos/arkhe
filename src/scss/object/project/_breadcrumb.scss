@@ -3,8 +3,8 @@
 .p-breadcrumb {
 	position: relative;
 	width: 100%;
-	margin: 0 auto;
 	padding: 8px 0;
+	margin: 0 auto;
 
 }
 
@@ -19,8 +19,8 @@
 .p-breadcrumb__item {
 	position: relative;
 	max-width: 100%;
-	margin-right: 10px;
 	padding-right: 12px;
+	margin-right: 10px;
 
 	&::after {
 		position: absolute;
@@ -30,11 +30,11 @@
 		width: 4px;
 		height: 4px;
 		color: inherit;
-		border-top: solid 1px currentColor;
-		border-right: solid 1px currentColor;
-		transform: translateY(-50%) rotate(45deg);
-		opacity: var(--ark-opacity--thin);
 		content: "";
+		border-top: solid 1px currentcolor;
+		border-right: solid 1px currentcolor;
+		opacity: var(--ark-opacity--thin);
+		transform: translateY(-50%) rotate(45deg);
 	}
 
 	&:last-child {
@@ -48,10 +48,10 @@
 .p-breadcrumb__text {
 	display: block;
 	overflow: hidden;
-	color: inherit;
-	font-size: 10px;
-	white-space: nowrap;
 	text-overflow: ellipsis;
+	font-size: 10px;
+	color: inherit;
+	white-space: nowrap;
 
 	&:where(:not(:hover)) {
 		text-decoration: none;

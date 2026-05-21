@@ -2,16 +2,16 @@
 
 .c-pageTitle__main {
 	position: relative;
-	font-weight: 700;
 	font-size: 2rem;
+	font-weight: 700;
 	line-height: 1.5;
 }
 
 .c-pageTitle__sub {
 	position: relative;
-	font-weight: normal;
 	font-size: .9rem;
 	font-style: italic;
+	font-weight: normal;
 	vertical-align: middle;
 
 	&::before,
