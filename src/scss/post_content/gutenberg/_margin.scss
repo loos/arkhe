@@ -1,43 +1,45 @@
-html :where(.editor-styles-wrapper) p {
-	margin-top: 0;
-	margin-bottom: 0;
+html {
+	// コアのデフォルトマージンの打ち消し
+	:where(.wp-block),
+	:where(.editor-styles-wrapper) p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
-// 本文エリア
-.editor-styles-wrapper {
-	//最初のブロックの上にはマージン付けない
-	.is-root-container > [data-type="core/heading"]:first-child {
-		margin-top: 0 !important;
-	}
-
-	// ブロック感のマージン ( default: 28px )
-	// .block-editor-block-list__block,
-	.wp-block {
+/*
+ * ブロック間のマージン設定
+ *   コアは .editor-styles-wrapper xxx でmarginつけてくるので詳細度に注意。
+ *   Arkhe Blockは ark-keep-mtクラスで一括処理
+ */
+.is-root-container {
+	> .wp-block {
 		margin-top: var(--ark-mt);
 		margin-bottom: 0;
 	}
+	> .wp-block:first-child {
+		margin-top: 0 !important;
+	}
 
+	// fullが連続する時は余白 0 に。
+	> [data-align="full"] + [data-align="full"],
+	> [data-align="full"] + style + [data-align="full"] {
+		margin-top: 0;
+	}
+
+	// headingは特殊幅を使う
 	[data-type="core/heading"] {
 		--ark-mt: var(--ark-mt--h);
 	}
 
-	// memo: 6.1 からリストの各項目がブロック化された。
-	[data-type="core/list"] .wp-block {
-		--ark-mt: 0;
-	}
-
-	// block-editor-block-list__layout is-root-container
-	.is-root-container {
-		> [data-align="full"] + [data-align="full"],
-		> [data-align="full"] + style + [data-align="full"] {
-			margin-top: 0;
-		}
-	}
-
-	// 余白を小さくするエリア。
-	// カラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
+	/*
+	* 余白を小さく維持するエリア。
+	*   - カラムブロック・details・アコーディオンパネル・メディアと文章ブロック
+	*   - カバー・通常幅のグループブロックの中
+	*/
 	:is(
 			.wp-block-details,
+			.wp-block-accordion-panel,
 			.wp-block-quote,
 			.wp-block-column,
 			.wp-block-media-text__content,
@@ -56,8 +58,22 @@ html :where(.editor-styles-wrapper) p {
 		}
 	}
 
+	// 全幅の時は、インナーのmtを通常幅へ
 	[data-align="full"] {
 		--ark-mt--inner: var(--ark-mt);
+	}
+}
+
+// ウィジェット は .is-root-containerはついていない
+.wp-block-widget-area__inner-blocks {
+	> div {
+		> .wp-block {
+			margin-top: var(--ark-mt);
+			margin-bottom: 0;
+		}
+		> .wp-block:first-child {
+			margin-top: 0 !important;
+		}
 	}
 
 	// ウィジェットグループブロック
