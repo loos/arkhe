@@ -3,6 +3,11 @@
 .mce-content-body,
 .editor-styles-wrapper {
 
+	// theme.json を入れた事で消えるpaddingを追加
+	&.editor-styles-wrapper {
+		padding: 8px;
+	}
+
 	@import "./post_content";
 
 	// エディターではどちらも表示させる（編集できるように）
