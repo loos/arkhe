@@ -106,4 +106,4 @@ composer phpcs           # PHP の lint（コミット前に通す）
   - .DS_Store を削除
   - 1 つ上の階層へ移動し arkhe-{引数}.zip を出力（※ファイル名は引数そのまま。3-12-1 指定なら arkhe-3-12-1.zip）
 4. バージョン書き換え分をコミット (style.css と readme.txt の差分が出るので master にコミット)
-5. 公開（生成した zip をアップロード）
+5. https://ja.wordpress.org/themes/upload/ に zipアップロードして公開
