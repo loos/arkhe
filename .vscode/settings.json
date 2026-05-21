@@ -1,0 +1,12 @@
+{
+	// CSS / SCSS の保存時整形を Prettier 拡張に固定する。
+	// VS Code 内蔵の CSS フォーマッタと競合し保存時整形が効かない問題への対処。
+	"[css]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
+}

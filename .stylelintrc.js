@@ -2,23 +2,22 @@ module.exports = {
 	// "configBasedir": __dirname, // プロジェクトのルートディレクトリを指す
     extends: [
         '@wordpress/stylelint-config/scss',
-        'stylelint-config-rational-order',
+        'stylelint-config-recess-order',
     ],
     ignoreFiles: ['./src/js/**/*.js', './**/plugins/*.scss','./assets/**/*.css'],
     rules: {
-        'max-line-length': null, //max文字数を無視
+        // stylelint 16 で core から削除された stylistic ルール（max-line-length /
+        // function-url-quotes / number-leading-zero）は設定から除外した。
         'length-zero-no-unit': null,
         'selector-class-pattern': null,
-        'function-url-quotes': 'never', //不必要なクォーテーションを禁止( これだけ自動Fixできない )
         'no-descending-specificity': null, //セレクタの詳細度に関する警告を出さない
-        'number-leading-zero': 'never', //0.5emなどは.5emに
         'at-rule-no-unknown': null, //scssで使える @include などにエラーがでないように
         'scss/at-rule-no-unknown': true, //scssでもサポートしていない @ルールにはエラーを出す
         'font-weight-notation': null, //font-weightの指定は自由
         'font-family-no-missing-generic-family-keyword': null, //[sans-]serif を必須にしない。(object-fitのエラー回避）
         'no-invalid-double-slash-comments': null,
 
-        'scss/at-import-partial-extension': null,
+        'scss/load-partial-extension': null, //@import のファイル拡張子(.scss)を許可（旧 at-import-partial-extension）
 
 		'no-invalid-position-at-import-rule': null,
 
