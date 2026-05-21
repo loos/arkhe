@@ -2,6 +2,7 @@ module.exports = {
 	// "configBasedir": __dirname, // プロジェクトのルートディレクトリを指す
     extends: [
         '@wordpress/stylelint-config/scss',
+        'stylelint-config-recess-order',
     ],
     ignoreFiles: ['./src/js/**/*.js', './**/plugins/*.scss','./assets/**/*.css'],
     rules: {
