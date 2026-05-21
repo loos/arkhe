@@ -16,11 +16,14 @@
 	text-decoration: inherit;
 }
 
+math * {
+	font-size: revert;
+}
+
 b,
 strong {
 	font-weight: bold;
 }
-
 
 // HTML5 display-role reset for older browsers
 main {
@@ -49,7 +52,6 @@ svg:not([fill]) {
 	display: none; /* Add the correct display in IE */
 }
 
-
 /* Form */
 button,
 input,
@@ -64,13 +66,15 @@ textarea {
 /* Show the overflow in IE. */
 
 button,
-input { /* Show the overflow in Edge. */
+input {
+	/* Show the overflow in Edge. */
 	overflow: visible;
 }
 
 /* Remove the inheritance of text transform in Edge, Firefox, and IE.  */
 button,
-select { /* Remove the inheritance of text transform in Firefox. */
+select {
+	/* Remove the inheritance of text transform in Firefox. */
 	text-transform: none;
 }
 
@@ -90,7 +94,7 @@ button,
 
 /* normalize 通り */
 fieldset {
-	padding: .35em .75em .625em;
+	padding: 0.35em 0.75em 0.625em;
 }
 
 /* normalize 通り */
@@ -107,7 +111,7 @@ input,
 textarea,
 select,
 button {
-	padding: .25em .5em;
+	padding: 0.25em 0.5em;
 	color: #333;
 	border: 1px solid var(--ark-color--border);
 	border-radius: 0;
@@ -120,7 +124,6 @@ button {
 [type="range"] {
 	vertical-align: middle;
 }
-
 
 /*
  * Accessibility
@@ -143,7 +146,6 @@ button {
 
 /* Hide content from screens but not screenreaders */
 @media screen {
-
 	[hidden~="screen"] {
 		display: inherit;
 	}
@@ -153,4 +155,3 @@ button {
 		clip: rect(0 0 0 0) !important;
 	}
 }
-
