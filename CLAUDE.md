@@ -88,12 +88,22 @@ composer phpcs           # PHP の lint（コミット前に通す）
 
 `classes/Style/__Module.php` の `Module` trait が `dist/css/module/` の CSS を必要時のみ読み込む。`get_module_path()` は子テーマ → 親テーマの順で探索。overlay-header / luminous など条件付きの CSS/JS は `inc/enqueue_scripts.php` で個別に判定して enqueue する。
 
-### ライセンス・アップデート
-
-拡張版向けにライセンス認証（`classes/Utility/Licence.php`、option `arkhe_licence_key`）とテーマ更新チェック（`inc/update.php`）を持つ。更新・お知らせ情報は CDN（`https://loos-cdn.com/arkhe`）から取得し、`information.json` はトランジェントでキャッシュする。`inc/update.php` は `is_admin() || is_user_logged_in()` のときだけ読み込まれる。
 
 ## コーディング規約
 
 - PHP は `phpcs.xml`（WordPress Theme Coding Standards + PHPCompatibility、WPCS 3.x ベース）に従う。コミット前に `composer phpcs` を通す。
 - 既存コードはタブインデント、コメントは日本語が基本。周辺コードのスタイルに合わせる。テキストドメインは `arkhe`。
 - SCSS は FLOCSS 的構成（`foundation` / `layout` / `object`）。クラス接頭辞は `l-`（layout）/ `c-`（component）/ `p-`（project）/ `u-`（utility）。
+
+## リリース手順
+1. lintチェック: lint:php, lint:css
+2. ビルド: nr build
+3. zip化: nr update {version} (例: nr update 3-12-1)
+  - bin/zip.sh がやること:
+  - 引数の - を . に変換（3-12-1 → 3.12.1）
+  - style.css の Version: を書き換え
+  - readme.txt の Stable tag: を書き換え
+  - .DS_Store を削除
+  - 1 つ上の階層へ移動し arkhe-{引数}.zip を出力（※ファイル名は引数そのまま。3-12-1 指定なら arkhe-3-12-1.zip）
+4. バージョン書き換え分をコミット (style.css と readme.txt の差分が出るので master にコミット)
+5. 公開（生成した zip をアップロード）
