@@ -45,6 +45,8 @@
 	<!-- Exclude patterns. -->
 	<exclude-pattern>/vendor/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<!-- ビルド生成物は走査しない -->
+	<exclude-pattern>/dist/*</exclude-pattern>
 	<!-- <exclude-pattern>/_test.php</exclude-pattern> -->
 	
 
@@ -65,6 +67,12 @@
 		<!-- ファイルコメントに関するルールを除外 -->
 		<exclude name="Squiz.Commenting" />
 		<exclude name="Generic.Commenting" />
+
+		<!-- ファイル冒頭 docblock の並び順ルールを除外（namespace / use の後ろのセクションコメントを許可） -->
+		<exclude name="PSR12.Files.FileHeader" />
+
+		<!-- 未使用引数の警告を除外（フック/フィルターのコールバックは WP がシグネチャを決めるため、また include 先で使う引数を追えないため） -->
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter" />
 
 		<!-- コードをコメントアウトした時の警告を除去 -->
 		<exclude name="Squiz.PHP.CommentedOutCode.Found" />

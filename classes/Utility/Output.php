@@ -10,11 +10,11 @@ trait Output {
 	 */
 	public static function get_front_global_vars() {
 		return array(
-			'homeUrl'        => home_url( '/' ),
-			'isFixHeadPC'    => \Arkhe::get_setting( 'fix_header_pc' ),
-			'isFixHeadSP'    => \Arkhe::get_setting( 'fix_header_sp' ),
-			'fixGnav'        => \Arkhe::get_setting( 'fix_gnav' ),
-			'smoothScroll'   => \Arkhe::get_setting( 'smooth_scroll' ),
+			'homeUrl'      => home_url( '/' ),
+			'isFixHeadPC'  => \Arkhe::get_setting( 'fix_header_pc' ),
+			'isFixHeadSP'  => \Arkhe::get_setting( 'fix_header_sp' ),
+			'fixGnav'      => \Arkhe::get_setting( 'fix_gnav' ),
+			'smoothScroll' => \Arkhe::get_setting( 'smooth_scroll' ),
 		);
 	}
 

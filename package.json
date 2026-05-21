@@ -18,6 +18,8 @@
 		"watch:js": "nodemon --watch src/js --ignore **/plugin/** --ignore **/admin/** -e js -x \"npm run build:js\"",
 		"lint:css": "stylelint \"src/scss/**/*.scss\"",
 		"lint:css:fix": "stylelint \"src/scss/**/*.scss\" --fix",
+		"lint:php": "vendor/bin/phpcs",
+		"lint:php:fix": "vendor/bin/phpcbf",
 		"update": "bash ./bin/zip.sh",
 		"packages-update": "wp-scripts packages-update",
 		"postpackages-update": "npm run build",

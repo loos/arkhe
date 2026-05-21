@@ -33,7 +33,6 @@ function customizer_setup( $wp_customize ) {
 
 	// アーカイブ
 	include_once ARKHE_THEME_PATH . '/inc/customizer/post_list.php';
-
 }
 
 

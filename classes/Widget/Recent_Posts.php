@@ -5,7 +5,7 @@ namespace Arkhe_Theme\Widget;
  * 既存の「最新の投稿」ウィジェットのフォーマットを編集（投稿日をaタグの中へ）
  *   ※ エディター上のプレビューでは反映されない
  */
-class Recent_Posts extends \wp_widget_recent_posts {
+class Recent_Posts extends \WP_Widget_Recent_Posts {
 
 	// 既存の widget メソッドを上書き
 	public function widget( $args, $instance ) {

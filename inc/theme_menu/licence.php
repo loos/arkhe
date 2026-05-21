@@ -105,7 +105,7 @@ $has_licence = 1 === $the_status || 2 === $the_status;
 		// $licence_link = \Arkhe::$is_ja ? 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/' : '';
 		$licence_link = 'https://arkhe-theme.com/ja/product/arkhe-pro-pack/';
 
-		echo sprintf(
+		printf(
 			// translators: %s is link;
 			esc_html__( 'Purchasing "%s" will allow you to update all Arkhe plugins to the latest version.', 'arkhe' ),
 			'<a href="' . esc_url( $licence_link ) . '">' . esc_html__( 'Arkhe License', 'arkhe' ) . '</a>'

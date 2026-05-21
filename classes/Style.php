@@ -53,7 +53,6 @@ class Style {
 
 		if ( 'front' === $type ) self::set_front_style( $setting );
 		if ( 'editor' === $type ) self::set_editor_style( $setting, $page_template );
-
 	}
 
 
@@ -91,7 +90,6 @@ class Style {
 		// フッター
 		self::add_root_css( '--ark-color--footer_bg', \Arkhe::get_setting( 'footer_color_bg' ) );
 		self::add_root_css( '--ark-color--footer_txt', \Arkhe::get_setting( 'footer_color_txt' ) );
-
 	}
 
 
@@ -108,7 +106,6 @@ class Style {
 		if ( is_user_logged_in() ) {
 			self::add_css( '#wpadminbar', 'position: fixed !important' );
 		}
-
 	}
 
 
@@ -119,7 +116,6 @@ class Style {
 
 		// ブロック幅
 		self::css_block_width( $setting['container_width'], $setting['slim_width'], $page_template );
-
 	}
 
 
@@ -143,5 +139,4 @@ class Style {
 
 		return '@media (' . $condition . '){' . $return . '}';
 	}
-
 }

@@ -158,5 +158,4 @@ class Gnav_Menu extends \Walker {
 	public function end_el( &$output, $data_object, $depth = 0, $args = null ) {
 		$output .= '</li>';
 	}
-
 }

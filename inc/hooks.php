@@ -130,8 +130,8 @@ function hook_terms_checklist_args( $args ) {
  * ページネーションの構造を書き換える
  */
 add_filter( 'navigation_markup_template', __NAMESPACE__ . '\hook_navigation_markup', 10, 2 );
-function hook_navigation_markup( $template, $class ) {
-	if ( 'pagination' === $class ) {
+function hook_navigation_markup( $template, $nav_class ) {
+	if ( 'pagination' === $nav_class ) {
 		return '<nav class="navigation %1$s" role="navigation" aria-label="%4$s">%3$s</nav>';
 	}
 	return $template;

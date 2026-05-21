@@ -53,9 +53,9 @@ Customizer::add( $arkhe_section, 'logo_size_pc',
 		'description' => '24~160px',
 		'type'        => 'number',
 		'input_attrs' => array(
-			'step'    => '1',
-			'min'     => '24',
-			'max'     => '160',
+			'step' => '1',
+			'min'  => '24',
+			'max'  => '160',
 		),
 		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
@@ -68,9 +68,9 @@ Customizer::add( $arkhe_section, 'logo_size_sp',
 		'description' => '24~100px',
 		'type'        => 'number',
 		'input_attrs' => array(
-			'step'    => '1',
-			'min'     => '24',
-			'max'     => '100',
+			'step' => '1',
+			'min'  => '24',
+			'max'  => '100',
 		),
 		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
@@ -188,9 +188,9 @@ Customizer::add( $arkhe_section, 'move_gnav_under',
 // グローバルナビを画面上部に固定する
 Customizer::add( $arkhe_section, 'fix_gnav',
 	array(
-		'classname'   => '-underGnav',
-		'label'       => __( 'Fixed global navigation at top of screen', 'arkhe' ),
-		'type'        => 'checkbox',
+		'classname' => '-underGnav',
+		'label'     => __( 'Fixed global navigation at top of screen', 'arkhe' ),
+		'type'      => 'checkbox',
 	)
 );
 

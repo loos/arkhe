@@ -159,5 +159,4 @@ trait Condition {
 	public static function use_fse_blocks() {
 		return apply_filters( 'arkhe_use_fse_blocks', false );
 	}
-
 }

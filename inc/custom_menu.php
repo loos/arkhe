@@ -8,9 +8,9 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\register_nav_locations', 9 );
 function register_nav_locations() {
 	register_nav_menus(
 		array(
-			'header_menu'  => __( 'Global Navigation', 'arkhe' ),
-			'drawer_menu'  => __( 'Inside the drawer menu', 'arkhe' ),
-			'footer_menu'  => __( 'Footer', 'arkhe' ),
+			'header_menu' => __( 'Global Navigation', 'arkhe' ),
+			'drawer_menu' => __( 'Inside the drawer menu', 'arkhe' ),
+			'footer_menu' => __( 'Footer', 'arkhe' ),
 		)
 	);
 }

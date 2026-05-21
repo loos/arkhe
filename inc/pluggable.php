@@ -36,10 +36,10 @@ if ( ! function_exists( 'ark_get__head_logo_img' ) ) {
 			) );
 
 			$common_logo = Arkhe::get_image( $logo_id, array(
-				'class'    => 'c-headLogo__img -common',
-				'sizes'    => $logo_sizes,
-				'alt'      => get_option( 'blogname' ),
-				'loading'  => 'lazy',
+				'class'   => 'c-headLogo__img -common',
+				'sizes'   => $logo_sizes,
+				'alt'     => get_option( 'blogname' ),
+				'loading' => 'lazy',
 			) );
 			$common_logo = str_replace( '<img ', '<img aria-hidden="true" ', $common_logo );
 

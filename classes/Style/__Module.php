@@ -45,7 +45,6 @@ trait Module {
 	public static function add_module( $filename = '' ) {
 
 		self::$modules[] = $filename;
-
 	}
 
 	/**
@@ -68,6 +67,5 @@ trait Module {
 		}
 
 		return $module_path;
-
 	}
 }

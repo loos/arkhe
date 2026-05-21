@@ -3,12 +3,12 @@
  * ドロワーメニュー
  */
 $menu_args = array(
-	'walker'          => new \Arkhe_Theme\Walker\Gnav_Menu(),
-	'ark_component'   => 'drawerNav',
-	'container'       => '',
-	'fallback_cb'     => '',
-	'items_wrap'      => '%3$s',
-	'theme_location'  => has_nav_menu( 'drawer_menu' ) ? 'drawer_menu' : 'header_menu',
+	'walker'         => new \Arkhe_Theme\Walker\Gnav_Menu(),
+	'ark_component'  => 'drawerNav',
+	'container'      => '',
+	'fallback_cb'    => '',
+	'items_wrap'     => '%3$s',
+	'theme_location' => has_nav_menu( 'drawer_menu' ) ? 'drawer_menu' : 'header_menu',
 );
 ?>
 <div id="drawer_menu" class="p-drawer">

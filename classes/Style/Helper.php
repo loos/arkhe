@@ -182,5 +182,4 @@ trait Helper {
 				return '100%';
 		}
 	}
-
 }

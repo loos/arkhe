@@ -6,11 +6,11 @@ trait Get {
 	/**
 	 * データをサニタイズ
 	 */
-	public static function get_cleaned_data( $var ) {
-		if ( is_array( $var ) ) {
-			return array_map( array( __CLASS__, 'get_cleaned_data' ), $var );
+	public static function get_cleaned_data( $data ) {
+		if ( is_array( $data ) ) {
+			return array_map( array( __CLASS__, 'get_cleaned_data' ), $data );
 		} else {
-			return is_scalar( $var ) ? sanitize_text_field( wp_unslash( $var ) ) : $var;
+			return is_scalar( $data ) ? sanitize_text_field( wp_unslash( $data ) ) : $data;
 		}
 	}
 
@@ -229,10 +229,10 @@ trait Get {
 			'</style>';
 
 			return array(
-				'id'     => 'arkhe_licence_check',
-				'meta'   => array( 'class' => 'arkhe-menu-licence' ),
-				'title'  => $style . $title,
-				'href'   => admin_url( 'themes.php?page=arkhe&tab=licence' ),
+				'id'    => 'arkhe_licence_check',
+				'meta'  => array( 'class' => 'arkhe-menu-licence' ),
+				'title' => $style . $title,
+				'href'  => admin_url( 'themes.php?page=arkhe&tab=licence' ),
 			);
 		}
 	}

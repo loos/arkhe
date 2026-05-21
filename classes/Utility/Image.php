@@ -146,6 +146,4 @@ trait Image {
 
 		return $props;
 	}
-
-
 }

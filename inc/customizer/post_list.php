@@ -101,9 +101,9 @@ Customizer::add( $arkhe_section, 'excerpt_length',
 		'label'       => __( 'Number of characters in excerpt', 'arkhe' ),
 		'type'        => 'number',
 		'input_attrs' => array(
-			'step'    => '20',
-			'min'     => '0',
-			'max'     => '320',
+			'step' => '20',
+			'min'  => '0',
+			'max'  => '320',
 		),
 		'sanitize'    => array( '\Arkhe_Theme\Customizer\Sanitize', 'int' ),
 	)
@@ -125,8 +125,8 @@ Customizer::add( $arkhe_section, 'cat_priority_on_list',
 // 投稿と直接紐付いてなくても、一番上層のカテゴリーを表示する
 Customizer::add( $arkhe_section, 'force_get_top_cat',
 	array(
-		'label'       => __( 'Display the top-level category even if it is not directly associated with the post', 'arkhe' ),
-		'type'        => 'checkbox',
+		'label' => __( 'Display the top-level category even if it is not directly associated with the post', 'arkhe' ),
+		'type'  => 'checkbox',
 	)
 );
 
@@ -136,9 +136,9 @@ Customizer::add( $arkhe_section, 'cat_priority_on_cat_page',
 		'label'   => __( 'Overriding priority on Category Pages', 'arkhe' ),
 		'type'    => 'select',
 		'choices' => array(
-			''       => __( 'Not set', 'arkhe' ), // 設定しない
-			'self'   => __( 'Force display of current category', 'arkhe' ), // 現在のカテゴリーを強制的に表示する
-			'child'  => __( 'Prefer child category', 'arkhe' ),
+			''      => __( 'Not set', 'arkhe' ), // 設定しない
+			'self'  => __( 'Force display of current category', 'arkhe' ), // 現在のカテゴリーを強制的に表示する
+			'child' => __( 'Prefer child category', 'arkhe' ),
 		),
 	)
 );

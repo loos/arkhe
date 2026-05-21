@@ -121,9 +121,9 @@ Customizer::big_title( $arkhe_section, 'breadcrumb_list',
 // パンくずリストの位置
 Customizer::add( $arkhe_section, 'breadcrumbs_pos',
 	array(
-		'label'       => __( 'Breadcrumbs position', 'arkhe' ),
-		'type'        => 'radio',
-		'choices'     => array(
+		'label'   => __( 'Breadcrumbs position', 'arkhe' ),
+		'type'    => 'radio',
+		'choices' => array(
 			'top'    => __( 'Top of page', 'arkhe' ),
 			'bottom' => __( 'Bottom of page', 'arkhe' ),
 		),
@@ -165,9 +165,9 @@ Customizer::big_title( $arkhe_section, 'common_others',
 // スムーススクロール
 Customizer::add( $arkhe_section, 'smooth_scroll',
 	array(
-		'label'       => __( 'Smooth scroll', 'arkhe' ),
-		'type'        => 'select',
-		'choices'     => array(
+		'label'   => __( 'Smooth scroll', 'arkhe' ),
+		'type'    => 'select',
+		'choices' => array(
 			'on'  => 'ON',
 			'off' => 'OFF',
 		),

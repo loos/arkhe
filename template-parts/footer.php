@@ -29,12 +29,12 @@ $is_active_footer2 = is_active_sidebar( 'footer-2' );
 					do_action( 'arkhe_start_footer_foot_content' );
 					wp_nav_menu(
 						array(
-							'container'       => false,
-							'fallback_cb'     => '',
-							'theme_location'  => 'footer_menu',
-							'items_wrap'      => '<ul class="l-footer__nav u-flex--c">%3$s</ul>',
-							'link_before'     => '',
-							'link_after'      => '',
+							'container'      => false,
+							'fallback_cb'    => '',
+							'theme_location' => 'footer_menu',
+							'items_wrap'     => '<ul class="l-footer__nav u-flex--c">%3$s</ul>',
+							'link_before'    => '',
+							'link_after'     => '',
 						)
 					);
 				?>

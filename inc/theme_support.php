@@ -121,7 +121,6 @@ function setup_theme() {
 			'color' => 'var(--ark-color--gray)',
 		),
 	) );
-
 }
 
 

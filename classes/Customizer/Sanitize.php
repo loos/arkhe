@@ -98,5 +98,4 @@ class Sanitize {
 		$file      = wp_check_filetype( $video_url, $mimes );
 		return ( $file['ext'] ? $video_id : $setting->default );
 	}
-
 }

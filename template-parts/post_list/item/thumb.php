@@ -9,9 +9,9 @@ $sizes = isset( $args['sizes'] ) ? $args['sizes'] : '';
 	<figure class="c-postThumb__figure">
 		<?php
 			ark_the__thumbnail( array(
-				'size'        => $size,
-				'sizes'       => $sizes,
-				'class'       => 'c-postThumb__img',
+				'size'  => $size,
+				'sizes' => $sizes,
+				'class' => 'c-postThumb__img',
 			) );
 		?>
 	</figure>

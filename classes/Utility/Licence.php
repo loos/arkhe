@@ -73,5 +73,4 @@ trait Licence {
 		// 正常なデータ
 		return $get_data;
 	}
-
 }

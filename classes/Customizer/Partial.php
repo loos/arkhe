@@ -16,5 +16,4 @@ class Partial {
 		\Arkhe::get_part( 'other/breadcrumb' );
 		return ob_get_clean();
 	}
-
 }

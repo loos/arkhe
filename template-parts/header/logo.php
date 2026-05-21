@@ -28,7 +28,7 @@ if ( ! $logo_id ) {
 // ロゴ部分の出力
 $logo_tag = apply_filters( 'arkhe_logo_tag', is_front_page() ? 'h1' : 'div' );
 echo '<' . esc_attr( $logo_tag ) . ' class="l-header__logo has-' . esc_attr( $logo_type ) . '"',
-		$style ? ' style="' . esc_attr( $style ) . '"' : '' ,
+		$style ? ' style="' . esc_attr( $style ) . '"' : '',
 	'>' .
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		'<a href="' . esc_url( home_url( '/' ) ) . '" class="c-headLogo" rel="home">' . $logo_content . '</a>' .

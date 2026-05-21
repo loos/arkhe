@@ -8,7 +8,7 @@ $wp_obj      = get_queried_object();  // そのページのWPオブジェクト�
 $wp_obj_type = '';
 if ( null !== $wp_obj && is_object( $wp_obj ) ) {
 	$wp_obj_type = get_class( $wp_obj );
-};
+}
 
 
 $list_data = array();
@@ -132,7 +132,7 @@ if ( is_search() ) {
 	);
 
 
-} elseif ( is_page() || is_home() && 'WP_Post' === $wp_obj_type ) {
+} elseif ( ( is_page() || is_home() ) && 'WP_Post' === $wp_obj_type ) {
 	// 固定ページ
 
 	$page_id    = $wp_obj->ID;
@@ -167,7 +167,7 @@ if ( is_search() ) {
 		'name' => post_type_archive_title( '', false ),
 	);
 
-} elseif ( is_category() || is_tag() || is_tax() && 'WP_Term' === $wp_obj_type ) {
+} elseif ( ( is_category() || is_tag() || is_tax() ) && 'WP_Term' === $wp_obj_type ) {
 	// ターム系アーカイブ
 
 	$term_id   = $wp_obj->term_id;
