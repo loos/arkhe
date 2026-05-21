@@ -1,4 +1,3 @@
-
 html :where(.editor-styles-wrapper) p {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -6,7 +5,6 @@ html :where(.editor-styles-wrapper) p {
 
 // 本文エリア
 .editor-styles-wrapper {
-
 	//最初のブロックの上にはマージン付けない
 	.is-root-container > [data-type="core/heading"]:first-child {
 		margin-top: 0 !important;
@@ -28,28 +26,25 @@ html :where(.editor-styles-wrapper) p {
 		--ark-mt: 0;
 	}
 
-
 	// block-editor-block-list__layout is-root-container
 	.is-root-container {
-
 		> [data-align="full"] + [data-align="full"],
 		> [data-align="full"] + style + [data-align="full"] {
 			margin-top: 0;
 		}
 	}
 
-
 	// 余白を小さくするエリア。
 	// カラムブロック・メディアと文章ブロックの中 / 通常幅のカバー・グループブロックの中
 	:is(
-	.wp-block-details,
-	.wp-block-quote,
-	.wp-block-column,
-	.wp-block-media-text__content,
-	.wp-block-cover__inner-container,
-	.wp-block-group:where(:not(.is-layout-flex):not(.is-layout-grid)),
-	.wp-block-group__inner-container) {
-
+			.wp-block-details,
+			.wp-block-quote,
+			.wp-block-column,
+			.wp-block-media-text__content,
+			.wp-block-cover__inner-container,
+			.wp-block-group:where(:not(.is-layout-flex):not(.is-layout-grid)),
+			.wp-block-group__inner-container
+		) {
 		> .wp-block:not(:first-child) {
 			margin-top: var(--ark-mt--inner, var(--ark-mt--s));
 		}
@@ -67,7 +62,6 @@ html :where(.editor-styles-wrapper) p {
 
 	// ウィジェットグループブロック
 	.wp-block-widget-group {
-
 		.widget-title {
 			margin-top: 0;
 			margin-bottom: 1.25rem;
@@ -77,5 +71,4 @@ html :where(.editor-styles-wrapper) p {
 			margin-top: 0;
 		}
 	}
-
 }
