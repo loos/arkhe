@@ -17,7 +17,7 @@ WordPress テーマ「Arkhe」（開発元: LOOS,Inc.）の開発リポジトリ
 
 ## 開発コマンド
 
-ビルドツールは `node` 16 系を前提（`.node-version`）。パッケージ操作は `@antfu/ni` 系コマンドを使う。
+ビルドツールは `.node-version` の node（現在 22 系）を前提。パッケージ操作は `@antfu/ni` 系コマンドを使う。
 
 ```bash
 npm install              # JS 依存をインストール
@@ -35,7 +35,7 @@ composer phpcs           # PHP の lint（コミット前に通す）
 
 `npm run wp-start` / `wp-stop` で `wp-env` のローカル環境を起動・停止できる。PHP/JS とも自動テストは無い。
 
-リリース zip は `npm run update`（`bin/zip.sh`）。引数にバージョンを渡すと `style.css`・`readme.txt` のバージョンを書き換え、`node_modules`・`vendor`・開発設定ファイルを除外して 1 つ上の階層に `arkhe-{version}.zip` を出力する。
+リリース zip は `nr update`（`bin/zip.sh`）で作るが、リリース作業は「リリース手順」の項を参照すること。
 
 ## ビルドの仕組み（重要）
 
@@ -96,12 +96,7 @@ composer phpcs           # PHP の lint（コミット前に通す）
 - SCSS は FLOCSS 的構成（`foundation` / `layout` / `object`）。クラス接頭辞は `l-`（layout）/ `c-`（component）/ `p-`（project）/ `u-`（utility）。
 
 ## リリース手順
-1. lintチェック: lint:php, lint:css
-2. ビルド: nr build
-3. zip化: nr update {version} (例: nr update 3.12.0)
-  - bin/zip.sh がやること:
-  - style.css の Version: を書き換え
-  - readme.txt の Stable tag: を書き換え
-  - 1 つ上の階層へ移動し arkhe-{引数}.zip を出力（※ファイル名は引数そのまま。3-12-1 指定なら arkhe-3-12-1.zip）
-4. バージョン書き換え分をコミット (style.css と readme.txt の差分が出るので master にコミット)
-5. https://ja.wordpress.org/themes/upload/ に zipアップロードして公開
+
+**`.claude/skills/release/SKILL.md`（`$release` スキル）に従う。**手順を推測で進めたり、ここに再掲したりしない。
+
+lint → ビルド → zip 作成 → バージョンコミット → push までがスキルの担当範囲。WordPress.org への zip アップロードだけはユーザーが手動で行う。Git タグは打たない（タグ運用は 3.2.2 で終了している）。
