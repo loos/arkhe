@@ -122,7 +122,7 @@ $has_licence = 1 === $the_status || 2 === $the_status;
 			</button>
 		<?php endif; ?>
 	<?php else : ?>
-		<span style="line-height: 32px;padding: 0 8px;"><?php echo esc_attr( substr( $licence_key, 0, 4 ) ); ?>************</span>
+		<span style="line-height: 32px;padding: 0 8px;"><?php echo esc_html( substr( $licence_key, 0, 4 ) ); ?>************</span>
 		<button type="submit" name="submit_type" value="deauthorize" class="button button-secondary">
 			<?php esc_html_e( 'Deauthorize', 'arkhe' ); ?>
 		</button>
