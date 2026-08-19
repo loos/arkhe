@@ -1,6 +1,6 @@
 === Arkhe ===
 Contributors: looswebstudio
-Stable tag: 3.13.0
+Stable tag: 3.14.0
 Tested up to: 7.1
 Requires at least: 6.8
 Requires PHP: 8.0
