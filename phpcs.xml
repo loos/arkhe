@@ -196,7 +196,9 @@
 		 (Multiple valid text domains can be provided as a comma-delimited list.) -->
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="arkhe"/>
+			<property name="text_domain" type="array">
+				<element value="arkhe"/>
+			</property>
 		</properties>
 	</rule>
 
