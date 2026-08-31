@@ -3,7 +3,7 @@
 .alignwide {
 	position: relative;
 	left: calc(var(--ark-alignwide_ex_width) * -1);
-	width: calc(100% + var(--ark-alignwide_ex_width) * 2);
+	width: var(--wp--style--global--wide-size);
 	max-width: unset !important; // embedなどのmax100%のものを上書き
 
 	// div中の全幅は、内部に収まるように。（ネスト内でも広げたいケースはそれぞれにrevertで0を打ち消す）
