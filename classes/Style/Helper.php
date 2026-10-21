@@ -69,12 +69,21 @@ trait Helper {
 
 
 	/**
+	 * 幅の設定値を取得
+	 * 空欄で保存すると 0 になり、PHP 8 では計算時に TypeError で落ちるため既定値に戻す。
+	 */
+	protected static function get_width_setting( $key ) {
+		return (int) \Arkhe::get_setting( $key ) ?: (int) \Arkhe::get_default_setting( $key );
+	}
+
+
+	/**
 	 * コンテンツ幅 （フロント & エディターで共通）
 	 */
 	protected static function set_content_width() {
 
-		$container_width = \Arkhe::get_setting( 'container_width' );
-		$slim_width      = \Arkhe::get_setting( 'slim_width' );
+		$container_width = self::get_width_setting( 'container_width' );
+		$slim_width      = self::get_width_setting( 'slim_width' );
 
 		// コンテナサイズ
 		self::add_root_css( '--ark-width--container', $container_width . 'px' );

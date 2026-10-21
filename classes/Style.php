@@ -115,7 +115,7 @@ class Style {
 	public static function set_editor_style( $setting, $page_template ) {
 
 		// ブロック幅
-		self::css_block_width( $setting['container_width'], $setting['slim_width'], $page_template );
+		self::css_block_width( self::get_width_setting( 'container_width' ), self::get_width_setting( 'slim_width' ), $page_template );
 	}
 
 

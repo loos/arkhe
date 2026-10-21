@@ -55,7 +55,7 @@ trait Attrs {
 			'show_search_pc' => $setting['show_search_pc'],
 			'btn_layout'     => $setting['header_btn_layout'],
 			'logo_pos'       => 'center',
-		), $args );
+		), (array) $args );
 
 		$attrs = array();
 
