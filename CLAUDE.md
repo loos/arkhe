@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 概要
 
 WordPress テーマ「Arkhe」（開発元: LOOS,Inc.）の開発リポジトリ。WordPress.org 公式ディレクトリに掲載されている無料テーマで、ブロックエディター対応のシンプルなベーステーマ。
-動作要件は WordPress 6.0 以上 / PHP 7.0 以上（`style.css`・`readme.txt`）。
+動作要件は WordPress 6.8 以上 / PHP 8.0 以上（`style.css`・`readme.txt`）。
 拡張版（Arkhe Pro 等）向けのライセンス認証・アップデート機構を内蔵する。
 
 ## リポジトリ運用
