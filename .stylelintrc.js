@@ -31,6 +31,13 @@ module.exports = {
 				ignoreProperties: ["container-name", "container-type"],
 			},
 		],
+		// 旧ブラウザ向けフォールバックとして意図的に残しているもの
+		"property-no-deprecated": [
+			true,
+			{
+				ignoreProperties: ["clip", "word-wrap"],
+			},
+		],
 		"unit-no-unknown": [
 			true,
 			{

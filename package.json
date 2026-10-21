@@ -28,10 +28,10 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@wordpress/browserslist-config": "^6.46.0",
-		"@wordpress/env": "^11.6.0",
-		"@wordpress/scripts": "^32.2.0",
-		"@wordpress/stylelint-config": "^23.38.0",
+		"@wordpress/browserslist-config": "^6.57.0",
+		"@wordpress/env": "^11.17.0",
+		"@wordpress/scripts": "^36.1.0",
+		"@wordpress/stylelint-config": "^26.1.0",
 		"autoprefixer": "^10.5.0",
 		"cross-env": "^7.0.3",
 		"css-mqpacker": "^7.0.0",
@@ -45,10 +45,10 @@
 		"po2json": "^1.0.0-beta-2",
 		"postcss": "^8.5.14",
 		"sass": "^1.99.0",
-		"stylelint": "^16.26.1",
+		"stylelint": "^17.14.1",
 		"stylelint-config-recess-order": "^7.7.0",
 		"stylelint-order": "^8.1.1",
-		"stylelint-scss": "^6.14.0"
+		"stylelint-scss": "^7.2.0"
 	},
 	"overrides": {
 		"ajv": "^8.20.0",
@@ -57,7 +57,10 @@
 		"webpack-dev-server": "^5.2.4",
 		"ws": "^8.20.1",
 		"markdownlint-cli": {
-			"minimatch": "^10.2.5"
-		}
+			"minimatch": "^10.2.5",
+			"js-yaml": "^5.4.3",
+			"smol-toml": "^1.9.1"
+		},
+		"qs": "^6.16.1"
 	}
 }
